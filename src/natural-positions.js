@@ -9,7 +9,7 @@ CAM:'kevin-de-bruyne bernardo-silva juan-roman-riquelme jay-jay-okocha pablo-aim
 LW:'eden-hazard yannick-bolasie denilson nani rivaldo ronaldinho neymar cristiano-ronaldo thierry-henry son-heung-min sadio-mane',
 RW:'ricardo-quaresma hatem-ben-arfa lionel-messi mohamed-salah riyad-mahrez',
 CF:'roberto-baggio francesco-totti alvaro-recoba alessandro-del-piero antonio-cassano wayne-rooney karim-benzema',
-ST:'adriano ronaldo-nazario gabriel-batistuta dimitar-berbatov obafemi-martins michael-owen zlatan-ibrahimovic kylian-mbappe luis-suarez robert-lewandowski didier-drogba samuel-etoo mario-balotelli sergio-aguero harry-kane robin-van-persie erling-haaland fernando-torres ruud-van-nistelrooy jamie-vardy hernan-crespo marcelo-salas ivan-zamorano',
+ST:'adriano ronaldo-nazario gabriel-batistuta dimitar-berbatov obafemi-martins michael-owen zlatan-ibrahimovic kylian-mbappe luis-suarez robert-lewandowski didier-drogba samuel-etoo mario-balotelli sergio-aguero harry-kane robin-van-persie erling-haaland fernando-torres ruud-van-nistelrooy jamie-vardy hernan-crespo marcelo-salas ivan-zamorano filippo-inzaghi',
 LB:'paolo-maldini sinisa-mihajlovic roberto-carlos ashley-cole patrice-evra andrew-robertson',
 RB:'javier-zanetti lilian-thuram philipp-lahm cafu gary-neville branislav-ivanovic kyle-walker trent-alexander-arnold',
 CB:'nemanja-vidic giorgio-chiellini rio-ferdinand jaap-stam lucio marcel-desailly ricardo-carvalho ledley-king sergio-ramos alessandro-nesta fabio-cannavaro carles-puyol virgil-van-dijk john-terry franz-beckenbauer vincent-kompany sol-campbell jamie-carragher kolo-toure ruben-dias andrea-barzagli',

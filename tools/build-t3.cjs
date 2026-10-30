@@ -8,7 +8,7 @@ for(const [id,data] of Object.entries(expansion.players)){if(ratings.players[id]
 ratings.status='MIXED: original 63 approved v1.1 entries, 40 pre-existing provisional entries, 36 new provisional entries';
 ratings.author='Original 63: Claude; expansion: unapproved editorial proposals';
 ratings.provisionalExpansionIds=Object.keys(expansion.players);
-const prefix='window.CAGE_APPROVED_RATINGS='+JSON.stringify(ratings)+';\n',c={window:{}};vm.createContext(c);for(const f of ['src/players.js','src/roster-expansion.js','src/roster-100.js','src/roster-101.js','src/roster-103.js','src/roster-pl-134.js','src/roster-135.js','src/roster-136.js','src/roster-139.js'])vm.runInContext(read(f),c);vm.runInContext(prefix,c);
+const prefix='window.CAGE_APPROVED_RATINGS='+JSON.stringify(ratings)+';\n',c={window:{}};vm.createContext(c);for(const f of ['src/players.js','src/roster-expansion.js','src/roster-100.js','src/roster-101.js','src/roster-103.js','src/roster-pl-134.js','src/roster-135.js','src/roster-136.js','src/roster-139.js','src/roster-140.js'])vm.runInContext(read(f),c);vm.runInContext(prefix,c);
 for(const f of ['src/engine/attributes.js','src/tactics/capabilities.js'])vm.runInContext(read(f),c);
 const ps=c.window.THE_CAGE_PLAYERS,C=c.window.CageCapabilities,keys=C.keys,sum=Object.fromEntries(keys.map(k=>[k,[0,0]])),phase=Object.fromEntries(['ATT','MID','DEF'].map(k=>[k,[0,0]]));let n=0;const points=[];
 // identity's percentile lookup is only used by describe(), not cohesionPoints().
