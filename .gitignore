@@ -8,3 +8,18 @@ showdown-e2e.html
 .test-*/
 work/
 proposals/tactical-spike/variants/
+# V5.4 generated standalone runtime artifacts and temporary browser profiles
+build-exe/sea-complete.blob
+build-exe/sea-complete.json
+build-exe/launcher-complete.js
+chrome-*/
+full-v5-e2e.html
+v5-save-recovery.html
+v53-*.html
+v54-*.html
+CLAUDE_V54_READONLY_AUDIT.md
+RUN_QWEN_V54_*.ps1
+RUN_CLAUDE_V54_*.ps1
+
+tools/v54-*.py
+tests/v54-balance-baseline.json

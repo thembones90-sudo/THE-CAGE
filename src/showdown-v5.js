@@ -1,5 +1,6 @@
 (()=>{'use strict';
 const $=id=>document.getElementById(id),E=window.CageEngine,R=window.CageRecords,players=window.THE_CAGE_PLAYERS,byId=new Map(players.map(p=>[p.id,p]));
+const routeTraitPreview=E.VERSION.startsWith('cage-t3')&&/[?&]traits=preview(?:&|$)/.test(location.search);let traitPreview=routeTraitPreview;
 const KEY=E.VERSION.startsWith('cage-t3')?'the-cage.showdown.t3-preview.v1':'the-cage.showdown.v1',used=new Map(),claimed={A:[null,null,null],B:[null,null,null]},locked={A:false,B:false},drafts={A:['','',''],B:['','','']};
 let wins={A:0,B:0},round=1,roundFinished=false,playing=false,timer=null,history=[],pending=null,viewRecord=null,replaying=false,canSave=false,candidate=null,bootChoice=false,generation=0,recoveryBlocked=false;
 const tacticHelp={balanced:'Balanced: even priorities, with no specialist emphasis.',possession:'Possession: more patient passing and shielding; fewer direct runs and shots. Pressure can trap the buildup.',press:'High Press: more defensive engagement; higher fatigue and foul risk. Beaten pressure leaves recovery work.',counter:'Counterattack: deeper defence and more direct runs; less patient buildup and fewer pressing attempts.'};
@@ -34,6 +35,9 @@ const recallHint=node('p','Enter a remembered surname, nickname or at least four
 document.querySelector('main > .grid').before(node('p',E.VERSION.startsWith('cage-t3')?
   'T3 PREVIEW: tactical balance unapproved. Full positional logs drive experimental 2D movement.':
   'CLASSIC V0.4: stable gameplay with limited positional telemetry and a static inferred off-ball shape. Use ?engine=t3 for the experimental full-positional viewer.','small badge'));
+const traitNotice=node('p','15-CLASS TRAITS PREVIEW: deterministic situational class decisions enabled. Experimental balance only; this choice is recorded for exact replay.','small badge');
+traitNotice.id='traits-mode-notice';document.querySelector('main > .grid').before(traitNotice);
+function updateTraitNotice(){traitNotice.classList.toggle('hidden',!traitPreview);}updateTraitNotice();
 for(const side of ['A','B']){const hint=node('p','','small muted');hint.id='help'+side;$('tactic'+side).after(hint);const duties=node('div',undefined,'duties small');duties.id='duties'+side;$('slots'+side).after(duties);$('tactic'+side).addEventListener('change',()=>{help();save();});}
 function setStatus(text,bad=false){$('status').textContent=text;$('status').className=bad?'error':'muted';}
 function firstSide(){return round%2?'A':'B';}
@@ -46,7 +50,7 @@ $('play').disabled=bootChoice||recoveryBlocked||!!pending||playing||roundFinishe
 for(const side of ['A','B']){$('lock'+side).disabled=bootChoice||playing||roundFinished||locked[side]||!claimed[side].every(Boolean);$('tactic'+side).disabled=bootChoice||playing||roundFinished||locked[side];for(const [i,slot] of [...$('slots'+side).children].entries()){slot.querySelector('input').disabled=!!claimed[side][i]||!allowed(side);slot.querySelector('button').disabled=!!claimed[side][i]||!allowed(side);slot.querySelectorAll('.confirm').forEach(b=>b.disabled=!allowed(side));}}
 $('pace').disabled=playing||bootChoice;replayButton.disabled=playing||bootChoice||!history.length;importInput.disabled=playing||bootChoice;
 document.body.classList.toggle('match-view',playing||roundFinished);document.querySelectorAll('[data-replay]').forEach(b=>b.disabled=playing||bootChoice);help();save();}
-function capture(){return {schema:1,round,wins:{...wins},used:[...used],claimed:R.copy(claimed),locked:{...locked},drafts:R.copy(drafts),tactics:{A:$('tacticA').value,B:$('tacticB').value},pace:$('pace').value,roundFinished,history:R.copy(history),pending:R.copy(pending)};}
+function capture(){return {schema:1,round,wins:{...wins},used:[...used],claimed:R.copy(claimed),locked:{...locked},drafts:R.copy(drafts),tactics:{A:$('tacticA').value,B:$('tacticB').value},pace:$('pace').value,roundFinished,history:R.copy(history),pending:R.copy(pending),traitsMode:traitPreview};}
 function save(){if(!canSave||replaying)return;try{localStorage.setItem(KEY,JSON.stringify(capture()));storageNote.textContent='Saved on this browser automatically.';}catch(e){storageNote.textContent='Browser storage is unavailable or full. Keep this page open and export completed rounds.';}}
 function claimedTile(root,input,btn,out,p){input.value=p.name;input.disabled=true;btn.disabled=true;root.classList.add('claimed');out.className='ok';out.replaceChildren(node('strong',p.name),node('span',p.country+' · Pace '+p.r.pace+' · Technique '+p.r.tech+' · Passing '+p.r.pass+' · Finishing '+p.r.finish+' · Defence '+p.r.def+' · Physical '+p.r.phys,'player-detail'));if(p.traits){out.append(node('div','TRAITS · '+p.traits.primary+' / '+p.traits.secondary,'small badge'));}if(p.careerTier||p.folklore?.length){out.append(node('div',[p.careerTier,...(p.folklore||[])].filter(Boolean).join(' · '),'small badge'));}if(p.talismanClubs?.length){out.append(node('div','TALISMAN CLUBS · '+p.talismanClubs.join(' / '),'small badge'));}}
 function slot(side,i){const root=node('div',undefined,'slot'),input=node('input'),btn=node('button','Search & verify'),out=node('div',undefined,'small');const label=node('label','Footballer '+(i+1));input.id='recall-'+side+i;label.htmlFor=input.id;input.placeholder='Recall from memory';input.autocomplete='off';input.maxLength=100;input.setAttribute('aria-label',side+' footballer '+(i+1));input.value=drafts[side][i];out.setAttribute('role','status');root.append(label,input,btn,out);
@@ -117,10 +121,10 @@ function playback(record,isReplay=false){
   ctl.play();
   $('arena').closest('section').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
 }
-function play(){if(bootChoice||recoveryBlocked||pending||playing||roundFinished||!locked.A||!locked.B)return;const config={teams:[claimed.A.slice(),claimed.B.slice()],tactics:[$('tacticA').value,$('tacticB').value],seed:crypto.getRandomValues(new Uint32Array(1))[0],mode:'ko'};try{const result=E.simulate(config);pending=R.make(config,result,round);save();playback(pending);}catch(e){stop();setStatus('Match void (seed '+config.seed+'): '+e.message+'. Your claims remain saved. Enter the Cage to retry with a new seed.',true);refresh();}}
+function play(){if(bootChoice||recoveryBlocked||pending||playing||roundFinished||!locked.A||!locked.B)return;const config={teams:[claimed.A.slice(),claimed.B.slice()],tactics:[$('tacticA').value,$('tacticB').value],seed:crypto.getRandomValues(new Uint32Array(1))[0],mode:'ko',...(traitPreview?{traits:{enabled:true}}:{})};try{const result=E.simulate(config);pending=R.make(config,result,round);save();playback(pending);}catch(e){stop();setStatus('Match void (seed '+config.seed+'): '+e.message+'. Your claims remain saved. Enter the Cage to retry with a new seed.',true);refresh();}}
 function replayRecord(record){if(playing||bootChoice)return;try{R.reproduce(record);playback(record,true);}catch(e){setStatus(e.message,true);}}
 function next(){if($('next').disabled)return;stop();round++;roundFinished=false;pending=null;viewRecord=null;for(const s of ['A','B']){locked[s]=false;claimed[s]=[null,null,null];drafts[s]=['','',''];}clearPitch();$('commentary').replaceChildren();$('report').replaceChildren();$('arena').textContent='ROUND '+round+' · NEW FOOTBALLERS REQUIRED';build();announceTurn();refresh();document.querySelector('main > .grid').scrollIntoView({behavior:'smooth',block:'start'});}
-function reset(){
+function reset(){traitPreview=routeTraitPreview;updateTraitNotice();
   // Preserve a recoverable copy before an explicitly requested fresh game
   // overwrites an incompatible, corrupt or older-version saved showdown.
   try{const raw=localStorage.getItem(KEY);if(raw&&!localStorage.getItem(KEY+'.legacy-backup'))localStorage.setItem(KEY+'.legacy-backup',raw);}catch(e){}
@@ -144,6 +148,8 @@ function resume(){
   }
   try{
     const s=verified;
+    traitPreview=Boolean(s.traitsMode??s.history[0]?.config.traits?.enabled??s.pending?.config.traits?.enabled??false);
+    updateTraitNotice();
     round=s.round;wins={...s.wins};roundFinished=s.roundFinished;
     history=s.history.map(E.freeze);pending=s.pending?E.freeze(s.pending):null;
     used.clear();s.used.forEach(([id,side])=>used.set(id,side));

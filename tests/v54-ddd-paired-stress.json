@@ -1,0 +1,38 @@
+{
+  "note": "500 paired seeds in each direction (1000 actual games per configuration), identical seed schedule and team compositions; no forced goals, no persistent modifications",
+  "roster": 182,
+  "rows": [
+    {
+      "name": "t3-3-parameter-baseline",
+      "shotQ": 11,
+      "shotReference": 75,
+      "matches": 1000,
+      "completed": 848,
+      "caps": 152,
+      "capRatePct": 15.2,
+      "p50": 1919,
+      "p95": 5261,
+      "p99": 5789,
+      "max": 5948,
+      "winsA": 417,
+      "kickoffWinPct": 45.8,
+      "shotsPerComplete": 20.7
+    },
+    {
+      "name": "t3-4-candidate",
+      "shotQ": 15,
+      "shotReference": 68,
+      "matches": 1000,
+      "completed": 984,
+      "caps": 16,
+      "capRatePct": 1.6,
+      "p50": 1034,
+      "p95": 4092,
+      "p99": 5293,
+      "max": 5718,
+      "winsA": 468,
+      "kickoffWinPct": 48.4,
+      "shotsPerComplete": 13.5
+    }
+  ]
+}

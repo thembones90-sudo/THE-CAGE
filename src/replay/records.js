@@ -8,6 +8,7 @@ const goals=result.events.filter(e=>e.type==='goal');if(goals.length!==1||result
 if(goals[0].assist&&!config.teams[goals[0].team].includes(goals[0].assist))throw Error('Invalid assist.');}
 function validate(record){if(!record||record.schema!==SCHEMA||!Number.isInteger(record.round)||record.round<1||record.round>5)throw Error('Unsupported replay record.');
 const c=record.config;if(!c||c.mode!=='ko'||!Number.isInteger(c.seed)||c.seed<0||c.seed>0xffffffff||!Array.isArray(c.teams)||c.teams.length!==2||c.teams.some(t=>!Array.isArray(t)||t.length!==3||t.some(id=>typeof id!=='string'||!Object.hasOwn(E.BY_ID,id)))||new Set(c.teams.flat()).size!==6||!Array.isArray(c.tactics)||c.tactics.length!==2||c.tactics.some(t=>!Object.hasOwn(E.TACTICS,t)))throw Error('Invalid replay configuration.');
+if(c.traits!==undefined&&(!c.traits||c.traits.enabled!==true||Object.keys(c.traits).length!==1||!String(record.engineVersion).startsWith('cage-t3')))throw Error('Unsupported trait-mode replay configuration.');
 validResult(record.result,c);const engine=window.CAGE_ENGINE_REGISTRY?.[record.engineVersion]||(record.engineVersion===E.VERSION?E:null);if(engine?.hashEvents){if(record.result.eventHash!==engine.hashEvents(record.result.events))throw Error('Replay tactical event hash mismatch.');engine.validateEvidence(record.result.events,c);}return record;}
 function make(config,result,round){validResult(result,config);return E.freeze({schema:SCHEMA,round,createdAt:new Date().toISOString(),engineVersion:E.VERSION,paramsVersion:E.PARAMS_VERSION,rosterVersion:E.VERSION==='cage-0.4.0'?'editorial-v0.4-63':window.CAGE_ROSTER_VERSION||'editorial-v0.3',rosterFingerprint:fingerprint(replayRoster({engineVersion:E.VERSION,config})),config:copy(config),result:copy(result)});}
 function replayRoster(record){return record.config.teams.map(ids=>ids.map(id=>{const p=copy(E.BY_ID[id]);if(record.engineVersion==='cage-0.4.0'){delete p.attributes;delete p.ratingsVersion;delete p.attributesProvisional;}return p;}));}
@@ -20,6 +21,13 @@ const current=new Set();for(const side of ['A','B']){const ids=s.claimed[side];i
 const unique=new Map(s.used);if(unique.size!==s.used.length||unique.size!==exhausted.size||[...unique].some(([id,side])=>exhausted.get(id)!==side))throw Error('Saved used pool mismatch.');
 const first=s.round%2===1?'A':'B',other=first==='A'?'B':'A',n=s.claimed[first].filter(Boolean).length,m=s.claimed[other].filter(Boolean).length;if(!(n===m||n===m+1))throw Error('Invalid alternating draft.');
 if(s.roundFinished){const last=s.history.at(-1);if(JSON.stringify(last.config.teams)!==JSON.stringify([s.claimed.A,s.claimed.B]))throw Error('Completed squad mismatch.');}
+if(s.traitsMode!==undefined&&typeof s.traitsMode!=='boolean')throw Error('Invalid class-mode saved preference.');
+const recordedTrait=s.history[0]?.config.traits?.enabled??s.pending?.config.traits?.enabled??null;
+if(recordedTrait!==null){
+  const expected=s.traitsMode??recordedTrait;
+  for(const record of [...s.history,...(s.pending?[s.pending]:[])])
+    if(Boolean(record.config.traits?.enabled)!==expected)throw Error('Saved showdown mixed incompatible trait modes.');
+}else if(s.traitsMode===true&&!String(E.VERSION).startsWith('cage-t3'))throw Error('Class mode requires the experimental T3 engine.');
 if(s.pending){validate(s.pending);if(s.roundFinished||!s.locked.A||!s.locked.B||s.pending.round!==s.round||JSON.stringify(s.pending.config.teams)!==JSON.stringify([s.claimed.A,s.claimed.B]))throw Error('Invalid interrupted match.');}
 if(!['normal','fast','instant','dramatic'].includes(s.pace))throw Error('Invalid playback setting.');return s;}
 window.CageRecords={SCHEMA,fingerprint,make,validate,reproduce,validateSave,copy};
