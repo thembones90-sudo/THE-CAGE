@@ -43,7 +43,7 @@ prob = clamp(.035 · attack/defence · control/control, .008, .12)
 
 | Problem | Evidence |
 |---|---|
-| **Team structure barely matters** | 400 random trios × 30 matches. Points share: MMM .524, DMM .515, **DFM (one of each) .499**, FMM .496, FFM .467, FFF .395. A balanced trio is exactly average |
+| **Team structure barely matters** | 400 random trios × 30 matches. Points share: MMM .524, DMM .515, **DFM (one of each) .499**, FMM .496, FFM .467, FFF .395. A balanced trio is exactly average. **Erratum (2026-10-30):** the random generator used for this table repeated after ~9,600 values (precision loss above 2^53), so these figures may be distorted. It describes the retired v0.2 engine; see TACTICAL_INTELLIGENCE_PROPOSAL.md §A for corrected live-engine measurements |
 | **Too many draws, no knockout** | Draw rate 28–43%. No first-goal-wins mode exists |
 | **Tactics are multipliers on strength, so one dominates** | Possession is the best response to every tactic; Press is strictly worst |
 | **Chemistry is cosmetic** | `chem` is computed and displayed, but never enters `prob` |

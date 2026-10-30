@@ -1,0 +1,613 @@
+{
+ "version": "ratings-v1.1",
+ "date": "2026-10-30",
+ "author": "Claude (draft for owner approval)",
+ "status": "approved working baseline (owner 2026-10-30) + editorial verification corrections",
+ "method": "Editorial peak-career judgments on the roster scale (50 limited, 70 capable, 85 specialist, 95 exceptional). Not measured data; not taken from any video game or proprietary rating. work_rate = pressing and tracking intensity. stamina = sustaining output. composure = decisions under pressure (NOT finishing); first drafted, then linearly stretched (80 + 1.5 x (draft - 86)) because the draft spread was too narrow (sd 6.3) to matter. agility = acceleration, balance, turning in tight space. marking = defensive READING (anticipation, positioning, interception timing), deliberately separated from def (tackling/duels); a first draft tracked def too closely (residual sd 2.6) and was re-rated (residual sd 7.1).",
+ "attributes": [
+  "work_rate",
+  "stamina",
+  "composure",
+  "agility",
+  "marking"
+ ],
+ "players": {
+  "roy-keane": {
+   "work_rate": 95,
+   "stamina": 90,
+   "composure": 84,
+   "agility": 78,
+   "marking": 84,
+   "rationale": "Relentless ball-winner and organiser; on-ball calm under pressure strong, temperament is a discipline issue not composure."
+  },
+  "paul-scholes": {
+   "work_rate": 72,
+   "stamina": 82,
+   "composure": 91,
+   "agility": 78,
+   "marking": 70,
+   "rationale": "Tireless runner in his prime but a poor, mistimed tackler; elite calm in tight spaces."
+  },
+  "ryan-giggs": {
+   "work_rate": 78,
+   "stamina": 88,
+   "composure": 80,
+   "agility": 93,
+   "marking": 50,
+   "rationale": "Explosive turn and change of direction; tracked back on the flank but never a reader of play."
+  },
+  "michael-essien": {
+   "work_rate": 95,
+   "stamina": 93,
+   "composure": 80,
+   "agility": 86,
+   "marking": 80,
+   "rationale": "Box-to-box engine; covered every blade of grass with real defensive reading."
+  },
+  "frank-lampard": {
+   "work_rate": 85,
+   "stamina": 92,
+   "composure": 83,
+   "agility": 74,
+   "marking": 70,
+   "rationale": "Exceptional durability and late-box runs; not an agile dribbler, average defensive positioning."
+  },
+  "claude-makelele": {
+   "work_rate": 90,
+   "stamina": 86,
+   "composure": 88,
+   "agility": 82,
+   "marking": 97,
+   "rationale": "Defined the screening role: anticipation and positioning over physicality."
+  },
+  "kevin-de-bruyne": {
+   "work_rate": 85,
+   "stamina": 84,
+   "composure": 86,
+   "agility": 82,
+   "marking": 58,
+   "rationale": "Presses with intent and covers ground; defending positionally is not his game."
+  },
+  "rodri": {
+   "work_rate": 85,
+   "stamina": 84,
+   "composure": 92,
+   "agility": 70,
+   "marking": 95,
+   "rationale": "Positional anchor with outstanding calm on the ball; not quick over short distances."
+  },
+  "bernardo-silva": {
+   "work_rate": 92,
+   "stamina": 90,
+   "composure": 89,
+   "agility": 92,
+   "marking": 70,
+   "rationale": "Unusually industrious technician; tight-space agility and pressing work rate are standout."
+  },
+  "gilberto-silva": {
+   "work_rate": 88,
+   "stamina": 84,
+   "composure": 87,
+   "agility": 70,
+   "marking": 95,
+   "rationale": "The \"invisible wall\": disciplined screening and reading, low flair."
+  },
+  "patrick-vieira": {
+   "work_rate": 90,
+   "stamina": 90,
+   "composure": 84,
+   "agility": 76,
+   "marking": 82,
+   "rationale": "Dominant all-round midfielder; long-striding rather than nimble."
+  },
+  "robert-pires": {
+   "work_rate": 70,
+   "stamina": 78,
+   "composure": 83,
+   "agility": 87,
+   "marking": 52,
+   "rationale": "Graceful, balanced wide playmaker; contributed off the ball but rarely defended deep."
+  },
+  "xabi-alonso": {
+   "work_rate": 75,
+   "stamina": 78,
+   "composure": 92,
+   "agility": 66,
+   "marking": 90,
+   "rationale": "Metronome with superb reading of danger; limited acceleration."
+  },
+  "steven-gerrard": {
+   "work_rate": 85,
+   "stamina": 90,
+   "composure": 80,
+   "agility": 80,
+   "marking": 68,
+   "rationale": "Huge energy and drive; positional discipline was not his strength."
+  },
+  "javier-mascherano": {
+   "work_rate": 96,
+   "stamina": 90,
+   "composure": 82,
+   "agility": 80,
+   "marking": 90,
+   "rationale": "Ferocious presser and cover defender; reads danger exceptionally."
+  },
+  "ngolo-kante": {
+   "work_rate": 99,
+   "stamina": 97,
+   "composure": 85,
+   "agility": 92,
+   "marking": 92,
+   "rationale": "Benchmark for work rate and ball recovery; anticipation as much as legs."
+  },
+  "yaya-toure": {
+   "work_rate": 70,
+   "stamina": 88,
+   "composure": 83,
+   "agility": 75,
+   "marking": 62,
+   "rationale": "Powerful carrier with great composure; off-ball pressing work rate was a known weakness at his peak."
+  },
+  "eden-hazard": {
+   "work_rate": 55,
+   "stamina": 78,
+   "composure": 86,
+   "agility": 96,
+   "marking": 32,
+   "rationale": "Elite low-centre-of-gravity agility; minimal defensive contribution by design."
+  },
+  "juan-roman-riquelme": {
+   "work_rate": 35,
+   "stamina": 60,
+   "composure": 94,
+   "agility": 72,
+   "marking": 45,
+   "rationale": "Pure enganche: dictated tempo with total calm; did not press or track."
+  },
+  "ricardo-quaresma": {
+   "work_rate": 50,
+   "stamina": 72,
+   "composure": 64,
+   "agility": 90,
+   "marking": 25,
+   "rationale": "Quick, tricky winger; erratic decision-making and little defensive work."
+  },
+  "edgar-davids": {
+   "work_rate": 95,
+   "stamina": 92,
+   "composure": 75,
+   "agility": 88,
+   "marking": 70,
+   "rationale": "\"Pitbull\": pressing intensity and agility; tackling more than positional reading."
+  },
+  "roberto-baggio": {
+   "work_rate": 50,
+   "stamina": 70,
+   "composure": 91,
+   "agility": 92,
+   "marking": 40,
+   "rationale": "Balletic close control and supreme calm; not a defensive contributor."
+  },
+  "adriano": {
+   "work_rate": 45,
+   "stamina": 66,
+   "composure": 71,
+   "agility": 80,
+   "marking": 20,
+   "rationale": "Explosive power striker at his Inter peak; low off-ball work and fitness consistency."
+  },
+  "javier-zanetti": {
+   "work_rate": 95,
+   "stamina": 97,
+   "composure": 86,
+   "agility": 86,
+   "marking": 93,
+   "rationale": "Legendary durability and two-way discipline; calm, intelligent defender."
+  },
+  "michael-ballack": {
+   "work_rate": 82,
+   "stamina": 85,
+   "composure": 83,
+   "agility": 72,
+   "marking": 84,
+   "rationale": "Complete midfielder with genuine defensive reading; not nimble."
+  },
+  "paolo-maldini": {
+   "work_rate": 85,
+   "stamina": 88,
+   "composure": 95,
+   "agility": 82,
+   "marking": 99,
+   "rationale": "Benchmark for defensive positioning and calm; read play rather than dived in."
+  },
+  "ronaldo-nazario": {
+   "work_rate": 45,
+   "stamina": 80,
+   "composure": 92,
+   "agility": 97,
+   "marking": 20,
+   "rationale": "Peak R9: unmatched acceleration with the ball, ice-cold one-on-one; no defensive role."
+  },
+  "thomas-gravesen": {
+   "work_rate": 85,
+   "stamina": 80,
+   "composure": 59,
+   "agility": 62,
+   "marking": 70,
+   "rationale": "Combative holding midfielder; snapped into challenges, limited turning speed."
+  },
+  "jay-jay-okocha": {
+   "work_rate": 55,
+   "stamina": 72,
+   "composure": 83,
+   "agility": 95,
+   "marking": 38,
+   "rationale": "Showman with sensational agility; inconsistent off-ball work."
+  },
+  "nemanja-vidic": {
+   "work_rate": 82,
+   "stamina": 82,
+   "composure": 77,
+   "agility": 62,
+   "marking": 93,
+   "rationale": "Commanding, brave positional defender; slow on the turn."
+  },
+  "gabriel-batistuta": {
+   "work_rate": 65,
+   "stamina": 78,
+   "composure": 80,
+   "agility": 72,
+   "marking": 28,
+   "rationale": "Powerful finisher; worked the channels but little defending."
+  },
+  "francesco-totti": {
+   "work_rate": 55,
+   "stamina": 74,
+   "composure": 89,
+   "agility": 80,
+   "marking": 52,
+   "rationale": "Visionary false nine with great calm; selective pressing."
+  },
+  "giorgio-chiellini": {
+   "work_rate": 85,
+   "stamina": 85,
+   "composure": 74,
+   "agility": 66,
+   "marking": 91,
+   "rationale": "Elite marker and physical duellist; not agile, composure decent rather than elite."
+  },
+  "alvaro-recoba": {
+   "work_rate": 38,
+   "stamina": 62,
+   "composure": 74,
+   "agility": 85,
+   "marking": 30,
+   "rationale": "Wand of a left foot; notoriously low work rate and fitness."
+  },
+  "sinisa-mihajlovic": {
+   "work_rate": 65,
+   "stamina": 74,
+   "composure": 71,
+   "agility": 60,
+   "marking": 88,
+   "rationale": "Reads play well from deep; slow, not a presser; dead-ball specialist (setPiece flag candidate)."
+  },
+  "nani": {
+   "work_rate": 65,
+   "stamina": 78,
+   "composure": 65,
+   "agility": 91,
+   "marking": 32,
+   "rationale": "Quick, tricky and athletic; decision-making inconsistent."
+  },
+  "dimitar-berbatov": {
+   "work_rate": 40,
+   "stamina": 66,
+   "composure": 94,
+   "agility": 74,
+   "marking": 48,
+   "rationale": "Languid genius: supreme calm and touch, minimal pressing."
+  },
+  "yannick-bolasie": {
+   "work_rate": 78,
+   "stamina": 82,
+   "composure": 56,
+   "agility": 88,
+   "marking": 35,
+   "rationale": "Energetic, tricky winger who works; decision-making is the weakness."
+  },
+  "rio-ferdinand": {
+   "work_rate": 75,
+   "stamina": 84,
+   "composure": 89,
+   "agility": 82,
+   "marking": 97,
+   "rationale": "Ball-playing defender who read danger early; famously calm."
+  },
+  "obafemi-martins": {
+   "work_rate": 70,
+   "stamina": 80,
+   "composure": 62,
+   "agility": 94,
+   "marking": 22,
+   "rationale": "Explosive acceleration; willing runner; erratic finishing decisions."
+  },
+  "michael-owen": {
+   "work_rate": 60,
+   "stamina": 76,
+   "composure": 83,
+   "agility": 93,
+   "marking": 28,
+   "rationale": "Electric acceleration and cool finishing at his peak; no defending."
+  },
+  "jaap-stam": {
+   "work_rate": 80,
+   "stamina": 84,
+   "composure": 71,
+   "agility": 68,
+   "marking": 85,
+   "rationale": "Powerful, aggressive marker; not quick on the turn."
+  },
+  "lilian-thuram": {
+   "work_rate": 85,
+   "stamina": 88,
+   "composure": 86,
+   "agility": 84,
+   "marking": 96,
+   "rationale": "Quick, intelligent and calm; among the best readers of his era."
+  },
+  "denilson": {
+   "work_rate": 50,
+   "stamina": 72,
+   "composure": 71,
+   "agility": 96,
+   "marking": 25,
+   "rationale": "Step-over specialist with exceptional agility; little end product or defending."
+  },
+  "alessandro-del-piero": {
+   "work_rate": 65,
+   "stamina": 78,
+   "composure": 89,
+   "agility": 90,
+   "marking": 46,
+   "rationale": "Elegant, intelligent forward; more work rate than most luxury forwards."
+  },
+  "pablo-aimar": {
+   "work_rate": 65,
+   "stamina": 68,
+   "composure": 83,
+   "agility": 94,
+   "marking": 45,
+   "rationale": "Slight, darting playmaker; tight-space agility elite."
+  },
+  "antonio-cassano": {
+   "work_rate": 40,
+   "stamina": 58,
+   "composure": 74,
+   "agility": 86,
+   "marking": 32,
+   "rationale": "Gifted but low work rate and conditioning."
+  },
+  "daniele-de-rossi": {
+   "work_rate": 90,
+   "stamina": 86,
+   "composure": 80,
+   "agility": 72,
+   "marking": 86,
+   "rationale": "Combative, intelligent holding midfielder."
+  },
+  "andres-dalessandro": {
+   "work_rate": 60,
+   "stamina": 72,
+   "composure": 79,
+   "agility": 90,
+   "marking": 45,
+   "rationale": "Feisty, agile playmaker; intermittent defensive work."
+  },
+  "zlatan-ibrahimovic": {
+   "work_rate": 50,
+   "stamina": 76,
+   "composure": 89,
+   "agility": 82,
+   "marking": 40,
+   "rationale": "Unusually agile for his size; supreme confidence; selective pressing."
+  },
+  "lucio": {
+   "work_rate": 82,
+   "stamina": 88,
+   "composure": 70,
+   "agility": 76,
+   "marking": 78,
+   "rationale": "Athletic, aggressive, loved forward surges that left gaps; more duel-winner than reader."
+  },
+  "hatem-ben-arfa": {
+   "work_rate": 40,
+   "stamina": 70,
+   "composure": 68,
+   "agility": 93,
+   "marking": 28,
+   "rationale": "Dazzling dribbler; low tactical work and decision consistency."
+  },
+  "rivaldo": {
+   "work_rate": 50,
+   "stamina": 76,
+   "composure": 86,
+   "agility": 86,
+   "marking": 42,
+   "rationale": "Languid but decisive; big-moment calm; little pressing."
+  },
+  "marcel-desailly": {
+   "work_rate": 78,
+   "stamina": 84,
+   "composure": 86,
+   "agility": 74,
+   "marking": 92,
+   "rationale": "\"The Rock\": power and positional authority; not nimble."
+  },
+  "zinedine-zidane": {
+   "work_rate": 60,
+   "stamina": 78,
+   "composure": 98,
+   "agility": 88,
+   "marking": 64,
+   "rationale": "Supreme calm and balance in tight spaces; modest defensive work."
+  },
+  "ronaldinho": {
+   "work_rate": 50,
+   "stamina": 76,
+   "composure": 89,
+   "agility": 95,
+   "marking": 32,
+   "rationale": "Peak Barcelona: dazzling agility and audacious calm; minimal defending."
+  },
+  "djalminha": {
+   "work_rate": 40,
+   "stamina": 64,
+   "composure": 77,
+   "agility": 88,
+   "marking": 40,
+   "rationale": "Outrageous technician; low work rate and volatile temperament."
+  },
+  "steed-malbranque": {
+   "work_rate": 80,
+   "stamina": 82,
+   "composure": 71,
+   "agility": 82,
+   "marking": 58,
+   "rationale": "Industrious, nimble link player; limited defensive reading."
+  },
+  "ricardo-carvalho": {
+   "work_rate": 82,
+   "stamina": 82,
+   "composure": 83,
+   "agility": 80,
+   "marking": 97,
+   "rationale": "Clever, anticipating defender; calm, quick across the ground."
+  },
+  "ledley-king": {
+   "work_rate": 75,
+   "stamina": 70,
+   "composure": 86,
+   "agility": 78,
+   "marking": 97,
+   "rationale": "Famously clean, calm defending; chronic knee problems limit stamina."
+  },
+  "tugay-kerimoglu": {
+   "work_rate": 65,
+   "stamina": 70,
+   "composure": 83,
+   "agility": 70,
+   "marking": 78,
+   "rationale": "Composed deep passer; slow but reads play reasonably."
+  },
+  "morten-gamst-pedersen": {
+   "work_rate": 72,
+   "stamina": 80,
+   "composure": 68,
+   "agility": 72,
+   "marking": 58,
+   "rationale": "Hard-working wide midfielder with a strong left foot (setPiece flag candidate)."
+  },
+  "nene": {
+   "work_rate": 50,
+   "stamina": 70,
+   "composure": 68,
+   "agility": 82,
+   "marking": 30,
+   "rationale": "Skilful left-footed attacker; little defensive work."
+  }
+ },
+ "changelog": [
+  {
+   "version": "ratings-v1.1",
+   "date": "2026-10-30",
+   "note": "Editorial verification pass. Corrections chosen on football reasoning only; no match simulations were consulted. Revert any entry by restoring \"from\".",
+   "changes": [
+    {
+     "id": "claude-makelele",
+     "attribute": "composure",
+     "from": 83,
+     "to": 88,
+     "reason": "Famously unhurried in possession under pressure; draft under-rated composed non-creators."
+    },
+    {
+     "id": "gilberto-silva",
+     "attribute": "composure",
+     "from": 83,
+     "to": 87,
+     "reason": "Calm, simple, error-free distribution; the composure of a screen, not a creator."
+    },
+    {
+     "id": "roy-keane",
+     "attribute": "composure",
+     "from": 77,
+     "to": 84,
+     "reason": "Rarely lost the ball under pressure; temperament is discipline, not on-ball composure."
+    },
+    {
+     "id": "javier-mascherano",
+     "attribute": "composure",
+     "from": 77,
+     "to": 82,
+     "reason": "Composed enough to play centre-back for an elite possession side."
+    },
+    {
+     "id": "ngolo-kante",
+     "attribute": "composure",
+     "from": 80,
+     "to": 85,
+     "reason": "Calm, low-risk ball retention after recoveries."
+    },
+    {
+     "id": "patrick-vieira",
+     "attribute": "composure",
+     "from": 80,
+     "to": 84,
+     "reason": "Carried the ball through pressure with authority."
+    },
+    {
+     "id": "daniele-de-rossi",
+     "attribute": "composure",
+     "from": 74,
+     "to": 80,
+     "reason": "Assured on the ball in a deep role; occasional rashness is in tackling, not decisions."
+    },
+    {
+     "id": "michael-essien",
+     "attribute": "composure",
+     "from": 77,
+     "to": 80,
+     "reason": "Secure in possession; drafted too low relative to creators."
+    },
+    {
+     "id": "edgar-davids",
+     "attribute": "composure",
+     "from": 71,
+     "to": 75,
+     "reason": "Press-resistant carrier; drafted too low relative to creators."
+    },
+    {
+     "id": "lucio",
+     "attribute": "composure",
+     "from": 65,
+     "to": 70,
+     "reason": "Rash in positioning (reflected in marking) but composed on the ball during forward carries."
+    },
+    {
+     "id": "ronaldo-nazario",
+     "attribute": "stamina",
+     "from": 72,
+     "to": 80,
+     "reason": "Peak window 1996-98 preceded the knee injuries; 72 reflected later career."
+    },
+    {
+     "id": "zlatan-ibrahimovic",
+     "attribute": "agility",
+     "from": 78,
+     "to": 82,
+     "reason": "Exceptional body control and balance for his size."
+    }
+   ]
+  }
+ ]
+}

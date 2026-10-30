@@ -1,0 +1,83 @@
+THE CAGE tactical balance — engine proposals\tactical-spike\engine-tactical.js (tactical-spike-1 / spike), roster 63
+Compositions use roster role labels (D/M/F) until src/tactics capability roles exist (T2).
+
+E1  Composition matrix (row win % vs column; equal quality; Balanced vs Balanced; 400 matches per pairing)
+        DMF  FFF  DDD  DDM  DDF  MMF  DFF  DMM  MMM  MFF   OVERALL  beats≥3
+DMF       —   64   55   46   46   54   52   53   55   54    53.1%   yes  Complete Unit
+FFF      37    —   47   38   32   48   42   37   46   46    41.2%   NO   All-Out Assault
+DDD      45   54    —   49   36   50   45   44   50   50    46.9%   NO   Iron Fortress
+DDM      54   62   51    —   45   59   53   53   59   60    55.0%   yes  The Wall
+DDF      54   68   64   55    —   57   54   59   61   56    58.7%   yes  Counterstrike
+MMF      46   52   50   41   43    —   43   47   47   49    46.4%   NO   The Architects
+DFF      48   59   56   47   46   57    —   50   55   57    52.6%   yes  Spear and Shield
+DMM      47   63   56   47   41   53   50    —   57   57    52.6%   yes  The Engine Room
+MMM      45   54   50   41   39   53   46   43    —   53    47.0%   yes  The Orchestra
+MFF      46   54   50   40   44   51   43   43   47    —    46.4%   NO   Street Artists
+
+E2  Effect of +1 SD on goals per possession (20000 matches; baseline 0.1424)
+    own best ATT     +9%
+    own mean ATT    +16%
+    own mean MID     +0%
+    opp best DEF     -8%
+    opp mean DEF    -28%
+
+E4  Behaviour by composition (side-0 actions per possession; equal quality)
+       dribbles   passes     thru    shots  carries
+DMF        0.56     1.27     0.25     0.38     0.33
+FFF        0.87     0.88     0.25     0.46     0.52
+DDD        0.54     1.68     0.23     0.41     0.31
+DDM        0.51     1.60     0.24     0.35     0.32
+DDF        0.59     1.41     0.21     0.43     0.38
+MMF        0.68     1.10     0.31     0.36     0.36
+DFF        0.73     1.11     0.23     0.44     0.40
+DMM        0.50     1.46     0.26     0.35     0.33
+MMM        0.53     1.22     0.30     0.32     0.30
+MFF        0.71     0.94     0.29     0.41     0.39
+
+E10 Realism: interceptions 15.3% of passes; free-kick goals 3.0%; shots per match 4.1; anchor-duty goals 8.8%
+
+E5  Tactic effect per composition (win % of the composition using tactic X vs equal-quality random opponents using Balanced; 240 matches each)
+         balanced  possessio      press    counter   best
+DMF         54.6%      52.5%      57.5%      48.3%   press
+FFF         43.8%      43.3%      40.4%      37.9%   balanced
+DDD         48.3%      48.3%      57.5%      46.3%   press
+DDM         55.0%      48.8%      70.0%      55.8%   press
+DDF         55.8%      55.8%      61.3%      53.8%   press
+MMF         46.3%      46.3%      48.3%      43.8%   press
+DFF         56.3%      57.5%      55.4%      49.6%   possession
+DMM         53.8%      44.2%      61.3%      45.4%   press
+MMM         47.1%      50.0%      53.8%      38.8%   press
+MFF         42.9%      47.5%      48.3%      42.5%   press
+
+E6  Same composition, top-quartile vs bottom-quartile trios: 71.6% (1000 matches)
+
+E9  Random matches 20000: cap hits 0; duration median 65s, p90 192s, p99 425s. Defensive pairing (Maldini/Chiellini/Thuram v Gravesen/Stam/Vidić) 4000: cap hits 0 (0.0 per 10k)
+
+E12 Guards: legacy-derived fields read: none; legacy stamina/composure read: false; role label read: false; Math.random/Date: false
+
+E11 Ronaldinho/Rivaldo/Del Piero vs Maldini/Ballack/R9: 26.9% · Vidić/Stam/Gravesen vs Maldini/Ballack/R9: 4.9%
+
+SUMMARY  (82600 simulations, 0 safety-cap hits, 19 s)
+  FAIL  E1   Every composition 40–60% overall; no cell > 75%; each beats ≥ 3
+              range 41.2%–58.7%, max cell 68.0%, all beat≥3: false
+  FAIL  E2   |opp best DEF| ≤ 2× own best ATT; opp mean DEF ≥ 60% of best; own mean MID ≥ +8%
+              bestDEF -8% vs bestATT 9%; meanDEF/bestDEF 3.49; MID 0%
+  FAIL  E4   Different football: JSD(FFF,DDD) ≥ 0.10; dribbles FFF ≥ 2× DDD; passes MMM ≥ 1.5× DDF
+              JSD 0.064, dribble ratio 1.62, pass ratio 0.87
+  PASS  E10  Interceptions 12–22%; free kicks 2–8% of goals; 3–10 shots/match; anchors 2–12% of goals
+              int 15.3%, fk 3.0%, shots 4.1, anchor 8.8%
+  FAIL  E5   No tactic best for > 5/10 compositions; each best ≥ 1; ≥ 6 compositions swing ≥ 5 pts
+              best counts {"balanced":1,"possession":1,"press":8,"counter":0}, compositions swinging ≥5pts: 9
+  PASS  E6   Top vs bottom quartile within a composition 65–80%
+              71.6%
+  PASS  E9   0 caps in random; ≤ 1 per 10k defensive pairing; median 60–200 s; p99 < 900 s
+              random caps 0, defensive 0.0/10k, median 65s, p99 425s
+  PASS  E12  Engine reads no legacy-derived fields or role labels; no Math.random/Date
+              legacy 0, role false, random false
+  FAIL  E11  Artists vs MBR 35–55%; hardmen vs MBR 30–50%
+              artists 26.9%, hardmen 4.9%
+  ----  E3   Route of victory per composition — pending: needs event tags (T3.4/T4)
+  ----  E7   Grade validity — pending: needs src/tactics/capabilities.js (T2)
+  ----  E8   Cohesion is not a power score — pending: needs src/tactics/identity.js (T2)
+
+JSON written.
