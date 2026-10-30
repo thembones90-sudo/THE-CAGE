@@ -1,4 +1,4 @@
-// THE CAGE: four owner-approved cult footballers, 182-player roster, all 178 previous locks intact.
+// THE CAGE: four owner-approved cult footballers, 184-player roster, all 178 previous locks intact, after Valeron/Makaay.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
 const html=read('index.html'),prior=JSON.parse(read('docs/roster-audit-178-refined.json'));
@@ -6,10 +6,10 @@ const source=JSON.parse(read('proposals/world-street-heroes-4.json'));
 const ctx={window:{location:{search:'?engine=t3'}}};vm.createContext(ctx);
 for(const m of html.matchAll(/<script src="(src\/[^"]+)"><\/script>/g)){if(m[1]==='src/cage-commentary.js')break;vm.runInContext(read(m[1]),ctx,{filename:m[1]});}
 const w=ctx.window,players=w.THE_CAGE_PLAYERS,byId=new Map(players.map(p=>[p.id,p])),previous=new Map(prior.players.map(p=>[p.id,p]));
-assert.equal(players.length,182);assert.equal(byId.size,182);assert.equal(source.players.length,4);
-assert(html.includes('src/roster-182.js')&&html.includes('0 used / 182 available'));
-assert(w.CAGE_ROSTER_VERSION.includes('182'));assert(w.CageEngine.VERSION.startsWith('cage-t3'));
-assert.equal(Object.keys(w.CAGE_ROSTER_EXTRA_RATINGS).length,43);
+assert.equal(players.length,184);assert.equal(byId.size,184);assert.equal(source.players.length,4);
+assert(html.includes('src/roster-184.js')&&html.includes('0 used / 184 available'));
+assert(w.CAGE_ROSTER_VERSION.includes('184'));assert(w.CageEngine.VERSION.startsWith('cage-t3'));
+assert.equal(Object.keys(w.CAGE_ROSTER_EXTRA_RATINGS).length,45);
 for(const former of prior.players){
  const p=byId.get(former.id);assert(p,'missing historical roster player '+former.id);
  assert.equal(p.careerTier,former.careerTier,'tier accidentally changed '+p.id);
@@ -50,4 +50,4 @@ for(const [a,b] of matches)for(const seed of [11,67,131]){
  assert.deepEqual(JSON.parse(JSON.stringify(x)),JSON.parse(JSON.stringify(y)),'T3 nondeterministic at seed '+seed);
  assert([0,1].includes(x.winner));
 }
-console.log('PASS: 182 unique players; 4 ELITE street recruits, 17+5 ratings, positions, folklore, aliases, full historical roster preserved, 10 pending unadded, 6 deterministic T3 matches.');
+console.log('PASS: 184 unique players; 4 ELITE street recruits, 17+5 ratings, positions, folklore, aliases, full historical roster preserved, 10 pending unadded, 6 deterministic T3 matches.');

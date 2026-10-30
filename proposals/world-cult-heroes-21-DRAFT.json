@@ -1,8 +1,8 @@
 {
   "status": "DRAFT_GLOBAL_SCOUTS_NOT_IN_PLAYABLE_ROSTER",
-  "rosterBase": 182,
+  "rosterBase": 184,
   "previousBundesligaDraftPending": 10,
-  "description": "Tier and folklore suggestions, not approval or implementation.",
+  "description": "21 pending world cult-hero proposals; Valeron recruited as a playable LEGEND.",
   "candidates": [
     {
       "id": "tony-yeboah",
@@ -15,20 +15,6 @@
       ],
       "rationale": "Thunderbolt volleys against Liverpool and Wimbledon, unforgettable Leeds icon.",
       "source": "https://www.premierleague.com/ar/news/2275462"
-    },
-    {
-      "id": "juan-carlos-valeron",
-      "name": "Juan Carlos Valerón",
-      "scene": "Spain · Deportivo La Coruña",
-      "position": "CAM",
-      "tier": "LEGEND",
-      "folklore": [
-        "STREET HERO",
-        "TALISMAN",
-        "UNDERDOG"
-      ],
-      "rationale": "An exquisite playmaker and decisive contributor to Deportivo’s 4–0 comeback against Milan.",
-      "source": "https://www.uefa.com/uefachampionsleague/news/01ff-0e9c612e096f-674153cfb38d-1000--2003-04-rc-deportivo-la-coruna-4-0-ac-milan-juan-carlos-va/"
     },
     {
       "id": "joaquin-sanchez",

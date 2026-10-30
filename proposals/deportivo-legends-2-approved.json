@@ -1,0 +1,117 @@
+{
+  "version": "deportivo-legends-184-v1.6",
+  "status": "owner-approved-recruits-with-editorial-prime-and-provisional-T3-ratings",
+  "baseRoster": 182,
+  "updatedRoster": 184,
+  "players": [
+    {
+      "id": "juan-carlos-valeron",
+      "name": "Juan Carlos Valerón",
+      "country": "Spain",
+      "role": "M",
+      "aliases": [
+        "valeron",
+        "valerón",
+        "juan carlos valeron",
+        "juan carlos valerón",
+        "el flaco",
+        "el mago valeron"
+      ],
+      "peak": "2001–2005",
+      "tier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN",
+        "UNDERDOG"
+      ],
+      "talismanClubs": [
+        "Deportivo La Coruña"
+      ],
+      "traits": [
+        "Magician",
+        "Surgeon"
+      ],
+      "core": [
+        67,
+        97,
+        98,
+        72,
+        35,
+        59
+      ],
+      "detail": [
+        98,
+        92,
+        98,
+        99,
+        72,
+        73,
+        76,
+        59,
+        35,
+        85,
+        97
+      ],
+      "extra": [
+        60,
+        76,
+        97,
+        79,
+        41
+      ],
+      "note": "Deportivo's exceptional Spanish creator, club symbol and goalscorer in the 2004 4-0 European comeback against Milan. Late playmaking and 99 vision."
+    },
+    {
+      "id": "roy-makaay",
+      "name": "Roy Makaay",
+      "country": "Netherlands",
+      "role": "F",
+      "aliases": [
+        "makaay",
+        "roy makaay",
+        "the phantom makaay",
+        "das phantom",
+        "roy phantom"
+      ],
+      "peak": "2000–2005",
+      "tier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "UNDERDOG"
+      ],
+      "traits": [
+        "Predator",
+        "Phantom"
+      ],
+      "core": [
+        86,
+        85,
+        71,
+        98,
+        29,
+        78
+      ],
+      "detail": [
+        86,
+        81,
+        71,
+        76,
+        98,
+        96,
+        86,
+        78,
+        29,
+        99,
+        97
+      ],
+      "extra": [
+        72,
+        86,
+        97,
+        84,
+        26
+      ],
+      "note": "Deportivo's 1999/2000 title scorer, 2003 European Golden Shoe winner and Bayern Munich striker; record Champions League goal after 10.12 seconds in 2007."
+    }
+  ]
+}

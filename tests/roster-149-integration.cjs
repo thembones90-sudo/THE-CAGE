@@ -5,10 +5,10 @@ const ctx={window:{location:{search:'?engine=t3'}}};vm.createContext(ctx);
 const scripts=[...html.matchAll(new RegExp('<script src="(src/[^"]+)"></script>','g'))].map(m=>m[1]);
 for(const file of scripts){if(file==='src/cage-commentary.js')break;vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),ctx,{filename:file});}
 const ps=ctx.window.THE_CAGE_PLAYERS,lookup=id=>ps.find(p=>p.id===id);
-assert.equal(ps.length,182,'roster should contain 182 players');
-assert.equal(new Set(ps.map(p=>p.id)).size,182,'roster ID uniqueness');
-assert.equal(ctx.window.CAGE_ROSTER_VERSION.includes('182'),true,'roster version');
-assert.equal(Object.keys(ctx.window.CAGE_ROSTER_EXTRA_RATINGS).length,43,'13 new supplemental entries plus previous 26');
+assert.equal(ps.length,184,'roster should contain 184 players');
+assert.equal(new Set(ps.map(p=>p.id)).size,184,'roster ID uniqueness');
+assert.equal(ctx.window.CAGE_ROSTER_VERSION.includes('184'),true,'roster version');
+assert.equal(Object.keys(ctx.window.CAGE_ROSTER_EXTRA_RATINGS).length,45,'13 new supplemental entries plus previous 26');
 const expected=[["park-ji-sung","LEGEND",["STREET HERO","UNDERDOG"],"LM",["RM","CM"],"Engine","Tracker",["Ji Sung Park","Park Jisung","Three Lung Park"],"stamina",100],["tijjani-babangida","STALWART",["STREET HERO","UNDERDOG"],"RW",["RM"],"Magician","Phantom",["Tijjani Babangida","Babangida"],"pace",99],["mark-viduka","ELITE",["STREET HERO"],"ST",["CF"],"Juggernaut","Magician",["Mark Viduka","Viduka"],"phys",94],["youri-djorkaeff","LEGEND",["STREET HERO"],"CAM",["CF"],"Surgeon","Executioner",["Youri Djorkaeff","Djorkaeff"],"vision",94],["dejan-stankovic","LEGEND",["STREET HERO"],"CM",["CAM","RM"],"Engine","Executioner",["Dejan Stanković","Deki"],"shooting",97],["predrag-mijatovic","LEGEND",["STREET HERO"],"CF",["ST"],"Magician","Executioner",["Predrag Mijatović","Peđa"],"composure",96],["dragan-stojkovic","LEGEND",["STREET HERO","TALISMAN"],"CAM",["CM"],"Magician","Maestro",["Dragan Stojković","Piksi"],"tech",98],["dejan-savicevic","LEGEND",["STREET HERO","TALISMAN"],"CAM",["CF"],"Magician","Surgeon",["Dejan Savićević","Il Genio"],"dribbling",99]];
 for(const [id,tier,folklore,pos,alternates,primary,secondary,queries,key,value] of expected){
   const p=lookup(id);assert(p,'missing '+id);
@@ -38,5 +38,5 @@ for(const seed of [11,52,177]){
   assert([0,1].includes(a.winner),'no winner seed '+seed);
 }
 assert(html.includes('src/roster-149.js'), 'new roster not included in browser');
-assert(html.includes('0 used / 182 available'), 'initial UI pool count stale');
-console.log('PASS: 182 unique players, eight approved dossiers, 16 folklore assignments, two dual-club talismans, 22 attributes each, search, traits and three deterministic tactical matches.');
+assert(html.includes('0 used / 184 available'), 'initial UI pool count stale');
+console.log('PASS: 184 unique players, eight approved dossiers, 16 folklore assignments, two dual-club talismans, 22 attributes each, search, traits and three deterministic tactical matches.');

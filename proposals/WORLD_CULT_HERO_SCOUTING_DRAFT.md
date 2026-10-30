@@ -1,13 +1,12 @@
 # THE CAGE: Global Cult-Hero Scouting Wave
 
-> **UNAPPROVED SHORTLIST ONLY.** 22 worldwide candidates. None is in the 182-player roster or in the ten earlier pending Bundesliga dossiers.
+> **UNAPPROVED SHORTLIST ONLY.** 21 worldwide candidates. None is in the 184-player roster or in the ten earlier pending Bundesliga dossiers.
 
 This list consciously distinguishes historic career stature from STREET HERO status. Being a great scorer or beloved veteran does not automatically earn every folklore badge.
 
 | Candidate | Scene | Position | Tier proposal | Folklore proposal | Why recruit |
 |---|---|---|---|---|---|
 | Tony Yeboah | Ghana · Leeds / Frankfurt | ST | ELITE | STREET HERO | Thunderbolt volleys against Liverpool and Wimbledon, unforgettable Leeds icon. |
-| Juan Carlos Valerón | Spain · Deportivo La Coruña | CAM | LEGEND | STREET HERO + TALISMAN + UNDERDOG | An exquisite playmaker and decisive contributor to Deportivo’s 4–0 comeback against Milan. |
 | Joaquín Sánchez | Spain · Real Betis | RW | LEGEND | STREET HERO + TALISMAN | The embodiment of Betis, flamboyant winger with a historic 622 La Liga appearances. |
 | Antonio Di Natale | Italy · Udinese | ST | LEGEND | STREET HERO + TALISMAN | Remarkable longevity, inventive finishing, and deep one-club identification at Udinese. |
 | Guti | Spain · Real Madrid | CAM | ELITE | STREET HERO | Ridiculous disguised passes and backheels, more creative brilliance than conventional consistency. |
@@ -32,19 +31,18 @@ This list consciously distinguishes historic career stature from STREET HERO sta
 ## Highest-priority dossiers to prepare
 
 1. **Tony Yeboah**: perhaps the clearest missing old-school thunderbolt specialist; Leeds cult legacy and spectacular volleys.
-2. **Juan Carlos Valerón**: golden Deportivo playmaker and key man in the 2004 European comeback. His full dossier should examine STREET HERO, TALISMAN and UNDERDOG separately.
-3. **Joaquín Sánchez**: exceptional Real Betis identification and outrageous winger longevity.
-4. **Ali Karimi**: a critically underrepresented Asian icon and authentic dribbling genius.
-5. **Sofiane Boufal**: a technical chaos merchant with a verified goal-of-the-season solo run.
-6. **Guti**: inventive and technically daring passing to distinguish from our existing conductors.
-7. **Michu**: an unusual one-season breakout monster at Swansea; memorable without overstating career tier.
-8. **Lee Trundle**: the purest showboating wildcard; precisely the kind of player a highlights-only game should not overlook.
+2. **Joaquín Sánchez**: exceptional Real Betis identification and outrageous winger longevity.
+3. **Ali Karimi**: a critically underrepresented Asian icon and authentic dribbling genius.
+4. **Sofiane Boufal**: a technical chaos merchant with a verified goal-of-the-season solo run.
+5. **Guti**: inventive and technically daring passing to distinguish from our existing conductors.
+6. **Michu**: an unusual one-season breakout monster at Swansea; memorable without overstating career tier.
+7. **Lee Trundle**: the purest showboating wildcard; precisely the kind of player a highlights-only game should not overlook.
 
 ## Notes
 
 - The game still runs the legacy v0.4 engine by default; this document does not change that.
-- The original ten Bundesliga dossiers are **not** included in these 22 candidates.
-- A few folklore proposals (especially TALISMAN for Di Natale and Joaquín, or triple folklore for Valerón) deserve individual approval.
+- The original ten Bundesliga dossiers are **not** included in these 21 candidates.
+- A few folklore proposals (especially TALISMAN for Di Natale and Joaquín) deserve individual approval.
 - All tiers here are provisional: ACE does not mean a poor footballer, and TITAN cannot be inferred from a spectacular goal.
 - Source links are collected in the companion JSON. The final dossiers should verify each career and decisive match individually.
 

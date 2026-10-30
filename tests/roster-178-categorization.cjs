@@ -8,11 +8,11 @@ const html=read('index.html');
 const ctx={window:{location:{search:'?engine=t3'}}};vm.createContext(ctx);
 for(const m of html.matchAll(new RegExp('<script src="(src/[^"]+)"></script>','g'))){if(m[1]==='src/cage-commentary.js')break;vm.runInContext(read(m[1]),ctx,{filename:m[1]});}
 const w=ctx.window,players=w.THE_CAGE_PLAYERS,pmap=new Map(players.map(p=>[p.id,p]));
-assert.equal(players.length,182);assert.equal(pmap.size,182);
+assert.equal(players.length,184);assert.equal(pmap.size,184);
 assert.equal(pre.players.length,178);assert.equal(definitions.classifiedNow,138);assert.equal(definitions.traitsAssignedNow,61);
 assert(html.includes('src/roster-classification.js'),'browser must load classifications');
-assert(html.includes('0 used / 182 available'));
-assert(w.CAGE_ROSTER_VERSION.includes('182'));
+assert(html.includes('0 used / 184 available'));
+assert(w.CAGE_ROSTER_VERSION.includes('184'));
 const tiers=new Set(['ACE','STALWART','ELITE','LEGEND','TITAN']),badges=new Set(['STREET HERO','STREET VILLAIN','TALISMAN','UNDERDOG']);
 const traits=new Set(w.CageTraits.CATALOG);
 let restored=0,approvedPreserved=0,newTraits=0;
@@ -75,4 +75,4 @@ for(const [a,b] of matchups)for(const seed of [5,27,64]){
  assert.deepEqual(JSON.parse(JSON.stringify(one)),JSON.parse(JSON.stringify(two)),'trait-enabled match determinism '+seed);
  assert([0,1].includes(one.winner));
 }
-console.log('PASS: 182/182 tiers, folklore, traits, positions, preserved ratings, 40 approved dossiers intact, 138 new classifications, 61 restored trait pairs, and 9 trait-enabled T3 matches.');
+console.log('PASS: 184/184 tiers, folklore, traits, positions, preserved ratings, 40 approved dossiers intact, 138 new classifications, 61 restored trait pairs, and 9 trait-enabled T3 matches.');

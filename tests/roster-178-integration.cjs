@@ -5,12 +5,12 @@ const c={window:{location:{search:'?engine=t3'}}};vm.createContext(c);
 const scripts=[...html.matchAll(new RegExp('<script src="(src/[^"]+)"></script>','g'))].map(m=>m[1]);
 for(const f of scripts){if(f==='src/cage-commentary.js')break;vm.runInContext(fs.readFileSync(path.join(root,f),'utf8'),c,{filename:f});}
 const w=c.window,roster=w.THE_CAGE_PLAYERS,player=id=>roster.find(p=>p.id===id);
-assert.equal(roster.length,182,'all 13 additions loaded');
-assert.equal(new Set(roster.map(p=>p.id)).size,182,'no duplicate roster IDs');
+assert.equal(roster.length,184,'all 13 additions loaded');
+assert.equal(new Set(roster.map(p=>p.id)).size,184,'no duplicate roster IDs');
 assert(html.includes('src/roster-178.js'),'new roster script loaded');
-assert(html.includes('0 used / 182 available'),'roster UI count');
-assert(w.CAGE_ROSTER_VERSION.includes('182'),'roster version');
-assert.equal(Object.keys(w.CAGE_ROSTER_EXTRA_RATINGS).length,43,'13 new plus 26 previous tactical supplements');
+assert(html.includes('0 used / 184 available'),'roster UI count');
+assert(w.CAGE_ROSTER_VERSION.includes('184'),'roster version');
+assert.equal(Object.keys(w.CAGE_ROSTER_EXTRA_RATINGS).length,45,'13 new plus 26 previous tactical supplements');
 const expected=[["djibril-cisse","ELITE",["STREET HERO","UNDERDOG"],"ST",["RW"],"Phantom","Executioner","pace",97,"Djibril Cisse"],["dennis-bergkamp","TITAN",["STREET HERO"],"CF",["CAM"],"Magician","Surgeon","first_touch",100,"Bergkamp"],["pierre-van-hooijdonk","ELITE",["STREET HERO"],"ST",[],"Executioner","Juggernaut","shooting",97,"Pierre van Hooijdonk"],["shunsuke-nakamura","LEGEND",["STREET HERO","TALISMAN"],"CAM",["RM","CM"],"Architect","Executioner","shooting",97,"Nakamura"],["alan-shearer","TITAN",["STREET HERO","TALISMAN"],"ST",[],"Executioner","Juggernaut","finish",99,"Shearer"],["alberto-luque","STALWART",["STREET HERO","UNDERDOG"],"LW",["ST"],"Phantom","Executioner","pace",89,"Luque"],["diego-tristan","ELITE",["STREET HERO"],"ST",["CF"],"Executioner","Magician","finishing",95,"Diego Tristan"],["ariel-ortega","LEGEND",["STREET HERO","TALISMAN"],"CAM",["RW"],"Magician","Surgeon","dribbling",99,"Ortega"],["patrick-mboma","ELITE",["STREET HERO","UNDERDOG"],"ST",["CF"],"Juggernaut","Executioner","shooting",97,"Mboma"],["sami-hyypia","ELITE",["UNDERDOG"],"CB",[],"Wall","Anticipator","positioning",97,"Hyypia"],["milan-baros","ELITE",["STREET HERO","UNDERDOG"],"ST",["CF"],"Phantom","Predator","pace",91,"Baros"],["ruud-gullit","TITAN",["STREET HERO","TALISMAN"],"CAM",["CF","CM"],"Juggernaut","Maestro","phys",96,"Gullit"],["gianfranco-zola","LEGEND",["STREET HERO","TALISMAN"],"CF",["CAM"],"Magician","Surgeon","first_touch",99,"Zola"]];
 for(const [id,tier,folklore,position,other,primary,secondary,stat,val,query] of expected){
  const p=player(id);assert(p,'missing '+id);
@@ -46,4 +46,4 @@ for(const [team1,team2] of matchups)for(const seed of [7,88]){
  assert.deepEqual(JSON.parse(JSON.stringify(first)),JSON.parse(JSON.stringify(second)),'T3 match determinism');
  assert([0,1].includes(first.winner),'T3 match has a winner');
 }
-console.log('PASS: 182 distinct players; 13 new complete dossiers, corrected tiers, 5 talismans, 22 attributes each, aliases, traits and six deterministic T3 matches.');
+console.log('PASS: 184 distinct players; 13 new complete dossiers, corrected tiers, 5 talismans, 22 attributes each, aliases, traits and six deterministic T3 matches.');

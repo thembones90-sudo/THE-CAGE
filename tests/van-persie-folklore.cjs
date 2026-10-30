@@ -5,7 +5,7 @@ const ctx={window:{location:{search:'?engine=t3'}}};vm.createContext(ctx);
 const scripts=[...html.matchAll(new RegExp('<script src="(src/[^"]+)"></script>','g'))].map(m=>m[1]);
 for(const file of scripts){if(file==='src/cage-commentary.js')break;vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),ctx,{filename:file});}
 const ps=ctx.window.THE_CAGE_PLAYERS,p=ps.find(x=>x.id==='robin-van-persie');
-assert.equal(ps.length,182,'metadata update must preserve roster size');
+assert.equal(ps.length,184,'metadata update must preserve roster size');
 assert.equal(ps.filter(x=>x.id==='robin-van-persie').length,1,'no duplicate');
 assert(p,'Robin van Persie must exist');
 assert.equal(p.name,'Robin van Persie');
@@ -25,4 +25,4 @@ assert(E.VERSION.startsWith('cage-t3'),'T3 expected');
 const input={teams:[['robin-van-persie','mark-viduka','peter-crouch'],['andrey-arshavin','paolo-maldini','dejan-stankovic']],tactics:['balanced','counter'],seed:47,mode:'ko'};
 const a=E.simulate(input),b=E.simulate(input);
 assert.deepEqual(JSON.parse(JSON.stringify(a)),JSON.parse(JSON.stringify(b)),'simulation must be deterministic');
-console.log('PASS: Van Persie LEGEND + STREET HERO, no duplicate, 182 players, existing stats/traits unchanged, search and deterministic T3 match.');
+console.log('PASS: Van Persie LEGEND + STREET HERO, no duplicate, 184 players, existing stats/traits unchanged, search and deterministic T3 match.');
