@@ -8,7 +8,7 @@ for(const file of scripts){
   vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),ctx,{filename:file});
 }
 const players=ctx.window.THE_CAGE_PLAYERS,p=players.find(x=>x.id==='filippo-inzaghi');
-assert.equal(players.length,141,'new roster must have 141 players');
+assert.equal(players.length,149,'new roster must have 149 players');
 assert.equal(new Set(players.map(x=>x.id)).size,players.length,'duplicate roster ids');
 assert(p,'Filippo Inzaghi missing');
 assert.equal(p.position,'ST');assert.equal(p.role,'F');
@@ -28,4 +28,4 @@ const input={teams:sides,tactics:['balanced','counter'],seed:42,mode:'ko'};
 const a=E.simulate(input),b=E.simulate(input);
 assert.deepEqual(JSON.parse(JSON.stringify(a)),JSON.parse(JSON.stringify(b)),'nondeterministic match');
 assert([0,1].includes(a.winner));
-console.log('PASS: 141 unique players; Pippo LEGEND/STREET HERO, Predator/Phantom, 17 core + 5 tactical ratings, ST position, aliases, deterministic T3 match.');
+console.log('PASS: 149 unique players; Pippo LEGEND/STREET HERO, Predator/Phantom, 17 core + 5 tactical ratings, ST position, aliases, deterministic T3 match.');
