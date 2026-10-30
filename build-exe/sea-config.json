@@ -1,0 +1,14 @@
+{
+  "main": "launcher.js",
+  "output": "sea-prep.blob",
+  "disableExperimentalSEAWarning": true,
+  "useCodeCache": false,
+  "assets": {
+    "index.html": "../index.html",
+    "src/players.js": "../src/players.js",
+    "src/cage-engine.js": "../src/cage-engine.js",
+    "src/cage-commentary.js": "../src/cage-commentary.js",
+    "src/showdown.js": "../src/showdown.js",
+    "src/cage-ui.css": "../src/cage-ui.css"
+  }
+}

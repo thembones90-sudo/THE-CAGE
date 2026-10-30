@@ -1,0 +1,20 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const dir='A:/THE CAGE/';
+const html=fs.readFileSync(dir+'prototype-v02.html','utf8');
+const roster=fs.readFileSync(dir+'src/players.js','utf8');
+const ctx={window:{}};vm.createContext(ctx);vm.runInContext(roster,ctx);
+const ps=ctx.window.THE_CAGE_PLAYERS;assert.equal(ps.length,57);assert.equal(new Set(ps.map(p=>p.id)).size,57);
+for(const p of ps){assert(p.name&&p.country&&['F','M','D'].includes(p.role));for(const k of ['pace','tech','pass','finish','def','phys','first_touch','dribbling','passing','vision','finishing','shooting','stamina','physical','tackling','positioning','composure'])assert(Number.isFinite(p.r[k])&&p.r[k]>=0&&p.r[k]<=100,p.name+' '+k)}
+assert(html.includes('<script src="src/players.js"></script>'));
+assert(html.includes('const PLAYERS=window.THE_CAGE_PLAYERS;'));
+const inline=html.split('<script>')[1].split('</script>')[0];new vm.Script(inline);
+const pure=inline.slice(inline.indexOf('const LEGACY_PLAYERS='),inline.indexOf('function slotUI('));
+vm.runInContext(pure,ctx);
+assert.equal(ctx.search('R9').matches[0].id,'ronaldo-nazario');
+assert.equal(ctx.search('Siniša Mihajlović').matches[0].id,'sinisa-mihajlovic');
+assert.equal(ctx.search('Djalminha').matches[0].id,'djalminha');
+assert(ctx.search('nema').error);
+const a=['ronaldo-nazario','michael-ballack','paolo-maldini'],b=['djalminha','jay-jay-okocha','nemanja-vidic'];
+const x=ctx.match(a,b,'balanced','press',42),y=ctx.match(a,b,'balanced','press',42);
+assert.deepEqual(JSON.stringify(x),JSON.stringify(y));assert(x.score.every(Number.isInteger));assert(x.events.every(e=>typeof e==='string'));
+console.log('PASS: 57 unique, 17 stats each, script integration, search, deterministic match');

@@ -1,0 +1,12 @@
+const fs=require('fs'),path=require('path');
+const root='A:/THE CAGE/';
+const dir=root+'proposals/engine-spike/';
+let eng=fs.readFileSync(dir+'engine.js','utf8');
+eng=eng.replace("const fs = require('fs');\nconst w = {}; new Function('window', fs.readFileSync(require('path').join(__dirname, '../../src/players.js'), 'utf8'))(w);\nconst ROSTER = w.THE_CAGE_PLAYERS, BY_ID = Object.fromEntries(ROSTER.map(p => [p.id, p]));","const ROSTER = window.THE_CAGE_PLAYERS, BY_ID = Object.fromEntries(ROSTER.map(p => [p.id, p]));");
+eng=eng.replace("module.exports = { simulate, stats, ROSTER, BY_ID, comp, shape, TACTICS, P };","window.CageEngine = { simulate, stats, ROSTER, BY_ID, comp, shape, TACTICS, P };");
+fs.writeFileSync(root+'src/cage-engine.js',eng);
+let com=fs.readFileSync(dir+'commentary.js','utf8');
+com=com.replace("const { BY_ID } = require('./engine');","const { BY_ID } = window.CageEngine;");
+com=com.replace("module.exports = { commentate, mmss };","window.CageCommentary = { commentate, mmss };");
+fs.writeFileSync(root+'src/cage-commentary.js',com);
+console.log('Created cage-engine.js and cage-commentary.js');

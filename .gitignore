@@ -1,0 +1,9 @@
+node_modules/
+dist/
+backups/
+build-exe/sea-prep.blob
+build-exe/*.log
+ui-regression.html
+showdown-e2e.html
+.test-*/
+work/
