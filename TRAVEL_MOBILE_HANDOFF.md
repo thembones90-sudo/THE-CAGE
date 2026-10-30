@@ -1,13 +1,12 @@
-# THE CAGE Travel / Mobile Handoff
-Checkpoint: c2833fd on codex/t3-tactical-space. Experimental T3 is not approved; default v0.4 is preserved.
-The current HTML has a mobile viewport and narrow-screen CSS, but full touch/mobile QA and hosting are not complete.
-For another town: localhost/127.0.0.1 on your phone does NOT connect to the home PC. Windows EXE does not run on a phone. A hosted HTTPS web build is required for mobile play.
-GitHub currently blocked: No git remote configured, and GitHub CLI is not authenticated. The connected account is thembones90-sudo; there was no owned THE-CAGE repo.
-Create a PRIVATE GitHub repo named THE-CAGE without initializing README, then on SKYNET:
-1. gh auth login
-2. Set-Location 'A:\THE CAGE'
-3. git remote add origin https://github.com/thembones90-sudo/THE-CAGE.git
-4. git push -u origin codex/t3-tactical-space
-No force push. Don't publish as public without review.
-GitHub Mobile can inspect source and commits, but editing/testing requires browser IDE or computer. Local run: node tools/serve.mjs; http://127.0.0.1:4173/ .
-The portable Git bundle in project parent directory contains commit history, not ignored build artifacts or Windows EXEs.
+# THE CAGE — Remote / Mobile Handoff
+GitHub: https://github.com/thembones90-sudo/THE-CAGE
+Repository visibility: PUBLIC as configured by the owner. Avoid committing credentials, private test data or secrets.
+Snapshot: ee0cbcd (2026-10-30), development branch codex/t3-tactical-space. The main branch was initialized from the same snapshot. Separate history branches codex/saved-showdowns and master plus tactical-baseline tag are preserved.
+T3 is EXPERIMENTAL and not approved. Released v0.4 remains preserved; engine work is in progress.
+The HTML already declares width=device-width and includes responsive CSS for <=720px. This is a basic mobile layout, NOT fully tested mobile gameplay.
+On your phone you can read/review the project in GitHub Mobile, or browse code at https://github.dev/thembones90-sudo/THE-CAGE (web editor, browser compatibility permitting).
+To actually RUN THE GAME on a phone, a hosted HTTPS deployment or accessible remote computer is required. The Windows .exe is not mobile compatible; http://127.0.0.1:4173/ is reachable only on the machine running the server. No mobile-hosted playable site is claimed.
+Local source at A:\THE CAGE, portable full-history backup at A:\THE-CAGE-TRAVEL-20261030.bundle (ignored build binaries not included).
+Local testing: node tools/serve.mjs then open http://127.0.0.1:4173/ on that computer.
+Current arena brief: design/big-pickle/arena/LIM-001.md. Separate agent artwork is not yet verified.
+To sync future work from SKYNET: git status, git add <reviewed files>, git commit -m "message", git push origin codex/t3-tactical-space. Do not force push.
