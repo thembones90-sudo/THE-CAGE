@@ -4,7 +4,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {execFile} from 'node:child_process';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const files=new Map(['index.html','src/players.js','src/roster-expansion.js','src/identity/search.js','src/cage-engine.js','src/cage-commentary.js','src/replay/records.js','src/showdown.js','src/cage-ui.css'].map(f=>['/'+f,f]));
+const files=new Map(['index.html','src/players.js','src/roster-expansion.js','src/identity/search.js','src/engine/legacy-v04.js','src/cage-engine.js','src/cage-commentary.js','src/replay/records.js','src/showdown.js','src/cage-ui.css'].map(f=>['/'+f,f]));
 files.set('/','index.html');files.set('/showdown.html','index.html');
 const port=Number(process.env.CAGE_PORT||4173);
 const server=http.createServer((req,res)=>{const file=files.get(new URL(req.url,'http://localhost').pathname);if(!file){res.writeHead(404);res.end('Not found');return;}const types={'.html':'text/html','.js':'text/javascript','.css':'text/css'};res.writeHead(200,{'Content-Type':types[path.extname(file)]+'; charset=utf-8','Cache-Control':'no-store'});fs.createReadStream(path.join(root,file)).pipe(res);});

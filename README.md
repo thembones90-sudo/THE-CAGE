@@ -11,3 +11,5 @@ See `SPRINT_V04_REPORT.md` for implementation, exact checks and unresolved balan
 Primary development path: `node tools/serve.mjs`. EXE snapshots do not pick up later source edits; the current lookup-fix package is `dist/TheCage-v0.4.1.exe` and also defaults to port 4173.
 
 Name lookup: type a remembered surname, exact nickname or at least four letters, then press Enter/Search to see matching full identities. Confirm the intended player to claim him. No suggestions appear before submission.
+
+T3 tactical preview: `http://127.0.0.1:4173/?engine=t3`. It is gated for evaluation, with a separate preview save. The default game retains the archived v0.4 engine until the tactical acceptance gates pass. Rebuild the generated candidate after module changes with `node tools/build-t3.cjs`; verify with `--check`. See `CODEX_T3_IMPLEMENTATION_REPORT.md` for measured findings and readiness.

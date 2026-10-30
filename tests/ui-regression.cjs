@@ -29,6 +29,7 @@ $('play').click();
 if(r===0){check(!$('report').textContent.includes('Goals'),'no premature statistics');check($('arena').textContent.includes('LIVE'),'live arena');check($('pace').disabled,'pace frozen');check(document.querySelectorAll('.pitch-player').length===6,'six pitch players');
 await new Promise(resolve=>{const timer=setInterval(()=>{if(window.CageShowdown.snapshot().roundFinished){clearInterval(timer);resolve();}},50);});}
 let s=window.CageShowdown.snapshot();check(s.roundFinished,'round finishes');check(s.used.length===(r+1)*6,'claims retained');check($('report').textContent.includes('Goals'),'final statistics');
+if(window.CageEngine.VERSION.startsWith('cage-t3')){const positions=s.history.at(-1).result.events.filter(e=>e.positions).at(-1).positions,markers=[...document.querySelectorAll('.pitch-player')];for(const [id,pos]of Object.entries(positions)){const marker=markers.find(n=>n.textContent===window.CageEngine.BY_ID[id].name);check(marker?.dataset.cell===pos.x+','+pos.y,'diagram uses recorded cell');}check(new Set(markers.map(n=>n.style.left+':'+n.style.top)).size===6,'shared-cell labels remain distinct');}
 check(document.querySelectorAll('.event.goal').length===1,'only winning goal highlighted');
 check($('recap').textContent.includes('winning goal'),'factual recap');
 const before=JSON.stringify({wins:s.wins,used:s.used,round:s.round,history:s.history});
@@ -46,7 +47,8 @@ out.textContent='UI_REGRESSION_PASS: alternating turns, stale search, exhausted 
 const fixture=path.join(root,'ui-regression.html');
 fs.writeFileSync(fixture,fs.readFileSync(path.join(root,'index.html'),'utf8').replace('</body>','<script>'+script+'</script></body>'));
 const chrome='C:/Program Files/Google/Chrome/Application/chrome.exe';
-const result=cp.spawnSync(chrome,['--headless=new','--disable-gpu','--no-sandbox','--allow-file-access-from-files','--virtual-time-budget=45000','--dump-dom',require('node:url').pathToFileURL(fixture).href],{encoding:'utf8',timeout:60000,maxBuffer:8e6});
+const url=require('node:url').pathToFileURL(fixture).href+(process.argv.includes('--t3')?'?engine=t3':'');
+const result=cp.spawnSync(chrome,['--headless=new','--disable-gpu','--no-sandbox','--allow-file-access-from-files','--virtual-time-budget=45000','--dump-dom',url],{encoding:'utf8',timeout:60000,maxBuffer:16e6});
 assert(!result.error,String(result.error));
 const output=result.stdout.match(/<pre id="regression-result">([\s\S]*?)<\/pre>/)?.[1];
 console.log(output||'No regression result');assert(output?.startsWith('UI_REGRESSION_PASS'),output||result.stderr);

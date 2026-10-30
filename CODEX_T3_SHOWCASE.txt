@@ -1,0 +1,6 @@
+cage-0.4.0 Complete vs assault: 92.4% Complete wins, 0 caps, 78.3s mean; base quality gap 1.67
+cage-t3-3 Complete vs assault: 69.8% Complete wins, 0 caps, 85.6s mean; base quality gap 1.67
+cage-0.4.0 Complete vs fortress: 90.3% Complete wins, 0 caps, 303.4s mean; base quality gap 11.44
+cage-t3-3 Complete vs fortress: 96.4% Complete wins, 0 caps, 184.0s mean; base quality gap 11.44
+cage-0.4.0 Complete vs creators: 91.4% Complete wins, 0 caps, 148.7s mean; base quality gap 10.50
+cage-t3-3 Complete vs creators: 84.5% Complete wins, 0 caps, 110.4s mean; base quality gap 10.50

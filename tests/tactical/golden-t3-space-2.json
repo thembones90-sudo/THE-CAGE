@@ -1,0 +1,10 @@
+{
+  "engineVersion": "cage-t3-2",
+  "paramsVersion": "t3-space-2",
+  "fixtures": [
+    {"input":{"teams":[["paolo-maldini","michael-ballack","ronaldo-nazario"],["ronaldinho","rivaldo","alessandro-del-piero"]],"tactics":["balanced","counter"],"seed":42,"mode":"ko"},"hash":"090b44d5"},
+    {"input":{"teams":[["paolo-maldini","michael-ballack","ronaldo-nazario"],["nemanja-vidic","jaap-stam","thomas-gravesen"]],"tactics":["balanced","counter"],"seed":42,"mode":"ko"},"hash":"99463695"},
+    {"input":{"teams":[["paolo-maldini","michael-ballack","ronaldo-nazario"],["jay-jay-okocha","djalminha","nemanja-vidic"]],"tactics":["balanced","counter"],"seed":42,"mode":"ko"},"hash":"3e144e91"},
+    {"input":{"teams":[["ronaldinho","rivaldo","alessandro-del-piero"],["nemanja-vidic","jaap-stam","thomas-gravesen"]],"tactics":["balanced","counter"],"seed":42,"mode":"ko"},"hash":"90ba2cdd"}
+  ]
+}

@@ -5,7 +5,7 @@ const sea = require('node:sea');
 const PORT = Number(process.env.CAGE_PORT || 4173);
 
 // Must match the "assets" list in sea-config.json.
-const ASSETS = ['index.html', 'src/players.js', 'src/roster-expansion.js', 'src/identity/search.js', 'src/cage-engine.js', 'src/cage-commentary.js', 'src/replay/records.js', 'src/showdown.js', 'src/cage-ui.css'];
+const ASSETS = ['index.html', 'src/players.js', 'src/roster-expansion.js', 'src/identity/search.js', 'src/engine/legacy-v04.js', 'src/cage-engine.js', 'src/cage-commentary.js', 'src/replay/records.js', 'src/showdown.js', 'src/cage-ui.css'];
 const TYPES = { html: 'text/html; charset=utf-8', js: 'text/javascript; charset=utf-8', css: 'text/css; charset=utf-8' };
 const FILES = Object.fromEntries(ASSETS.map(a => ['/' + a, [a, TYPES[a.split('.').pop()]]]));
 FILES['/'] = FILES['/index.html'];

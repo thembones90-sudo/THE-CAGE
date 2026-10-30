@@ -1,0 +1,805 @@
+{
+  "rows": [
+    {
+      "engine": "cage-0.4.0",
+      "opponent": "assault",
+      "n": 1000,
+      "completeWinPct": 92.4,
+      "caps": 0,
+      "meanSeconds": 78.292,
+      "baseQualityGap": 1.6666666666666572,
+      "metrics": [
+        {
+          "possessions": 2249,
+          "dribbles": 4915,
+          "passes": 6153,
+          "shots": 2291,
+          "overloads": 0,
+          "help": 0,
+          "exposed": 0,
+          "outlets": 0,
+          "presses": 0
+        },
+        {
+          "possessions": 1844,
+          "dribbles": 1104,
+          "passes": 4133,
+          "shots": 467,
+          "overloads": 0,
+          "help": 0,
+          "exposed": 0,
+          "outlets": 0,
+          "presses": 0
+        }
+      ]
+    },
+    {
+      "engine": "cage-t3-3",
+      "opponent": "assault",
+      "n": 1000,
+      "completeWinPct": 69.8,
+      "caps": 0,
+      "meanSeconds": 85.57,
+      "baseQualityGap": 1.6666666666666572,
+      "metrics": [
+        {
+          "possessions": 2897,
+          "dribbles": 5656,
+          "passes": 5654,
+          "shots": 1847,
+          "overloads": 2174,
+          "help": 12551,
+          "exposed": 1469,
+          "outlets": 456,
+          "presses": 129
+        },
+        {
+          "possessions": 2718,
+          "dribbles": 2839,
+          "passes": 4428,
+          "shots": 1004,
+          "overloads": 1875,
+          "help": 8445,
+          "exposed": 1525,
+          "outlets": 285,
+          "presses": 64
+        }
+      ]
+    },
+    {
+      "engine": "cage-0.4.0",
+      "opponent": "fortress",
+      "n": 1000,
+      "completeWinPct": 90.3,
+      "caps": 0,
+      "meanSeconds": 303.407,
+      "baseQualityGap": 11.444444444444457,
+      "metrics": [
+        {
+          "possessions": 15344,
+          "dribbles": 5528,
+          "passes": 29025,
+          "shots": 4853,
+          "overloads": 0,
+          "help": 0,
+          "exposed": 0,
+          "outlets": 0,
+          "presses": 0
+        },
+        {
+          "possessions": 14960,
+          "dribbles": 11429,
+          "passes": 14361,
+          "shots": 4610,
+          "overloads": 0,
+          "help": 0,
+          "exposed": 0,
+          "outlets": 0,
+          "presses": 0
+        }
+      ]
+    },
+    {
+      "engine": "cage-t3-3",
+      "opponent": "fortress",
+      "n": 1000,
+      "completeWinPct": 96.4,
+      "caps": 0,
+      "meanSeconds": 184.039,
+      "baseQualityGap": 11.444444444444457,
+      "metrics": [
+        {
+          "possessions": 7687,
+          "dribbles": 4832,
+          "passes": 14614,
+          "shots": 3909,
+          "overloads": 2861,
+          "help": 24043,
+          "exposed": 0,
+          "outlets": 910,
+          "presses": 59
+        },
+        {
+          "possessions": 7242,
+          "dribbles": 1820,
+          "passes": 16897,
+          "shots": 991,
+          "overloads": 2756,
+          "help": 19740,
+          "exposed": 4436,
+          "outlets": 4787,
+          "presses": 299
+        }
+      ]
+    },
+    {
+      "engine": "cage-0.4.0",
+      "opponent": "creators",
+      "n": 1000,
+      "completeWinPct": 91.4,
+      "caps": 0,
+      "meanSeconds": 148.677,
+      "baseQualityGap": 10.500000000000014,
+      "metrics": [
+        {
+          "possessions": 6096,
+          "dribbles": 7190,
+          "passes": 13092,
+          "shots": 3745,
+          "overloads": 0,
+          "help": 0,
+          "exposed": 0,
+          "outlets": 0,
+          "presses": 0
+        },
+        {
+          "possessions": 5701,
+          "dribbles": 3585,
+          "passes": 7088,
+          "shots": 1003,
+          "overloads": 0,
+          "help": 0,
+          "exposed": 0,
+          "outlets": 0,
+          "presses": 0
+        }
+      ]
+    },
+    {
+      "engine": "cage-t3-3",
+      "opponent": "creators",
+      "n": 1000,
+      "completeWinPct": 84.5,
+      "caps": 0,
+      "meanSeconds": 110.364,
+      "baseQualityGap": 10.500000000000014,
+      "metrics": [
+        {
+          "possessions": 3852,
+          "dribbles": 6767,
+          "passes": 7462,
+          "shots": 2342,
+          "overloads": 2732,
+          "help": 16046,
+          "exposed": 1839,
+          "outlets": 567,
+          "presses": 132
+        },
+        {
+          "possessions": 3526,
+          "dribbles": 2731,
+          "passes": 7156,
+          "shots": 738,
+          "overloads": 1754,
+          "help": 10647,
+          "exposed": 1995,
+          "outlets": 944,
+          "presses": 130
+        }
+      ]
+    }
+  ],
+  "examples": {
+    "help_defence": {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "ronaldinho",
+            "rivaldo",
+            "alessandro-del-piero"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "balanced"
+        ],
+        "seed": 12345,
+        "mode": "ko"
+      },
+      "event": {
+        "type": "pass",
+        "team": 0,
+        "actor": "paolo-maldini",
+        "target": "ronaldo-nazario",
+        "opp": "alessandro-del-piero",
+        "p": 0.88,
+        "roll": 0.9606854091398418,
+        "zone": {
+          "x": 1,
+          "lane": "right"
+        },
+        "to": {
+          "x": 1,
+          "lane": "centre"
+        },
+        "outcome": "intercepted",
+        "tags": [
+          "help_defence"
+        ],
+        "roles": {
+          "carrier": "paolo-maldini",
+          "challenger": "alessandro-del-piero",
+          "helper": "rivaldo",
+          "support": [
+            "ronaldo-nazario"
+          ],
+          "receiver": "ronaldo-nazario"
+        },
+        "calc": {
+          "A": 85.8365,
+          "D": 57.55,
+          "bias": 2.7,
+          "support": 0.4071,
+          "help": 0.2399,
+          "logit": 4.153,
+          "weights": {
+            "carry": 0.72,
+            "pass": 1.8451,
+            "through": 0.1949
+          },
+          "wasTransition": false,
+          "forwardDistance": 0,
+          "supportQ": 0.9048,
+          "helpQ": 0.3198,
+          "defenderIds": [
+            "alessandro-del-piero",
+            "rivaldo",
+            "ronaldinho"
+          ],
+          "availability": {
+            "paolo-maldini": 0,
+            "michael-ballack": 0,
+            "ronaldo-nazario": 0,
+            "ronaldinho": 0,
+            "rivaldo": 0,
+            "alessandro-del-piero": 0
+          },
+          "commitment": {
+            "paolo-maldini": false,
+            "michael-ballack": true,
+            "ronaldo-nazario": true,
+            "ronaldinho": true,
+            "rivaldo": true,
+            "alessandro-del-piero": true
+          }
+        },
+        "i": 2,
+        "t": 13,
+        "n": 3,
+        "positions": {
+          "paolo-maldini": {
+            "x": 1,
+            "y": 2
+          },
+          "michael-ballack": {
+            "x": 2,
+            "y": 1
+          },
+          "ronaldo-nazario": {
+            "x": 1,
+            "y": 1
+          },
+          "ronaldinho": {
+            "x": 2,
+            "y": 1
+          },
+          "rivaldo": {
+            "x": 1,
+            "y": 1
+          },
+          "alessandro-del-piero": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        "support": 1,
+        "help": 0.3198,
+        "numbers": {
+          "attackers": 2,
+          "defenders": 3
+        }
+      }
+    },
+    "overload": {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "ronaldinho",
+            "rivaldo",
+            "alessandro-del-piero"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "balanced"
+        ],
+        "seed": 12345,
+        "mode": "ko"
+      },
+      "event": {
+        "type": "dribble_duel",
+        "team": 1,
+        "actor": "rivaldo",
+        "opp": "michael-ballack",
+        "p": 0.66454,
+        "roll": 0.25228336500003934,
+        "zone": {
+          "x": 2,
+          "lane": "centre"
+        },
+        "outcome": "attacker_wins",
+        "calc": {
+          "A": 90.05,
+          "D": 81,
+          "bias": -0.35,
+          "support": 0.8342,
+          "help": 0.2103,
+          "logit": 0.6852,
+          "weights": {
+            "shoot": 1.2054,
+            "dribble": 2.2722,
+            "pass": 2.2214,
+            "through": 2.1,
+            "wall": 1.7892
+          },
+          "supportQ": 1.8537,
+          "helpQ": 0.2805,
+          "defenderIds": [
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          "availability": {
+            "paolo-maldini": 0,
+            "michael-ballack": 0,
+            "ronaldo-nazario": 0,
+            "ronaldinho": 0,
+            "rivaldo": 0,
+            "alessandro-del-piero": 0
+          },
+          "commitment": {
+            "paolo-maldini": false,
+            "michael-ballack": true,
+            "ronaldo-nazario": true,
+            "ronaldinho": true,
+            "rivaldo": true,
+            "alessandro-del-piero": true
+          }
+        },
+        "i": 8,
+        "t": 20,
+        "n": 3,
+        "roles": {
+          "carrier": "rivaldo",
+          "challenger": "michael-ballack",
+          "helper": "ronaldo-nazario",
+          "support": [
+            "ronaldinho",
+            "alessandro-del-piero"
+          ]
+        },
+        "positions": {
+          "paolo-maldini": {
+            "x": 0,
+            "y": 2
+          },
+          "michael-ballack": {
+            "x": 1,
+            "y": 1
+          },
+          "ronaldo-nazario": {
+            "x": 1,
+            "y": 2
+          },
+          "ronaldinho": {
+            "x": 0,
+            "y": 1
+          },
+          "rivaldo": {
+            "x": 1,
+            "y": 1
+          },
+          "alessandro-del-piero": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        "tags": [
+          "overload",
+          "help_defence"
+        ],
+        "support": 2,
+        "help": 0.2805,
+        "numbers": {
+          "attackers": 3,
+          "defenders": 2
+        }
+      }
+    },
+    "rest_defence_exposed": {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "ronaldinho",
+            "rivaldo",
+            "alessandro-del-piero"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "balanced"
+        ],
+        "seed": 12345,
+        "mode": "ko"
+      },
+      "event": {
+        "type": "turnover",
+        "team": 0,
+        "actor": "ronaldo-nazario",
+        "how": "rebound",
+        "reason": "second_ball",
+        "zone": {
+          "x": 0,
+          "lane": "centre"
+        },
+        "transition": true,
+        "tags": [
+          "rest_defence_exposed"
+        ],
+        "calc": {
+          "caught": [
+            "ronaldinho",
+            "rivaldo",
+            "alessandro-del-piero"
+          ],
+          "goalSide": [],
+          "lossZone": 3,
+          "supportQ": 1.6395,
+          "helpQ": 0,
+          "defenderIds": [],
+          "availability": {
+            "paolo-maldini": 0,
+            "michael-ballack": 0,
+            "ronaldo-nazario": 0,
+            "ronaldinho": 2,
+            "rivaldo": 2,
+            "alessandro-del-piero": 2
+          },
+          "commitment": {
+            "paolo-maldini": false,
+            "michael-ballack": true,
+            "ronaldo-nazario": true,
+            "ronaldinho": true,
+            "rivaldo": true,
+            "alessandro-del-piero": true
+          }
+        },
+        "i": 24,
+        "t": 46,
+        "n": 3,
+        "roles": {
+          "carrier": "ronaldo-nazario",
+          "challenger": null,
+          "helper": null,
+          "support": [
+            "paolo-maldini",
+            "michael-ballack"
+          ]
+        },
+        "positions": {
+          "paolo-maldini": {
+            "x": 0,
+            "y": 1
+          },
+          "michael-ballack": {
+            "x": 0,
+            "y": 2
+          },
+          "ronaldo-nazario": {
+            "x": 0,
+            "y": 1
+          },
+          "ronaldinho": {
+            "x": 0,
+            "y": 1
+          },
+          "rivaldo": {
+            "x": 0,
+            "y": 1
+          },
+          "alessandro-del-piero": {
+            "x": 0,
+            "y": 2
+          }
+        },
+        "support": 2,
+        "help": 0,
+        "numbers": {
+          "attackers": 3,
+          "defenders": 0
+        }
+      }
+    },
+    "direct_outlet": {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "ronaldinho",
+            "rivaldo",
+            "alessandro-del-piero"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "balanced"
+        ],
+        "seed": 1013916571,
+        "mode": "ko"
+      },
+      "event": {
+        "type": "through_ball",
+        "team": 1,
+        "actor": "ronaldinho",
+        "target": "rivaldo",
+        "opp": "paolo-maldini",
+        "p": 0.843895,
+        "roll": 0.44598271208815277,
+        "zone": {
+          "x": 0,
+          "lane": "centre"
+        },
+        "to": {
+          "x": 1,
+          "lane": "right"
+        },
+        "outcome": "complete",
+        "tags": [
+          "direct_outlet",
+          "overload"
+        ],
+        "roles": {
+          "carrier": "ronaldinho",
+          "challenger": "paolo-maldini",
+          "helper": null,
+          "support": [
+            "alessandro-del-piero"
+          ],
+          "receiver": "rivaldo"
+        },
+        "calc": {
+          "A": 91.6167,
+          "D": 89.853,
+          "bias": 1.2,
+          "support": 0.4083,
+          "help": 0,
+          "logit": 1.6884,
+          "weights": {
+            "carry": 1.44,
+            "pass": 1.8936,
+            "outlet": 0.56
+          },
+          "wasTransition": true,
+          "forwardDistance": 1,
+          "supportQ": 0.9072,
+          "helpQ": 0,
+          "defenderIds": [
+            "paolo-maldini"
+          ],
+          "availability": {
+            "paolo-maldini": 0,
+            "michael-ballack": 1,
+            "ronaldo-nazario": 1,
+            "ronaldinho": 0,
+            "rivaldo": 0,
+            "alessandro-del-piero": 0
+          },
+          "commitment": {
+            "paolo-maldini": false,
+            "michael-ballack": true,
+            "ronaldo-nazario": true,
+            "ronaldinho": true,
+            "rivaldo": true,
+            "alessandro-del-piero": true
+          }
+        },
+        "i": 66,
+        "t": 104,
+        "n": 3,
+        "positions": {
+          "paolo-maldini": {
+            "x": 3,
+            "y": 2
+          },
+          "michael-ballack": {
+            "x": 3,
+            "y": 2
+          },
+          "ronaldo-nazario": {
+            "x": 2,
+            "y": 1
+          },
+          "ronaldinho": {
+            "x": 3,
+            "y": 1
+          },
+          "rivaldo": {
+            "x": 2,
+            "y": 2
+          },
+          "alessandro-del-piero": {
+            "x": 3,
+            "y": 2
+          }
+        },
+        "support": 1,
+        "help": 0,
+        "numbers": {
+          "attackers": 2,
+          "defenders": 1
+        }
+      }
+    },
+    "counter_press": {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "ronaldinho",
+            "rivaldo",
+            "alessandro-del-piero"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "balanced"
+        ],
+        "seed": 774566179,
+        "mode": "ko"
+      },
+      "event": {
+        "type": "press",
+        "team": 0,
+        "actor": "paolo-maldini",
+        "opp": "ronaldinho",
+        "p": 0.347759,
+        "roll": 0.28931113821454346,
+        "zone": {
+          "x": 1,
+          "lane": "centre"
+        },
+        "outcome": "ball_won",
+        "tags": [
+          "counter_press"
+        ],
+        "calc": {
+          "A": 84.931,
+          "D": 92.1614,
+          "bias": -0.3,
+          "support": 0,
+          "help": 0,
+          "logit": -0.6287,
+          "weights": {
+            "dribble": 1.4574,
+            "pass": 2.4616,
+            "through": 4.1664,
+            "wall": 2.4612,
+            "shield": 1.35,
+            "outlet": 0.56
+          },
+          "sinceRegain": 1,
+          "pressDistance": 0,
+          "supportQ": 1.8138,
+          "helpQ": 0.5708,
+          "defenderIds": [
+            "paolo-maldini",
+            "michael-ballack"
+          ],
+          "availability": {
+            "paolo-maldini": 0,
+            "michael-ballack": 0,
+            "ronaldo-nazario": 1,
+            "ronaldinho": 0,
+            "rivaldo": 0,
+            "alessandro-del-piero": 0
+          },
+          "commitment": {
+            "paolo-maldini": false,
+            "michael-ballack": true,
+            "ronaldo-nazario": true,
+            "ronaldinho": true,
+            "rivaldo": true,
+            "alessandro-del-piero": true
+          }
+        },
+        "roles": {
+          "carrier": "ronaldinho",
+          "challenger": "paolo-maldini",
+          "helper": "michael-ballack",
+          "support": [
+            "rivaldo",
+            "alessandro-del-piero"
+          ],
+          "presser": "paolo-maldini"
+        },
+        "i": 27,
+        "t": 37,
+        "n": 3,
+        "positions": {
+          "paolo-maldini": {
+            "x": 2,
+            "y": 1
+          },
+          "michael-ballack": {
+            "x": 2,
+            "y": 1
+          },
+          "ronaldo-nazario": {
+            "x": 1,
+            "y": 1
+          },
+          "ronaldinho": {
+            "x": 2,
+            "y": 1
+          },
+          "rivaldo": {
+            "x": 1,
+            "y": 1
+          },
+          "alessandro-del-piero": {
+            "x": 2,
+            "y": 2
+          }
+        },
+        "support": 2,
+        "help": 0.5708,
+        "numbers": {
+          "attackers": 3,
+          "defenders": 2
+        }
+      }
+    }
+  }
+}

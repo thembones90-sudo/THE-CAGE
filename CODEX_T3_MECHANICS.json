@@ -1,0 +1,162 @@
+{
+  "pass": true,
+  "approvedRatings": 63,
+  "calibratedTrios": 39711,
+  "completed": 1000,
+  "caps": 0,
+  "tags": [
+    "help_defence",
+    "rest_defence_exposed",
+    "overload",
+    "direct_outlet",
+    "counter_press"
+  ],
+  "policy": {
+    "assault": {
+      "blockHeight": 0.2917444444444444,
+      "restDefence": 0,
+      "commitForward": 3,
+      "tempo": 1.038045,
+      "riskAppetite": 1.4,
+      "pressTrigger": 0.18165277777777755,
+      "directness": 0.7,
+      "rotation": 0.4910458333333334,
+      "compactness": 0.5916666666666667,
+      "AT": 94.09625,
+      "DS": 47.741,
+      "MC": 85.34400000000001,
+      "TE": 77.73499999999999,
+      "PD": 69.14416666666666,
+      "TA": 68.20916666666668
+    },
+    "fortress": {
+      "blockHeight": 0.35295555555555547,
+      "restDefence": 2,
+      "commitForward": 1,
+      "tempo": 0.97799375,
+      "riskAppetite": 0.7,
+      "pressTrigger": 0.5287291666666665,
+      "directness": 1.4866074999999999,
+      "rotation": 0.57831875,
+      "compactness": 0.9116666666666666,
+      "AT": 57.483125,
+      "DS": 81.81349999999999,
+      "MC": 69.95,
+      "TE": 74.35125,
+      "PD": 84.97833333333334,
+      "TA": 65.66375
+    },
+    "complete": {
+      "blockHeight": 0.35155555555555557,
+      "restDefence": 1,
+      "commitForward": 2,
+      "tempo": 0.978595,
+      "riskAppetite": 1.2179583333333337,
+      "pressTrigger": 0.5358680555555554,
+      "directness": 0.7384499999999997,
+      "rotation": 0.6655833333333333,
+      "compactness": 0.7033333333333334,
+      "AT": 86.47000000000001,
+      "DS": 73.3925,
+      "MC": 83.054,
+      "TE": 87.335,
+      "PD": 80.96666666666665,
+      "TA": 83.11666666666667
+    }
+  },
+  "deterministicFixtures": [
+    {
+      "input": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "ronaldinho",
+            "rivaldo",
+            "alessandro-del-piero"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 42,
+        "mode": "ko"
+      },
+      "hash": "cf33fe13"
+    },
+    {
+      "input": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jaap-stam",
+            "thomas-gravesen"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 42,
+        "mode": "ko"
+      },
+      "hash": "99463695"
+    },
+    {
+      "input": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "jay-jay-okocha",
+            "djalminha",
+            "nemanja-vidic"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 42,
+        "mode": "ko"
+      },
+      "hash": "aeed0e93"
+    },
+    {
+      "input": {
+        "teams": [
+          [
+            "ronaldinho",
+            "rivaldo",
+            "alessandro-del-piero"
+          ],
+          [
+            "nemanja-vidic",
+            "jaap-stam",
+            "thomas-gravesen"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 42,
+        "mode": "ko"
+      },
+      "hash": "90ba2cdd"
+    }
+  ],
+  "legacySourceSHA256": "55f96d4f182ca7bef4f6d142095cc7f83104df88a7c448aba4ae9794180baebb"
+}
