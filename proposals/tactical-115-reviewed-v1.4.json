@@ -1,0 +1,1965 @@
+{
+  "version": "tactical-115-v1.4",
+  "status": "editorial-reassessed-still-provisional",
+  "originalApprovedProfilesUntouched": 63,
+  "profilesReviewed": 115,
+  "profilesAdjusted": 65,
+  "profilesRetained": 50,
+  "players": {
+    "adel-taarabt": {
+      "previous": {
+        "work_rate": 53,
+        "stamina": 73,
+        "composure": 78,
+        "agility": 90,
+        "marking": 41
+      },
+      "refined": {
+        "work_rate": 53,
+        "stamina": 73,
+        "composure": 78,
+        "agility": 90,
+        "marking": 41
+      },
+      "changed": false
+    },
+    "aiden-mcgeady": {
+      "previous": {
+        "work_rate": 82,
+        "stamina": 84,
+        "composure": 71,
+        "agility": 91,
+        "marking": 35
+      },
+      "refined": {
+        "work_rate": 82,
+        "stamina": 84,
+        "composure": 71,
+        "agility": 91,
+        "marking": 35
+      },
+      "changed": false
+    },
+    "alan-shearer": {
+      "previous": {
+        "work_rate": 89,
+        "stamina": 91,
+        "composure": 97,
+        "agility": 78,
+        "marking": 42
+      },
+      "refined": {
+        "work_rate": 89,
+        "stamina": 91,
+        "composure": 97,
+        "agility": 78,
+        "marking": 42
+      },
+      "changed": false
+    },
+    "alberto-luque": {
+      "previous": {
+        "work_rate": 80,
+        "stamina": 83,
+        "composure": 82,
+        "agility": 87,
+        "marking": 34
+      },
+      "refined": {
+        "work_rate": 80,
+        "stamina": 83,
+        "composure": 82,
+        "agility": 87,
+        "marking": 34
+      },
+      "changed": false
+    },
+    "alen-boksic": {
+      "previous": {
+        "work_rate": 81,
+        "stamina": 84,
+        "composure": 86,
+        "agility": 89,
+        "marking": 29
+      },
+      "refined": {
+        "work_rate": 81,
+        "stamina": 84,
+        "composure": 86,
+        "agility": 89,
+        "marking": 29
+      },
+      "changed": false
+    },
+    "alessandro-nesta": {
+      "previous": {
+        "work_rate": 91,
+        "stamina": 83,
+        "composure": 62,
+        "agility": 80,
+        "marking": 97
+      },
+      "refined": {
+        "work_rate": 91,
+        "stamina": 83,
+        "composure": 94,
+        "agility": 80,
+        "marking": 99
+      },
+      "changed": true
+    },
+    "alex-de-souza": {
+      "previous": {
+        "work_rate": 76,
+        "stamina": 76,
+        "composure": 96,
+        "agility": 79,
+        "marking": 32
+      },
+      "refined": {
+        "work_rate": 76,
+        "stamina": 76,
+        "composure": 96,
+        "agility": 79,
+        "marking": 32
+      },
+      "changed": false
+    },
+    "andrea-barzagli": {
+      "previous": {
+        "work_rate": 80,
+        "stamina": 85,
+        "composure": 90,
+        "agility": 70,
+        "marking": 96
+      },
+      "refined": {
+        "work_rate": 80,
+        "stamina": 85,
+        "composure": 90,
+        "agility": 70,
+        "marking": 96
+      },
+      "changed": false
+    },
+    "andrea-pirlo": {
+      "previous": {
+        "work_rate": 63,
+        "stamina": 60,
+        "composure": 87,
+        "agility": 75,
+        "marking": 71
+      },
+      "refined": {
+        "work_rate": 63,
+        "stamina": 60,
+        "composure": 94,
+        "agility": 75,
+        "marking": 71
+      },
+      "changed": true
+    },
+    "andres-iniesta": {
+      "previous": {
+        "work_rate": 64,
+        "stamina": 72,
+        "composure": 89,
+        "agility": 89,
+        "marking": 62
+      },
+      "refined": {
+        "work_rate": 73,
+        "stamina": 83,
+        "composure": 96,
+        "agility": 89,
+        "marking": 62
+      },
+      "changed": true
+    },
+    "andrew-robertson": {
+      "previous": {
+        "work_rate": 96,
+        "stamina": 96,
+        "composure": 82,
+        "agility": 86,
+        "marking": 84
+      },
+      "refined": {
+        "work_rate": 96,
+        "stamina": 96,
+        "composure": 82,
+        "agility": 86,
+        "marking": 84
+      },
+      "changed": true
+    },
+    "andrey-arshavin": {
+      "previous": {
+        "work_rate": 74,
+        "stamina": 75,
+        "composure": 87,
+        "agility": 93,
+        "marking": 30
+      },
+      "refined": {
+        "work_rate": 74,
+        "stamina": 75,
+        "composure": 87,
+        "agility": 93,
+        "marking": 30
+      },
+      "changed": false
+    },
+    "ariel-ortega": {
+      "previous": {
+        "work_rate": 70,
+        "stamina": 78,
+        "composure": 86,
+        "agility": 98,
+        "marking": 30
+      },
+      "refined": {
+        "work_rate": 70,
+        "stamina": 78,
+        "composure": 86,
+        "agility": 98,
+        "marking": 30
+      },
+      "changed": false
+    },
+    "ashley-cole": {
+      "previous": {
+        "work_rate": 90,
+        "stamina": 84,
+        "composure": 62,
+        "agility": 86,
+        "marking": 94
+      },
+      "refined": {
+        "work_rate": 90,
+        "stamina": 84,
+        "composure": 83,
+        "agility": 86,
+        "marking": 94
+      },
+      "changed": true
+    },
+    "bastian-schweinsteiger": {
+      "previous": {
+        "work_rate": 83,
+        "stamina": 81,
+        "composure": 83,
+        "agility": 80,
+        "marking": 86
+      },
+      "refined": {
+        "work_rate": 83,
+        "stamina": 91,
+        "composure": 88,
+        "agility": 80,
+        "marking": 86
+      },
+      "changed": true
+    },
+    "branislav-ivanovic": {
+      "previous": {
+        "work_rate": 86,
+        "stamina": 86,
+        "composure": 81,
+        "agility": 64,
+        "marking": 89
+      },
+      "refined": {
+        "work_rate": 86,
+        "stamina": 86,
+        "composure": 82,
+        "agility": 64,
+        "marking": 89
+      },
+      "changed": true
+    },
+    "bruno-fernandes": {
+      "previous": {
+        "work_rate": 91,
+        "stamina": 91,
+        "composure": 78,
+        "agility": 80,
+        "marking": 62
+      },
+      "refined": {
+        "work_rate": 91,
+        "stamina": 91,
+        "composure": 83,
+        "agility": 80,
+        "marking": 62
+      },
+      "changed": true
+    },
+    "cafu": {
+      "previous": {
+        "work_rate": 89,
+        "stamina": 87,
+        "composure": 73,
+        "agility": 89,
+        "marking": 90
+      },
+      "refined": {
+        "work_rate": 89,
+        "stamina": 87,
+        "composure": 85,
+        "agility": 89,
+        "marking": 90
+      },
+      "changed": true
+    },
+    "carles-puyol": {
+      "previous": {
+        "work_rate": 91,
+        "stamina": 85,
+        "composure": 54,
+        "agility": 72,
+        "marking": 95
+      },
+      "refined": {
+        "work_rate": 91,
+        "stamina": 85,
+        "composure": 87,
+        "agility": 72,
+        "marking": 96
+      },
+      "changed": true
+    },
+    "cesc-fabregas": {
+      "previous": {
+        "work_rate": 64,
+        "stamina": 69,
+        "composure": 86,
+        "agility": 80,
+        "marking": 65
+      },
+      "refined": {
+        "work_rate": 64,
+        "stamina": 83,
+        "composure": 91,
+        "agility": 80,
+        "marking": 65
+      },
+      "changed": true
+    },
+    "christian-eriksen": {
+      "previous": {
+        "work_rate": 79,
+        "stamina": 85,
+        "composure": 87,
+        "agility": 78,
+        "marking": 54
+      },
+      "refined": {
+        "work_rate": 79,
+        "stamina": 85,
+        "composure": 87,
+        "agility": 78,
+        "marking": 54
+      },
+      "changed": false
+    },
+    "clarence-seedorf": {
+      "previous": {
+        "work_rate": 80,
+        "stamina": 85,
+        "composure": 88,
+        "agility": 84,
+        "marking": 77
+      },
+      "refined": {
+        "work_rate": 80,
+        "stamina": 85,
+        "composure": 92,
+        "agility": 84,
+        "marking": 77
+      },
+      "changed": true
+    },
+    "cristiano-ronaldo": {
+      "previous": {
+        "work_rate": 65,
+        "stamina": 94,
+        "composure": 97,
+        "agility": 95,
+        "marking": 45
+      },
+      "refined": {
+        "work_rate": 65,
+        "stamina": 94,
+        "composure": 97,
+        "agility": 95,
+        "marking": 45
+      },
+      "changed": false
+    },
+    "darko-pancev": {
+      "previous": {
+        "work_rate": 77,
+        "stamina": 79,
+        "composure": 96,
+        "agility": 79,
+        "marking": 25
+      },
+      "refined": {
+        "work_rate": 77,
+        "stamina": 79,
+        "composure": 96,
+        "agility": 79,
+        "marking": 25
+      },
+      "changed": false
+    },
+    "david-beckham": {
+      "previous": {
+        "work_rate": 70,
+        "stamina": 77,
+        "composure": 85,
+        "agility": 80,
+        "marking": 68
+      },
+      "refined": {
+        "work_rate": 70,
+        "stamina": 86,
+        "composure": 91,
+        "agility": 80,
+        "marking": 68
+      },
+      "changed": true
+    },
+    "david-silva": {
+      "previous": {
+        "work_rate": 72,
+        "stamina": 85,
+        "composure": 96,
+        "agility": 95,
+        "marking": 49
+      },
+      "refined": {
+        "work_rate": 72,
+        "stamina": 85,
+        "composure": 95,
+        "agility": 95,
+        "marking": 49
+      },
+      "changed": true
+    },
+    "davor-suker": {
+      "previous": {
+        "work_rate": 78,
+        "stamina": 82,
+        "composure": 97,
+        "agility": 81,
+        "marking": 29
+      },
+      "refined": {
+        "work_rate": 78,
+        "stamina": 82,
+        "composure": 97,
+        "agility": 81,
+        "marking": 29
+      },
+      "changed": false
+    },
+    "declan-rice": {
+      "previous": {
+        "work_rate": 92,
+        "stamina": 93,
+        "composure": 87,
+        "agility": 80,
+        "marking": 92
+      },
+      "refined": {
+        "work_rate": 92,
+        "stamina": 93,
+        "composure": 87,
+        "agility": 80,
+        "marking": 93
+      },
+      "changed": true
+    },
+    "dejan-savicevic": {
+      "previous": {
+        "work_rate": 72,
+        "stamina": 73,
+        "composure": 94,
+        "agility": 98,
+        "marking": 31
+      },
+      "refined": {
+        "work_rate": 72,
+        "stamina": 73,
+        "composure": 94,
+        "agility": 98,
+        "marking": 31
+      },
+      "changed": false
+    },
+    "dejan-stankovic": {
+      "previous": {
+        "work_rate": 90,
+        "stamina": 93,
+        "composure": 89,
+        "agility": 82,
+        "marking": 78
+      },
+      "refined": {
+        "work_rate": 90,
+        "stamina": 93,
+        "composure": 89,
+        "agility": 82,
+        "marking": 78
+      },
+      "changed": false
+    },
+    "dennis-bergkamp": {
+      "previous": {
+        "work_rate": 73,
+        "stamina": 78,
+        "composure": 98,
+        "agility": 93,
+        "marking": 33
+      },
+      "refined": {
+        "work_rate": 73,
+        "stamina": 78,
+        "composure": 98,
+        "agility": 93,
+        "marking": 33
+      },
+      "changed": false
+    },
+    "didier-drogba": {
+      "previous": {
+        "work_rate": 65,
+        "stamina": 91,
+        "composure": 89,
+        "agility": 82,
+        "marking": 46
+      },
+      "refined": {
+        "work_rate": 77,
+        "stamina": 91,
+        "composure": 91,
+        "agility": 82,
+        "marking": 46
+      },
+      "changed": true
+    },
+    "diego-tristan": {
+      "previous": {
+        "work_rate": 75,
+        "stamina": 80,
+        "composure": 93,
+        "agility": 80,
+        "marking": 29
+      },
+      "refined": {
+        "work_rate": 75,
+        "stamina": 80,
+        "composure": 93,
+        "agility": 80,
+        "marking": 29
+      },
+      "changed": false
+    },
+    "djibril-cisse": {
+      "previous": {
+        "work_rate": 80,
+        "stamina": 82,
+        "composure": 86,
+        "agility": 94,
+        "marking": 29
+      },
+      "refined": {
+        "work_rate": 80,
+        "stamina": 82,
+        "composure": 86,
+        "agility": 94,
+        "marking": 29
+      },
+      "changed": false
+    },
+    "dragan-stojkovic": {
+      "previous": {
+        "work_rate": 77,
+        "stamina": 79,
+        "composure": 95,
+        "agility": 97,
+        "marking": 39
+      },
+      "refined": {
+        "work_rate": 77,
+        "stamina": 79,
+        "composure": 95,
+        "agility": 97,
+        "marking": 39
+      },
+      "changed": false
+    },
+    "erling-haaland": {
+      "previous": {
+        "work_rate": 72,
+        "stamina": 89,
+        "composure": 87,
+        "agility": 74,
+        "marking": 27
+      },
+      "refined": {
+        "work_rate": 72,
+        "stamina": 93,
+        "composure": 87,
+        "agility": 74,
+        "marking": 27
+      },
+      "changed": true
+    },
+    "fabio-cannavaro": {
+      "previous": {
+        "work_rate": 92,
+        "stamina": 85,
+        "composure": 58,
+        "agility": 80,
+        "marking": 97
+      },
+      "refined": {
+        "work_rate": 92,
+        "stamina": 85,
+        "composure": 92,
+        "agility": 80,
+        "marking": 98
+      },
+      "changed": true
+    },
+    "fernandinho": {
+      "previous": {
+        "work_rate": 94,
+        "stamina": 91,
+        "composure": 82,
+        "agility": 79,
+        "marking": 90
+      },
+      "refined": {
+        "work_rate": 94,
+        "stamina": 91,
+        "composure": 86,
+        "agility": 79,
+        "marking": 90
+      },
+      "changed": true
+    },
+    "fernando-torres": {
+      "previous": {
+        "work_rate": 73,
+        "stamina": 85,
+        "composure": 86,
+        "agility": 92,
+        "marking": 30
+      },
+      "refined": {
+        "work_rate": 73,
+        "stamina": 87,
+        "composure": 87,
+        "agility": 92,
+        "marking": 30
+      },
+      "changed": true
+    },
+    "filippo-inzaghi": {
+      "previous": {
+        "work_rate": 78,
+        "stamina": 82,
+        "composure": 96,
+        "agility": 79,
+        "marking": 25
+      },
+      "refined": {
+        "work_rate": 78,
+        "stamina": 82,
+        "composure": 96,
+        "agility": 79,
+        "marking": 25
+      },
+      "changed": false
+    },
+    "franz-beckenbauer": {
+      "previous": {
+        "work_rate": 89,
+        "stamina": 82,
+        "composure": 81,
+        "agility": 85,
+        "marking": 96
+      },
+      "refined": {
+        "work_rate": 89,
+        "stamina": 82,
+        "composure": 96,
+        "agility": 85,
+        "marking": 96
+      },
+      "changed": true
+    },
+    "gareth-bale": {
+      "previous": {
+        "work_rate": 76,
+        "stamina": 82,
+        "composure": 88,
+        "agility": 92,
+        "marking": 50
+      },
+      "refined": {
+        "work_rate": 76,
+        "stamina": 92,
+        "composure": 88,
+        "agility": 92,
+        "marking": 50
+      },
+      "changed": true
+    },
+    "gary-neville": {
+      "previous": {
+        "work_rate": 84,
+        "stamina": 85,
+        "composure": 83,
+        "agility": 69,
+        "marking": 91
+      },
+      "refined": {
+        "work_rate": 91,
+        "stamina": 89,
+        "composure": 84,
+        "agility": 69,
+        "marking": 91
+      },
+      "changed": true
+    },
+    "gennaro-gattuso": {
+      "previous": {
+        "work_rate": 91,
+        "stamina": 86,
+        "composure": 66,
+        "agility": 75,
+        "marking": 92
+      },
+      "refined": {
+        "work_rate": 96,
+        "stamina": 86,
+        "composure": 78,
+        "agility": 75,
+        "marking": 92
+      },
+      "changed": true
+    },
+    "gianfranco-zola": {
+      "previous": {
+        "work_rate": 81,
+        "stamina": 82,
+        "composure": 96,
+        "agility": 95,
+        "marking": 28
+      },
+      "refined": {
+        "work_rate": 81,
+        "stamina": 82,
+        "composure": 96,
+        "agility": 95,
+        "marking": 28
+      },
+      "changed": false
+    },
+    "harry-kane": {
+      "previous": {
+        "work_rate": 80,
+        "stamina": 86,
+        "composure": 96,
+        "agility": 74,
+        "marking": 41
+      },
+      "refined": {
+        "work_rate": 80,
+        "stamina": 86,
+        "composure": 95,
+        "agility": 74,
+        "marking": 41
+      },
+      "changed": true
+    },
+    "hernan-crespo": {
+      "previous": {
+        "work_rate": 76,
+        "stamina": 85,
+        "composure": 90,
+        "agility": 82,
+        "marking": 33
+      },
+      "refined": {
+        "work_rate": 76,
+        "stamina": 85,
+        "composure": 90,
+        "agility": 82,
+        "marking": 33
+      },
+      "changed": false
+    },
+    "hidetoshi-nakata": {
+      "previous": {
+        "work_rate": 82,
+        "stamina": 85,
+        "composure": 88,
+        "agility": 86,
+        "marking": 53
+      },
+      "refined": {
+        "work_rate": 82,
+        "stamina": 85,
+        "composure": 88,
+        "agility": 86,
+        "marking": 53
+      },
+      "changed": false
+    },
+    "hulk": {
+      "previous": {
+        "work_rate": 84,
+        "stamina": 82,
+        "composure": 85,
+        "agility": 86,
+        "marking": 39
+      },
+      "refined": {
+        "work_rate": 84,
+        "stamina": 82,
+        "composure": 85,
+        "agility": 86,
+        "marking": 39
+      },
+      "changed": false
+    },
+    "ilkay-gundogan": {
+      "previous": {
+        "work_rate": 82,
+        "stamina": 85,
+        "composure": 91,
+        "agility": 82,
+        "marking": 76
+      },
+      "refined": {
+        "work_rate": 82,
+        "stamina": 88,
+        "composure": 92,
+        "agility": 82,
+        "marking": 76
+      },
+      "changed": true
+    },
+    "ivan-zamorano": {
+      "previous": {
+        "work_rate": 88,
+        "stamina": 91,
+        "composure": 86,
+        "agility": 75,
+        "marking": 41
+      },
+      "refined": {
+        "work_rate": 88,
+        "stamina": 91,
+        "composure": 87,
+        "agility": 75,
+        "marking": 41
+      },
+      "changed": true
+    },
+    "jamie-carragher": {
+      "previous": {
+        "work_rate": 85,
+        "stamina": 86,
+        "composure": 80,
+        "agility": 64,
+        "marking": 93
+      },
+      "refined": {
+        "work_rate": 85,
+        "stamina": 84,
+        "composure": 84,
+        "agility": 64,
+        "marking": 93
+      },
+      "changed": true
+    },
+    "jamie-vardy": {
+      "previous": {
+        "work_rate": 92,
+        "stamina": 92,
+        "composure": 84,
+        "agility": 88,
+        "marking": 39
+      },
+      "refined": {
+        "work_rate": 94,
+        "stamina": 92,
+        "composure": 84,
+        "agility": 88,
+        "marking": 39
+      },
+      "changed": true
+    },
+    "john-terry": {
+      "previous": {
+        "work_rate": 87,
+        "stamina": 77,
+        "composure": 59,
+        "agility": 65,
+        "marking": 95
+      },
+      "refined": {
+        "work_rate": 87,
+        "stamina": 77,
+        "composure": 86,
+        "agility": 65,
+        "marking": 97
+      },
+      "changed": true
+    },
+    "josip-ilicic": {
+      "previous": {
+        "work_rate": 76,
+        "stamina": 77,
+        "composure": 91,
+        "agility": 88,
+        "marking": 32
+      },
+      "refined": {
+        "work_rate": 76,
+        "stamina": 77,
+        "composure": 91,
+        "agility": 88,
+        "marking": 32
+      },
+      "changed": false
+    },
+    "kaka": {
+      "previous": {
+        "work_rate": 64,
+        "stamina": 85,
+        "composure": 93,
+        "agility": 94,
+        "marking": 50
+      },
+      "refined": {
+        "work_rate": 71,
+        "stamina": 85,
+        "composure": 91,
+        "agility": 94,
+        "marking": 50
+      },
+      "changed": true
+    },
+    "karim-benzema": {
+      "previous": {
+        "work_rate": 61,
+        "stamina": 82,
+        "composure": 95,
+        "agility": 88,
+        "marking": 49
+      },
+      "refined": {
+        "work_rate": 75,
+        "stamina": 89,
+        "composure": 95,
+        "agility": 88,
+        "marking": 49
+      },
+      "changed": true
+    },
+    "kolo-toure": {
+      "previous": {
+        "work_rate": 83,
+        "stamina": 85,
+        "composure": 78,
+        "agility": 80,
+        "marking": 85
+      },
+      "refined": {
+        "work_rate": 83,
+        "stamina": 85,
+        "composure": 81,
+        "agility": 80,
+        "marking": 85
+      },
+      "changed": true
+    },
+    "kyle-walker": {
+      "previous": {
+        "work_rate": 88,
+        "stamina": 92,
+        "composure": 80,
+        "agility": 92,
+        "marking": 88
+      },
+      "refined": {
+        "work_rate": 88,
+        "stamina": 95,
+        "composure": 78,
+        "agility": 92,
+        "marking": 88
+      },
+      "changed": true
+    },
+    "kylian-mbappe": {
+      "previous": {
+        "work_rate": 59,
+        "stamina": 88,
+        "composure": 95,
+        "agility": 97,
+        "marking": 41
+      },
+      "refined": {
+        "work_rate": 59,
+        "stamina": 88,
+        "composure": 89,
+        "agility": 97,
+        "marking": 41
+      },
+      "changed": true
+    },
+    "lionel-messi": {
+      "previous": {
+        "work_rate": 57,
+        "stamina": 80,
+        "composure": 100,
+        "agility": 94,
+        "marking": 46
+      },
+      "refined": {
+        "work_rate": 55,
+        "stamina": 80,
+        "composure": 100,
+        "agility": 94,
+        "marking": 46
+      },
+      "changed": true
+    },
+    "luis-suarez": {
+      "previous": {
+        "work_rate": 63,
+        "stamina": 83,
+        "composure": 95,
+        "agility": 86,
+        "marking": 52
+      },
+      "refined": {
+        "work_rate": 89,
+        "stamina": 91,
+        "composure": 90,
+        "agility": 86,
+        "marking": 52
+      },
+      "changed": true
+    },
+    "luka-modric": {
+      "previous": {
+        "work_rate": 74,
+        "stamina": 75,
+        "composure": 87,
+        "agility": 88,
+        "marking": 77
+      },
+      "refined": {
+        "work_rate": 87,
+        "stamina": 93,
+        "composure": 94,
+        "agility": 88,
+        "marking": 77
+      },
+      "changed": true
+    },
+    "marcelo-salas": {
+      "previous": {
+        "work_rate": 77,
+        "stamina": 83,
+        "composure": 88,
+        "agility": 88,
+        "marking": 31
+      },
+      "refined": {
+        "work_rate": 77,
+        "stamina": 83,
+        "composure": 90,
+        "agility": 88,
+        "marking": 31
+      },
+      "changed": true
+    },
+    "mario-balotelli": {
+      "previous": {
+        "work_rate": 50,
+        "stamina": 69,
+        "composure": 80,
+        "agility": 83,
+        "marking": 48
+      },
+      "refined": {
+        "work_rate": 50,
+        "stamina": 75,
+        "composure": 74,
+        "agility": 83,
+        "marking": 48
+      },
+      "changed": true
+    },
+    "mark-viduka": {
+      "previous": {
+        "work_rate": 77,
+        "stamina": 74,
+        "composure": 95,
+        "agility": 74,
+        "marking": 29
+      },
+      "refined": {
+        "work_rate": 77,
+        "stamina": 74,
+        "composure": 95,
+        "agility": 74,
+        "marking": 29
+      },
+      "changed": false
+    },
+    "marouane-fellaini": {
+      "previous": {
+        "work_rate": 82,
+        "stamina": 84,
+        "composure": 77,
+        "agility": 65,
+        "marking": 81
+      },
+      "refined": {
+        "work_rate": 82,
+        "stamina": 84,
+        "composure": 77,
+        "agility": 65,
+        "marking": 81
+      },
+      "changed": false
+    },
+    "matt-le-tissier": {
+      "previous": {
+        "work_rate": 53,
+        "stamina": 73,
+        "composure": 94,
+        "agility": 74,
+        "marking": 35
+      },
+      "refined": {
+        "work_rate": 53,
+        "stamina": 73,
+        "composure": 93,
+        "agility": 74,
+        "marking": 35
+      },
+      "changed": true
+    },
+    "mesut-ozil": {
+      "previous": {
+        "work_rate": 50,
+        "stamina": 68,
+        "composure": 86,
+        "agility": 86,
+        "marking": 43
+      },
+      "refined": {
+        "work_rate": 50,
+        "stamina": 68,
+        "composure": 91,
+        "agility": 86,
+        "marking": 43
+      },
+      "changed": true
+    },
+    "michael-carrick": {
+      "previous": {
+        "work_rate": 75,
+        "stamina": 84,
+        "composure": 91,
+        "agility": 69,
+        "marking": 88
+      },
+      "refined": {
+        "work_rate": 75,
+        "stamina": 84,
+        "composure": 94,
+        "agility": 69,
+        "marking": 88
+      },
+      "changed": true
+    },
+    "milan-baros": {
+      "previous": {
+        "work_rate": 83,
+        "stamina": 86,
+        "composure": 82,
+        "agility": 89,
+        "marking": 30
+      },
+      "refined": {
+        "work_rate": 83,
+        "stamina": 86,
+        "composure": 82,
+        "agility": 89,
+        "marking": 30
+      },
+      "changed": false
+    },
+    "miodrag-belodedici": {
+      "previous": {
+        "work_rate": 84,
+        "stamina": 81,
+        "composure": 92,
+        "agility": 80,
+        "marking": 97
+      },
+      "refined": {
+        "work_rate": 84,
+        "stamina": 81,
+        "composure": 92,
+        "agility": 80,
+        "marking": 97
+      },
+      "changed": false
+    },
+    "mohamed-salah": {
+      "previous": {
+        "work_rate": 62,
+        "stamina": 84,
+        "composure": 95,
+        "agility": 94,
+        "marking": 49
+      },
+      "refined": {
+        "work_rate": 89,
+        "stamina": 92,
+        "composure": 91,
+        "agility": 94,
+        "marking": 49
+      },
+      "changed": true
+    },
+    "mousa-dembele": {
+      "previous": {
+        "work_rate": 80,
+        "stamina": 83,
+        "composure": 94,
+        "agility": 90,
+        "marking": 76
+      },
+      "refined": {
+        "work_rate": 80,
+        "stamina": 87,
+        "composure": 94,
+        "agility": 90,
+        "marking": 76
+      },
+      "changed": true
+    },
+    "neymar": {
+      "previous": {
+        "work_rate": 55,
+        "stamina": 78,
+        "composure": 95,
+        "agility": 95,
+        "marking": 44
+      },
+      "refined": {
+        "work_rate": 55,
+        "stamina": 78,
+        "composure": 86,
+        "agility": 95,
+        "marking": 44
+      },
+      "changed": true
+    },
+    "nwankwo-kanu": {
+      "previous": {
+        "work_rate": 77,
+        "stamina": 79,
+        "composure": 90,
+        "agility": 84,
+        "marking": 34
+      },
+      "refined": {
+        "work_rate": 77,
+        "stamina": 79,
+        "composure": 90,
+        "agility": 84,
+        "marking": 34
+      },
+      "changed": false
+    },
+    "papiss-cisse": {
+      "previous": {
+        "work_rate": 75,
+        "stamina": 76,
+        "composure": 85,
+        "agility": 76,
+        "marking": 31
+      },
+      "refined": {
+        "work_rate": 75,
+        "stamina": 76,
+        "composure": 85,
+        "agility": 76,
+        "marking": 31
+      },
+      "changed": false
+    },
+    "park-ji-sung": {
+      "previous": {
+        "work_rate": 100,
+        "stamina": 100,
+        "composure": 88,
+        "agility": 83,
+        "marking": 88
+      },
+      "refined": {
+        "work_rate": 100,
+        "stamina": 100,
+        "composure": 88,
+        "agility": 83,
+        "marking": 88
+      },
+      "changed": false
+    },
+    "patrice-evra": {
+      "previous": {
+        "work_rate": 90,
+        "stamina": 90,
+        "composure": 83,
+        "agility": 87,
+        "marking": 84
+      },
+      "refined": {
+        "work_rate": 90,
+        "stamina": 90,
+        "composure": 84,
+        "agility": 87,
+        "marking": 84
+      },
+      "changed": true
+    },
+    "patrick-mboma": {
+      "previous": {
+        "work_rate": 82,
+        "stamina": 84,
+        "composure": 90,
+        "agility": 85,
+        "marking": 31
+      },
+      "refined": {
+        "work_rate": 82,
+        "stamina": 84,
+        "composure": 90,
+        "agility": 85,
+        "marking": 31
+      },
+      "changed": false
+    },
+    "paul-pogba": {
+      "previous": {
+        "work_rate": 65,
+        "stamina": 77,
+        "composure": 81,
+        "agility": 83,
+        "marking": 61
+      },
+      "refined": {
+        "work_rate": 65,
+        "stamina": 85,
+        "composure": 81,
+        "agility": 83,
+        "marking": 61
+      },
+      "changed": true
+    },
+    "peter-crouch": {
+      "previous": {
+        "work_rate": 80,
+        "stamina": 78,
+        "composure": 87,
+        "agility": 62,
+        "marking": 42
+      },
+      "refined": {
+        "work_rate": 80,
+        "stamina": 78,
+        "composure": 87,
+        "agility": 62,
+        "marking": 42
+      },
+      "changed": false
+    },
+    "philipp-lahm": {
+      "previous": {
+        "work_rate": 86,
+        "stamina": 77,
+        "composure": 69,
+        "agility": 86,
+        "marking": 95
+      },
+      "refined": {
+        "work_rate": 86,
+        "stamina": 77,
+        "composure": 94,
+        "agility": 86,
+        "marking": 95
+      },
+      "changed": true
+    },
+    "pierre-van-hooijdonk": {
+      "previous": {
+        "work_rate": 80,
+        "stamina": 81,
+        "composure": 91,
+        "agility": 70,
+        "marking": 32
+      },
+      "refined": {
+        "work_rate": 80,
+        "stamina": 81,
+        "composure": 91,
+        "agility": 70,
+        "marking": 32
+      },
+      "changed": false
+    },
+    "predrag-mijatovic": {
+      "previous": {
+        "work_rate": 82,
+        "stamina": 79,
+        "composure": 96,
+        "agility": 90,
+        "marking": 28
+      },
+      "refined": {
+        "work_rate": 82,
+        "stamina": 79,
+        "composure": 96,
+        "agility": 90,
+        "marking": 28
+      },
+      "changed": false
+    },
+    "riyad-mahrez": {
+      "previous": {
+        "work_rate": 65,
+        "stamina": 79,
+        "composure": 91,
+        "agility": 92,
+        "marking": 37
+      },
+      "refined": {
+        "work_rate": 65,
+        "stamina": 79,
+        "composure": 91,
+        "agility": 92,
+        "marking": 37
+      },
+      "changed": false
+    },
+    "robert-lewandowski": {
+      "previous": {
+        "work_rate": 61,
+        "stamina": 85,
+        "composure": 93,
+        "agility": 83,
+        "marking": 45
+      },
+      "refined": {
+        "work_rate": 83,
+        "stamina": 92,
+        "composure": 95,
+        "agility": 83,
+        "marking": 45
+      },
+      "changed": true
+    },
+    "robert-prosinecki": {
+      "previous": {
+        "work_rate": 75,
+        "stamina": 76,
+        "composure": 91,
+        "agility": 88,
+        "marking": 42
+      },
+      "refined": {
+        "work_rate": 75,
+        "stamina": 76,
+        "composure": 91,
+        "agility": 88,
+        "marking": 42
+      },
+      "changed": false
+    },
+    "roberto-carlos": {
+      "previous": {
+        "work_rate": 90,
+        "stamina": 91,
+        "composure": 84,
+        "agility": 91,
+        "marking": 88
+      },
+      "refined": {
+        "work_rate": 92,
+        "stamina": 91,
+        "composure": 84,
+        "agility": 91,
+        "marking": 88
+      },
+      "changed": true
+    },
+    "robin-van-persie": {
+      "previous": {
+        "work_rate": 68,
+        "stamina": 77,
+        "composure": 92,
+        "agility": 86,
+        "marking": 35
+      },
+      "refined": {
+        "work_rate": 68,
+        "stamina": 82,
+        "composure": 94,
+        "agility": 86,
+        "marking": 35
+      },
+      "changed": true
+    },
+    "ruben-dias": {
+      "previous": {
+        "work_rate": 86,
+        "stamina": 86,
+        "composure": 89,
+        "agility": 70,
+        "marking": 95
+      },
+      "refined": {
+        "work_rate": 86,
+        "stamina": 86,
+        "composure": 88,
+        "agility": 70,
+        "marking": 95
+      },
+      "changed": true
+    },
+    "ruud-gullit": {
+      "previous": {
+        "work_rate": 92,
+        "stamina": 92,
+        "composure": 94,
+        "agility": 90,
+        "marking": 76
+      },
+      "refined": {
+        "work_rate": 92,
+        "stamina": 92,
+        "composure": 94,
+        "agility": 90,
+        "marking": 76
+      },
+      "changed": false
+    },
+    "ruud-van-nistelrooy": {
+      "previous": {
+        "work_rate": 59,
+        "stamina": 77,
+        "composure": 97,
+        "agility": 72,
+        "marking": 30
+      },
+      "refined": {
+        "work_rate": 59,
+        "stamina": 77,
+        "composure": 96,
+        "agility": 72,
+        "marking": 30
+      },
+      "changed": true
+    },
+    "sadio-mane": {
+      "previous": {
+        "work_rate": 94,
+        "stamina": 94,
+        "composure": 86,
+        "agility": 93,
+        "marking": 43
+      },
+      "refined": {
+        "work_rate": 94,
+        "stamina": 94,
+        "composure": 86,
+        "agility": 93,
+        "marking": 43
+      },
+      "changed": false
+    },
+    "safet-susic": {
+      "previous": {
+        "work_rate": 78,
+        "stamina": 82,
+        "composure": 93,
+        "agility": 91,
+        "marking": 30
+      },
+      "refined": {
+        "work_rate": 78,
+        "stamina": 82,
+        "composure": 93,
+        "agility": 91,
+        "marking": 30
+      },
+      "changed": false
+    },
+    "sami-hyypia": {
+      "previous": {
+        "work_rate": 83,
+        "stamina": 81,
+        "composure": 94,
+        "agility": 65,
+        "marking": 96
+      },
+      "refined": {
+        "work_rate": 83,
+        "stamina": 81,
+        "composure": 94,
+        "agility": 65,
+        "marking": 96
+      },
+      "changed": false
+    },
+    "samuel-etoo": {
+      "previous": {
+        "work_rate": 68,
+        "stamina": 89,
+        "composure": 91,
+        "agility": 92,
+        "marking": 53
+      },
+      "refined": {
+        "work_rate": 91,
+        "stamina": 92,
+        "composure": 91,
+        "agility": 92,
+        "marking": 53
+      },
+      "changed": true
+    },
+    "santi-cazorla": {
+      "previous": {
+        "work_rate": 78,
+        "stamina": 82,
+        "composure": 92,
+        "agility": 94,
+        "marking": 45
+      },
+      "refined": {
+        "work_rate": 78,
+        "stamina": 82,
+        "composure": 92,
+        "agility": 94,
+        "marking": 45
+      },
+      "changed": false
+    },
+    "savo-milosevic": {
+      "previous": {
+        "work_rate": 82,
+        "stamina": 83,
+        "composure": 88,
+        "agility": 72,
+        "marking": 33
+      },
+      "refined": {
+        "work_rate": 82,
+        "stamina": 83,
+        "composure": 88,
+        "agility": 72,
+        "marking": 33
+      },
+      "changed": false
+    },
+    "sergio-aguero": {
+      "previous": {
+        "work_rate": 68,
+        "stamina": 82,
+        "composure": 95,
+        "agility": 94,
+        "marking": 28
+      },
+      "refined": {
+        "work_rate": 68,
+        "stamina": 82,
+        "composure": 93,
+        "agility": 94,
+        "marking": 28
+      },
+      "changed": true
+    },
+    "sergio-busquets": {
+      "previous": {
+        "work_rate": 80,
+        "stamina": 66,
+        "composure": 70,
+        "agility": 70,
+        "marking": 93
+      },
+      "refined": {
+        "work_rate": 80,
+        "stamina": 85,
+        "composure": 96,
+        "agility": 70,
+        "marking": 93
+      },
+      "changed": true
+    },
+    "sergio-ramos": {
+      "previous": {
+        "work_rate": 92,
+        "stamina": 87,
+        "composure": 74,
+        "agility": 80,
+        "marking": 95
+      },
+      "refined": {
+        "work_rate": 92,
+        "stamina": 87,
+        "composure": 85,
+        "agility": 80,
+        "marking": 90
+      },
+      "changed": true
+    },
+    "shunsuke-nakamura": {
+      "previous": {
+        "work_rate": 78,
+        "stamina": 82,
+        "composure": 94,
+        "agility": 86,
+        "marking": 40
+      },
+      "refined": {
+        "work_rate": 78,
+        "stamina": 82,
+        "composure": 94,
+        "agility": 86,
+        "marking": 40
+      },
+      "changed": false
+    },
+    "sol-campbell": {
+      "previous": {
+        "work_rate": 80,
+        "stamina": 84,
+        "composure": 82,
+        "agility": 72,
+        "marking": 94
+      },
+      "refined": {
+        "work_rate": 80,
+        "stamina": 84,
+        "composure": 87,
+        "agility": 72,
+        "marking": 95
+      },
+      "changed": true
+    },
+    "son-heung-min": {
+      "previous": {
+        "work_rate": 85,
+        "stamina": 90,
+        "composure": 92,
+        "agility": 90,
+        "marking": 36
+      },
+      "refined": {
+        "work_rate": 89,
+        "stamina": 90,
+        "composure": 92,
+        "agility": 90,
+        "marking": 36
+      },
+      "changed": true
+    },
+    "thierry-henry": {
+      "previous": {
+        "work_rate": 63,
+        "stamina": 90,
+        "composure": 96,
+        "agility": 96,
+        "marking": 46
+      },
+      "refined": {
+        "work_rate": 63,
+        "stamina": 90,
+        "composure": 96,
+        "agility": 96,
+        "marking": 46
+      },
+      "changed": false
+    },
+    "tijjani-babangida": {
+      "previous": {
+        "work_rate": 75,
+        "stamina": 81,
+        "composure": 75,
+        "agility": 96,
+        "marking": 35
+      },
+      "refined": {
+        "work_rate": 75,
+        "stamina": 81,
+        "composure": 75,
+        "agility": 96,
+        "marking": 35
+      },
+      "changed": false
+    },
+    "toni-kroos": {
+      "previous": {
+        "work_rate": 68,
+        "stamina": 69,
+        "composure": 86,
+        "agility": 78,
+        "marking": 73
+      },
+      "refined": {
+        "work_rate": 68,
+        "stamina": 83,
+        "composure": 95,
+        "agility": 78,
+        "marking": 73
+      },
+      "changed": true
+    },
+    "trent-alexander-arnold": {
+      "previous": {
+        "work_rate": 72,
+        "stamina": 80,
+        "composure": 87,
+        "agility": 84,
+        "marking": 68
+      },
+      "refined": {
+        "work_rate": 72,
+        "stamina": 80,
+        "composure": 87,
+        "agility": 84,
+        "marking": 68
+      },
+      "changed": false
+    },
+    "vincent-kompany": {
+      "previous": {
+        "work_rate": 90,
+        "stamina": 84,
+        "composure": 65,
+        "agility": 74,
+        "marking": 94
+      },
+      "refined": {
+        "work_rate": 90,
+        "stamina": 84,
+        "composure": 86,
+        "agility": 74,
+        "marking": 94
+      },
+      "changed": true
+    },
+    "virgil-van-dijk": {
+      "previous": {
+        "work_rate": 93,
+        "stamina": 88,
+        "composure": 63,
+        "agility": 78,
+        "marking": 96
+      },
+      "refined": {
+        "work_rate": 93,
+        "stamina": 88,
+        "composure": 92,
+        "agility": 78,
+        "marking": 98
+      },
+      "changed": true
+    },
+    "vladimir-jugovic": {
+      "previous": {
+        "work_rate": 91,
+        "stamina": 91,
+        "composure": 90,
+        "agility": 82,
+        "marking": 85
+      },
+      "refined": {
+        "work_rate": 91,
+        "stamina": 91,
+        "composure": 90,
+        "agility": 82,
+        "marking": 85
+      },
+      "changed": false
+    },
+    "wayne-rooney": {
+      "previous": {
+        "work_rate": 77,
+        "stamina": 88,
+        "composure": 92,
+        "agility": 87,
+        "marking": 70
+      },
+      "refined": {
+        "work_rate": 90,
+        "stamina": 92,
+        "composure": 92,
+        "agility": 87,
+        "marking": 70
+      },
+      "changed": true
+    },
+    "xavi-hernandez": {
+      "previous": {
+        "work_rate": 67,
+        "stamina": 68,
+        "composure": 85,
+        "agility": 83,
+        "marking": 71
+      },
+      "refined": {
+        "work_rate": 79,
+        "stamina": 82,
+        "composure": 97,
+        "agility": 83,
+        "marking": 71
+      },
+      "changed": true
+    },
+    "youri-djorkaeff": {
+      "previous": {
+        "work_rate": 77,
+        "stamina": 78,
+        "composure": 93,
+        "agility": 88,
+        "marking": 39
+      },
+      "refined": {
+        "work_rate": 77,
+        "stamina": 78,
+        "composure": 93,
+        "agility": 88,
+        "marking": 39
+      },
+      "changed": false
+    }
+  }
+}

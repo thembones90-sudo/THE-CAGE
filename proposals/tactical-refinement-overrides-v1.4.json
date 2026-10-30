@@ -1,0 +1,241 @@
+{
+  "version": "tactical-provisional-refinement-v1.4",
+  "status": "editorial-re-reviewed-still-provisional",
+  "method": "Individual, role-sensitive reassessment of five situational tactical attributes. No core ratings or previously approved 63 tactical profiles touched. The existing provisional profile remains where no clear correction was justified.",
+  "baseline": "docs/provisional-115-baseline.json",
+  "overrides": {
+    "gennaro-gattuso": {
+      "work_rate": 96,
+      "composure": 78
+    },
+    "sergio-ramos": {
+      "composure": 85,
+      "marking": 90
+    },
+    "alessandro-nesta": {
+      "composure": 94,
+      "marking": 99
+    },
+    "fabio-cannavaro": {
+      "composure": 92,
+      "marking": 98
+    },
+    "carles-puyol": {
+      "composure": 87,
+      "marking": 96
+    },
+    "virgil-van-dijk": {
+      "composure": 92,
+      "marking": 98
+    },
+    "john-terry": {
+      "composure": 86,
+      "marking": 97
+    },
+    "philipp-lahm": {
+      "composure": 94
+    },
+    "cafu": {
+      "composure": 85
+    },
+    "franz-beckenbauer": {
+      "composure": 96
+    },
+    "vincent-kompany": {
+      "composure": 86
+    },
+    "ashley-cole": {
+      "composure": 83
+    },
+    "xavi-hernandez": {
+      "work_rate": 79,
+      "stamina": 82,
+      "composure": 97
+    },
+    "andres-iniesta": {
+      "work_rate": 73,
+      "stamina": 83,
+      "composure": 96
+    },
+    "luka-modric": {
+      "work_rate": 87,
+      "stamina": 93,
+      "composure": 94
+    },
+    "toni-kroos": {
+      "stamina": 83,
+      "composure": 95
+    },
+    "andrea-pirlo": {
+      "composure": 94
+    },
+    "sergio-busquets": {
+      "stamina": 85,
+      "composure": 96
+    },
+    "kaka": {
+      "work_rate": 71,
+      "composure": 91
+    },
+    "david-beckham": {
+      "stamina": 86,
+      "composure": 91
+    },
+    "cesc-fabregas": {
+      "stamina": 83,
+      "composure": 91
+    },
+    "bastian-schweinsteiger": {
+      "stamina": 91,
+      "composure": 88
+    },
+    "clarence-seedorf": {
+      "composure": 92
+    },
+    "mesut-ozil": {
+      "composure": 91
+    },
+    "lionel-messi": {
+      "work_rate": 55
+    },
+    "neymar": {
+      "composure": 86
+    },
+    "kylian-mbappe": {
+      "composure": 89
+    },
+    "wayne-rooney": {
+      "work_rate": 90,
+      "stamina": 92
+    },
+    "luis-suarez": {
+      "work_rate": 89,
+      "stamina": 91,
+      "composure": 90
+    },
+    "robert-lewandowski": {
+      "work_rate": 83,
+      "stamina": 92,
+      "composure": 95
+    },
+    "karim-benzema": {
+      "work_rate": 75,
+      "stamina": 89
+    },
+    "didier-drogba": {
+      "work_rate": 77,
+      "composure": 91
+    },
+    "samuel-etoo": {
+      "work_rate": 91,
+      "stamina": 92
+    },
+    "mohamed-salah": {
+      "work_rate": 89,
+      "stamina": 92,
+      "composure": 91
+    },
+    "mario-balotelli": {
+      "composure": 74,
+      "stamina": 75
+    },
+    "sol-campbell": {
+      "composure": 87,
+      "marking": 95
+    },
+    "gary-neville": {
+      "work_rate": 91,
+      "stamina": 89,
+      "composure": 84
+    },
+    "patrice-evra": {
+      "composure": 84
+    },
+    "jamie-carragher": {
+      "stamina": 84,
+      "composure": 84
+    },
+    "kolo-toure": {
+      "composure": 81
+    },
+    "branislav-ivanovic": {
+      "composure": 82
+    },
+    "kyle-walker": {
+      "stamina": 95,
+      "composure": 78
+    },
+    "andrew-robertson": {
+      "composure": 82
+    },
+    "ruben-dias": {
+      "composure": 88
+    },
+    "david-silva": {
+      "composure": 95
+    },
+    "michael-carrick": {
+      "composure": 94
+    },
+    "fernandinho": {
+      "composure": 86
+    },
+    "ilkay-gundogan": {
+      "stamina": 88,
+      "composure": 92
+    },
+    "bruno-fernandes": {
+      "composure": 83
+    },
+    "paul-pogba": {
+      "stamina": 85
+    },
+    "mousa-dembele": {
+      "stamina": 87
+    },
+    "sergio-aguero": {
+      "composure": 93
+    },
+    "harry-kane": {
+      "composure": 95
+    },
+    "robin-van-persie": {
+      "composure": 94,
+      "stamina": 82
+    },
+    "erling-haaland": {
+      "stamina": 93
+    },
+    "fernando-torres": {
+      "composure": 87,
+      "stamina": 87
+    },
+    "gareth-bale": {
+      "stamina": 92
+    },
+    "son-heung-min": {
+      "work_rate": 89
+    },
+    "ruud-van-nistelrooy": {
+      "composure": 96
+    },
+    "jamie-vardy": {
+      "work_rate": 94
+    },
+    "matt-le-tissier": {
+      "composure": 93
+    },
+    "marcelo-salas": {
+      "composure": 90
+    },
+    "ivan-zamorano": {
+      "composure": 87
+    },
+    "roberto-carlos": {
+      "work_rate": 92
+    },
+    "declan-rice": {
+      "marking": 93
+    }
+  }
+}

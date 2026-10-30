@@ -17,7 +17,7 @@ assert.equal(p.traits.primary,'Executioner');
 assert.equal(p.traits.secondary,'Magician');
 assert.deepEqual([p.r.pace,p.r.tech,p.r.pass,p.r.finish,p.r.def,p.r.phys],[79,94,85,97,32,73]);
 assert.equal(Object.keys(p.r).length,17);
-assert.deepEqual([p.attributes.work_rate,p.attributes.stamina,p.attributes.composure,p.attributes.agility,p.attributes.marking],[68,77,92,86,35]);
+assert.deepEqual([p.attributes.work_rate,p.attributes.stamina,p.attributes.composure,p.attributes.agility,p.attributes.marking],[68,82,94,86,35]);
 for(const q of ['Robin van Persie','Van Persie','rvp'])assert(ctx.window.CageIdentity.resolve(q).matches?.some(x=>x.id===p.id),'search failed: '+q);
 assert.equal(ctx.window.CageTraits.traits(p.id)[0][0],'Executioner');
 const E=ctx.window.CageEngine;

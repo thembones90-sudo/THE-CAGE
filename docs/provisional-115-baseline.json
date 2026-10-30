@@ -1,0 +1,2992 @@
+[
+  {
+    "id": "gennaro-gattuso",
+    "role": "M",
+    "position": "CDM",
+    "traits": {
+      "primary": "Destroyer",
+      "secondary": "Enforcer"
+    },
+    "attribute": {
+      "work_rate": 91,
+      "stamina": 86,
+      "composure": 66,
+      "agility": 75,
+      "marking": 92
+    },
+    "r": {
+      "stamina": 86,
+      "composure": 66,
+      "pace": 75,
+      "dribbling": 75,
+      "tech": 75,
+      "def": 95,
+      "tackling": 95,
+      "positioning": 86
+    }
+  },
+  {
+    "id": "sergio-ramos",
+    "role": "D",
+    "position": "CB",
+    "traits": {
+      "primary": "Enforcer",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 92,
+      "stamina": 87,
+      "composure": 74,
+      "agility": 80,
+      "marking": 95
+    },
+    "r": {
+      "stamina": 87,
+      "composure": 74,
+      "pace": 82,
+      "dribbling": 78,
+      "tech": 78,
+      "def": 96,
+      "tackling": 96,
+      "positioning": 87
+    }
+  },
+  {
+    "id": "alessandro-nesta",
+    "role": "D",
+    "position": "CB",
+    "traits": {
+      "primary": "Wall",
+      "secondary": "Anticipator"
+    },
+    "attribute": {
+      "work_rate": 91,
+      "stamina": 83,
+      "composure": 62,
+      "agility": 80,
+      "marking": 97
+    },
+    "r": {
+      "stamina": 83,
+      "composure": 62,
+      "pace": 77,
+      "dribbling": 83,
+      "tech": 83,
+      "def": 99,
+      "tackling": 99,
+      "positioning": 89
+    }
+  },
+  {
+    "id": "fabio-cannavaro",
+    "role": "D",
+    "position": "CB",
+    "traits": {
+      "primary": "Anticipator",
+      "secondary": "Tracker"
+    },
+    "attribute": {
+      "work_rate": 92,
+      "stamina": 85,
+      "composure": 58,
+      "agility": 80,
+      "marking": 97
+    },
+    "r": {
+      "stamina": 85,
+      "composure": 58,
+      "pace": 82,
+      "dribbling": 77,
+      "tech": 77,
+      "def": 98,
+      "tackling": 98,
+      "positioning": 88
+    }
+  },
+  {
+    "id": "carles-puyol",
+    "role": "D",
+    "position": "CB",
+    "traits": {
+      "primary": "Enforcer",
+      "secondary": "Wall"
+    },
+    "attribute": {
+      "work_rate": 91,
+      "stamina": 85,
+      "composure": 54,
+      "agility": 72,
+      "marking": 95
+    },
+    "r": {
+      "stamina": 85,
+      "composure": 54,
+      "pace": 75,
+      "dribbling": 69,
+      "tech": 69,
+      "def": 97,
+      "tackling": 97,
+      "positioning": 84
+    }
+  },
+  {
+    "id": "virgil-van-dijk",
+    "role": "D",
+    "position": "CB",
+    "traits": {
+      "primary": "Wall",
+      "secondary": "Architect"
+    },
+    "attribute": {
+      "work_rate": 93,
+      "stamina": 88,
+      "composure": 63,
+      "agility": 78,
+      "marking": 96
+    },
+    "r": {
+      "stamina": 88,
+      "composure": 63,
+      "pace": 80,
+      "dribbling": 76,
+      "tech": 76,
+      "def": 97,
+      "tackling": 97,
+      "positioning": 92
+    }
+  },
+  {
+    "id": "john-terry",
+    "role": "D",
+    "position": "CB",
+    "traits": {
+      "primary": "Wall",
+      "secondary": "Enforcer"
+    },
+    "attribute": {
+      "work_rate": 87,
+      "stamina": 77,
+      "composure": 59,
+      "agility": 65,
+      "marking": 95
+    },
+    "r": {
+      "stamina": 77,
+      "composure": 59,
+      "pace": 59,
+      "dribbling": 70,
+      "tech": 70,
+      "def": 97,
+      "tackling": 97,
+      "positioning": 85
+    }
+  },
+  {
+    "id": "philipp-lahm",
+    "role": "D",
+    "position": "RB",
+    "traits": {
+      "primary": "Anticipator",
+      "secondary": "Maestro"
+    },
+    "attribute": {
+      "work_rate": 86,
+      "stamina": 77,
+      "composure": 69,
+      "agility": 86,
+      "marking": 95
+    },
+    "r": {
+      "stamina": 77,
+      "composure": 69,
+      "pace": 82,
+      "dribbling": 89,
+      "tech": 89,
+      "def": 95,
+      "tackling": 95,
+      "positioning": 93
+    }
+  },
+  {
+    "id": "cafu",
+    "role": "D",
+    "position": "RB",
+    "traits": {
+      "primary": "Engine",
+      "secondary": "Tracker"
+    },
+    "attribute": {
+      "work_rate": 89,
+      "stamina": 87,
+      "composure": 73,
+      "agility": 89,
+      "marking": 90
+    },
+    "r": {
+      "stamina": 87,
+      "composure": 73,
+      "pace": 92,
+      "dribbling": 85,
+      "tech": 85,
+      "def": 90,
+      "tackling": 90,
+      "positioning": 88
+    }
+  },
+  {
+    "id": "roberto-carlos",
+    "role": "D",
+    "position": "LB",
+    "traits": {
+      "primary": "Tracker",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 90,
+      "stamina": 91,
+      "composure": 84,
+      "agility": 91,
+      "marking": 88
+    },
+    "r": {
+      "stamina": 91,
+      "composure": 84,
+      "pace": 95,
+      "dribbling": 87,
+      "tech": 87,
+      "def": 88,
+      "tackling": 88,
+      "positioning": 85
+    }
+  },
+  {
+    "id": "franz-beckenbauer",
+    "role": "D",
+    "position": "CB",
+    "traits": {
+      "primary": "Libero",
+      "secondary": "Architect"
+    },
+    "attribute": {
+      "work_rate": 89,
+      "stamina": 82,
+      "composure": 81,
+      "agility": 85,
+      "marking": 96
+    },
+    "r": {
+      "stamina": 82,
+      "composure": 81,
+      "pace": 79,
+      "dribbling": 91,
+      "tech": 91,
+      "def": 96,
+      "tackling": 96,
+      "positioning": 95
+    }
+  },
+  {
+    "id": "vincent-kompany",
+    "role": "D",
+    "position": "CB",
+    "traits": {
+      "primary": "Enforcer",
+      "secondary": "Wall"
+    },
+    "attribute": {
+      "work_rate": 90,
+      "stamina": 84,
+      "composure": 65,
+      "agility": 74,
+      "marking": 94
+    },
+    "r": {
+      "stamina": 84,
+      "composure": 65,
+      "pace": 73,
+      "dribbling": 75,
+      "tech": 75,
+      "def": 95,
+      "tackling": 95,
+      "positioning": 87
+    }
+  },
+  {
+    "id": "ashley-cole",
+    "role": "D",
+    "position": "LB",
+    "traits": {
+      "primary": "Tracker",
+      "secondary": "Anticipator"
+    },
+    "attribute": {
+      "work_rate": 90,
+      "stamina": 84,
+      "composure": 62,
+      "agility": 86,
+      "marking": 94
+    },
+    "r": {
+      "stamina": 84,
+      "composure": 62,
+      "pace": 90,
+      "dribbling": 81,
+      "tech": 81,
+      "def": 95,
+      "tackling": 95,
+      "positioning": 87
+    }
+  },
+  {
+    "id": "xavi-hernandez",
+    "role": "M",
+    "position": "CM",
+    "traits": {
+      "primary": "Maestro",
+      "secondary": "Architect"
+    },
+    "attribute": {
+      "work_rate": 67,
+      "stamina": 68,
+      "composure": 85,
+      "agility": 83,
+      "marking": 71
+    },
+    "r": {
+      "stamina": 68,
+      "composure": 85,
+      "pace": 70,
+      "dribbling": 96,
+      "tech": 96,
+      "def": 65,
+      "tackling": 65,
+      "positioning": 82
+    }
+  },
+  {
+    "id": "andres-iniesta",
+    "role": "M",
+    "position": "CM",
+    "traits": {
+      "primary": "Maestro",
+      "secondary": "Phantom"
+    },
+    "attribute": {
+      "work_rate": 64,
+      "stamina": 72,
+      "composure": 89,
+      "agility": 89,
+      "marking": 62
+    },
+    "r": {
+      "stamina": 72,
+      "composure": 89,
+      "pace": 79,
+      "dribbling": 99,
+      "tech": 99,
+      "def": 55,
+      "tackling": 55,
+      "positioning": 76
+    }
+  },
+  {
+    "id": "luka-modric",
+    "role": "M",
+    "position": "CM",
+    "traits": {
+      "primary": "Maestro",
+      "secondary": "Engine"
+    },
+    "attribute": {
+      "work_rate": 74,
+      "stamina": 75,
+      "composure": 87,
+      "agility": 88,
+      "marking": 77
+    },
+    "r": {
+      "stamina": 75,
+      "composure": 87,
+      "pace": 80,
+      "dribbling": 95,
+      "tech": 95,
+      "def": 72,
+      "tackling": 72,
+      "positioning": 85
+    }
+  },
+  {
+    "id": "toni-kroos",
+    "role": "M",
+    "position": "CM",
+    "traits": {
+      "primary": "Architect",
+      "secondary": "Maestro"
+    },
+    "attribute": {
+      "work_rate": 68,
+      "stamina": 69,
+      "composure": 86,
+      "agility": 78,
+      "marking": 73
+    },
+    "r": {
+      "stamina": 69,
+      "composure": 86,
+      "pace": 65,
+      "dribbling": 91,
+      "tech": 91,
+      "def": 67,
+      "tackling": 67,
+      "positioning": 83
+    }
+  },
+  {
+    "id": "andrea-pirlo",
+    "role": "M",
+    "position": "CM",
+    "traits": {
+      "primary": "Architect",
+      "secondary": "Maestro"
+    },
+    "attribute": {
+      "work_rate": 63,
+      "stamina": 60,
+      "composure": 87,
+      "agility": 75,
+      "marking": 71
+    },
+    "r": {
+      "stamina": 60,
+      "composure": 87,
+      "pace": 56,
+      "dribbling": 94,
+      "tech": 94,
+      "def": 65,
+      "tackling": 65,
+      "positioning": 82
+    }
+  },
+  {
+    "id": "sergio-busquets",
+    "role": "M",
+    "position": "CDM",
+    "traits": {
+      "primary": "Anticipator",
+      "secondary": "Maestro"
+    },
+    "attribute": {
+      "work_rate": 80,
+      "stamina": 66,
+      "composure": 70,
+      "agility": 70,
+      "marking": 93
+    },
+    "r": {
+      "stamina": 66,
+      "composure": 70,
+      "pace": 54,
+      "dribbling": 85,
+      "tech": 85,
+      "def": 93,
+      "tackling": 93,
+      "positioning": 93
+    }
+  },
+  {
+    "id": "kaka",
+    "role": "M",
+    "position": "CAM",
+    "traits": {
+      "primary": "Predator",
+      "secondary": "Surgeon"
+    },
+    "attribute": {
+      "work_rate": 64,
+      "stamina": 85,
+      "composure": 93,
+      "agility": 94,
+      "marking": 50
+    },
+    "r": {
+      "stamina": 85,
+      "composure": 93,
+      "pace": 92,
+      "dribbling": 95,
+      "tech": 95,
+      "def": 42,
+      "tackling": 42,
+      "positioning": 66
+    }
+  },
+  {
+    "id": "david-beckham",
+    "role": "M",
+    "position": "RM",
+    "traits": {
+      "primary": "Architect",
+      "secondary": "Surgeon"
+    },
+    "attribute": {
+      "work_rate": 70,
+      "stamina": 77,
+      "composure": 85,
+      "agility": 80,
+      "marking": 68
+    },
+    "r": {
+      "stamina": 77,
+      "composure": 85,
+      "pace": 75,
+      "dribbling": 85,
+      "tech": 85,
+      "def": 62,
+      "tackling": 62,
+      "positioning": 80
+    }
+  },
+  {
+    "id": "cesc-fabregas",
+    "role": "M",
+    "position": "CM",
+    "traits": {
+      "primary": "Surgeon",
+      "secondary": "Architect"
+    },
+    "attribute": {
+      "work_rate": 64,
+      "stamina": 69,
+      "composure": 86,
+      "agility": 80,
+      "marking": 65
+    },
+    "r": {
+      "stamina": 69,
+      "composure": 86,
+      "pace": 70,
+      "dribbling": 89,
+      "tech": 89,
+      "def": 58,
+      "tackling": 58,
+      "positioning": 77
+    }
+  },
+  {
+    "id": "bastian-schweinsteiger",
+    "role": "M",
+    "position": "CM",
+    "traits": {
+      "primary": "Engine",
+      "secondary": "Architect"
+    },
+    "attribute": {
+      "work_rate": 83,
+      "stamina": 81,
+      "composure": 83,
+      "agility": 80,
+      "marking": 86
+    },
+    "r": {
+      "stamina": 81,
+      "composure": 83,
+      "pace": 74,
+      "dribbling": 85,
+      "tech": 85,
+      "def": 85,
+      "tackling": 85,
+      "positioning": 87
+    }
+  },
+  {
+    "id": "clarence-seedorf",
+    "role": "M",
+    "position": "CM",
+    "traits": {
+      "primary": "Engine",
+      "secondary": "Juggernaut"
+    },
+    "attribute": {
+      "work_rate": 80,
+      "stamina": 85,
+      "composure": 88,
+      "agility": 84,
+      "marking": 77
+    },
+    "r": {
+      "stamina": 85,
+      "composure": 88,
+      "pace": 78,
+      "dribbling": 90,
+      "tech": 90,
+      "def": 75,
+      "tackling": 75,
+      "positioning": 82
+    }
+  },
+  {
+    "id": "mesut-ozil",
+    "role": "M",
+    "position": "CAM",
+    "traits": {
+      "primary": "Surgeon",
+      "secondary": "Phantom"
+    },
+    "attribute": {
+      "work_rate": 50,
+      "stamina": 68,
+      "composure": 86,
+      "agility": 86,
+      "marking": 43
+    },
+    "r": {
+      "stamina": 68,
+      "composure": 86,
+      "pace": 78,
+      "dribbling": 94,
+      "tech": 94,
+      "def": 31,
+      "tackling": 31,
+      "positioning": 64
+    }
+  },
+  {
+    "id": "lionel-messi",
+    "role": "F",
+    "position": "RW",
+    "traits": {
+      "primary": "Phantom",
+      "secondary": "Surgeon"
+    },
+    "attribute": {
+      "work_rate": 57,
+      "stamina": 80,
+      "composure": 100,
+      "agility": 94,
+      "marking": 46
+    },
+    "r": {
+      "stamina": 80,
+      "composure": 100,
+      "pace": 88,
+      "dribbling": 100,
+      "tech": 100,
+      "def": 33,
+      "tackling": 33,
+      "positioning": 66
+    }
+  },
+  {
+    "id": "cristiano-ronaldo",
+    "role": "F",
+    "position": "LW",
+    "traits": {
+      "primary": "Executioner",
+      "secondary": "Predator"
+    },
+    "attribute": {
+      "work_rate": 65,
+      "stamina": 94,
+      "composure": 97,
+      "agility": 95,
+      "marking": 45
+    },
+    "r": {
+      "stamina": 94,
+      "composure": 97,
+      "pace": 95,
+      "dribbling": 95,
+      "tech": 95,
+      "def": 35,
+      "tackling": 35,
+      "positioning": 60
+    }
+  },
+  {
+    "id": "neymar",
+    "role": "F",
+    "position": "LW",
+    "traits": {
+      "primary": "Magician",
+      "secondary": "Surgeon"
+    },
+    "attribute": {
+      "work_rate": 55,
+      "stamina": 78,
+      "composure": 95,
+      "agility": 95,
+      "marking": 44
+    },
+    "r": {
+      "stamina": 78,
+      "composure": 95,
+      "pace": 91,
+      "dribbling": 99,
+      "tech": 99,
+      "def": 31,
+      "tackling": 31,
+      "positioning": 63
+    }
+  },
+  {
+    "id": "kylian-mbappe",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Predator",
+      "secondary": "Phantom"
+    },
+    "attribute": {
+      "work_rate": 59,
+      "stamina": 88,
+      "composure": 95,
+      "agility": 97,
+      "marking": 41
+    },
+    "r": {
+      "stamina": 88,
+      "composure": 95,
+      "pace": 99,
+      "dribbling": 94,
+      "tech": 94,
+      "def": 30,
+      "tackling": 30,
+      "positioning": 57
+    }
+  },
+  {
+    "id": "thierry-henry",
+    "role": "F",
+    "position": "LW",
+    "traits": {
+      "primary": "Predator",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 63,
+      "stamina": 90,
+      "composure": 96,
+      "agility": 96,
+      "marking": 46
+    },
+    "r": {
+      "stamina": 90,
+      "composure": 96,
+      "pace": 97,
+      "dribbling": 95,
+      "tech": 95,
+      "def": 35,
+      "tackling": 35,
+      "positioning": 62
+    }
+  },
+  {
+    "id": "wayne-rooney",
+    "role": "F",
+    "position": "CF",
+    "traits": {
+      "primary": "Predator",
+      "secondary": "Engine"
+    },
+    "attribute": {
+      "work_rate": 77,
+      "stamina": 88,
+      "composure": 92,
+      "agility": 87,
+      "marking": 70
+    },
+    "r": {
+      "stamina": 88,
+      "composure": 92,
+      "pace": 85,
+      "dribbling": 89,
+      "tech": 89,
+      "def": 65,
+      "tackling": 65,
+      "positioning": 77
+    }
+  },
+  {
+    "id": "luis-suarez",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Executioner",
+      "secondary": "Predator"
+    },
+    "attribute": {
+      "work_rate": 63,
+      "stamina": 83,
+      "composure": 95,
+      "agility": 86,
+      "marking": 52
+    },
+    "r": {
+      "stamina": 83,
+      "composure": 95,
+      "pace": 80,
+      "dribbling": 91,
+      "tech": 91,
+      "def": 43,
+      "tackling": 43,
+      "positioning": 65
+    }
+  },
+  {
+    "id": "robert-lewandowski",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Executioner",
+      "secondary": "Juggernaut"
+    },
+    "attribute": {
+      "work_rate": 61,
+      "stamina": 85,
+      "composure": 93,
+      "agility": 83,
+      "marking": 45
+    },
+    "r": {
+      "stamina": 85,
+      "composure": 93,
+      "pace": 78,
+      "dribbling": 87,
+      "tech": 87,
+      "def": 36,
+      "tackling": 36,
+      "positioning": 58
+    }
+  },
+  {
+    "id": "karim-benzema",
+    "role": "F",
+    "position": "CF",
+    "traits": {
+      "primary": "Maestro",
+      "secondary": "Surgeon"
+    },
+    "attribute": {
+      "work_rate": 61,
+      "stamina": 82,
+      "composure": 95,
+      "agility": 88,
+      "marking": 49
+    },
+    "r": {
+      "stamina": 82,
+      "composure": 95,
+      "pace": 82,
+      "dribbling": 93,
+      "tech": 93,
+      "def": 39,
+      "tackling": 39,
+      "positioning": 65
+    }
+  },
+  {
+    "id": "didier-drogba",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Juggernaut",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 65,
+      "stamina": 91,
+      "composure": 89,
+      "agility": 82,
+      "marking": 46
+    },
+    "r": {
+      "stamina": 91,
+      "composure": 89,
+      "pace": 82,
+      "dribbling": 81,
+      "tech": 81,
+      "def": 39,
+      "tackling": 39,
+      "positioning": 57
+    }
+  },
+  {
+    "id": "samuel-etoo",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Predator",
+      "secondary": "Tracker"
+    },
+    "attribute": {
+      "work_rate": 68,
+      "stamina": 89,
+      "composure": 91,
+      "agility": 92,
+      "marking": 53
+    },
+    "r": {
+      "stamina": 89,
+      "composure": 91,
+      "pace": 97,
+      "dribbling": 86,
+      "tech": 86,
+      "def": 47,
+      "tackling": 47,
+      "positioning": 62
+    }
+  },
+  {
+    "id": "mohamed-salah",
+    "role": "F",
+    "position": "RW",
+    "traits": {
+      "primary": "Phantom",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 62,
+      "stamina": 84,
+      "composure": 95,
+      "agility": 94,
+      "marking": 49
+    },
+    "r": {
+      "stamina": 84,
+      "composure": 95,
+      "pace": 94,
+      "dribbling": 94,
+      "tech": 94,
+      "def": 39,
+      "tackling": 39,
+      "positioning": 63
+    }
+  },
+  {
+    "id": "adel-taarabt",
+    "role": "M",
+    "position": "CAM",
+    "traits": {
+      "primary": "Magician",
+      "secondary": "Surgeon"
+    },
+    "attribute": {
+      "work_rate": 53,
+      "stamina": 73,
+      "composure": 78,
+      "agility": 90,
+      "marking": 41
+    },
+    "r": {
+      "stamina": 73,
+      "composure": 78,
+      "pace": 83,
+      "dribbling": 97,
+      "tech": 97,
+      "def": 32,
+      "tackling": 32,
+      "positioning": 57
+    }
+  },
+  {
+    "id": "marouane-fellaini",
+    "role": "M",
+    "position": "CM",
+    "traits": {
+      "primary": "Juggernaut",
+      "secondary": "Engine"
+    },
+    "attribute": {
+      "work_rate": 82,
+      "stamina": 84,
+      "composure": 77,
+      "agility": 65,
+      "marking": 81
+    },
+    "r": {
+      "stamina": 84,
+      "composure": 77,
+      "pace": 55,
+      "dribbling": 69,
+      "tech": 75,
+      "def": 79,
+      "tackling": 79,
+      "positioning": 86
+    }
+  },
+  {
+    "id": "mario-balotelli",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Executioner",
+      "secondary": "Juggernaut"
+    },
+    "attribute": {
+      "work_rate": 50,
+      "stamina": 69,
+      "composure": 80,
+      "agility": 83,
+      "marking": 48
+    },
+    "r": {
+      "stamina": 69,
+      "composure": 80,
+      "pace": 79,
+      "dribbling": 84,
+      "tech": 87,
+      "def": 30,
+      "tackling": 30,
+      "positioning": 75
+    }
+  },
+  {
+    "id": "sol-campbell",
+    "role": "D",
+    "position": "CB",
+    "traits": {
+      "primary": "Wall",
+      "secondary": "Enforcer"
+    },
+    "attribute": {
+      "work_rate": 80,
+      "stamina": 84,
+      "composure": 82,
+      "agility": 72,
+      "marking": 94
+    },
+    "r": {
+      "stamina": 86,
+      "composure": 55,
+      "pace": 76,
+      "dribbling": 70,
+      "tech": 70,
+      "def": 97,
+      "tackling": 97,
+      "positioning": 84
+    }
+  },
+  {
+    "id": "gary-neville",
+    "role": "D",
+    "position": "RB",
+    "traits": {
+      "primary": "Anticipator",
+      "secondary": "Engine"
+    },
+    "attribute": {
+      "work_rate": 84,
+      "stamina": 85,
+      "composure": 83,
+      "agility": 69,
+      "marking": 91
+    },
+    "r": {
+      "stamina": 73,
+      "composure": 58,
+      "pace": 69,
+      "dribbling": 74,
+      "tech": 74,
+      "def": 90,
+      "tackling": 90,
+      "positioning": 86
+    }
+  },
+  {
+    "id": "patrice-evra",
+    "role": "D",
+    "position": "LB",
+    "traits": {
+      "primary": "Tracker",
+      "secondary": "Engine"
+    },
+    "attribute": {
+      "work_rate": 90,
+      "stamina": 90,
+      "composure": 83,
+      "agility": 87,
+      "marking": 84
+    },
+    "r": {
+      "stamina": 83,
+      "composure": 68,
+      "pace": 88,
+      "dribbling": 83,
+      "tech": 83,
+      "def": 90,
+      "tackling": 90,
+      "positioning": 87
+    }
+  },
+  {
+    "id": "jamie-carragher",
+    "role": "D",
+    "position": "CB",
+    "traits": {
+      "primary": "Wall",
+      "secondary": "Anticipator"
+    },
+    "attribute": {
+      "work_rate": 85,
+      "stamina": 86,
+      "composure": 80,
+      "agility": 64,
+      "marking": 93
+    },
+    "r": {
+      "stamina": 75,
+      "composure": 53,
+      "pace": 63,
+      "dribbling": 68,
+      "tech": 68,
+      "def": 94,
+      "tackling": 94,
+      "positioning": 84
+    }
+  },
+  {
+    "id": "kolo-toure",
+    "role": "D",
+    "position": "CB",
+    "traits": {
+      "primary": "Tracker",
+      "secondary": "Enforcer"
+    },
+    "attribute": {
+      "work_rate": 83,
+      "stamina": 85,
+      "composure": 78,
+      "agility": 80,
+      "marking": 85
+    },
+    "r": {
+      "stamina": 86,
+      "composure": 57,
+      "pace": 83,
+      "dribbling": 72,
+      "tech": 72,
+      "def": 91,
+      "tackling": 91,
+      "positioning": 82
+    }
+  },
+  {
+    "id": "branislav-ivanovic",
+    "role": "D",
+    "position": "RB",
+    "traits": {
+      "primary": "Enforcer",
+      "secondary": "Wall"
+    },
+    "attribute": {
+      "work_rate": 86,
+      "stamina": 86,
+      "composure": 81,
+      "agility": 64,
+      "marking": 89
+    },
+    "r": {
+      "stamina": 82,
+      "composure": 69,
+      "pace": 68,
+      "dribbling": 71,
+      "tech": 71,
+      "def": 92,
+      "tackling": 92,
+      "positioning": 82
+    }
+  },
+  {
+    "id": "kyle-walker",
+    "role": "D",
+    "position": "RB",
+    "traits": {
+      "primary": "Tracker",
+      "secondary": "Wall"
+    },
+    "attribute": {
+      "work_rate": 88,
+      "stamina": 92,
+      "composure": 80,
+      "agility": 92,
+      "marking": 88
+    },
+    "r": {
+      "stamina": 94,
+      "composure": 62,
+      "pace": 98,
+      "dribbling": 78,
+      "tech": 78,
+      "def": 93,
+      "tackling": 93,
+      "positioning": 87
+    }
+  },
+  {
+    "id": "trent-alexander-arnold",
+    "role": "D",
+    "position": "RB",
+    "traits": {
+      "primary": "Architect",
+      "secondary": "Libero"
+    },
+    "attribute": {
+      "work_rate": 72,
+      "stamina": 80,
+      "composure": 87,
+      "agility": 84,
+      "marking": 68
+    },
+    "r": {
+      "stamina": 73,
+      "composure": 76,
+      "pace": 76,
+      "dribbling": 88,
+      "tech": 88,
+      "def": 70,
+      "tackling": 70,
+      "positioning": 84
+    }
+  },
+  {
+    "id": "andrew-robertson",
+    "role": "D",
+    "position": "LB",
+    "traits": {
+      "primary": "Engine",
+      "secondary": "Tracker"
+    },
+    "attribute": {
+      "work_rate": 96,
+      "stamina": 96,
+      "composure": 82,
+      "agility": 86,
+      "marking": 84
+    },
+    "r": {
+      "stamina": 83,
+      "composure": 62,
+      "pace": 89,
+      "dribbling": 78,
+      "tech": 78,
+      "def": 89,
+      "tackling": 89,
+      "positioning": 89
+    }
+  },
+  {
+    "id": "ruben-dias",
+    "role": "D",
+    "position": "CB",
+    "traits": {
+      "primary": "Wall",
+      "secondary": "Anticipator"
+    },
+    "attribute": {
+      "work_rate": 86,
+      "stamina": 86,
+      "composure": 89,
+      "agility": 70,
+      "marking": 95
+    },
+    "r": {
+      "stamina": 82,
+      "composure": 60,
+      "pace": 70,
+      "dribbling": 75,
+      "tech": 75,
+      "def": 96,
+      "tackling": 96,
+      "positioning": 88
+    }
+  },
+  {
+    "id": "david-silva",
+    "role": "M",
+    "position": "CAM",
+    "traits": {
+      "primary": "Surgeon",
+      "secondary": "Maestro"
+    },
+    "attribute": {
+      "work_rate": 72,
+      "stamina": 85,
+      "composure": 96,
+      "agility": 95,
+      "marking": 49
+    },
+    "r": {
+      "stamina": 67,
+      "composure": 91,
+      "pace": 76,
+      "dribbling": 98,
+      "tech": 98,
+      "def": 43,
+      "tackling": 43,
+      "positioning": 70
+    }
+  },
+  {
+    "id": "michael-carrick",
+    "role": "M",
+    "position": "CDM",
+    "traits": {
+      "primary": "Architect",
+      "secondary": "Anticipator"
+    },
+    "attribute": {
+      "work_rate": 75,
+      "stamina": 84,
+      "composure": 91,
+      "agility": 69,
+      "marking": 88
+    },
+    "r": {
+      "stamina": 69,
+      "composure": 74,
+      "pace": 61,
+      "dribbling": 81,
+      "tech": 81,
+      "def": 81,
+      "tackling": 81,
+      "positioning": 88
+    }
+  },
+  {
+    "id": "fernandinho",
+    "role": "M",
+    "position": "CDM",
+    "traits": {
+      "primary": "Destroyer",
+      "secondary": "Anticipator"
+    },
+    "attribute": {
+      "work_rate": 94,
+      "stamina": 91,
+      "composure": 82,
+      "agility": 79,
+      "marking": 90
+    },
+    "r": {
+      "stamina": 81,
+      "composure": 70,
+      "pace": 77,
+      "dribbling": 77,
+      "tech": 77,
+      "def": 93,
+      "tackling": 93,
+      "positioning": 89
+    }
+  },
+  {
+    "id": "ilkay-gundogan",
+    "role": "M",
+    "position": "CM",
+    "traits": {
+      "primary": "Engine",
+      "secondary": "Phantom"
+    },
+    "attribute": {
+      "work_rate": 82,
+      "stamina": 85,
+      "composure": 91,
+      "agility": 82,
+      "marking": 76
+    },
+    "r": {
+      "stamina": 74,
+      "composure": 89,
+      "pace": 73,
+      "dribbling": 89,
+      "tech": 89,
+      "def": 71,
+      "tackling": 71,
+      "positioning": 81
+    }
+  },
+  {
+    "id": "santi-cazorla",
+    "role": "M",
+    "position": "CM",
+    "traits": {
+      "primary": "Magician",
+      "secondary": "Architect"
+    },
+    "attribute": {
+      "work_rate": 78,
+      "stamina": 82,
+      "composure": 92,
+      "agility": 94,
+      "marking": 45
+    },
+    "r": {
+      "stamina": 67,
+      "composure": 87,
+      "pace": 77,
+      "dribbling": 96,
+      "tech": 96,
+      "def": 44,
+      "tackling": 44,
+      "positioning": 70
+    }
+  },
+  {
+    "id": "bruno-fernandes",
+    "role": "M",
+    "position": "CAM",
+    "traits": {
+      "primary": "Surgeon",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 91,
+      "stamina": 91,
+      "composure": 78,
+      "agility": 80,
+      "marking": 62
+    },
+    "r": {
+      "stamina": 75,
+      "composure": 87,
+      "pace": 78,
+      "dribbling": 85,
+      "tech": 85,
+      "def": 57,
+      "tackling": 57,
+      "positioning": 75
+    }
+  },
+  {
+    "id": "christian-eriksen",
+    "role": "M",
+    "position": "CAM",
+    "traits": {
+      "primary": "Architect",
+      "secondary": "Surgeon"
+    },
+    "attribute": {
+      "work_rate": 79,
+      "stamina": 85,
+      "composure": 87,
+      "agility": 78,
+      "marking": 54
+    },
+    "r": {
+      "stamina": 67,
+      "composure": 85,
+      "pace": 70,
+      "dribbling": 87,
+      "tech": 87,
+      "def": 51,
+      "tackling": 51,
+      "positioning": 73
+    }
+  },
+  {
+    "id": "paul-pogba",
+    "role": "M",
+    "position": "CM",
+    "traits": {
+      "primary": "Juggernaut",
+      "secondary": "Architect"
+    },
+    "attribute": {
+      "work_rate": 65,
+      "stamina": 77,
+      "composure": 81,
+      "agility": 83,
+      "marking": 61
+    },
+    "r": {
+      "stamina": 87,
+      "composure": 89,
+      "pace": 80,
+      "dribbling": 93,
+      "tech": 93,
+      "def": 66,
+      "tackling": 66,
+      "positioning": 79
+    }
+  },
+  {
+    "id": "mousa-dembele",
+    "role": "M",
+    "position": "CM",
+    "traits": {
+      "primary": "Magician",
+      "secondary": "Juggernaut"
+    },
+    "attribute": {
+      "work_rate": 80,
+      "stamina": 83,
+      "composure": 94,
+      "agility": 90,
+      "marking": 76
+    },
+    "r": {
+      "stamina": 87,
+      "composure": 81,
+      "pace": 79,
+      "dribbling": 95,
+      "tech": 95,
+      "def": 79,
+      "tackling": 79,
+      "positioning": 83
+    }
+  },
+  {
+    "id": "declan-rice",
+    "role": "M",
+    "position": "CDM",
+    "traits": {
+      "primary": "Destroyer",
+      "secondary": "Engine"
+    },
+    "attribute": {
+      "work_rate": 92,
+      "stamina": 93,
+      "composure": 87,
+      "agility": 80,
+      "marking": 92
+    },
+    "r": {
+      "stamina": 85,
+      "composure": 79,
+      "pace": 78,
+      "dribbling": 82,
+      "tech": 82,
+      "def": 93,
+      "tackling": 93,
+      "positioning": 90
+    }
+  },
+  {
+    "id": "sergio-aguero",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Predator",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 68,
+      "stamina": 82,
+      "composure": 95,
+      "agility": 94,
+      "marking": 28
+    },
+    "r": {
+      "stamina": 84,
+      "composure": 97,
+      "pace": 90,
+      "dribbling": 94,
+      "tech": 94,
+      "def": 29,
+      "tackling": 29,
+      "positioning": 55
+    }
+  },
+  {
+    "id": "harry-kane",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Executioner",
+      "secondary": "Surgeon"
+    },
+    "attribute": {
+      "work_rate": 80,
+      "stamina": 86,
+      "composure": 96,
+      "agility": 74,
+      "marking": 41
+    },
+    "r": {
+      "stamina": 78,
+      "composure": 92,
+      "pace": 68,
+      "dribbling": 85,
+      "tech": 85,
+      "def": 39,
+      "tackling": 39,
+      "positioning": 67
+    }
+  },
+  {
+    "id": "robin-van-persie",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Executioner",
+      "secondary": "Magician"
+    },
+    "attribute": {
+      "work_rate": 68,
+      "stamina": 77,
+      "composure": 92,
+      "agility": 86,
+      "marking": 35
+    },
+    "r": {
+      "stamina": 76,
+      "composure": 96,
+      "pace": 79,
+      "dribbling": 94,
+      "tech": 94,
+      "def": 32,
+      "tackling": 32,
+      "positioning": 59
+    }
+  },
+  {
+    "id": "erling-haaland",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Predator",
+      "secondary": "Juggernaut"
+    },
+    "attribute": {
+      "work_rate": 72,
+      "stamina": 89,
+      "composure": 87,
+      "agility": 74,
+      "marking": 27
+    },
+    "r": {
+      "stamina": 95,
+      "composure": 89,
+      "pace": 93,
+      "dribbling": 78,
+      "tech": 78,
+      "def": 30,
+      "tackling": 30,
+      "positioning": 48
+    }
+  },
+  {
+    "id": "fernando-torres",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Predator",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 73,
+      "stamina": 85,
+      "composure": 86,
+      "agility": 92,
+      "marking": 30
+    },
+    "r": {
+      "stamina": 88,
+      "composure": 91,
+      "pace": 96,
+      "dribbling": 87,
+      "tech": 87,
+      "def": 30,
+      "tackling": 30,
+      "positioning": 53
+    }
+  },
+  {
+    "id": "gareth-bale",
+    "role": "F",
+    "position": "RW",
+    "traits": {
+      "primary": "Predator",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 76,
+      "stamina": 82,
+      "composure": 88,
+      "agility": 92,
+      "marking": 50
+    },
+    "r": {
+      "stamina": 95,
+      "composure": 93,
+      "pace": 99,
+      "dribbling": 92,
+      "tech": 92,
+      "def": 53,
+      "tackling": 53,
+      "positioning": 67
+    }
+  },
+  {
+    "id": "son-heung-min",
+    "role": "F",
+    "position": "LW",
+    "traits": {
+      "primary": "Phantom",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 85,
+      "stamina": 90,
+      "composure": 92,
+      "agility": 90,
+      "marking": 36
+    },
+    "r": {
+      "stamina": 83,
+      "composure": 92,
+      "pace": 93,
+      "dribbling": 88,
+      "tech": 88,
+      "def": 37,
+      "tackling": 37,
+      "positioning": 59
+    }
+  },
+  {
+    "id": "sadio-mane",
+    "role": "F",
+    "position": "LW",
+    "traits": {
+      "primary": "Predator",
+      "secondary": "Engine"
+    },
+    "attribute": {
+      "work_rate": 94,
+      "stamina": 94,
+      "composure": 86,
+      "agility": 93,
+      "marking": 43
+    },
+    "r": {
+      "stamina": 86,
+      "composure": 91,
+      "pace": 94,
+      "dribbling": 91,
+      "tech": 91,
+      "def": 48,
+      "tackling": 48,
+      "positioning": 65
+    }
+  },
+  {
+    "id": "ruud-van-nistelrooy",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Executioner",
+      "secondary": "Predator"
+    },
+    "attribute": {
+      "work_rate": 59,
+      "stamina": 77,
+      "composure": 97,
+      "agility": 72,
+      "marking": 30
+    },
+    "r": {
+      "stamina": 77,
+      "composure": 91,
+      "pace": 74,
+      "dribbling": 83,
+      "tech": 83,
+      "def": 29,
+      "tackling": 29,
+      "positioning": 49
+    }
+  },
+  {
+    "id": "riyad-mahrez",
+    "role": "F",
+    "position": "RW",
+    "traits": {
+      "primary": "Magician",
+      "secondary": "Phantom"
+    },
+    "attribute": {
+      "work_rate": 65,
+      "stamina": 79,
+      "composure": 91,
+      "agility": 92,
+      "marking": 37
+    },
+    "r": {
+      "stamina": 74,
+      "composure": 91,
+      "pace": 83,
+      "dribbling": 96,
+      "tech": 96,
+      "def": 39,
+      "tackling": 39,
+      "positioning": 63
+    }
+  },
+  {
+    "id": "jamie-vardy",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Predator",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 92,
+      "stamina": 92,
+      "composure": 84,
+      "agility": 88,
+      "marking": 39
+    },
+    "r": {
+      "stamina": 88,
+      "composure": 86,
+      "pace": 95,
+      "dribbling": 78,
+      "tech": 78,
+      "def": 45,
+      "tackling": 45,
+      "positioning": 56
+    }
+  },
+  {
+    "id": "andrea-barzagli",
+    "role": "D",
+    "position": "CB",
+    "traits": {
+      "primary": "Wall",
+      "secondary": "Anticipator"
+    },
+    "attribute": {
+      "work_rate": 80,
+      "stamina": 85,
+      "composure": 90,
+      "agility": 70,
+      "marking": 96
+    },
+    "r": {
+      "stamina": 85,
+      "composure": 88,
+      "pace": 70,
+      "dribbling": 70,
+      "tech": 73,
+      "def": 97,
+      "tackling": 97,
+      "positioning": 96
+    }
+  },
+  {
+    "id": "matt-le-tissier",
+    "role": "M",
+    "position": "CAM",
+    "traits": {
+      "primary": "Executioner",
+      "secondary": "Magician"
+    },
+    "attribute": {
+      "work_rate": 53,
+      "stamina": 73,
+      "composure": 94,
+      "agility": 74,
+      "marking": 35
+    },
+    "r": {
+      "stamina": 69,
+      "composure": 94,
+      "pace": 62,
+      "dribbling": 93,
+      "tech": 96,
+      "def": 28,
+      "tackling": 28,
+      "positioning": 67
+    }
+  },
+  {
+    "id": "hernan-crespo",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Predator",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 76,
+      "stamina": 85,
+      "composure": 90,
+      "agility": 82,
+      "marking": 33
+    },
+    "r": {
+      "stamina": 83,
+      "composure": 91,
+      "pace": 82,
+      "dribbling": 85,
+      "tech": 85,
+      "def": 34,
+      "tackling": 34,
+      "positioning": 55
+    }
+  },
+  {
+    "id": "marcelo-salas",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Executioner",
+      "secondary": "Magician"
+    },
+    "attribute": {
+      "work_rate": 77,
+      "stamina": 83,
+      "composure": 88,
+      "agility": 88,
+      "marking": 31
+    },
+    "r": {
+      "stamina": 82,
+      "composure": 93,
+      "pace": 84,
+      "dribbling": 90,
+      "tech": 90,
+      "def": 30,
+      "tackling": 30,
+      "positioning": 54
+    }
+  },
+  {
+    "id": "ivan-zamorano",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Juggernaut",
+      "secondary": "Predator"
+    },
+    "attribute": {
+      "work_rate": 88,
+      "stamina": 91,
+      "composure": 86,
+      "agility": 75,
+      "marking": 41
+    },
+    "r": {
+      "stamina": 88,
+      "composure": 85,
+      "pace": 80,
+      "dribbling": 75,
+      "tech": 75,
+      "def": 40,
+      "tackling": 40,
+      "positioning": 53
+    }
+  },
+  {
+    "id": "filippo-inzaghi",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Predator",
+      "secondary": "Phantom"
+    },
+    "attribute": {
+      "work_rate": 78,
+      "stamina": 82,
+      "composure": 96,
+      "agility": 79,
+      "marking": 25
+    },
+    "r": {
+      "stamina": 82,
+      "composure": 96,
+      "pace": 82,
+      "dribbling": 59,
+      "tech": 70,
+      "def": 25,
+      "tackling": 25,
+      "positioning": 100
+    }
+  },
+  {
+    "id": "hidetoshi-nakata",
+    "role": "M",
+    "position": "CAM",
+    "traits": {
+      "primary": "Surgeon",
+      "secondary": "Engine"
+    },
+    "attribute": {
+      "work_rate": 82,
+      "stamina": 85,
+      "composure": 88,
+      "agility": 86,
+      "marking": 53
+    },
+    "r": {
+      "stamina": 85,
+      "composure": 88,
+      "pace": 83,
+      "dribbling": 86,
+      "tech": 88,
+      "def": 53,
+      "tackling": 54,
+      "positioning": 76
+    }
+  },
+  {
+    "id": "park-ji-sung",
+    "role": "M",
+    "position": "LM",
+    "traits": {
+      "primary": "Engine",
+      "secondary": "Tracker"
+    },
+    "attribute": {
+      "work_rate": 100,
+      "stamina": 100,
+      "composure": 88,
+      "agility": 83,
+      "marking": 88
+    },
+    "r": {
+      "stamina": 100,
+      "composure": 88,
+      "pace": 84,
+      "dribbling": 79,
+      "tech": 81,
+      "def": 82,
+      "tackling": 84,
+      "positioning": 93
+    }
+  },
+  {
+    "id": "tijjani-babangida",
+    "role": "F",
+    "position": "RW",
+    "traits": {
+      "primary": "Magician",
+      "secondary": "Phantom"
+    },
+    "attribute": {
+      "work_rate": 75,
+      "stamina": 81,
+      "composure": 75,
+      "agility": 96,
+      "marking": 35
+    },
+    "r": {
+      "stamina": 81,
+      "composure": 75,
+      "pace": 99,
+      "dribbling": 89,
+      "tech": 84,
+      "def": 35,
+      "tackling": 35,
+      "positioning": 83
+    }
+  },
+  {
+    "id": "mark-viduka",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Juggernaut",
+      "secondary": "Magician"
+    },
+    "attribute": {
+      "work_rate": 77,
+      "stamina": 74,
+      "composure": 95,
+      "agility": 74,
+      "marking": 29
+    },
+    "r": {
+      "stamina": 74,
+      "composure": 95,
+      "pace": 69,
+      "dribbling": 85,
+      "tech": 88,
+      "def": 29,
+      "tackling": 29,
+      "positioning": 90
+    }
+  },
+  {
+    "id": "youri-djorkaeff",
+    "role": "M",
+    "position": "CAM",
+    "traits": {
+      "primary": "Surgeon",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 77,
+      "stamina": 78,
+      "composure": 93,
+      "agility": 88,
+      "marking": 39
+    },
+    "r": {
+      "stamina": 78,
+      "composure": 93,
+      "pace": 79,
+      "dribbling": 88,
+      "tech": 93,
+      "def": 39,
+      "tackling": 39,
+      "positioning": 89
+    }
+  },
+  {
+    "id": "dejan-stankovic",
+    "role": "M",
+    "position": "CM",
+    "traits": {
+      "primary": "Engine",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 90,
+      "stamina": 93,
+      "composure": 89,
+      "agility": 82,
+      "marking": 78
+    },
+    "r": {
+      "stamina": 93,
+      "composure": 89,
+      "pace": 78,
+      "dribbling": 83,
+      "tech": 87,
+      "def": 78,
+      "tackling": 79,
+      "positioning": 87
+    }
+  },
+  {
+    "id": "predrag-mijatovic",
+    "role": "F",
+    "position": "CF",
+    "traits": {
+      "primary": "Magician",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 82,
+      "stamina": 79,
+      "composure": 96,
+      "agility": 90,
+      "marking": 28
+    },
+    "r": {
+      "stamina": 79,
+      "composure": 96,
+      "pace": 88,
+      "dribbling": 94,
+      "tech": 95,
+      "def": 28,
+      "tackling": 28,
+      "positioning": 93
+    }
+  },
+  {
+    "id": "dragan-stojkovic",
+    "role": "M",
+    "position": "CAM",
+    "traits": {
+      "primary": "Magician",
+      "secondary": "Maestro"
+    },
+    "attribute": {
+      "work_rate": 77,
+      "stamina": 79,
+      "composure": 95,
+      "agility": 97,
+      "marking": 39
+    },
+    "r": {
+      "stamina": 79,
+      "composure": 95,
+      "pace": 84,
+      "dribbling": 97,
+      "tech": 98,
+      "def": 39,
+      "tackling": 39,
+      "positioning": 86
+    }
+  },
+  {
+    "id": "dejan-savicevic",
+    "role": "M",
+    "position": "CAM",
+    "traits": {
+      "primary": "Magician",
+      "secondary": "Surgeon"
+    },
+    "attribute": {
+      "work_rate": 72,
+      "stamina": 73,
+      "composure": 94,
+      "agility": 98,
+      "marking": 31
+    },
+    "r": {
+      "stamina": 73,
+      "composure": 94,
+      "pace": 87,
+      "dribbling": 99,
+      "tech": 99,
+      "def": 31,
+      "tackling": 31,
+      "positioning": 84
+    }
+  },
+  {
+    "id": "robert-prosinecki",
+    "role": "M",
+    "position": "CAM",
+    "traits": {
+      "primary": "Magician",
+      "secondary": "Maestro"
+    },
+    "attribute": {
+      "work_rate": 75,
+      "stamina": 76,
+      "composure": 91,
+      "agility": 88,
+      "marking": 42
+    },
+    "r": {
+      "stamina": 76,
+      "composure": 91,
+      "pace": 75,
+      "dribbling": 96,
+      "tech": 97,
+      "def": 42,
+      "tackling": 42,
+      "positioning": 79
+    }
+  },
+  {
+    "id": "darko-pancev",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Predator",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 77,
+      "stamina": 79,
+      "composure": 96,
+      "agility": 79,
+      "marking": 25
+    },
+    "r": {
+      "stamina": 79,
+      "composure": 96,
+      "pace": 76,
+      "dribbling": 75,
+      "tech": 79,
+      "def": 25,
+      "tackling": 25,
+      "positioning": 99
+    }
+  },
+  {
+    "id": "miodrag-belodedici",
+    "role": "D",
+    "position": "CB",
+    "traits": {
+      "primary": "Libero",
+      "secondary": "Anticipator"
+    },
+    "attribute": {
+      "work_rate": 84,
+      "stamina": 81,
+      "composure": 92,
+      "agility": 80,
+      "marking": 97
+    },
+    "r": {
+      "stamina": 81,
+      "composure": 92,
+      "pace": 77,
+      "dribbling": 79,
+      "tech": 86,
+      "def": 97,
+      "tackling": 96,
+      "positioning": 98
+    }
+  },
+  {
+    "id": "safet-susic",
+    "role": "M",
+    "position": "CAM",
+    "traits": {
+      "primary": "Magician",
+      "secondary": "Surgeon"
+    },
+    "attribute": {
+      "work_rate": 78,
+      "stamina": 82,
+      "composure": 93,
+      "agility": 91,
+      "marking": 30
+    },
+    "r": {
+      "stamina": 82,
+      "composure": 93,
+      "pace": 80,
+      "dribbling": 97,
+      "tech": 98,
+      "def": 30,
+      "tackling": 30,
+      "positioning": 82
+    }
+  },
+  {
+    "id": "davor-suker",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Executioner",
+      "secondary": "Predator"
+    },
+    "attribute": {
+      "work_rate": 78,
+      "stamina": 82,
+      "composure": 97,
+      "agility": 81,
+      "marking": 29
+    },
+    "r": {
+      "stamina": 82,
+      "composure": 97,
+      "pace": 81,
+      "dribbling": 88,
+      "tech": 90,
+      "def": 29,
+      "tackling": 29,
+      "positioning": 97
+    }
+  },
+  {
+    "id": "alen-boksic",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Juggernaut",
+      "secondary": "Phantom"
+    },
+    "attribute": {
+      "work_rate": 81,
+      "stamina": 84,
+      "composure": 86,
+      "agility": 89,
+      "marking": 29
+    },
+    "r": {
+      "stamina": 84,
+      "composure": 86,
+      "pace": 92,
+      "dribbling": 89,
+      "tech": 87,
+      "def": 29,
+      "tackling": 29,
+      "positioning": 91
+    }
+  },
+  {
+    "id": "savo-milosevic",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Predator",
+      "secondary": "Juggernaut"
+    },
+    "attribute": {
+      "work_rate": 82,
+      "stamina": 83,
+      "composure": 88,
+      "agility": 72,
+      "marking": 33
+    },
+    "r": {
+      "stamina": 83,
+      "composure": 88,
+      "pace": 75,
+      "dribbling": 75,
+      "tech": 78,
+      "def": 33,
+      "tackling": 33,
+      "positioning": 94
+    }
+  },
+  {
+    "id": "josip-ilicic",
+    "role": "M",
+    "position": "CAM",
+    "traits": {
+      "primary": "Magician",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 76,
+      "stamina": 77,
+      "composure": 91,
+      "agility": 88,
+      "marking": 32
+    },
+    "r": {
+      "stamina": 77,
+      "composure": 91,
+      "pace": 75,
+      "dribbling": 94,
+      "tech": 96,
+      "def": 32,
+      "tackling": 32,
+      "positioning": 85
+    }
+  },
+  {
+    "id": "vladimir-jugovic",
+    "role": "M",
+    "position": "CM",
+    "traits": {
+      "primary": "Engine",
+      "secondary": "Architect"
+    },
+    "attribute": {
+      "work_rate": 91,
+      "stamina": 91,
+      "composure": 90,
+      "agility": 82,
+      "marking": 85
+    },
+    "r": {
+      "stamina": 91,
+      "composure": 90,
+      "pace": 78,
+      "dribbling": 82,
+      "tech": 84,
+      "def": 86,
+      "tackling": 86,
+      "positioning": 86
+    }
+  },
+  {
+    "id": "nwankwo-kanu",
+    "role": "F",
+    "position": "CF",
+    "traits": {
+      "primary": "Magician",
+      "secondary": "Predator"
+    },
+    "attribute": {
+      "work_rate": 77,
+      "stamina": 79,
+      "composure": 90,
+      "agility": 84,
+      "marking": 34
+    },
+    "r": {
+      "stamina": 79,
+      "composure": 90,
+      "pace": 75,
+      "dribbling": 92,
+      "tech": 94,
+      "def": 34,
+      "tackling": 34,
+      "positioning": 89
+    }
+  },
+  {
+    "id": "alex-de-souza",
+    "role": "M",
+    "position": "CAM",
+    "traits": {
+      "primary": "Maestro",
+      "secondary": "Surgeon"
+    },
+    "attribute": {
+      "work_rate": 76,
+      "stamina": 76,
+      "composure": 96,
+      "agility": 79,
+      "marking": 32
+    },
+    "r": {
+      "stamina": 76,
+      "composure": 96,
+      "pace": 67,
+      "dribbling": 91,
+      "tech": 96,
+      "def": 32,
+      "tackling": 32,
+      "positioning": 85
+    }
+  },
+  {
+    "id": "andrey-arshavin",
+    "role": "F",
+    "position": "LW",
+    "traits": {
+      "primary": "Magician",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 74,
+      "stamina": 75,
+      "composure": 87,
+      "agility": 93,
+      "marking": 30
+    },
+    "r": {
+      "stamina": 75,
+      "composure": 87,
+      "pace": 88,
+      "dribbling": 94,
+      "tech": 93,
+      "def": 30,
+      "tackling": 30,
+      "positioning": 86
+    }
+  },
+  {
+    "id": "hulk",
+    "role": "F",
+    "position": "RW",
+    "traits": {
+      "primary": "Juggernaut",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 84,
+      "stamina": 82,
+      "composure": 85,
+      "agility": 86,
+      "marking": 39
+    },
+    "r": {
+      "stamina": 82,
+      "composure": 85,
+      "pace": 90,
+      "dribbling": 88,
+      "tech": 87,
+      "def": 39,
+      "tackling": 39,
+      "positioning": 84
+    }
+  },
+  {
+    "id": "aiden-mcgeady",
+    "role": "F",
+    "position": "RW",
+    "traits": {
+      "primary": "Magician",
+      "secondary": "Phantom"
+    },
+    "attribute": {
+      "work_rate": 82,
+      "stamina": 84,
+      "composure": 71,
+      "agility": 91,
+      "marking": 35
+    },
+    "r": {
+      "stamina": 84,
+      "composure": 71,
+      "pace": 87,
+      "dribbling": 94,
+      "tech": 89,
+      "def": 35,
+      "tackling": 35,
+      "positioning": 74
+    }
+  },
+  {
+    "id": "papiss-cisse",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Predator",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 75,
+      "stamina": 76,
+      "composure": 85,
+      "agility": 76,
+      "marking": 31
+    },
+    "r": {
+      "stamina": 76,
+      "composure": 85,
+      "pace": 82,
+      "dribbling": 73,
+      "tech": 73,
+      "def": 31,
+      "tackling": 31,
+      "positioning": 94
+    }
+  },
+  {
+    "id": "peter-crouch",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Juggernaut",
+      "secondary": "Predator"
+    },
+    "attribute": {
+      "work_rate": 80,
+      "stamina": 78,
+      "composure": 87,
+      "agility": 62,
+      "marking": 42
+    },
+    "r": {
+      "stamina": 78,
+      "composure": 87,
+      "pace": 62,
+      "dribbling": 75,
+      "tech": 78,
+      "def": 42,
+      "tackling": 42,
+      "positioning": 92
+    }
+  },
+  {
+    "id": "djibril-cisse",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Phantom",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 80,
+      "stamina": 82,
+      "composure": 86,
+      "agility": 94,
+      "marking": 29
+    },
+    "r": {
+      "stamina": 82,
+      "composure": 86,
+      "pace": 97,
+      "dribbling": 84,
+      "tech": 80,
+      "def": 29,
+      "tackling": 29,
+      "positioning": 91
+    }
+  },
+  {
+    "id": "dennis-bergkamp",
+    "role": "F",
+    "position": "CF",
+    "traits": {
+      "primary": "Magician",
+      "secondary": "Surgeon"
+    },
+    "attribute": {
+      "work_rate": 73,
+      "stamina": 78,
+      "composure": 98,
+      "agility": 93,
+      "marking": 33
+    },
+    "r": {
+      "stamina": 78,
+      "composure": 98,
+      "pace": 76,
+      "dribbling": 96,
+      "tech": 99,
+      "def": 33,
+      "tackling": 33,
+      "positioning": 93
+    }
+  },
+  {
+    "id": "pierre-van-hooijdonk",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Executioner",
+      "secondary": "Juggernaut"
+    },
+    "attribute": {
+      "work_rate": 80,
+      "stamina": 81,
+      "composure": 91,
+      "agility": 70,
+      "marking": 32
+    },
+    "r": {
+      "stamina": 81,
+      "composure": 91,
+      "pace": 71,
+      "dribbling": 79,
+      "tech": 84,
+      "def": 32,
+      "tackling": 32,
+      "positioning": 92
+    }
+  },
+  {
+    "id": "shunsuke-nakamura",
+    "role": "M",
+    "position": "CAM",
+    "traits": {
+      "primary": "Architect",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 78,
+      "stamina": 82,
+      "composure": 94,
+      "agility": 86,
+      "marking": 40
+    },
+    "r": {
+      "stamina": 82,
+      "composure": 94,
+      "pace": 73,
+      "dribbling": 89,
+      "tech": 96,
+      "def": 40,
+      "tackling": 40,
+      "positioning": 82
+    }
+  },
+  {
+    "id": "alan-shearer",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Executioner",
+      "secondary": "Juggernaut"
+    },
+    "attribute": {
+      "work_rate": 89,
+      "stamina": 91,
+      "composure": 97,
+      "agility": 78,
+      "marking": 42
+    },
+    "r": {
+      "stamina": 91,
+      "composure": 97,
+      "pace": 80,
+      "dribbling": 80,
+      "tech": 86,
+      "def": 42,
+      "tackling": 42,
+      "positioning": 98
+    }
+  },
+  {
+    "id": "alberto-luque",
+    "role": "F",
+    "position": "LW",
+    "traits": {
+      "primary": "Phantom",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 80,
+      "stamina": 83,
+      "composure": 82,
+      "agility": 87,
+      "marking": 34
+    },
+    "r": {
+      "stamina": 83,
+      "composure": 82,
+      "pace": 89,
+      "dribbling": 88,
+      "tech": 85,
+      "def": 34,
+      "tackling": 34,
+      "positioning": 88
+    }
+  },
+  {
+    "id": "diego-tristan",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Executioner",
+      "secondary": "Magician"
+    },
+    "attribute": {
+      "work_rate": 75,
+      "stamina": 80,
+      "composure": 93,
+      "agility": 80,
+      "marking": 29
+    },
+    "r": {
+      "stamina": 80,
+      "composure": 93,
+      "pace": 78,
+      "dribbling": 87,
+      "tech": 89,
+      "def": 29,
+      "tackling": 29,
+      "positioning": 93
+    }
+  },
+  {
+    "id": "ariel-ortega",
+    "role": "M",
+    "position": "CAM",
+    "traits": {
+      "primary": "Magician",
+      "secondary": "Surgeon"
+    },
+    "attribute": {
+      "work_rate": 70,
+      "stamina": 78,
+      "composure": 86,
+      "agility": 98,
+      "marking": 30
+    },
+    "r": {
+      "stamina": 78,
+      "composure": 86,
+      "pace": 87,
+      "dribbling": 99,
+      "tech": 98,
+      "def": 30,
+      "tackling": 30,
+      "positioning": 85
+    }
+  },
+  {
+    "id": "patrick-mboma",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Juggernaut",
+      "secondary": "Executioner"
+    },
+    "attribute": {
+      "work_rate": 82,
+      "stamina": 84,
+      "composure": 90,
+      "agility": 85,
+      "marking": 31
+    },
+    "r": {
+      "stamina": 84,
+      "composure": 90,
+      "pace": 87,
+      "dribbling": 84,
+      "tech": 85,
+      "def": 31,
+      "tackling": 31,
+      "positioning": 94
+    }
+  },
+  {
+    "id": "sami-hyypia",
+    "role": "D",
+    "position": "CB",
+    "traits": {
+      "primary": "Wall",
+      "secondary": "Anticipator"
+    },
+    "attribute": {
+      "work_rate": 83,
+      "stamina": 81,
+      "composure": 94,
+      "agility": 65,
+      "marking": 96
+    },
+    "r": {
+      "stamina": 81,
+      "composure": 94,
+      "pace": 64,
+      "dribbling": 61,
+      "tech": 73,
+      "def": 95,
+      "tackling": 96,
+      "positioning": 97
+    }
+  },
+  {
+    "id": "milan-baros",
+    "role": "F",
+    "position": "ST",
+    "traits": {
+      "primary": "Phantom",
+      "secondary": "Predator"
+    },
+    "attribute": {
+      "work_rate": 83,
+      "stamina": 86,
+      "composure": 82,
+      "agility": 89,
+      "marking": 30
+    },
+    "r": {
+      "stamina": 86,
+      "composure": 82,
+      "pace": 91,
+      "dribbling": 87,
+      "tech": 84,
+      "def": 30,
+      "tackling": 30,
+      "positioning": 90
+    }
+  },
+  {
+    "id": "ruud-gullit",
+    "role": "M",
+    "position": "CAM",
+    "traits": {
+      "primary": "Juggernaut",
+      "secondary": "Maestro"
+    },
+    "attribute": {
+      "work_rate": 92,
+      "stamina": 92,
+      "composure": 94,
+      "agility": 90,
+      "marking": 76
+    },
+    "r": {
+      "stamina": 92,
+      "composure": 94,
+      "pace": 90,
+      "dribbling": 94,
+      "tech": 95,
+      "def": 76,
+      "tackling": 77,
+      "positioning": 92
+    }
+  },
+  {
+    "id": "gianfranco-zola",
+    "role": "F",
+    "position": "CF",
+    "traits": {
+      "primary": "Magician",
+      "secondary": "Surgeon"
+    },
+    "attribute": {
+      "work_rate": 81,
+      "stamina": 82,
+      "composure": 96,
+      "agility": 95,
+      "marking": 28
+    },
+    "r": {
+      "stamina": 82,
+      "composure": 96,
+      "pace": 78,
+      "dribbling": 97,
+      "tech": 98,
+      "def": 28,
+      "tackling": 28,
+      "positioning": 88
+    }
+  }
+]

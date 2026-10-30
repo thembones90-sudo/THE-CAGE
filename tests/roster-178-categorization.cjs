@@ -35,7 +35,7 @@ for(const prior of pre.players){
  }else{
    restored++;
    assert(definitions.classifications[p.id],'not included in classification proposal '+p.id);
-   assert.equal(p.classificationStatus,'editorial-reviewed-v1.3','editorial status missing '+p.id);
+   assert(['editorial-reviewed-v1.3','editorial-refined-v1.4'].includes(p.classificationStatus),'editorial status missing '+p.id);
    if(prior.traits)assert.deepEqual(JSON.parse(JSON.stringify(p.traits)),prior.traits,'existing trait pair overwritten '+p.id);
    else{
      newTraits++;
