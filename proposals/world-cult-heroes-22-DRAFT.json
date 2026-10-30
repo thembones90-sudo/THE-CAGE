@@ -1,0 +1,274 @@
+{
+  "status": "DRAFT_GLOBAL_SCOUTS_NOT_IN_PLAYABLE_ROSTER",
+  "rosterBase": 182,
+  "previousBundesligaDraftPending": 10,
+  "description": "Tier and folklore suggestions, not approval or implementation.",
+  "candidates": [
+    {
+      "id": "tony-yeboah",
+      "name": "Tony Yeboah",
+      "scene": "Ghana · Leeds / Frankfurt",
+      "position": "ST",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "rationale": "Thunderbolt volleys against Liverpool and Wimbledon, unforgettable Leeds icon.",
+      "source": "https://www.premierleague.com/ar/news/2275462"
+    },
+    {
+      "id": "juan-carlos-valeron",
+      "name": "Juan Carlos Valerón",
+      "scene": "Spain · Deportivo La Coruña",
+      "position": "CAM",
+      "tier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN",
+        "UNDERDOG"
+      ],
+      "rationale": "An exquisite playmaker and decisive contributor to Deportivo’s 4–0 comeback against Milan.",
+      "source": "https://www.uefa.com/uefachampionsleague/news/01ff-0e9c612e096f-674153cfb38d-1000--2003-04-rc-deportivo-la-coruna-4-0-ac-milan-juan-carlos-va/"
+    },
+    {
+      "id": "joaquin-sanchez",
+      "name": "Joaquín Sánchez",
+      "scene": "Spain · Real Betis",
+      "position": "RW",
+      "tier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "rationale": "The embodiment of Betis, flamboyant winger with a historic 622 La Liga appearances.",
+      "source": "https://www.laliga.com/en-US/news/five-things-you-may-not-know-about-real-betis"
+    },
+    {
+      "id": "antonio-di-natale",
+      "name": "Antonio Di Natale",
+      "scene": "Italy · Udinese",
+      "position": "ST",
+      "tier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "rationale": "Remarkable longevity, inventive finishing, and deep one-club identification at Udinese.",
+      "source": null
+    },
+    {
+      "id": "guti",
+      "name": "Guti",
+      "scene": "Spain · Real Madrid",
+      "position": "CAM",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "rationale": "Ridiculous disguised passes and backheels, more creative brilliance than conventional consistency.",
+      "source": "https://www.realmadrid.com/en-US/the-club/history/football-legends/jose-maria-gutierrez?lang=en"
+    },
+    {
+      "id": "michu",
+      "name": "Michu",
+      "scene": "Spain · Swansea City",
+      "position": "ST",
+      "tier": "STALWART",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "rationale": "The iconic 18-goal Premier League 2012/13 breakthrough, cut short by injuries.",
+      "source": "https://www.premierleague.com/en/players/54322/michu/career"
+    },
+    {
+      "id": "dimitri-payet",
+      "name": "Dimitri Payet",
+      "scene": "France · Marseille / West Ham",
+      "position": "CAM",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "rationale": "Tight curls, audacious free kicks and extraordinary attacking vision.",
+      "source": null
+    },
+    {
+      "id": "lee-trundle",
+      "name": "Lee Trundle",
+      "scene": "England · Swansea City",
+      "position": "ST",
+      "tier": "STALWART",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "rationale": "A genuine lower-league showboat king, dazzling tricks and inventive finishes.",
+      "source": "https://www.bbc.co.uk/sport/football/articles/ckg2g6d47y8o"
+    },
+    {
+      "id": "elano",
+      "name": "Elano",
+      "scene": "Brazil · Manchester City / Santos",
+      "position": "CAM",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "rationale": "One of Manchester City's early cult technicians with spectacular dead-ball ability.",
+      "source": "https://www.si.com/soccer/premier-league-40-best-streets-wont-forget-players"
+    },
+    {
+      "id": "geovanni",
+      "name": "Geovanni",
+      "scene": "Brazil · Manchester City / Hull City",
+      "position": "CAM",
+      "tier": "STALWART",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "rationale": "Spectacular long shots including the shock Hull City win away at Arsenal.",
+      "source": "https://www.premierleague.com/en/news/692630"
+    },
+    {
+      "id": "jeremy-menez",
+      "name": "Jérémy Ménez",
+      "scene": "France · Roma / PSG / AC Milan",
+      "position": "LW",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "rationale": "Mercurial winger with outrageous dribbles and an iconic Milan backheel finish.",
+      "source": null
+    },
+    {
+      "id": "sofiane-boufal",
+      "name": "Sofiane Boufal",
+      "scene": "Morocco · Lille / Southampton",
+      "position": "LW",
+      "tier": "STALWART",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "rationale": "2017/18 Premier League Goal of the Season winner for solo dribbling against West Brom.",
+      "source": "https://www.premierleague.com/en/news/691852/boufal-wins-201718-carling-goal-of-the-season"
+    },
+    {
+      "id": "gervinho",
+      "name": "Gervinho",
+      "scene": "Ivory Coast · Roma / Arsenal",
+      "position": "LW",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "rationale": "Chaotic, explosive ball-carrying and breakaway runs at Roma.",
+      "source": null
+    },
+    {
+      "id": "javier-saviola",
+      "name": "Javier Saviola",
+      "scene": "Argentina · Barcelona / Benfica / Monaco",
+      "position": "ST",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "rationale": "The Rabbit, teenage sensation who scored eleven goals at the 2001 U20 World Cup.",
+      "source": "https://www.uefa.com/uefachampionsleague/news/017b-0e6a3114ac61-5040f89a4084-1000/"
+    },
+    {
+      "id": "yacine-brahimi",
+      "name": "Yacine Brahimi",
+      "scene": "Algeria · Granada / Porto",
+      "position": "LW",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "rationale": "Exceptional one-on-one dribbler and creator, especially at Porto.",
+      "source": null
+    },
+    {
+      "id": "ali-karimi",
+      "name": "Ali Karimi",
+      "scene": "Iran · Persepolis / Bayern Munich",
+      "position": "CAM",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "rationale": "Asia's technical magician and 2004 AFC Player of the Year.",
+      "source": "https://www.the-afc.com/en/more/news/asian_icons_ali_karimi.html"
+    },
+    {
+      "id": "faustino-asprilla",
+      "name": "Faustino Asprilla",
+      "scene": "Colombia · Parma / Newcastle",
+      "position": "ST",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "rationale": "Charismatic and unpredictable attacker, famous for European nights at Newcastle.",
+      "source": null
+    },
+    {
+      "id": "alexandre-pato",
+      "name": "Alexandre Pato",
+      "scene": "Brazil · AC Milan / Corinthians",
+      "position": "ST",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "rationale": "Electric early AC Milan rise, remarkable straight-line ball carrying and finishing.",
+      "source": null
+    },
+    {
+      "id": "mauro-zarate",
+      "name": "Mauro Zárate",
+      "scene": "Argentina · Lazio / Vélez",
+      "position": "CF",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "rationale": "Powerful cut-ins, dribbles and long-distance shooting during his Lazio peak.",
+      "source": null
+    },
+    {
+      "id": "royston-drenthe",
+      "name": "Royston Drenthe",
+      "scene": "Netherlands · Real Madrid / Everton",
+      "position": "LW",
+      "tier": "ACE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "rationale": "Unruly flair, physical acceleration and cult status exceeding career consistency.",
+      "source": null
+    },
+    {
+      "id": "keisuke-honda",
+      "name": "Keisuke Honda",
+      "scene": "Japan · CSKA Moscow / AC Milan",
+      "position": "CAM",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "rationale": "Unmistakable left foot, dead-ball authority and 2010 World Cup heroics.",
+      "source": null
+    },
+    {
+      "id": "mario-jardel",
+      "name": "Mário Jardel",
+      "scene": "Brazil · Porto / Galatasaray / Sporting",
+      "position": "ST",
+      "tier": "LEGEND",
+      "folklore": [],
+      "rationale": "Two European Golden Shoes and an astonishing scoring record; legend of finishing, not automatically STREET HERO.",
+      "source": null
+    }
+  ]
+}

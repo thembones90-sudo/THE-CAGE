@@ -5,12 +5,12 @@ const context={window:{location:{search:'?engine=t3'}}};vm.createContext(context
 const scripts=[...html.matchAll(new RegExp('<script src="(src/[^"]+)"></script>','g'))].map(m=>m[1]);
 for(const file of scripts){if(file==='src/cage-commentary.js')break;vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),context,{filename:file});}
 const w=context.window,players=w.THE_CAGE_PLAYERS,lookup=id=>players.find(p=>p.id===id);
-assert.equal(players.length,178);
-assert.equal(new Set(players.map(p=>p.id)).size,178);
-assert.equal(Object.keys(w.CAGE_ROSTER_EXTRA_RATINGS).length,39,'16 roster-165 plus prior 10 plus new 13');
-assert(w.CAGE_ROSTER_VERSION.includes('178'));
+assert.equal(players.length,182);
+assert.equal(new Set(players.map(p=>p.id)).size,182);
+assert.equal(Object.keys(w.CAGE_ROSTER_EXTRA_RATINGS).length,43,'16 roster-165 plus prior 10 plus new 13');
+assert(w.CAGE_ROSTER_VERSION.includes('182'));
 assert(html.includes('src/roster-165.js'));
-assert(html.includes('0 used / 178 available'));
+assert(html.includes('0 used / 182 available'));
 const expected=[["robert-prosinecki","LEGEND",["STREET HERO"],"CAM",["CM"],"Magician","Maestro","first_touch",98,"Prosinecki"],["darko-pancev","LEGEND",["STREET HERO"],"ST",[],"Predator","Executioner","finish",99,"Pancev"],["miodrag-belodedici","LEGEND",[],"CB",[],"Libero","Anticipator","positioning",98,"Belodedici"],["safet-susic","LEGEND",["STREET HERO","TALISMAN"],"CAM",[],"Magician","Surgeon","vision",99,"Safet Susic"],["davor-suker","LEGEND",["STREET HERO"],"ST",["CF"],"Executioner","Predator","finishing",98,"Davor Suker"],["alen-boksic","LEGEND",["STREET HERO"],"ST",["CF"],"Juggernaut","Phantom","pace",92,"Alen Boksic"],["savo-milosevic","ELITE",[],"ST",[],"Predator","Juggernaut","positioning",94,"Savo Milosevic"],["josip-ilicic","ELITE",["STREET HERO"],"CAM",["RW"],"Magician","Executioner","shooting",96,"Josip Ilicic"],["vladimir-jugovic","ELITE",[],"CM",["CDM"],"Engine","Architect","stamina",91,"Jugovic"],["nwankwo-kanu","LEGEND",["STREET HERO","UNDERDOG"],"CF",["ST"],"Magician","Predator","first_touch",96,"Kanu"],["alex-de-souza","ELITE",["STREET HERO","TALISMAN"],"CAM",[],"Maestro","Surgeon","vision",98,"Alex de Souza"],["andrey-arshavin","ELITE",["STREET HERO"],"LW",["CAM"],"Magician","Executioner","dribbling",94,"Arshavin"],["hulk","ELITE",["STREET HERO"],"RW",["ST"],"Juggernaut","Executioner","shooting",99,"Hulk"],["aiden-mcgeady","STALWART",["STREET HERO"],"RW",["LW"],"Magician","Phantom","dribbling",94,"McGeady"],["papiss-cisse","STALWART",["STREET HERO"],"ST",[],"Predator","Executioner","finishing",94,"Papiss Cisse"],["peter-crouch","STALWART",["STREET HERO"],"ST",[],"Juggernaut","Predator","positioning",92,"Crouch"]];
 for(const [id,tier,folklore,pos,alternate,primary,secondary,stat,value,query] of expected){
  const p=lookup(id);assert(p,'missing '+id);
@@ -45,4 +45,4 @@ for(const [sideA,sideB] of [
   assert([0,1].includes(a.winner),'missing winner');
  }
 }
-console.log('PASS: all 16 approved additions, 178 unique IDs, positions, folklore, dual talismans, 22 attributes each, search, traits and 6 deterministic T3 matches.');
+console.log('PASS: all 16 approved additions, 182 unique IDs, positions, folklore, dual talismans, 22 attributes each, search, traits and 6 deterministic T3 matches.');

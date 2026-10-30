@@ -1,0 +1,214 @@
+{
+  "version": "world-street-heroes-182-v1",
+  "status": "owner-approved-for-recruitment-four-players;editorial-ratings-subject-to-future-adjustment",
+  "baseRoster": 178,
+  "updatedRoster": 182,
+  "players": [
+    {
+      "id": "ailton",
+      "name": "Aílton",
+      "country": "Brazil",
+      "role": "F",
+      "aliases": [
+        "ailton",
+        "aílton",
+        "ailton goncalves da silva",
+        "kugelblitz"
+      ],
+      "peak": "2002–2004",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO",
+        "UNDERDOG"
+      ],
+      "traits": [
+        "Predator",
+        "Phantom"
+      ],
+      "core": [
+        90,
+        81,
+        65,
+        95,
+        30,
+        86
+      ],
+      "detail": [
+        84,
+        84,
+        65,
+        68,
+        95,
+        93,
+        84,
+        86,
+        30,
+        94,
+        86
+      ],
+      "extra": [
+        77,
+        84,
+        86,
+        86,
+        33
+      ],
+      "note": "Werder Bremen's Kugelblitz, 28 Bundesliga goals and 2003/04 league-and-cup double. Original editorial ratings; historically distinctive cult striker.",
+      "source": "https://www.bundesliga.com/en/bundesliga/news/iconic-bundesliga-teams-werder-bremen-s-double-2003-04-double-winners-24945"
+    },
+    {
+      "id": "marcelinho-hertha",
+      "name": "Marcelinho",
+      "country": "Brazil",
+      "role": "M",
+      "aliases": [
+        "marcelinho",
+        "marcelinho hertha",
+        "marcelinho paraiba",
+        "marcelinho da silva",
+        "marcelo dos santos"
+      ],
+      "peak": "2002–2006",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": [
+        "Magician",
+        "Surgeon"
+      ],
+      "core": [
+        82,
+        96,
+        93,
+        84,
+        34,
+        65
+      ],
+      "detail": [
+        95,
+        96,
+        93,
+        94,
+        84,
+        91,
+        82,
+        65,
+        34,
+        82,
+        88
+      ],
+      "extra": [
+        70,
+        82,
+        88,
+        94,
+        39
+      ],
+      "note": "Hertha Berlin's Brazilian No. 10, outrageous flair, playmaking, goals and set-piece prowess. Distinguished from unrelated footballers also known as Marcelinho.",
+      "source": "https://www.bundesliga.com/en/bundesliga/news/best-number-10s-robben-netzer-matthaus-24578"
+    },
+    {
+      "id": "juan-arango",
+      "name": "Juan Arango",
+      "country": "Venezuela",
+      "role": "M",
+      "aliases": [
+        "arango",
+        "juan arango",
+        "juan fernando arango"
+      ],
+      "peak": "2009–2014",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": [
+        "Architect",
+        "Executioner"
+      ],
+      "core": [
+        70,
+        92,
+        95,
+        82,
+        45,
+        69
+      ],
+      "detail": [
+        93,
+        87,
+        95,
+        95,
+        82,
+        96,
+        82,
+        69,
+        45,
+        82,
+        91
+      ],
+      "extra": [
+        75,
+        82,
+        91,
+        79,
+        52
+      ],
+      "note": "Borussia Mönchengladbach's celebrated Venezuelan playmaker with an extraordinary left foot and dangerous direct free-kicks.",
+      "source": "https://www.bundesliga.com/en/bundesliga/news/best-number-10s-robben-netzer-matthaus-24578"
+    },
+    {
+      "id": "jefferson-farfan",
+      "name": "Jefferson Farfán",
+      "country": "Peru",
+      "role": "F",
+      "aliases": [
+        "farfan",
+        "farfán",
+        "jefferson farfan",
+        "jefferson farfán",
+        "foquita"
+      ],
+      "peak": "2008–2013",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": [
+        "Phantom",
+        "Magician"
+      ],
+      "core": [
+        94,
+        87,
+        82,
+        85,
+        40,
+        76
+      ],
+      "detail": [
+        86,
+        91,
+        82,
+        85,
+        85,
+        87,
+        89,
+        76,
+        40,
+        89,
+        84
+      ],
+      "extra": [
+        84,
+        89,
+        84,
+        92,
+        45
+      ],
+      "note": "Schalke 04's rapid Peruvian right winger, explosive carrying and goal threat; DFB-Pokal winner. Original editorial peak ratings.",
+      "source": "https://datencenter.dfb.de/en/data-center/people/jefferson-farfan/player"
+    }
+  ]
+}

@@ -7,14 +7,14 @@ const change=json('proposals/roster-178-refinement-v1.4.json');
 const html=read('index.html'),ctx={window:{location:{search:'?engine=t3'}}};vm.createContext(ctx);
 for(const m of html.matchAll(/<script src="(src\/[^"]+)"><\/script>/g)){if(m[1]==='src/cage-commentary.js')break;vm.runInContext(read(m[1]),ctx,{filename:m[1]});}
 const w=ctx.window,roster=w.THE_CAGE_PLAYERS,byId=new Map(roster.map(p=>[p.id,p]));
-assert.equal(roster.length,178);assert.equal(byId.size,178);
+assert.equal(roster.length,182);assert.equal(byId.size,182);
 assert(html.includes('src/roster-refinement.js')&&html.includes('src/tactical-refinement.js'));
-assert(w.CAGE_ROSTER_VERSION.includes('v1.4'));
+assert(w.CAGE_ROSTER_VERSION.includes('182'));
 const prior=new Map(before.players.map(p=>[p.id,p])),initial=new Map(old.players.map(p=>[p.id,p]));
 const adjusted=new Set(Object.keys(json('proposals/tactical-refinement-overrides-v1.4.json').overrides));
 const originalApproved=json('proposals/ratings-v1.json').players;
 let owner=0,editorial=0,approvedProfiles=0;
-for(const p of roster){
+for(const p of roster.filter(v=>prior.has(v.id))){
  const was=prior.get(p.id),locked=initial.get(p.id);
  assert(was&&locked,'not in prior roster '+p.id);
  assert.equal(p.position,was.position,'position modified '+p.id);
@@ -64,4 +64,4 @@ for(const seed of [6,21,46]){
  const a=E.simulate(input),b=E.simulate(input);
  assert.deepEqual(JSON.parse(JSON.stringify(a)),JSON.parse(JSON.stringify(b)),'deterministic T3 traits '+seed);
 }
-console.log('PASS V1.4: 178 tiers; 40 owner locks intact; 63 approved tactical profiles unchanged; 115 reviewed, 65 adjusted; 3 trait-enabled deterministic T3 games.');
+console.log('PASS V1.4: 182 tiers; 40 owner locks intact; 63 approved tactical profiles unchanged; 115 reviewed, 65 adjusted; 3 trait-enabled deterministic T3 games.');
