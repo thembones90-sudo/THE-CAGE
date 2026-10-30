@@ -1,0 +1,250 @@
+{
+  "status": "PROPOSED_NOT_ACTIVE",
+  "instruction": "Review individually; do not override existing trait pairs. These 61 records currently have no trait metadata.",
+  "traits": {
+    "roy-keane": {
+      "primary": "Enforcer",
+      "secondary": "Destroyer"
+    },
+    "ryan-giggs": {
+      "primary": "Magician",
+      "secondary": "Engine"
+    },
+    "michael-essien": {
+      "primary": "Engine",
+      "secondary": "Destroyer"
+    },
+    "frank-lampard": {
+      "primary": "Executioner",
+      "secondary": "Phantom"
+    },
+    "claude-makelele": {
+      "primary": "Anticipator",
+      "secondary": "Wall"
+    },
+    "kevin-de-bruyne": {
+      "primary": "Surgeon",
+      "secondary": "Architect"
+    },
+    "rodri": {
+      "primary": "Architect",
+      "secondary": "Anticipator"
+    },
+    "bernardo-silva": {
+      "primary": "Magician",
+      "secondary": "Engine"
+    },
+    "gilberto-silva": {
+      "primary": "Anticipator",
+      "secondary": "Wall"
+    },
+    "patrick-vieira": {
+      "primary": "Enforcer",
+      "secondary": "Engine"
+    },
+    "robert-pires": {
+      "primary": "Magician",
+      "secondary": "Surgeon"
+    },
+    "xabi-alonso": {
+      "primary": "Architect",
+      "secondary": "Anticipator"
+    },
+    "steven-gerrard": {
+      "primary": "Engine",
+      "secondary": "Executioner"
+    },
+    "javier-mascherano": {
+      "primary": "Tracker",
+      "secondary": "Destroyer"
+    },
+    "ngolo-kante": {
+      "primary": "Tracker",
+      "secondary": "Engine"
+    },
+    "yaya-toure": {
+      "primary": "Juggernaut",
+      "secondary": "Engine"
+    },
+    "eden-hazard": {
+      "primary": "Magician",
+      "secondary": "Surgeon"
+    },
+    "juan-roman-riquelme": {
+      "primary": "Maestro",
+      "secondary": "Surgeon"
+    },
+    "ricardo-quaresma": {
+      "primary": "Magician",
+      "secondary": "Surgeon"
+    },
+    "edgar-davids": {
+      "primary": "Destroyer",
+      "secondary": "Engine"
+    },
+    "roberto-baggio": {
+      "primary": "Magician",
+      "secondary": "Executioner"
+    },
+    "adriano": {
+      "primary": "Juggernaut",
+      "secondary": "Executioner"
+    },
+    "javier-zanetti": {
+      "primary": "Engine",
+      "secondary": "Anticipator"
+    },
+    "michael-ballack": {
+      "primary": "Engine",
+      "secondary": "Executioner"
+    },
+    "paolo-maldini": {
+      "primary": "Anticipator",
+      "secondary": "Wall"
+    },
+    "ronaldo-nazario": {
+      "primary": "Predator",
+      "secondary": "Magician"
+    },
+    "thomas-gravesen": {
+      "primary": "Enforcer",
+      "secondary": "Destroyer"
+    },
+    "jay-jay-okocha": {
+      "primary": "Magician",
+      "secondary": "Surgeon"
+    },
+    "nemanja-vidic": {
+      "primary": "Wall",
+      "secondary": "Enforcer"
+    },
+    "gabriel-batistuta": {
+      "primary": "Executioner",
+      "secondary": "Juggernaut"
+    },
+    "francesco-totti": {
+      "primary": "Maestro",
+      "secondary": "Executioner"
+    },
+    "giorgio-chiellini": {
+      "primary": "Wall",
+      "secondary": "Enforcer"
+    },
+    "alvaro-recoba": {
+      "primary": "Magician",
+      "secondary": "Executioner"
+    },
+    "sinisa-mihajlovic": {
+      "primary": "Executioner",
+      "secondary": "Enforcer"
+    },
+    "nani": {
+      "primary": "Magician",
+      "secondary": "Executioner"
+    },
+    "dimitar-berbatov": {
+      "primary": "Magician",
+      "secondary": "Surgeon"
+    },
+    "yannick-bolasie": {
+      "primary": "Magician",
+      "secondary": "Phantom"
+    },
+    "rio-ferdinand": {
+      "primary": "Libero",
+      "secondary": "Anticipator"
+    },
+    "obafemi-martins": {
+      "primary": "Phantom",
+      "secondary": "Predator"
+    },
+    "michael-owen": {
+      "primary": "Phantom",
+      "secondary": "Predator"
+    },
+    "jaap-stam": {
+      "primary": "Wall",
+      "secondary": "Enforcer"
+    },
+    "lilian-thuram": {
+      "primary": "Wall",
+      "secondary": "Tracker"
+    },
+    "denilson": {
+      "primary": "Magician",
+      "secondary": "Phantom"
+    },
+    "alessandro-del-piero": {
+      "primary": "Magician",
+      "secondary": "Executioner"
+    },
+    "pablo-aimar": {
+      "primary": "Magician",
+      "secondary": "Surgeon"
+    },
+    "antonio-cassano": {
+      "primary": "Magician",
+      "secondary": "Surgeon"
+    },
+    "daniele-de-rossi": {
+      "primary": "Destroyer",
+      "secondary": "Architect"
+    },
+    "andres-dalessandro": {
+      "primary": "Magician",
+      "secondary": "Surgeon"
+    },
+    "zlatan-ibrahimovic": {
+      "primary": "Juggernaut",
+      "secondary": "Magician"
+    },
+    "lucio": {
+      "primary": "Libero",
+      "secondary": "Enforcer"
+    },
+    "rivaldo": {
+      "primary": "Magician",
+      "secondary": "Executioner"
+    },
+    "marcel-desailly": {
+      "primary": "Wall",
+      "secondary": "Anticipator"
+    },
+    "zinedine-zidane": {
+      "primary": "Maestro",
+      "secondary": "Magician"
+    },
+    "ronaldinho": {
+      "primary": "Magician",
+      "secondary": "Maestro"
+    },
+    "djalminha": {
+      "primary": "Magician",
+      "secondary": "Surgeon"
+    },
+    "steed-malbranque": {
+      "primary": "Engine",
+      "secondary": "Surgeon"
+    },
+    "ricardo-carvalho": {
+      "primary": "Anticipator",
+      "secondary": "Wall"
+    },
+    "ledley-king": {
+      "primary": "Anticipator",
+      "secondary": "Wall"
+    },
+    "tugay-kerimoglu": {
+      "primary": "Architect",
+      "secondary": "Executioner"
+    },
+    "morten-gamst-pedersen": {
+      "primary": "Architect",
+      "secondary": "Executioner"
+    },
+    "nene": {
+      "primary": "Magician",
+      "secondary": "Executioner"
+    }
+  }
+}
