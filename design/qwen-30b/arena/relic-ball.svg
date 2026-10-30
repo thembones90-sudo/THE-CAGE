@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="ballTitle ballDesc">
+<title id="ballTitle">The Golden Relic</title><desc id="ballDesc">Original metallic gold football with engraved geometric plates, deep obsidian seams, and polished edges.</desc>
+<defs>
+<radialGradient id="shell" cx="28%" cy="17%" r="85%"><stop stop-color="#fff4c8"/><stop offset=".13" stop-color="#f4df9a"/><stop offset=".35" stop-color="#e4bc58"/><stop offset=".56" stop-color="#ba8525"/><stop offset=".82" stop-color="#8e5c1d"/><stop offset="1" stop-color="#3d270d"/></radialGradient>
+<linearGradient id="gold-panel" x1=".06" y1=".03" x2=".94" y2=".98"><stop stop-color="#fff2ba"/><stop offset=".19" stop-color="#dfb557"/><stop offset=".53" stop-color="#ac7624"/><stop offset=".75" stop-color="#ca9a41"/><stop offset="1" stop-color="#785018"/></linearGradient>
+<linearGradient id="dark-panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8c681f"/><stop offset=".3" stop-color="#533711"/><stop offset=".76" stop-color="#241a0b"/><stop offset="1" stop-color="#65471a"/></linearGradient>
+<radialGradient id="gloss" cx=".30" cy=".1" r=".75"><stop stop-color="#fff9db" stop-opacity=".5"/><stop offset=".2" stop-color="#ffdb76" stop-opacity=".16"/><stop offset=".7" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="drop"><feGaussianBlur in="SourceAlpha" stdDeviation="2.1"/><feOffset dy="3"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<clipPath id="orb"><circle cx="100" cy="100" r="92"/></clipPath>
+</defs>
+<circle cx="100" cy="100" r="98" fill="#090d0d" opacity=".4"/>
+<circle cx="100" cy="100" r="95" fill="#0d130d" stroke="#624217" stroke-width="3"/>
+<circle cx="100" cy="100" r="91" fill="url(#shell)" stroke="#ffefb0" stroke-width="3"/>
+<g clip-path="url(#orb)" stroke="#251d11" stroke-width="5.3" stroke-linejoin="round" filter="url(#drop)">
+  <!-- Overlapping angular facets are an original ceremonial football-panel pattern. -->
+  <path d="M88 10L119 11L141 51L116 68L82 53L67 24Z" fill="url(#gold-panel)"/>
+  <path d="M14 52L64 25L82 53L71 93L32 111L9 95Z" fill="url(#gold-panel)"/>
+  <path d="M141 51L184 40L198 91L171 112L137 91L116 68Z" fill="url(#dark-panel)"/>
+  <path d="M32 111L71 93L98 112L104 148L71 181L30 161Z" fill="url(#dark-panel)"/>
+  <path d="M98 112L137 91L171 112L164 153L134 184L104 148Z" fill="url(#gold-panel)"/>
+  <path d="M71 181L104 148L134 184L128 202L75 199Z" fill="url(#gold-panel)"/>
+  <path d="M71 93L82 53L116 68L137 91L98 112Z" fill="url(#dark-panel)"/>
+  <path d="M98 112L104 148L71 181L48 155L32 111L71 93Z" fill="url(#gold-panel)" opacity=".77"/>
+</g>
+<!-- Raised machined panel framework, not an existing branded football motif. -->
+<path d="M82 53L116 68L137 91L98 112L71 93Z" fill="url(#gold-panel)" stroke="#32240d" stroke-width="4"/>
+<path d="M87 59L114 74L130 91L99 106L78 91Z" fill="none" stroke="#ffdd76" opacity=".65" stroke-width="2"/>
+<path d="M98 112L104 148M71 93L32 111M137 91L171 112M116 68L141 51" fill="none" stroke="#f4d98b" opacity=".45" stroke-width="1.8"/>
+<g fill="none" stroke="#e2bf6c" stroke-width="1.5" opacity=".52">
+  <path d="M48 57l13-8M43 64l20-11M139 125l15-10M132 134l23-15M82 169l13-14M87 176l11-13"/>
+</g>
+<g fill="#fff0be" opacity=".8"><circle cx="88" cy="53" r="2.2"/><circle cx="116" cy="68" r="2.2"/><circle cx="137" cy="91" r="2.2"/><circle cx="98" cy="112" r="2.2"/><circle cx="71" cy="93" r="2.2"/></g>
+<circle cx="100" cy="100" r="90" fill="url(#gloss)"/>
+<path d="M29 55Q59 13 112 17" fill="none" stroke="#fff7d9" stroke-width="7" stroke-linecap="round" opacity=".75"/>
+<path d="M145 175Q172 157 185 116" fill="none" stroke="#432b11" stroke-width="7" opacity=".35" stroke-linecap="round"/>
+<circle cx="100" cy="100" r="92" fill="none" stroke="#e6c57b" stroke-width="2.6" opacity=".9"/>
+</svg>

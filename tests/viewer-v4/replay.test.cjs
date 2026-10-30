@@ -1,0 +1,19 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path');
+const {loadViewer,fixture}=require('../viewer/harness.cjs');
+const FX=require('../../src/viewer-v4/fx.js');
+const W=loadViewer(),T=W.CageViewerTimeline,rec=fixture(),tl=T.buildTimeline(rec);
+const E=rec.result.events,cues=FX.buildCues(tl,E);
+let n=0;function test(name,fn){fn();n++;console.log('PASS',name);}
+test('recorded 178-roster T3 fixture',()=>{assert.equal(rec.engineVersion,'cage-t3-3');assert.equal(E.length,41);assert.equal(rec.result.eventHash,'17b48626');assert.deepEqual(rec.result.score,[0,1]);assert.equal(tl.ids.length,6);});
+test('record is sole scoreboard authority',()=>{assert.deepEqual(Array.from(T.scoreAt(tl,0)),[0,0]);assert.deepEqual(Array.from(T.scoreAt(tl,tl.total)),rec.result.score);assert.equal(tl.goals.length,1);assert.equal(E.filter(e=>e.type==='goal').length,1);});
+test('goal cues mapped one-for-one from actual events',()=>{const gs=cues.filter(c=>c.type==='goal');assert.equal(gs.length,tl.goals.length);assert.equal(gs[0].goalEventIndex,tl.goals[0].i);assert.equal(gs[0].at,tl.goals[0].tau);assert.equal(gs[0].side,'left');assert.equal(gs[0].source,'recorded-goal');assert(gs[0].positionInferred);});
+test('chain net reacts only to actual scoring side',()=>{const g=cues.find(c=>c.type==='goal'),time=g.at+.09;assert.equal(FX.strongestNet(cues,time,'right',325),0);assert(Math.abs(FX.strongestNet(cues,time,'left',325))>.01);assert.equal(FX.strongestNet(cues,g.at+1.21,'left',325),0);assert.equal(FX.strongestNet(cues,g.at-.01,'left',325),0);});
+test('seek, replay and effect decay deterministic',()=>{const g=cues.find(c=>c.type==='goal');for(let k=0;k<100;k++){const time=g.at-.1+k*.014;assert.equal(FX.strongestNet(cues,time,'left',325),FX.strongestNet(cues,time,'left',325));}assert.equal(FX.pulse(g,g.at+1.2),0);assert.equal(FX.pulse(g,g.at-.2),0);});
+test('record immutability during V4 cue generation',()=>{const serialized=JSON.stringify(rec);FX.buildCues(tl,E);assert.equal(JSON.stringify(rec),serialized);});
+test('wall FX only when wall_pass is recorded',()=>{const walls=cues.filter(c=>c.type==='wall_pass');const expected=E.filter(e=>e.type==='wall_pass'&&e.zone&&['left','right'].includes(e.zone.lane));assert.equal(walls.length,expected.length);for(const cue of walls){assert.equal(E[cue.eventIndex].type,'wall_pass');assert(cue.positionInferred);assert.equal(cue.source,'recorded-wall-pass');}});
+test('no fabricated outcomes in FX',()=>{for(const c of cues)assert(!('score'in c)&&!('winner'in c)&&!('result'in c));const fx=fs.readFileSync(path.join(__dirname,'../../src/viewer-v4/fx.js'),'utf8');assert(!/\.simulate\s*\(|Math\.random\s*\(/.test(fx));});
+test('arena preserves true geometry and both goals on mobile',()=>{const p=FX.fit(480,320);assert.equal(p.scale,.4);assert.equal(p.x,0);assert.equal(p.y,30);assert.equal(FX.WORLD.w,1200);assert.equal(FX.WORLD.rightGoal,1091);});
+test('live viewer uses recorded timeline and golden ball',()=>{const html=fs.readFileSync(path.join(__dirname,'../../viewer-v4.html'),'utf8');const v=fs.readFileSync(path.join(__dirname,'../../src/viewer-v4/viewer.js'),'utf8');const renderer=fs.readFileSync(path.join(__dirname,'../../src/viewer-v4/renderer.js'),'utf8');for(const f of ['src/roster-178.js','src/viewer-v4/fx.js','src/viewer-v4/renderer.js','src/viewer-v4/viewer.js'])assert(html.includes(f));assert(v.includes('const cues=window.CageViewerV4FX.buildCues(tl,events)'));assert(v.includes('score=T.scoreAt(tl,tau)'));assert(renderer.includes("FX.paintNet(ctx,f.cues,f.tau,'left')"));assert(renderer.includes("FX.paintNet(ctx,f.cues,f.tau,'right')"));assert(renderer.includes('relic-ball.svg'));assert(!/CageEngine\.simulate/.test(v+renderer));});
+console.log('V4_EVENT_INTEGRATION_PASS',n,'tests');

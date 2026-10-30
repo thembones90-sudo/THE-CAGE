@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>THE CAGE | V5.2 Natural Motion Viewer</title>
+<link rel="stylesheet" href="src/viewer/viewer.css">
+<link rel="stylesheet" href="src/viewer-v4/viewer-v4.css">
+</head>
+<body>
+<div class="page" id="page">
+<header class="v4-top">
+ <div class="v4-brand"><span class="v4-logo">C</span><div><small>THE CAGE / THE LIVING IRON PIT</small><h1>RECORDED MATCH <em>V5.2</em></h1></div></div>
+ <div class="v4-source"><span class="v4-led"></span><span class="badge" id="badge">Loading recorded fixture</span></div>
+</header>
+<div class="v4-tools">
+ <label>ARENA <select id="arena-variant"><option value="iron">IRON PIT</option><option value="golden">GOLDEN ARENA</option></select></label>
+ <button id="builtin" type="button">REPLAY FIXTURE</button>
+ <label class="v4-import">IMPORT MATCH JSON<input id="file" type="file" accept=".json,application/json"></label>
+ <label>ROUND <select id="round" hidden aria-label="Round"></select></label>
+ <span class="v4-honesty">REAL EVENT LOG · VISUALS ONLY · T3 EXPERIMENTAL</span>
+</div>
+<div id="viewer"></div>
+<p class="v4-foot">The match clock, six players, score, golden goal and commentary follow one recorded event log. Net impacts are visual reactions; precise shot paths and contact pixels remain inferred wherever the engine does not record them. Space: play/pause. Arrow keys: seek. Drop a saved match JSON to inspect it.</p>
+</div>
+<!-- Local modules only (no CDN). Engine bundle is loaded for player names, record verification and commentary; the viewer never calls simulate. -->
+<script src="src/players.js"></script><script src="src/roster-expansion.js"></script><script src="src/roster-100.js"></script><script src="src/roster-101.js"></script><script src="src/roster-103.js"></script><script src="src/roster-pl-134.js"></script><script src="src/roster-135.js"></script><script src="src/roster-136.js"></script><script src="src/roster-139.js"></script><script src="src/roster-140.js"></script><script src="src/roster-141.js"></script><script src="src/roster-149.js"></script><script src="src/roster-165.js"></script><script src="src/roster-178.js"></script><script src="src/roster-classification.js"></script><script src="src/roster-refinement.js"></script><script src="src/tactical-refinement.js"></script><script src="src/roster-182.js"></script><script src="src/natural-positions.js"></script><script src="src/identity/search.js"></script><script src="src/engine/legacy-v04.js"></script><script src="src/cage-engine.js"></script><script src="src/cage-commentary.js"></script><script src="src/replay/records.js"></script>
+<script src="src/viewer/coords.js"></script><script src="src/viewer/layout.js"></script><script src="src/viewer/timeline.js"></script><script src="src/viewer/clock.js"></script><script src="src/viewer-v4/fx.js"></script><script src="src/viewer-v4/motion.js"></script><script src="src/viewer-v4/kinetics.js"></script><script src="src/viewer-v4/label-layout.js"></script><script src="src/viewer-v4/renderer.js"></script><script src="src/viewer-v4/viewer.js"></script>
+<script src="src/viewer/fixture-default.js"></script>
+<script>
+(()=>{'use strict';
+const v4Query=new URLSearchParams(window.location.search);window.CageViewerV4Variant=v4Query.get('arena')==='golden'?'golden':'iron';document.getElementById('arena-variant').value=window.CageViewerV4Variant;
+const host=document.getElementById('viewer'),badge=document.getElementById('badge'),roundSel=document.getElementById('round');
+let ctl=null,saved=null;
+const setBadge=(cls,text)=>{badge.className='badge '+cls;badge.textContent=text;};
+const names=ids=>Object.fromEntries(ids.map(id=>[id,window.CageEngine?.BY_ID?.[id]?.name||null]).filter(([,n])=>n));
+function verify(rec){if(!rec.config)return ['warn','Bare result: not verifiable'];if(!window.CageRecords)return ['warn','Record not verified (records module unavailable)'];
+  try{window.CageRecords.validate(rec);return ['ok','Verified record · '+rec.engineVersion+' · hash '+rec.result.eventHash];}catch(e){return ['warn','Unverified: '+e.message];}}
+function commentary(rec){try{if(window.CageCommentary&&window.CageEngine?.BY_ID)return window.CageCommentary.commentate(rec.result,rec.config?.seed??0,['Commander','Opponent']);}catch(e){console.warn('Commentary unavailable:',e);}return null;}
+function show(rec,showdown){if(ctl){ctl.destroy();ctl=null;}
+  try{const [cls,text]=verify(rec),ids=(rec.config?.teams||[]).flat();
+    ctl=window.CageViewer.mount(host,rec,{speed:'dynamic',mode:'live',names:names(ids.length?ids:[]),lines:commentary(rec),showdown});
+    if(!ids.length){/* bare result: names resolved from ids */}
+    if(v4Query.has('tau')){const x=Number(v4Query.get('tau'));if(Number.isFinite(x))ctl.seek(x).pause();}
+    setBadge(cls,text+(ctl.timeline.mode==='ball-only'?' · ball-only mode':'')+(ctl.timeline.timing==='approximate'?' · approximate timing':''));
+    ctl.on('end',d=>console.info('Viewer end (once per mount):',d));
+  }catch(e){host.innerHTML='<div class="badge err" style="display:block;padding:16px">'+String(e.message).replace(/</g,'&lt;')+'</div>';setBadge('err','Cannot play this file');}}
+// Showdown score shown is the tally BEFORE the chosen round, read from the saved file. Read-only.
+function pickRound(i){const h=saved.history,w={A:0,B:0};for(let k=0;k<i;k++)w[h[k].result.winner===0?'A':'B']++;show(h[i],{A:w.A,B:w.B,label:'BEFORE ROUND '+h[i].round});}
+function load(data){saved=null;roundSel.hidden=true;
+  if(data&&Array.isArray(data.history)&&data.history.length){saved=data;roundSel.innerHTML=data.history.map((r,i)=>'<option value="'+i+'">Round '+r.round+'</option>').join('');roundSel.hidden=false;roundSel.value=String(data.history.length-1);return pickRound(data.history.length-1);}
+  if(data&&data.record)data=data.record;
+  show(data,null);}
+roundSel.addEventListener('change',()=>pickRound(+roundSel.value));
+document.getElementById('builtin').addEventListener('click',()=>builtin());
+function builtin(){if(window.CAGE_VIEWER_FIXTURE)load(JSON.parse(JSON.stringify(window.CAGE_VIEWER_FIXTURE)));else{setBadge('err','Built-in fixture missing (run node tests/viewer/make-fixture.cjs)');}}
+function readFile(f){if(!f)return;const r=new FileReader();r.onload=()=>{try{load(JSON.parse(r.result));}catch(e){setBadge('err','Not valid JSON: '+e.message);}};r.readAsText(f);}
+document.getElementById('file').addEventListener('change',e=>readFile(e.target.files[0]));
+document.getElementById('arena-variant').addEventListener('change',e=>{window.CageViewerV4Variant=e.target.value==='golden'?'golden':'iron';});
+const page=document.getElementById('page');
+page.addEventListener('dragover',e=>{e.preventDefault();page.classList.add('drop');});page.addEventListener('dragleave',()=>page.classList.remove('drop'));
+page.addEventListener('drop',e=>{e.preventDefault();page.classList.remove('drop');readFile(e.dataTransfer.files[0]);});
+builtin();
+})();
+</script>
+</body></html>

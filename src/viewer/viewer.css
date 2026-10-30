@@ -1,0 +1,51 @@
+/* THE CAGE 2D viewer shell. Placeholder look; design tokens are CSS custom properties
+   so Big Pickle can restyle without touching code (architecture §G). */
+:root{--cv-bg:#0b0d11;--cv-panel:#141821;--cv-panel-2:#1b202b;--cv-ink:#e9edf3;--cv-mute:#8d97a6;--cv-edge:#2a3140;
+  --team-a:#3aa0ff;--team-b:#ff5a52;--momentum:#ffb627;--danger:#e0283c;--verified:#3ccf6e}
+.cv-root{display:flex;flex-direction:column;gap:10px;color:var(--cv-ink);font:14px/1.35 system-ui,-apple-system,Segoe UI,sans-serif;outline:none}
+.cv-scoreboard{display:grid;grid-template-columns:auto 1fr auto auto auto;align-items:center;gap:14px;background:var(--cv-panel);border:1px solid var(--cv-edge);border-radius:10px;padding:8px 14px}
+.cv-scoreboard small{display:block;font-size:10px;letter-spacing:.12em;color:var(--cv-mute)}
+.cv-round{font-weight:700;letter-spacing:.1em;color:var(--cv-mute)}
+.cv-match{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;text-align:center}
+.cv-match small{flex-basis:100%;order:9}
+.cv-team{font-weight:800;letter-spacing:.06em}.cv-a{color:var(--team-a)}.cv-b{color:var(--team-b)}
+.cv-score{font:800 30px/1 ui-monospace,Consolas,monospace;background:#05070a;padding:4px 12px;border-radius:6px;min-width:3.4em;text-align:center}
+.cv-clock{text-align:center}.cv-clock span{font:700 20px/1 ui-monospace,Consolas,monospace}
+.cv-showdown{text-align:center;opacity:.9}.cv-showdown span{font:700 15px/1 ui-monospace,Consolas,monospace}
+.cv-chip{display:block;font-style:normal;font-size:9px;letter-spacing:.1em;color:var(--cv-mute)}
+.cv-state{font-weight:800;font-size:12px;letter-spacing:.08em;padding:4px 8px;border-radius:6px;background:var(--cv-panel-2);min-width:7em;text-align:center}
+.cv-root[data-state=playing] .cv-state{color:#ff6b6b}.cv-root[data-state=replay] .cv-state{color:var(--momentum)}.cv-root[data-state=ended] .cv-state{color:var(--verified)}
+.cv-main{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:10px}
+.cv-stage{position:relative;background:#0d1014;border:1px solid var(--cv-edge);border-radius:10px;overflow:hidden;aspect-ratio:1.8/1.08;min-height:220px}
+.cv-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.cv-tap{position:absolute;inset:0;background:transparent;border:0;cursor:pointer;touch-action:manipulation}
+.cv-banner{position:absolute;top:8%;left:50%;transform:translateX(-50%);font:900 clamp(16px,3vw,30px)/1 system-ui;letter-spacing:.14em;color:#fff;text-shadow:0 2px 8px #000;opacity:0;transition:opacity .25s;pointer-events:none}
+.cv-banner.on{opacity:1}
+.cv-goalcard{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(8,10,14,.88);border:2px solid var(--momentum);border-radius:12px;padding:14px 22px;text-align:center;display:flex;flex-direction:column;gap:4px;pointer-events:none;min-width:220px}
+.cv-goalcard[hidden]{display:none}
+.cv-goalcard b{font:900 28px/1 system-ui;letter-spacing:.12em;color:var(--momentum)}.cv-goalcard span{font-size:20px;font-weight:700}
+.cv-goalcard small{color:var(--cv-mute)}.cv-goalcard em{font-style:normal;font-weight:800;letter-spacing:.08em;color:var(--verified)}.cv-goalcard i{font-style:normal;color:var(--momentum);font-size:11px;letter-spacing:.2em}
+.cv-side{background:var(--cv-panel);border:1px solid var(--cv-edge);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;min-height:0;max-height:min(70vh,560px)}
+.cv-side h2{font-size:12px;letter-spacing:.14em;color:var(--cv-mute);margin:8px 0 6px;display:flex;justify-content:space-between;align-items:center}
+.cv-onball{padding:6px 8px;background:var(--cv-panel-2);border-radius:6px}.cv-onball small{color:var(--cv-mute);letter-spacing:.1em;font-size:10px}
+.cv-onball .t0{color:var(--team-a)}.cv-onball .t1{color:var(--team-b)}
+.cv-comm{list-style:none;margin:0;padding:0;overflow:auto;flex:1;min-height:120px}
+.cv-comm li{padding:5px 2px;border-bottom:1px solid #1f2532}.cv-comm time{color:var(--cv-mute);font:12px ui-monospace,Consolas,monospace;margin-right:4px}
+.cv-comm li.imp2{color:#fff}.cv-comm li.imp3{color:var(--momentum);font-weight:700}
+.cv-nocomm .cv-comm{visibility:hidden}
+.cv-notes{margin-top:8px;color:var(--cv-mute);font-size:12px}.cv-notes ul{padding-left:18px;margin:6px 0}
+.cv-controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:var(--cv-panel);border:1px solid var(--cv-edge);border-radius:10px;padding:8px 10px}
+.cv-controls button,.cv-mini,.cv-controls select{min-height:44px;min-width:44px;background:var(--cv-panel-2);color:var(--cv-ink);border:1px solid var(--cv-edge);border-radius:8px;font:600 14px system-ui;padding:0 12px;cursor:pointer;touch-action:manipulation}
+.cv-mini{min-height:28px;font-size:11px;padding:0 8px}
+.cv-controls button:disabled{opacity:.4;cursor:default}
+.cv-controls .cv-primary{background:var(--momentum);color:#111;font-size:18px;min-width:56px}
+.cv-controls input[type=range]{flex:1;min-width:140px;height:44px;accent-color:var(--momentum)}
+.cv-speed{display:flex;align-items:center;gap:6px;color:var(--cv-mute);font-size:12px}
+.cv-ptime{font:12px ui-monospace,Consolas,monospace;color:var(--cv-mute);min-width:8em;text-align:right}
+.cv-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+:focus-visible{outline:2px solid var(--momentum);outline-offset:2px}
+@media (max-width:1100px){.cv-main{grid-template-columns:1fr}.cv-side{max-height:none}.cv-comm{max-height:9.5em;min-height:0}
+  .cv-controls{position:sticky;bottom:0;z-index:2}}
+@media (max-width:640px){.cv-scoreboard{grid-template-columns:1fr 1fr;gap:6px 10px;padding:8px}.cv-match{grid-column:1/-1;order:-1}
+  .cv-score{font-size:24px}.cv-round,.cv-state{font-size:11px}.cv-stage{aspect-ratio:1.8/1.15}.cv-ptime{min-width:0}}
+@media (prefers-reduced-motion:reduce){.cv-banner{transition:none}}
