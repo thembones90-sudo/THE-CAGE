@@ -1,0 +1,7496 @@
+{
+  "total": 178,
+  "uniqueIds": 178,
+  "errors": [],
+  "warnings": [],
+  "distribution": {
+    "tier": {
+      "ACE": 1,
+      "ELITE": 52,
+      "LEGEND": 78,
+      "STALWART": 17,
+      "TITAN": 30
+    },
+    "folklore": {
+      "STREET HERO": 97,
+      "STREET VILLAIN": 9,
+      "TALISMAN": 33,
+      "UNDERDOG": 16
+    },
+    "folkloreCombos": {
+      "NONE": 64,
+      "STREET HERO": 57,
+      "STREET HERO + STREET VILLAIN": 6,
+      "STREET HERO + TALISMAN": 22,
+      "STREET HERO + TALISMAN + UNDERDOG": 1,
+      "STREET HERO + UNDERDOG": 11,
+      "STREET VILLAIN": 3,
+      "TALISMAN": 10,
+      "UNDERDOG": 4
+    },
+    "primary": {
+      "Anticipator": 9,
+      "Architect": 12,
+      "Destroyer": 5,
+      "Enforcer": 7,
+      "Engine": 13,
+      "Executioner": 16,
+      "Juggernaut": 13,
+      "Libero": 4,
+      "Maestro": 8,
+      "Magician": 39,
+      "Phantom": 8,
+      "Predator": 17,
+      "Surgeon": 7,
+      "Tracker": 7,
+      "Wall": 13
+    },
+    "secondary": {
+      "Anticipator": 14,
+      "Architect": 10,
+      "Destroyer": 4,
+      "Enforcer": 9,
+      "Engine": 14,
+      "Executioner": 36,
+      "Juggernaut": 9,
+      "Libero": 1,
+      "Maestro": 10,
+      "Magician": 8,
+      "Phantom": 13,
+      "Predator": 10,
+      "Surgeon": 25,
+      "Tracker": 6,
+      "Wall": 9
+    },
+    "position": {
+      "CAM": 26,
+      "CB": 23,
+      "CDM": 15,
+      "CF": 11,
+      "CM": 24,
+      "LB": 6,
+      "LM": 5,
+      "LW": 13,
+      "RB": 8,
+      "RM": 1,
+      "RW": 9,
+      "ST": 37
+    },
+    "role": {
+      "D": 40,
+      "F": 70,
+      "M": 68
+    },
+    "pairFamilies": {
+      "D-D": 27,
+      "D-F": 2,
+      "D-M": 11,
+      "F-D": 2,
+      "F-F": 60,
+      "F-M": 31,
+      "M-D": 10,
+      "M-F": 14,
+      "M-M": 21
+    },
+    "ratingType": {
+      "editorial-pl-v0.1-provisional": 31,
+      "editorial-user-approved-v1": 39,
+      "editorial-v0.3": 57,
+      "editorial-v0.4": 7,
+      "editorial-v0.5": 36,
+      "editorial-v0.6": 3,
+      "editorial-v0.6-provisional": 1,
+      "editorial-v0.7-provisional": 4
+    },
+    "provisionalTactical": {
+      "false": 63,
+      "true": 115
+    }
+  },
+  "players": [
+    {
+      "id": "roy-keane",
+      "name": "Roy Keane",
+      "country": "Ireland",
+      "role": "M",
+      "position": "CDM",
+      "secondaryPositions": [
+        "CM"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET VILLAIN"
+      ],
+      "traits": {
+        "primary": "Enforcer",
+        "secondary": "Destroyer"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 75,
+        "tech": 78,
+        "pass": 84,
+        "finish": 67,
+        "def": 92,
+        "phys": 91,
+        "first_touch": 80,
+        "dribbling": 78,
+        "passing": 84,
+        "vision": 81,
+        "finishing": 67,
+        "shooting": 75,
+        "stamina": 83,
+        "physical": 91,
+        "tackling": 92,
+        "positioning": 88,
+        "composure": 73
+      }
+    },
+    {
+      "id": "paul-scholes",
+      "name": "Paul Scholes",
+      "country": "England",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Architect",
+        "secondary": "Maestro"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 66,
+        "tech": 90,
+        "pass": 96,
+        "finish": 84,
+        "def": 66,
+        "phys": 65,
+        "first_touch": 92,
+        "dribbling": 90,
+        "passing": 96,
+        "vision": 93,
+        "finishing": 84,
+        "shooting": 78,
+        "stamina": 66,
+        "physical": 65,
+        "tackling": 66,
+        "positioning": 81,
+        "composure": 87
+      }
+    },
+    {
+      "id": "ryan-giggs",
+      "name": "Ryan Giggs",
+      "country": "Wales",
+      "role": "M",
+      "position": "LM",
+      "secondaryPositions": [
+        "LW"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Engine"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 93,
+        "tech": 91,
+        "pass": 89,
+        "finish": 81,
+        "def": 43,
+        "phys": 66,
+        "first_touch": 90,
+        "dribbling": 91,
+        "passing": 89,
+        "vision": 90,
+        "finishing": 81,
+        "shooting": 76,
+        "stamina": 80,
+        "physical": 66,
+        "tackling": 43,
+        "positioning": 66,
+        "composure": 86
+      }
+    },
+    {
+      "id": "michael-essien",
+      "name": "Michael Essien",
+      "country": "Ghana",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Destroyer"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 87,
+        "tech": 78,
+        "pass": 81,
+        "finish": 78,
+        "def": 91,
+        "phys": 94,
+        "first_touch": 79,
+        "dribbling": 78,
+        "passing": 81,
+        "vision": 80,
+        "finishing": 78,
+        "shooting": 83,
+        "stamina": 91,
+        "physical": 94,
+        "tackling": 91,
+        "positioning": 86,
+        "composure": 78
+      }
+    },
+    {
+      "id": "frank-lampard",
+      "name": "Frank Lampard",
+      "country": "England",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Phantom"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 69,
+        "tech": 83,
+        "pass": 88,
+        "finish": 93,
+        "def": 69,
+        "phys": 78,
+        "first_touch": 85,
+        "dribbling": 83,
+        "passing": 88,
+        "vision": 86,
+        "finishing": 93,
+        "shooting": 88,
+        "stamina": 74,
+        "physical": 78,
+        "tackling": 69,
+        "positioning": 79,
+        "composure": 88
+      }
+    },
+    {
+      "id": "claude-makelele",
+      "name": "Claude Makélélé",
+      "country": "France",
+      "role": "D",
+      "position": "CDM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Anticipator",
+        "secondary": "Wall"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 76,
+        "tech": 77,
+        "pass": 82,
+        "finish": 42,
+        "def": 96,
+        "phys": 81,
+        "first_touch": 79,
+        "dribbling": 77,
+        "passing": 82,
+        "vision": 80,
+        "finishing": 42,
+        "shooting": 55,
+        "stamina": 79,
+        "physical": 81,
+        "tackling": 96,
+        "positioning": 89,
+        "composure": 60
+      }
+    },
+    {
+      "id": "kevin-de-bruyne",
+      "name": "Kevin De Bruyne",
+      "country": "Belgium",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Surgeon",
+        "secondary": "Architect"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 78,
+        "tech": 89,
+        "pass": 98,
+        "finish": 91,
+        "def": 53,
+        "phys": 75,
+        "first_touch": 92,
+        "dribbling": 89,
+        "passing": 98,
+        "vision": 94,
+        "finishing": 91,
+        "shooting": 86,
+        "stamina": 77,
+        "physical": 75,
+        "tackling": 53,
+        "positioning": 76,
+        "composure": 90
+      }
+    },
+    {
+      "id": "rodri",
+      "name": "Rodri",
+      "country": "Spain",
+      "role": "M",
+      "position": "CDM",
+      "secondaryPositions": [
+        "CM"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Architect",
+        "secondary": "Anticipator"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 69,
+        "tech": 86,
+        "pass": 94,
+        "finish": 79,
+        "def": 91,
+        "phys": 88,
+        "first_touch": 89,
+        "dribbling": 86,
+        "passing": 94,
+        "vision": 90,
+        "finishing": 79,
+        "shooting": 82,
+        "stamina": 79,
+        "physical": 88,
+        "tackling": 91,
+        "positioning": 93,
+        "composure": 83
+      }
+    },
+    {
+      "id": "bernardo-silva",
+      "name": "Bernardo Silva",
+      "country": "Portugal",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [
+        "RW"
+      ],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Engine"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 81,
+        "tech": 94,
+        "pass": 91,
+        "finish": 78,
+        "def": 64,
+        "phys": 66,
+        "first_touch": 93,
+        "dribbling": 94,
+        "passing": 91,
+        "vision": 93,
+        "finishing": 78,
+        "shooting": 74,
+        "stamina": 74,
+        "physical": 66,
+        "tackling": 64,
+        "positioning": 78,
+        "composure": 86
+      }
+    },
+    {
+      "id": "gilberto-silva",
+      "name": "Gilberto Silva",
+      "country": "Brazil",
+      "role": "D",
+      "position": "CDM",
+      "secondaryPositions": [
+        "CB"
+      ],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Anticipator",
+        "secondary": "Wall"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 67,
+        "tech": 72,
+        "pass": 78,
+        "finish": 49,
+        "def": 91,
+        "phys": 87,
+        "first_touch": 74,
+        "dribbling": 72,
+        "passing": 78,
+        "vision": 75,
+        "finishing": 49,
+        "shooting": 62,
+        "stamina": 77,
+        "physical": 87,
+        "tackling": 91,
+        "positioning": 85,
+        "composure": 61
+      }
+    },
+    {
+      "id": "patrick-vieira",
+      "name": "Patrick Vieira",
+      "country": "France",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Enforcer",
+        "secondary": "Engine"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 82,
+        "tech": 82,
+        "pass": 84,
+        "finish": 78,
+        "def": 92,
+        "phys": 96,
+        "first_touch": 83,
+        "dribbling": 82,
+        "passing": 84,
+        "vision": 83,
+        "finishing": 78,
+        "shooting": 84,
+        "stamina": 89,
+        "physical": 96,
+        "tackling": 92,
+        "positioning": 88,
+        "composure": 80
+      }
+    },
+    {
+      "id": "robert-pires",
+      "name": "Robert Pirès",
+      "country": "France",
+      "role": "M",
+      "position": "LM",
+      "secondaryPositions": [
+        "LW"
+      ],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 80,
+        "tech": 92,
+        "pass": 90,
+        "finish": 85,
+        "def": 41,
+        "phys": 63,
+        "first_touch": 91,
+        "dribbling": 92,
+        "passing": 90,
+        "vision": 91,
+        "finishing": 85,
+        "shooting": 78,
+        "stamina": 72,
+        "physical": 63,
+        "tackling": 41,
+        "positioning": 66,
+        "composure": 89
+      }
+    },
+    {
+      "id": "xabi-alonso",
+      "name": "Xabi Alonso",
+      "country": "Spain",
+      "role": "M",
+      "position": "CDM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "UNDERDOG"
+      ],
+      "traits": {
+        "primary": "Architect",
+        "secondary": "Anticipator"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 59,
+        "tech": 83,
+        "pass": 96,
+        "finish": 76,
+        "def": 78,
+        "phys": 77,
+        "first_touch": 87,
+        "dribbling": 83,
+        "passing": 96,
+        "vision": 90,
+        "finishing": 76,
+        "shooting": 76,
+        "stamina": 68,
+        "physical": 77,
+        "tackling": 78,
+        "positioning": 87,
+        "composure": 80
+      }
+    },
+    {
+      "id": "steven-gerrard",
+      "name": "Steven Gerrard",
+      "country": "England",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [
+        "CAM"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "UNDERDOG",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 82,
+        "tech": 86,
+        "pass": 90,
+        "finish": 91,
+        "def": 80,
+        "phys": 91,
+        "first_touch": 87,
+        "dribbling": 86,
+        "passing": 90,
+        "vision": 88,
+        "finishing": 91,
+        "shooting": 91,
+        "stamina": 87,
+        "physical": 91,
+        "tackling": 80,
+        "positioning": 85,
+        "composure": 89
+      }
+    },
+    {
+      "id": "javier-mascherano",
+      "name": "Javier Mascherano",
+      "country": "Argentina",
+      "role": "D",
+      "position": "CDM",
+      "secondaryPositions": [
+        "CB"
+      ],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Tracker",
+        "secondary": "Destroyer"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 73,
+        "tech": 72,
+        "pass": 81,
+        "finish": 45,
+        "def": 93,
+        "phys": 83,
+        "first_touch": 75,
+        "dribbling": 72,
+        "passing": 81,
+        "vision": 77,
+        "finishing": 45,
+        "shooting": 58,
+        "stamina": 78,
+        "physical": 83,
+        "tackling": 93,
+        "positioning": 87,
+        "composure": 59
+      }
+    },
+    {
+      "id": "ngolo-kante",
+      "name": "N'Golo Kanté",
+      "country": "France",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "UNDERDOG"
+      ],
+      "traits": {
+        "primary": "Tracker",
+        "secondary": "Engine"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 87,
+        "tech": 80,
+        "pass": 80,
+        "finish": 51,
+        "def": 98,
+        "phys": 79,
+        "first_touch": 80,
+        "dribbling": 80,
+        "passing": 80,
+        "vision": 80,
+        "finishing": 51,
+        "shooting": 60,
+        "stamina": 83,
+        "physical": 79,
+        "tackling": 98,
+        "positioning": 89,
+        "composure": 66
+      }
+    },
+    {
+      "id": "yaya-toure",
+      "name": "Yaya Touré",
+      "country": "Ivory Coast",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Juggernaut",
+        "secondary": "Engine"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 83,
+        "tech": 88,
+        "pass": 89,
+        "finish": 89,
+        "def": 76,
+        "phys": 96,
+        "first_touch": 88,
+        "dribbling": 88,
+        "passing": 89,
+        "vision": 89,
+        "finishing": 89,
+        "shooting": 91,
+        "stamina": 90,
+        "physical": 96,
+        "tackling": 76,
+        "positioning": 83,
+        "composure": 89
+      }
+    },
+    {
+      "id": "eden-hazard",
+      "name": "Eden Hazard",
+      "country": "Belgium",
+      "role": "F",
+      "position": "LW",
+      "secondaryPositions": [
+        "CAM"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 88,
+        "tech": 98,
+        "pass": 88,
+        "finish": 87,
+        "def": 33,
+        "phys": 69,
+        "first_touch": 95,
+        "dribbling": 98,
+        "passing": 88,
+        "vision": 93,
+        "finishing": 87,
+        "shooting": 81,
+        "stamina": 79,
+        "physical": 69,
+        "tackling": 33,
+        "positioning": 61,
+        "composure": 93
+      }
+    },
+    {
+      "id": "juan-roman-riquelme",
+      "name": "Juan Román Riquelme",
+      "country": "Argentina",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Maestro",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 42,
+        "tech": 93,
+        "pass": 97,
+        "finish": 79,
+        "def": 28,
+        "phys": 50,
+        "first_touch": 94,
+        "dribbling": 93,
+        "passing": 97,
+        "vision": 95,
+        "finishing": 79,
+        "shooting": 69,
+        "stamina": 46,
+        "physical": 50,
+        "tackling": 28,
+        "positioning": 63,
+        "composure": 86
+      }
+    },
+    {
+      "id": "ricardo-quaresma",
+      "name": "Ricardo Quaresma",
+      "country": "Portugal",
+      "role": "F",
+      "position": "RW",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 86,
+        "tech": 92,
+        "pass": 78,
+        "finish": 76,
+        "def": 24,
+        "phys": 55,
+        "first_touch": 87,
+        "dribbling": 92,
+        "passing": 78,
+        "vision": 85,
+        "finishing": 76,
+        "shooting": 69,
+        "stamina": 71,
+        "physical": 55,
+        "tackling": 24,
+        "positioning": 51,
+        "composure": 84
+      }
+    },
+    {
+      "id": "edgar-davids",
+      "name": "Edgar Davids",
+      "country": "Netherlands",
+      "role": "M",
+      "position": "CDM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Destroyer",
+        "secondary": "Engine"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 84,
+        "tech": 78,
+        "pass": 80,
+        "finish": 55,
+        "def": 82,
+        "phys": 88,
+        "first_touch": 79,
+        "dribbling": 78,
+        "passing": 80,
+        "vision": 79,
+        "finishing": 55,
+        "shooting": 66,
+        "stamina": 86,
+        "physical": 88,
+        "tackling": 82,
+        "positioning": 81,
+        "composure": 67
+      }
+    },
+    {
+      "id": "roberto-baggio",
+      "name": "Roberto Baggio",
+      "country": "Italy",
+      "role": "F",
+      "position": "CF",
+      "secondaryPositions": [],
+      "careerTier": "TITAN",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 82,
+        "tech": 96,
+        "pass": 92,
+        "finish": 94,
+        "def": 29,
+        "phys": 61,
+        "first_touch": 95,
+        "dribbling": 96,
+        "passing": 92,
+        "vision": 94,
+        "finishing": 94,
+        "shooting": 83,
+        "stamina": 72,
+        "physical": 61,
+        "tackling": 29,
+        "positioning": 61,
+        "composure": 95
+      }
+    },
+    {
+      "id": "adriano",
+      "name": "Adriano",
+      "country": "Brazil",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Juggernaut",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 91,
+        "tech": 86,
+        "pass": 70,
+        "finish": 96,
+        "def": 25,
+        "phys": 98,
+        "first_touch": 81,
+        "dribbling": 86,
+        "passing": 70,
+        "vision": 78,
+        "finishing": 96,
+        "shooting": 97,
+        "stamina": 95,
+        "physical": 98,
+        "tackling": 25,
+        "positioning": 48,
+        "composure": 91
+      }
+    },
+    {
+      "id": "javier-zanetti",
+      "name": "Javier Zanetti",
+      "country": "Argentina",
+      "role": "D",
+      "position": "RB",
+      "secondaryPositions": [
+        "LB"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Anticipator"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 82,
+        "tech": 84,
+        "pass": 85,
+        "finish": 62,
+        "def": 94,
+        "phys": 85,
+        "first_touch": 84,
+        "dribbling": 84,
+        "passing": 85,
+        "vision": 85,
+        "finishing": 62,
+        "shooting": 70,
+        "stamina": 84,
+        "physical": 85,
+        "tackling": 94,
+        "positioning": 90,
+        "composure": 73
+      }
+    },
+    {
+      "id": "michael-ballack",
+      "name": "Michael Ballack",
+      "country": "Germany",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 73,
+        "tech": 82,
+        "pass": 87,
+        "finish": 91,
+        "def": 77,
+        "phys": 93,
+        "first_touch": 84,
+        "dribbling": 82,
+        "passing": 87,
+        "vision": 85,
+        "finishing": 91,
+        "shooting": 92,
+        "stamina": 83,
+        "physical": 93,
+        "tackling": 77,
+        "positioning": 82,
+        "composure": 87
+      }
+    },
+    {
+      "id": "paolo-maldini",
+      "name": "Paolo Maldini",
+      "country": "Italy",
+      "role": "D",
+      "position": "LB",
+      "secondaryPositions": [
+        "CB"
+      ],
+      "careerTier": "TITAN",
+      "folklore": [
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Anticipator",
+        "secondary": "Wall"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 79,
+        "tech": 79,
+        "pass": 80,
+        "finish": 45,
+        "def": 99,
+        "phys": 84,
+        "first_touch": 79,
+        "dribbling": 79,
+        "passing": 80,
+        "vision": 80,
+        "finishing": 45,
+        "shooting": 58,
+        "stamina": 82,
+        "physical": 84,
+        "tackling": 99,
+        "positioning": 90,
+        "composure": 62
+      }
+    },
+    {
+      "id": "ronaldo-nazario",
+      "name": "Ronaldo Nazário",
+      "country": "Brazil",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "TITAN",
+      "folklore": [
+        "STREET HERO",
+        "UNDERDOG"
+      ],
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Magician"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 98,
+        "tech": 98,
+        "pass": 78,
+        "finish": 99,
+        "def": 20,
+        "phys": 88,
+        "first_touch": 91,
+        "dribbling": 98,
+        "passing": 78,
+        "vision": 88,
+        "finishing": 99,
+        "shooting": 95,
+        "stamina": 93,
+        "physical": 88,
+        "tackling": 20,
+        "positioning": 49,
+        "composure": 99
+      }
+    },
+    {
+      "id": "thomas-gravesen",
+      "name": "Thomas Gravesen",
+      "country": "Denmark",
+      "role": "M",
+      "position": "CDM",
+      "secondaryPositions": [],
+      "careerTier": "STALWART",
+      "folklore": [
+        "STREET VILLAIN"
+      ],
+      "traits": {
+        "primary": "Enforcer",
+        "secondary": "Destroyer"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 66,
+        "tech": 66,
+        "pass": 74,
+        "finish": 56,
+        "def": 82,
+        "phys": 92,
+        "first_touch": 69,
+        "dribbling": 66,
+        "passing": 74,
+        "vision": 70,
+        "finishing": 56,
+        "shooting": 68,
+        "stamina": 79,
+        "physical": 92,
+        "tackling": 82,
+        "positioning": 78,
+        "composure": 61
+      }
+    },
+    {
+      "id": "jay-jay-okocha",
+      "name": "Jay-Jay Okocha",
+      "country": "Nigeria",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "UNDERDOG"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 88,
+        "tech": 95,
+        "pass": 86,
+        "finish": 78,
+        "def": 35,
+        "phys": 58,
+        "first_touch": 92,
+        "dribbling": 95,
+        "passing": 86,
+        "vision": 91,
+        "finishing": 78,
+        "shooting": 71,
+        "stamina": 73,
+        "physical": 58,
+        "tackling": 35,
+        "positioning": 61,
+        "composure": 87
+      }
+    },
+    {
+      "id": "nemanja-vidic",
+      "name": "Nemanja Vidić",
+      "country": "Serbia",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Wall",
+        "secondary": "Enforcer"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 57,
+        "tech": 56,
+        "pass": 64,
+        "finish": 34,
+        "def": 96,
+        "phys": 94,
+        "first_touch": 59,
+        "dribbling": 56,
+        "passing": 64,
+        "vision": 60,
+        "finishing": 34,
+        "shooting": 54,
+        "stamina": 76,
+        "physical": 94,
+        "tackling": 96,
+        "positioning": 80,
+        "composure": 45
+      }
+    },
+    {
+      "id": "gabriel-batistuta",
+      "name": "Gabriel Batistuta",
+      "country": "Argentina",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Juggernaut"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 79,
+        "tech": 79,
+        "pass": 68,
+        "finish": 98,
+        "def": 26,
+        "phys": 94,
+        "first_touch": 75,
+        "dribbling": 79,
+        "passing": 68,
+        "vision": 74,
+        "finishing": 98,
+        "shooting": 97,
+        "stamina": 87,
+        "physical": 94,
+        "tackling": 26,
+        "positioning": 47,
+        "composure": 89
+      }
+    },
+    {
+      "id": "francesco-totti",
+      "name": "Francesco Totti",
+      "country": "Italy",
+      "role": "F",
+      "position": "CF",
+      "secondaryPositions": [
+        "CAM"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Maestro",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 68,
+        "tech": 94,
+        "pass": 96,
+        "finish": 94,
+        "def": 34,
+        "phys": 79,
+        "first_touch": 95,
+        "dribbling": 94,
+        "passing": 96,
+        "vision": 95,
+        "finishing": 94,
+        "shooting": 89,
+        "stamina": 74,
+        "physical": 79,
+        "tackling": 34,
+        "positioning": 65,
+        "composure": 94
+      }
+    },
+    {
+      "id": "giorgio-chiellini",
+      "name": "Giorgio Chiellini",
+      "country": "Italy",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Wall",
+        "secondary": "Enforcer"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 67,
+        "tech": 66,
+        "pass": 70,
+        "finish": 34,
+        "def": 97,
+        "phys": 94,
+        "first_touch": 67,
+        "dribbling": 66,
+        "passing": 70,
+        "vision": 68,
+        "finishing": 34,
+        "shooting": 54,
+        "stamina": 81,
+        "physical": 94,
+        "tackling": 97,
+        "positioning": 84,
+        "composure": 50
+      }
+    },
+    {
+      "id": "alvaro-recoba",
+      "name": "Álvaro Recoba",
+      "country": "Uruguay",
+      "role": "F",
+      "position": "CF",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 78,
+        "tech": 94,
+        "pass": 91,
+        "finish": 89,
+        "def": 27,
+        "phys": 62,
+        "first_touch": 93,
+        "dribbling": 94,
+        "passing": 91,
+        "vision": 93,
+        "finishing": 89,
+        "shooting": 80,
+        "stamina": 70,
+        "physical": 62,
+        "tackling": 27,
+        "positioning": 59,
+        "composure": 92
+      }
+    },
+    {
+      "id": "sinisa-mihajlovic",
+      "name": "Siniša Mihajlović",
+      "country": "Serbia",
+      "role": "D",
+      "position": "LB",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Enforcer"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 59,
+        "tech": 70,
+        "pass": 88,
+        "finish": 54,
+        "def": 78,
+        "phys": 76,
+        "first_touch": 76,
+        "dribbling": 70,
+        "passing": 88,
+        "vision": 79,
+        "finishing": 54,
+        "shooting": 61,
+        "stamina": 68,
+        "physical": 76,
+        "tackling": 78,
+        "positioning": 83,
+        "composure": 62
+      }
+    },
+    {
+      "id": "nani",
+      "name": "Nani",
+      "country": "Portugal",
+      "role": "F",
+      "position": "LW",
+      "secondaryPositions": [
+        "RW"
+      ],
+      "careerTier": "STALWART",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 90,
+        "tech": 92,
+        "pass": 80,
+        "finish": 84,
+        "def": 36,
+        "phys": 68,
+        "first_touch": 88,
+        "dribbling": 92,
+        "passing": 80,
+        "vision": 86,
+        "finishing": 84,
+        "shooting": 79,
+        "stamina": 79,
+        "physical": 68,
+        "tackling": 36,
+        "positioning": 58,
+        "composure": 88
+      }
+    },
+    {
+      "id": "dimitar-berbatov",
+      "name": "Dimitar Berbatov",
+      "country": "Bulgaria",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 61,
+        "tech": 95,
+        "pass": 85,
+        "finish": 92,
+        "def": 32,
+        "phys": 78,
+        "first_touch": 92,
+        "dribbling": 95,
+        "passing": 85,
+        "vision": 90,
+        "finishing": 92,
+        "shooting": 87,
+        "stamina": 70,
+        "physical": 78,
+        "tackling": 32,
+        "positioning": 59,
+        "composure": 94
+      }
+    },
+    {
+      "id": "yannick-bolasie",
+      "name": "Yannick Bolasie",
+      "country": "DR Congo",
+      "role": "F",
+      "position": "LW",
+      "secondaryPositions": [],
+      "careerTier": "ACE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Phantom"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 92,
+        "tech": 91,
+        "pass": 71,
+        "finish": 70,
+        "def": 42,
+        "phys": 81,
+        "first_touch": 84,
+        "dribbling": 91,
+        "passing": 71,
+        "vision": 81,
+        "finishing": 70,
+        "shooting": 74,
+        "stamina": 87,
+        "physical": 81,
+        "tackling": 42,
+        "positioning": 57,
+        "composure": 81
+      }
+    },
+    {
+      "id": "rio-ferdinand",
+      "name": "Rio Ferdinand",
+      "country": "England",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Libero",
+        "secondary": "Anticipator"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 81,
+        "tech": 79,
+        "pass": 80,
+        "finish": 37,
+        "def": 96,
+        "phys": 87,
+        "first_touch": 79,
+        "dribbling": 79,
+        "passing": 80,
+        "vision": 80,
+        "finishing": 37,
+        "shooting": 54,
+        "stamina": 84,
+        "physical": 87,
+        "tackling": 96,
+        "positioning": 88,
+        "composure": 58
+      }
+    },
+    {
+      "id": "obafemi-martins",
+      "name": "Obafemi Martins",
+      "country": "Nigeria",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "STALWART",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Phantom",
+        "secondary": "Predator"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 99,
+        "tech": 77,
+        "pass": 62,
+        "finish": 87,
+        "def": 24,
+        "phys": 79,
+        "first_touch": 72,
+        "dribbling": 77,
+        "passing": 62,
+        "vision": 70,
+        "finishing": 87,
+        "shooting": 84,
+        "stamina": 89,
+        "physical": 79,
+        "tackling": 24,
+        "positioning": 43,
+        "composure": 82
+      }
+    },
+    {
+      "id": "michael-owen",
+      "name": "Michael Owen",
+      "country": "England",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Phantom",
+        "secondary": "Predator"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 97,
+        "tech": 78,
+        "pass": 66,
+        "finish": 94,
+        "def": 28,
+        "phys": 65,
+        "first_touch": 74,
+        "dribbling": 78,
+        "passing": 66,
+        "vision": 72,
+        "finishing": 94,
+        "shooting": 84,
+        "stamina": 81,
+        "physical": 65,
+        "tackling": 28,
+        "positioning": 47,
+        "composure": 86
+      }
+    },
+    {
+      "id": "jaap-stam",
+      "name": "Jaap Stam",
+      "country": "Netherlands",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Wall",
+        "secondary": "Enforcer"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 76,
+        "tech": 58,
+        "pass": 61,
+        "finish": 25,
+        "def": 94,
+        "phys": 93,
+        "first_touch": 59,
+        "dribbling": 58,
+        "passing": 61,
+        "vision": 60,
+        "finishing": 25,
+        "shooting": 48,
+        "stamina": 85,
+        "physical": 93,
+        "tackling": 94,
+        "positioning": 78,
+        "composure": 42
+      }
+    },
+    {
+      "id": "lilian-thuram",
+      "name": "Lilian Thuram",
+      "country": "France",
+      "role": "D",
+      "position": "RB",
+      "secondaryPositions": [
+        "CB"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Wall",
+        "secondary": "Tracker"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 86,
+        "tech": 76,
+        "pass": 76,
+        "finish": 39,
+        "def": 97,
+        "phys": 90,
+        "first_touch": 76,
+        "dribbling": 76,
+        "passing": 76,
+        "vision": 76,
+        "finishing": 39,
+        "shooting": 56,
+        "stamina": 88,
+        "physical": 90,
+        "tackling": 97,
+        "positioning": 87,
+        "composure": 58
+      }
+    },
+    {
+      "id": "denilson",
+      "name": "Denílson",
+      "country": "Brazil",
+      "role": "F",
+      "position": "LW",
+      "secondaryPositions": [],
+      "careerTier": "STALWART",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Phantom"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 88,
+        "tech": 97,
+        "pass": 76,
+        "finish": 65,
+        "def": 29,
+        "phys": 59,
+        "first_touch": 90,
+        "dribbling": 97,
+        "passing": 76,
+        "vision": 87,
+        "finishing": 65,
+        "shooting": 63,
+        "stamina": 74,
+        "physical": 59,
+        "tackling": 29,
+        "positioning": 53,
+        "composure": 81
+      }
+    },
+    {
+      "id": "alessandro-del-piero",
+      "name": "Alessandro Del Piero",
+      "country": "Italy",
+      "role": "F",
+      "position": "CF",
+      "secondaryPositions": [],
+      "careerTier": "TITAN",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 80,
+        "tech": 95,
+        "pass": 90,
+        "finish": 96,
+        "def": 32,
+        "phys": 68,
+        "first_touch": 93,
+        "dribbling": 95,
+        "passing": 90,
+        "vision": 93,
+        "finishing": 96,
+        "shooting": 87,
+        "stamina": 74,
+        "physical": 68,
+        "tackling": 32,
+        "positioning": 61,
+        "composure": 96
+      }
+    },
+    {
+      "id": "pablo-aimar",
+      "name": "Pablo Aimar",
+      "country": "Argentina",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 85,
+        "tech": 96,
+        "pass": 91,
+        "finish": 77,
+        "def": 37,
+        "phys": 56,
+        "first_touch": 94,
+        "dribbling": 96,
+        "passing": 91,
+        "vision": 94,
+        "finishing": 77,
+        "shooting": 70,
+        "stamina": 71,
+        "physical": 56,
+        "tackling": 37,
+        "positioning": 64,
+        "composure": 87
+      }
+    },
+    {
+      "id": "antonio-cassano",
+      "name": "Antonio Cassano",
+      "country": "Italy",
+      "role": "F",
+      "position": "CF",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO",
+        "STREET VILLAIN"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 74,
+        "tech": 95,
+        "pass": 91,
+        "finish": 85,
+        "def": 26,
+        "phys": 69,
+        "first_touch": 94,
+        "dribbling": 95,
+        "passing": 91,
+        "vision": 93,
+        "finishing": 85,
+        "shooting": 80,
+        "stamina": 72,
+        "physical": 69,
+        "tackling": 26,
+        "positioning": 59,
+        "composure": 90
+      }
+    },
+    {
+      "id": "daniele-de-rossi",
+      "name": "Daniele De Rossi",
+      "country": "Italy",
+      "role": "M",
+      "position": "CDM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Destroyer",
+        "secondary": "Architect"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 73,
+        "tech": 78,
+        "pass": 87,
+        "finish": 70,
+        "def": 89,
+        "phys": 90,
+        "first_touch": 81,
+        "dribbling": 78,
+        "passing": 87,
+        "vision": 83,
+        "finishing": 70,
+        "shooting": 77,
+        "stamina": 82,
+        "physical": 90,
+        "tackling": 89,
+        "positioning": 88,
+        "composure": 74
+      }
+    },
+    {
+      "id": "andres-dalessandro",
+      "name": "Andrés D'Alessandro",
+      "country": "Argentina",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 76,
+        "tech": 94,
+        "pass": 92,
+        "finish": 76,
+        "def": 40,
+        "phys": 58,
+        "first_touch": 93,
+        "dribbling": 94,
+        "passing": 92,
+        "vision": 93,
+        "finishing": 76,
+        "shooting": 70,
+        "stamina": 67,
+        "physical": 58,
+        "tackling": 40,
+        "positioning": 66,
+        "composure": 85
+      }
+    },
+    {
+      "id": "zlatan-ibrahimovic",
+      "name": "Zlatan Ibrahimović",
+      "country": "Sweden",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "TITAN",
+      "folklore": [
+        "STREET HERO",
+        "STREET VILLAIN"
+      ],
+      "traits": {
+        "primary": "Juggernaut",
+        "secondary": "Magician"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 78,
+        "tech": 93,
+        "pass": 84,
+        "finish": 97,
+        "def": 30,
+        "phys": 97,
+        "first_touch": 90,
+        "dribbling": 93,
+        "passing": 84,
+        "vision": 89,
+        "finishing": 97,
+        "shooting": 97,
+        "stamina": 88,
+        "physical": 97,
+        "tackling": 30,
+        "positioning": 57,
+        "composure": 95
+      }
+    },
+    {
+      "id": "lucio",
+      "name": "Lúcio",
+      "country": "Brazil",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Libero",
+        "secondary": "Enforcer"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 82,
+        "tech": 73,
+        "pass": 75,
+        "finish": 43,
+        "def": 94,
+        "phys": 96,
+        "first_touch": 74,
+        "dribbling": 73,
+        "passing": 75,
+        "vision": 74,
+        "finishing": 43,
+        "shooting": 61,
+        "stamina": 89,
+        "physical": 96,
+        "tackling": 94,
+        "positioning": 85,
+        "composure": 58
+      }
+    },
+    {
+      "id": "hatem-ben-arfa",
+      "name": "Hatem Ben Arfa",
+      "country": "France",
+      "role": "F",
+      "position": "RW",
+      "secondaryPositions": [],
+      "careerTier": "STALWART",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Phantom"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 88,
+        "tech": 97,
+        "pass": 76,
+        "finish": 79,
+        "def": 31,
+        "phys": 70,
+        "first_touch": 90,
+        "dribbling": 97,
+        "passing": 76,
+        "vision": 87,
+        "finishing": 79,
+        "shooting": 76,
+        "stamina": 79,
+        "physical": 70,
+        "tackling": 31,
+        "positioning": 54,
+        "composure": 88
+      }
+    },
+    {
+      "id": "rivaldo",
+      "name": "Rivaldo",
+      "country": "Brazil",
+      "role": "F",
+      "position": "LW",
+      "secondaryPositions": [
+        "CAM"
+      ],
+      "careerTier": "TITAN",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 83,
+        "tech": 96,
+        "pass": 91,
+        "finish": 97,
+        "def": 38,
+        "phys": 79,
+        "first_touch": 94,
+        "dribbling": 96,
+        "passing": 91,
+        "vision": 94,
+        "finishing": 97,
+        "shooting": 91,
+        "stamina": 81,
+        "physical": 79,
+        "tackling": 38,
+        "positioning": 65,
+        "composure": 97
+      }
+    },
+    {
+      "id": "marcel-desailly",
+      "name": "Marcel Desailly",
+      "country": "France",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Wall",
+        "secondary": "Anticipator"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 79,
+        "tech": 75,
+        "pass": 77,
+        "finish": 38,
+        "def": 97,
+        "phys": 96,
+        "first_touch": 76,
+        "dribbling": 75,
+        "passing": 77,
+        "vision": 76,
+        "finishing": 38,
+        "shooting": 57,
+        "stamina": 88,
+        "physical": 96,
+        "tackling": 97,
+        "positioning": 87,
+        "composure": 57
+      }
+    },
+    {
+      "id": "zinedine-zidane",
+      "name": "Zinedine Zidane",
+      "country": "France",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [],
+      "careerTier": "TITAN",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Maestro",
+        "secondary": "Magician"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 74,
+        "tech": 99,
+        "pass": 98,
+        "finish": 88,
+        "def": 51,
+        "phys": 84,
+        "first_touch": 99,
+        "dribbling": 99,
+        "passing": 98,
+        "vision": 99,
+        "finishing": 88,
+        "shooting": 87,
+        "stamina": 79,
+        "physical": 84,
+        "tackling": 51,
+        "positioning": 75,
+        "composure": 94
+      }
+    },
+    {
+      "id": "ronaldinho",
+      "name": "Ronaldinho",
+      "country": "Brazil",
+      "role": "F",
+      "position": "LW",
+      "secondaryPositions": [
+        "CAM"
+      ],
+      "careerTier": "TITAN",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Maestro"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 85,
+        "tech": 99,
+        "pass": 95,
+        "finish": 91,
+        "def": 29,
+        "phys": 76,
+        "first_touch": 98,
+        "dribbling": 99,
+        "passing": 95,
+        "vision": 97,
+        "finishing": 91,
+        "shooting": 86,
+        "stamina": 81,
+        "physical": 76,
+        "tackling": 29,
+        "positioning": 62,
+        "composure": 95
+      }
+    },
+    {
+      "id": "djalminha",
+      "name": "Djalminha",
+      "country": "Brazil",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-v0.3",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 72,
+        "tech": 95,
+        "pass": 91,
+        "finish": 80,
+        "def": 30,
+        "phys": 52,
+        "first_touch": 94,
+        "dribbling": 95,
+        "passing": 91,
+        "vision": 93,
+        "finishing": 80,
+        "shooting": 71,
+        "stamina": 62,
+        "physical": 52,
+        "tackling": 30,
+        "positioning": 61,
+        "composure": 88
+      }
+    },
+    {
+      "id": "steed-malbranque",
+      "name": "Steed Malbranque",
+      "country": "France",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "STALWART",
+      "folklore": [],
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-v0.4",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 76,
+        "tech": 86,
+        "pass": 85,
+        "finish": 73,
+        "def": 53,
+        "phys": 61,
+        "first_touch": 86,
+        "dribbling": 86,
+        "passing": 85,
+        "vision": 86,
+        "finishing": 73,
+        "shooting": 67,
+        "stamina": 69,
+        "physical": 61,
+        "tackling": 53,
+        "positioning": 69,
+        "composure": 80
+      }
+    },
+    {
+      "id": "ricardo-carvalho",
+      "name": "Ricardo Carvalho",
+      "country": "Portugal",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Anticipator",
+        "secondary": "Wall"
+      },
+      "ratingType": "editorial-v0.4",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 73,
+        "tech": 68,
+        "pass": 76,
+        "finish": 30,
+        "def": 94,
+        "phys": 80,
+        "first_touch": 72,
+        "dribbling": 68,
+        "passing": 76,
+        "vision": 72,
+        "finishing": 30,
+        "shooting": 55,
+        "stamina": 77,
+        "physical": 80,
+        "tackling": 94,
+        "positioning": 85,
+        "composure": 49
+      }
+    },
+    {
+      "id": "ledley-king",
+      "name": "Ledley King",
+      "country": "England",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Anticipator",
+        "secondary": "Wall"
+      },
+      "ratingType": "editorial-v0.4",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 79,
+        "tech": 72,
+        "pass": 73,
+        "finish": 32,
+        "def": 93,
+        "phys": 86,
+        "first_touch": 73,
+        "dribbling": 72,
+        "passing": 73,
+        "vision": 73,
+        "finishing": 32,
+        "shooting": 59,
+        "stamina": 83,
+        "physical": 86,
+        "tackling": 93,
+        "positioning": 83,
+        "composure": 52
+      }
+    },
+    {
+      "id": "tugay-kerimoglu",
+      "name": "Tugay Kerimoğlu",
+      "country": "Turkey",
+      "role": "M",
+      "position": "CDM",
+      "secondaryPositions": [],
+      "careerTier": "STALWART",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Architect",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-v0.4",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 52,
+        "tech": 86,
+        "pass": 91,
+        "finish": 72,
+        "def": 65,
+        "phys": 65,
+        "first_touch": 89,
+        "dribbling": 86,
+        "passing": 91,
+        "vision": 89,
+        "finishing": 72,
+        "shooting": 69,
+        "stamina": 59,
+        "physical": 65,
+        "tackling": 65,
+        "positioning": 78,
+        "composure": 79
+      }
+    },
+    {
+      "id": "morten-gamst-pedersen",
+      "name": "Morten Gamst Pedersen",
+      "country": "Norway",
+      "role": "M",
+      "position": "LM",
+      "secondaryPositions": [],
+      "careerTier": "STALWART",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Architect",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-v0.4",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 75,
+        "tech": 80,
+        "pass": 84,
+        "finish": 76,
+        "def": 56,
+        "phys": 72,
+        "first_touch": 82,
+        "dribbling": 80,
+        "passing": 84,
+        "vision": 82,
+        "finishing": 76,
+        "shooting": 74,
+        "stamina": 74,
+        "physical": 72,
+        "tackling": 56,
+        "positioning": 70,
+        "composure": 78
+      }
+    },
+    {
+      "id": "nene",
+      "name": "Nenê",
+      "country": "Brazil",
+      "role": "M",
+      "position": "LM",
+      "secondaryPositions": [],
+      "careerTier": "STALWART",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-v0.4",
+      "provisionalTactical": false,
+      "r": {
+        "pace": 76,
+        "tech": 90,
+        "pass": 86,
+        "finish": 84,
+        "def": 27,
+        "phys": 58,
+        "first_touch": 88,
+        "dribbling": 90,
+        "passing": 86,
+        "vision": 88,
+        "finishing": 84,
+        "shooting": 71,
+        "stamina": 67,
+        "physical": 58,
+        "tackling": 27,
+        "positioning": 57,
+        "composure": 87
+      }
+    },
+    {
+      "id": "gennaro-gattuso",
+      "name": "Gennaro Gattuso",
+      "country": "Italy",
+      "role": "M",
+      "position": "CDM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET VILLAIN"
+      ],
+      "traits": {
+        "primary": "Destroyer",
+        "secondary": "Enforcer"
+      },
+      "ratingType": "editorial-v0.4",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 75,
+        "tech": 75,
+        "pass": 77,
+        "finish": 56,
+        "def": 95,
+        "phys": 96,
+        "first_touch": 76,
+        "dribbling": 75,
+        "passing": 77,
+        "vision": 76,
+        "finishing": 56,
+        "shooting": 76,
+        "stamina": 86,
+        "physical": 96,
+        "tackling": 95,
+        "positioning": 86,
+        "composure": 66
+      }
+    },
+    {
+      "id": "sergio-ramos",
+      "name": "Sergio Ramos",
+      "country": "Spain",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [
+        "RB"
+      ],
+      "careerTier": "TITAN",
+      "folklore": [
+        "STREET HERO",
+        "STREET VILLAIN"
+      ],
+      "traits": {
+        "primary": "Enforcer",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 82,
+        "tech": 78,
+        "pass": 77,
+        "finish": 70,
+        "def": 96,
+        "phys": 91,
+        "first_touch": 78,
+        "dribbling": 78,
+        "passing": 77,
+        "vision": 78,
+        "finishing": 70,
+        "shooting": 81,
+        "stamina": 87,
+        "physical": 91,
+        "tackling": 96,
+        "positioning": 87,
+        "composure": 74
+      }
+    },
+    {
+      "id": "alessandro-nesta",
+      "name": "Alessandro Nesta",
+      "country": "Italy",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Wall",
+        "secondary": "Anticipator"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 77,
+        "tech": 83,
+        "pass": 79,
+        "finish": 40,
+        "def": 99,
+        "phys": 88,
+        "first_touch": 81,
+        "dribbling": 83,
+        "passing": 79,
+        "vision": 81,
+        "finishing": 40,
+        "shooting": 64,
+        "stamina": 83,
+        "physical": 88,
+        "tackling": 99,
+        "positioning": 89,
+        "composure": 62
+      }
+    },
+    {
+      "id": "fabio-cannavaro",
+      "name": "Fabio Cannavaro",
+      "country": "Italy",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "TITAN",
+      "folklore": [],
+      "traits": {
+        "primary": "Anticipator",
+        "secondary": "Tracker"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 82,
+        "tech": 77,
+        "pass": 77,
+        "finish": 39,
+        "def": 98,
+        "phys": 87,
+        "first_touch": 77,
+        "dribbling": 77,
+        "passing": 77,
+        "vision": 77,
+        "finishing": 39,
+        "shooting": 63,
+        "stamina": 85,
+        "physical": 87,
+        "tackling": 98,
+        "positioning": 88,
+        "composure": 58
+      }
+    },
+    {
+      "id": "carles-puyol",
+      "name": "Carles Puyol",
+      "country": "Spain",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [
+        "RB"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Enforcer",
+        "secondary": "Wall"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 75,
+        "tech": 69,
+        "pass": 71,
+        "finish": 38,
+        "def": 97,
+        "phys": 95,
+        "first_touch": 70,
+        "dribbling": 69,
+        "passing": 71,
+        "vision": 70,
+        "finishing": 38,
+        "shooting": 67,
+        "stamina": 85,
+        "physical": 95,
+        "tackling": 97,
+        "positioning": 84,
+        "composure": 54
+      }
+    },
+    {
+      "id": "virgil-van-dijk",
+      "name": "Virgil van Dijk",
+      "country": "Netherlands",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Wall",
+        "secondary": "Architect"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 80,
+        "tech": 76,
+        "pass": 86,
+        "finish": 49,
+        "def": 97,
+        "phys": 95,
+        "first_touch": 81,
+        "dribbling": 76,
+        "passing": 86,
+        "vision": 81,
+        "finishing": 49,
+        "shooting": 72,
+        "stamina": 88,
+        "physical": 95,
+        "tackling": 97,
+        "positioning": 92,
+        "composure": 63
+      }
+    },
+    {
+      "id": "john-terry",
+      "name": "John Terry",
+      "country": "England",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Wall",
+        "secondary": "Enforcer"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 59,
+        "tech": 70,
+        "pass": 72,
+        "finish": 47,
+        "def": 97,
+        "phys": 94,
+        "first_touch": 71,
+        "dribbling": 70,
+        "passing": 72,
+        "vision": 71,
+        "finishing": 47,
+        "shooting": 71,
+        "stamina": 77,
+        "physical": 94,
+        "tackling": 97,
+        "positioning": 85,
+        "composure": 59
+      }
+    },
+    {
+      "id": "philipp-lahm",
+      "name": "Philipp Lahm",
+      "country": "Germany",
+      "role": "D",
+      "position": "RB",
+      "secondaryPositions": [
+        "LB",
+        "CDM"
+      ],
+      "careerTier": "TITAN",
+      "folklore": [
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Anticipator",
+        "secondary": "Maestro"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 82,
+        "tech": 89,
+        "pass": 90,
+        "finish": 48,
+        "def": 95,
+        "phys": 72,
+        "first_touch": 90,
+        "dribbling": 89,
+        "passing": 90,
+        "vision": 90,
+        "finishing": 48,
+        "shooting": 60,
+        "stamina": 77,
+        "physical": 72,
+        "tackling": 95,
+        "positioning": 93,
+        "composure": 69
+      }
+    },
+    {
+      "id": "cafu",
+      "name": "Cafu",
+      "country": "Brazil",
+      "role": "D",
+      "position": "RB",
+      "secondaryPositions": [
+        "RM"
+      ],
+      "careerTier": "TITAN",
+      "folklore": [],
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Tracker"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 92,
+        "tech": 85,
+        "pass": 85,
+        "finish": 61,
+        "def": 90,
+        "phys": 82,
+        "first_touch": 85,
+        "dribbling": 85,
+        "passing": 85,
+        "vision": 85,
+        "finishing": 61,
+        "shooting": 72,
+        "stamina": 87,
+        "physical": 82,
+        "tackling": 90,
+        "positioning": 88,
+        "composure": 73
+      }
+    },
+    {
+      "id": "roberto-carlos",
+      "name": "Roberto Carlos",
+      "country": "Brazil",
+      "role": "D",
+      "position": "LB",
+      "secondaryPositions": [],
+      "careerTier": "TITAN",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Tracker",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 95,
+        "tech": 87,
+        "pass": 82,
+        "finish": 81,
+        "def": 88,
+        "phys": 87,
+        "first_touch": 85,
+        "dribbling": 87,
+        "passing": 82,
+        "vision": 85,
+        "finishing": 81,
+        "shooting": 84,
+        "stamina": 91,
+        "physical": 87,
+        "tackling": 88,
+        "positioning": 85,
+        "composure": 84
+      }
+    },
+    {
+      "id": "franz-beckenbauer",
+      "name": "Franz Beckenbauer",
+      "country": "Germany",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [
+        "CDM"
+      ],
+      "careerTier": "TITAN",
+      "folklore": [],
+      "traits": {
+        "primary": "Libero",
+        "secondary": "Architect"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 79,
+        "tech": 91,
+        "pass": 94,
+        "finish": 70,
+        "def": 96,
+        "phys": 84,
+        "first_touch": 93,
+        "dribbling": 91,
+        "passing": 94,
+        "vision": 93,
+        "finishing": 70,
+        "shooting": 77,
+        "stamina": 82,
+        "physical": 84,
+        "tackling": 96,
+        "positioning": 95,
+        "composure": 81
+      }
+    },
+    {
+      "id": "vincent-kompany",
+      "name": "Vincent Kompany",
+      "country": "Belgium",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Enforcer",
+        "secondary": "Wall"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 73,
+        "tech": 75,
+        "pass": 78,
+        "finish": 55,
+        "def": 95,
+        "phys": 94,
+        "first_touch": 77,
+        "dribbling": 75,
+        "passing": 78,
+        "vision": 77,
+        "finishing": 55,
+        "shooting": 75,
+        "stamina": 84,
+        "physical": 94,
+        "tackling": 95,
+        "positioning": 87,
+        "composure": 65
+      }
+    },
+    {
+      "id": "ashley-cole",
+      "name": "Ashley Cole",
+      "country": "England",
+      "role": "D",
+      "position": "LB",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Tracker",
+        "secondary": "Anticipator"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 90,
+        "tech": 81,
+        "pass": 78,
+        "finish": 42,
+        "def": 95,
+        "phys": 78,
+        "first_touch": 80,
+        "dribbling": 81,
+        "passing": 78,
+        "vision": 80,
+        "finishing": 42,
+        "shooting": 60,
+        "stamina": 84,
+        "physical": 78,
+        "tackling": 95,
+        "positioning": 87,
+        "composure": 62
+      }
+    },
+    {
+      "id": "xavi-hernandez",
+      "name": "Xavi Hernández",
+      "country": "Spain",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "TITAN",
+      "folklore": [
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Maestro",
+        "secondary": "Architect"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 70,
+        "tech": 96,
+        "pass": 99,
+        "finish": 73,
+        "def": 65,
+        "phys": 65,
+        "first_touch": 98,
+        "dribbling": 96,
+        "passing": 99,
+        "vision": 98,
+        "finishing": 73,
+        "shooting": 69,
+        "stamina": 68,
+        "physical": 65,
+        "tackling": 65,
+        "positioning": 82,
+        "composure": 85
+      }
+    },
+    {
+      "id": "andres-iniesta",
+      "name": "Andrés Iniesta",
+      "country": "Spain",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [
+        "CAM"
+      ],
+      "careerTier": "TITAN",
+      "folklore": [
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Maestro",
+        "secondary": "Phantom"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 79,
+        "tech": 99,
+        "pass": 96,
+        "finish": 78,
+        "def": 55,
+        "phys": 65,
+        "first_touch": 98,
+        "dribbling": 99,
+        "passing": 96,
+        "vision": 98,
+        "finishing": 78,
+        "shooting": 72,
+        "stamina": 72,
+        "physical": 65,
+        "tackling": 55,
+        "positioning": 76,
+        "composure": 89
+      }
+    },
+    {
+      "id": "luka-modric",
+      "name": "Luka Modrić",
+      "country": "Croatia",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "TITAN",
+      "folklore": [],
+      "traits": {
+        "primary": "Maestro",
+        "secondary": "Engine"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 80,
+        "tech": 95,
+        "pass": 97,
+        "finish": 79,
+        "def": 72,
+        "phys": 70,
+        "first_touch": 96,
+        "dribbling": 95,
+        "passing": 97,
+        "vision": 96,
+        "finishing": 79,
+        "shooting": 75,
+        "stamina": 75,
+        "physical": 70,
+        "tackling": 72,
+        "positioning": 85,
+        "composure": 87
+      }
+    },
+    {
+      "id": "toni-kroos",
+      "name": "Toni Kroos",
+      "country": "Germany",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "TITAN",
+      "folklore": [],
+      "traits": {
+        "primary": "Architect",
+        "secondary": "Maestro"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 65,
+        "tech": 91,
+        "pass": 99,
+        "finish": 81,
+        "def": 67,
+        "phys": 73,
+        "first_touch": 95,
+        "dribbling": 91,
+        "passing": 99,
+        "vision": 95,
+        "finishing": 81,
+        "shooting": 77,
+        "stamina": 69,
+        "physical": 73,
+        "tackling": 67,
+        "positioning": 83,
+        "composure": 86
+      }
+    },
+    {
+      "id": "andrea-pirlo",
+      "name": "Andrea Pirlo",
+      "country": "Italy",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "TITAN",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Architect",
+        "secondary": "Maestro"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 56,
+        "tech": 94,
+        "pass": 99,
+        "finish": 79,
+        "def": 65,
+        "phys": 64,
+        "first_touch": 97,
+        "dribbling": 94,
+        "passing": 99,
+        "vision": 97,
+        "finishing": 79,
+        "shooting": 72,
+        "stamina": 60,
+        "physical": 64,
+        "tackling": 65,
+        "positioning": 82,
+        "composure": 87
+      }
+    },
+    {
+      "id": "sergio-busquets",
+      "name": "Sergio Busquets",
+      "country": "Spain",
+      "role": "M",
+      "position": "CDM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Anticipator",
+        "secondary": "Maestro"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 54,
+        "tech": 85,
+        "pass": 92,
+        "finish": 55,
+        "def": 93,
+        "phys": 78,
+        "first_touch": 89,
+        "dribbling": 85,
+        "passing": 92,
+        "vision": 89,
+        "finishing": 55,
+        "shooting": 67,
+        "stamina": 66,
+        "physical": 78,
+        "tackling": 93,
+        "positioning": 93,
+        "composure": 70
+      }
+    },
+    {
+      "id": "kaka",
+      "name": "Kaká",
+      "country": "Brazil",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 92,
+        "tech": 95,
+        "pass": 89,
+        "finish": 91,
+        "def": 42,
+        "phys": 78,
+        "first_touch": 92,
+        "dribbling": 95,
+        "passing": 89,
+        "vision": 92,
+        "finishing": 91,
+        "shooting": 85,
+        "stamina": 85,
+        "physical": 78,
+        "tackling": 42,
+        "positioning": 66,
+        "composure": 93
+      }
+    },
+    {
+      "id": "david-beckham",
+      "name": "David Beckham",
+      "country": "England",
+      "role": "M",
+      "position": "RM",
+      "secondaryPositions": [
+        "RW"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Architect",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 75,
+        "tech": 85,
+        "pass": 98,
+        "finish": 84,
+        "def": 62,
+        "phys": 78,
+        "first_touch": 92,
+        "dribbling": 85,
+        "passing": 98,
+        "vision": 92,
+        "finishing": 84,
+        "shooting": 81,
+        "stamina": 77,
+        "physical": 78,
+        "tackling": 62,
+        "positioning": 80,
+        "composure": 85
+      }
+    },
+    {
+      "id": "cesc-fabregas",
+      "name": "Cesc Fàbregas",
+      "country": "Spain",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Surgeon",
+        "secondary": "Architect"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 70,
+        "tech": 89,
+        "pass": 96,
+        "finish": 82,
+        "def": 58,
+        "phys": 68,
+        "first_touch": 93,
+        "dribbling": 89,
+        "passing": 96,
+        "vision": 93,
+        "finishing": 82,
+        "shooting": 75,
+        "stamina": 69,
+        "physical": 68,
+        "tackling": 58,
+        "positioning": 77,
+        "composure": 86
+      }
+    },
+    {
+      "id": "bastian-schweinsteiger",
+      "name": "Bastian Schweinsteiger",
+      "country": "Germany",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Architect"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 74,
+        "tech": 85,
+        "pass": 89,
+        "finish": 81,
+        "def": 85,
+        "phys": 88,
+        "first_touch": 87,
+        "dribbling": 85,
+        "passing": 89,
+        "vision": 87,
+        "finishing": 81,
+        "shooting": 85,
+        "stamina": 81,
+        "physical": 88,
+        "tackling": 85,
+        "positioning": 87,
+        "composure": 83
+      }
+    },
+    {
+      "id": "clarence-seedorf",
+      "name": "Clarence Seedorf",
+      "country": "Netherlands",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Juggernaut"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 78,
+        "tech": 90,
+        "pass": 88,
+        "finish": 86,
+        "def": 75,
+        "phys": 92,
+        "first_touch": 89,
+        "dribbling": 90,
+        "passing": 88,
+        "vision": 89,
+        "finishing": 86,
+        "shooting": 89,
+        "stamina": 85,
+        "physical": 92,
+        "tackling": 75,
+        "positioning": 82,
+        "composure": 88
+      }
+    },
+    {
+      "id": "mesut-ozil",
+      "name": "Mesut Özil",
+      "country": "Germany",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Surgeon",
+        "secondary": "Phantom"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 78,
+        "tech": 94,
+        "pass": 97,
+        "finish": 78,
+        "def": 31,
+        "phys": 58,
+        "first_touch": 96,
+        "dribbling": 94,
+        "passing": 97,
+        "vision": 96,
+        "finishing": 78,
+        "shooting": 68,
+        "stamina": 68,
+        "physical": 58,
+        "tackling": 31,
+        "positioning": 64,
+        "composure": 86
+      }
+    },
+    {
+      "id": "lionel-messi",
+      "name": "Lionel Messi",
+      "country": "Argentina",
+      "role": "F",
+      "position": "RW",
+      "secondaryPositions": [
+        "CF",
+        "CAM"
+      ],
+      "careerTier": "TITAN",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Phantom",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 88,
+        "tech": 100,
+        "pass": 98,
+        "finish": 99,
+        "def": 33,
+        "phys": 72,
+        "first_touch": 99,
+        "dribbling": 100,
+        "passing": 98,
+        "vision": 99,
+        "finishing": 99,
+        "shooting": 86,
+        "stamina": 80,
+        "physical": 72,
+        "tackling": 33,
+        "positioning": 66,
+        "composure": 100
+      }
+    },
+    {
+      "id": "cristiano-ronaldo",
+      "name": "Cristiano Ronaldo",
+      "country": "Portugal",
+      "role": "F",
+      "position": "LW",
+      "secondaryPositions": [
+        "ST"
+      ],
+      "careerTier": "TITAN",
+      "folklore": [
+        "STREET HERO",
+        "STREET VILLAIN"
+      ],
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Predator"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 95,
+        "tech": 95,
+        "pass": 85,
+        "finish": 99,
+        "def": 35,
+        "phys": 93,
+        "first_touch": 90,
+        "dribbling": 95,
+        "passing": 85,
+        "vision": 90,
+        "finishing": 99,
+        "shooting": 96,
+        "stamina": 94,
+        "physical": 93,
+        "tackling": 35,
+        "positioning": 60,
+        "composure": 97
+      }
+    },
+    {
+      "id": "neymar",
+      "name": "Neymar Jr.",
+      "country": "Brazil",
+      "role": "F",
+      "position": "LW",
+      "secondaryPositions": [],
+      "careerTier": "TITAN",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 91,
+        "tech": 99,
+        "pass": 94,
+        "finish": 91,
+        "def": 31,
+        "phys": 64,
+        "first_touch": 97,
+        "dribbling": 99,
+        "passing": 94,
+        "vision": 97,
+        "finishing": 91,
+        "shooting": 78,
+        "stamina": 78,
+        "physical": 64,
+        "tackling": 31,
+        "positioning": 63,
+        "composure": 95
+      }
+    },
+    {
+      "id": "kylian-mbappe",
+      "name": "Kylian Mbappé",
+      "country": "France",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Phantom"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 99,
+        "tech": 94,
+        "pass": 83,
+        "finish": 96,
+        "def": 30,
+        "phys": 77,
+        "first_touch": 89,
+        "dribbling": 94,
+        "passing": 83,
+        "vision": 89,
+        "finishing": 96,
+        "shooting": 87,
+        "stamina": 88,
+        "physical": 77,
+        "tackling": 30,
+        "positioning": 57,
+        "composure": 95
+      }
+    },
+    {
+      "id": "thierry-henry",
+      "name": "Thierry Henry",
+      "country": "France",
+      "role": "F",
+      "position": "LW",
+      "secondaryPositions": [
+        "ST"
+      ],
+      "careerTier": "TITAN",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 97,
+        "tech": 95,
+        "pass": 88,
+        "finish": 97,
+        "def": 35,
+        "phys": 82,
+        "first_touch": 92,
+        "dribbling": 95,
+        "passing": 88,
+        "vision": 92,
+        "finishing": 97,
+        "shooting": 90,
+        "stamina": 90,
+        "physical": 82,
+        "tackling": 35,
+        "positioning": 62,
+        "composure": 96
+      }
+    },
+    {
+      "id": "wayne-rooney",
+      "name": "Wayne Rooney",
+      "country": "England",
+      "role": "F",
+      "position": "CF",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Engine"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 85,
+        "tech": 89,
+        "pass": 89,
+        "finish": 95,
+        "def": 65,
+        "phys": 91,
+        "first_touch": 89,
+        "dribbling": 89,
+        "passing": 89,
+        "vision": 89,
+        "finishing": 95,
+        "shooting": 93,
+        "stamina": 88,
+        "physical": 91,
+        "tackling": 65,
+        "positioning": 77,
+        "composure": 92
+      }
+    },
+    {
+      "id": "luis-suarez",
+      "name": "Luis Suárez",
+      "country": "Uruguay",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "TITAN",
+      "folklore": [
+        "STREET HERO",
+        "STREET VILLAIN"
+      ],
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Predator"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 80,
+        "tech": 91,
+        "pass": 86,
+        "finish": 98,
+        "def": 43,
+        "phys": 86,
+        "first_touch": 89,
+        "dribbling": 91,
+        "passing": 86,
+        "vision": 89,
+        "finishing": 98,
+        "shooting": 92,
+        "stamina": 83,
+        "physical": 86,
+        "tackling": 43,
+        "positioning": 65,
+        "composure": 95
+      }
+    },
+    {
+      "id": "robert-lewandowski",
+      "name": "Robert Lewandowski",
+      "country": "Poland",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "TITAN",
+      "folklore": [],
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Juggernaut"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 78,
+        "tech": 87,
+        "pass": 80,
+        "finish": 98,
+        "def": 36,
+        "phys": 92,
+        "first_touch": 84,
+        "dribbling": 87,
+        "passing": 80,
+        "vision": 84,
+        "finishing": 98,
+        "shooting": 95,
+        "stamina": 85,
+        "physical": 92,
+        "tackling": 36,
+        "positioning": 58,
+        "composure": 93
+      }
+    },
+    {
+      "id": "karim-benzema",
+      "name": "Karim Benzema",
+      "country": "France",
+      "role": "F",
+      "position": "CF",
+      "secondaryPositions": [],
+      "careerTier": "TITAN",
+      "folklore": [],
+      "traits": {
+        "primary": "Maestro",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 82,
+        "tech": 93,
+        "pass": 91,
+        "finish": 96,
+        "def": 39,
+        "phys": 82,
+        "first_touch": 92,
+        "dribbling": 93,
+        "passing": 91,
+        "vision": 92,
+        "finishing": 96,
+        "shooting": 89,
+        "stamina": 82,
+        "physical": 82,
+        "tackling": 39,
+        "positioning": 65,
+        "composure": 95
+      }
+    },
+    {
+      "id": "didier-drogba",
+      "name": "Didier Drogba",
+      "country": "Ivory Coast",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Juggernaut",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 82,
+        "tech": 81,
+        "pass": 75,
+        "finish": 97,
+        "def": 39,
+        "phys": 99,
+        "first_touch": 78,
+        "dribbling": 81,
+        "passing": 75,
+        "vision": 78,
+        "finishing": 97,
+        "shooting": 98,
+        "stamina": 91,
+        "physical": 99,
+        "tackling": 39,
+        "positioning": 57,
+        "composure": 89
+      }
+    },
+    {
+      "id": "samuel-etoo",
+      "name": "Samuel Eto'o",
+      "country": "Cameroon",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "TITAN",
+      "folklore": [],
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Tracker"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 97,
+        "tech": 86,
+        "pass": 76,
+        "finish": 96,
+        "def": 47,
+        "phys": 80,
+        "first_touch": 81,
+        "dribbling": 86,
+        "passing": 76,
+        "vision": 81,
+        "finishing": 96,
+        "shooting": 88,
+        "stamina": 89,
+        "physical": 80,
+        "tackling": 47,
+        "positioning": 62,
+        "composure": 91
+      }
+    },
+    {
+      "id": "mohamed-salah",
+      "name": "Mohamed Salah",
+      "country": "Egypt",
+      "role": "F",
+      "position": "RW",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Phantom",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-v0.5",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 94,
+        "tech": 94,
+        "pass": 86,
+        "finish": 96,
+        "def": 39,
+        "phys": 73,
+        "first_touch": 90,
+        "dribbling": 94,
+        "passing": 86,
+        "vision": 90,
+        "finishing": 96,
+        "shooting": 85,
+        "stamina": 84,
+        "physical": 73,
+        "tackling": 39,
+        "positioning": 63,
+        "composure": 95
+      }
+    },
+    {
+      "id": "adel-taarabt",
+      "name": "Adel Taarabt",
+      "country": "Morocco",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [],
+      "careerTier": "STALWART",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-v0.6",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 83,
+        "tech": 97,
+        "pass": 86,
+        "finish": 78,
+        "def": 32,
+        "phys": 72,
+        "first_touch": 96,
+        "dribbling": 97,
+        "passing": 86,
+        "vision": 91,
+        "finishing": 78,
+        "shooting": 80,
+        "stamina": 73,
+        "physical": 72,
+        "tackling": 32,
+        "positioning": 57,
+        "composure": 78
+      }
+    },
+    {
+      "id": "marouane-fellaini",
+      "name": "Marouane Fellaini",
+      "country": "Belgium",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "STALWART",
+      "folklore": [],
+      "traits": {
+        "primary": "Juggernaut",
+        "secondary": "Engine"
+      },
+      "ratingType": "editorial-v0.6",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 55,
+        "tech": 75,
+        "pass": 72,
+        "finish": 77,
+        "def": 79,
+        "phys": 97,
+        "first_touch": 77,
+        "dribbling": 69,
+        "passing": 72,
+        "vision": 70,
+        "finishing": 77,
+        "shooting": 80,
+        "stamina": 84,
+        "physical": 97,
+        "tackling": 79,
+        "positioning": 86,
+        "composure": 77
+      }
+    },
+    {
+      "id": "mario-balotelli",
+      "name": "Mario Balotelli",
+      "country": "Italy",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "STALWART",
+      "folklore": [
+        "STREET HERO",
+        "STREET VILLAIN"
+      ],
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Juggernaut"
+      },
+      "ratingType": "editorial-v0.6",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 79,
+        "tech": 87,
+        "pass": 75,
+        "finish": 91,
+        "def": 30,
+        "phys": 92,
+        "first_touch": 85,
+        "dribbling": 84,
+        "passing": 75,
+        "vision": 77,
+        "finishing": 91,
+        "shooting": 95,
+        "stamina": 69,
+        "physical": 92,
+        "tackling": 30,
+        "positioning": 75,
+        "composure": 80
+      }
+    },
+    {
+      "id": "sol-campbell",
+      "name": "Sol Campbell",
+      "country": "England",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Wall",
+        "secondary": "Enforcer"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 76,
+        "tech": 70,
+        "pass": 71,
+        "finish": 40,
+        "def": 97,
+        "phys": 96,
+        "first_touch": 71,
+        "dribbling": 70,
+        "passing": 71,
+        "vision": 71,
+        "finishing": 40,
+        "shooting": 68,
+        "stamina": 86,
+        "physical": 96,
+        "tackling": 97,
+        "positioning": 84,
+        "composure": 55
+      }
+    },
+    {
+      "id": "gary-neville",
+      "name": "Gary Neville",
+      "country": "England",
+      "role": "D",
+      "position": "RB",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Anticipator",
+        "secondary": "Engine"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 69,
+        "tech": 74,
+        "pass": 82,
+        "finish": 42,
+        "def": 90,
+        "phys": 77,
+        "first_touch": 78,
+        "dribbling": 74,
+        "passing": 82,
+        "vision": 78,
+        "finishing": 42,
+        "shooting": 60,
+        "stamina": 73,
+        "physical": 77,
+        "tackling": 90,
+        "positioning": 86,
+        "composure": 58
+      }
+    },
+    {
+      "id": "patrice-evra",
+      "name": "Patrice Evra",
+      "country": "France",
+      "role": "D",
+      "position": "LB",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Tracker",
+        "secondary": "Engine"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 88,
+        "tech": 83,
+        "pass": 83,
+        "finish": 52,
+        "def": 90,
+        "phys": 78,
+        "first_touch": 83,
+        "dribbling": 83,
+        "passing": 83,
+        "vision": 83,
+        "finishing": 52,
+        "shooting": 65,
+        "stamina": 83,
+        "physical": 78,
+        "tackling": 90,
+        "positioning": 87,
+        "composure": 68
+      }
+    },
+    {
+      "id": "jamie-carragher",
+      "name": "Jamie Carragher",
+      "country": "England",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "UNDERDOG"
+      ],
+      "traits": {
+        "primary": "Wall",
+        "secondary": "Anticipator"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 63,
+        "tech": 68,
+        "pass": 73,
+        "finish": 37,
+        "def": 94,
+        "phys": 87,
+        "first_touch": 71,
+        "dribbling": 68,
+        "passing": 73,
+        "vision": 71,
+        "finishing": 37,
+        "shooting": 62,
+        "stamina": 75,
+        "physical": 87,
+        "tackling": 94,
+        "positioning": 84,
+        "composure": 53
+      }
+    },
+    {
+      "id": "kolo-toure",
+      "name": "Kolo Touré",
+      "country": "Ivory Coast",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Tracker",
+        "secondary": "Enforcer"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 83,
+        "tech": 72,
+        "pass": 72,
+        "finish": 42,
+        "def": 91,
+        "phys": 88,
+        "first_touch": 72,
+        "dribbling": 72,
+        "passing": 72,
+        "vision": 72,
+        "finishing": 42,
+        "shooting": 65,
+        "stamina": 86,
+        "physical": 88,
+        "tackling": 91,
+        "positioning": 82,
+        "composure": 57
+      }
+    },
+    {
+      "id": "branislav-ivanovic",
+      "name": "Branislav Ivanović",
+      "country": "Serbia",
+      "role": "D",
+      "position": "RB",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Enforcer",
+        "secondary": "Wall"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 68,
+        "tech": 71,
+        "pass": 72,
+        "finish": 66,
+        "def": 92,
+        "phys": 95,
+        "first_touch": 72,
+        "dribbling": 71,
+        "passing": 72,
+        "vision": 72,
+        "finishing": 66,
+        "shooting": 81,
+        "stamina": 82,
+        "physical": 95,
+        "tackling": 92,
+        "positioning": 82,
+        "composure": 69
+      }
+    },
+    {
+      "id": "kyle-walker",
+      "name": "Kyle Walker",
+      "country": "England",
+      "role": "D",
+      "position": "RB",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Tracker",
+        "secondary": "Wall"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 98,
+        "tech": 78,
+        "pass": 80,
+        "finish": 45,
+        "def": 93,
+        "phys": 89,
+        "first_touch": 79,
+        "dribbling": 78,
+        "passing": 80,
+        "vision": 79,
+        "finishing": 45,
+        "shooting": 67,
+        "stamina": 94,
+        "physical": 89,
+        "tackling": 93,
+        "positioning": 87,
+        "composure": 62
+      }
+    },
+    {
+      "id": "trent-alexander-arnold",
+      "name": "Trent Alexander-Arnold",
+      "country": "England",
+      "role": "D",
+      "position": "RB",
+      "secondaryPositions": [
+        "CM"
+      ],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Architect",
+        "secondary": "Libero"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 76,
+        "tech": 88,
+        "pass": 98,
+        "finish": 63,
+        "def": 70,
+        "phys": 69,
+        "first_touch": 93,
+        "dribbling": 88,
+        "passing": 98,
+        "vision": 93,
+        "finishing": 63,
+        "shooting": 66,
+        "stamina": 73,
+        "physical": 69,
+        "tackling": 70,
+        "positioning": 84,
+        "composure": 76
+      }
+    },
+    {
+      "id": "andrew-robertson",
+      "name": "Andrew Robertson",
+      "country": "Scotland",
+      "role": "D",
+      "position": "LB",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Tracker"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 89,
+        "tech": 78,
+        "pass": 88,
+        "finish": 45,
+        "def": 89,
+        "phys": 76,
+        "first_touch": 83,
+        "dribbling": 78,
+        "passing": 88,
+        "vision": 83,
+        "finishing": 45,
+        "shooting": 61,
+        "stamina": 83,
+        "physical": 76,
+        "tackling": 89,
+        "positioning": 89,
+        "composure": 62
+      }
+    },
+    {
+      "id": "ruben-dias",
+      "name": "Rúben Dias",
+      "country": "Portugal",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Wall",
+        "secondary": "Anticipator"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 70,
+        "tech": 75,
+        "pass": 80,
+        "finish": 44,
+        "def": 96,
+        "phys": 94,
+        "first_touch": 78,
+        "dribbling": 75,
+        "passing": 80,
+        "vision": 78,
+        "finishing": 44,
+        "shooting": 69,
+        "stamina": 82,
+        "physical": 94,
+        "tackling": 96,
+        "positioning": 88,
+        "composure": 60
+      }
+    },
+    {
+      "id": "david-silva",
+      "name": "David Silva",
+      "country": "Spain",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Surgeon",
+        "secondary": "Maestro"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 76,
+        "tech": 98,
+        "pass": 97,
+        "finish": 83,
+        "def": 43,
+        "phys": 57,
+        "first_touch": 98,
+        "dribbling": 98,
+        "passing": 97,
+        "vision": 98,
+        "finishing": 83,
+        "shooting": 70,
+        "stamina": 67,
+        "physical": 57,
+        "tackling": 43,
+        "positioning": 70,
+        "composure": 91
+      }
+    },
+    {
+      "id": "michael-carrick",
+      "name": "Michael Carrick",
+      "country": "England",
+      "role": "M",
+      "position": "CDM",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Architect",
+        "secondary": "Anticipator"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 61,
+        "tech": 81,
+        "pass": 94,
+        "finish": 67,
+        "def": 81,
+        "phys": 76,
+        "first_touch": 88,
+        "dribbling": 81,
+        "passing": 94,
+        "vision": 88,
+        "finishing": 67,
+        "shooting": 72,
+        "stamina": 69,
+        "physical": 76,
+        "tackling": 81,
+        "positioning": 88,
+        "composure": 74
+      }
+    },
+    {
+      "id": "fernandinho",
+      "name": "Fernandinho",
+      "country": "Brazil",
+      "role": "M",
+      "position": "CDM",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Destroyer",
+        "secondary": "Anticipator"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 77,
+        "tech": 77,
+        "pass": 84,
+        "finish": 63,
+        "def": 93,
+        "phys": 84,
+        "first_touch": 81,
+        "dribbling": 77,
+        "passing": 84,
+        "vision": 81,
+        "finishing": 63,
+        "shooting": 74,
+        "stamina": 81,
+        "physical": 84,
+        "tackling": 93,
+        "positioning": 89,
+        "composure": 70
+      }
+    },
+    {
+      "id": "ilkay-gundogan",
+      "name": "İlkay Gündoğan",
+      "country": "Germany",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Phantom"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 73,
+        "tech": 89,
+        "pass": 91,
+        "finish": 88,
+        "def": 71,
+        "phys": 75,
+        "first_touch": 90,
+        "dribbling": 89,
+        "passing": 91,
+        "vision": 90,
+        "finishing": 88,
+        "shooting": 82,
+        "stamina": 74,
+        "physical": 75,
+        "tackling": 71,
+        "positioning": 81,
+        "composure": 89
+      }
+    },
+    {
+      "id": "santi-cazorla",
+      "name": "Santi Cazorla",
+      "country": "Spain",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Architect"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 77,
+        "tech": 96,
+        "pass": 95,
+        "finish": 78,
+        "def": 44,
+        "phys": 56,
+        "first_touch": 96,
+        "dribbling": 96,
+        "passing": 95,
+        "vision": 96,
+        "finishing": 78,
+        "shooting": 67,
+        "stamina": 67,
+        "physical": 56,
+        "tackling": 44,
+        "positioning": 70,
+        "composure": 87
+      }
+    },
+    {
+      "id": "bruno-fernandes",
+      "name": "Bruno Fernandes",
+      "country": "Portugal",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Surgeon",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 78,
+        "tech": 85,
+        "pass": 92,
+        "finish": 89,
+        "def": 57,
+        "phys": 72,
+        "first_touch": 89,
+        "dribbling": 85,
+        "passing": 92,
+        "vision": 89,
+        "finishing": 89,
+        "shooting": 81,
+        "stamina": 75,
+        "physical": 72,
+        "tackling": 57,
+        "positioning": 75,
+        "composure": 87
+      }
+    },
+    {
+      "id": "christian-eriksen",
+      "name": "Christian Eriksen",
+      "country": "Denmark",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Architect",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 70,
+        "tech": 87,
+        "pass": 95,
+        "finish": 82,
+        "def": 51,
+        "phys": 63,
+        "first_touch": 91,
+        "dribbling": 87,
+        "passing": 95,
+        "vision": 91,
+        "finishing": 82,
+        "shooting": 73,
+        "stamina": 67,
+        "physical": 63,
+        "tackling": 51,
+        "positioning": 73,
+        "composure": 85
+      }
+    },
+    {
+      "id": "paul-pogba",
+      "name": "Paul Pogba",
+      "country": "France",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Juggernaut",
+        "secondary": "Architect"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 80,
+        "tech": 93,
+        "pass": 92,
+        "finish": 84,
+        "def": 66,
+        "phys": 93,
+        "first_touch": 93,
+        "dribbling": 93,
+        "passing": 92,
+        "vision": 93,
+        "finishing": 84,
+        "shooting": 89,
+        "stamina": 87,
+        "physical": 93,
+        "tackling": 66,
+        "positioning": 79,
+        "composure": 89
+      }
+    },
+    {
+      "id": "mousa-dembele",
+      "name": "Mousa Dembélé",
+      "country": "Belgium",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Juggernaut"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 79,
+        "tech": 95,
+        "pass": 86,
+        "finish": 66,
+        "def": 79,
+        "phys": 94,
+        "first_touch": 91,
+        "dribbling": 95,
+        "passing": 86,
+        "vision": 91,
+        "finishing": 66,
+        "shooting": 80,
+        "stamina": 87,
+        "physical": 94,
+        "tackling": 79,
+        "positioning": 83,
+        "composure": 81
+      }
+    },
+    {
+      "id": "declan-rice",
+      "name": "Declan Rice",
+      "country": "England",
+      "role": "M",
+      "position": "CDM",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Destroyer",
+        "secondary": "Engine"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 78,
+        "tech": 82,
+        "pass": 86,
+        "finish": 75,
+        "def": 93,
+        "phys": 91,
+        "first_touch": 84,
+        "dribbling": 82,
+        "passing": 86,
+        "vision": 84,
+        "finishing": 75,
+        "shooting": 83,
+        "stamina": 85,
+        "physical": 91,
+        "tackling": 93,
+        "positioning": 90,
+        "composure": 79
+      }
+    },
+    {
+      "id": "sergio-aguero",
+      "name": "Sergio Agüero",
+      "country": "Argentina",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 90,
+        "tech": 94,
+        "pass": 81,
+        "finish": 99,
+        "def": 29,
+        "phys": 77,
+        "first_touch": 88,
+        "dribbling": 94,
+        "passing": 81,
+        "vision": 88,
+        "finishing": 99,
+        "shooting": 88,
+        "stamina": 84,
+        "physical": 77,
+        "tackling": 29,
+        "positioning": 55,
+        "composure": 97
+      }
+    },
+    {
+      "id": "harry-kane",
+      "name": "Harry Kane",
+      "country": "England",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 68,
+        "tech": 85,
+        "pass": 94,
+        "finish": 99,
+        "def": 39,
+        "phys": 87,
+        "first_touch": 90,
+        "dribbling": 85,
+        "passing": 94,
+        "vision": 90,
+        "finishing": 99,
+        "shooting": 93,
+        "stamina": 78,
+        "physical": 87,
+        "tackling": 39,
+        "positioning": 67,
+        "composure": 92
+      }
+    },
+    {
+      "id": "robin-van-persie",
+      "name": "Robin van Persie",
+      "country": "Netherlands",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Magician"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 79,
+        "tech": 94,
+        "pass": 85,
+        "finish": 97,
+        "def": 32,
+        "phys": 73,
+        "first_touch": 90,
+        "dribbling": 94,
+        "passing": 85,
+        "vision": 90,
+        "finishing": 97,
+        "shooting": 85,
+        "stamina": 76,
+        "physical": 73,
+        "tackling": 32,
+        "positioning": 59,
+        "composure": 96
+      }
+    },
+    {
+      "id": "erling-haaland",
+      "name": "Erling Haaland",
+      "country": "Norway",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Juggernaut"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 93,
+        "tech": 78,
+        "pass": 65,
+        "finish": 99,
+        "def": 30,
+        "phys": 97,
+        "first_touch": 72,
+        "dribbling": 78,
+        "passing": 65,
+        "vision": 72,
+        "finishing": 99,
+        "shooting": 98,
+        "stamina": 95,
+        "physical": 97,
+        "tackling": 30,
+        "positioning": 48,
+        "composure": 89
+      }
+    },
+    {
+      "id": "fernando-torres",
+      "name": "Fernando Torres",
+      "country": "Spain",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 96,
+        "tech": 87,
+        "pass": 75,
+        "finish": 95,
+        "def": 30,
+        "phys": 80,
+        "first_touch": 81,
+        "dribbling": 87,
+        "passing": 75,
+        "vision": 81,
+        "finishing": 95,
+        "shooting": 88,
+        "stamina": 88,
+        "physical": 80,
+        "tackling": 30,
+        "positioning": 53,
+        "composure": 91
+      }
+    },
+    {
+      "id": "gareth-bale",
+      "name": "Gareth Bale",
+      "country": "Wales",
+      "role": "F",
+      "position": "RW",
+      "secondaryPositions": [
+        "LW"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 99,
+        "tech": 92,
+        "pass": 81,
+        "finish": 93,
+        "def": 53,
+        "phys": 90,
+        "first_touch": 87,
+        "dribbling": 92,
+        "passing": 81,
+        "vision": 87,
+        "finishing": 93,
+        "shooting": 92,
+        "stamina": 95,
+        "physical": 90,
+        "tackling": 53,
+        "positioning": 67,
+        "composure": 93
+      }
+    },
+    {
+      "id": "son-heung-min",
+      "name": "Son Heung-min",
+      "country": "South Korea",
+      "role": "F",
+      "position": "LW",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Phantom",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 93,
+        "tech": 88,
+        "pass": 81,
+        "finish": 96,
+        "def": 37,
+        "phys": 73,
+        "first_touch": 85,
+        "dribbling": 88,
+        "passing": 81,
+        "vision": 85,
+        "finishing": 96,
+        "shooting": 85,
+        "stamina": 83,
+        "physical": 73,
+        "tackling": 37,
+        "positioning": 59,
+        "composure": 92
+      }
+    },
+    {
+      "id": "sadio-mane",
+      "name": "Sadio Mané",
+      "country": "Senegal",
+      "role": "F",
+      "position": "LW",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Engine"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 94,
+        "tech": 91,
+        "pass": 81,
+        "finish": 91,
+        "def": 48,
+        "phys": 77,
+        "first_touch": 86,
+        "dribbling": 91,
+        "passing": 81,
+        "vision": 86,
+        "finishing": 91,
+        "shooting": 84,
+        "stamina": 86,
+        "physical": 77,
+        "tackling": 48,
+        "positioning": 65,
+        "composure": 91
+      }
+    },
+    {
+      "id": "ruud-van-nistelrooy",
+      "name": "Ruud van Nistelrooy",
+      "country": "Netherlands",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Predator"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 74,
+        "tech": 83,
+        "pass": 68,
+        "finish": 99,
+        "def": 29,
+        "phys": 80,
+        "first_touch": 76,
+        "dribbling": 83,
+        "passing": 68,
+        "vision": 76,
+        "finishing": 99,
+        "shooting": 90,
+        "stamina": 77,
+        "physical": 80,
+        "tackling": 29,
+        "positioning": 49,
+        "composure": 91
+      }
+    },
+    {
+      "id": "riyad-mahrez",
+      "name": "Riyad Mahrez",
+      "country": "Algeria",
+      "role": "F",
+      "position": "RW",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO",
+        "UNDERDOG"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Phantom"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 83,
+        "tech": 96,
+        "pass": 86,
+        "finish": 85,
+        "def": 39,
+        "phys": 65,
+        "first_touch": 91,
+        "dribbling": 96,
+        "passing": 86,
+        "vision": 91,
+        "finishing": 85,
+        "shooting": 75,
+        "stamina": 74,
+        "physical": 65,
+        "tackling": 39,
+        "positioning": 63,
+        "composure": 91
+      }
+    },
+    {
+      "id": "jamie-vardy",
+      "name": "Jamie Vardy",
+      "country": "England",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO",
+        "UNDERDOG"
+      ],
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-pl-v0.1-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 95,
+        "tech": 78,
+        "pass": 66,
+        "finish": 93,
+        "def": 45,
+        "phys": 80,
+        "first_touch": 72,
+        "dribbling": 78,
+        "passing": 66,
+        "vision": 72,
+        "finishing": 93,
+        "shooting": 87,
+        "stamina": 88,
+        "physical": 80,
+        "tackling": 45,
+        "positioning": 56,
+        "composure": 86
+      }
+    },
+    {
+      "id": "andrea-barzagli",
+      "name": "Andrea Barzagli",
+      "country": "Italy",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Wall",
+        "secondary": "Anticipator"
+      },
+      "ratingType": "editorial-v0.6-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 70,
+        "tech": 73,
+        "pass": 77,
+        "finish": 32,
+        "def": 97,
+        "phys": 90,
+        "first_touch": 76,
+        "dribbling": 70,
+        "passing": 77,
+        "vision": 79,
+        "finishing": 32,
+        "shooting": 47,
+        "stamina": 85,
+        "physical": 90,
+        "tackling": 97,
+        "positioning": 96,
+        "composure": 88
+      }
+    },
+    {
+      "id": "matt-le-tissier",
+      "name": "Matt Le Tissier",
+      "country": "England",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Magician"
+      },
+      "ratingType": "editorial-v0.7-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 62,
+        "tech": 96,
+        "pass": 90,
+        "finish": 96,
+        "def": 28,
+        "phys": 72,
+        "first_touch": 97,
+        "dribbling": 93,
+        "passing": 90,
+        "vision": 93,
+        "finishing": 96,
+        "shooting": 98,
+        "stamina": 69,
+        "physical": 72,
+        "tackling": 28,
+        "positioning": 67,
+        "composure": 94
+      }
+    },
+    {
+      "id": "hernan-crespo",
+      "name": "Hernán Crespo",
+      "country": "Argentina",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-v0.7-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 82,
+        "tech": 85,
+        "pass": 76,
+        "finish": 96,
+        "def": 34,
+        "phys": 83,
+        "first_touch": 81,
+        "dribbling": 85,
+        "passing": 76,
+        "vision": 81,
+        "finishing": 96,
+        "shooting": 90,
+        "stamina": 83,
+        "physical": 83,
+        "tackling": 34,
+        "positioning": 55,
+        "composure": 91
+      }
+    },
+    {
+      "id": "marcelo-salas",
+      "name": "Marcelo Salas",
+      "country": "Chile",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Magician"
+      },
+      "ratingType": "editorial-v0.7-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 84,
+        "tech": 90,
+        "pass": 78,
+        "finish": 95,
+        "def": 30,
+        "phys": 80,
+        "first_touch": 84,
+        "dribbling": 90,
+        "passing": 78,
+        "vision": 84,
+        "finishing": 95,
+        "shooting": 88,
+        "stamina": 82,
+        "physical": 80,
+        "tackling": 30,
+        "positioning": 54,
+        "composure": 93
+      }
+    },
+    {
+      "id": "ivan-zamorano",
+      "name": "Iván Zamorano",
+      "country": "Chile",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Juggernaut",
+        "secondary": "Predator"
+      },
+      "ratingType": "editorial-v0.7-provisional",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 80,
+        "tech": 75,
+        "pass": 65,
+        "finish": 94,
+        "def": 40,
+        "phys": 95,
+        "first_touch": 70,
+        "dribbling": 75,
+        "passing": 65,
+        "vision": 70,
+        "finishing": 94,
+        "shooting": 95,
+        "stamina": 88,
+        "physical": 95,
+        "tackling": 40,
+        "positioning": 53,
+        "composure": 85
+      }
+    },
+    {
+      "id": "filippo-inzaghi",
+      "name": "Filippo Inzaghi",
+      "country": "Italy",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Phantom"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 82,
+        "tech": 70,
+        "pass": 65,
+        "finish": 98,
+        "def": 25,
+        "phys": 71,
+        "first_touch": 75,
+        "dribbling": 59,
+        "passing": 65,
+        "vision": 68,
+        "finishing": 98,
+        "shooting": 84,
+        "stamina": 82,
+        "physical": 71,
+        "tackling": 25,
+        "positioning": 100,
+        "composure": 96
+      }
+    },
+    {
+      "id": "hidetoshi-nakata",
+      "name": "Hidetoshi Nakata",
+      "country": "Japan",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [
+        "CM"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Surgeon",
+        "secondary": "Engine"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 83,
+        "tech": 88,
+        "pass": 92,
+        "finish": 81,
+        "def": 53,
+        "phys": 76,
+        "first_touch": 89,
+        "dribbling": 86,
+        "passing": 92,
+        "vision": 95,
+        "finishing": 81,
+        "shooting": 90,
+        "stamina": 85,
+        "physical": 76,
+        "tackling": 54,
+        "positioning": 76,
+        "composure": 88
+      }
+    },
+    {
+      "id": "park-ji-sung",
+      "name": "Park Ji-sung",
+      "country": "South Korea",
+      "role": "M",
+      "position": "LM",
+      "secondaryPositions": [
+        "RM",
+        "CM"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "UNDERDOG"
+      ],
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Tracker"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 84,
+        "tech": 81,
+        "pass": 82,
+        "finish": 74,
+        "def": 82,
+        "phys": 76,
+        "first_touch": 82,
+        "dribbling": 79,
+        "passing": 82,
+        "vision": 83,
+        "finishing": 74,
+        "shooting": 76,
+        "stamina": 100,
+        "physical": 76,
+        "tackling": 84,
+        "positioning": 93,
+        "composure": 88
+      }
+    },
+    {
+      "id": "tijjani-babangida",
+      "name": "Tijjani Babangida",
+      "country": "Nigeria",
+      "role": "F",
+      "position": "RW",
+      "secondaryPositions": [
+        "RM"
+      ],
+      "careerTier": "STALWART",
+      "folklore": [
+        "STREET HERO",
+        "UNDERDOG"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Phantom"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 99,
+        "tech": 84,
+        "pass": 74,
+        "finish": 79,
+        "def": 35,
+        "phys": 66,
+        "first_touch": 81,
+        "dribbling": 89,
+        "passing": 74,
+        "vision": 74,
+        "finishing": 79,
+        "shooting": 78,
+        "stamina": 81,
+        "physical": 66,
+        "tackling": 35,
+        "positioning": 83,
+        "composure": 75
+      }
+    },
+    {
+      "id": "mark-viduka",
+      "name": "Mark Viduka",
+      "country": "Australia",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [
+        "CF"
+      ],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Juggernaut",
+        "secondary": "Magician"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 69,
+        "tech": 88,
+        "pass": 81,
+        "finish": 93,
+        "def": 29,
+        "phys": 94,
+        "first_touch": 92,
+        "dribbling": 85,
+        "passing": 81,
+        "vision": 82,
+        "finishing": 93,
+        "shooting": 91,
+        "stamina": 74,
+        "physical": 94,
+        "tackling": 29,
+        "positioning": 90,
+        "composure": 95
+      }
+    },
+    {
+      "id": "youri-djorkaeff",
+      "name": "Youri Djorkaeff",
+      "country": "France",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [
+        "CF"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Surgeon",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 79,
+        "tech": 93,
+        "pass": 90,
+        "finish": 92,
+        "def": 39,
+        "phys": 72,
+        "first_touch": 95,
+        "dribbling": 88,
+        "passing": 90,
+        "vision": 94,
+        "finishing": 92,
+        "shooting": 93,
+        "stamina": 78,
+        "physical": 72,
+        "tackling": 39,
+        "positioning": 89,
+        "composure": 93
+      }
+    },
+    {
+      "id": "dejan-stankovic",
+      "name": "Dejan Stanković",
+      "country": "Serbia",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [
+        "CAM",
+        "RM"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 78,
+        "tech": 87,
+        "pass": 87,
+        "finish": 82,
+        "def": 78,
+        "phys": 84,
+        "first_touch": 87,
+        "dribbling": 83,
+        "passing": 87,
+        "vision": 88,
+        "finishing": 82,
+        "shooting": 97,
+        "stamina": 93,
+        "physical": 84,
+        "tackling": 79,
+        "positioning": 87,
+        "composure": 89
+      }
+    },
+    {
+      "id": "predrag-mijatovic",
+      "name": "Predrag Mijatović",
+      "country": "Yugoslavia / Montenegro",
+      "role": "F",
+      "position": "CF",
+      "secondaryPositions": [
+        "ST"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 88,
+        "tech": 95,
+        "pass": 86,
+        "finish": 94,
+        "def": 28,
+        "phys": 74,
+        "first_touch": 95,
+        "dribbling": 94,
+        "passing": 86,
+        "vision": 88,
+        "finishing": 94,
+        "shooting": 92,
+        "stamina": 79,
+        "physical": 74,
+        "tackling": 28,
+        "positioning": 93,
+        "composure": 96
+      }
+    },
+    {
+      "id": "dragan-stojkovic",
+      "name": "Dragan Stojković",
+      "country": "Yugoslavia / Serbia",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [
+        "CM"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Maestro"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 84,
+        "tech": 98,
+        "pass": 96,
+        "finish": 88,
+        "def": 39,
+        "phys": 69,
+        "first_touch": 98,
+        "dribbling": 97,
+        "passing": 96,
+        "vision": 98,
+        "finishing": 88,
+        "shooting": 91,
+        "stamina": 79,
+        "physical": 69,
+        "tackling": 39,
+        "positioning": 86,
+        "composure": 95
+      }
+    },
+    {
+      "id": "dejan-savicevic",
+      "name": "Dejan Savićević",
+      "country": "Yugoslavia / Montenegro",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [
+        "CF"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 87,
+        "tech": 99,
+        "pass": 92,
+        "finish": 88,
+        "def": 31,
+        "phys": 69,
+        "first_touch": 98,
+        "dribbling": 99,
+        "passing": 92,
+        "vision": 95,
+        "finishing": 88,
+        "shooting": 90,
+        "stamina": 73,
+        "physical": 69,
+        "tackling": 31,
+        "positioning": 84,
+        "composure": 94
+      }
+    },
+    {
+      "id": "robert-prosinecki",
+      "name": "Robert Prosinečki",
+      "country": "Yugoslavia / Croatia",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [
+        "CM"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Maestro"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 75,
+        "tech": 97,
+        "pass": 94,
+        "finish": 81,
+        "def": 42,
+        "phys": 68,
+        "first_touch": 98,
+        "dribbling": 96,
+        "passing": 94,
+        "vision": 97,
+        "finishing": 81,
+        "shooting": 84,
+        "stamina": 76,
+        "physical": 68,
+        "tackling": 42,
+        "positioning": 79,
+        "composure": 91
+      }
+    },
+    {
+      "id": "darko-pancev",
+      "name": "Darko Pančev",
+      "country": "Yugoslavia / North Macedonia",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 76,
+        "tech": 79,
+        "pass": 66,
+        "finish": 99,
+        "def": 25,
+        "phys": 78,
+        "first_touch": 83,
+        "dribbling": 75,
+        "passing": 66,
+        "vision": 71,
+        "finishing": 99,
+        "shooting": 94,
+        "stamina": 79,
+        "physical": 78,
+        "tackling": 25,
+        "positioning": 99,
+        "composure": 96
+      }
+    },
+    {
+      "id": "miodrag-belodedici",
+      "name": "Miodrag Belodedici",
+      "country": "Romania",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [],
+      "traits": {
+        "primary": "Libero",
+        "secondary": "Anticipator"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 77,
+        "tech": 86,
+        "pass": 83,
+        "finish": 35,
+        "def": 97,
+        "phys": 80,
+        "first_touch": 86,
+        "dribbling": 79,
+        "passing": 83,
+        "vision": 84,
+        "finishing": 35,
+        "shooting": 51,
+        "stamina": 81,
+        "physical": 80,
+        "tackling": 96,
+        "positioning": 98,
+        "composure": 92
+      }
+    },
+    {
+      "id": "safet-susic",
+      "name": "Safet Sušić",
+      "country": "Yugoslavia / Bosnia and Herzegovina",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 80,
+        "tech": 98,
+        "pass": 97,
+        "finish": 85,
+        "def": 30,
+        "phys": 65,
+        "first_touch": 98,
+        "dribbling": 97,
+        "passing": 97,
+        "vision": 99,
+        "finishing": 85,
+        "shooting": 87,
+        "stamina": 82,
+        "physical": 65,
+        "tackling": 30,
+        "positioning": 82,
+        "composure": 93
+      }
+    },
+    {
+      "id": "davor-suker",
+      "name": "Davor Šuker",
+      "country": "Croatia",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [
+        "CF"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Predator"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 81,
+        "tech": 90,
+        "pass": 79,
+        "finish": 98,
+        "def": 29,
+        "phys": 74,
+        "first_touch": 92,
+        "dribbling": 88,
+        "passing": 79,
+        "vision": 82,
+        "finishing": 98,
+        "shooting": 94,
+        "stamina": 82,
+        "physical": 74,
+        "tackling": 29,
+        "positioning": 97,
+        "composure": 97
+      }
+    },
+    {
+      "id": "alen-boksic",
+      "name": "Alen Bokšić",
+      "country": "Croatia",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [
+        "CF"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Juggernaut",
+        "secondary": "Phantom"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 92,
+        "tech": 87,
+        "pass": 77,
+        "finish": 90,
+        "def": 29,
+        "phys": 91,
+        "first_touch": 87,
+        "dribbling": 89,
+        "passing": 77,
+        "vision": 78,
+        "finishing": 90,
+        "shooting": 88,
+        "stamina": 84,
+        "physical": 91,
+        "tackling": 29,
+        "positioning": 91,
+        "composure": 86
+      }
+    },
+    {
+      "id": "savo-milosevic",
+      "name": "Savo Milošević",
+      "country": "Yugoslavia / Serbia",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Juggernaut"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 75,
+        "tech": 78,
+        "pass": 69,
+        "finish": 93,
+        "def": 33,
+        "phys": 88,
+        "first_touch": 82,
+        "dribbling": 75,
+        "passing": 69,
+        "vision": 74,
+        "finishing": 93,
+        "shooting": 91,
+        "stamina": 83,
+        "physical": 88,
+        "tackling": 33,
+        "positioning": 94,
+        "composure": 88
+      }
+    },
+    {
+      "id": "josip-ilicic",
+      "name": "Josip Iličić",
+      "country": "Slovenia",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [
+        "RW"
+      ],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 75,
+        "tech": 96,
+        "pass": 91,
+        "finish": 92,
+        "def": 32,
+        "phys": 71,
+        "first_touch": 95,
+        "dribbling": 94,
+        "passing": 91,
+        "vision": 94,
+        "finishing": 92,
+        "shooting": 96,
+        "stamina": 77,
+        "physical": 71,
+        "tackling": 32,
+        "positioning": 85,
+        "composure": 91
+      }
+    },
+    {
+      "id": "vladimir-jugovic",
+      "name": "Vladimir Jugović",
+      "country": "Yugoslavia / Serbia",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [
+        "CDM"
+      ],
+      "careerTier": "ELITE",
+      "folklore": [],
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Architect"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 78,
+        "tech": 84,
+        "pass": 88,
+        "finish": 78,
+        "def": 86,
+        "phys": 84,
+        "first_touch": 86,
+        "dribbling": 82,
+        "passing": 88,
+        "vision": 87,
+        "finishing": 78,
+        "shooting": 83,
+        "stamina": 91,
+        "physical": 84,
+        "tackling": 86,
+        "positioning": 86,
+        "composure": 90
+      }
+    },
+    {
+      "id": "nwankwo-kanu",
+      "name": "Nwankwo Kanu",
+      "country": "Nigeria",
+      "role": "F",
+      "position": "CF",
+      "secondaryPositions": [
+        "ST"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "UNDERDOG"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Predator"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 75,
+        "tech": 94,
+        "pass": 85,
+        "finish": 91,
+        "def": 34,
+        "phys": 80,
+        "first_touch": 96,
+        "dribbling": 92,
+        "passing": 85,
+        "vision": 86,
+        "finishing": 91,
+        "shooting": 89,
+        "stamina": 79,
+        "physical": 80,
+        "tackling": 34,
+        "positioning": 89,
+        "composure": 90
+      }
+    },
+    {
+      "id": "alex-de-souza",
+      "name": "Alex de Souza",
+      "country": "Brazil",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Maestro",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 67,
+        "tech": 96,
+        "pass": 97,
+        "finish": 92,
+        "def": 32,
+        "phys": 70,
+        "first_touch": 96,
+        "dribbling": 91,
+        "passing": 97,
+        "vision": 98,
+        "finishing": 92,
+        "shooting": 93,
+        "stamina": 76,
+        "physical": 70,
+        "tackling": 32,
+        "positioning": 85,
+        "composure": 96
+      }
+    },
+    {
+      "id": "andrey-arshavin",
+      "name": "Andrey Arshavin",
+      "country": "Russia",
+      "role": "F",
+      "position": "LW",
+      "secondaryPositions": [
+        "CAM"
+      ],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 88,
+        "tech": 93,
+        "pass": 87,
+        "finish": 89,
+        "def": 30,
+        "phys": 64,
+        "first_touch": 93,
+        "dribbling": 94,
+        "passing": 87,
+        "vision": 91,
+        "finishing": 89,
+        "shooting": 88,
+        "stamina": 75,
+        "physical": 64,
+        "tackling": 30,
+        "positioning": 86,
+        "composure": 87
+      }
+    },
+    {
+      "id": "hulk",
+      "name": "Hulk",
+      "country": "Brazil",
+      "role": "F",
+      "position": "RW",
+      "secondaryPositions": [
+        "ST"
+      ],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Juggernaut",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 90,
+        "tech": 87,
+        "pass": 80,
+        "finish": 91,
+        "def": 39,
+        "phys": 98,
+        "first_touch": 85,
+        "dribbling": 88,
+        "passing": 80,
+        "vision": 80,
+        "finishing": 91,
+        "shooting": 99,
+        "stamina": 82,
+        "physical": 98,
+        "tackling": 39,
+        "positioning": 84,
+        "composure": 85
+      }
+    },
+    {
+      "id": "aiden-mcgeady",
+      "name": "Aiden McGeady",
+      "country": "Republic of Ireland",
+      "role": "F",
+      "position": "RW",
+      "secondaryPositions": [
+        "LW"
+      ],
+      "careerTier": "STALWART",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Phantom"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 87,
+        "tech": 89,
+        "pass": 75,
+        "finish": 67,
+        "def": 35,
+        "phys": 62,
+        "first_touch": 85,
+        "dribbling": 94,
+        "passing": 75,
+        "vision": 78,
+        "finishing": 67,
+        "shooting": 72,
+        "stamina": 84,
+        "physical": 62,
+        "tackling": 35,
+        "positioning": 74,
+        "composure": 71
+      }
+    },
+    {
+      "id": "papiss-cisse",
+      "name": "Papiss Cissé",
+      "country": "Senegal",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "STALWART",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 82,
+        "tech": 73,
+        "pass": 61,
+        "finish": 94,
+        "def": 31,
+        "phys": 77,
+        "first_touch": 78,
+        "dribbling": 73,
+        "passing": 61,
+        "vision": 66,
+        "finishing": 94,
+        "shooting": 94,
+        "stamina": 76,
+        "physical": 77,
+        "tackling": 31,
+        "positioning": 94,
+        "composure": 85
+      }
+    },
+    {
+      "id": "peter-crouch",
+      "name": "Peter Crouch",
+      "country": "England",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "STALWART",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Juggernaut",
+        "secondary": "Predator"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 62,
+        "tech": 78,
+        "pass": 76,
+        "finish": 86,
+        "def": 42,
+        "phys": 90,
+        "first_touch": 84,
+        "dribbling": 75,
+        "passing": 76,
+        "vision": 74,
+        "finishing": 86,
+        "shooting": 87,
+        "stamina": 78,
+        "physical": 90,
+        "tackling": 42,
+        "positioning": 92,
+        "composure": 87
+      }
+    },
+    {
+      "id": "djibril-cisse",
+      "name": "Djibril Cissé",
+      "country": "France",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [
+        "RW"
+      ],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO",
+        "UNDERDOG"
+      ],
+      "traits": {
+        "primary": "Phantom",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 97,
+        "tech": 80,
+        "pass": 66,
+        "finish": 91,
+        "def": 29,
+        "phys": 81,
+        "first_touch": 80,
+        "dribbling": 84,
+        "passing": 66,
+        "vision": 69,
+        "finishing": 91,
+        "shooting": 94,
+        "stamina": 82,
+        "physical": 81,
+        "tackling": 29,
+        "positioning": 91,
+        "composure": 86
+      }
+    },
+    {
+      "id": "dennis-bergkamp",
+      "name": "Dennis Bergkamp",
+      "country": "Netherlands",
+      "role": "F",
+      "position": "CF",
+      "secondaryPositions": [
+        "CAM"
+      ],
+      "careerTier": "TITAN",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 76,
+        "tech": 99,
+        "pass": 96,
+        "finish": 94,
+        "def": 33,
+        "phys": 70,
+        "first_touch": 100,
+        "dribbling": 96,
+        "passing": 96,
+        "vision": 97,
+        "finishing": 94,
+        "shooting": 94,
+        "stamina": 78,
+        "physical": 70,
+        "tackling": 33,
+        "positioning": 93,
+        "composure": 98
+      }
+    },
+    {
+      "id": "pierre-van-hooijdonk",
+      "name": "Pierre van Hooijdonk",
+      "country": "Netherlands",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Juggernaut"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 71,
+        "tech": 84,
+        "pass": 76,
+        "finish": 94,
+        "def": 32,
+        "phys": 92,
+        "first_touch": 84,
+        "dribbling": 79,
+        "passing": 76,
+        "vision": 79,
+        "finishing": 94,
+        "shooting": 97,
+        "stamina": 81,
+        "physical": 92,
+        "tackling": 32,
+        "positioning": 92,
+        "composure": 91
+      }
+    },
+    {
+      "id": "shunsuke-nakamura",
+      "name": "Shunsuke Nakamura",
+      "country": "Japan",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [
+        "RM",
+        "CM"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Architect",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 73,
+        "tech": 96,
+        "pass": 96,
+        "finish": 83,
+        "def": 40,
+        "phys": 62,
+        "first_touch": 95,
+        "dribbling": 89,
+        "passing": 96,
+        "vision": 95,
+        "finishing": 83,
+        "shooting": 97,
+        "stamina": 82,
+        "physical": 62,
+        "tackling": 40,
+        "positioning": 82,
+        "composure": 94
+      }
+    },
+    {
+      "id": "alan-shearer",
+      "name": "Alan Shearer",
+      "country": "England",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "careerTier": "TITAN",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Juggernaut"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 80,
+        "tech": 86,
+        "pass": 77,
+        "finish": 99,
+        "def": 42,
+        "phys": 96,
+        "first_touch": 87,
+        "dribbling": 80,
+        "passing": 77,
+        "vision": 81,
+        "finishing": 99,
+        "shooting": 98,
+        "stamina": 91,
+        "physical": 96,
+        "tackling": 42,
+        "positioning": 98,
+        "composure": 97
+      }
+    },
+    {
+      "id": "alberto-luque",
+      "name": "Alberto Luque",
+      "country": "Spain",
+      "role": "F",
+      "position": "LW",
+      "secondaryPositions": [
+        "ST"
+      ],
+      "careerTier": "STALWART",
+      "folklore": [
+        "STREET HERO",
+        "UNDERDOG"
+      ],
+      "traits": {
+        "primary": "Phantom",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 89,
+        "tech": 85,
+        "pass": 77,
+        "finish": 87,
+        "def": 34,
+        "phys": 75,
+        "first_touch": 86,
+        "dribbling": 88,
+        "passing": 77,
+        "vision": 79,
+        "finishing": 87,
+        "shooting": 91,
+        "stamina": 83,
+        "physical": 75,
+        "tackling": 34,
+        "positioning": 88,
+        "composure": 82
+      }
+    },
+    {
+      "id": "diego-tristan",
+      "name": "Diego Tristán",
+      "country": "Spain",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [
+        "CF"
+      ],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Magician"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 78,
+        "tech": 89,
+        "pass": 77,
+        "finish": 95,
+        "def": 29,
+        "phys": 78,
+        "first_touch": 92,
+        "dribbling": 87,
+        "passing": 77,
+        "vision": 81,
+        "finishing": 95,
+        "shooting": 94,
+        "stamina": 80,
+        "physical": 78,
+        "tackling": 29,
+        "positioning": 93,
+        "composure": 93
+      }
+    },
+    {
+      "id": "ariel-ortega",
+      "name": "Ariel Ortega",
+      "country": "Argentina",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [
+        "RW"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 87,
+        "tech": 98,
+        "pass": 91,
+        "finish": 82,
+        "def": 30,
+        "phys": 61,
+        "first_touch": 97,
+        "dribbling": 99,
+        "passing": 91,
+        "vision": 96,
+        "finishing": 82,
+        "shooting": 85,
+        "stamina": 78,
+        "physical": 61,
+        "tackling": 30,
+        "positioning": 85,
+        "composure": 86
+      }
+    },
+    {
+      "id": "patrick-mboma",
+      "name": "Patrick Mboma",
+      "country": "Cameroon",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [
+        "CF"
+      ],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO",
+        "UNDERDOG"
+      ],
+      "traits": {
+        "primary": "Juggernaut",
+        "secondary": "Executioner"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 87,
+        "tech": 85,
+        "pass": 72,
+        "finish": 94,
+        "def": 31,
+        "phys": 93,
+        "first_touch": 86,
+        "dribbling": 84,
+        "passing": 72,
+        "vision": 76,
+        "finishing": 94,
+        "shooting": 97,
+        "stamina": 84,
+        "physical": 93,
+        "tackling": 31,
+        "positioning": 94,
+        "composure": 90
+      }
+    },
+    {
+      "id": "sami-hyypia",
+      "name": "Sami Hyypiä",
+      "country": "Finland",
+      "role": "D",
+      "position": "CB",
+      "secondaryPositions": [],
+      "careerTier": "ELITE",
+      "folklore": [
+        "UNDERDOG"
+      ],
+      "traits": {
+        "primary": "Wall",
+        "secondary": "Anticipator"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 64,
+        "tech": 73,
+        "pass": 76,
+        "finish": 42,
+        "def": 95,
+        "phys": 92,
+        "first_touch": 75,
+        "dribbling": 61,
+        "passing": 76,
+        "vision": 79,
+        "finishing": 42,
+        "shooting": 72,
+        "stamina": 81,
+        "physical": 92,
+        "tackling": 96,
+        "positioning": 97,
+        "composure": 94
+      }
+    },
+    {
+      "id": "milan-baros",
+      "name": "Milan Baroš",
+      "country": "Czech Republic",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [
+        "CF"
+      ],
+      "careerTier": "ELITE",
+      "folklore": [
+        "STREET HERO",
+        "UNDERDOG"
+      ],
+      "traits": {
+        "primary": "Phantom",
+        "secondary": "Predator"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 91,
+        "tech": 84,
+        "pass": 70,
+        "finish": 87,
+        "def": 30,
+        "phys": 77,
+        "first_touch": 83,
+        "dribbling": 87,
+        "passing": 70,
+        "vision": 73,
+        "finishing": 87,
+        "shooting": 85,
+        "stamina": 86,
+        "physical": 77,
+        "tackling": 30,
+        "positioning": 90,
+        "composure": 82
+      }
+    },
+    {
+      "id": "ruud-gullit",
+      "name": "Ruud Gullit",
+      "country": "Netherlands",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [
+        "CF",
+        "CM"
+      ],
+      "careerTier": "TITAN",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Juggernaut",
+        "secondary": "Maestro"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 90,
+        "tech": 95,
+        "pass": 91,
+        "finish": 92,
+        "def": 76,
+        "phys": 96,
+        "first_touch": 95,
+        "dribbling": 94,
+        "passing": 91,
+        "vision": 93,
+        "finishing": 92,
+        "shooting": 94,
+        "stamina": 92,
+        "physical": 96,
+        "tackling": 77,
+        "positioning": 92,
+        "composure": 94
+      }
+    },
+    {
+      "id": "gianfranco-zola",
+      "name": "Gianfranco Zola",
+      "country": "Italy",
+      "role": "F",
+      "position": "CF",
+      "secondaryPositions": [
+        "CAM"
+      ],
+      "careerTier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Surgeon"
+      },
+      "ratingType": "editorial-user-approved-v1",
+      "provisionalTactical": true,
+      "r": {
+        "pace": 78,
+        "tech": 98,
+        "pass": 94,
+        "finish": 90,
+        "def": 28,
+        "phys": 58,
+        "first_touch": 99,
+        "dribbling": 97,
+        "passing": 94,
+        "vision": 96,
+        "finishing": 90,
+        "shooting": 94,
+        "stamina": 82,
+        "physical": 58,
+        "tackling": 28,
+        "positioning": 88,
+        "composure": 96
+      }
+    }
+  ],
+  "aliasCollisions": [],
+  "unclassified": [],
+  "missingFolklore": 0,
+  "talismans": [
+    {
+      "id": "ryan-giggs",
+      "clubs": [
+        "Manchester United"
+      ]
+    },
+    {
+      "id": "frank-lampard",
+      "clubs": [
+        "Chelsea"
+      ]
+    },
+    {
+      "id": "steven-gerrard",
+      "clubs": [
+        "Liverpool"
+      ]
+    },
+    {
+      "id": "juan-roman-riquelme",
+      "clubs": [
+        "Boca Juniors"
+      ]
+    },
+    {
+      "id": "javier-zanetti",
+      "clubs": [
+        "Inter Milan"
+      ]
+    },
+    {
+      "id": "paolo-maldini",
+      "clubs": [
+        "AC Milan"
+      ]
+    },
+    {
+      "id": "gabriel-batistuta",
+      "clubs": [
+        "Fiorentina"
+      ]
+    },
+    {
+      "id": "francesco-totti",
+      "clubs": [
+        "AS Roma"
+      ]
+    },
+    {
+      "id": "alessandro-del-piero",
+      "clubs": [
+        "Juventus"
+      ]
+    },
+    {
+      "id": "daniele-de-rossi",
+      "clubs": [
+        "AS Roma"
+      ]
+    },
+    {
+      "id": "carles-puyol",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "id": "john-terry",
+      "clubs": [
+        "Chelsea"
+      ]
+    },
+    {
+      "id": "philipp-lahm",
+      "clubs": [
+        "Bayern Munich"
+      ]
+    },
+    {
+      "id": "vincent-kompany",
+      "clubs": [
+        "Manchester City"
+      ]
+    },
+    {
+      "id": "xavi-hernandez",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "id": "andres-iniesta",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "id": "lionel-messi",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "id": "thierry-henry",
+      "clubs": [
+        "Arsenal"
+      ]
+    },
+    {
+      "id": "wayne-rooney",
+      "clubs": [
+        "Manchester United"
+      ]
+    },
+    {
+      "id": "didier-drogba",
+      "clubs": [
+        "Chelsea"
+      ]
+    },
+    {
+      "id": "mohamed-salah",
+      "clubs": [
+        "Liverpool"
+      ]
+    },
+    {
+      "id": "sergio-aguero",
+      "clubs": [
+        "Manchester City"
+      ]
+    },
+    {
+      "id": "son-heung-min",
+      "clubs": [
+        "Tottenham Hotspur"
+      ]
+    },
+    {
+      "id": "matt-le-tissier",
+      "clubs": [
+        "Southampton"
+      ]
+    },
+    {
+      "id": "dragan-stojkovic",
+      "clubs": [
+        "Red Star Belgrade",
+        "Nagoya Grampus"
+      ]
+    },
+    {
+      "id": "dejan-savicevic",
+      "clubs": [
+        "Red Star Belgrade",
+        "AC Milan"
+      ]
+    },
+    {
+      "id": "safet-susic",
+      "clubs": [
+        "Paris Saint-Germain"
+      ]
+    },
+    {
+      "id": "alex-de-souza",
+      "clubs": [
+        "Fenerbahçe"
+      ]
+    },
+    {
+      "id": "shunsuke-nakamura",
+      "clubs": [
+        "Yokohama F. Marinos"
+      ]
+    },
+    {
+      "id": "alan-shearer",
+      "clubs": [
+        "Newcastle United"
+      ]
+    },
+    {
+      "id": "ariel-ortega",
+      "clubs": [
+        "River Plate"
+      ]
+    },
+    {
+      "id": "ruud-gullit",
+      "clubs": [
+        "AC Milan"
+      ]
+    },
+    {
+      "id": "gianfranco-zola",
+      "clubs": [
+        "Chelsea"
+      ]
+    }
+  ],
+  "underdogs": [
+    "xabi-alonso",
+    "steven-gerrard",
+    "ngolo-kante",
+    "ronaldo-nazario",
+    "jay-jay-okocha",
+    "jamie-carragher",
+    "riyad-mahrez",
+    "jamie-vardy",
+    "park-ji-sung",
+    "tijjani-babangida",
+    "nwankwo-kanu",
+    "djibril-cisse",
+    "alberto-luque",
+    "patrick-mboma",
+    "sami-hyypia",
+    "milan-baros"
+  ],
+  "villains": [
+    "roy-keane",
+    "thomas-gravesen",
+    "antonio-cassano",
+    "zlatan-ibrahimovic",
+    "gennaro-gattuso",
+    "sergio-ramos",
+    "cristiano-ronaldo",
+    "luis-suarez",
+    "mario-balotelli"
+  ],
+  "topScores": {
+    "pace": [
+      {
+        "id": "obafemi-martins",
+        "v": 99
+      },
+      {
+        "id": "kylian-mbappe",
+        "v": 99
+      },
+      {
+        "id": "gareth-bale",
+        "v": 99
+      },
+      {
+        "id": "tijjani-babangida",
+        "v": 99
+      },
+      {
+        "id": "ronaldo-nazario",
+        "v": 98
+      },
+      {
+        "id": "kyle-walker",
+        "v": 98
+      }
+    ],
+    "tech": [
+      {
+        "id": "lionel-messi",
+        "v": 100
+      },
+      {
+        "id": "zinedine-zidane",
+        "v": 99
+      },
+      {
+        "id": "ronaldinho",
+        "v": 99
+      },
+      {
+        "id": "andres-iniesta",
+        "v": 99
+      },
+      {
+        "id": "neymar",
+        "v": 99
+      },
+      {
+        "id": "dejan-savicevic",
+        "v": 99
+      }
+    ],
+    "pass": [
+      {
+        "id": "xavi-hernandez",
+        "v": 99
+      },
+      {
+        "id": "toni-kroos",
+        "v": 99
+      },
+      {
+        "id": "andrea-pirlo",
+        "v": 99
+      },
+      {
+        "id": "kevin-de-bruyne",
+        "v": 98
+      },
+      {
+        "id": "zinedine-zidane",
+        "v": 98
+      },
+      {
+        "id": "david-beckham",
+        "v": 98
+      }
+    ],
+    "finish": [
+      {
+        "id": "ronaldo-nazario",
+        "v": 99
+      },
+      {
+        "id": "lionel-messi",
+        "v": 99
+      },
+      {
+        "id": "cristiano-ronaldo",
+        "v": 99
+      },
+      {
+        "id": "sergio-aguero",
+        "v": 99
+      },
+      {
+        "id": "harry-kane",
+        "v": 99
+      },
+      {
+        "id": "erling-haaland",
+        "v": 99
+      }
+    ],
+    "def": [
+      {
+        "id": "paolo-maldini",
+        "v": 99
+      },
+      {
+        "id": "alessandro-nesta",
+        "v": 99
+      },
+      {
+        "id": "ngolo-kante",
+        "v": 98
+      },
+      {
+        "id": "fabio-cannavaro",
+        "v": 98
+      },
+      {
+        "id": "giorgio-chiellini",
+        "v": 97
+      },
+      {
+        "id": "lilian-thuram",
+        "v": 97
+      }
+    ],
+    "phys": [
+      {
+        "id": "didier-drogba",
+        "v": 99
+      },
+      {
+        "id": "adriano",
+        "v": 98
+      },
+      {
+        "id": "hulk",
+        "v": 98
+      },
+      {
+        "id": "zlatan-ibrahimovic",
+        "v": 97
+      },
+      {
+        "id": "marouane-fellaini",
+        "v": 97
+      },
+      {
+        "id": "erling-haaland",
+        "v": 97
+      }
+    ],
+    "first_touch": [
+      {
+        "id": "dennis-bergkamp",
+        "v": 100
+      },
+      {
+        "id": "zinedine-zidane",
+        "v": 99
+      },
+      {
+        "id": "lionel-messi",
+        "v": 99
+      },
+      {
+        "id": "gianfranco-zola",
+        "v": 99
+      },
+      {
+        "id": "ronaldinho",
+        "v": 98
+      },
+      {
+        "id": "xavi-hernandez",
+        "v": 98
+      }
+    ],
+    "dribbling": [
+      {
+        "id": "lionel-messi",
+        "v": 100
+      },
+      {
+        "id": "zinedine-zidane",
+        "v": 99
+      },
+      {
+        "id": "ronaldinho",
+        "v": 99
+      },
+      {
+        "id": "andres-iniesta",
+        "v": 99
+      },
+      {
+        "id": "neymar",
+        "v": 99
+      },
+      {
+        "id": "dejan-savicevic",
+        "v": 99
+      }
+    ],
+    "passing": [
+      {
+        "id": "xavi-hernandez",
+        "v": 99
+      },
+      {
+        "id": "toni-kroos",
+        "v": 99
+      },
+      {
+        "id": "andrea-pirlo",
+        "v": 99
+      },
+      {
+        "id": "kevin-de-bruyne",
+        "v": 98
+      },
+      {
+        "id": "zinedine-zidane",
+        "v": 98
+      },
+      {
+        "id": "david-beckham",
+        "v": 98
+      }
+    ],
+    "vision": [
+      {
+        "id": "zinedine-zidane",
+        "v": 99
+      },
+      {
+        "id": "lionel-messi",
+        "v": 99
+      },
+      {
+        "id": "safet-susic",
+        "v": 99
+      },
+      {
+        "id": "xavi-hernandez",
+        "v": 98
+      },
+      {
+        "id": "andres-iniesta",
+        "v": 98
+      },
+      {
+        "id": "david-silva",
+        "v": 98
+      }
+    ],
+    "finishing": [
+      {
+        "id": "ronaldo-nazario",
+        "v": 99
+      },
+      {
+        "id": "lionel-messi",
+        "v": 99
+      },
+      {
+        "id": "cristiano-ronaldo",
+        "v": 99
+      },
+      {
+        "id": "sergio-aguero",
+        "v": 99
+      },
+      {
+        "id": "harry-kane",
+        "v": 99
+      },
+      {
+        "id": "erling-haaland",
+        "v": 99
+      }
+    ],
+    "shooting": [
+      {
+        "id": "hulk",
+        "v": 99
+      },
+      {
+        "id": "didier-drogba",
+        "v": 98
+      },
+      {
+        "id": "erling-haaland",
+        "v": 98
+      },
+      {
+        "id": "matt-le-tissier",
+        "v": 98
+      },
+      {
+        "id": "alan-shearer",
+        "v": 98
+      },
+      {
+        "id": "adriano",
+        "v": 97
+      }
+    ],
+    "stamina": [
+      {
+        "id": "park-ji-sung",
+        "v": 100
+      },
+      {
+        "id": "adriano",
+        "v": 95
+      },
+      {
+        "id": "erling-haaland",
+        "v": 95
+      },
+      {
+        "id": "gareth-bale",
+        "v": 95
+      },
+      {
+        "id": "cristiano-ronaldo",
+        "v": 94
+      },
+      {
+        "id": "kyle-walker",
+        "v": 94
+      }
+    ],
+    "physical": [
+      {
+        "id": "didier-drogba",
+        "v": 99
+      },
+      {
+        "id": "adriano",
+        "v": 98
+      },
+      {
+        "id": "hulk",
+        "v": 98
+      },
+      {
+        "id": "zlatan-ibrahimovic",
+        "v": 97
+      },
+      {
+        "id": "marouane-fellaini",
+        "v": 97
+      },
+      {
+        "id": "erling-haaland",
+        "v": 97
+      }
+    ],
+    "tackling": [
+      {
+        "id": "paolo-maldini",
+        "v": 99
+      },
+      {
+        "id": "alessandro-nesta",
+        "v": 99
+      },
+      {
+        "id": "ngolo-kante",
+        "v": 98
+      },
+      {
+        "id": "fabio-cannavaro",
+        "v": 98
+      },
+      {
+        "id": "giorgio-chiellini",
+        "v": 97
+      },
+      {
+        "id": "lilian-thuram",
+        "v": 97
+      }
+    ],
+    "positioning": [
+      {
+        "id": "filippo-inzaghi",
+        "v": 100
+      },
+      {
+        "id": "darko-pancev",
+        "v": 99
+      },
+      {
+        "id": "miodrag-belodedici",
+        "v": 98
+      },
+      {
+        "id": "alan-shearer",
+        "v": 98
+      },
+      {
+        "id": "davor-suker",
+        "v": 97
+      },
+      {
+        "id": "sami-hyypia",
+        "v": 97
+      }
+    ],
+    "composure": [
+      {
+        "id": "lionel-messi",
+        "v": 100
+      },
+      {
+        "id": "ronaldo-nazario",
+        "v": 99
+      },
+      {
+        "id": "dennis-bergkamp",
+        "v": 98
+      },
+      {
+        "id": "rivaldo",
+        "v": 97
+      },
+      {
+        "id": "cristiano-ronaldo",
+        "v": 97
+      },
+      {
+        "id": "sergio-aguero",
+        "v": 97
+      }
+    ]
+  },
+  "scoreSummary": {
+    "pace": {
+      "min": 42,
+      "max": 99,
+      "mean": 79.4
+    },
+    "tech": {
+      "min": 56,
+      "max": 100,
+      "mean": 85.9
+    },
+    "pass": {
+      "min": 61,
+      "max": 99,
+      "mean": 83.5
+    },
+    "finish": {
+      "min": 25,
+      "max": 99,
+      "mean": 76.8
+    },
+    "def": {
+      "min": 20,
+      "max": 99,
+      "mean": 57.6
+    },
+    "phys": {
+      "min": 50,
+      "max": 99,
+      "mean": 79.3
+    },
+    "first_touch": {
+      "min": 59,
+      "max": 100,
+      "mean": 85.9
+    },
+    "dribbling": {
+      "min": 56,
+      "max": 100,
+      "mean": 85.4
+    },
+    "passing": {
+      "min": 61,
+      "max": 99,
+      "mean": 83.5
+    },
+    "vision": {
+      "min": 60,
+      "max": 99,
+      "mean": 84.8
+    },
+    "finishing": {
+      "min": 25,
+      "max": 99,
+      "mean": 76.8
+    },
+    "shooting": {
+      "min": 47,
+      "max": 99,
+      "mean": 79.4
+    },
+    "stamina": {
+      "min": 46,
+      "max": 100,
+      "mean": 80.1
+    },
+    "physical": {
+      "min": 50,
+      "max": 99,
+      "mean": 79.3
+    },
+    "tackling": {
+      "min": 20,
+      "max": 99,
+      "mean": 57.6
+    },
+    "positioning": {
+      "min": 43,
+      "max": 100,
+      "mean": 77
+    },
+    "composure": {
+      "min": 42,
+      "max": 100,
+      "mean": 82.3
+    }
+  },
+  "rosterVersion": "editorial-v1.3-178+ratings-v1.1-provisional",
+  "engineVersion": "cage-t3-3"
+}
