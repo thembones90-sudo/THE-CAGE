@@ -25,7 +25,7 @@ const want = id => !ONLY || String(ONLY).split(',').includes(id);
 function loadGame(enginePath) {
   const window = {};
   const ctx = vm.createContext({ window, console, Math, Object, Array, Error, TypeError, RangeError, JSON, Number, String, Set, Map, WeakMap, Symbol, Boolean });
-  for (const f of [path.join(ROOT, 'src', 'players.js'), path.join(ROOT, 'src', 'roster-expansion.js'), enginePath]) {
+  for (const f of [path.join(ROOT, 'src', 'players.js'), opt('--roster', path.join(ROOT, 'src', 'roster-expansion.js')), enginePath]) {
     if (!fs.existsSync(f)) { if (f.endsWith('roster-expansion.js')) continue; throw Error('Missing ' + f); }
     vm.runInContext(fs.readFileSync(f, 'utf8'), ctx, { filename: f });
   }

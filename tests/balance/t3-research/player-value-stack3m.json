@@ -1,0 +1,261 @@
+{
+ "engine": "t3r-D1b+D3+D4+D5b+C1+C2+A2t+B2+B4t+B5+M2",
+ "flags": "D1b+D3+D4+D5b+C1+C2+A2t+B2+B4t+B5+M2",
+ "N": 30000,
+ "caps": 0,
+ "medianDuration": 70,
+ "players": {
+  "roy-keane": {
+   "rate": 0.5178947368421053,
+   "n": 2850
+  },
+  "paul-scholes": {
+   "rate": 0.5024475524475525,
+   "n": 2860
+  },
+  "ryan-giggs": {
+   "rate": 0.5081512313562262,
+   "n": 2883
+  },
+  "michael-essien": {
+   "rate": 0.5563355563355563,
+   "n": 2849
+  },
+  "frank-lampard": {
+   "rate": 0.5221147201105736,
+   "n": 2894
+  },
+  "claude-makelele": {
+   "rate": 0.5095852213314744,
+   "n": 2869
+  },
+  "kevin-de-bruyne": {
+   "rate": 0.5455855855855856,
+   "n": 2775
+  },
+  "rodri": {
+   "rate": 0.530812324929972,
+   "n": 2856
+  },
+  "bernardo-silva": {
+   "rate": 0.5506329113924051,
+   "n": 2844
+  },
+  "gilberto-silva": {
+   "rate": 0.47807486631016044,
+   "n": 2805
+  },
+  "patrick-vieira": {
+   "rate": 0.5366609294320138,
+   "n": 2905
+  },
+  "robert-pires": {
+   "rate": 0.5129280223619846,
+   "n": 2862
+  },
+  "xabi-alonso": {
+   "rate": 0.49200833912439196,
+   "n": 2878
+  },
+  "steven-gerrard": {
+   "rate": 0.5891311872620284,
+   "n": 2889
+  },
+  "javier-mascherano": {
+   "rate": 0.47357065803667747,
+   "n": 2781
+  },
+  "ngolo-kante": {
+   "rate": 0.5464915312824058,
+   "n": 2893
+  },
+  "yaya-toure": {
+   "rate": 0.5774446823697359,
+   "n": 2802
+  },
+  "eden-hazard": {
+   "rate": 0.5267097652262674,
+   "n": 2939
+  },
+  "juan-roman-riquelme": {
+   "rate": 0.43002717391304346,
+   "n": 2944
+  },
+  "ricardo-quaresma": {
+   "rate": 0.4327057182705718,
+   "n": 2868
+  },
+  "edgar-davids": {
+   "rate": 0.48340021889821233,
+   "n": 2741
+  },
+  "roberto-baggio": {
+   "rate": 0.534051424600417,
+   "n": 2878
+  },
+  "adriano": {
+   "rate": 0.5949453551912568,
+   "n": 2928
+  },
+  "javier-zanetti": {
+   "rate": 0.5368679775280899,
+   "n": 2848
+  },
+  "michael-ballack": {
+   "rate": 0.5475113122171946,
+   "n": 2873
+  },
+  "paolo-maldini": {
+   "rate": 0.5171832884097035,
+   "n": 2968
+  },
+  "ronaldo-nazario": {
+   "rate": 0.6259042369962108,
+   "n": 2903
+  },
+  "thomas-gravesen": {
+   "rate": 0.40035714285714286,
+   "n": 2800
+  },
+  "jay-jay-okocha": {
+   "rate": 0.48578199052132703,
+   "n": 2954
+  },
+  "nemanja-vidic": {
+   "rate": 0.41286307053941906,
+   "n": 2892
+  },
+  "gabriel-batistuta": {
+   "rate": 0.5537049626104691,
+   "n": 2942
+  },
+  "francesco-totti": {
+   "rate": 0.5150976909413855,
+   "n": 2815
+  },
+  "giorgio-chiellini": {
+   "rate": 0.4480630785053137,
+   "n": 2917
+  },
+  "alvaro-recoba": {
+   "rate": 0.4828551434569629,
+   "n": 2858
+  },
+  "sinisa-mihajlovic": {
+   "rate": 0.423977630199231,
+   "n": 2861
+  },
+  "nani": {
+   "rate": 0.48044895003620564,
+   "n": 2762
+  },
+  "dimitar-berbatov": {
+   "rate": 0.4928246412320616,
+   "n": 2857
+  },
+  "yannick-bolasie": {
+   "rate": 0.4513888888888889,
+   "n": 2880
+  },
+  "rio-ferdinand": {
+   "rate": 0.486411149825784,
+   "n": 2870
+  },
+  "obafemi-martins": {
+   "rate": 0.5184266477675408,
+   "n": 2822
+  },
+  "michael-owen": {
+   "rate": 0.5506439262095371,
+   "n": 2873
+  },
+  "jaap-stam": {
+   "rate": 0.40904236383054465,
+   "n": 2809
+  },
+  "lilian-thuram": {
+   "rate": 0.5010760401721664,
+   "n": 2788
+  },
+  "denilson": {
+   "rate": 0.40963855421686746,
+   "n": 2822
+  },
+  "alessandro-del-piero": {
+   "rate": 0.5280390107976315,
+   "n": 2871
+  },
+  "pablo-aimar": {
+   "rate": 0.4691444600280505,
+   "n": 2852
+  },
+  "antonio-cassano": {
+   "rate": 0.4776278409090909,
+   "n": 2816
+  },
+  "daniele-de-rossi": {
+   "rate": 0.5129265770423992,
+   "n": 2901
+  },
+  "andres-dalessandro": {
+   "rate": 0.4581190301249082,
+   "n": 2722
+  },
+  "zlatan-ibrahimovic": {
+   "rate": 0.5932203389830508,
+   "n": 2832
+  },
+  "lucio": {
+   "rate": 0.4550877192982456,
+   "n": 2850
+  },
+  "hatem-ben-arfa": {
+   "rate": 0.4606353591160221,
+   "n": 2896
+  },
+  "rivaldo": {
+   "rate": 0.5609137055837563,
+   "n": 2758
+  },
+  "marcel-desailly": {
+   "rate": 0.47075208913649025,
+   "n": 2872
+  },
+  "zinedine-zidane": {
+   "rate": 0.5576117318435754,
+   "n": 2864
+  },
+  "ronaldinho": {
+   "rate": 0.57,
+   "n": 2900
+  },
+  "djalminha": {
+   "rate": 0.453015427769986,
+   "n": 2852
+  },
+  "steed-malbranque": {
+   "rate": 0.4534639608117565,
+   "n": 2858
+  },
+  "ricardo-carvalho": {
+   "rate": 0.46178686759956944,
+   "n": 2787
+  },
+  "ledley-king": {
+   "rate": 0.47795414462081126,
+   "n": 2835
+  },
+  "tugay-kerimoglu": {
+   "rate": 0.4406838799720865,
+   "n": 2866
+  },
+  "morten-gamst-pedersen": {
+   "rate": 0.4400977995110024,
+   "n": 2863
+  },
+  "nene": {
+   "rate": 0.44824016563146996,
+   "n": 2898
+  }
+ }
+}

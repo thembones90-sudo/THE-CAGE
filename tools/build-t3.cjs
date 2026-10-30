@@ -1,7 +1,14 @@
 // Reproducible standalone browser/analysis bundle. Edit modules, not cage-engine.js.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),crypto=require('node:crypto');const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
-const ratings=JSON.parse(read('proposals/ratings-v1.json'));if(ratings.version!=='ratings-v1.1')throw Error('Expected approved ratings-v1.1');
-const prefix='window.CAGE_APPROVED_RATINGS='+JSON.stringify(ratings)+';\n',c={window:{}};vm.createContext(c);for(const f of ['src/players.js','src/roster-expansion.js'])vm.runInContext(read(f),c);vm.runInContext(prefix,c);
+const ratings=JSON.parse(read('proposals/ratings-v1.json'));if(ratings.version!=='ratings-v1.1')throw Error('Expected ratings-v1.1 source');
+// Provisional expansion ratings are loaded separately and may NOT overwrite existing ratings.
+const expansion=JSON.parse(read('proposals/ratings-expansion-36-provisional.json'));
+if(Object.keys(expansion.players).length!==36)throw Error('Expected 36 provisional expansion records');
+for(const [id,data] of Object.entries(expansion.players)){if(ratings.players[id])throw Error('Provisional rating conflicts with existing rating: '+id);ratings.players[id]={...data};}
+ratings.status='MIXED: original 63 approved v1.1 entries, 40 pre-existing provisional entries, 36 new provisional entries';
+ratings.author='Original 63: Claude; expansion: unapproved editorial proposals';
+ratings.provisionalExpansionIds=Object.keys(expansion.players);
+const prefix='window.CAGE_APPROVED_RATINGS='+JSON.stringify(ratings)+';\n',c={window:{}};vm.createContext(c);for(const f of ['src/players.js','src/roster-expansion.js','src/roster-100.js','src/roster-101.js','src/roster-103.js','src/roster-pl-134.js','src/roster-135.js','src/roster-136.js','src/roster-139.js'])vm.runInContext(read(f),c);vm.runInContext(prefix,c);
 for(const f of ['src/engine/attributes.js','src/tactics/capabilities.js'])vm.runInContext(read(f),c);
 const ps=c.window.THE_CAGE_PLAYERS,C=c.window.CageCapabilities,keys=C.keys,sum=Object.fromEntries(keys.map(k=>[k,[0,0]])),phase=Object.fromEntries(['ATT','MID','DEF'].map(k=>[k,[0,0]]));let n=0;const points=[];
 // identity's percentile lookup is only used by describe(), not cohesionPoints().
@@ -16,7 +23,7 @@ for(const f of ['src/engine/attributes.js','src/tactics/capabilities.js'])out+='
 out+='\nwindow.CAGE_TACTICAL_CALIBRATION='+cal+';\n';
 for(const f of ['src/tactics/identity.js','src/tactics/params.js','src/tactics/policy.js','src/tactics/spatial.js','src/tactics/evidence.js'])out+='\n'+read(f);
 const sigmoid=Array.from({length:6145},(_,i)=>Math.round(1e6/(1+Math.exp(-((i-3072)/256)))));
-out+='\nwindow.CAGE_SIGMOID_LUT='+JSON.stringify(sigmoid)+';\n'+read('src/engine/tactical-match.js');
+out+='\nwindow.CAGE_SIGMOID_LUT='+JSON.stringify(sigmoid)+';\n'+read('src/tactics/traits.js')+'\n'+read('src/engine/tactical-match.js');
 out+='\nwindow.CAGE_ENGINE_REGISTRY={"cage-0.4.0":window.CageLegacyEngine,[window.CageEngine.VERSION]:window.CageEngine};\n';
 out+='\nwindow.CageEngineCandidate=window.CageEngine;\nif(window.location&&!/[?&]engine=t3(?:&|$)/.test(window.location.search)&&window.CageLegacyEngine)window.CageEngine=window.CageLegacyEngine;\n';
 if(check){if(read('src/cage-engine.js')!==out)throw Error('Generated engine is stale.');}else fs.writeFileSync(path.join(root,'src/cage-engine.js'),out);console.log((check?'Verified':'Built')+' T3 engine; '+n+' calibrated trios; baseline SHA256 '+crypto.createHash('sha256').update(legacy).digest('hex'));

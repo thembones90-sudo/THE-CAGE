@@ -1,0 +1,443 @@
+{
+ "engine": "work\\t3-research\\engine-D1b+D3+D4+D5b+C1+C2.js",
+ "version": "t3r-D1b+D3+D4+D5b+C1+C2",
+ "params": "t3-space-3",
+ "roster": 63,
+ "quick": false,
+ "experiments": {
+  "E1": {
+   "overall": {
+    "DMF": 0.5591666666666667,
+    "FFF": 0.49277777777777776,
+    "DDD": 0.35138888888888886,
+    "DDM": 0.4572222222222222,
+    "DDF": 0.5952777777777778,
+    "MMF": 0.4961111111111111,
+    "DFF": 0.585,
+    "DMM": 0.4847222222222222,
+    "MMM": 0.44916666666666666,
+    "MFF": 0.5291666666666667
+   },
+   "W": {
+    "DMF": {
+     "DMF": 0,
+     "FFF": 227,
+     "DDD": 278,
+     "DDM": 233,
+     "DDF": 183,
+     "MMF": 228,
+     "DFF": 196,
+     "DMM": 227,
+     "MMM": 230,
+     "MFF": 211
+    },
+    "FFF": {
+     "DMF": 173,
+     "FFF": 0,
+     "DDD": 265,
+     "DDM": 206,
+     "DDF": 169,
+     "MMF": 192,
+     "DFF": 177,
+     "DMM": 180,
+     "MMM": 231,
+     "MFF": 181
+    },
+    "DDD": {
+     "DMF": 122,
+     "FFF": 135,
+     "DDD": 0,
+     "DDM": 161,
+     "DDF": 114,
+     "MMF": 159,
+     "DFF": 104,
+     "DMM": 152,
+     "MMM": 171,
+     "MFF": 147
+    },
+    "DDM": {
+     "DMF": 167,
+     "FFF": 194,
+     "DDD": 239,
+     "DDM": 0,
+     "DDF": 160,
+     "MMF": 170,
+     "DFF": 157,
+     "DMM": 185,
+     "MMM": 192,
+     "MFF": 182
+    },
+    "DDF": {
+     "DMF": 217,
+     "FFF": 231,
+     "DDD": 286,
+     "DDM": 240,
+     "DDF": 0,
+     "MMF": 228,
+     "DFF": 204,
+     "DMM": 250,
+     "MMM": 247,
+     "MFF": 240
+    },
+    "MMF": {
+     "DMF": 172,
+     "FFF": 208,
+     "DDD": 241,
+     "DDM": 230,
+     "DDF": 172,
+     "MMF": 0,
+     "DFF": 170,
+     "DMM": 205,
+     "MMM": 213,
+     "MFF": 175
+    },
+    "DFF": {
+     "DMF": 204,
+     "FFF": 223,
+     "DDD": 296,
+     "DDM": 243,
+     "DDF": 196,
+     "MMF": 230,
+     "DFF": 0,
+     "DMM": 245,
+     "MMM": 246,
+     "MFF": 223
+    },
+    "DMM": {
+     "DMF": 173,
+     "FFF": 220,
+     "DDD": 248,
+     "DDM": 215,
+     "DDF": 150,
+     "MMF": 195,
+     "DFF": 155,
+     "DMM": 0,
+     "MMM": 222,
+     "MFF": 167
+    },
+    "MMM": {
+     "DMF": 170,
+     "FFF": 169,
+     "DDD": 229,
+     "DDM": 208,
+     "DDF": 153,
+     "MMF": 187,
+     "DFF": 154,
+     "DMM": 178,
+     "MMM": 0,
+     "MFF": 169
+    },
+    "MFF": {
+     "DMF": 189,
+     "FFF": 219,
+     "DDD": 253,
+     "DDM": 218,
+     "DDF": 160,
+     "MMF": 225,
+     "DFF": 177,
+     "DMM": 233,
+     "MMM": 231,
+     "MFF": 0
+    }
+   },
+   "G": {
+    "DMF": {
+     "DMF": 0,
+     "FFF": 400,
+     "DDD": 400,
+     "DDM": 400,
+     "DDF": 400,
+     "MMF": 400,
+     "DFF": 400,
+     "DMM": 400,
+     "MMM": 400,
+     "MFF": 400
+    },
+    "FFF": {
+     "DMF": 400,
+     "FFF": 0,
+     "DDD": 400,
+     "DDM": 400,
+     "DDF": 400,
+     "MMF": 400,
+     "DFF": 400,
+     "DMM": 400,
+     "MMM": 400,
+     "MFF": 400
+    },
+    "DDD": {
+     "DMF": 400,
+     "FFF": 400,
+     "DDD": 0,
+     "DDM": 400,
+     "DDF": 400,
+     "MMF": 400,
+     "DFF": 400,
+     "DMM": 400,
+     "MMM": 400,
+     "MFF": 400
+    },
+    "DDM": {
+     "DMF": 400,
+     "FFF": 400,
+     "DDD": 400,
+     "DDM": 0,
+     "DDF": 400,
+     "MMF": 400,
+     "DFF": 400,
+     "DMM": 400,
+     "MMM": 400,
+     "MFF": 400
+    },
+    "DDF": {
+     "DMF": 400,
+     "FFF": 400,
+     "DDD": 400,
+     "DDM": 400,
+     "DDF": 0,
+     "MMF": 400,
+     "DFF": 400,
+     "DMM": 400,
+     "MMM": 400,
+     "MFF": 400
+    },
+    "MMF": {
+     "DMF": 400,
+     "FFF": 400,
+     "DDD": 400,
+     "DDM": 400,
+     "DDF": 400,
+     "MMF": 0,
+     "DFF": 400,
+     "DMM": 400,
+     "MMM": 400,
+     "MFF": 400
+    },
+    "DFF": {
+     "DMF": 400,
+     "FFF": 400,
+     "DDD": 400,
+     "DDM": 400,
+     "DDF": 400,
+     "MMF": 400,
+     "DFF": 0,
+     "DMM": 400,
+     "MMM": 400,
+     "MFF": 400
+    },
+    "DMM": {
+     "DMF": 400,
+     "FFF": 400,
+     "DDD": 400,
+     "DDM": 400,
+     "DDF": 400,
+     "MMF": 400,
+     "DFF": 400,
+     "DMM": 0,
+     "MMM": 400,
+     "MFF": 400
+    },
+    "MMM": {
+     "DMF": 400,
+     "FFF": 400,
+     "DDD": 400,
+     "DDM": 400,
+     "DDF": 400,
+     "MMF": 400,
+     "DFF": 400,
+     "DMM": 400,
+     "MMM": 0,
+     "MFF": 400
+    },
+    "MFF": {
+     "DMF": 400,
+     "FFF": 400,
+     "DDD": 400,
+     "DDM": 400,
+     "DDF": 400,
+     "MMF": 400,
+     "DFF": 400,
+     "DMM": 400,
+     "MMM": 400,
+     "MFF": 0
+    }
+   }
+  },
+  "E2": {
+   "own best ATT": 0.11194763517344604,
+   "own mean ATT": 0.2367009027227639,
+   "own mean MID": -0.0814478924385186,
+   "opp best DEF": -0.0674839564656743,
+   "opp mean DEF": -0.19383708455184342
+  },
+  "E4": {
+   "jsdFFFvsDDD": 0.05773237979224571,
+   "dribbleRatioFFFvsDDD": 1.7093246039618701,
+   "passRatioMMMvsDDF": 0.8294000253614515
+  },
+  "E10": {
+   "intRate": 0.19553544642474485,
+   "fkShare": 0.03866666666666667,
+   "shotsPerMatch": 5.198166666666666,
+   "anchorGoalShare": 0.12516666666666668
+  },
+  "E5": {
+   "best": {
+    "DMF": "press",
+    "FFF": "counter",
+    "DDD": "press",
+    "DDM": "counter",
+    "DDF": "balanced",
+    "MMF": "press",
+    "DFF": "press",
+    "DMM": "balanced",
+    "MMM": "press",
+    "MFF": "possession"
+   },
+   "swing": {
+    "DMF": 0.05833333333333335,
+    "FFF": 0.02083333333333326,
+    "DDD": 0.175,
+    "DDM": 0.11666666666666664,
+    "DDF": 0.12916666666666665,
+    "MMF": 0.07500000000000007,
+    "DFF": 0.07916666666666672,
+    "DMM": 0.1208333333333334,
+    "MMM": 0.07083333333333336,
+    "MFF": 0.07916666666666672
+   },
+   "counts": {
+    "balanced": 2,
+    "possession": 1,
+    "press": 5,
+    "counter": 2
+   }
+  },
+  "E6": 0.669,
+  "E9": {
+   "randomCaps": 0,
+   "median": 92,
+   "p90": 306,
+   "p99": 685,
+   "defCapsPer10k": 0
+  },
+  "E12": {
+   "legacyFields": [],
+   "legacyStaminaComposure": false,
+   "roleRead": false,
+   "nondeterministic": false
+  },
+  "E11": {
+   "artistsVsMBR": 0.3125,
+   "hardmenVsMBR": 0.0595,
+   "gradient": {
+    "bins": [
+     [
+      -99,
+      -8
+     ],
+     [
+      -8,
+      -4
+     ],
+     [
+      -4,
+      -1.5
+     ],
+     [
+      -1.5,
+      1.5
+     ],
+     [
+      1.5,
+      4
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      8,
+      99
+     ]
+    ],
+    "rates": [
+     0.29320113314447593,
+     0.38276937844972403,
+     0.43988063893277163,
+     0.5013302486986697,
+     0.5639445300462249,
+     0.6191599811231713,
+     0.7011331444759207
+    ],
+    "n": [
+     706,
+     4167,
+     5697,
+     8645,
+     5841,
+     4238,
+     706
+    ]
+   }
+  }
+ },
+ "verdicts": [
+  {
+   "id": "E1",
+   "name": "Every composition 40–60% overall; no cell > 75%; each beats ≥ 3",
+   "pass": false,
+   "detail": "range 35.1%–59.5%, max cell 74.0%, all beat≥3: false"
+  },
+  {
+   "id": "E2",
+   "name": "|opp best DEF| ≤ 2× own best ATT; opp mean DEF ≥ 60% of best; own mean MID ≥ +8%",
+   "pass": false,
+   "detail": "bestDEF -7% vs bestATT 11%; meanDEF/bestDEF 2.87; MID -8%"
+  },
+  {
+   "id": "E4",
+   "name": "Different football: JSD(FFF,DDD) ≥ 0.10; dribbles FFF ≥ 2× DDD; passes MMM ≥ 1.5× DDF",
+   "pass": false,
+   "detail": "JSD 0.058, dribble ratio 1.71, pass ratio 0.83"
+  },
+  {
+   "id": "E10",
+   "name": "Interceptions 12–22%; free kicks 2–8% of goals; 3–10 shots/match; anchors 2–12% of goals",
+   "pass": false,
+   "detail": "int 19.6%, fk 3.9%, shots 5.2, anchor 12.5%"
+  },
+  {
+   "id": "E5",
+   "name": "No tactic best for > 5/10 compositions; each best ≥ 1; ≥ 6 compositions swing ≥ 5 pts",
+   "pass": true,
+   "detail": "best counts {\"balanced\":2,\"possession\":1,\"press\":5,\"counter\":2}, compositions swinging ≥5pts: 9"
+  },
+  {
+   "id": "E6",
+   "name": "Top vs bottom quartile within a composition 65–80%",
+   "pass": true,
+   "detail": "66.9%"
+  },
+  {
+   "id": "E9",
+   "name": "0 caps in random; ≤ 1 per 10k defensive pairing; median 60–200 s; p99 < 900 s",
+   "pass": true,
+   "detail": "random caps 0, defensive 0.0/10k, median 92s, p99 685s"
+  },
+  {
+   "id": "E12",
+   "name": "Engine reads no legacy-derived fields or role labels; no Math.random/Date",
+   "pass": true,
+   "detail": "legacy 0, role false, random false"
+  },
+  {
+   "id": "E11",
+   "name": "Quality gradient: win rate rises with rating gap; equal quality 45–55%; gap ≥ 8 underdog wins ≤ 25% (no floor)",
+   "pass": false,
+   "detail": "monotonic true, equal 50.1%, big-gap underdog 29.3%"
+  }
+ ],
+ "simulations": 112600,
+ "capHits": 0
+}

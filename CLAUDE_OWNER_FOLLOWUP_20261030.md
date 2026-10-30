@@ -1,0 +1,18 @@
+# THE CAGE — Owner direction relayed to Claude (2026-10-30)
+
+Review findings accepted as priorities, NOT blanket approval to merge or deploy.
+
+1. The 6 T3 recovery fixes R1–R6 are promising. Preserve the validated order and test each separately; especially do not ship urgency + second balls until the press corrections are included. The six-fix study is not final balance approval: large-gap upsets (29% vs 25% target) and insufficient composition differentiation remain open.
+2. The 37 formula-derived new player supplemental ratings are NOT owner-approved. Your individually reviewed `proposals/ratings-v1.2-roster100-proposal.json` is preferred for review. Keep the original 63 approved v1.1 values unchanged. Do not call mixed ratings "approved" or label formula estimates as individual editorial judgments.
+3. Current roster is **101**, not 100: Adel Taarabt was added after the study, and Hatem Ben Arfa was already present. Include Taarabt in the individual assessment on the same scale; distinguish his 5 supplemental ratings as provisional until owner approval.
+4. For the 37 proposed player profiles, explicitly check high midfield composure values (Xavi, Pirlo, Kroos, Iniesta), high forward work rates (Rooney, Eto'o, Suarez), and marking for Ramos and Gattuso. Keep differences defensible and document comparisons.
+5. Before applying ratings or engine changes, prepare a concise owner-facing report showing the 38-player proposed final ratings including Taarabt, with notable disputed values and comparison anchors. Do NOT alter production code, commit, deploy, or regenerate executable until explicitly authorized. Codex owns commits under the current workflow.
+6. After rating approval, integrate in isolated commits, test against the actual 101-player roster, and postpone activation of 15 special traits until the foundational match balance is tested.
+
+Please acknowledge the message and report the current state and next safe step. No code changes authorized by this message.
+
+## Owner roster update (later same day)
+The live source roster is now **103**. Marouane Fellaini and Mario Balotelli have been added after Adel Taarabt. Hatem Ben Arfa was already present. Their provisional primary/secondary traits are Fellaini Juggernaut/Engine and Balotelli Executioner/Juggernaut. Include all **40 supplemental-rating review subjects** (the original 37 proposed plus Taarabt, Fellaini, Balotelli), and validate against the 103-player roster. No authority granted to merge rating proposals or change the T3 engine. New additions have only formula-derived supplemental values pending individual review.
+
+## Subsequent roster expansion: 139 source players
+The game source roster has expanded to **139 unique players**: 103 prior players + 31 proposed Premier League figures (the original 30 plus Jamie Vardy) + Andrea Barzagli + Matt Le Tissier + Hernán Crespo + Marcelo Salas + Iván Zamorano. Cafu and Roberto Carlos were already on the 103-player roster, so were NOT duplicated. The 36 new entrants have individually proposed, **unapproved** supplemental attributes in `proposals/ratings-expansion-36-provisional.json`, loaded separately by `tools/build-t3.cjs`; this preserves every existing rating in `proposals/ratings-v1.json`. There are currently 76 provisional players (40 previous + 36 new). Trait pairings for the new entrants are provisional and are not simulated. `tests/roster-139-integration.cjs` verifies 139 unique IDs, 10 searches, 2 deterministic T3 matches, and completeness; `tools/build-t3.cjs --check` verifies 437,989 calibrated trios. Do not treat older 63-, 100-, 101- or 103-player measurements as validated balance on the 139-player roster. No R1–R6 fixes were integrated in this expansion and no executable rebuilt.

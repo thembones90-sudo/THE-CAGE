@@ -1,0 +1,10 @@
+// T3 golden regression without trait activation; project code remains untouched.
+const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert').strict;
+const root=path.resolve(__dirname,'../..'),ctx={window:{location:{search:'?engine=t3'}}};vm.createContext(ctx);
+const files=['src/players.js','src/roster-expansion.js','src/roster-100.js','src/roster-101.js','src/roster-103.js','src/roster-pl-134.js','src/roster-135.js','src/roster-136.js','src/roster-139.js','src/engine/legacy-v04.js','src/cage-engine.js'];
+for(const file of files)vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),ctx,{filename:file});
+assert.equal(ctx.window.THE_CAGE_PLAYERS.length,139);const E=ctx.window.CageEngine;
+const pairs=[[['paolo-maldini','michael-ballack','ronaldo-nazario'],['jamie-vardy','mousa-dembele','ruben-dias']],[['sergio-ramos','luka-modric','thierry-henry'],['andrea-barzagli','david-silva','sergio-aguero']],[['virgil-van-dijk','santi-cazorla','robin-van-persie'],['kyle-walker','bruno-fernandes','erling-haaland']],[['rio-ferdinand','xavi-hernandez','mohamed-salah'],['sol-campbell','michael-carrick','mario-balotelli']],[['carles-puyol','andrea-pirlo','marcelo-salas'],['patrice-evra','frank-lampard','ivan-zamorano']]],tactics=[['balanced','counter'],['press','possession'],['counter','press'],['possession','balanced']];
+const games=[];for(let i=0;i<500;i++){const config={teams:pairs[i%5],tactics:tactics[Math.floor(i/5)%4],seed:1337+i*17,mode:'ko'};try{const r=E.simulate(config);games.push([i,r.winner,r.duration,r.draws,r.eventHash]);}catch(e){games.push([i,'error',e.message]);}}
+const snapshot={roster:139,engine:E.VERSION,games},dest=path.join(__dirname,'baseline-139-500.json');
+if(process.argv.includes('--check')){assert.deepEqual(snapshot,JSON.parse(fs.readFileSync(dest,'utf8')));console.log('PASS: 500 exact T3 match baseline checks');}else{fs.writeFileSync(dest,JSON.stringify(snapshot)+'\n');console.log('SAVED: 500 T3 match baseline cases; exceptions '+games.filter(g=>g[1]==='error').length);}

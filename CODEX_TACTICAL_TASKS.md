@@ -66,6 +66,27 @@ On `node tools/claude-tactical-balance.cjs` (full size), the new engine must mat
 
 Report any gate failure to Claude with the harness output instead of tuning around it.
 
+### Research update (Claude, 2026-10-30, later) — see `RESEARCH_ABC_REPORT.md`
+
+**No new work for Codex now; T3/T4 proceed as specified.**
+
+Validated mechanisms, to be specified *after* the T3/T4 gate passes and re-validated on the production engine:
+- **T4.5:** free man / numbers-aware blocking (A2);
+- **T4.6:** bypassed press creates a transition, plus press decoupled from rest defence and counter-press calibration (C1, C2).
+
+**Held** (Claude research): B2 receive-in-space, B4 pass-bias recalibration, A1 work-rate availability, C3 fatigue scale. Dropped: B1, B3.
+
+**Please don't port anything from `engine-research.src.js` until it appears here with exact formulas.**
+
+### T3 recovery (Claude, 2026-10-30, supersedes the research update above) — see `CLAUDE_T3_RECOVERY_PLAN.md`
+
+The owner removed the "after the T3/T4 gate" condition. The specs are now delivered against T3 itself (`cage-t3-3`), with exact formulas, integration points, RNG ledger and per-mechanism tests:
+- **Integrate in order, one mechanism per commit, full harness after each:** R1 urgency → R2 second-ball shot → R3 press `rest 0` → R4 bypassed press opens a transition → R5 cover-aware discipline → R6 regainer joins the counter. **R3/R4 must land before any build ships R1/R2** (R1+R2 alone make press best for 9/10).
+- **Held:** R7 free man from help defence (validated mechanically; costs DDD 2–5 pts), R8–R11 midfield set, C3.
+- **Not to port:** the spike-era A2 cut-back condition, D1, D5, D6, Q1, M1.
+
+These supersede T4.5/T4.6 above: R3/R4 replace C1/C2 for T3, and R7 replaces A2.
+
 ---
 
 **Original status line:** for owner review. *(Superseded by the status block above.)*
@@ -170,3 +191,6 @@ T0 ──► T1 ──► T2 ──► T3 ──► T4 ──► T5 ──► T8
 - **After T3:** E2 elasticity, E1 no composition < 35%, E9 no regression in cap hits.
 - **After T4:** E3 routes, E9 termination, E10 realism.
 - **After T5:** E5 tactics.
+
+### Update 2026-10-30 (Claude): midfield bundle promoted to next candidate
+See CLAUDE_ENGINE_REWARD_FINDINGS.md. After R1-R6, integrate R8, R9, R10 and R11 one per commit (still not R7). Acceptance per step: MID improves, the finisher premium shrinks (proposals/t3-research/player-value.cjs), DDD at or above 33%, and gates do not regress. Daily challenge spec: CLAUDE_DAILY_CHALLENGE_SPEC.md (awaiting owner approval; launch after engine acceptance).

@@ -1,0 +1,307 @@
+{
+  "status": "candidates_not_imported",
+  "era": "La Liga 1996 onward",
+  "notes": "Natural primary positions and primary/secondary traits. Hunter renamed to Tracker; mechanics unchanged.",
+  "players": [
+    {
+      "id": "raul-gonzalez",
+      "name": "Raúl González",
+      "position": "ST",
+      "role": "F",
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Phantom"
+      }
+    },
+    {
+      "id": "luis-figo",
+      "name": "Luís Figo",
+      "position": "RW",
+      "role": "F",
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Surgeon"
+      }
+    },
+    {
+      "id": "antoine-griezmann",
+      "name": "Antoine Griezmann",
+      "position": "CF",
+      "role": "F",
+      "traits": {
+        "primary": "Surgeon",
+        "secondary": "Engine"
+      }
+    },
+    {
+      "id": "david-villa",
+      "name": "David Villa",
+      "position": "ST",
+      "role": "F",
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Predator"
+      }
+    },
+    {
+      "id": "dani-alves",
+      "name": "Dani Alves",
+      "position": "RB",
+      "role": "D",
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Architect"
+      }
+    },
+    {
+      "id": "marcelo",
+      "name": "Marcelo",
+      "position": "LB",
+      "role": "D",
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Tracker"
+      }
+    },
+    {
+      "id": "gerard-pique",
+      "name": "Gerard Piqué",
+      "position": "CB",
+      "role": "D",
+      "traits": {
+        "primary": "Libero",
+        "secondary": "Anticipator"
+      }
+    },
+    {
+      "id": "diego-godin",
+      "name": "Diego Godín",
+      "position": "CB",
+      "role": "D",
+      "traits": {
+        "primary": "Wall",
+        "secondary": "Enforcer"
+      }
+    },
+    {
+      "id": "diego-forlan",
+      "name": "Diego Forlán",
+      "position": "ST",
+      "role": "F",
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Surgeon"
+      }
+    },
+    {
+      "id": "radamel-falcao",
+      "name": "Radamel Falcao",
+      "position": "ST",
+      "role": "F",
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Juggernaut"
+      }
+    },
+    {
+      "id": "diego-costa",
+      "name": "Diego Costa",
+      "position": "ST",
+      "role": "F",
+      "traits": {
+        "primary": "Juggernaut",
+        "secondary": "Enforcer"
+      }
+    },
+    {
+      "id": "pepe",
+      "name": "Pepe",
+      "position": "CB",
+      "role": "D",
+      "traits": {
+        "primary": "Enforcer",
+        "secondary": "Tracker"
+      }
+    },
+    {
+      "id": "ivan-rakitic",
+      "name": "Ivan Rakitić",
+      "position": "CM",
+      "role": "M",
+      "traits": {
+        "primary": "Architect",
+        "secondary": "Engine"
+      }
+    },
+    {
+      "id": "koke",
+      "name": "Koke",
+      "position": "CM",
+      "role": "M",
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Architect"
+      }
+    },
+    {
+      "id": "joaquin-sanchez",
+      "name": "Joaquín Sánchez",
+      "position": "RW",
+      "role": "F",
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Engine"
+      }
+    },
+    {
+      "id": "isco",
+      "name": "Isco",
+      "position": "CAM",
+      "role": "M",
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Maestro"
+      }
+    },
+    {
+      "id": "gaizka-mendieta",
+      "name": "Gaizka Mendieta",
+      "position": "RM",
+      "role": "M",
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Surgeon"
+      }
+    },
+    {
+      "id": "juan-carlos-valeron",
+      "name": "Juan Carlos Valerón",
+      "position": "CAM",
+      "role": "M",
+      "traits": {
+        "primary": "Surgeon",
+        "secondary": "Maestro"
+      }
+    },
+    {
+      "id": "ruben-baraja",
+      "name": "Rubén Baraja",
+      "position": "CM",
+      "role": "M",
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Destroyer"
+      }
+    },
+    {
+      "id": "marcos-senna",
+      "name": "Marcos Senna",
+      "position": "CDM",
+      "role": "M",
+      "traits": {
+        "primary": "Anticipator",
+        "secondary": "Architect"
+      }
+    },
+    {
+      "id": "arda-turan",
+      "name": "Arda Turan",
+      "position": "LM",
+      "role": "M",
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Surgeon"
+      }
+    },
+    {
+      "id": "juanfran",
+      "name": "Juanfran",
+      "position": "RB",
+      "role": "D",
+      "traits": {
+        "primary": "Tracker",
+        "secondary": "Engine"
+      }
+    },
+    {
+      "id": "jesus-navas",
+      "name": "Jesús Navas",
+      "position": "RW",
+      "role": "F",
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Surgeon"
+      }
+    },
+    {
+      "id": "iago-aspas",
+      "name": "Iago Aspas",
+      "position": "CF",
+      "role": "F",
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Surgeon"
+      }
+    },
+    {
+      "id": "aritz-aduriz",
+      "name": "Aritz Aduriz",
+      "position": "ST",
+      "role": "F",
+      "traits": {
+        "primary": "Juggernaut",
+        "secondary": "Predator"
+      }
+    },
+    {
+      "id": "guti-hernandez",
+      "name": "Guti Hernández",
+      "position": "CAM",
+      "role": "M",
+      "traits": {
+        "primary": "Surgeon",
+        "secondary": "Magician"
+      }
+    },
+    {
+      "id": "nihat-kahveci",
+      "name": "Nihat Kahveci",
+      "position": "ST",
+      "role": "F",
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Executioner"
+      }
+    },
+    {
+      "id": "jose-antonio-reyes",
+      "name": "José Antonio Reyes",
+      "position": "LW",
+      "role": "F",
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Phantom"
+      }
+    },
+    {
+      "id": "carlos-vela",
+      "name": "Carlos Vela",
+      "position": "RW",
+      "role": "F",
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Executioner"
+      }
+    },
+    {
+      "id": "david-albelda",
+      "name": "David Albelda",
+      "position": "CDM",
+      "role": "M",
+      "traits": {
+        "primary": "Destroyer",
+        "secondary": "Anticipator"
+      }
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+THE CAGE tactical balance — engine work\t3-research\engine-D4+D5b.js (t3r-D4+D5b / t3-space-3), roster 63
+Compositions use roster role labels (D/M/F) until src/tactics capability roles exist (T2).
+
+E1  Composition matrix (row win % vs column; equal quality; Balanced vs Balanced; 400 matches per pairing)
+        DMF  FFF  DDD  DDM  DDF  MMF  DFF  DMM  MMM  MFF   OVERALL  beats≥3
+DMF       —   57   73   60   47   61   50   55   62   55    57.7%   yes  Complete Unit
+FFF      43    —   72   56   43   51   41   49   57   46    50.7%   yes  All-Out Assault
+DDD      27   28    —   42   25   33   21   35   37   32    30.8%   NO   Iron Fortress
+DDM      41   44   59    —   33   45   39   50   51   44    44.9%   yes  The Wall
+DDF      53   57   75   67    —   60   48   60   64   59    60.3%   yes  Counterstrike
+MMF      39   50   68   56   41    —   38   48   51   46    48.3%   yes  The Architects
+DFF      50   59   80   62   52   62    —   64   64   59    61.0%   yes  Spear and Shield
+DMM      46   52   66   50   40   53   36    —   54   46    49.1%   yes  The Engine Room
+MMM      38   43   64   49   36   49   36   46    —   43    44.9%   NO   The Orchestra
+MFF      45   54   69   56   41   54   42   54   57    —    52.3%   yes  Street Artists
+
+E2  Effect of +1 SD on goals per possession (20000 matches; baseline 0.1226)
+    own best ATT    +13%
+    own mean ATT    +23%
+    own mean MID    -11%
+    opp best DEF    -10%
+    opp mean DEF    -17%
+
+E4  Behaviour by composition (side-0 actions per possession; equal quality)
+       dribbles   passes     thru    shots  carries
+DMF        0.72     1.62     0.41     0.41     0.32
+FFF        1.13     0.99     0.40     0.53     0.44
+DDD        0.60     2.36     0.54     0.33     0.54
+DDM        0.61     2.31     0.52     0.31     0.51
+DDF        0.74     2.04     0.42     0.39     0.49
+MMF        0.92     1.40     0.43     0.42     0.34
+DFF        0.91     1.43     0.38     0.46     0.32
+DMM        0.69     1.98     0.51     0.32     0.41
+MMM        0.87     1.58     0.49     0.36     0.32
+MFF        0.97     1.14     0.38     0.51     0.36
+
+E10 Realism: interceptions 19.5% of passes; free-kick goals 4.2%; shots per match 5.0; anchor-duty goals 9.1%
+
+E5  Tactic effect per composition (win % of the composition using tactic X vs equal-quality random opponents using Balanced; 240 matches each)
+         balanced  possessio      press    counter   best
+DMF         58.8%      54.6%      56.7%      52.5%   balanced
+FFF         51.7%      52.1%      61.7%      54.2%   press
+DDD         32.1%      24.6%      49.2%      39.2%   press
+DDM         46.3%      38.8%      54.2%      47.1%   press
+DDF         57.9%      52.5%      60.4%      60.4%   press
+MMF         43.8%      43.3%      52.9%      47.9%   press
+DFF         57.5%      55.8%      60.4%      58.3%   press
+DMM         44.2%      39.2%      52.5%      45.0%   press
+MMM         45.4%      35.8%      50.8%      41.3%   press
+MFF         50.0%      54.2%      60.0%      48.8%   press
+
+E6  Same composition, top-quartile vs bottom-quartile trios: 65.8% (1000 matches)
+
+E9  Random matches 20000: cap hits 0; duration median 94s, p90 311s, p99 701s. Defensive pairing (Maldini/Chiellini/Thuram v Gravesen/Stam/Vidić) 4000: cap hits 0 (0.0 per 10k)
+
+E12 Guards: legacy-derived fields read: none; legacy stamina/composure read: false; role label read: false; Math.random/Date: false
+
+E11 Showcase (information only, no target — owner 2026-10-30: no underdog floor): Ronaldinho/Rivaldo/Del Piero vs Maldini/Ballack/R9 29.4% (quality gap -1.7) · Vidić/Stam/Gravesen vs Maldini/Ballack/R9 4.2% (gap -11.4)
+    quality gap (A − B):       <-8  -8..-4-4..-1.5-1.5..1.5  1.5..4    4..8      ≥8
+    A win rate:              30.2%   39.2%   45.0%   50.2%   56.4%   61.2%   67.7%   (n 706/4167/5697/8645/5841/4238/706)
+
+SUMMARY  (112600 simulations, 0 safety-cap hits, 288 s)
+  FAIL  E1   Every composition 40–60% overall; no cell > 75%; each beats ≥ 3
+              range 30.8%–61.0%, max cell 79.5%, all beat≥3: false
+  FAIL  E2   |opp best DEF| ≤ 2× own best ATT; opp mean DEF ≥ 60% of best; own mean MID ≥ +8%
+              bestDEF -10% vs bestATT 13%; meanDEF/bestDEF 1.77; MID -11%
+  FAIL  E4   Different football: JSD(FFF,DDD) ≥ 0.10; dribbles FFF ≥ 2× DDD; passes MMM ≥ 1.5× DDF
+              JSD 0.071, dribble ratio 1.87, pass ratio 0.77
+  PASS  E10  Interceptions 12–22%; free kicks 2–8% of goals; 3–10 shots/match; anchors 2–12% of goals
+              int 19.5%, fk 4.2%, shots 5.0, anchor 9.1%
+  FAIL  E5   No tactic best for > 5/10 compositions; each best ≥ 1; ≥ 6 compositions swing ≥ 5 pts
+              best counts {"balanced":1,"possession":0,"press":9,"counter":0}, compositions swinging ≥5pts: 9
+  PASS  E6   Top vs bottom quartile within a composition 65–80%
+              65.8%
+  PASS  E9   0 caps in random; ≤ 1 per 10k defensive pairing; median 60–200 s; p99 < 900 s
+              random caps 0, defensive 0.0/10k, median 94s, p99 701s
+  PASS  E12  Engine reads no legacy-derived fields or role labels; no Math.random/Date
+              legacy 0, role false, random false
+  FAIL  E11  Quality gradient: win rate rises with rating gap; equal quality 45–55%; gap ≥ 8 underdog wins ≤ 25% (no floor)
+              monotonic true, equal 50.2%, big-gap underdog 30.2%
+  ----  E3   Route of victory per composition — pending: needs event tags (T3.4/T4)
+  ----  E7   Grade validity — pending: needs src/tactics/capabilities.js (T2)
+  ----  E8   Cohesion is not a power score — pending: needs src/tactics/identity.js (T2)
+
+JSON written.

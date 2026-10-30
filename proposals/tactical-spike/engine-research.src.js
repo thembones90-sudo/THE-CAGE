@@ -245,7 +245,7 @@ function simulate({ teams, tactics, seed, mode = 'ko' }) {
       const fwd = act === 'through' || act === 'outlet' ? Math.min(3, Math.max(x + 2, 2)) : Math.min(3, x + (recv.duty === 'spear' ? 1 : recv.duty === 'anchor' ? -1 : 0));
       const diff = act === 'through' ? -0.6 + P.deltaThrough * delta : act === 'outlet' ? P.b.outlet - 1.2 : (fwd > x ? -0.5 : 0.4);
       const recvMove = (recv.c.a.agi + recv.c.a.pace) / 2;
-      const passDuel = F.B3 ? ((A, D, b) => { const p = clamp(logistic((A - D) / 13 + b)); const roll = R(); return { p: +p.toFixed(3), roll: +roll.toFixed(3), win: roll < p }; }) : duel;
+      const passDuel = F.B4 ? ((A, D, b) => { const p = Math.min(.97, Math.max(.10, logistic((A - D) / 12 + b - 1.1))); const roll = R(); return { p: +p.toFixed(3), roll: +roll.toFixed(3), win: roll < p }; }) : F.B3 ? ((A, D, b) => { const p = clamp(logistic((A - D) / 13 + b)); const roll = R(); return { p: +p.toFixed(3), roll: +roll.toFixed(3), win: roll < p }; }) : duel;
       const r = md ? passDuel(.75 * eff(c, 'pass') + .25 * recvMove, eff(md, 'intercept'), (act === 'outlet' ? P.b.pass : P.b[act] || P.b.pass) + diff + P.deltaPass * delta + (engaged ? -.5 * lim(1 - (c.c.escape - 70) / 30, 0, 1) : 0)) : { p: 1, roll: R(), win: true };
       t += P.dt[act]; tire(c, 'pass');
       const ok = r.roll < r.p;

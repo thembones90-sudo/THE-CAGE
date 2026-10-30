@@ -1,0 +1,263 @@
+{
+  "version": "ratings-pl-31-proposal",
+  "date": "2026-10-30",
+  "status": "PROVISIONAL. Not approved by owner; separate from approved v1.1 source ratings.",
+  "method": "Individually proposed editorial judgements on v1.1 5-attribute scale (not formula derived); no match results considered.",
+  "attributes": [
+    "work_rate",
+    "stamina",
+    "composure",
+    "agility",
+    "marking"
+  ],
+  "players": {
+    "sol-campbell": {
+      "work_rate": 80,
+      "stamina": 84,
+      "composure": 82,
+      "agility": 72,
+      "marking": 94,
+      "rationale": "Provisional editorial individual assessment. Elite strength and recovery positioning; composed covering centre-back."
+    },
+    "gary-neville": {
+      "work_rate": 84,
+      "stamina": 85,
+      "composure": 83,
+      "agility": 69,
+      "marking": 91,
+      "rationale": "Provisional editorial individual assessment. Disciplined full-back, persistent overlapping and positional reading."
+    },
+    "patrice-evra": {
+      "work_rate": 90,
+      "stamina": 90,
+      "composure": 83,
+      "agility": 87,
+      "marking": 84,
+      "rationale": "Provisional editorial individual assessment. Agile overlapping full-back with sustained recovery and work rate."
+    },
+    "jamie-carragher": {
+      "work_rate": 85,
+      "stamina": 86,
+      "composure": 80,
+      "agility": 64,
+      "marking": 93,
+      "rationale": "Provisional editorial individual assessment. Tough, vocal cover defender with great tactical positioning."
+    },
+    "kolo-toure": {
+      "work_rate": 83,
+      "stamina": 85,
+      "composure": 78,
+      "agility": 80,
+      "marking": 85,
+      "rationale": "Provisional editorial individual assessment. Mobile, physical ball winner; positional reading good but not exceptional."
+    },
+    "branislav-ivanovic": {
+      "work_rate": 86,
+      "stamina": 86,
+      "composure": 81,
+      "agility": 64,
+      "marking": 89,
+      "rationale": "Provisional editorial individual assessment. Aerial strength and commitment; dependable marking but limited turning agility."
+    },
+    "kyle-walker": {
+      "work_rate": 88,
+      "stamina": 92,
+      "composure": 80,
+      "agility": 92,
+      "marking": 88,
+      "rationale": "Provisional editorial individual assessment. Exceptional pace in recovery, durable defensive athlete."
+    },
+    "trent-alexander-arnold": {
+      "work_rate": 72,
+      "stamina": 80,
+      "composure": 87,
+      "agility": 84,
+      "marking": 68,
+      "rationale": "Provisional editorial individual assessment. World-class passing full-back; attacking positioning more reliable than defensive marking."
+    },
+    "andrew-robertson": {
+      "work_rate": 96,
+      "stamina": 96,
+      "composure": 82,
+      "agility": 86,
+      "marking": 84,
+      "rationale": "Provisional editorial individual assessment. Relentless overlapping and tracking; very high endurance."
+    },
+    "ruben-dias": {
+      "work_rate": 86,
+      "stamina": 86,
+      "composure": 89,
+      "agility": 70,
+      "marking": 95,
+      "rationale": "Provisional editorial individual assessment. Elite organizer and anticipation; measured use of strength."
+    },
+    "david-silva": {
+      "work_rate": 72,
+      "stamina": 85,
+      "composure": 96,
+      "agility": 95,
+      "marking": 49,
+      "rationale": "Provisional editorial individual assessment. Superior close-space calm and final-pass invention; selective pressing."
+    },
+    "michael-carrick": {
+      "work_rate": 75,
+      "stamina": 84,
+      "composure": 91,
+      "agility": 69,
+      "marking": 88,
+      "rationale": "Provisional editorial individual assessment. Calm deep distributor and screened lanes; not quick laterally."
+    },
+    "fernandinho": {
+      "work_rate": 94,
+      "stamina": 91,
+      "composure": 82,
+      "agility": 79,
+      "marking": 90,
+      "rationale": "Provisional editorial individual assessment. Intense defensive midfielder with elite covering and disciplined pressing."
+    },
+    "ilkay-gundogan": {
+      "work_rate": 82,
+      "stamina": 85,
+      "composure": 91,
+      "agility": 82,
+      "marking": 76,
+      "rationale": "Provisional editorial individual assessment. Intelligent late penalty-area runs and retention under pressure."
+    },
+    "santi-cazorla": {
+      "work_rate": 78,
+      "stamina": 82,
+      "composure": 92,
+      "agility": 94,
+      "marking": 45,
+      "rationale": "Provisional editorial individual assessment. Two-footed close control and passing; small but press-resistant."
+    },
+    "bruno-fernandes": {
+      "work_rate": 91,
+      "stamina": 91,
+      "composure": 78,
+      "agility": 80,
+      "marking": 62,
+      "rationale": "Provisional editorial individual assessment. Relentless chance creator and runner with high-risk decisions."
+    },
+    "christian-eriksen": {
+      "work_rate": 79,
+      "stamina": 85,
+      "composure": 87,
+      "agility": 78,
+      "marking": 54,
+      "rationale": "Provisional editorial individual assessment. Precise distribution and vision; tidy but not exceptional in duels."
+    },
+    "paul-pogba": {
+      "work_rate": 65,
+      "stamina": 77,
+      "composure": 81,
+      "agility": 83,
+      "marking": 61,
+      "rationale": "Provisional editorial individual assessment. Elite physical technical midfielder; inconsistent off-ball coverage."
+    },
+    "mousa-dembele": {
+      "work_rate": 80,
+      "stamina": 83,
+      "composure": 94,
+      "agility": 90,
+      "marking": 76,
+      "rationale": "Provisional editorial individual assessment. Incredible pressure resistance through balance and ball protection."
+    },
+    "declan-rice": {
+      "work_rate": 92,
+      "stamina": 93,
+      "composure": 87,
+      "agility": 80,
+      "marking": 92,
+      "rationale": "Provisional editorial individual assessment. Consistent midfield cover and interceptions; progressive carries."
+    },
+    "sergio-aguero": {
+      "work_rate": 68,
+      "stamina": 82,
+      "composure": 95,
+      "agility": 94,
+      "marking": 28,
+      "rationale": "Provisional editorial individual assessment. Sharp changes of direction, elite finishing decisions and box movement."
+    },
+    "harry-kane": {
+      "work_rate": 80,
+      "stamina": 86,
+      "composure": 96,
+      "agility": 74,
+      "marking": 41,
+      "rationale": "Provisional editorial individual assessment. Elite finishing composure and creative passing from deep."
+    },
+    "robin-van-persie": {
+      "work_rate": 68,
+      "stamina": 77,
+      "composure": 92,
+      "agility": 86,
+      "marking": 35,
+      "rationale": "Provisional editorial individual assessment. Technical left-footed finisher with superb first-touch shot creation."
+    },
+    "erling-haaland": {
+      "work_rate": 72,
+      "stamina": 89,
+      "composure": 87,
+      "agility": 74,
+      "marking": 27,
+      "rationale": "Provisional editorial individual assessment. Explosive physical box specialist with lethal timing."
+    },
+    "fernando-torres": {
+      "work_rate": 73,
+      "stamina": 85,
+      "composure": 86,
+      "agility": 92,
+      "marking": 30,
+      "rationale": "Provisional editorial individual assessment. Peak Liverpool acceleration and direct box threat."
+    },
+    "gareth-bale": {
+      "work_rate": 76,
+      "stamina": 82,
+      "composure": 88,
+      "agility": 92,
+      "marking": 50,
+      "rationale": "Provisional editorial individual assessment. Long-striding pace, powerful strikes and athletic carrying."
+    },
+    "son-heung-min": {
+      "work_rate": 85,
+      "stamina": 90,
+      "composure": 92,
+      "agility": 90,
+      "marking": 36,
+      "rationale": "Provisional editorial individual assessment. Two-footed composure and intelligent off-shoulder runs."
+    },
+    "sadio-mane": {
+      "work_rate": 94,
+      "stamina": 94,
+      "composure": 86,
+      "agility": 93,
+      "marking": 43,
+      "rationale": "Provisional editorial individual assessment. Relentless pressing winger with explosive diagonal runs."
+    },
+    "ruud-van-nistelrooy": {
+      "work_rate": 59,
+      "stamina": 77,
+      "composure": 97,
+      "agility": 72,
+      "marking": 30,
+      "rationale": "Provisional editorial individual assessment. Clinical box positioning and exceptional one-touch finishing."
+    },
+    "riyad-mahrez": {
+      "work_rate": 65,
+      "stamina": 79,
+      "composure": 91,
+      "agility": 92,
+      "marking": 37,
+      "rationale": "Provisional editorial individual assessment. Deceptive dribbling and control in tight right-wing pockets."
+    },
+    "jamie-vardy": {
+      "work_rate": 92,
+      "stamina": 92,
+      "composure": 84,
+      "agility": 88,
+      "marking": 39,
+      "rationale": "Provisional editorial individual assessment. Constant pressing and direct runs behind a high defensive line."
+    }
+  }
+}
