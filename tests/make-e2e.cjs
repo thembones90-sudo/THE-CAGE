@@ -1,14 +1,14 @@
-const fs=require('fs');const root='A:/THE CAGE/';let h=fs.readFileSync(root+'showdown.html','utf8');const inject=`
+const fs=require('fs');const root='A:/THE CAGE/';let h=fs.readFileSync(root+'index.html','utf8');const inject=`
 <script>
 (function(){
 const out=document.createElement('pre');out.id='testResult';document.body.append(out);
 function run(){
 try{
-document.getElementById('pace').value='instant';
+document.getElementById('reset').click();document.getElementById('pace').value='instant';
 for(let round=0;round<5;round++){
 const st=window.CageShowdown.snapshot();
 if(st.wins.A>=3||st.wins.B>=3)break;
-for(const side of ['A','B'])for(let i=0;i<3;i++){
+for(let i=0;i<3;i++)for(const side of round%2?['B','A']:['A','B']){
 const p=window.THE_CAGE_PLAYERS[round*6+(side==='B'?3:0)+i];
 const slots=document.getElementById('slots'+side).children;
 const input=slots[i].querySelector('input');input.value=p.name;slots[i].querySelector('button').click();

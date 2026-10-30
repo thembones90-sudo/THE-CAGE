@@ -1,0 +1,625 @@
+{
+  "engineVersion": "cage-0.4.0",
+  "rows": [
+    {
+      "label": "balanced vs creators",
+      "n": 1000,
+      "winsA": 914,
+      "winPct": 91.4,
+      "kickoffWinPct": 50.5,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        458,
+        456
+      ],
+      "caps": 0,
+      "p50": 128,
+      "p95": 437,
+      "p99": 570,
+      "max": 942
+    },
+    {
+      "label": "creators vs balanced",
+      "n": 1000,
+      "winsA": 78,
+      "winPct": 7.8,
+      "kickoffWinPct": 51.1,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        43,
+        35
+      ],
+      "caps": 0,
+      "p50": 125,
+      "p95": 418,
+      "p99": 704,
+      "max": 899
+    },
+    {
+      "label": "balanced vs attackers",
+      "n": 1000,
+      "winsA": 916,
+      "winPct": 91.6,
+      "kickoffWinPct": 49.5,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        454,
+        462
+      ],
+      "caps": 0,
+      "p50": 63,
+      "p95": 225,
+      "p99": 362,
+      "max": 546
+    },
+    {
+      "label": "attackers vs balanced",
+      "n": 1000,
+      "winsA": 105,
+      "winPct": 10.5,
+      "kickoffWinPct": 51.8,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        60,
+        45
+      ],
+      "caps": 0,
+      "p50": 64,
+      "p95": 216,
+      "p99": 325,
+      "max": 544
+    },
+    {
+      "label": "balanced vs twoForwards",
+      "n": 1000,
+      "winsA": 749,
+      "winPct": 74.9,
+      "kickoffWinPct": 48.6,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        366,
+        383
+      ],
+      "caps": 0,
+      "p50": 157,
+      "p95": 478,
+      "p99": 651,
+      "max": 1071
+    },
+    {
+      "label": "twoForwards vs balanced",
+      "n": 1000,
+      "winsA": 211,
+      "winPct": 21.1,
+      "kickoffWinPct": 47,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        89,
+        122
+      ],
+      "caps": 0,
+      "p50": 150,
+      "p95": 496,
+      "p99": 657,
+      "max": 1215
+    },
+    {
+      "label": "creators vs attackers",
+      "n": 1000,
+      "winsA": 476,
+      "winPct": 47.6,
+      "kickoffWinPct": 52.5,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        249,
+        227
+      ],
+      "caps": 0,
+      "p50": 96,
+      "p95": 340,
+      "p99": 554,
+      "max": 817
+    },
+    {
+      "label": "attackers vs creators",
+      "n": 1000,
+      "winsA": 521,
+      "winPct": 52.1,
+      "kickoffWinPct": 50.6,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        262,
+        259
+      ],
+      "caps": 0,
+      "p50": 99,
+      "p95": 355,
+      "p99": 506,
+      "max": 752
+    },
+    {
+      "label": "twoForwards vs attackers",
+      "n": 1000,
+      "winsA": 725,
+      "winPct": 72.5,
+      "kickoffWinPct": 49,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        356,
+        369
+      ],
+      "caps": 0,
+      "p50": 81,
+      "p95": 312,
+      "p99": 480,
+      "max": 668
+    },
+    {
+      "label": "attackers vs twoForwards",
+      "n": 1000,
+      "winsA": 295,
+      "winPct": 29.5,
+      "kickoffWinPct": 51.8,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        155,
+        140
+      ],
+      "caps": 0,
+      "p50": 79,
+      "p95": 296,
+      "p99": 475,
+      "max": 1244
+    },
+    {
+      "label": "defenders vs balanced",
+      "n": 1000,
+      "winsA": 77,
+      "winPct": 7.7,
+      "kickoffWinPct": 49.8,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        36,
+        41
+      ],
+      "caps": 0,
+      "p50": 317,
+      "p95": 1038,
+      "p99": 1450,
+      "max": 2235
+    },
+    {
+      "label": "balanced vs defenders",
+      "n": 1000,
+      "winsA": 917,
+      "winPct": 91.7,
+      "kickoffWinPct": 49.4,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        454,
+        463
+      ],
+      "caps": 0,
+      "p50": 314,
+      "p95": 1070,
+      "p99": 1488,
+      "max": 2125
+    },
+    {
+      "label": "tactics balanced / balanced",
+      "n": 1000,
+      "winsA": 914,
+      "winPct": 91.4,
+      "kickoffWinPct": 50.5,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        458,
+        456
+      ],
+      "caps": 0,
+      "p50": 128,
+      "p95": 437,
+      "p99": 570,
+      "max": 942
+    },
+    {
+      "label": "tactics balanced / possession",
+      "n": 1000,
+      "winsA": 942,
+      "winPct": 94.2,
+      "kickoffWinPct": 48.1,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        460,
+        482
+      ],
+      "caps": 0,
+      "p50": 126,
+      "p95": 435,
+      "p99": 631,
+      "max": 855
+    },
+    {
+      "label": "tactics balanced / press",
+      "n": 1000,
+      "winsA": 921,
+      "winPct": 92.1,
+      "kickoffWinPct": 49.4,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        456,
+        465
+      ],
+      "caps": 0,
+      "p50": 123,
+      "p95": 389,
+      "p99": 516,
+      "max": 760
+    },
+    {
+      "label": "tactics balanced / counter",
+      "n": 1000,
+      "winsA": 905,
+      "winPct": 90.5,
+      "kickoffWinPct": 50.2,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        452,
+        453
+      ],
+      "caps": 0,
+      "p50": 121,
+      "p95": 416,
+      "p99": 595,
+      "max": 876
+    },
+    {
+      "label": "tactics possession / balanced",
+      "n": 1000,
+      "winsA": 891,
+      "winPct": 89.1,
+      "kickoffWinPct": 48,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        434,
+        457
+      ],
+      "caps": 0,
+      "p50": 173,
+      "p95": 567,
+      "p99": 783,
+      "max": 1174
+    },
+    {
+      "label": "tactics possession / possession",
+      "n": 1000,
+      "winsA": 929,
+      "winPct": 92.9,
+      "kickoffWinPct": 47.4,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        450,
+        479
+      ],
+      "caps": 0,
+      "p50": 162,
+      "p95": 567,
+      "p99": 798,
+      "max": 1368
+    },
+    {
+      "label": "tactics possession / press",
+      "n": 1000,
+      "winsA": 895,
+      "winPct": 89.5,
+      "kickoffWinPct": 48.2,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        437,
+        458
+      ],
+      "caps": 0,
+      "p50": 173,
+      "p95": 513,
+      "p99": 715,
+      "max": 1198
+    },
+    {
+      "label": "tactics possession / counter",
+      "n": 1000,
+      "winsA": 871,
+      "winPct": 87.1,
+      "kickoffWinPct": 49.2,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        430,
+        441
+      ],
+      "caps": 0,
+      "p50": 164,
+      "p95": 573,
+      "p99": 780,
+      "max": 1080
+    },
+    {
+      "label": "tactics press / balanced",
+      "n": 1000,
+      "winsA": 942,
+      "winPct": 94.2,
+      "kickoffWinPct": 49.5,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        467,
+        475
+      ],
+      "caps": 0,
+      "p50": 103,
+      "p95": 352,
+      "p99": 563,
+      "max": 1006
+    },
+    {
+      "label": "tactics press / possession",
+      "n": 1000,
+      "winsA": 962,
+      "winPct": 96.2,
+      "kickoffWinPct": 47.9,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        469,
+        493
+      ],
+      "caps": 0,
+      "p50": 108,
+      "p95": 395,
+      "p99": 603,
+      "max": 884
+    },
+    {
+      "label": "tactics press / press",
+      "n": 1000,
+      "winsA": 926,
+      "winPct": 92.6,
+      "kickoffWinPct": 47.3,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        448,
+        478
+      ],
+      "caps": 0,
+      "p50": 106,
+      "p95": 375,
+      "p99": 516,
+      "max": 813
+    },
+    {
+      "label": "tactics press / counter",
+      "n": 1000,
+      "winsA": 912,
+      "winPct": 91.2,
+      "kickoffWinPct": 49.1,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        450,
+        462
+      ],
+      "caps": 0,
+      "p50": 99,
+      "p95": 393,
+      "p99": 519,
+      "max": 763
+    },
+    {
+      "label": "tactics counter / balanced",
+      "n": 1000,
+      "winsA": 927,
+      "winPct": 92.7,
+      "kickoffWinPct": 48.8,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        456,
+        471
+      ],
+      "caps": 0,
+      "p50": 106,
+      "p95": 354,
+      "p99": 541,
+      "max": 687
+    },
+    {
+      "label": "tactics counter / possession",
+      "n": 1000,
+      "winsA": 945,
+      "winPct": 94.5,
+      "kickoffWinPct": 49.2,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        467,
+        478
+      ],
+      "caps": 0,
+      "p50": 111,
+      "p95": 367,
+      "p99": 508,
+      "max": 689
+    },
+    {
+      "label": "tactics counter / press",
+      "n": 1000,
+      "winsA": 923,
+      "winPct": 92.3,
+      "kickoffWinPct": 48.6,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        453,
+        470
+      ],
+      "caps": 0,
+      "p50": 107,
+      "p95": 330,
+      "p99": 450,
+      "max": 798
+    },
+    {
+      "label": "tactics counter / counter",
+      "n": 1000,
+      "winsA": 902,
+      "winPct": 90.2,
+      "kickoffWinPct": 49.3,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        446,
+        456
+      ],
+      "caps": 0,
+      "p50": 100,
+      "p95": 330,
+      "p99": 474,
+      "max": 686
+    },
+    {
+      "label": "balanced mirror",
+      "n": 1000,
+      "winsA": 473,
+      "winPct": 47.3,
+      "kickoffWinPct": 46.2,
+      "kickN": [
+        497,
+        503
+      ],
+      "sideWins": [
+        216,
+        257
+      ],
+      "caps": 0,
+      "p50": 170,
+      "p95": 561,
+      "p99": 728,
+      "max": 1122
+    },
+    {
+      "label": "defensive worst case",
+      "n": 10000,
+      "winsA": 4952,
+      "winPct": 52.13,
+      "kickoffWinPct": 49.99,
+      "kickN": [
+        4756,
+        4743
+      ],
+      "sideWins": [
+        2479,
+        2473
+      ],
+      "caps": 501,
+      "p50": 1446,
+      "p95": 4682,
+      "p99": 5623,
+      "max": 5999
+    },
+    {
+      "label": "defender mirror",
+      "n": 10000,
+      "winsA": 4623,
+      "winPct": 49.65,
+      "kickoffWinPct": 50.11,
+      "kickN": [
+        4652,
+        4659
+      ],
+      "sideWins": [
+        2315,
+        2308
+      ],
+      "caps": 689,
+      "p50": 1595,
+      "p95": 4973,
+      "p99": 5756,
+      "max": 5997
+    }
+  ]
+}

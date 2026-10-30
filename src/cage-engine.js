@@ -8,7 +8,7 @@ const P = { // every tunable constant lives here
   b: { dribble: -0.25, pass: 1.7, through: 0.0, wall: -0.1, shield: 0.6, press: -0.3, recover: 0, rebound: 0 },
   shot: { box: { C: -0.4, S: -1.0 }, edge: { C: -1.9, S: -2.4 }, fk: -1.3, transition: 0.35, pressure: -0.7 },
   block: -0.9, blockCover: -1.7, foul: 0.035, fatigueCost: { sprint: 3, duel: 2, pass: 1, press: 3 },
-  escalate: [300, 480, 600], dt: { pass: 4, dribble: 3, through: 4, shot: 2, wall: 3, shield: 3, restart: 6 },
+  dt: { pass: 4, dribble: 3, through: 4, shot: 2, wall: 3, shield: 3, restart: 6 },
 };
 const TACTICS = {
   balanced:   { press: .35, patience: 1.0, flair: 1.0, direct: 1.0, shoot: 1.0, aggr: .3, fat: 1.0, deep: 0 },
@@ -65,6 +65,10 @@ function shape(players) {
 }
 
 function simulate({ teams, tactics, seed, mode = 'ko' }) {
+  if(!Array.isArray(teams)||teams.length!==2||teams.some(ids=>!Array.isArray(ids)||ids.length!==3||new Set(ids).size!==3||ids.some(id=>typeof id!=='string'||!Object.hasOwn(BY_ID,id))))throw Error('Each side requires three distinct supported identities.');
+  if(!Array.isArray(tactics)||tactics.length!==2||tactics.some(t=>typeof t!=='string'||!Object.hasOwn(TACTICS,t)))throw Error('Unknown tactic.');
+  if(!Number.isInteger(seed)||seed<0||seed>0xffffffff)throw Error('Seed must be an unsigned 32-bit integer.');
+  if(!['ko','timed'].includes(mode))throw Error('Unknown match mode.');
   const R = rng(seed), events = [];
   const T = teams.map((ids, ti) => {
     const ps = ids.map(id => { const p = BY_ID[id]; if (!p) throw Error('unknown ' + id); return { id, p, c: comp(p), fat: 0, active: true, oop: 0, ti }; });
@@ -139,7 +143,10 @@ function simulate({ teams, tactics, seed, mode = 'ko' }) {
     const mates = active(poss).filter(q => q !== c);
     const spear = byDuty(poss, 'spear');
     const U = {};
-    if (x >= 2) U.shoot = (x === 3 ? 1.2 + (c.c.shot - 75) / 18 : (c.c.long - 82) / 12) * tac.shoot * (engaged ? .7 : 1.6);
+    // At small-goal range a defensive specialist still attempts a finish. The old
+    // /18 scale made box-shot utility negative for defenders, reducing it to .03
+    // and producing endless safe passes. This changes decisions, never goal rolls.
+    if (x >= 2) U.shoot = (x === 3 ? Math.max(.45,1.2 + (c.c.shot - 75) / 50) : (c.c.long - 82) / 12) * tac.shoot * (engaged ? .7 : 1.6);
     if (!d) U.shoot = x >= 2 ? 6 : undefined;
     if (engaged) U.dribble = (.4 + (c.c.dribble - (d ? d.c.tackle : 50)) / 20) * tac.flair;
     if (!engaged && x < 3) U.carry = 1.2;
@@ -173,7 +180,7 @@ function simulate({ teams, tactics, seed, mode = 'ko' }) {
       const diff = act === 'through' ? -0.6 - (md ? 0 : -2) : (fwd > x ? -0.5 : 0.4);
       const r = md ? duel(eff(c, 'pass'), eff(md, 'intercept'), P.b[act] + diff + (engaged ? -.5 : 0)) : { p: 1, roll: R(), win: true };
       t += P.dt[act]; tire(c, 'pass');
-      emit({ type: act === 'through' ? 'through_ball' : 'pass', team: poss, actor: c.id, target: recv.id, opp: md ? md.id : null, p: r.p, roll: +(+r.roll).toFixed(3), zone: zbefore, outcome: r.roll < r.p ? 'complete' : 'intercepted' });
+      emit({ type: act === 'through' ? 'through_ball' : 'pass', team: poss, actor: c.id, target: recv.id, opp: md ? md.id : null, p: r.p, roll: +(+r.roll).toFixed(3), zone: zbefore, to: {x:Math.max(0,fwd),lane:['left','centre','right'][lane]}, outcome: r.roll < r.p ? 'complete' : 'intercepted' });
       if (r.roll < r.p) { lastPasser = c.id; carrier = recv; x = Math.max(0, fwd); if (act === 'through' && md) { const race = duel(eff(recv, 'recover') * .5 + recv.c.dribble * .5, eff(md, 'recover'), .2); emit({ type: 'race', team: poss, actor: recv.id, opp: md.id, p: race.p, roll: race.roll, outcome: race.win ? 'attacker_clear' : 'defender_recovers' }); if (race.win) md.oop = 2; } return; }
       return turnover(md, 'interception', 'read_pass');
     }
@@ -185,7 +192,7 @@ function simulate({ teams, tactics, seed, mode = 'ko' }) {
     if (t > 6000) throw Error('Cage golden-goal safety limit: simulation exceeded 100 minutes without a goal.');
   }
   const winner = score[0] > score[1] ? 0 : score[1] > score[0] ? 1 : -1;
-  return { events, score, winner, duration: t, draws: R.count(), shapes: T.map(tt => ({ duty: Object.fromEntries(tt.ps.map(q => [q.id, q.duty])), cover: tt.shape.cover.map(v => +v.toFixed(1)) })) };
+  return freeze({ events, score, winner, duration: t, draws: R.count(), shapes: T.map(tt => ({ duty: Object.fromEntries(tt.ps.map(q => [q.id, q.duty])), cover: tt.shape.cover.map(v => +v.toFixed(1)) })) });
 }
 
 function stats(res, teams) {
@@ -208,4 +215,5 @@ function stats(res, teams) {
   const tot = s[0].team.poss + s[1].team.poss || 1; s.forEach(x => x.team.poss = Math.round(100 * x.team.poss / tot));
   return s;
 }
-window.CageEngine = { simulate, stats, ROSTER, BY_ID, comp, shape, TACTICS, P };
+function freeze(value){if(value&&typeof value==='object'){Object.values(value).forEach(freeze);Object.freeze(value);}return value;}
+window.CageEngine = { VERSION:'cage-0.4.0', PARAMS_VERSION:'golden-goal-1', simulate, stats, ROSTER, BY_ID, comp, shape, TACTICS, P, freeze };

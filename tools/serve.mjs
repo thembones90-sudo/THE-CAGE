@@ -1,0 +1,12 @@
+import http from 'node:http';
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {execFile} from 'node:child_process';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const files=new Map(['index.html','src/players.js','src/roster-expansion.js','src/identity/search.js','src/cage-engine.js','src/cage-commentary.js','src/replay/records.js','src/showdown.js','src/cage-ui.css'].map(f=>['/'+f,f]));
+files.set('/','index.html');files.set('/showdown.html','index.html');
+const port=Number(process.env.CAGE_PORT||4173);
+const server=http.createServer((req,res)=>{const file=files.get(new URL(req.url,'http://localhost').pathname);if(!file){res.writeHead(404);res.end('Not found');return;}const types={'.html':'text/html','.js':'text/javascript','.css':'text/css'};res.writeHead(200,{'Content-Type':types[path.extname(file)]+'; charset=utf-8','Cache-Control':'no-store'});fs.createReadStream(path.join(root,file)).pipe(res);});
+server.on('error',e=>{console.error(e.code==='EADDRINUSE'?'Port '+port+' is already in use. If THE CAGE is running, open http://127.0.0.1:'+port+'/':e.message);process.exitCode=1;});
+server.listen(port,'127.0.0.1',()=>{const url='http://127.0.0.1:'+port+'/';console.log('THE CAGE live source: '+url);if(process.env.CAGE_OPEN_BROWSER==='1')execFile('cmd.exe',['/c','start','',url]);});

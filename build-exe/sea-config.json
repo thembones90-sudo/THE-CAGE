@@ -9,6 +9,9 @@
     "src/cage-engine.js": "../src/cage-engine.js",
     "src/cage-commentary.js": "../src/cage-commentary.js",
     "src/showdown.js": "../src/showdown.js",
-    "src/cage-ui.css": "../src/cage-ui.css"
+    "src/cage-ui.css": "../src/cage-ui.css",
+    "src/roster-expansion.js": "../src/roster-expansion.js",
+    "src/identity/search.js": "../src/identity/search.js",
+    "src/replay/records.js": "../src/replay/records.js"
   }
 }

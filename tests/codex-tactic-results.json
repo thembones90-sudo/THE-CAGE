@@ -1,0 +1,117 @@
+{
+  "engineVersion": "cage-0.4.0",
+  "rows": [
+    {
+      "a": "balanced",
+      "b": "balanced",
+      "n": 1000,
+      "winPct": 47.3,
+      "meanSeconds": 211
+    },
+    {
+      "a": "balanced",
+      "b": "possession",
+      "n": 1000,
+      "winPct": 60.3,
+      "meanSeconds": 254
+    },
+    {
+      "a": "balanced",
+      "b": "press",
+      "n": 1000,
+      "winPct": 45.7,
+      "meanSeconds": 205
+    },
+    {
+      "a": "balanced",
+      "b": "counter",
+      "n": 1000,
+      "winPct": 48.7,
+      "meanSeconds": 197
+    },
+    {
+      "a": "possession",
+      "b": "balanced",
+      "n": 1000,
+      "winPct": 41.2,
+      "meanSeconds": 255
+    },
+    {
+      "a": "possession",
+      "b": "possession",
+      "n": 1000,
+      "winPct": 50,
+      "meanSeconds": 296
+    },
+    {
+      "a": "possession",
+      "b": "press",
+      "n": 1000,
+      "winPct": 35,
+      "meanSeconds": 238
+    },
+    {
+      "a": "possession",
+      "b": "counter",
+      "n": 1000,
+      "winPct": 34.9,
+      "meanSeconds": 222
+    },
+    {
+      "a": "press",
+      "b": "balanced",
+      "n": 1000,
+      "winPct": 53.4,
+      "meanSeconds": 206
+    },
+    {
+      "a": "press",
+      "b": "possession",
+      "n": 1000,
+      "winPct": 66.8,
+      "meanSeconds": 231
+    },
+    {
+      "a": "press",
+      "b": "press",
+      "n": 1000,
+      "winPct": 51.7,
+      "meanSeconds": 191
+    },
+    {
+      "a": "press",
+      "b": "counter",
+      "n": 1000,
+      "winPct": 48.2,
+      "meanSeconds": 184
+    },
+    {
+      "a": "counter",
+      "b": "balanced",
+      "n": 1000,
+      "winPct": 52.8,
+      "meanSeconds": 193
+    },
+    {
+      "a": "counter",
+      "b": "possession",
+      "n": 1000,
+      "winPct": 63.8,
+      "meanSeconds": 236
+    },
+    {
+      "a": "counter",
+      "b": "press",
+      "n": 1000,
+      "winPct": 51.4,
+      "meanSeconds": 189
+    },
+    {
+      "a": "counter",
+      "b": "counter",
+      "n": 1000,
+      "winPct": 46.9,
+      "meanSeconds": 170
+    }
+  ]
+}

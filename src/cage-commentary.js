@@ -75,7 +75,6 @@ function commentate(res, seed, teamNames = ['Home', 'Away']) {
       case 'rebound': say(e, fill(pick(e.outcome === 'attack_keeps' ? 'rebound_att' : 'rebound_def', e.i), e), e.outcome === 'attack_keeps' ? 2 : 1); break;
       case 'withdrawal': say(e, fill(pick('withdrawal', e.i), e), 1); break;
       case 'escalation': say(e, fill(pick('escalation', e.i), e, { X: e.to }), 2); break;
-      case 'decider_xg': say(e, `Still level. It goes to the chances ledger: ${teamNames[e.team]} created more (${e.xg.join(' to ')}).`, 3); break;
     }
   }
   for (const e of res.events) {
