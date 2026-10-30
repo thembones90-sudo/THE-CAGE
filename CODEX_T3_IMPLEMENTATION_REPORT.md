@@ -137,6 +137,6 @@ Research source/task changes outside this inventory belong to Claude and were no
 
 ## Commit record and next-phase recommendation
 
-Baseline `17884ca`, tag `tactical-baseline`; implementation commit to be recorded below after final staging verification. No push.
+Baseline `17884ca`, tag `tactical-baseline`; implementation commit `7e14dbb4e50131bfcc9eb3b896c12981304708bb` (54 files, branch `codex/t3-tactical-space`). A following documentation-only commit records this hash and the final report. Concurrent Claude task/research edits and untracked briefs remain outside the implementation commit. No push.
 
 **T4 recommendation: HOLD.** T3 demonstrates real support/position/action effects, but aggregate acceptance fails and important regressions remain. Keep default engine preserved. Next review should isolate defensive outlet/finishing and stall causes, assess quality sensitivity with controlled attributes, and agree any changed formulas before implementation. Re-run the unchanged full harness after each approved mechanics correction. Do not tune ratings, add blanket composition bonuses or import research A/B/C payoff mechanisms merely to pass a win-rate table.
