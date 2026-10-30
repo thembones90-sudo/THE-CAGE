@@ -8,4 +8,6 @@ Completed rounds have Replay and Export replay controls. Load a JSON replay file
 
 See `SPRINT_V04_REPORT.md` for implementation, exact checks and unresolved balance findings; `ROSTER_EXPANSION_V04.md` for identity sources and editorial methodology. The defensive safety-cap and provisional matchup-balance gates still need work.
 
-Primary development path: `node tools/serve.mjs`. EXE snapshots do not pick up later source edits; the v0.4 package is `dist/TheCage-v0.4.exe` and also defaults to port 4173.
+Primary development path: `node tools/serve.mjs`. EXE snapshots do not pick up later source edits; the current lookup-fix package is `dist/TheCage-v0.4.1.exe` and also defaults to port 4173.
+
+Name lookup: type a remembered surname, exact nickname or at least four letters, then press Enter/Search to see matching full identities. Confirm the intended player to claim him. No suggestions appear before submission.
