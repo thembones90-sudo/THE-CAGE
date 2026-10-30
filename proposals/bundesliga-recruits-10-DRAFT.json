@@ -1,0 +1,633 @@
+{
+  "version": "bundesliga-recruitment-proposals-v1",
+  "status": "DRAFT_OWNER_REVIEW_NOT_ACTIVE",
+  "rosterImpact": 0,
+  "rosterBefore": 178,
+  "plannedAfterApproval": 188,
+  "scale": "Original editorial prime-career ratings; not licensed or scraped video-game data. Career tiers measure historical stature, independent of attributes.",
+  "ratingKeys": [
+    "pace",
+    "tech",
+    "pass",
+    "finish",
+    "def",
+    "phys",
+    "first_touch",
+    "dribbling",
+    "passing",
+    "vision",
+    "finishing",
+    "shooting",
+    "stamina",
+    "physical",
+    "tackling",
+    "positioning",
+    "composure"
+  ],
+  "extraKeys": [
+    "work_rate",
+    "stamina",
+    "composure",
+    "agility",
+    "marking"
+  ],
+  "playerProfiles": [
+    {
+      "id": "arjen-robben",
+      "name": "Arjen Robben",
+      "country": "Netherlands",
+      "role": "F",
+      "position": "RW",
+      "secondaryPositions": [
+        "LW"
+      ],
+      "prime": "2010–2015",
+      "nickname": "Mr. Wembley",
+      "tier": "TITAN",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "talismanClubs": [
+        "Bayern Munich"
+      ],
+      "traits": [
+        "Magician",
+        "Executioner"
+      ],
+      "core": [
+        94,
+        97,
+        83,
+        95,
+        28,
+        70
+      ],
+      "detail": [
+        95,
+        97,
+        83,
+        87,
+        95,
+        98,
+        84,
+        70,
+        28,
+        92,
+        94
+      ],
+      "extra": [
+        82,
+        84,
+        93,
+        96,
+        36
+      ],
+      "career": "Bayern's decade-defining inverted winger; eight Bundesliga titles and the decisive 2013 Champions League final winner against Dortmund. One of the great signature-move specialists.",
+      "whyTier": "World-class individual peak, decisive European final, sustained club dominance and a globally influential attacking template.",
+      "whyFolklore": "STREET HERO for his notorious right-wing cut inside and curled left-foot finish; TALISMAN for defining Bayern's modern identity alongside Ribéry, not merely one trophy.",
+      "playstyle": "Demand the ball on the right, feint outside, cut inside onto left foot; create an extreme shooting threat when his defender gives one meter of space.",
+      "strength": "One-on-one acceleration, tight angled dribbles, curled shots, clutch composure.",
+      "counter": "Force onto the right foot, double up at entry to central channel and deny shooting lanes.",
+      "sourceUrls": [
+        "https://fcbayern.com/en/news/2025/03/interview-arjen-robben-franck-ribery-dominance-is-part-of-bayern",
+        "https://www.bundesliga.com/en/bundesliga/news/robben-van-der-vaart-huntelaar-makaay-van-bommel-germany-netherlands-dutch-masters-19300"
+      ]
+    },
+    {
+      "id": "franck-ribery",
+      "name": "Franck Ribéry",
+      "country": "France",
+      "role": "F",
+      "position": "LW",
+      "secondaryPositions": [
+        "CAM"
+      ],
+      "prime": "2009–2013",
+      "nickname": "Kaiser Franck",
+      "tier": "TITAN",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "talismanClubs": [
+        "Bayern Munich"
+      ],
+      "traits": [
+        "Magician",
+        "Surgeon"
+      ],
+      "core": [
+        92,
+        98,
+        92,
+        86,
+        38,
+        74
+      ],
+      "detail": [
+        97,
+        99,
+        92,
+        96,
+        86,
+        88,
+        90,
+        74,
+        38,
+        88,
+        91
+      ],
+      "extra": [
+        87,
+        91,
+        91,
+        97,
+        50
+      ],
+      "career": "Bayern's creative left-side focal point and key 2013 treble performer; UEFA Best Player in Europe in 2013.",
+      "whyTier": "Transformative decade-long club importance, extraordinary wide creativity and the highest continental club achievements.",
+      "whyFolklore": "STREET HERO for impossible feints and short-space dribbling; TALISMAN for shaping Bayern's identity over a long successful era.",
+      "playstyle": "Repeated lateral carries, hidden reverse passes and tight dribbling combinations; designed to draw multiple defenders before releasing teammates.",
+      "strength": "Elite dribbling, first touch, passing vision, off-balance delivery.",
+      "counter": "Do not dive into 1v1 challenges; layer covering defenders and remove the return passing option.",
+      "sourceUrls": [
+        "https://fcbayern.com/en/news/2025/03/interview-arjen-robben-franck-ribery-dominance-is-part-of-bayern",
+        "https://www.bundesliga.com/en/bundesliga/news/franck-ribery-retires-12-seasons-at-bayern-munich-12-best-moments-1829"
+      ]
+    },
+    {
+      "id": "gerd-muller",
+      "name": "Gerd Müller",
+      "country": "Germany",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [],
+      "prime": "1969–1974",
+      "nickname": "Der Bomber",
+      "tier": "TITAN",
+      "folklore": [
+        "TALISMAN"
+      ],
+      "talismanClubs": [
+        "Bayern Munich"
+      ],
+      "traits": [
+        "Predator",
+        "Executioner"
+      ],
+      "core": [
+        75,
+        86,
+        75,
+        100,
+        25,
+        84
+      ],
+      "detail": [
+        92,
+        79,
+        75,
+        77,
+        100,
+        98,
+        86,
+        84,
+        25,
+        100,
+        97
+      ],
+      "extra": [
+        74,
+        86,
+        97,
+        79,
+        27
+      ],
+      "career": "365 Bundesliga goals, seven Bundesliga scoring crowns, Ballon d'Or 1970, World Cup 1974 decisive finisher and multiple European Cups with Bayern.",
+      "whyTier": "Foundational all-time goal-scoring standard; a clear TITAN without needing high dribbling or pace.",
+      "whyFolklore": "TALISMAN as a foundational Bayern club symbol; no automatic STREET HERO merely for great finishing.",
+      "playstyle": "Near-post movements, rapid close-range redirections, striking from awkward body positions. Maximum penalty-area conversion, limited ball-carrying.",
+      "strength": "Unmatched penalty-area movement, first-time finishing, ruthless positioning.",
+      "counter": "Deny service and crowd his six-yard channels; force him to build play from deep.",
+      "sourceUrls": [
+        "https://fcbayern.com/en/club/hall-of-fame/gerd-muller"
+      ]
+    },
+    {
+      "id": "thomas-muller",
+      "name": "Thomas Müller",
+      "country": "Germany",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [
+        "CF",
+        "ST"
+      ],
+      "prime": "2013–2020",
+      "nickname": "Der Raumdeuter",
+      "tier": "TITAN",
+      "folklore": [
+        "TALISMAN"
+      ],
+      "talismanClubs": [
+        "Bayern Munich"
+      ],
+      "traits": [
+        "Phantom",
+        "Surgeon"
+      ],
+      "core": [
+        76,
+        84,
+        91,
+        90,
+        57,
+        76
+      ],
+      "detail": [
+        84,
+        78,
+        91,
+        96,
+        90,
+        86,
+        95,
+        76,
+        57,
+        100,
+        93
+      ],
+      "extra": [
+        94,
+        95,
+        93,
+        77,
+        73
+      ],
+      "career": "Bayern record appearances, 13 Bundesliga titles, two Champions League titles and the 2014 World Cup; world-class longevity as a space interpreter.",
+      "whyTier": "Exceptional domestic and international legacy alongside an era-defining off-ball attacking style.",
+      "whyFolklore": "TALISMAN for an extremely long Bayern association; not STREET HERO since his defining genius is movement more than street-skill spectacle.",
+      "playstyle": "Without possessing the ball, find the space nobody watches, then finish or immediately slip a teammate into a better opening.",
+      "strength": "Space occupation, anticipation, selfless final passes, stamina and pressing triggers.",
+      "counter": "Track his blindside movements and deny third-man combinations; do not merely mark where he stood a moment ago.",
+      "sourceUrls": [
+        "https://fcbayern.com/en/news/2025/05/bayern-say-goodbye-to-eric-dier-and-thomas-muller",
+        "https://fcbayern.com/en/news/2025/06/thomas-mueller-named-potm-for-may-2025"
+      ]
+    },
+    {
+      "id": "marco-reus",
+      "name": "Marco Reus",
+      "country": "Germany",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [
+        "LW",
+        "RW"
+      ],
+      "prime": "2012–2014 (with 2018/19 resurgence)",
+      "nickname": "Dortmund's Golden Boy",
+      "tier": "LEGEND",
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "talismanClubs": [
+        "Borussia Dortmund"
+      ],
+      "traits": [
+        "Phantom",
+        "Executioner"
+      ],
+      "core": [
+        91,
+        92,
+        86,
+        92,
+        40,
+        73
+      ],
+      "detail": [
+        92,
+        93,
+        86,
+        89,
+        92,
+        92,
+        83,
+        73,
+        40,
+        92,
+        89
+      ],
+      "extra": [
+        76,
+        83,
+        89,
+        93,
+        44
+      ],
+      "career": "Dortmund-born creator and finisher, 12 years at BVB, 170 goals and 131 assists in 429 competitive appearances according to Bundesliga's retrospective; multiple domestic cups and major individual recognition.",
+      "whyTier": "World-class German attacking star and enduring club symbol; injuries and fewer major team titles keep him below the strict TITAN tier.",
+      "whyFolklore": "STREET HERO for lightning footwork, incisive combinations and distinctive modern attacking style; TALISMAN for returning to hometown Dortmund and becoming a defining captain and symbol.",
+      "playstyle": "Accelerate into a vacated half-space, strike before the defensive shape settles, or ghost in behind after a teammate carries the ball.",
+      "strength": "Agility, acceleration, first touch, precision finishing and fast combinations.",
+      "counter": "Force deeper central receives and physically block runs through the inside channel.",
+      "sourceUrls": [
+        "https://www.bundesliga.com/en/bundesliga/news/marco-reus-10-things-borussia-dortmund-germany-new-contract-5396/",
+        "https://www.bundesliga.com/en/bundesliga/news/marco-reus-gio-reyna-players-to-play-for-dortmund-and-gladbach-35220"
+      ]
+    },
+    {
+      "id": "stefan-effenberg",
+      "name": "Stefan Effenberg",
+      "country": "Germany",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [
+        "CDM"
+      ],
+      "prime": "1998–2001",
+      "nickname": "Der Tiger",
+      "tier": "LEGEND",
+      "folklore": [
+        "STREET VILLAIN"
+      ],
+      "traits": [
+        "Maestro",
+        "Enforcer"
+      ],
+      "core": [
+        72,
+        85,
+        94,
+        81,
+        82,
+        89
+      ],
+      "detail": [
+        87,
+        73,
+        94,
+        91,
+        81,
+        90,
+        86,
+        89,
+        85,
+        87,
+        91
+      ],
+      "extra": [
+        87,
+        86,
+        90,
+        67,
+        84
+      ],
+      "career": "Bayern's uncompromising captain, Bundesliga champion three consecutive seasons from 1998/99, a leader of the 2001 Champions League winning team and a decisive penalty scorer in the final.",
+      "whyTier": "Sustained top-class midfield authority and European-cup captaincy, without the historical universality demanded of TITAN.",
+      "whyFolklore": "STREET VILLAIN for a lasting confrontational, provocative on-pitch persona; no TALISMAN because Bayern has more singular defining lifetime figures.",
+      "playstyle": "Dictate game rhythm with assertive long passing, physically challenge midfield runners, and set an imposing tempo in possession.",
+      "strength": "Range of passing, long-range striking, physical authority, tactical rhythm.",
+      "counter": "Exploit his turning radius, bait aggressive steps out of position and force quick one-touch exchanges.",
+      "sourceUrls": [
+        "https://www.bundesliga.com/en/bundesliga/news/stefan-effenberg-bayern-munich-gladbach-old-school-driving-force-with-a-will-to-succeed-24494"
+      ]
+    },
+    {
+      "id": "edin-dzeko",
+      "name": "Edin Džeko",
+      "country": "Bosnia and Herzegovina",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [
+        "CF"
+      ],
+      "prime": "2008–2012",
+      "nickname": "The Bosnian Diamond",
+      "tier": "LEGEND",
+      "folklore": [
+        "UNDERDOG"
+      ],
+      "traits": [
+        "Juggernaut",
+        "Predator"
+      ],
+      "core": [
+        77,
+        84,
+        77,
+        96,
+        32,
+        93
+      ],
+      "detail": [
+        89,
+        79,
+        77,
+        79,
+        96,
+        94,
+        87,
+        93,
+        32,
+        95,
+        93
+      ],
+      "extra": [
+        80,
+        87,
+        93,
+        74,
+        35
+      ],
+      "career": "26 Bundesliga goals in Wolfsburg's 2008/09 first title, Bundesliga scoring crown in 2009/10, two English Premier League titles with Manchester City and major later contributions in Italy.",
+      "whyTier": "Exceptionally long, international top-flight striker career with sustained goals and decisive championships; LEGEND rather than TITAN.",
+      "whyFolklore": "UNDERDOG as one of the decisive scorers in Wolfsburg's genuinely unforeseen 2009 Bundesliga championship. No STREET HERO simply for prolific goals.",
+      "playstyle": "Tall target striker with surprisingly clean technical feet, strong lay-offs and heavy first-time finishing; moves intelligently rather than sprinting past defenders.",
+      "strength": "Two-footed shooting, hold-up, finishing, box positioning, aerial strength.",
+      "counter": "Keep him away from shooting range, stop crosses/lay-offs and force repeated wide-area chases.",
+      "sourceUrls": [
+        "https://www.bundesliga.com/en/bundesliga/news/iconic-teams-wolfsburg-2008-09-champions-dzeko-grafite-magath-24937",
+        "https://www.bundesliga.com/en/2bundesliga/news/edin-dzeko-returns-to-germany-schalke-bosnia-world-cup-35677"
+      ]
+    },
+    {
+      "id": "grafite",
+      "name": "Grafite",
+      "country": "Brazil",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [
+        "CF"
+      ],
+      "prime": "2008/09",
+      "nickname": "The Wolfsburg Sorcerer",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO",
+        "UNDERDOG"
+      ],
+      "traits": [
+        "Predator",
+        "Magician"
+      ],
+      "core": [
+        85,
+        87,
+        75,
+        96,
+        31,
+        88
+      ],
+      "detail": [
+        88,
+        90,
+        75,
+        77,
+        96,
+        92,
+        83,
+        88,
+        31,
+        94,
+        91
+      ],
+      "extra": [
+        75,
+        83,
+        91,
+        85,
+        28
+      ],
+      "career": "Bundesliga 2008/09 Golden Boot with 28 goals in 25 matches, Wolfsburg's first Bundesliga title, extraordinary weaving dribble and backheel goal against Bayern.",
+      "whyTier": "One historic brilliant peak with impressive career but not enough long-term world-class influence for the strict LEGEND category.",
+      "whyFolklore": "STREET HERO for the legendary self-made goal against Bayern; UNDERDOG for a decisive season in Wolfsburg's shock title.",
+      "playstyle": "Strong striker who can unexpectedly dribble through tight central crowds then finish from an improbable angle.",
+      "strength": "Sudden dribble improvisation, short explosive runs, instinctive finishes and shielding.",
+      "counter": "Never assume he is a static target; deny his diagonal feet and crowd him before he enters the box.",
+      "sourceUrls": [
+        "https://www.bundesliga.com/en/bundesliga/news/iconic-teams-wolfsburg-2008-09-champions-dzeko-grafite-magath-24937",
+        "https://www.bundesliga.com/en/bundesliga/news/top-5-shock-title-winners-dortmund-stuttgart-bremen-kaiserslautern-wolfsburg-21347"
+      ]
+    },
+    {
+      "id": "diego-ribas",
+      "name": "Diego Ribas",
+      "country": "Brazil",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [
+        "CM"
+      ],
+      "prime": "2006–2009",
+      "nickname": "The Wizard of the Weser",
+      "tier": "ELITE",
+      "folklore": [
+        "STREET HERO"
+      ],
+      "traits": [
+        "Magician",
+        "Surgeon"
+      ],
+      "core": [
+        83,
+        96,
+        94,
+        88,
+        34,
+        67
+      ],
+      "detail": [
+        96,
+        96,
+        94,
+        96,
+        88,
+        94,
+        81,
+        67,
+        34,
+        86,
+        88
+      ],
+      "extra": [
+        71,
+        81,
+        88,
+        92,
+        43
+      ],
+      "career": "Werder Bremen's creative star, top assist provider in the Bundesliga in 2006/07 and 2007/08, key in Werder's 2009 DFB-Pokal triumph and UEFA Cup final run.",
+      "whyTier": "Brilliant and memorable German peak with significant longevity elsewhere, but not enough sustained world-historical greatness for LEGEND.",
+      "whyFolklore": "STREET HERO because feints, outrageous technical actions and set-piece artistry made him a cult Bundesliga magician; no strict club TALISMAN despite being beloved at Werder.",
+      "playstyle": "Classic No.10 who dribbles into midfield pressure, draws defenders, then finds a threaded release or drives a shot from the edge of the box.",
+      "strength": "Tight-space ball mastery, incisive final ball, finesse shooting and invention.",
+      "counter": "Maintain two defensive layers and block central passing lanes; do not chase his first feint.",
+      "sourceUrls": [
+        "https://www.bundesliga.com/en/bundesliga/news/best-number-10s-robben-netzer-matthaus-24578",
+        "https://www.bundesliga.com/de/bundesliga/news/sv-werder-bremen-diego-abschiedsspiel-weserstadion-31388"
+      ]
+    },
+    {
+      "id": "zvjezdan-misimovic",
+      "name": "Zvjezdan Misimović",
+      "country": "Bosnia and Herzegovina",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [
+        "CM"
+      ],
+      "prime": "2008/09",
+      "nickname": "The Wolfsburg Architect",
+      "tier": "ELITE",
+      "folklore": [
+        "UNDERDOG"
+      ],
+      "traits": [
+        "Architect",
+        "Surgeon"
+      ],
+      "core": [
+        68,
+        89,
+        97,
+        80,
+        42,
+        68
+      ],
+      "detail": [
+        92,
+        76,
+        97,
+        97,
+        80,
+        85,
+        79,
+        68,
+        42,
+        82,
+        92
+      ],
+      "extra": [
+        72,
+        79,
+        92,
+        69,
+        51
+      ],
+      "career": "The chance-creation center of Wolfsburg's 2008/09 Bundesliga champions, supplying 20 league assists and seven goals.",
+      "whyTier": "An outstanding Bundesliga creative peak with valuable club and international career, but not consistent global legend stature.",
+      "whyFolklore": "UNDERDOG for indispensably organizing Wolfsburg's unexpected first title. No STREET HERO because the defining genius was systematic creation rather than showboating.",
+      "playstyle": "Seek one or two touches to find advanced strikers, manipulate passing angles, and split compact defenses without sprinting or dribbling excessively.",
+      "strength": "Final-ball timing, field vision, disguise, set-piece service and controlled tempo.",
+      "counter": "Screen the supply channels to runners and force him to beat people with pace rather than passes.",
+      "sourceUrls": [
+        "https://www.bundesliga.com/en/bundesliga/news/iconic-teams-wolfsburg-2008-09-champions-dzeko-grafite-magath-24937",
+        "https://www.bundesliga.com/en/bundesliga/news/top-5-shock-title-winners-dortmund-stuttgart-bremen-kaiserslautern-wolfsburg-21347"
+      ]
+    }
+  ]
+}
