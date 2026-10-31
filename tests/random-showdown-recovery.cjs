@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),fixture=path.join(root,'draft-recover-e2e.html');
 const script=fs.readFileSync(path.join(__dirname,'fixtures/random-showdown-recovery.js'),'utf8');
@@ -11,4 +11,3 @@ const out=cp.spawnSync('C:/Program Files/Google/Chrome/Application/chrome.exe',[
 const message=out.stdout.match(/<pre id="recover-test">([\s\S]*?)<\/pre>/)?.[1]||'No result';
 console.log(message);assert(message.startsWith('RECOVERY_TEST_PASS'),message+'\n'+(out.stderr||'').slice(-700));
 }finally{try{fs.rmSync(fixture,{force:true});fs.rmSync(profile,{recursive:true,force:true,maxRetries:3});}catch{}}
-
