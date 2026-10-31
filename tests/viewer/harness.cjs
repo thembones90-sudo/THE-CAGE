@@ -3,7 +3,7 @@
 const fs = require('node:fs'), vm = require('node:vm'), path = require('node:path');
 const root = path.resolve(__dirname, '../..');
 
-const ENGINE_FILES = ['players', 'roster-expansion', 'roster-100', 'roster-101', 'roster-103', 'roster-pl-134', 'roster-135', 'roster-136', 'roster-139', 'roster-140', 'roster-141', 'roster-149', 'roster-165', 'roster-178', 'roster-classification', 'roster-refinement', 'tactical-refinement', 'roster-182', 'natural-positions', 'engine/legacy-v04', 'cage-engine', 'cage-commentary', 'replay/records'];
+const ENGINE_FILES = ['players', 'roster-expansion', 'roster-100', 'roster-101', 'roster-103', 'roster-pl-134', 'roster-135', 'roster-136', 'roster-139', 'roster-140', 'roster-141', 'roster-149', 'roster-165', 'roster-178', 'roster-classification', 'roster-refinement', 'tactical-refinement', 'roster-182', 'roster-trait-family-v16', 'natural-positions', 'engine/legacy-v04', 'cage-engine', 'cage-commentary', 'replay/records'];
 const VIEWER_PURE = ['coords', 'layout', 'timeline', 'clock'];
 
 function run(ctx, rel) { vm.runInContext(fs.readFileSync(path.join(root, rel), 'utf8'), ctx, { filename: rel }); }

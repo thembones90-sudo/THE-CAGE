@@ -1,6 +1,8 @@
 // THE CAGE: thirteen owner-approved additions, 178-player tactical and identity integration.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const revisions=JSON.parse(fs.readFileSync(path.join(root,'proposals/trait-family-v16-reviewed.json'),'utf8')).rows;
+const alias=x=>x==='Tracker'?'Hunter':x;
 const c={window:{location:{search:'?engine=t3'}}};vm.createContext(c);
 const scripts=[...html.matchAll(new RegExp('<script src="(src/[^"]+)"></script>','g'))].map(m=>m[1]);
 for(const f of scripts){if(f==='src/cage-commentary.js')break;vm.runInContext(fs.readFileSync(path.join(root,f),'utf8'),c,{filename:f});}
@@ -18,13 +20,13 @@ for(const [id,tier,folklore,position,other,primary,secondary,stat,val,query] of 
  assert.deepEqual(Array.from(p.folklore),folklore,id+' folklore');
  assert.equal(p.position,position,id+' natural position');
  assert.deepEqual(Array.from(p.secondaryPositions),other,id+' secondary positions');
- assert.equal(p.traits.primary,primary,id+' primary');
- assert.equal(p.traits.secondary,secondary,id+' secondary');
+ assert.equal(p.traits.primary,alias(primary),id+' approved original primary');
+ assert.equal(p.traits.secondary,revisions[id]?.newSecondary||alias(secondary),id+' reviewed cross-family secondary');
  assert.equal(p.r[stat],val,id+' signature rating');
  assert.equal(Object.keys(p.r).length,17,id+' core/extended ratings');
  assert.equal(Object.keys(p.attributes).length,5,id+' T3 supplemental ratings');
  assert.equal(p.attributesProvisional,true,id+' supplement provisional flag');
- assert.equal(w.CageTraits.traits(id)[0][0],primary,id+' trait engine integration');
+ assert.equal(w.CageTraits.traits(id)[0][0],alias(primary),id+' trait engine integration');
  assert(w.CageIdentity.resolve(query).matches?.some(x=>x.id===id),id+' search alias: '+query);
  for(const value of [...Object.values(p.r),...Object.values(p.attributes)])assert(Number.isFinite(value)&&value>=0&&value<=100,id+' invalid rating');
 }

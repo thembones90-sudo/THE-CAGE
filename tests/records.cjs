@@ -9,7 +9,7 @@ const scripts=[...page.matchAll(/<script\s+src="(src\/[^"]+)"/g)].map(x=>x[1]);
 assert(scripts.includes('src/roster-182.js')&&scripts.includes('src/replay/records.js'));
 for(const f of scripts){if(f==='src/showdown.js')break;vm.runInContext(fs.readFileSync(path.join(root,f),'utf8'),ctx,{filename:f});}
 const E=ctx.window.CageEngine,R=ctx.window.CageRecords,I=ctx.window.CageIdentity,ps=ctx.window.THE_CAGE_PLAYERS;
-assert.equal(ps.length,182);assert.equal(E.VERSION,'cage-t3-4');
+assert.equal(ps.length,182);assert.equal(E.VERSION,'cage-t3-5');
 const config={teams:[['paolo-maldini','michael-ballack','ronaldo-nazario'],['nemanja-vidic','jay-jay-okocha','djalminha']],tactics:['balanced','press'],seed:42,mode:'ko'};
 const result=E.simulate(config),record=R.make(config,result,1);
 assert.equal(JSON.stringify(R.reproduce(record)),JSON.stringify(result));

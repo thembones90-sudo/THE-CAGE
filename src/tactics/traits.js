@@ -1,12 +1,12 @@
 // THE CAGE: experimental decision-only trait layer. Opt-in via simulate({traits:{enabled:true}}).
 // No strength, stamina, duel/shot probability, or outcome modifiers.
 (()=>{'use strict';
-const CATALOG=Object.freeze(['Wall','Enforcer','Anticipator','Tracker','Libero','Maestro','Architect','Destroyer','Engine','Surgeon','Predator','Magician','Executioner','Phantom','Juggernaut']);
+const CATALOG=Object.freeze(['Wall','Enforcer','Anticipator','Hunter','Libero','Maestro','Architect','Destroyer','Engine','Surgeon','Predator','Magician','Executioner','Phantom','Juggernaut']);
 const COUNTERPLAY=Object.freeze({
 Wall:'Recycle or pass around a defender who holds the box instead of chasing',
 Enforcer:'Use quick passes to exploit front-foot challenges and foul risk',
 Anticipator:'Change passing lanes; bait the read before releasing',
-Tracker:'Switch play or use wall passes behind an active pursuer',
+Hunter:'Switch play or use wall passes behind an active pursuer',
 Libero:'Counter into space vacated by a defender advancing with cover',
 Maestro:'Press short passing lanes or force low-value recycling',
 Architect:'Screen progressive passes and close the forward outlet',
@@ -38,7 +38,7 @@ case 'Magician': if(s.engaged){boost('dribble',.56);boost('wall',.29);}else boos
 case 'Executioner': if(s.x===3){boost('shoot',.55);soften('pass',.15);}else if(s.x===2&&!s.engaged)boost('shoot',.22);break;
 case 'Phantom': if(!s.engaged&&s.x<3)boost('carry',.33);else if(s.engaged)boost('wall',.24);break;
 case 'Juggernaut': if(s.engaged){boost('shield',.48);boost('wall',.18);}else if(s.transition)boost('carry',.32);break;
-case 'Enforcer': case 'Anticipator': case 'Tracker': case 'Wall': case 'Destroyer':break;
+case 'Enforcer': case 'Anticipator': case 'Hunter': case 'Wall': case 'Destroyer':break;
 }}
 return {weights:U,active:[...new Set(active)]};
 }
@@ -50,7 +50,7 @@ switch(name){
 case 'Wall': if(s.x===2)amount-=.16*strength;break;
 case 'Enforcer': if(s.x>=1)amount+=.18*strength;break;
 case 'Anticipator': if(s.x>=1&&s.x<=2)amount-=.13*strength;break;
-case 'Tracker': if(s.transition||s.x>=1)amount+=.14*strength;break;
+case 'Hunter': if(s.transition||s.x>=1)amount+=.14*strength;break;
 case 'Destroyer': if(s.x<=2)amount+=.22*strength;break;
 case 'Engine': if(s.x<=2)amount+=.07*strength;break;
 }}
@@ -75,5 +75,5 @@ const weights=available.map(q=>Math.max(.3,1+q.score*.35)),total=weights.reduce(
 for(let i=0;i<available.length;i++)if((roll-=weights[i])<0)return available[i].q;
 return available.at(-1).q;
 }
-window.CageTraits=Object.freeze({VERSION:'traits-preview-0.1',CATALOG,COUNTERPLAY,traits,weights,engagement,receiver});
+window.CageTraits=Object.freeze({VERSION:'traits-preview-0.2',CATALOG,COUNTERPLAY,traits,weights,engagement,receiver});
 })();

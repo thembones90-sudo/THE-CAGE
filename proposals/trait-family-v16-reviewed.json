@@ -1,0 +1,688 @@
+{
+  "note": "Reviewable human-curated secondary trait proposals after Qwen's mappings failed the hard cross-family constraint. No primary or rating changes.",
+  "family": {
+    "D": [
+      "Wall",
+      "Enforcer",
+      "Anticipator",
+      "Hunter",
+      "Libero"
+    ],
+    "M": [
+      "Maestro",
+      "Architect",
+      "Destroyer",
+      "Engine",
+      "Surgeon"
+    ],
+    "A": [
+      "Predator",
+      "Magician",
+      "Executioner",
+      "Phantom",
+      "Juggernaut"
+    ]
+  },
+  "rows": {
+    "adriano": {
+      "name": "Adriano",
+      "previous": "Executioner",
+      "primary": "Juggernaut",
+      "newSecondary": "Engine"
+    },
+    "aiden-mcgeady": {
+      "name": "Aiden McGeady",
+      "previous": "Phantom",
+      "primary": "Magician",
+      "newSecondary": "Engine"
+    },
+    "ailton": {
+      "name": "Aílton",
+      "previous": "Phantom",
+      "primary": "Predator",
+      "newSecondary": "Engine"
+    },
+    "alan-shearer": {
+      "name": "Alan Shearer",
+      "previous": "Juggernaut",
+      "primary": "Executioner",
+      "newSecondary": "Engine"
+    },
+    "alberto-luque": {
+      "name": "Alberto Luque",
+      "previous": "Executioner",
+      "primary": "Phantom",
+      "newSecondary": "Engine"
+    },
+    "alen-boksic": {
+      "name": "Alen Bokšić",
+      "previous": "Phantom",
+      "primary": "Juggernaut",
+      "newSecondary": "Engine"
+    },
+    "alessandro-del-piero": {
+      "name": "Alessandro Del Piero",
+      "previous": "Executioner",
+      "primary": "Magician",
+      "newSecondary": "Maestro"
+    },
+    "alessandro-nesta": {
+      "name": "Alessandro Nesta",
+      "previous": "Anticipator",
+      "primary": "Wall",
+      "newSecondary": "Surgeon"
+    },
+    "alex-de-souza": {
+      "name": "Alex de Souza",
+      "previous": "Surgeon",
+      "primary": "Maestro",
+      "newSecondary": "Executioner"
+    },
+    "alvaro-recoba": {
+      "name": "Álvaro Recoba",
+      "previous": "Executioner",
+      "primary": "Magician",
+      "newSecondary": "Architect"
+    },
+    "andrea-barzagli": {
+      "name": "Andrea Barzagli",
+      "previous": "Anticipator",
+      "primary": "Wall",
+      "newSecondary": "Architect"
+    },
+    "andrea-pirlo": {
+      "name": "Andrea Pirlo",
+      "previous": "Maestro",
+      "primary": "Architect",
+      "newSecondary": "Magician"
+    },
+    "andrey-arshavin": {
+      "name": "Andrey Arshavin",
+      "previous": "Executioner",
+      "primary": "Magician",
+      "newSecondary": "Surgeon"
+    },
+    "ashley-cole": {
+      "name": "Ashley Cole",
+      "previous": "Anticipator",
+      "primary": "Tracker",
+      "newSecondary": "Engine"
+    },
+    "bastian-schweinsteiger": {
+      "name": "Bastian Schweinsteiger",
+      "previous": "Architect",
+      "primary": "Engine",
+      "newSecondary": "Enforcer"
+    },
+    "branislav-ivanovic": {
+      "name": "Branislav Ivanović",
+      "previous": "Wall",
+      "primary": "Enforcer",
+      "newSecondary": "Juggernaut"
+    },
+    "carles-puyol": {
+      "name": "Carles Puyol",
+      "previous": "Wall",
+      "primary": "Enforcer",
+      "newSecondary": "Destroyer"
+    },
+    "cesc-fabregas": {
+      "name": "Cesc Fàbregas",
+      "previous": "Architect",
+      "primary": "Surgeon",
+      "newSecondary": "Phantom"
+    },
+    "christian-eriksen": {
+      "name": "Christian Eriksen",
+      "previous": "Surgeon",
+      "primary": "Architect",
+      "newSecondary": "Executioner"
+    },
+    "claude-makelele": {
+      "name": "Claude Makélélé",
+      "previous": "Wall",
+      "primary": "Anticipator",
+      "newSecondary": "Engine"
+    },
+    "cristiano-ronaldo": {
+      "name": "Cristiano Ronaldo",
+      "previous": "Predator",
+      "primary": "Executioner",
+      "newSecondary": "Engine"
+    },
+    "daniele-de-rossi": {
+      "name": "Daniele De Rossi",
+      "previous": "Architect",
+      "primary": "Destroyer",
+      "newSecondary": "Wall"
+    },
+    "darko-pancev": {
+      "name": "Darko Pančev",
+      "previous": "Executioner",
+      "primary": "Predator",
+      "newSecondary": "Anticipator"
+    },
+    "david-beckham": {
+      "name": "David Beckham",
+      "previous": "Surgeon",
+      "primary": "Architect",
+      "newSecondary": "Executioner"
+    },
+    "david-silva": {
+      "name": "David Silva",
+      "previous": "Maestro",
+      "primary": "Surgeon",
+      "newSecondary": "Magician"
+    },
+    "davor-suker": {
+      "name": "Davor Šuker",
+      "previous": "Predator",
+      "primary": "Executioner",
+      "newSecondary": "Maestro"
+    },
+    "declan-rice": {
+      "name": "Declan Rice",
+      "previous": "Engine",
+      "primary": "Destroyer",
+      "newSecondary": "Wall"
+    },
+    "denilson": {
+      "name": "Denílson",
+      "previous": "Phantom",
+      "primary": "Magician",
+      "newSecondary": "Surgeon"
+    },
+    "didier-drogba": {
+      "name": "Didier Drogba",
+      "previous": "Executioner",
+      "primary": "Juggernaut",
+      "newSecondary": "Engine"
+    },
+    "diego-tristan": {
+      "name": "Diego Tristán",
+      "previous": "Magician",
+      "primary": "Executioner",
+      "newSecondary": "Maestro"
+    },
+    "djibril-cisse": {
+      "name": "Djibril Cissé",
+      "previous": "Executioner",
+      "primary": "Phantom",
+      "newSecondary": "Engine"
+    },
+    "edgar-davids": {
+      "name": "Edgar Davids",
+      "previous": "Engine",
+      "primary": "Destroyer",
+      "newSecondary": "Hunter"
+    },
+    "erling-haaland": {
+      "name": "Erling Haaland",
+      "previous": "Juggernaut",
+      "primary": "Predator",
+      "newSecondary": "Engine"
+    },
+    "fabio-cannavaro": {
+      "name": "Fabio Cannavaro",
+      "previous": "Tracker",
+      "primary": "Anticipator",
+      "newSecondary": "Engine"
+    },
+    "fernando-torres": {
+      "name": "Fernando Torres",
+      "previous": "Executioner",
+      "primary": "Predator",
+      "newSecondary": "Engine"
+    },
+    "filippo-inzaghi": {
+      "name": "Filippo Inzaghi",
+      "previous": "Phantom",
+      "primary": "Predator",
+      "newSecondary": "Anticipator"
+    },
+    "frank-lampard": {
+      "name": "Frank Lampard",
+      "previous": "Phantom",
+      "primary": "Executioner",
+      "newSecondary": "Engine"
+    },
+    "gabriel-batistuta": {
+      "name": "Gabriel Batistuta",
+      "previous": "Juggernaut",
+      "primary": "Executioner",
+      "newSecondary": "Engine"
+    },
+    "gareth-bale": {
+      "name": "Gareth Bale",
+      "previous": "Executioner",
+      "primary": "Predator",
+      "newSecondary": "Engine"
+    },
+    "gilberto-silva": {
+      "name": "Gilberto Silva",
+      "previous": "Wall",
+      "primary": "Anticipator",
+      "newSecondary": "Destroyer"
+    },
+    "giorgio-chiellini": {
+      "name": "Giorgio Chiellini",
+      "previous": "Enforcer",
+      "primary": "Wall",
+      "newSecondary": "Destroyer"
+    },
+    "hatem-ben-arfa": {
+      "name": "Hatem Ben Arfa",
+      "previous": "Phantom",
+      "primary": "Magician",
+      "newSecondary": "Surgeon"
+    },
+    "hernan-crespo": {
+      "name": "Hernán Crespo",
+      "previous": "Executioner",
+      "primary": "Predator",
+      "newSecondary": "Engine"
+    },
+    "hidetoshi-nakata": {
+      "name": "Hidetoshi Nakata",
+      "previous": "Engine",
+      "primary": "Surgeon",
+      "newSecondary": "Phantom"
+    },
+    "hulk": {
+      "name": "Hulk",
+      "previous": "Executioner",
+      "primary": "Juggernaut",
+      "newSecondary": "Engine"
+    },
+    "ivan-zamorano": {
+      "name": "Iván Zamorano",
+      "previous": "Predator",
+      "primary": "Juggernaut",
+      "newSecondary": "Engine"
+    },
+    "jaap-stam": {
+      "name": "Jaap Stam",
+      "previous": "Enforcer",
+      "primary": "Wall",
+      "newSecondary": "Destroyer"
+    },
+    "jamie-carragher": {
+      "name": "Jamie Carragher",
+      "previous": "Anticipator",
+      "primary": "Wall",
+      "newSecondary": "Destroyer"
+    },
+    "jamie-vardy": {
+      "name": "Jamie Vardy",
+      "previous": "Executioner",
+      "primary": "Predator",
+      "newSecondary": "Hunter"
+    },
+    "jefferson-farfan": {
+      "name": "Jefferson Farfán",
+      "previous": "Magician",
+      "primary": "Phantom",
+      "newSecondary": "Engine"
+    },
+    "john-terry": {
+      "name": "John Terry",
+      "previous": "Enforcer",
+      "primary": "Wall",
+      "newSecondary": "Destroyer"
+    },
+    "josip-ilicic": {
+      "name": "Josip Iličić",
+      "previous": "Executioner",
+      "primary": "Magician",
+      "newSecondary": "Surgeon"
+    },
+    "juan-roman-riquelme": {
+      "name": "Juan Román Riquelme",
+      "previous": "Surgeon",
+      "primary": "Maestro",
+      "newSecondary": "Magician"
+    },
+    "karim-benzema": {
+      "name": "Karim Benzema",
+      "previous": "Surgeon",
+      "primary": "Maestro",
+      "newSecondary": "Predator"
+    },
+    "kevin-de-bruyne": {
+      "name": "Kevin De Bruyne",
+      "previous": "Architect",
+      "primary": "Surgeon",
+      "newSecondary": "Executioner"
+    },
+    "kolo-toure": {
+      "name": "Kolo Touré",
+      "previous": "Enforcer",
+      "primary": "Tracker",
+      "newSecondary": "Engine"
+    },
+    "kyle-walker": {
+      "name": "Kyle Walker",
+      "previous": "Wall",
+      "primary": "Tracker",
+      "newSecondary": "Engine"
+    },
+    "kylian-mbappe": {
+      "name": "Kylian Mbappé",
+      "previous": "Phantom",
+      "primary": "Predator",
+      "newSecondary": "Engine"
+    },
+    "ledley-king": {
+      "name": "Ledley King",
+      "previous": "Wall",
+      "primary": "Anticipator",
+      "newSecondary": "Engine"
+    },
+    "lilian-thuram": {
+      "name": "Lilian Thuram",
+      "previous": "Tracker",
+      "primary": "Wall",
+      "newSecondary": "Engine"
+    },
+    "lucio": {
+      "name": "Lúcio",
+      "previous": "Enforcer",
+      "primary": "Libero",
+      "newSecondary": "Engine"
+    },
+    "luis-suarez": {
+      "name": "Luis Suárez",
+      "previous": "Predator",
+      "primary": "Executioner",
+      "newSecondary": "Hunter"
+    },
+    "luka-modric": {
+      "name": "Luka Modrić",
+      "previous": "Engine",
+      "primary": "Maestro",
+      "newSecondary": "Hunter"
+    },
+    "marcel-desailly": {
+      "name": "Marcel Desailly",
+      "previous": "Anticipator",
+      "primary": "Wall",
+      "newSecondary": "Destroyer"
+    },
+    "marcelo-salas": {
+      "name": "Marcelo Salas",
+      "previous": "Magician",
+      "primary": "Executioner",
+      "newSecondary": "Engine"
+    },
+    "mario-balotelli": {
+      "name": "Mario Balotelli",
+      "previous": "Juggernaut",
+      "primary": "Executioner",
+      "newSecondary": "Maestro"
+    },
+    "mark-viduka": {
+      "name": "Mark Viduka",
+      "previous": "Magician",
+      "primary": "Juggernaut",
+      "newSecondary": "Maestro"
+    },
+    "matt-le-tissier": {
+      "name": "Matt Le Tissier",
+      "previous": "Magician",
+      "primary": "Executioner",
+      "newSecondary": "Maestro"
+    },
+    "michael-essien": {
+      "name": "Michael Essien",
+      "previous": "Destroyer",
+      "primary": "Engine",
+      "newSecondary": "Enforcer"
+    },
+    "michael-owen": {
+      "name": "Michael Owen",
+      "previous": "Predator",
+      "primary": "Phantom",
+      "newSecondary": "Engine"
+    },
+    "milan-baros": {
+      "name": "Milan Baroš",
+      "previous": "Predator",
+      "primary": "Phantom",
+      "newSecondary": "Engine"
+    },
+    "miodrag-belodedici": {
+      "name": "Miodrag Belodedici",
+      "previous": "Anticipator",
+      "primary": "Libero",
+      "newSecondary": "Architect"
+    },
+    "mohamed-salah": {
+      "name": "Mohamed Salah",
+      "previous": "Executioner",
+      "primary": "Phantom",
+      "newSecondary": "Engine"
+    },
+    "mousa-dembele": {
+      "name": "Mousa Dembélé",
+      "previous": "Juggernaut",
+      "primary": "Magician",
+      "newSecondary": "Destroyer"
+    },
+    "nani": {
+      "name": "Nani",
+      "previous": "Executioner",
+      "primary": "Magician",
+      "newSecondary": "Engine"
+    },
+    "nemanja-vidic": {
+      "name": "Nemanja Vidić",
+      "previous": "Enforcer",
+      "primary": "Wall",
+      "newSecondary": "Destroyer"
+    },
+    "nene": {
+      "name": "Nenê",
+      "previous": "Executioner",
+      "primary": "Magician",
+      "newSecondary": "Architect"
+    },
+    "nwankwo-kanu": {
+      "name": "Nwankwo Kanu",
+      "previous": "Predator",
+      "primary": "Magician",
+      "newSecondary": "Maestro"
+    },
+    "obafemi-martins": {
+      "name": "Obafemi Martins",
+      "previous": "Predator",
+      "primary": "Phantom",
+      "newSecondary": "Engine"
+    },
+    "paolo-maldini": {
+      "name": "Paolo Maldini",
+      "previous": "Wall",
+      "primary": "Anticipator",
+      "newSecondary": "Architect"
+    },
+    "papiss-cisse": {
+      "name": "Papiss Cissé",
+      "previous": "Executioner",
+      "primary": "Predator",
+      "newSecondary": "Engine"
+    },
+    "patrick-mboma": {
+      "name": "Patrick Mboma",
+      "previous": "Executioner",
+      "primary": "Juggernaut",
+      "newSecondary": "Engine"
+    },
+    "paul-scholes": {
+      "name": "Paul Scholes",
+      "previous": "Maestro",
+      "primary": "Architect",
+      "newSecondary": "Executioner"
+    },
+    "peter-crouch": {
+      "name": "Peter Crouch",
+      "previous": "Predator",
+      "primary": "Juggernaut",
+      "newSecondary": "Maestro"
+    },
+    "pierre-van-hooijdonk": {
+      "name": "Pierre van Hooijdonk",
+      "previous": "Juggernaut",
+      "primary": "Executioner",
+      "newSecondary": "Architect"
+    },
+    "predrag-mijatovic": {
+      "name": "Predrag Mijatović",
+      "previous": "Executioner",
+      "primary": "Magician",
+      "newSecondary": "Architect"
+    },
+    "ricardo-carvalho": {
+      "name": "Ricardo Carvalho",
+      "previous": "Wall",
+      "primary": "Anticipator",
+      "newSecondary": "Architect"
+    },
+    "rio-ferdinand": {
+      "name": "Rio Ferdinand",
+      "previous": "Anticipator",
+      "primary": "Libero",
+      "newSecondary": "Architect"
+    },
+    "rivaldo": {
+      "name": "Rivaldo",
+      "previous": "Executioner",
+      "primary": "Magician",
+      "newSecondary": "Maestro"
+    },
+    "riyad-mahrez": {
+      "name": "Riyad Mahrez",
+      "previous": "Phantom",
+      "primary": "Magician",
+      "newSecondary": "Architect"
+    },
+    "robert-lewandowski": {
+      "name": "Robert Lewandowski",
+      "previous": "Juggernaut",
+      "primary": "Executioner",
+      "newSecondary": "Engine"
+    },
+    "roberto-baggio": {
+      "name": "Roberto Baggio",
+      "previous": "Executioner",
+      "primary": "Magician",
+      "newSecondary": "Maestro"
+    },
+    "robin-van-persie": {
+      "name": "Robin van Persie",
+      "previous": "Magician",
+      "primary": "Executioner",
+      "newSecondary": "Architect"
+    },
+    "ronaldo-nazario": {
+      "name": "Ronaldo Nazário",
+      "previous": "Magician",
+      "primary": "Predator",
+      "newSecondary": "Surgeon"
+    },
+    "ruben-dias": {
+      "name": "Rúben Dias",
+      "previous": "Anticipator",
+      "primary": "Wall",
+      "newSecondary": "Architect"
+    },
+    "ruud-van-nistelrooy": {
+      "name": "Ruud van Nistelrooy",
+      "previous": "Predator",
+      "primary": "Executioner",
+      "newSecondary": "Engine"
+    },
+    "sami-hyypia": {
+      "name": "Sami Hyypiä",
+      "previous": "Anticipator",
+      "primary": "Wall",
+      "newSecondary": "Architect"
+    },
+    "savo-milosevic": {
+      "name": "Savo Milošević",
+      "previous": "Juggernaut",
+      "primary": "Predator",
+      "newSecondary": "Engine"
+    },
+    "sergio-aguero": {
+      "name": "Sergio Agüero",
+      "previous": "Executioner",
+      "primary": "Predator",
+      "newSecondary": "Maestro"
+    },
+    "sol-campbell": {
+      "name": "Sol Campbell",
+      "previous": "Enforcer",
+      "primary": "Wall",
+      "newSecondary": "Destroyer"
+    },
+    "son-heung-min": {
+      "name": "Son Heung-min",
+      "previous": "Executioner",
+      "primary": "Phantom",
+      "newSecondary": "Engine"
+    },
+    "steed-malbranque": {
+      "name": "Steed Malbranque",
+      "previous": "Surgeon",
+      "primary": "Engine",
+      "newSecondary": "Phantom"
+    },
+    "thierry-henry": {
+      "name": "Thierry Henry",
+      "previous": "Executioner",
+      "primary": "Predator",
+      "newSecondary": "Maestro"
+    },
+    "tijjani-babangida": {
+      "name": "Tijjani Babangida",
+      "previous": "Phantom",
+      "primary": "Magician",
+      "newSecondary": "Engine"
+    },
+    "toni-kroos": {
+      "name": "Toni Kroos",
+      "previous": "Maestro",
+      "primary": "Architect",
+      "newSecondary": "Executioner"
+    },
+    "vincent-kompany": {
+      "name": "Vincent Kompany",
+      "previous": "Wall",
+      "primary": "Enforcer",
+      "newSecondary": "Architect"
+    },
+    "vladimir-jugovic": {
+      "name": "Vladimir Jugović",
+      "previous": "Architect",
+      "primary": "Engine",
+      "newSecondary": "Hunter"
+    },
+    "xavi-hernandez": {
+      "name": "Xavi Hernández",
+      "previous": "Architect",
+      "primary": "Maestro",
+      "newSecondary": "Anticipator"
+    },
+    "yannick-bolasie": {
+      "name": "Yannick Bolasie",
+      "previous": "Phantom",
+      "primary": "Magician",
+      "newSecondary": "Engine"
+    },
+    "zlatan-ibrahimovic": {
+      "name": "Zlatan Ibrahimović",
+      "previous": "Magician",
+      "primary": "Juggernaut",
+      "newSecondary": "Maestro"
+    }
+  }
+}

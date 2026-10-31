@@ -1,5 +1,5 @@
 /* THE CAGE V5.3: generated from the canonical playable dependency list. */
-const CACHE='the-cage-full-v54-d9b594b80e0b';
+const CACHE='the-cage-full-v54-5b7ac605947f';
 const STATIC=[
   "./assets/cage-icon.svg",
   "./design/qwen-30b/arena/arena-golden.svg",
@@ -33,6 +33,7 @@ const STATIC=[
   "./src/roster-expansion.js",
   "./src/roster-pl-134.js",
   "./src/roster-refinement.js",
+  "./src/roster-trait-family-v16.js",
   "./src/showdown-v5.js",
   "./src/tactical-refinement.js",
   "./src/viewer-v4/fx.js",

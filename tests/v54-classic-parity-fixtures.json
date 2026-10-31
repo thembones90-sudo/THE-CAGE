@@ -1,0 +1,4205 @@
+{
+  "source": "clean V5.3 c049502, Classic v0.4.0, 150 deterministic full-result JSON SHA256",
+  "records": [
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 39,
+        "mode": "ko"
+      },
+      "sha256": "527681dfd33dc60c14ae1de4d32a318dabef0e01178cc1bee2cdcd2a93ac3b53",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 1132,
+        "mode": "ko"
+      },
+      "sha256": "b06803d60f05c0d3c0975359f325e16f72c93771858bed0b9ff420619f7b0840",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 2225,
+        "mode": "ko"
+      },
+      "sha256": "b3a5ae682a9caab2fa3e3ce7cff08426e504b76881beea9b9d4c2e4183651f6e",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 3318,
+        "mode": "ko"
+      },
+      "sha256": "60aa8fe1925ae29449e6540df938b369cd92a21bd3b6b1661cebdb4f85acd29a",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 4411,
+        "mode": "ko"
+      },
+      "sha256": "441b7dfaa63d171b1b2c21c44d753c2002653fb9ce56052ffe20dc1422daf18f",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 5504,
+        "mode": "ko"
+      },
+      "sha256": "46bab8d5b563af9a9b1a66777723f0896d851b5a05bd0cfe77690cc08a60897b",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 6597,
+        "mode": "ko"
+      },
+      "sha256": "ca454dd79f3957032c527395c576cf809c250412b8bf41211a51b9221b8e7d0e",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 7690,
+        "mode": "ko"
+      },
+      "sha256": "71792e3c0310fdbfebcfffaf10435052f31c2d31cc04b7f16f6a7d58e26b59fe",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 8783,
+        "mode": "ko"
+      },
+      "sha256": "00cbeb550b0cf6bf721532cb05bdaea284b31a01e3433a553423b0671e622b9f",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 9876,
+        "mode": "ko"
+      },
+      "sha256": "22299052a2f435ead9d07d39b4d6d925cf94c7214b94ce926d4593a59914fa40",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 10969,
+        "mode": "ko"
+      },
+      "sha256": "98754b8deab3c900476246dcd4ae278851029de0f10ee4234912b8041d749c4b",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 12062,
+        "mode": "ko"
+      },
+      "sha256": "9c5df814217a29cd45b91fdcb2cb45fb47400fbbd9a192daa0cc2e350caf1758",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 13155,
+        "mode": "ko"
+      },
+      "sha256": "e23d02d8337931b3d3e26369e3f028c8194a22a177d55031f2075a1a0477d117",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 14248,
+        "mode": "ko"
+      },
+      "sha256": "019597d76627252a45693456daa50cbf684322b11f05c743751505fe25c6d243",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 15341,
+        "mode": "ko"
+      },
+      "sha256": "b75799edcaee7ad5d9057155347b028790ca78b1a608ea81b8c84940d0373242",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 16434,
+        "mode": "ko"
+      },
+      "sha256": "8003c7147891d32ae218b4361b33ad454065d011637e8cfbff474b6c5564dc3d",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 17527,
+        "mode": "ko"
+      },
+      "sha256": "c353151af92d7c157e396e4f823b6319142805f4ac3e49018c4249a5e77121c4",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 18620,
+        "mode": "ko"
+      },
+      "sha256": "d86cf14130b6e363002b587775254a4dfa3b82a95cae3375d5ad54cbdad6e4d2",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 19713,
+        "mode": "ko"
+      },
+      "sha256": "1902ebd2ebd25542749b8ec4065f38fddde08e3b93a34dce9ab7979a26c8c321",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 20806,
+        "mode": "ko"
+      },
+      "sha256": "d0ce3bb18080e06b3b9a866b5b2fd01cde9ac144314a915bec7557d9de01e5c3",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 21899,
+        "mode": "ko"
+      },
+      "sha256": "2cbd71e433893c60f35e00f90a36d671f155027ae82b8301d5eef2f313d9fd5a",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 22992,
+        "mode": "ko"
+      },
+      "sha256": "087efcc9d75f46b1484560c4a1fbee928de1a626794cbad1a8f87395c887c65b",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 24085,
+        "mode": "ko"
+      },
+      "sha256": "3dad55c8f193cf54b0aba33bf524380582346ea88ab2a0ebbbcd41647bf2dd55",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 25178,
+        "mode": "ko"
+      },
+      "sha256": "4c85ba4c88eb5a5561e3d2a2900915cf0b2d6c2277dfdaf895db8fe10d9870fd",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 26271,
+        "mode": "ko"
+      },
+      "sha256": "cc6b35dc039c5d652b4e703f98f15e00626e4661a5239ad58fdc8b76e0aea0f7",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 27364,
+        "mode": "ko"
+      },
+      "sha256": "b626afe19e3d24829d8f8342a188b90a10054183397c3ecc4d6eb2e4504b5ea2",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 28457,
+        "mode": "ko"
+      },
+      "sha256": "ee1b613d3a19dab9f800e933f3f21137f0fd06015ad0f98b2440f27f222bde93",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 29550,
+        "mode": "ko"
+      },
+      "sha256": "61c395e9a6d9f5981c96ace4e474a43f08041f6d52c05b7f7902f6bf5db56e8d",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 30643,
+        "mode": "ko"
+      },
+      "sha256": "56c6f7205d5f7d2b0716737c196d9f419c2180db7bae2ba8f7077bc72e37e1c6",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 31736,
+        "mode": "ko"
+      },
+      "sha256": "cdc2249ddf23c106eb25ae164dc36b3fec0089338097a5f78b1331ba65f491a9",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 32829,
+        "mode": "ko"
+      },
+      "sha256": "a7a123495835502328b7f4817284907ab5a9d7bae013f68aeaa88704a3109b98",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 33922,
+        "mode": "ko"
+      },
+      "sha256": "f5b559be0eeceadb6bdd0ee012df659d6be63415a1fcb66509db22f7b0cfb7c3",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 35015,
+        "mode": "ko"
+      },
+      "sha256": "767def6da68f2983e230d8ba07e800ec7d3b446331742674977f66d9f910c391",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 36108,
+        "mode": "ko"
+      },
+      "sha256": "94a641eedb93fb189c3ed082ff0e543d4e2f3a484eba587b69d078d2fbd372c2",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 37201,
+        "mode": "ko"
+      },
+      "sha256": "6e3bb9ad679350709ab067eecd66449cfe837d38a098ee4d7d783981a88fc574",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 38294,
+        "mode": "ko"
+      },
+      "sha256": "801ded662aac2c2436ab87fec7706ca6853d7d1bebabb7d73db7e1cbe26a7fdc",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 39387,
+        "mode": "ko"
+      },
+      "sha256": "f4856cd3016da38db6eb3a9d8146d04d208d16d23a88cce94ae89dddc60e905b",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 40480,
+        "mode": "ko"
+      },
+      "sha256": "fce855804526dce0c0787211815e1f7f06afead7cce5c4566355b7b7de4577fa",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 41573,
+        "mode": "ko"
+      },
+      "sha256": "edbd44c676b76d8274a7c27e205e7f5b61b6a00131a6edd1a0e0430db45de0c5",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 42666,
+        "mode": "ko"
+      },
+      "sha256": "c2c2fb46055330172bf714f50b75c5c035286b049c4041c7f37888a66a49ebd7",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 43759,
+        "mode": "ko"
+      },
+      "sha256": "c147ce089985b9c614fe179061b187b07cc1f9c4c22624af6efb01e0e6e361de",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 44852,
+        "mode": "ko"
+      },
+      "sha256": "5758af77680ea412e5bf30e700524cd594fbb0e8a455411901c94c8fc20c945f",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 45945,
+        "mode": "ko"
+      },
+      "sha256": "adf910c91c69469e13637e76898776e36706dee97a04209dd39c727fbdb5a534",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 47038,
+        "mode": "ko"
+      },
+      "sha256": "67563811cb61a800143ba8e12a72a3a27c961a2fe44e999d4661f8db91c04512",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 48131,
+        "mode": "ko"
+      },
+      "sha256": "6ffaa98b69a2d406d191774d6799aded5ec105b5e8bb2df5419741a4f6b458a3",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 49224,
+        "mode": "ko"
+      },
+      "sha256": "b0638878a008032a25432d2cef18d97e5f7f5267301802a88bf2bbc49682cc55",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 50317,
+        "mode": "ko"
+      },
+      "sha256": "79ff2c254436efee2008413097d371785e0e2e66f0dfd55fa7e2e6dfeb17507a",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 51410,
+        "mode": "ko"
+      },
+      "sha256": "edee35a76b311f0ebb2afea2d6ae8dfd30be34fd633a78cec93ecd9de156e47c",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 52503,
+        "mode": "ko"
+      },
+      "sha256": "dd802d1624c37fccf3e4f1a098fdf6008dcfb87faef98f08f804d20cba344dae",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 53596,
+        "mode": "ko"
+      },
+      "sha256": "c79c247002f441be5f1e5c7bbf3987d65b3fa6f71fe529e407bbcc5e6c2ca218",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 54689,
+        "mode": "ko"
+      },
+      "sha256": "b77da8c1316a99a5af644c82f7fda14ac6b4e6294eefabb6ccb97f2163938a83",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 55782,
+        "mode": "ko"
+      },
+      "sha256": "e0aae9515ba3192a474e1770ed81d987fc339967584a384786e9bfaddbf77255",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 56875,
+        "mode": "ko"
+      },
+      "sha256": "04a2f653a4c94b1646d289181699371cf39a0230bce6570c7af3b4e26da4890c",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 57968,
+        "mode": "ko"
+      },
+      "sha256": "ef59101a52398aac073acc40f66ebac40961691edaecebb4e379bd6e82d01df3",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 59061,
+        "mode": "ko"
+      },
+      "sha256": "dca10263e4f54e9027e2377a9f64deb921b651b873436b2b21b03e5053d441bb",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 60154,
+        "mode": "ko"
+      },
+      "sha256": "0ae5a77542856ec640085abc1cbb72365de3db529a1a43888ba082b13a36ade7",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 61247,
+        "mode": "ko"
+      },
+      "sha256": "744d6dcfa8f24b9acc52cbdfd1caffd26bd1604ac3f712543593a5a7953a90ed",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 62340,
+        "mode": "ko"
+      },
+      "sha256": "14c14ffa812d9f20434feb0ef8536b3378d731c30d4edf86d823367c713aa71f",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 63433,
+        "mode": "ko"
+      },
+      "sha256": "fa01f85457bdfc8e313b3252d00961b1f5b3e3154cfe6b8d6a6d67a6dd87a1d7",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 64526,
+        "mode": "ko"
+      },
+      "sha256": "db9c169a2f160609641ca5fe280e890796c1d2f870703b99016c1d8efccb06b7",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 65619,
+        "mode": "ko"
+      },
+      "sha256": "aa8edef2e97184b76ffb8a3d264fe2958af619ece4065ee3ab25ff591fcba3c9",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 66712,
+        "mode": "ko"
+      },
+      "sha256": "1ecf14292e36b8c665535a774c12d7b19b31c2777e4c4eec0c55870adf7cb663",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 67805,
+        "mode": "ko"
+      },
+      "sha256": "8514a7b6905935a354be1963b59d2079073b2f421cda16a57dd288478d9378b5",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 68898,
+        "mode": "ko"
+      },
+      "sha256": "a51c1374e45e468b3e0454d10ec12417341acb3c4d0a826c36456800850d842a",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 69991,
+        "mode": "ko"
+      },
+      "sha256": "980f69b9e9137d01162824d5298211c5d2620806c5b1cc659338193cbd328187",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 71084,
+        "mode": "ko"
+      },
+      "sha256": "7406930037e64d3493de1714fb115f16fbe72e8a481d46c2042d0ddca2f6a9ce",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 72177,
+        "mode": "ko"
+      },
+      "sha256": "b63ab656720fe475dd9ebae6d857458f5fa79f05bf68fbf1280b606ddf5c31f2",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 73270,
+        "mode": "ko"
+      },
+      "sha256": "3a944f4cc24d6a14f7589f4b1ad65312e18180803ddc685e8592afa6886819f8",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 74363,
+        "mode": "ko"
+      },
+      "sha256": "f3b8bd3689a6b62e35fbf37979ba0e074389c12cc128820c02ec5be6a84b2ba6",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 75456,
+        "mode": "ko"
+      },
+      "sha256": "f63c1d48f82e49642410a99c4cf82d8ec9c0c5c170409501d3275a0dbf27859a",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 76549,
+        "mode": "ko"
+      },
+      "sha256": "d33fa2eb8a08de7729a9c65324612c220f7fa4b69f950c377ab43473f30216c4",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 77642,
+        "mode": "ko"
+      },
+      "sha256": "2536042ec6479b29baf631cf76f953584f8741f75224e8c5d49ebd19d656c868",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 78735,
+        "mode": "ko"
+      },
+      "sha256": "62d58df5270d93e37a6239f003cbcf084438046b4ce22be778ed0b2470a91dc7",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 79828,
+        "mode": "ko"
+      },
+      "sha256": "480f41bf71ae0422f44e294a5ebb6842b77e22f149ba2465cf9141d6984950e7",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 80921,
+        "mode": "ko"
+      },
+      "sha256": "bd0bceffdf5fe19dfae5d3f39ad3b85114c74dec1c5fb048146c60b07eaf3ae0",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 82014,
+        "mode": "ko"
+      },
+      "sha256": "a235435b40fc794c97df034969926d13ec98fd2d500dcd027b72e6f6e9d74cef",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 83107,
+        "mode": "ko"
+      },
+      "sha256": "7b9c87227f381c374409974bd5f269dfbd8588a55b3b73a5addb04f8eeab6af3",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 84200,
+        "mode": "ko"
+      },
+      "sha256": "7d728bbd85c183cd60d5c6cce6503e277aedbed1da702b2c4b2663d4f527d8fa",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 85293,
+        "mode": "ko"
+      },
+      "sha256": "f99e366325b30c861b888763cd9ab07e184dec5947a0656163f18d6656d75caf",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 86386,
+        "mode": "ko"
+      },
+      "sha256": "7c60dbc377113c7a65f1eaa1a9e72118d27e086c17972ca6dd764c08aa2da271",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 87479,
+        "mode": "ko"
+      },
+      "sha256": "38bd5b85b63eb68e49f4902d39890bcc07ced132665cca216d0e44bfd0c589d2",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 88572,
+        "mode": "ko"
+      },
+      "sha256": "eaec4f594c22d713f142f8498a2c1ff63316b2a3299cc629f1b151c6685d140e",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 89665,
+        "mode": "ko"
+      },
+      "sha256": "9c3a30462af21c391f57b379bb1ba02fd1b3a8a3df177ebfea5699d94bd58d5e",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 90758,
+        "mode": "ko"
+      },
+      "sha256": "3d9918d1a13ed8d8b0475eb27f255f78b4ca613a2616258fb974cd245605390a",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 91851,
+        "mode": "ko"
+      },
+      "sha256": "7ab8215ab44e6e0e6a782dc550761d2d0244829cc505e79117645505c7fdab50",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 92944,
+        "mode": "ko"
+      },
+      "sha256": "52396ef6724def41e93ff18c91b1097910a58390a2d2d05d76b64dd4dcdb6fd2",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 94037,
+        "mode": "ko"
+      },
+      "sha256": "4b05eb8082c28aad04f2ec59b74699455870fb4390ebc0f6c99383bacc9ca0c9",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 95130,
+        "mode": "ko"
+      },
+      "sha256": "ce1dc5282c31089d972ff179ce0a2e778c6371312460b01baf92f334ca9b4de3",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 96223,
+        "mode": "ko"
+      },
+      "sha256": "0f0019d4ef19ab24c386529fd6c29aaae6c140ed497c7b265ef082faee3cb2cd",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 97316,
+        "mode": "ko"
+      },
+      "sha256": "c211c63dd4ce1a2ec27a697be2c2ef6de5234a9bc9b4cdac64a3f1a1595d6f85",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 98409,
+        "mode": "ko"
+      },
+      "sha256": "8c866330bf29e2aa7794b578ff91b0e8ffa78f58915b7e96b1a2c957128225a8",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 99502,
+        "mode": "ko"
+      },
+      "sha256": "8c7f339335b3e11933af70649d1ff3b194a5a9a4613b55117ee8289ce5519522",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 100595,
+        "mode": "ko"
+      },
+      "sha256": "7682b0ed8dc09b12678c68bdb692a4b1b4899f9cf55b72948a74b6171e27d288",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 101688,
+        "mode": "ko"
+      },
+      "sha256": "cc2b6ad46e8663a9195e2b3e96ada08385b1059297265806f57815ac9d375f0e",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 102781,
+        "mode": "ko"
+      },
+      "sha256": "51dd3ac06b2cea320b18b3d968d1c007739e72cfca2bcd27cf3e1eb9e97f0b88",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 103874,
+        "mode": "ko"
+      },
+      "sha256": "0b67835eed23dc03bd1c6c23575241d9b0a1fe55a1aefae2706ae8c61f670271",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 104967,
+        "mode": "ko"
+      },
+      "sha256": "8a03fa7d88d5a4e2575fc87a351faebeb578653c82bc85c51e3b0dba49a5cb1d",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 106060,
+        "mode": "ko"
+      },
+      "sha256": "6d46324da9cdf6642045a0711db899a462937f1e989df18a9087fc7775dd81f7",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 107153,
+        "mode": "ko"
+      },
+      "sha256": "0495c40bde7dc5d0b115cfd448bd22a5e4161501873d59f7c1cae266591fb4a2",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 108246,
+        "mode": "ko"
+      },
+      "sha256": "b787b5ed717f22ec1ea17ac4848299c6ba6f694c61b64a3fa843d0c97762f853",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 109339,
+        "mode": "ko"
+      },
+      "sha256": "0f047f9fec32747d4acba84127e4fe91f4ee94583a4fa76d9d635e9ed4b211f2",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 110432,
+        "mode": "ko"
+      },
+      "sha256": "2ae63f9dc1f509cfd90b596972e3819765276109e2caeb3e9aef73b3563c3cc5",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 111525,
+        "mode": "ko"
+      },
+      "sha256": "07275538fbdabae8d1e1d8cd40d7dfa535ec37dab0e3d352916614471753ae97",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 112618,
+        "mode": "ko"
+      },
+      "sha256": "c1e6180b1406a7b366b65faf50d60fc587ee7c656cc16707ba5c7edc47be1bdd",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 113711,
+        "mode": "ko"
+      },
+      "sha256": "41561eae3caf7fa6cc036fffcca57879f7df0787b82d40781a040bf95dda1452",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 114804,
+        "mode": "ko"
+      },
+      "sha256": "8ee677fb9109e545592469db1c7168f9c4d194e6ed53fc9a1c18f51c0c3df70c",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 115897,
+        "mode": "ko"
+      },
+      "sha256": "912a86305e05e986a8333693b5a21f436beab3e2d9b60ff4f50fcd1004aaa922",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 116990,
+        "mode": "ko"
+      },
+      "sha256": "2f6832e0692e699965522e866a0d3fcdaf52922a33c2b0c7e34a26897c6456c5",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 118083,
+        "mode": "ko"
+      },
+      "sha256": "e16181af975bd072c6df1250a7c838c5d600d722d516c46a009ee4965b52fbaf",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 119176,
+        "mode": "ko"
+      },
+      "sha256": "536f5f530030de845e0d5985bdc8f6d59cc18fcfb99b5e95959633e89fde6a24",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 120269,
+        "mode": "ko"
+      },
+      "sha256": "72af0535bbefc51a91bd3d7eab4fbabe8bc6fe1d9a37c29db47e8d8ef94bd61e",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 121362,
+        "mode": "ko"
+      },
+      "sha256": "6b0d089cc31e3786f799c2863a00da713daffc64d97d60fa5c2fcedc1a7a1d0b",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 122455,
+        "mode": "ko"
+      },
+      "sha256": "195a7133201f811102f5ad43ebc62279dd7355337041695ccbdd4397d5c85b58",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 123548,
+        "mode": "ko"
+      },
+      "sha256": "bb8397e4e2e829293dcb806da2ea603d3d4312c0f25815d1fb553d8527c39feb",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 124641,
+        "mode": "ko"
+      },
+      "sha256": "6501f6ffd1c8a4a34aae371ae33d59314759fb2c9ccefdd8ca8dbe274d710cf8",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 125734,
+        "mode": "ko"
+      },
+      "sha256": "1bf26c7fe1f46581910e2d3d36e6ccac321901128217029b59f549d5355ba875",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 126827,
+        "mode": "ko"
+      },
+      "sha256": "f72b7d682c2c1e92c17e76d529d999090db82e17c4696df864c61efaf5d81092",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 127920,
+        "mode": "ko"
+      },
+      "sha256": "bb622e21250c510a5f9528f69be5f6218c20324bc9127ee6f24d6a59e632c7b3",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 129013,
+        "mode": "ko"
+      },
+      "sha256": "65741ad272365d5bdc9c74231ebb65a68acd45ba3aa0ed4cb07eb90d0470a4e3",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 130106,
+        "mode": "ko"
+      },
+      "sha256": "93fd0ff3c25dce2f852a16ed2bed5d5d58330b51757d9c109a2433aa261a67c2",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 131199,
+        "mode": "ko"
+      },
+      "sha256": "dac5f53bcb27983afc404b8ef3d3cc503bad6ce145b5bd56fad0398e5ca77455",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 132292,
+        "mode": "ko"
+      },
+      "sha256": "232336e7b4141a1133e85f65b6d57914df7b2069c6442b6992d39ad722071075",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 133385,
+        "mode": "ko"
+      },
+      "sha256": "221915e1d9cf866324bb27e1f8f855687a86a3b7f61a0af15083889635824613",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 134478,
+        "mode": "ko"
+      },
+      "sha256": "ce8d183540b8ac957590fbc2c7c64bb18dc89e39b66dadecced3ba8f4c11133a",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 135571,
+        "mode": "ko"
+      },
+      "sha256": "a60bb427980b5c489503c13b51f4963c5c916275c8e8cd7c5cb3a0f16f9ea33b",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 136664,
+        "mode": "ko"
+      },
+      "sha256": "db61b8433f78877e8e63a6f3cab6dd9c4afa83f5d4bf56c3822390d57572ef2f",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 137757,
+        "mode": "ko"
+      },
+      "sha256": "3b6852057d8b188b345e9cdf0471d4f2c097150c4680f5c85591469ad65e76c7",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 138850,
+        "mode": "ko"
+      },
+      "sha256": "95f4ee02c26d7493798497a6cb8155096daa8c0ebc0cb27ff28ae751969af2ec",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 139943,
+        "mode": "ko"
+      },
+      "sha256": "9a37c2fc50fe35a5a488c20d5c82c8b15645166aca80a8ea0c9f80185a1a510d",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 141036,
+        "mode": "ko"
+      },
+      "sha256": "86a976de3d0937b529c46450a78bdb9f9c1e74e29c0429d1e9b84b97ca5fa28d",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 142129,
+        "mode": "ko"
+      },
+      "sha256": "0125aaf123371aef5ec770d70fc738d4d5e117c9d540da545bf3dd74da29ce29",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 143222,
+        "mode": "ko"
+      },
+      "sha256": "b6867808987ce96c50522652229e2a1d63681d0ffda144a9f85edf61f2ffdd76",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 144315,
+        "mode": "ko"
+      },
+      "sha256": "a48bbf0c6feb6fde023152bec6769dfacfe24699eaea136fef5b8ca000233bdb",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 145408,
+        "mode": "ko"
+      },
+      "sha256": "e662fc686455ab80c0e33f5ce7c2c17d52ff7f3323f94827333ae0c949a5db72",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 146501,
+        "mode": "ko"
+      },
+      "sha256": "815bdf1923dd8649f4e3096fe62d096a58af5bf639c4c0f02f147bd5914387c0",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 147594,
+        "mode": "ko"
+      },
+      "sha256": "d60af3d55defc2b8115e1a90c36473b9fded720a7202ed0bbdb571775b4037ce",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 148687,
+        "mode": "ko"
+      },
+      "sha256": "109905602989691d7851ec6f08b6326bb78fa68d8a4749db2a3a182c82b4b04f",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 149780,
+        "mode": "ko"
+      },
+      "sha256": "9b46e7ace73d4199ecc09586730718edc9a736ca98be0369e51bfde29c6008dc",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 150873,
+        "mode": "ko"
+      },
+      "sha256": "fa02bfe98a127e01ea0c5121f0193d2dd3bd70b2dda4cddb564bc0101594f60a",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 151966,
+        "mode": "ko"
+      },
+      "sha256": "8915cd08346aa401b648de0a59cca8b5fe06718539f0ea8689b499e9989d38e1",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 153059,
+        "mode": "ko"
+      },
+      "sha256": "a33b5792fac62099d2133f31ce7624680c46533f1d7f5a2e806f13fa995beb12",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 154152,
+        "mode": "ko"
+      },
+      "sha256": "caa0b1bf27015e66db3eb644ab5874bc41c53f9a22082c39787bef4c85b3bad4",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 155245,
+        "mode": "ko"
+      },
+      "sha256": "f01ac3d5221217af0abfc72d37ab995d37a05d29dc81f1316fbdaa9da1e4e020",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 156338,
+        "mode": "ko"
+      },
+      "sha256": "18be2f5567296e6f7de891b589fe500542737b9d7999c8c0c830115d5e8466d5",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 157431,
+        "mode": "ko"
+      },
+      "sha256": "9fcbc58cca8a61225db665b4a0b31ad0645510469d745c022eb09712f1ea16ca",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 158524,
+        "mode": "ko"
+      },
+      "sha256": "a0619392d36b6151eb88311afdcc13444172663b4d152d1c03657530a91d58da",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 159617,
+        "mode": "ko"
+      },
+      "sha256": "be3b7b0b2ddbc053ca7d7b6595738f7229c4ccb5fd7ee76329eedb2f1dfdcbd8",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "gareth-bale",
+            "sergio-busquets",
+            "sami-hyypia"
+          ],
+          [
+            "ruud-gullit",
+            "gianfranco-zola",
+            "alan-shearer"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 160710,
+        "mode": "ko"
+      },
+      "sha256": "a8c85c6d9a312144586f466c19bbabd16e7ca5139d06f2106cede5ab3f7f376e",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 161803,
+        "mode": "ko"
+      },
+      "sha256": "e0ce33650ca4de241ea07c22085feac9b734165d3415dd09865fdebe0a15c137",
+      "winner": 0,
+      "score": [
+        1,
+        0
+      ]
+    },
+    {
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "counter",
+          "press"
+        ],
+        "seed": 162896,
+        "mode": "ko"
+      },
+      "sha256": "0b90c308a0771bfcbc55968773f7bcb8561e224205bfcbb7c0815c73dc595dbc",
+      "winner": 1,
+      "score": [
+        0,
+        1
+      ]
+    }
+  ]
+}

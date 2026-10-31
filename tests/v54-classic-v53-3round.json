@@ -1,0 +1,6273 @@
+{
+  "schema": 1,
+  "round": 3,
+  "wins": {
+    "A": 2,
+    "B": 1
+  },
+  "used": [
+    [
+      "paolo-maldini",
+      "A"
+    ],
+    [
+      "michael-ballack",
+      "A"
+    ],
+    [
+      "ronaldo-nazario",
+      "A"
+    ],
+    [
+      "nemanja-vidic",
+      "B"
+    ],
+    [
+      "jay-jay-okocha",
+      "B"
+    ],
+    [
+      "djalminha",
+      "B"
+    ],
+    [
+      "roy-keane",
+      "A"
+    ],
+    [
+      "paul-scholes",
+      "A"
+    ],
+    [
+      "ryan-giggs",
+      "A"
+    ],
+    [
+      "claude-makelele",
+      "B"
+    ],
+    [
+      "frank-lampard",
+      "B"
+    ],
+    [
+      "michael-essien",
+      "B"
+    ],
+    [
+      "lionel-messi",
+      "A"
+    ],
+    [
+      "luka-modric",
+      "A"
+    ],
+    [
+      "zinedine-zidane",
+      "A"
+    ],
+    [
+      "cristiano-ronaldo",
+      "B"
+    ],
+    [
+      "sergio-ramos",
+      "B"
+    ],
+    [
+      "andres-iniesta",
+      "B"
+    ]
+  ],
+  "claimed": {
+    "A": [
+      "lionel-messi",
+      "luka-modric",
+      "zinedine-zidane"
+    ],
+    "B": [
+      "cristiano-ronaldo",
+      "sergio-ramos",
+      "andres-iniesta"
+    ]
+  },
+  "locked": {
+    "A": true,
+    "B": true
+  },
+  "drafts": {
+    "A": [
+      "lionel-messi",
+      "luka-modric",
+      "zinedine-zidane"
+    ],
+    "B": [
+      "cristiano-ronaldo",
+      "sergio-ramos",
+      "andres-iniesta"
+    ]
+  },
+  "tactics": {
+    "A": "balanced",
+    "B": "counter"
+  },
+  "pace": "normal",
+  "roundFinished": true,
+  "history": [
+    {
+      "schema": 1,
+      "round": 1,
+      "createdAt": "2026-10-31T05:59:46.957Z",
+      "engineVersion": "cage-0.4.0",
+      "paramsVersion": "golden-goal-1",
+      "rosterVersion": "editorial-v0.4-63",
+      "rosterFingerprint": "2edb14e1",
+      "config": {
+        "teams": [
+          [
+            "paolo-maldini",
+            "michael-ballack",
+            "ronaldo-nazario"
+          ],
+          [
+            "nemanja-vidic",
+            "jay-jay-okocha",
+            "djalminha"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 1044,
+        "mode": "ko"
+      },
+      "result": {
+        "events": [
+          {
+            "type": "restart",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "reason": "kickoff",
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "i": 0,
+            "t": 6,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "from": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "i": 1,
+            "t": 9,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "target": "michael-ballack",
+            "opp": "djalminha",
+            "p": 0.94,
+            "roll": 0.677,
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 2,
+            "t": 13,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 0,
+            "actor": "michael-ballack",
+            "opp": "djalminha",
+            "p": 0.94,
+            "roll": 0.609,
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "outcome": "fouled",
+            "cover": false,
+            "i": 3,
+            "t": 16,
+            "n": 3
+          },
+          {
+            "type": "foul",
+            "team": 1,
+            "actor": "djalminha",
+            "opp": "michael-ballack",
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "i": 4,
+            "t": 16,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 0,
+            "actor": "michael-ballack",
+            "opp": "djalminha",
+            "p": 0.94,
+            "roll": 0.506,
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "outcome": "fouled",
+            "cover": false,
+            "i": 5,
+            "t": 19,
+            "n": 3
+          },
+          {
+            "type": "foul",
+            "team": 1,
+            "actor": "djalminha",
+            "opp": "michael-ballack",
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "i": 6,
+            "t": 19,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "michael-ballack",
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "from": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "i": 7,
+            "t": 22,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 0,
+            "actor": "michael-ballack",
+            "opp": "djalminha",
+            "p": 0.94,
+            "roll": 0.66,
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 8,
+            "t": 25,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 0,
+            "actor": "michael-ballack",
+            "zone": {
+              "x": 3,
+              "lane": "left"
+            },
+            "kind": "box",
+            "pressure": "djalminha",
+            "i": 9,
+            "t": 25,
+            "n": 3
+          },
+          {
+            "type": "block",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "michael-ballack",
+            "p": 0.314,
+            "roll": 0.01,
+            "outcome": "blocked",
+            "i": 10,
+            "t": 27,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.448,
+            "roll": 0.518,
+            "source": "block",
+            "outcome": "defence_clears",
+            "i": 11,
+            "t": 27,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.694,
+            "roll": 0.067,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 12,
+            "t": 30,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "p": 0.43,
+            "roll": 0.143,
+            "outcome": "back_in_shape",
+            "i": 13,
+            "t": 30,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.693,
+            "roll": 0.983,
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "outcome": "defender_wins",
+            "cover": false,
+            "i": 14,
+            "t": 33,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "how": "tackle",
+            "reason": "won_duel",
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "transition": false,
+            "i": 15,
+            "t": 33,
+            "n": 3
+          },
+          {
+            "type": "wall_pass",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "opp": "nemanja-vidic",
+            "p": 0.532,
+            "roll": 0.068,
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 16,
+            "t": 36,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "p": 0.54,
+            "roll": 0.415,
+            "outcome": "back_in_shape",
+            "i": 17,
+            "t": 36,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "target": "michael-ballack",
+            "opp": "djalminha",
+            "p": 0.94,
+            "roll": 0.374,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 18,
+            "t": 40,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 0,
+            "actor": "michael-ballack",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "kind": "box",
+            "pressure": "djalminha",
+            "i": 19,
+            "t": 40,
+            "n": 3
+          },
+          {
+            "type": "block",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "michael-ballack",
+            "p": 0.304,
+            "roll": 0.188,
+            "outcome": "blocked",
+            "i": 20,
+            "t": 42,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.447,
+            "roll": 0.645,
+            "source": "block",
+            "outcome": "defence_clears",
+            "i": 21,
+            "t": 42,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "from": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "i": 22,
+            "t": 45,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "from": {
+              "x": 1,
+              "lane": "left"
+            },
+            "i": 23,
+            "t": 48,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.681,
+            "roll": 0.204,
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 24,
+            "t": 51,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.68,
+            "roll": 0.179,
+            "zone": {
+              "x": 3,
+              "lane": "left"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 25,
+            "t": 54,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "target": "jay-jay-okocha",
+            "opp": "paolo-maldini",
+            "p": 0.26,
+            "roll": 0.912,
+            "zone": {
+              "x": 3,
+              "lane": "left"
+            },
+            "to": {
+              "x": 3,
+              "lane": "left"
+            },
+            "outcome": "intercepted",
+            "i": 26,
+            "t": 58,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 0,
+              "lane": "left"
+            },
+            "transition": true,
+            "i": 27,
+            "t": 58,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "jay-jay-okocha",
+            "p": 0.434,
+            "roll": 0.182,
+            "outcome": "back_in_shape",
+            "i": 28,
+            "t": 58,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "target": "ronaldo-nazario",
+            "opp": "jay-jay-okocha",
+            "p": 0.94,
+            "roll": 0.235,
+            "zone": {
+              "x": 0,
+              "lane": "left"
+            },
+            "to": {
+              "x": 1,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 29,
+            "t": 62,
+            "n": 3
+          },
+          {
+            "type": "press",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.791,
+            "roll": 0.209,
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "outcome": "press_beaten",
+            "i": 30,
+            "t": 65,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "p": 0.507,
+            "roll": 0.047,
+            "outcome": "back_in_shape",
+            "i": 31,
+            "t": 65,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "target": "michael-ballack",
+            "opp": "djalminha",
+            "p": 0.94,
+            "roll": 0.769,
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "to": {
+              "x": 1,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 32,
+            "t": 69,
+            "n": 3
+          },
+          {
+            "type": "through_ball",
+            "team": 0,
+            "actor": "michael-ballack",
+            "target": "ronaldo-nazario",
+            "opp": "nemanja-vidic",
+            "p": 0.389,
+            "roll": 0.85,
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "to": {
+              "x": 3,
+              "lane": "left"
+            },
+            "outcome": "intercepted",
+            "i": 33,
+            "t": 73,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "transition": false,
+            "i": 34,
+            "t": 73,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "target": "djalminha",
+            "opp": "michael-ballack",
+            "p": 0.597,
+            "roll": 0.32,
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "to": {
+              "x": 2,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 35,
+            "t": 77,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "djalminha",
+            "target": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.94,
+            "roll": 0.258,
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "to": {
+              "x": 1,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 36,
+            "t": 81,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.671,
+            "roll": 0.351,
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 37,
+            "t": 84,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "p": 0.407,
+            "roll": 0.137,
+            "outcome": "back_in_shape",
+            "i": 38,
+            "t": 84,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "target": "djalminha",
+            "opp": "michael-ballack",
+            "p": 0.595,
+            "roll": 0.453,
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "to": {
+              "x": 2,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 39,
+            "t": 88,
+            "n": 3
+          },
+          {
+            "type": "through_ball",
+            "team": 1,
+            "actor": "djalminha",
+            "target": "jay-jay-okocha",
+            "opp": "paolo-maldini",
+            "p": 0.235,
+            "roll": 0.285,
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "to": {
+              "x": 3,
+              "lane": "left"
+            },
+            "outcome": "intercepted",
+            "i": 40,
+            "t": 92,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "transition": true,
+            "i": 41,
+            "t": 92,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "zone": {
+              "x": 2,
+              "lane": "right"
+            },
+            "from": {
+              "x": 1,
+              "lane": "left"
+            },
+            "i": 42,
+            "t": 95,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "jay-jay-okocha",
+            "p": 0.434,
+            "roll": 0.273,
+            "outcome": "back_in_shape",
+            "i": 43,
+            "t": 95,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "target": "michael-ballack",
+            "opp": "djalminha",
+            "p": 0.94,
+            "roll": 0.377,
+            "zone": {
+              "x": 2,
+              "lane": "right"
+            },
+            "to": {
+              "x": 2,
+              "lane": "right"
+            },
+            "outcome": "complete",
+            "i": 44,
+            "t": 99,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 0,
+            "actor": "michael-ballack",
+            "zone": {
+              "x": 2,
+              "lane": "right"
+            },
+            "kind": "edge",
+            "pressure": "djalminha",
+            "i": 45,
+            "t": 99,
+            "n": 3
+          },
+          {
+            "type": "block",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "michael-ballack",
+            "p": 0.275,
+            "roll": 0.154,
+            "outcome": "blocked",
+            "i": 46,
+            "t": 101,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "opp": "nemanja-vidic",
+            "p": 0.475,
+            "roll": 0.003,
+            "source": "block",
+            "outcome": "attack_keeps",
+            "i": 47,
+            "t": 101,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "zone": {
+              "x": 3,
+              "lane": "right"
+            },
+            "kind": "box",
+            "pressure": "nemanja-vidic",
+            "i": 48,
+            "t": 101,
+            "n": 3
+          },
+          {
+            "type": "block",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.457,
+            "roll": 0.236,
+            "outcome": "blocked",
+            "i": 49,
+            "t": 103,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "paolo-maldini",
+            "p": 0.587,
+            "roll": 0.601,
+            "source": "block",
+            "outcome": "defence_clears",
+            "i": 50,
+            "t": 103,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.669,
+            "roll": 0.803,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "outcome": "defender_wins",
+            "cover": false,
+            "i": 51,
+            "t": 106,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "how": "tackle",
+            "reason": "won_duel",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "transition": false,
+            "i": 52,
+            "t": 106,
+            "n": 3
+          },
+          {
+            "type": "wall_pass",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "opp": "nemanja-vidic",
+            "p": 0.578,
+            "roll": 0.754,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "defender_wins",
+            "cover": false,
+            "i": 53,
+            "t": 109,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "how": "tackle",
+            "reason": "won_duel",
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "transition": true,
+            "i": 54,
+            "t": 109,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 0,
+            "actor": "michael-ballack",
+            "p": 0.57,
+            "roll": 0.483,
+            "outcome": "back_in_shape",
+            "i": 55,
+            "t": 109,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "p": 0.4,
+            "roll": 0.19,
+            "outcome": "back_in_shape",
+            "i": 56,
+            "t": 109,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "zone": {
+              "x": 1,
+              "lane": "right"
+            },
+            "from": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "i": 57,
+            "t": 112,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "from": {
+              "x": 1,
+              "lane": "right"
+            },
+            "i": 58,
+            "t": 115,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "from": {
+              "x": 2,
+              "lane": "left"
+            },
+            "i": 59,
+            "t": 118,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.715,
+            "roll": 0.936,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "defender_wins",
+            "cover": false,
+            "i": 60,
+            "t": 121,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "how": "tackle",
+            "reason": "won_duel",
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "transition": true,
+            "i": 61,
+            "t": 121,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "jay-jay-okocha",
+            "p": 0.434,
+            "roll": 0.284,
+            "outcome": "back_in_shape",
+            "i": 62,
+            "t": 121,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "target": "paolo-maldini",
+            "opp": "jay-jay-okocha",
+            "p": 0.94,
+            "roll": 0.76,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 63,
+            "t": 125,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "zone": {
+              "x": 1,
+              "lane": "right"
+            },
+            "from": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "i": 64,
+            "t": 128,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "opp": "jay-jay-okocha",
+            "p": 0.916,
+            "roll": 0.732,
+            "zone": {
+              "x": 1,
+              "lane": "right"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 65,
+            "t": 131,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "target": "michael-ballack",
+            "opp": "djalminha",
+            "p": 0.94,
+            "roll": 0.599,
+            "zone": {
+              "x": 2,
+              "lane": "right"
+            },
+            "to": {
+              "x": 2,
+              "lane": "right"
+            },
+            "outcome": "complete",
+            "i": 66,
+            "t": 135,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 0,
+            "actor": "michael-ballack",
+            "opp": "djalminha",
+            "p": 0.94,
+            "roll": 0.766,
+            "zone": {
+              "x": 2,
+              "lane": "right"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 67,
+            "t": 138,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 0,
+            "actor": "michael-ballack",
+            "zone": {
+              "x": 3,
+              "lane": "right"
+            },
+            "kind": "box",
+            "pressure": "djalminha",
+            "i": 68,
+            "t": 138,
+            "n": 3
+          },
+          {
+            "type": "shot_miss",
+            "team": 0,
+            "actor": "michael-ballack",
+            "p": 0.383,
+            "roll": 0.471,
+            "outcome": "off_post_or_wide",
+            "kind": "box",
+            "i": 69,
+            "t": 140,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.497,
+            "roll": 0.737,
+            "source": "wall",
+            "outcome": "defence_clears",
+            "i": 70,
+            "t": 140,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "target": "jay-jay-okocha",
+            "opp": "paolo-maldini",
+            "p": 0.187,
+            "roll": 0.888,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "outcome": "intercepted",
+            "i": 71,
+            "t": 144,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "transition": false,
+            "i": 72,
+            "t": 144,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "target": "michael-ballack",
+            "opp": "djalminha",
+            "p": 0.94,
+            "roll": 0.596,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 73,
+            "t": 148,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 0,
+            "actor": "michael-ballack",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "kind": "box",
+            "pressure": "djalminha",
+            "i": 74,
+            "t": 148,
+            "n": 3
+          },
+          {
+            "type": "block",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "michael-ballack",
+            "p": 0.25,
+            "roll": 0.033,
+            "outcome": "blocked",
+            "i": 75,
+            "t": 150,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.499,
+            "roll": 0.543,
+            "source": "block",
+            "outcome": "defence_clears",
+            "i": 76,
+            "t": 150,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "target": "djalminha",
+            "opp": "michael-ballack",
+            "p": 0.698,
+            "roll": 0.403,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 77,
+            "t": 154,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "djalminha",
+            "target": "jay-jay-okocha",
+            "opp": "paolo-maldini",
+            "p": 0.761,
+            "roll": 0.818,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "outcome": "intercepted",
+            "i": 78,
+            "t": 158,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "transition": false,
+            "i": 79,
+            "t": 158,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "target": "ronaldo-nazario",
+            "opp": "nemanja-vidic",
+            "p": 0.791,
+            "roll": 0.421,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 80,
+            "t": 162,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "target": "paolo-maldini",
+            "opp": "jay-jay-okocha",
+            "p": 0.94,
+            "roll": 0.044,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 81,
+            "t": 166,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "from": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "i": 82,
+            "t": 169,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "opp": "jay-jay-okocha",
+            "p": 0.882,
+            "roll": 0.246,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 83,
+            "t": 172,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "jay-jay-okocha",
+            "p": 0.425,
+            "roll": 0.228,
+            "outcome": "back_in_shape",
+            "i": 84,
+            "t": 172,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "target": "michael-ballack",
+            "opp": "djalminha",
+            "p": 0.94,
+            "roll": 0.128,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 85,
+            "t": 176,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 0,
+            "actor": "michael-ballack",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "kind": "box",
+            "pressure": "djalminha",
+            "i": 86,
+            "t": 176,
+            "n": 3
+          },
+          {
+            "type": "shot_miss",
+            "team": 0,
+            "actor": "michael-ballack",
+            "p": 0.443,
+            "roll": 0.962,
+            "outcome": "wide",
+            "kind": "box",
+            "i": 87,
+            "t": 178,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.499,
+            "roll": 0.785,
+            "source": "wall",
+            "outcome": "defence_clears",
+            "i": 88,
+            "t": 178,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "from": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "i": 89,
+            "t": 181,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "zone": {
+              "x": 2,
+              "lane": "right"
+            },
+            "from": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "i": 90,
+            "t": 184,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "from": {
+              "x": 2,
+              "lane": "right"
+            },
+            "i": 91,
+            "t": 187,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.631,
+            "roll": 0.401,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 92,
+            "t": 190,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.63,
+            "roll": 0.386,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 93,
+            "t": 193,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "p": 0.385,
+            "roll": 0.346,
+            "outcome": "back_in_shape",
+            "i": 94,
+            "t": 193,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "target": "djalminha",
+            "opp": "michael-ballack",
+            "p": 0.572,
+            "roll": 0.211,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 95,
+            "t": 197,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "djalminha",
+            "target": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.94,
+            "roll": 0.888,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 96,
+            "t": 201,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.627,
+            "roll": 0.214,
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 97,
+            "t": 204,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "p": 0.381,
+            "roll": 0.213,
+            "outcome": "back_in_shape",
+            "i": 98,
+            "t": 204,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "target": "jay-jay-okocha",
+            "opp": "paolo-maldini",
+            "p": 0.253,
+            "roll": 0.416,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "intercepted",
+            "i": 99,
+            "t": 208,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "transition": true,
+            "i": 100,
+            "t": 208,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "jay-jay-okocha",
+            "p": 0.425,
+            "roll": 0.042,
+            "outcome": "back_in_shape",
+            "i": 101,
+            "t": 208,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "djalminha",
+            "p": 0.208,
+            "roll": 0.05,
+            "outcome": "back_in_shape",
+            "i": 102,
+            "t": 208,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "target": "michael-ballack",
+            "opp": "djalminha",
+            "p": 0.94,
+            "roll": 0.904,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 103,
+            "t": 212,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "michael-ballack",
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "from": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "i": 104,
+            "t": 215,
+            "n": 3
+          },
+          {
+            "type": "press",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "michael-ballack",
+            "p": 0.797,
+            "roll": 0.618,
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "outcome": "press_beaten",
+            "i": 105,
+            "t": 218,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "michael-ballack",
+            "zone": {
+              "x": 2,
+              "lane": "right"
+            },
+            "from": {
+              "x": 1,
+              "lane": "left"
+            },
+            "i": 106,
+            "t": 221,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 0,
+            "actor": "michael-ballack",
+            "zone": {
+              "x": 2,
+              "lane": "right"
+            },
+            "kind": "edge",
+            "pressure": "djalminha",
+            "i": 107,
+            "t": 221,
+            "n": 3
+          },
+          {
+            "type": "block",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "michael-ballack",
+            "p": 0.22,
+            "roll": 0.111,
+            "outcome": "blocked",
+            "i": 108,
+            "t": 223,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.535,
+            "roll": 0.595,
+            "source": "block",
+            "outcome": "defence_clears",
+            "i": 109,
+            "t": 223,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "from": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "i": 110,
+            "t": 226,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.612,
+            "roll": 0.615,
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "outcome": "defender_wins",
+            "cover": false,
+            "i": 111,
+            "t": 229,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "how": "tackle",
+            "reason": "won_duel",
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "transition": false,
+            "i": 112,
+            "t": 229,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "opp": "nemanja-vidic",
+            "p": 0.711,
+            "roll": 0.845,
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "outcome": "defender_wins",
+            "cover": false,
+            "i": 113,
+            "t": 232,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "how": "tackle",
+            "reason": "won_duel",
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "transition": true,
+            "i": 114,
+            "t": 232,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "zone": {
+              "x": 2,
+              "lane": "right"
+            },
+            "from": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "i": 115,
+            "t": 235,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.673,
+            "roll": 0.439,
+            "zone": {
+              "x": 2,
+              "lane": "right"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 116,
+            "t": 238,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "opp": "ronaldo-nazario",
+            "p": 0.672,
+            "roll": 0.157,
+            "zone": {
+              "x": 3,
+              "lane": "right"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 117,
+            "t": 241,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "p": 0.367,
+            "roll": 0.144,
+            "outcome": "back_in_shape",
+            "i": 118,
+            "t": 241,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "zone": {
+              "x": 3,
+              "lane": "right"
+            },
+            "kind": "box",
+            "pressure": "ronaldo-nazario",
+            "i": 119,
+            "t": 241,
+            "n": 3
+          },
+          {
+            "type": "shot_miss",
+            "team": 1,
+            "actor": "nemanja-vidic",
+            "p": 0.021,
+            "roll": 0.263,
+            "outcome": "off_post_or_wide",
+            "kind": "box",
+            "i": 120,
+            "t": 243,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 1,
+            "actor": "jay-jay-okocha",
+            "opp": "paolo-maldini",
+            "p": 0.167,
+            "roll": 0,
+            "source": "wall",
+            "outcome": "attack_keeps",
+            "i": 121,
+            "t": 243,
+            "n": 3
+          },
+          {
+            "type": "wall_pass",
+            "team": 1,
+            "actor": "jay-jay-okocha",
+            "opp": "paolo-maldini",
+            "p": 0.536,
+            "roll": 0.603,
+            "zone": {
+              "x": 3,
+              "lane": "left"
+            },
+            "outcome": "defender_wins",
+            "cover": false,
+            "i": 122,
+            "t": 246,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "how": "tackle",
+            "reason": "won_duel",
+            "zone": {
+              "x": 0,
+              "lane": "left"
+            },
+            "transition": true,
+            "i": 123,
+            "t": 246,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "djalminha",
+            "p": 0.208,
+            "roll": 0.019,
+            "outcome": "back_in_shape",
+            "i": 124,
+            "t": 246,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "paolo-maldini",
+            "target": "michael-ballack",
+            "opp": "djalminha",
+            "p": 0.94,
+            "roll": 0.249,
+            "zone": {
+              "x": 0,
+              "lane": "left"
+            },
+            "to": {
+              "x": 0,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 125,
+            "t": 250,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "michael-ballack",
+            "target": "ronaldo-nazario",
+            "opp": "nemanja-vidic",
+            "p": 0.825,
+            "roll": 0.191,
+            "zone": {
+              "x": 0,
+              "lane": "left"
+            },
+            "to": {
+              "x": 1,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 126,
+            "t": 254,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "from": {
+              "x": 1,
+              "lane": "left"
+            },
+            "i": 127,
+            "t": 257,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "kind": "edge",
+            "pressure": "nemanja-vidic",
+            "i": 128,
+            "t": 257,
+            "n": 3
+          },
+          {
+            "type": "goal",
+            "team": 0,
+            "actor": "ronaldo-nazario",
+            "p": 0.185,
+            "roll": 0.051,
+            "kind": "edge",
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "assist": "michael-ballack",
+            "i": 129,
+            "t": 259,
+            "n": 3
+          }
+        ],
+        "score": [
+          1,
+          0
+        ],
+        "winner": 0,
+        "duration": 259,
+        "draws": 347,
+        "shapes": [
+          {
+            "duty": {
+              "paolo-maldini": "anchor",
+              "michael-ballack": "link",
+              "ronaldo-nazario": "spear"
+            },
+            "cover": [
+              83.8,
+              81.8,
+              91.1
+            ]
+          },
+          {
+            "duty": {
+              "nemanja-vidic": "anchor",
+              "jay-jay-okocha": "spear",
+              "djalminha": "link"
+            },
+            "cover": [
+              76.1,
+              78,
+              79.7
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "schema": 1,
+      "round": 2,
+      "createdAt": "2026-10-31T05:59:46.961Z",
+      "engineVersion": "cage-0.4.0",
+      "paramsVersion": "golden-goal-1",
+      "rosterVersion": "editorial-v0.4-63",
+      "rosterFingerprint": "58c7f64b",
+      "config": {
+        "teams": [
+          [
+            "roy-keane",
+            "paul-scholes",
+            "ryan-giggs"
+          ],
+          [
+            "claude-makelele",
+            "frank-lampard",
+            "michael-essien"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 1045,
+        "mode": "ko"
+      },
+      "result": {
+        "events": [
+          {
+            "type": "restart",
+            "team": 0,
+            "actor": "roy-keane",
+            "reason": "kickoff",
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "i": 0,
+            "t": 6,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "roy-keane",
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "from": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "i": 1,
+            "t": 9,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "paul-scholes",
+            "opp": "claude-makelele",
+            "p": 0.808,
+            "roll": 0.35,
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "to": {
+              "x": 1,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 2,
+            "t": 13,
+            "n": 3
+          },
+          {
+            "type": "through_ball",
+            "team": 0,
+            "actor": "paul-scholes",
+            "target": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.442,
+            "roll": 0.484,
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "to": {
+              "x": 3,
+              "lane": "left"
+            },
+            "outcome": "intercepted",
+            "i": 3,
+            "t": 17,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 1,
+            "actor": "michael-essien",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "transition": false,
+            "i": 4,
+            "t": 17,
+            "n": 3
+          },
+          {
+            "type": "through_ball",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.161,
+            "roll": 0.975,
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "to": {
+              "x": 3,
+              "lane": "left"
+            },
+            "outcome": "intercepted",
+            "i": 5,
+            "t": 21,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "roy-keane",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "transition": true,
+            "i": 6,
+            "t": 21,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "frank-lampard",
+            "p": 0.479,
+            "roll": 0.278,
+            "outcome": "back_in_shape",
+            "i": 7,
+            "t": 21,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "michael-essien",
+            "p": 0.824,
+            "roll": 0.589,
+            "outcome": "back_in_shape",
+            "i": 8,
+            "t": 21,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "paul-scholes",
+            "opp": "claude-makelele",
+            "p": 0.807,
+            "roll": 0.704,
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "to": {
+              "x": 1,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 9,
+            "t": 25,
+            "n": 3
+          },
+          {
+            "type": "through_ball",
+            "team": 0,
+            "actor": "paul-scholes",
+            "target": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.441,
+            "roll": 0.718,
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "to": {
+              "x": 3,
+              "lane": "left"
+            },
+            "outcome": "intercepted",
+            "i": 10,
+            "t": 29,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 1,
+            "actor": "michael-essien",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "transition": false,
+            "i": 11,
+            "t": 29,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.538,
+            "roll": 0.276,
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "to": {
+              "x": 3,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 12,
+            "t": 33,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 1,
+            "actor": "frank-lampard",
+            "zone": {
+              "x": 3,
+              "lane": "left"
+            },
+            "kind": "box",
+            "pressure": "roy-keane",
+            "i": 13,
+            "t": 33,
+            "n": 3
+          },
+          {
+            "type": "block",
+            "team": 0,
+            "actor": "roy-keane",
+            "opp": "frank-lampard",
+            "p": 0.528,
+            "roll": 0.228,
+            "outcome": "blocked",
+            "i": 14,
+            "t": 35,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 1,
+            "actor": "michael-essien",
+            "opp": "roy-keane",
+            "p": 0.524,
+            "roll": 0.27,
+            "source": "block",
+            "outcome": "attack_keeps",
+            "i": 15,
+            "t": 35,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.741,
+            "roll": 0.067,
+            "zone": {
+              "x": 3,
+              "lane": "left"
+            },
+            "to": {
+              "x": 3,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 16,
+            "t": 39,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 1,
+            "actor": "frank-lampard",
+            "zone": {
+              "x": 3,
+              "lane": "left"
+            },
+            "kind": "box",
+            "pressure": "roy-keane",
+            "i": 17,
+            "t": 39,
+            "n": 3
+          },
+          {
+            "type": "block",
+            "team": 0,
+            "actor": "roy-keane",
+            "opp": "frank-lampard",
+            "p": 0.528,
+            "roll": 0.125,
+            "outcome": "blocked",
+            "i": 18,
+            "t": 41,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 1,
+            "actor": "michael-essien",
+            "opp": "roy-keane",
+            "p": 0.521,
+            "roll": 0.419,
+            "source": "block",
+            "outcome": "attack_keeps",
+            "i": 19,
+            "t": 41,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.94,
+            "roll": 0.067,
+            "zone": {
+              "x": 3,
+              "lane": "left"
+            },
+            "to": {
+              "x": 3,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 20,
+            "t": 45,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "claude-makelele",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.748,
+            "roll": 0.795,
+            "zone": {
+              "x": 3,
+              "lane": "left"
+            },
+            "to": {
+              "x": 3,
+              "lane": "left"
+            },
+            "outcome": "intercepted",
+            "i": 21,
+            "t": 49,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "roy-keane",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 0,
+              "lane": "left"
+            },
+            "transition": true,
+            "i": 22,
+            "t": 49,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "claude-makelele",
+            "p": 0.761,
+            "roll": 0.054,
+            "outcome": "back_in_shape",
+            "i": 23,
+            "t": 49,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "frank-lampard",
+            "p": 0.479,
+            "roll": 0.191,
+            "outcome": "back_in_shape",
+            "i": 24,
+            "t": 49,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "paul-scholes",
+            "opp": "claude-makelele",
+            "p": 0.807,
+            "roll": 0.364,
+            "zone": {
+              "x": 0,
+              "lane": "left"
+            },
+            "to": {
+              "x": 0,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 25,
+            "t": 53,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "paul-scholes",
+            "target": "roy-keane",
+            "opp": "frank-lampard",
+            "p": 0.94,
+            "roll": 0.851,
+            "zone": {
+              "x": 0,
+              "lane": "left"
+            },
+            "to": {
+              "x": 0,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 26,
+            "t": 57,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "paul-scholes",
+            "opp": "claude-makelele",
+            "p": 0.717,
+            "roll": 0.948,
+            "zone": {
+              "x": 0,
+              "lane": "left"
+            },
+            "to": {
+              "x": 0,
+              "lane": "left"
+            },
+            "outcome": "intercepted",
+            "i": 27,
+            "t": 61,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 1,
+            "actor": "claude-makelele",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 3,
+              "lane": "left"
+            },
+            "transition": false,
+            "i": 28,
+            "t": 61,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.675,
+            "roll": 0.617,
+            "zone": {
+              "x": 3,
+              "lane": "left"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 29,
+            "t": 64,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "claude-makelele",
+            "target": "michael-essien",
+            "opp": "ryan-giggs",
+            "p": 0.94,
+            "roll": 0.443,
+            "zone": {
+              "x": 3,
+              "lane": "left"
+            },
+            "to": {
+              "x": 2,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 30,
+            "t": 68,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.538,
+            "roll": 0.817,
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "to": {
+              "x": 3,
+              "lane": "left"
+            },
+            "outcome": "intercepted",
+            "i": 31,
+            "t": 72,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "roy-keane",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "transition": true,
+            "i": 32,
+            "t": 72,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "frank-lampard",
+            "p": 0.479,
+            "roll": 0.213,
+            "outcome": "back_in_shape",
+            "i": 33,
+            "t": 72,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "michael-essien",
+            "p": 0.818,
+            "roll": 0.014,
+            "outcome": "back_in_shape",
+            "i": 34,
+            "t": 72,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.514,
+            "roll": 0.712,
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "to": {
+              "x": 2,
+              "lane": "left"
+            },
+            "outcome": "intercepted",
+            "i": 35,
+            "t": 76,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 1,
+            "actor": "michael-essien",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "transition": false,
+            "i": 36,
+            "t": 76,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 1,
+            "actor": "michael-essien",
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "kind": "edge",
+            "pressure": "ryan-giggs",
+            "i": 37,
+            "t": 76,
+            "n": 3
+          },
+          {
+            "type": "shot_miss",
+            "team": 1,
+            "actor": "michael-essien",
+            "p": 0.066,
+            "roll": 0.77,
+            "outcome": "wide",
+            "kind": "edge",
+            "i": 38,
+            "t": 78,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 0,
+            "actor": "roy-keane",
+            "opp": "frank-lampard",
+            "p": 0.203,
+            "roll": 0.449,
+            "source": "wall",
+            "outcome": "defence_clears",
+            "i": 39,
+            "t": 78,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.513,
+            "roll": 0.525,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "outcome": "intercepted",
+            "i": 40,
+            "t": 82,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 1,
+            "actor": "michael-essien",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "transition": false,
+            "i": 41,
+            "t": 82,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.94,
+            "roll": 0.803,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 42,
+            "t": 86,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.673,
+            "roll": 0.239,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 43,
+            "t": 89,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.674,
+            "roll": 0.371,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 44,
+            "t": 92,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 1,
+            "actor": "claude-makelele",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "kind": "box",
+            "pressure": "paul-scholes",
+            "i": 45,
+            "t": 92,
+            "n": 3
+          },
+          {
+            "type": "shot_miss",
+            "team": 1,
+            "actor": "claude-makelele",
+            "p": 0.061,
+            "roll": 0.998,
+            "outcome": "wide",
+            "kind": "box",
+            "i": 46,
+            "t": 94,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 0,
+            "actor": "roy-keane",
+            "opp": "frank-lampard",
+            "p": 0.205,
+            "roll": 0.644,
+            "source": "wall",
+            "outcome": "defence_clears",
+            "i": 47,
+            "t": 94,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "paul-scholes",
+            "opp": "claude-makelele",
+            "p": 0.81,
+            "roll": 0.149,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 48,
+            "t": 98,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "paul-scholes",
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "from": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "i": 49,
+            "t": 101,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "paul-scholes",
+            "target": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.82,
+            "roll": 0.498,
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 50,
+            "t": 105,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "ryan-giggs",
+            "target": "paul-scholes",
+            "opp": "claude-makelele",
+            "p": 0.832,
+            "roll": 0.698,
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 51,
+            "t": 109,
+            "n": 3
+          },
+          {
+            "type": "through_ball",
+            "team": 0,
+            "actor": "paul-scholes",
+            "target": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.312,
+            "roll": 0.51,
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "intercepted",
+            "i": 52,
+            "t": 113,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 1,
+            "actor": "michael-essien",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "transition": true,
+            "i": 53,
+            "t": 113,
+            "n": 3
+          },
+          {
+            "type": "through_ball",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.162,
+            "roll": 0.121,
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 54,
+            "t": 117,
+            "n": 3
+          },
+          {
+            "type": "race",
+            "team": 1,
+            "actor": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.406,
+            "roll": 0.748,
+            "outcome": "defender_recovers",
+            "i": 55,
+            "t": 117,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 1,
+            "actor": "frank-lampard",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "kind": "box",
+            "pressure": "roy-keane",
+            "i": 56,
+            "t": 117,
+            "n": 3
+          },
+          {
+            "type": "block",
+            "team": 0,
+            "actor": "roy-keane",
+            "opp": "frank-lampard",
+            "p": 0.518,
+            "roll": 0.098,
+            "outcome": "blocked",
+            "i": 57,
+            "t": 119,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 0,
+            "actor": "roy-keane",
+            "opp": "michael-essien",
+            "p": 0.525,
+            "roll": 0.947,
+            "source": "block",
+            "outcome": "defence_clears",
+            "i": 58,
+            "t": 119,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "roy-keane",
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "from": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "i": 59,
+            "t": 122,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "paul-scholes",
+            "opp": "claude-makelele",
+            "p": 0.807,
+            "roll": 0.72,
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 60,
+            "t": 126,
+            "n": 3
+          },
+          {
+            "type": "through_ball",
+            "team": 0,
+            "actor": "paul-scholes",
+            "target": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.427,
+            "roll": 0.153,
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 61,
+            "t": 130,
+            "n": 3
+          },
+          {
+            "type": "race",
+            "team": 0,
+            "actor": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.397,
+            "roll": 0.042,
+            "outcome": "attacker_clear",
+            "i": 62,
+            "t": 130,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "michael-essien",
+            "p": 0.815,
+            "roll": 0.279,
+            "outcome": "back_in_shape",
+            "i": 63,
+            "t": 130,
+            "n": 3
+          },
+          {
+            "type": "wall_pass",
+            "team": 0,
+            "actor": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.448,
+            "roll": 0.157,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 64,
+            "t": 133,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "michael-essien",
+            "p": 0.812,
+            "roll": 0.672,
+            "outcome": "back_in_shape",
+            "i": 65,
+            "t": 133,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 0,
+            "actor": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.391,
+            "roll": 0.016,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 66,
+            "t": 136,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 0,
+            "actor": "ryan-giggs",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "kind": "box",
+            "pressure": "michael-essien",
+            "i": 67,
+            "t": 136,
+            "n": 3
+          },
+          {
+            "type": "block",
+            "team": 1,
+            "actor": "michael-essien",
+            "opp": "ryan-giggs",
+            "p": 0.574,
+            "roll": 0.27,
+            "outcome": "blocked",
+            "i": 68,
+            "t": 138,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 1,
+            "actor": "michael-essien",
+            "opp": "roy-keane",
+            "p": 0.248,
+            "roll": 0.307,
+            "source": "block",
+            "outcome": "defence_clears",
+            "i": 69,
+            "t": 138,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.659,
+            "roll": 0.303,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 70,
+            "t": 142,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 1,
+            "actor": "frank-lampard",
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "from": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "i": 71,
+            "t": 145,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 1,
+            "actor": "frank-lampard",
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "kind": "edge",
+            "pressure": "roy-keane",
+            "i": 72,
+            "t": 145,
+            "n": 3
+          },
+          {
+            "type": "shot_miss",
+            "team": 1,
+            "actor": "frank-lampard",
+            "p": 0.092,
+            "roll": 0.661,
+            "outcome": "wide",
+            "kind": "edge",
+            "i": 73,
+            "t": 147,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 0,
+            "actor": "roy-keane",
+            "opp": "michael-essien",
+            "p": 0.524,
+            "roll": 0.979,
+            "source": "wall",
+            "outcome": "defence_clears",
+            "i": 74,
+            "t": 147,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.635,
+            "roll": 0.143,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 75,
+            "t": 151,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "ryan-giggs",
+            "target": "roy-keane",
+            "opp": "frank-lampard",
+            "p": 0.94,
+            "roll": 0.939,
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 76,
+            "t": 155,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "roy-keane",
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "from": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "i": 77,
+            "t": 158,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.509,
+            "roll": 0.971,
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "to": {
+              "x": 2,
+              "lane": "left"
+            },
+            "outcome": "intercepted",
+            "i": 78,
+            "t": 162,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 1,
+            "actor": "michael-essien",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "transition": false,
+            "i": 79,
+            "t": 162,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.664,
+            "roll": 0.238,
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "to": {
+              "x": 3,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 80,
+            "t": 166,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 1,
+            "actor": "frank-lampard",
+            "zone": {
+              "x": 3,
+              "lane": "left"
+            },
+            "kind": "box",
+            "pressure": "roy-keane",
+            "i": 81,
+            "t": 166,
+            "n": 3
+          },
+          {
+            "type": "block",
+            "team": 0,
+            "actor": "roy-keane",
+            "opp": "frank-lampard",
+            "p": 0.499,
+            "roll": 0.164,
+            "outcome": "blocked",
+            "i": 82,
+            "t": 168,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 1,
+            "actor": "michael-essien",
+            "opp": "roy-keane",
+            "p": 0.536,
+            "roll": 0.449,
+            "source": "block",
+            "outcome": "attack_keeps",
+            "i": 83,
+            "t": 168,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.746,
+            "roll": 0.995,
+            "zone": {
+              "x": 3,
+              "lane": "right"
+            },
+            "to": {
+              "x": 3,
+              "lane": "right"
+            },
+            "outcome": "intercepted",
+            "i": 84,
+            "t": 172,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "roy-keane",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 0,
+              "lane": "right"
+            },
+            "transition": true,
+            "i": 85,
+            "t": 172,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "claude-makelele",
+            "p": 0.747,
+            "roll": 0.506,
+            "outcome": "back_in_shape",
+            "i": 86,
+            "t": 172,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "frank-lampard",
+            "p": 0.472,
+            "roll": 0.427,
+            "outcome": "back_in_shape",
+            "i": 87,
+            "t": 172,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "michael-essien",
+            "p": 0.805,
+            "roll": 0.571,
+            "outcome": "back_in_shape",
+            "i": 88,
+            "t": 172,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "roy-keane",
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "from": {
+              "x": 0,
+              "lane": "right"
+            },
+            "i": 89,
+            "t": 175,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "paul-scholes",
+            "opp": "claude-makelele",
+            "p": 0.801,
+            "roll": 0.552,
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "to": {
+              "x": 1,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 90,
+            "t": 179,
+            "n": 3
+          },
+          {
+            "type": "through_ball",
+            "team": 0,
+            "actor": "paul-scholes",
+            "target": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.433,
+            "roll": 0.047,
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "to": {
+              "x": 3,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 91,
+            "t": 183,
+            "n": 3
+          },
+          {
+            "type": "race",
+            "team": 0,
+            "actor": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.407,
+            "roll": 0.332,
+            "outcome": "attacker_clear",
+            "i": 92,
+            "t": 183,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "michael-essien",
+            "p": 0.805,
+            "roll": 0.357,
+            "outcome": "back_in_shape",
+            "i": 93,
+            "t": 183,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "ryan-giggs",
+            "target": "roy-keane",
+            "opp": "frank-lampard",
+            "p": 0.94,
+            "roll": 0.791,
+            "zone": {
+              "x": 3,
+              "lane": "left"
+            },
+            "to": {
+              "x": 2,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 94,
+            "t": 187,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "paul-scholes",
+            "opp": "claude-makelele",
+            "p": 0.708,
+            "roll": 0.965,
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "to": {
+              "x": 2,
+              "lane": "left"
+            },
+            "outcome": "intercepted",
+            "i": 95,
+            "t": 191,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 1,
+            "actor": "claude-makelele",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "transition": true,
+            "i": 96,
+            "t": 191,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 0,
+            "actor": "paul-scholes",
+            "p": 0.376,
+            "roll": 0.006,
+            "outcome": "back_in_shape",
+            "i": 97,
+            "t": 191,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 0,
+            "actor": "ryan-giggs",
+            "p": 0.545,
+            "roll": 0.204,
+            "outcome": "back_in_shape",
+            "i": 98,
+            "t": 191,
+            "n": 3
+          },
+          {
+            "type": "through_ball",
+            "team": 1,
+            "actor": "claude-makelele",
+            "target": "frank-lampard",
+            "opp": "paul-scholes",
+            "p": 0.536,
+            "roll": 0.362,
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "to": {
+              "x": 3,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 99,
+            "t": 195,
+            "n": 3
+          },
+          {
+            "type": "race",
+            "team": 1,
+            "actor": "frank-lampard",
+            "opp": "paul-scholes",
+            "p": 0.728,
+            "roll": 0.18,
+            "outcome": "attacker_clear",
+            "i": 100,
+            "t": 195,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 1,
+            "actor": "frank-lampard",
+            "zone": {
+              "x": 3,
+              "lane": "left"
+            },
+            "kind": "box",
+            "pressure": "roy-keane",
+            "i": 101,
+            "t": 195,
+            "n": 3
+          },
+          {
+            "type": "shot_miss",
+            "team": 1,
+            "actor": "frank-lampard",
+            "p": 0.419,
+            "roll": 0.585,
+            "outcome": "off_post_or_wide",
+            "kind": "box",
+            "i": 102,
+            "t": 197,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 1,
+            "actor": "michael-essien",
+            "opp": "roy-keane",
+            "p": 0.547,
+            "roll": 0.348,
+            "source": "wall",
+            "outcome": "attack_keeps",
+            "i": 103,
+            "t": 197,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.75,
+            "roll": 0.708,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 104,
+            "t": 201,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "frank-lampard",
+            "target": "michael-essien",
+            "opp": "ryan-giggs",
+            "p": 0.94,
+            "roll": 0.323,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 105,
+            "t": 205,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.94,
+            "roll": 0.03,
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 106,
+            "t": 209,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "claude-makelele",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.56,
+            "roll": 0.896,
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "intercepted",
+            "i": 107,
+            "t": 213,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "roy-keane",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "transition": true,
+            "i": 108,
+            "t": 213,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "claude-makelele",
+            "p": 0.743,
+            "roll": 0.116,
+            "outcome": "back_in_shape",
+            "i": 109,
+            "t": 213,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "paul-scholes",
+            "opp": "claude-makelele",
+            "p": 0.801,
+            "roll": 0.98,
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "outcome": "intercepted",
+            "i": 110,
+            "t": 217,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 1,
+            "actor": "claude-makelele",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "transition": false,
+            "i": 111,
+            "t": 217,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "claude-makelele",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.56,
+            "roll": 0.319,
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 112,
+            "t": 221,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 1,
+            "actor": "frank-lampard",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "kind": "box",
+            "pressure": "roy-keane",
+            "i": 113,
+            "t": 221,
+            "n": 3
+          },
+          {
+            "type": "block",
+            "team": 0,
+            "actor": "roy-keane",
+            "opp": "frank-lampard",
+            "p": 0.487,
+            "roll": 0.197,
+            "outcome": "blocked",
+            "i": 114,
+            "t": 223,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 0,
+            "actor": "roy-keane",
+            "opp": "michael-essien",
+            "p": 0.545,
+            "roll": 0.667,
+            "source": "block",
+            "outcome": "defence_clears",
+            "i": 115,
+            "t": 223,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "frank-lampard",
+            "p": 0.47,
+            "roll": 0.207,
+            "outcome": "back_in_shape",
+            "i": 116,
+            "t": 223,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "roy-keane",
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "from": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "i": 117,
+            "t": 226,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.624,
+            "roll": 0.523,
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 118,
+            "t": 230,
+            "n": 3
+          },
+          {
+            "type": "wall_pass",
+            "team": 0,
+            "actor": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.46,
+            "roll": 0.372,
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 119,
+            "t": 233,
+            "n": 3
+          },
+          {
+            "type": "wall_pass",
+            "team": 0,
+            "actor": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.462,
+            "roll": 0.88,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "defender_wins",
+            "cover": false,
+            "i": 120,
+            "t": 236,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 1,
+            "actor": "michael-essien",
+            "how": "tackle",
+            "reason": "won_duel",
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "transition": true,
+            "i": 121,
+            "t": 236,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 0,
+            "actor": "paul-scholes",
+            "p": 0.376,
+            "roll": 0.342,
+            "outcome": "back_in_shape",
+            "i": 122,
+            "t": 236,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.55,
+            "roll": 0.53,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 123,
+            "t": 240,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "frank-lampard",
+            "target": "michael-essien",
+            "opp": "ryan-giggs",
+            "p": 0.94,
+            "roll": 0.136,
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 124,
+            "t": 244,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.94,
+            "roll": 0.998,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "outcome": "intercepted",
+            "i": 125,
+            "t": 248,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "paul-scholes",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "transition": false,
+            "i": 126,
+            "t": 248,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 0,
+            "actor": "paul-scholes",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "kind": "box",
+            "pressure": "claude-makelele",
+            "i": 127,
+            "t": 248,
+            "n": 3
+          },
+          {
+            "type": "block",
+            "team": 1,
+            "actor": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.555,
+            "roll": 0.239,
+            "outcome": "blocked",
+            "i": 128,
+            "t": 250,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 1,
+            "actor": "michael-essien",
+            "opp": "ryan-giggs",
+            "p": 0.161,
+            "roll": 0.242,
+            "source": "block",
+            "outcome": "defence_clears",
+            "i": 129,
+            "t": 250,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.666,
+            "roll": 0.979,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "outcome": "intercepted",
+            "i": 130,
+            "t": 254,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "roy-keane",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "transition": false,
+            "i": 131,
+            "t": 254,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "paul-scholes",
+            "opp": "claude-makelele",
+            "p": 0.705,
+            "roll": 0.442,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 132,
+            "t": 258,
+            "n": 3
+          },
+          {
+            "type": "wall_pass",
+            "team": 0,
+            "actor": "paul-scholes",
+            "opp": "claude-makelele",
+            "p": 0.431,
+            "roll": 0.4,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 133,
+            "t": 261,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "claude-makelele",
+            "p": 0.737,
+            "roll": 0.199,
+            "outcome": "back_in_shape",
+            "i": 134,
+            "t": 261,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 0,
+            "actor": "paul-scholes",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "kind": "box",
+            "pressure": "claude-makelele",
+            "i": 135,
+            "t": 261,
+            "n": 3
+          },
+          {
+            "type": "block",
+            "team": 1,
+            "actor": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.551,
+            "roll": 0.389,
+            "outcome": "blocked",
+            "i": 136,
+            "t": 263,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 1,
+            "actor": "michael-essien",
+            "opp": "ryan-giggs",
+            "p": 0.162,
+            "roll": 0.386,
+            "source": "block",
+            "outcome": "defence_clears",
+            "i": 137,
+            "t": 263,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.667,
+            "roll": 0.355,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 138,
+            "t": 267,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 1,
+            "actor": "frank-lampard",
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "from": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "i": 139,
+            "t": 270,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "frank-lampard",
+            "target": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.94,
+            "roll": 0.332,
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "to": {
+              "x": 2,
+              "lane": "left"
+            },
+            "outcome": "complete",
+            "i": 140,
+            "t": 274,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 1,
+            "actor": "claude-makelele",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "from": {
+              "x": 2,
+              "lane": "left"
+            },
+            "i": 141,
+            "t": 277,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.678,
+            "roll": 0.385,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 142,
+            "t": 280,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "claude-makelele",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.756,
+            "roll": 0.406,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 143,
+            "t": 284,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "frank-lampard",
+            "target": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.94,
+            "roll": 0.366,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 144,
+            "t": 288,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "claude-makelele",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.756,
+            "roll": 0.867,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "intercepted",
+            "i": 145,
+            "t": 292,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "roy-keane",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "transition": true,
+            "i": 146,
+            "t": 292,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "claude-makelele",
+            "p": 0.722,
+            "roll": 0.38,
+            "outcome": "back_in_shape",
+            "i": 147,
+            "t": 292,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "frank-lampard",
+            "p": 0.456,
+            "roll": 0.428,
+            "outcome": "back_in_shape",
+            "i": 148,
+            "t": 292,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "paul-scholes",
+            "opp": "claude-makelele",
+            "p": 0.804,
+            "roll": 0.616,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 149,
+            "t": 296,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "paul-scholes",
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "from": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "i": 150,
+            "t": 299,
+            "n": 3
+          },
+          {
+            "type": "through_ball",
+            "team": 0,
+            "actor": "paul-scholes",
+            "target": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.314,
+            "roll": 0.979,
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "intercepted",
+            "i": 151,
+            "t": 303,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 1,
+            "actor": "michael-essien",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "transition": false,
+            "i": 152,
+            "t": 303,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.94,
+            "roll": 0.774,
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 153,
+            "t": 307,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.684,
+            "roll": 0.202,
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 154,
+            "t": 310,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.684,
+            "roll": 0.339,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 155,
+            "t": 313,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 0,
+            "actor": "paul-scholes",
+            "p": 0.346,
+            "roll": 0.057,
+            "outcome": "back_in_shape",
+            "i": 156,
+            "t": 313,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.684,
+            "roll": 0.364,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 157,
+            "t": 316,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.685,
+            "roll": 0.7,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "defender_wins",
+            "cover": false,
+            "i": 158,
+            "t": 319,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "paul-scholes",
+            "how": "tackle",
+            "reason": "won_duel",
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "transition": true,
+            "i": 159,
+            "t": 319,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "claude-makelele",
+            "p": 0.705,
+            "roll": 0.62,
+            "outcome": "back_in_shape",
+            "i": 160,
+            "t": 319,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "paul-scholes",
+            "target": "roy-keane",
+            "opp": "michael-essien",
+            "p": 0.914,
+            "roll": 0.354,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 161,
+            "t": 323,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "frank-lampard",
+            "p": 0.456,
+            "roll": 0.409,
+            "outcome": "back_in_shape",
+            "i": 162,
+            "t": 323,
+            "n": 3
+          },
+          {
+            "type": "wall_pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "opp": "frank-lampard",
+            "p": 0.721,
+            "roll": 0.557,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 163,
+            "t": 326,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "paul-scholes",
+            "opp": "claude-makelele",
+            "p": 0.807,
+            "roll": 0.161,
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 164,
+            "t": 330,
+            "n": 3
+          },
+          {
+            "type": "press",
+            "team": 1,
+            "actor": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.611,
+            "roll": 0.675,
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "outcome": "ball_won",
+            "i": 165,
+            "t": 333,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 1,
+            "actor": "claude-makelele",
+            "how": "press_win",
+            "reason": "press",
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "transition": true,
+            "i": 166,
+            "t": 333,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 0,
+            "actor": "roy-keane",
+            "p": 0.648,
+            "roll": 0.302,
+            "outcome": "back_in_shape",
+            "i": 167,
+            "t": 333,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 0,
+            "actor": "ryan-giggs",
+            "p": 0.535,
+            "roll": 0.341,
+            "outcome": "back_in_shape",
+            "i": 168,
+            "t": 333,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "claude-makelele",
+            "opp": "paul-scholes",
+            "p": 0.743,
+            "roll": 0.087,
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "outcome": "fouled",
+            "cover": false,
+            "i": 169,
+            "t": 336,
+            "n": 3
+          },
+          {
+            "type": "foul",
+            "team": 0,
+            "actor": "paul-scholes",
+            "opp": "claude-makelele",
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "i": 170,
+            "t": 336,
+            "n": 3
+          },
+          {
+            "type": "free_kick",
+            "team": 1,
+            "actor": "claude-makelele",
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "i": 171,
+            "t": 336,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 1,
+            "actor": "frank-lampard",
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "kind": "fk",
+            "pressure": "roy-keane",
+            "i": 172,
+            "t": 336,
+            "n": 3
+          },
+          {
+            "type": "shot_miss",
+            "team": 1,
+            "actor": "frank-lampard",
+            "p": 0.294,
+            "roll": 0.745,
+            "outcome": "wide",
+            "kind": "fk",
+            "i": 173,
+            "t": 338,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 1,
+            "actor": "michael-essien",
+            "opp": "roy-keane",
+            "p": 0.548,
+            "roll": 0.142,
+            "source": "wall",
+            "outcome": "attack_keeps",
+            "i": 174,
+            "t": 338,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 1,
+            "actor": "michael-essien",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "kind": "box",
+            "pressure": "ryan-giggs",
+            "i": 175,
+            "t": 338,
+            "n": 3
+          },
+          {
+            "type": "shot_miss",
+            "team": 1,
+            "actor": "michael-essien",
+            "p": 0.35,
+            "roll": 0.53,
+            "outcome": "off_post_or_wide",
+            "kind": "box",
+            "i": 176,
+            "t": 340,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 0,
+            "actor": "roy-keane",
+            "opp": "frank-lampard",
+            "p": 0.232,
+            "roll": 0.46,
+            "source": "wall",
+            "outcome": "defence_clears",
+            "i": 177,
+            "t": 340,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.626,
+            "roll": 0.553,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 178,
+            "t": 344,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "ryan-giggs",
+            "zone": {
+              "x": 2,
+              "lane": "right"
+            },
+            "from": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "i": 179,
+            "t": 347,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "ryan-giggs",
+            "zone": {
+              "x": 3,
+              "lane": "right"
+            },
+            "from": {
+              "x": 2,
+              "lane": "right"
+            },
+            "i": 180,
+            "t": 350,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "ryan-giggs",
+            "target": "roy-keane",
+            "opp": "frank-lampard",
+            "p": 0.94,
+            "roll": 0.557,
+            "zone": {
+              "x": 3,
+              "lane": "right"
+            },
+            "to": {
+              "x": 2,
+              "lane": "right"
+            },
+            "outcome": "complete",
+            "i": 181,
+            "t": 354,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.502,
+            "roll": 0.822,
+            "zone": {
+              "x": 2,
+              "lane": "right"
+            },
+            "to": {
+              "x": 3,
+              "lane": "right"
+            },
+            "outcome": "intercepted",
+            "i": 182,
+            "t": 358,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 1,
+            "actor": "michael-essien",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 1,
+              "lane": "right"
+            },
+            "transition": true,
+            "i": 183,
+            "t": 358,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 0,
+            "actor": "roy-keane",
+            "p": 0.643,
+            "roll": 0.187,
+            "outcome": "back_in_shape",
+            "i": 184,
+            "t": 358,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 1,
+            "actor": "michael-essien",
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "from": {
+              "x": 1,
+              "lane": "right"
+            },
+            "i": 185,
+            "t": 361,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.551,
+            "roll": 0.782,
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "to": {
+              "x": 3,
+              "lane": "left"
+            },
+            "outcome": "intercepted",
+            "i": 186,
+            "t": 365,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "roy-keane",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 1,
+              "lane": "left"
+            },
+            "transition": true,
+            "i": 187,
+            "t": 365,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "claude-makelele",
+            "p": 0.693,
+            "roll": 0.188,
+            "outcome": "back_in_shape",
+            "i": 188,
+            "t": 365,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "frank-lampard",
+            "p": 0.452,
+            "roll": 0.085,
+            "outcome": "back_in_shape",
+            "i": 189,
+            "t": 365,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "michael-essien",
+            "p": 0.781,
+            "roll": 0.035,
+            "outcome": "back_in_shape",
+            "i": 190,
+            "t": 365,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "roy-keane",
+            "zone": {
+              "x": 2,
+              "lane": "right"
+            },
+            "from": {
+              "x": 1,
+              "lane": "left"
+            },
+            "i": 191,
+            "t": 368,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "roy-keane",
+            "target": "paul-scholes",
+            "opp": "claude-makelele",
+            "p": 0.717,
+            "roll": 0.178,
+            "zone": {
+              "x": 2,
+              "lane": "right"
+            },
+            "to": {
+              "x": 2,
+              "lane": "right"
+            },
+            "outcome": "complete",
+            "i": 192,
+            "t": 372,
+            "n": 3
+          },
+          {
+            "type": "through_ball",
+            "team": 0,
+            "actor": "paul-scholes",
+            "target": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.302,
+            "roll": 0.221,
+            "zone": {
+              "x": 2,
+              "lane": "right"
+            },
+            "to": {
+              "x": 3,
+              "lane": "right"
+            },
+            "outcome": "complete",
+            "i": 193,
+            "t": 376,
+            "n": 3
+          },
+          {
+            "type": "race",
+            "team": 0,
+            "actor": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.427,
+            "roll": 0.583,
+            "outcome": "defender_recovers",
+            "i": 194,
+            "t": 376,
+            "n": 3
+          },
+          {
+            "type": "wall_pass",
+            "team": 0,
+            "actor": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.55,
+            "roll": 0.014,
+            "zone": {
+              "x": 3,
+              "lane": "right"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 195,
+            "t": 379,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "michael-essien",
+            "p": 0.778,
+            "roll": 0.124,
+            "outcome": "back_in_shape",
+            "i": 196,
+            "t": 379,
+            "n": 3
+          },
+          {
+            "type": "wall_pass",
+            "team": 0,
+            "actor": "ryan-giggs",
+            "opp": "michael-essien",
+            "p": 0.552,
+            "roll": 0.729,
+            "zone": {
+              "x": 3,
+              "lane": "right"
+            },
+            "outcome": "defender_wins",
+            "cover": false,
+            "i": 197,
+            "t": 382,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 1,
+            "actor": "michael-essien",
+            "how": "tackle",
+            "reason": "won_duel",
+            "zone": {
+              "x": 0,
+              "lane": "right"
+            },
+            "transition": true,
+            "i": 198,
+            "t": 382,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 1,
+            "actor": "michael-essien",
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "from": {
+              "x": 0,
+              "lane": "right"
+            },
+            "i": 199,
+            "t": 385,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "michael-essien",
+            "target": "frank-lampard",
+            "opp": "roy-keane",
+            "p": 0.667,
+            "roll": 0.035,
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 200,
+            "t": 389,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 1,
+            "actor": "frank-lampard",
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "kind": "edge",
+            "pressure": "roy-keane",
+            "i": 201,
+            "t": 389,
+            "n": 3
+          },
+          {
+            "type": "goal",
+            "team": 1,
+            "actor": "frank-lampard",
+            "p": 0.186,
+            "roll": 0.061,
+            "kind": "edge",
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "assist": "michael-essien",
+            "i": 202,
+            "t": 391,
+            "n": 3
+          }
+        ],
+        "score": [
+          0,
+          1
+        ],
+        "winner": 1,
+        "duration": 391,
+        "draws": 499,
+        "shapes": [
+          {
+            "duty": {
+              "roy-keane": "anchor",
+              "paul-scholes": "link",
+              "ryan-giggs": "spear"
+            },
+            "cover": [
+              80.6,
+              86.4,
+              84.1
+            ]
+          },
+          {
+            "duty": {
+              "claude-makelele": "link",
+              "frank-lampard": "spear",
+              "michael-essien": "anchor"
+            },
+            "cover": [
+              87.8,
+              83,
+              80.4
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "schema": 1,
+      "round": 3,
+      "createdAt": "2026-10-31T05:59:46.964Z",
+      "engineVersion": "cage-0.4.0",
+      "paramsVersion": "golden-goal-1",
+      "rosterVersion": "editorial-v0.4-63",
+      "rosterFingerprint": "d984d03d",
+      "config": {
+        "teams": [
+          [
+            "lionel-messi",
+            "luka-modric",
+            "zinedine-zidane"
+          ],
+          [
+            "cristiano-ronaldo",
+            "sergio-ramos",
+            "andres-iniesta"
+          ]
+        ],
+        "tactics": [
+          "balanced",
+          "counter"
+        ],
+        "seed": 1046,
+        "mode": "ko"
+      },
+      "result": {
+        "events": [
+          {
+            "type": "restart",
+            "team": 1,
+            "actor": "sergio-ramos",
+            "reason": "kickoff",
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "i": 0,
+            "t": 6,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "sergio-ramos",
+            "target": "andres-iniesta",
+            "opp": "zinedine-zidane",
+            "p": 0.94,
+            "roll": 0.462,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 1,
+            "t": 10,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "andres-iniesta",
+            "opp": "zinedine-zidane",
+            "p": 0.869,
+            "roll": 0.11,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 2,
+            "t": 13,
+            "n": 3
+          },
+          {
+            "type": "through_ball",
+            "team": 1,
+            "actor": "andres-iniesta",
+            "target": "cristiano-ronaldo",
+            "opp": "luka-modric",
+            "p": 0.78,
+            "roll": 0.911,
+            "zone": {
+              "x": 1,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "intercepted",
+            "i": 3,
+            "t": 17,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "luka-modric",
+            "how": "interception",
+            "reason": "read_pass",
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "transition": false,
+            "i": 4,
+            "t": 17,
+            "n": 3
+          },
+          {
+            "type": "wall_pass",
+            "team": 0,
+            "actor": "luka-modric",
+            "opp": "cristiano-ronaldo",
+            "p": 0.934,
+            "roll": 0.202,
+            "zone": {
+              "x": 2,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 5,
+            "t": 20,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "luka-modric",
+            "target": "lionel-messi",
+            "opp": "sergio-ramos",
+            "p": 0.878,
+            "roll": 0.764,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 6,
+            "t": 24,
+            "n": 3
+          },
+          {
+            "type": "wall_pass",
+            "team": 0,
+            "actor": "lionel-messi",
+            "opp": "sergio-ramos",
+            "p": 0.544,
+            "roll": 0.711,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "defender_wins",
+            "cover": false,
+            "i": 7,
+            "t": 27,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 1,
+            "actor": "sergio-ramos",
+            "how": "tackle",
+            "reason": "won_duel",
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "transition": true,
+            "i": 8,
+            "t": 27,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 1,
+            "actor": "sergio-ramos",
+            "zone": {
+              "x": 1,
+              "lane": "right"
+            },
+            "from": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "i": 9,
+            "t": 30,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 1,
+            "actor": "sergio-ramos",
+            "target": "andres-iniesta",
+            "opp": "zinedine-zidane",
+            "p": 0.94,
+            "roll": 0.754,
+            "zone": {
+              "x": 1,
+              "lane": "right"
+            },
+            "to": {
+              "x": 1,
+              "lane": "right"
+            },
+            "outcome": "complete",
+            "i": 10,
+            "t": 34,
+            "n": 3
+          },
+          {
+            "type": "through_ball",
+            "team": 1,
+            "actor": "andres-iniesta",
+            "target": "cristiano-ronaldo",
+            "opp": "luka-modric",
+            "p": 0.781,
+            "roll": 0.732,
+            "zone": {
+              "x": 1,
+              "lane": "right"
+            },
+            "to": {
+              "x": 3,
+              "lane": "right"
+            },
+            "outcome": "complete",
+            "i": 11,
+            "t": 38,
+            "n": 3
+          },
+          {
+            "type": "race",
+            "team": 1,
+            "actor": "cristiano-ronaldo",
+            "opp": "luka-modric",
+            "p": 0.675,
+            "roll": 0.04,
+            "outcome": "attacker_clear",
+            "i": 12,
+            "t": 38,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 0,
+            "actor": "luka-modric",
+            "p": 0.63,
+            "roll": 0.003,
+            "outcome": "back_in_shape",
+            "i": 13,
+            "t": 38,
+            "n": 3
+          },
+          {
+            "type": "wall_pass",
+            "team": 1,
+            "actor": "cristiano-ronaldo",
+            "opp": "luka-modric",
+            "p": 0.85,
+            "roll": 0.686,
+            "zone": {
+              "x": 3,
+              "lane": "right"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 14,
+            "t": 41,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 0,
+            "actor": "luka-modric",
+            "p": 0.625,
+            "roll": 0.471,
+            "outcome": "back_in_shape",
+            "i": 15,
+            "t": 41,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 1,
+            "actor": "cristiano-ronaldo",
+            "opp": "luka-modric",
+            "p": 0.865,
+            "roll": 0.643,
+            "zone": {
+              "x": 3,
+              "lane": "right"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 16,
+            "t": 44,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 0,
+            "actor": "luka-modric",
+            "p": 0.619,
+            "roll": 0.54,
+            "outcome": "back_in_shape",
+            "i": 17,
+            "t": 44,
+            "n": 3
+          },
+          {
+            "type": "wall_pass",
+            "team": 1,
+            "actor": "cristiano-ronaldo",
+            "opp": "luka-modric",
+            "p": 0.853,
+            "roll": 0.898,
+            "zone": {
+              "x": 3,
+              "lane": "right"
+            },
+            "outcome": "defender_wins",
+            "cover": false,
+            "i": 18,
+            "t": 47,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "luka-modric",
+            "how": "tackle",
+            "reason": "won_duel",
+            "zone": {
+              "x": 0,
+              "lane": "right"
+            },
+            "transition": true,
+            "i": 19,
+            "t": 47,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "cristiano-ronaldo",
+            "p": 0.506,
+            "roll": 0.276,
+            "outcome": "back_in_shape",
+            "i": 20,
+            "t": 47,
+            "n": 3
+          },
+          {
+            "type": "press",
+            "team": 1,
+            "actor": "cristiano-ronaldo",
+            "opp": "luka-modric",
+            "p": 0.927,
+            "roll": 0.137,
+            "zone": {
+              "x": 0,
+              "lane": "right"
+            },
+            "outcome": "press_beaten",
+            "i": 21,
+            "t": 50,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "cristiano-ronaldo",
+            "p": 0.501,
+            "roll": 0.293,
+            "outcome": "back_in_shape",
+            "i": 22,
+            "t": 50,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "luka-modric",
+            "target": "lionel-messi",
+            "opp": "sergio-ramos",
+            "p": 0.827,
+            "roll": 0.136,
+            "zone": {
+              "x": 0,
+              "lane": "right"
+            },
+            "to": {
+              "x": 1,
+              "lane": "right"
+            },
+            "outcome": "complete",
+            "i": 23,
+            "t": 54,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "lionel-messi",
+            "target": "zinedine-zidane",
+            "opp": "andres-iniesta",
+            "p": 0.94,
+            "roll": 0.428,
+            "zone": {
+              "x": 1,
+              "lane": "right"
+            },
+            "to": {
+              "x": 1,
+              "lane": "right"
+            },
+            "outcome": "complete",
+            "i": 24,
+            "t": 58,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "zinedine-zidane",
+            "zone": {
+              "x": 2,
+              "lane": "left"
+            },
+            "from": {
+              "x": 1,
+              "lane": "right"
+            },
+            "i": 25,
+            "t": 61,
+            "n": 3
+          },
+          {
+            "type": "carry",
+            "team": 0,
+            "actor": "zinedine-zidane",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "from": {
+              "x": 2,
+              "lane": "left"
+            },
+            "i": 26,
+            "t": 64,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 0,
+            "actor": "zinedine-zidane",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "kind": "box",
+            "pressure": "andres-iniesta",
+            "i": 27,
+            "t": 64,
+            "n": 3
+          },
+          {
+            "type": "block",
+            "team": 1,
+            "actor": "andres-iniesta",
+            "opp": "zinedine-zidane",
+            "p": 0.118,
+            "roll": 0.019,
+            "outcome": "blocked",
+            "i": 28,
+            "t": 66,
+            "n": 3
+          },
+          {
+            "type": "rebound",
+            "team": 1,
+            "actor": "sergio-ramos",
+            "opp": "lionel-messi",
+            "p": 0.15,
+            "roll": 0.498,
+            "source": "block",
+            "outcome": "defence_clears",
+            "i": 29,
+            "t": 66,
+            "n": 3
+          },
+          {
+            "type": "press",
+            "team": 0,
+            "actor": "lionel-messi",
+            "opp": "sergio-ramos",
+            "p": 0.933,
+            "roll": 0.934,
+            "zone": {
+              "x": 0,
+              "lane": "centre"
+            },
+            "outcome": "ball_won",
+            "i": 30,
+            "t": 69,
+            "n": 3
+          },
+          {
+            "type": "turnover",
+            "team": 0,
+            "actor": "lionel-messi",
+            "how": "press_win",
+            "reason": "press",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "transition": true,
+            "i": 31,
+            "t": 69,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "sergio-ramos",
+            "p": 0.802,
+            "roll": 0.788,
+            "outcome": "back_in_shape",
+            "i": 32,
+            "t": 69,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "andres-iniesta",
+            "p": 0.478,
+            "roll": 0.351,
+            "outcome": "back_in_shape",
+            "i": 33,
+            "t": 69,
+            "n": 3
+          },
+          {
+            "type": "pass",
+            "team": 0,
+            "actor": "lionel-messi",
+            "target": "zinedine-zidane",
+            "opp": "andres-iniesta",
+            "p": 0.94,
+            "roll": 0.591,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "to": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "complete",
+            "i": 34,
+            "t": 73,
+            "n": 3
+          },
+          {
+            "type": "wall_pass",
+            "team": 0,
+            "actor": "zinedine-zidane",
+            "opp": "andres-iniesta",
+            "p": 0.94,
+            "roll": 0.583,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 35,
+            "t": 76,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 0,
+            "actor": "zinedine-zidane",
+            "opp": "andres-iniesta",
+            "p": 0.906,
+            "roll": 0.869,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 36,
+            "t": 79,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "andres-iniesta",
+            "p": 0.468,
+            "roll": 0.083,
+            "outcome": "back_in_shape",
+            "i": 37,
+            "t": 79,
+            "n": 3
+          },
+          {
+            "type": "dribble_duel",
+            "team": 0,
+            "actor": "zinedine-zidane",
+            "opp": "andres-iniesta",
+            "p": 0.905,
+            "roll": 0.014,
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "outcome": "attacker_wins",
+            "cover": false,
+            "i": 38,
+            "t": 82,
+            "n": 3
+          },
+          {
+            "type": "recovery_run",
+            "team": 1,
+            "actor": "andres-iniesta",
+            "p": 0.464,
+            "roll": 0.324,
+            "outcome": "back_in_shape",
+            "i": 39,
+            "t": 82,
+            "n": 3
+          },
+          {
+            "type": "shot_attempt",
+            "team": 0,
+            "actor": "zinedine-zidane",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "kind": "box",
+            "pressure": "andres-iniesta",
+            "i": 40,
+            "t": 82,
+            "n": 3
+          },
+          {
+            "type": "goal",
+            "team": 0,
+            "actor": "zinedine-zidane",
+            "p": 0.56,
+            "roll": 0.448,
+            "kind": "box",
+            "zone": {
+              "x": 3,
+              "lane": "centre"
+            },
+            "assist": "lionel-messi",
+            "i": 41,
+            "t": 84,
+            "n": 3
+          }
+        ],
+        "score": [
+          1,
+          0
+        ],
+        "winner": 0,
+        "duration": 84,
+        "draws": 110,
+        "shapes": [
+          {
+            "duty": {
+              "lionel-messi": "spear",
+              "luka-modric": "anchor",
+              "zinedine-zidane": "link"
+            },
+            "cover": [
+              67.5,
+              88.8,
+              94.1
+            ]
+          },
+          {
+            "duty": {
+              "cristiano-ronaldo": "spear",
+              "sergio-ramos": "anchor",
+              "andres-iniesta": "link"
+            },
+            "cover": [
+              82.5,
+              86,
+              91.9
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "pending": null,
+  "traitsMode": false
+}

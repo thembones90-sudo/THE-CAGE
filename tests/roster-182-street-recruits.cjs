@@ -3,6 +3,9 @@ const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),asse
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
 const html=read('index.html'),prior=JSON.parse(read('docs/roster-audit-178-refined.json'));
 const source=JSON.parse(read('proposals/world-street-heroes-4.json'));
+const revised=JSON.parse(read('proposals/trait-family-v16-reviewed.json')).rows;
+const alias=name=>name==='Tracker'?'Hunter':name;
+const traitsFor=(id,base)=>({primary:alias(base.primary),secondary:revised[id]?.newSecondary||alias(base.secondary)});
 const ctx={window:{location:{search:'?engine=t3'}}};vm.createContext(ctx);
 for(const m of html.matchAll(/<script src="(src\/[^"]+)"><\/script>/g)){if(m[1]==='src/cage-commentary.js')break;vm.runInContext(read(m[1]),ctx,{filename:m[1]});}
 const w=ctx.window,players=w.THE_CAGE_PLAYERS,byId=new Map(players.map(p=>[p.id,p])),previous=new Map(prior.players.map(p=>[p.id,p]));
@@ -14,7 +17,7 @@ for(const former of prior.players){
  const p=byId.get(former.id);assert(p,'missing historical roster player '+former.id);
  assert.equal(p.careerTier,former.careerTier,'tier accidentally changed '+p.id);
  assert.deepEqual(Array.from(p.folklore),former.folklore,'badge accidentally changed '+p.id);
- assert.deepEqual(JSON.parse(JSON.stringify(p.traits)),former.traits,'trait accidentally changed '+p.id);
+ assert.deepEqual(JSON.parse(JSON.stringify(p.traits)),traitsFor(p.id,former.traits),'primary or reviewed trait unexpectedly changed '+p.id);
  assert.deepEqual(JSON.parse(JSON.stringify(p.r)),former.r,'ratings accidentally changed '+p.id);
  assert.equal(p.position,former.position,'natural position changed '+p.id);
  assert.equal(!!p.attributesProvisional,former.provisionalTactical,'tactical approval state changed '+p.id);
@@ -25,7 +28,7 @@ for(const proposed of source.players){
  assert.equal(p.name,proposed.name);
  assert.equal(p.careerTier,'ELITE');
  assert.deepEqual(Array.from(p.folklore),proposed.folklore);
- assert.deepEqual([p.traits.primary,p.traits.secondary],proposed.traits);
+ assert.deepEqual(JSON.parse(JSON.stringify(p.traits)),traitsFor(p.id,{primary:proposed.traits[0],secondary:proposed.traits[1]}));
  assert.equal(p.position,positions[p.id][0]);
  assert.deepEqual(Array.from(p.secondaryPositions),positions[p.id][1]);
  assert.equal(p.ratingType,'editorial-provisional-v1.5');
@@ -33,7 +36,7 @@ for(const proposed of source.players){
  assert.deepEqual(JSON.parse(JSON.stringify(p.r)),checks,p.id+' 17 prime ratings');
  assert.equal(Object.keys(p.attributes).length,5,p.id+' five T3 ratings');
  assert.equal(p.attributesProvisional,true,p.id+' must remain provisional');
- assert.equal(w.CageTraits.traits(p.id)[0][0],proposed.traits[0]);
+ assert.equal(w.CageTraits.traits(p.id)[0][0],alias(proposed.traits[0]));
  assert(w.CageIdentity.resolve(proposed.name).matches.some(x=>x.id===p.id),'search failed '+p.id);
 }
 for(const id of ['arjen-robben','franck-ribery','gerd-muller','thomas-muller','marco-reus','stefan-effenberg','edin-dzeko','grafite','diego-ribas','zvjezdan-misimovic'])

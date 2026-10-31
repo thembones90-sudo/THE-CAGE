@@ -57,3 +57,8 @@ button.confirm,.wide:not(:disabled){background:linear-gradient(135deg,#346d66,#1
  .integrated-viewer .cv-goalcard small,.integrated-viewer .cv-goalcard em{font-size:9px}
  .integrated-viewer .cv-goalcard i{font-size:8px}
 }
+
+/* Opt-in-only counterplay hints; no hints are mounted when OFF. */
+.cage-counter-toggle{display:flex;align-items:center;gap:9px;max-width:max-content;margin:12px 0;padding:9px 12px;border:1px solid rgba(104,140,148,.38);border-radius:6px;color:#bfced0;cursor:pointer;background:rgba(12,23,27,.42)}
+.cage-counter-toggle input{width:16px;height:16px;accent-color:#e5bd67;cursor:pointer}
+.cage-counter-hint{font-size:.75rem;line-height:1.45;max-width:100%;border-left:2px solid #a98c52;margin-top:8px;padding:7px 9px;background:rgba(212,180,105,.055)}

@@ -1,0 +1,733 @@
+{
+  "source": "clean c049502 V5.3 182-player trait fingerprint; replay-compatibility only, not gameplay or roster assignment",
+  "traits": {
+    "roy-keane": [
+      "Enforcer",
+      "Destroyer"
+    ],
+    "paul-scholes": [
+      "Architect",
+      "Maestro"
+    ],
+    "ryan-giggs": [
+      "Magician",
+      "Engine"
+    ],
+    "michael-essien": [
+      "Engine",
+      "Destroyer"
+    ],
+    "frank-lampard": [
+      "Executioner",
+      "Phantom"
+    ],
+    "claude-makelele": [
+      "Anticipator",
+      "Wall"
+    ],
+    "kevin-de-bruyne": [
+      "Surgeon",
+      "Architect"
+    ],
+    "rodri": [
+      "Architect",
+      "Anticipator"
+    ],
+    "bernardo-silva": [
+      "Magician",
+      "Engine"
+    ],
+    "gilberto-silva": [
+      "Anticipator",
+      "Wall"
+    ],
+    "patrick-vieira": [
+      "Enforcer",
+      "Engine"
+    ],
+    "robert-pires": [
+      "Magician",
+      "Surgeon"
+    ],
+    "xabi-alonso": [
+      "Architect",
+      "Anticipator"
+    ],
+    "steven-gerrard": [
+      "Engine",
+      "Executioner"
+    ],
+    "javier-mascherano": [
+      "Tracker",
+      "Destroyer"
+    ],
+    "ngolo-kante": [
+      "Tracker",
+      "Engine"
+    ],
+    "yaya-toure": [
+      "Juggernaut",
+      "Engine"
+    ],
+    "eden-hazard": [
+      "Magician",
+      "Surgeon"
+    ],
+    "juan-roman-riquelme": [
+      "Maestro",
+      "Surgeon"
+    ],
+    "ricardo-quaresma": [
+      "Magician",
+      "Surgeon"
+    ],
+    "edgar-davids": [
+      "Destroyer",
+      "Engine"
+    ],
+    "roberto-baggio": [
+      "Magician",
+      "Executioner"
+    ],
+    "adriano": [
+      "Juggernaut",
+      "Executioner"
+    ],
+    "javier-zanetti": [
+      "Engine",
+      "Anticipator"
+    ],
+    "michael-ballack": [
+      "Engine",
+      "Executioner"
+    ],
+    "paolo-maldini": [
+      "Anticipator",
+      "Wall"
+    ],
+    "ronaldo-nazario": [
+      "Predator",
+      "Magician"
+    ],
+    "thomas-gravesen": [
+      "Enforcer",
+      "Destroyer"
+    ],
+    "jay-jay-okocha": [
+      "Magician",
+      "Surgeon"
+    ],
+    "nemanja-vidic": [
+      "Wall",
+      "Enforcer"
+    ],
+    "gabriel-batistuta": [
+      "Executioner",
+      "Juggernaut"
+    ],
+    "francesco-totti": [
+      "Maestro",
+      "Executioner"
+    ],
+    "giorgio-chiellini": [
+      "Wall",
+      "Enforcer"
+    ],
+    "alvaro-recoba": [
+      "Magician",
+      "Executioner"
+    ],
+    "sinisa-mihajlovic": [
+      "Executioner",
+      "Enforcer"
+    ],
+    "nani": [
+      "Magician",
+      "Executioner"
+    ],
+    "dimitar-berbatov": [
+      "Magician",
+      "Surgeon"
+    ],
+    "yannick-bolasie": [
+      "Magician",
+      "Phantom"
+    ],
+    "rio-ferdinand": [
+      "Libero",
+      "Anticipator"
+    ],
+    "obafemi-martins": [
+      "Phantom",
+      "Predator"
+    ],
+    "michael-owen": [
+      "Phantom",
+      "Predator"
+    ],
+    "jaap-stam": [
+      "Wall",
+      "Enforcer"
+    ],
+    "lilian-thuram": [
+      "Wall",
+      "Tracker"
+    ],
+    "denilson": [
+      "Magician",
+      "Phantom"
+    ],
+    "alessandro-del-piero": [
+      "Magician",
+      "Executioner"
+    ],
+    "pablo-aimar": [
+      "Magician",
+      "Surgeon"
+    ],
+    "antonio-cassano": [
+      "Magician",
+      "Surgeon"
+    ],
+    "daniele-de-rossi": [
+      "Destroyer",
+      "Architect"
+    ],
+    "andres-dalessandro": [
+      "Magician",
+      "Surgeon"
+    ],
+    "zlatan-ibrahimovic": [
+      "Juggernaut",
+      "Magician"
+    ],
+    "lucio": [
+      "Libero",
+      "Enforcer"
+    ],
+    "hatem-ben-arfa": [
+      "Magician",
+      "Phantom"
+    ],
+    "rivaldo": [
+      "Magician",
+      "Executioner"
+    ],
+    "marcel-desailly": [
+      "Wall",
+      "Anticipator"
+    ],
+    "zinedine-zidane": [
+      "Maestro",
+      "Magician"
+    ],
+    "ronaldinho": [
+      "Magician",
+      "Maestro"
+    ],
+    "djalminha": [
+      "Magician",
+      "Surgeon"
+    ],
+    "steed-malbranque": [
+      "Engine",
+      "Surgeon"
+    ],
+    "ricardo-carvalho": [
+      "Anticipator",
+      "Wall"
+    ],
+    "ledley-king": [
+      "Anticipator",
+      "Wall"
+    ],
+    "tugay-kerimoglu": [
+      "Architect",
+      "Executioner"
+    ],
+    "morten-gamst-pedersen": [
+      "Architect",
+      "Executioner"
+    ],
+    "nene": [
+      "Magician",
+      "Executioner"
+    ],
+    "gennaro-gattuso": [
+      "Destroyer",
+      "Enforcer"
+    ],
+    "sergio-ramos": [
+      "Enforcer",
+      "Executioner"
+    ],
+    "alessandro-nesta": [
+      "Wall",
+      "Anticipator"
+    ],
+    "fabio-cannavaro": [
+      "Anticipator",
+      "Tracker"
+    ],
+    "carles-puyol": [
+      "Enforcer",
+      "Wall"
+    ],
+    "virgil-van-dijk": [
+      "Wall",
+      "Architect"
+    ],
+    "john-terry": [
+      "Wall",
+      "Enforcer"
+    ],
+    "philipp-lahm": [
+      "Anticipator",
+      "Maestro"
+    ],
+    "cafu": [
+      "Engine",
+      "Tracker"
+    ],
+    "roberto-carlos": [
+      "Tracker",
+      "Executioner"
+    ],
+    "franz-beckenbauer": [
+      "Libero",
+      "Architect"
+    ],
+    "vincent-kompany": [
+      "Enforcer",
+      "Wall"
+    ],
+    "ashley-cole": [
+      "Tracker",
+      "Anticipator"
+    ],
+    "xavi-hernandez": [
+      "Maestro",
+      "Architect"
+    ],
+    "andres-iniesta": [
+      "Maestro",
+      "Phantom"
+    ],
+    "luka-modric": [
+      "Maestro",
+      "Engine"
+    ],
+    "toni-kroos": [
+      "Architect",
+      "Maestro"
+    ],
+    "andrea-pirlo": [
+      "Architect",
+      "Maestro"
+    ],
+    "sergio-busquets": [
+      "Anticipator",
+      "Maestro"
+    ],
+    "kaka": [
+      "Predator",
+      "Surgeon"
+    ],
+    "david-beckham": [
+      "Architect",
+      "Surgeon"
+    ],
+    "cesc-fabregas": [
+      "Surgeon",
+      "Architect"
+    ],
+    "bastian-schweinsteiger": [
+      "Engine",
+      "Architect"
+    ],
+    "clarence-seedorf": [
+      "Engine",
+      "Juggernaut"
+    ],
+    "mesut-ozil": [
+      "Surgeon",
+      "Phantom"
+    ],
+    "lionel-messi": [
+      "Phantom",
+      "Surgeon"
+    ],
+    "cristiano-ronaldo": [
+      "Executioner",
+      "Predator"
+    ],
+    "neymar": [
+      "Magician",
+      "Surgeon"
+    ],
+    "kylian-mbappe": [
+      "Predator",
+      "Phantom"
+    ],
+    "thierry-henry": [
+      "Predator",
+      "Executioner"
+    ],
+    "wayne-rooney": [
+      "Predator",
+      "Engine"
+    ],
+    "luis-suarez": [
+      "Executioner",
+      "Predator"
+    ],
+    "robert-lewandowski": [
+      "Executioner",
+      "Juggernaut"
+    ],
+    "karim-benzema": [
+      "Maestro",
+      "Surgeon"
+    ],
+    "didier-drogba": [
+      "Juggernaut",
+      "Executioner"
+    ],
+    "samuel-etoo": [
+      "Predator",
+      "Tracker"
+    ],
+    "mohamed-salah": [
+      "Phantom",
+      "Executioner"
+    ],
+    "adel-taarabt": [
+      "Magician",
+      "Surgeon"
+    ],
+    "marouane-fellaini": [
+      "Juggernaut",
+      "Engine"
+    ],
+    "mario-balotelli": [
+      "Executioner",
+      "Juggernaut"
+    ],
+    "sol-campbell": [
+      "Wall",
+      "Enforcer"
+    ],
+    "gary-neville": [
+      "Anticipator",
+      "Engine"
+    ],
+    "patrice-evra": [
+      "Tracker",
+      "Engine"
+    ],
+    "jamie-carragher": [
+      "Wall",
+      "Anticipator"
+    ],
+    "kolo-toure": [
+      "Tracker",
+      "Enforcer"
+    ],
+    "branislav-ivanovic": [
+      "Enforcer",
+      "Wall"
+    ],
+    "kyle-walker": [
+      "Tracker",
+      "Wall"
+    ],
+    "trent-alexander-arnold": [
+      "Architect",
+      "Libero"
+    ],
+    "andrew-robertson": [
+      "Engine",
+      "Tracker"
+    ],
+    "ruben-dias": [
+      "Wall",
+      "Anticipator"
+    ],
+    "david-silva": [
+      "Surgeon",
+      "Maestro"
+    ],
+    "michael-carrick": [
+      "Architect",
+      "Anticipator"
+    ],
+    "fernandinho": [
+      "Destroyer",
+      "Anticipator"
+    ],
+    "ilkay-gundogan": [
+      "Engine",
+      "Phantom"
+    ],
+    "santi-cazorla": [
+      "Magician",
+      "Architect"
+    ],
+    "bruno-fernandes": [
+      "Surgeon",
+      "Executioner"
+    ],
+    "christian-eriksen": [
+      "Architect",
+      "Surgeon"
+    ],
+    "paul-pogba": [
+      "Juggernaut",
+      "Architect"
+    ],
+    "mousa-dembele": [
+      "Magician",
+      "Juggernaut"
+    ],
+    "declan-rice": [
+      "Destroyer",
+      "Engine"
+    ],
+    "sergio-aguero": [
+      "Predator",
+      "Executioner"
+    ],
+    "harry-kane": [
+      "Executioner",
+      "Surgeon"
+    ],
+    "robin-van-persie": [
+      "Executioner",
+      "Magician"
+    ],
+    "erling-haaland": [
+      "Predator",
+      "Juggernaut"
+    ],
+    "fernando-torres": [
+      "Predator",
+      "Executioner"
+    ],
+    "gareth-bale": [
+      "Predator",
+      "Executioner"
+    ],
+    "son-heung-min": [
+      "Phantom",
+      "Executioner"
+    ],
+    "sadio-mane": [
+      "Predator",
+      "Engine"
+    ],
+    "ruud-van-nistelrooy": [
+      "Executioner",
+      "Predator"
+    ],
+    "riyad-mahrez": [
+      "Magician",
+      "Phantom"
+    ],
+    "jamie-vardy": [
+      "Predator",
+      "Executioner"
+    ],
+    "andrea-barzagli": [
+      "Wall",
+      "Anticipator"
+    ],
+    "matt-le-tissier": [
+      "Executioner",
+      "Magician"
+    ],
+    "hernan-crespo": [
+      "Predator",
+      "Executioner"
+    ],
+    "marcelo-salas": [
+      "Executioner",
+      "Magician"
+    ],
+    "ivan-zamorano": [
+      "Juggernaut",
+      "Predator"
+    ],
+    "filippo-inzaghi": [
+      "Predator",
+      "Phantom"
+    ],
+    "hidetoshi-nakata": [
+      "Surgeon",
+      "Engine"
+    ],
+    "park-ji-sung": [
+      "Engine",
+      "Tracker"
+    ],
+    "tijjani-babangida": [
+      "Magician",
+      "Phantom"
+    ],
+    "mark-viduka": [
+      "Juggernaut",
+      "Magician"
+    ],
+    "youri-djorkaeff": [
+      "Surgeon",
+      "Executioner"
+    ],
+    "dejan-stankovic": [
+      "Engine",
+      "Executioner"
+    ],
+    "predrag-mijatovic": [
+      "Magician",
+      "Executioner"
+    ],
+    "dragan-stojkovic": [
+      "Magician",
+      "Maestro"
+    ],
+    "dejan-savicevic": [
+      "Magician",
+      "Surgeon"
+    ],
+    "robert-prosinecki": [
+      "Magician",
+      "Maestro"
+    ],
+    "darko-pancev": [
+      "Predator",
+      "Executioner"
+    ],
+    "miodrag-belodedici": [
+      "Libero",
+      "Anticipator"
+    ],
+    "safet-susic": [
+      "Magician",
+      "Surgeon"
+    ],
+    "davor-suker": [
+      "Executioner",
+      "Predator"
+    ],
+    "alen-boksic": [
+      "Juggernaut",
+      "Phantom"
+    ],
+    "savo-milosevic": [
+      "Predator",
+      "Juggernaut"
+    ],
+    "josip-ilicic": [
+      "Magician",
+      "Executioner"
+    ],
+    "vladimir-jugovic": [
+      "Engine",
+      "Architect"
+    ],
+    "nwankwo-kanu": [
+      "Magician",
+      "Predator"
+    ],
+    "alex-de-souza": [
+      "Maestro",
+      "Surgeon"
+    ],
+    "andrey-arshavin": [
+      "Magician",
+      "Executioner"
+    ],
+    "hulk": [
+      "Juggernaut",
+      "Executioner"
+    ],
+    "aiden-mcgeady": [
+      "Magician",
+      "Phantom"
+    ],
+    "papiss-cisse": [
+      "Predator",
+      "Executioner"
+    ],
+    "peter-crouch": [
+      "Juggernaut",
+      "Predator"
+    ],
+    "djibril-cisse": [
+      "Phantom",
+      "Executioner"
+    ],
+    "dennis-bergkamp": [
+      "Magician",
+      "Surgeon"
+    ],
+    "pierre-van-hooijdonk": [
+      "Executioner",
+      "Juggernaut"
+    ],
+    "shunsuke-nakamura": [
+      "Architect",
+      "Executioner"
+    ],
+    "alan-shearer": [
+      "Executioner",
+      "Juggernaut"
+    ],
+    "alberto-luque": [
+      "Phantom",
+      "Executioner"
+    ],
+    "diego-tristan": [
+      "Executioner",
+      "Magician"
+    ],
+    "ariel-ortega": [
+      "Magician",
+      "Surgeon"
+    ],
+    "patrick-mboma": [
+      "Juggernaut",
+      "Executioner"
+    ],
+    "sami-hyypia": [
+      "Wall",
+      "Anticipator"
+    ],
+    "milan-baros": [
+      "Phantom",
+      "Predator"
+    ],
+    "ruud-gullit": [
+      "Juggernaut",
+      "Maestro"
+    ],
+    "gianfranco-zola": [
+      "Magician",
+      "Surgeon"
+    ],
+    "ailton": [
+      "Predator",
+      "Phantom"
+    ],
+    "marcelinho-hertha": [
+      "Magician",
+      "Surgeon"
+    ],
+    "juan-arango": [
+      "Architect",
+      "Executioner"
+    ],
+    "jefferson-farfan": [
+      "Phantom",
+      "Magician"
+    ]
+  }
+}
