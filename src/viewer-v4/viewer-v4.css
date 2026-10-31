@@ -138,3 +138,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.08;ba
   .cv-stage{border-width:1px}
 }
 @media(prefers-reduced-motion:reduce){.cv-stage{transition:none}}
+
+/* A free-kick award is a set piece, not a recorded shot. */
+.cv-stage .cv-action[data-kind="setpiece"]{color:#d2e8ee;border-color:#84c1cb;background:linear-gradient(100deg,#174047dc,#17242cec)}
+.cv-stage[data-action="setpiece"]{border-color:#638e9b}

@@ -18,7 +18,16 @@ async function go(){
  const result=await cmd('Runtime.evaluate',{expression:code,returnByValue:true,awaitPromise:true});
  if(result.exceptionDetails)throw Error(result.exceptionDetails.exception?.description||result.exceptionDetails.text);
  const scene=result.result?.value;if(!scene||!scene.canvas||scene.scoreboardDisplay!=='grid'||scene.columns!==5||!scene.scoreAligned||scene.pitchWidth<scene.commentaryWidth*2||scene.actionKind!==scene.expectedActionKind)throw Error('V6.2 arena shell or recorded action failed: '+JSON.stringify(scene));console.log('V62_ARENA_UI_PASS '+JSON.stringify(scene));
- await sleep(500);
+ await cmd('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
+ await sleep(220);
+ const mobile=await cmd('Runtime.evaluate',{expression:"(()=>{const s=document.querySelector('#draft-arena .cv-scoreboard'),p=document.querySelector('#draft-arena .cv-stage'),a=document.querySelector('#draft-arena .cv-action');return {viewport:innerWidth,columns:getComputedStyle(s).gridTemplateColumns.split(' ').filter(Boolean).length,pitchWidth:p.getBoundingClientRect().width,overflow:document.documentElement.scrollWidth-innerWidth,actionFont:parseFloat(getComputedStyle(a).fontSize)}})()",returnByValue:true});
+ const m=mobile.result?.value;if(!m||m.viewport!==390||m.columns!==2||m.pitchWidth>390||m.overflow>4||m.actionFont>10)throw Error('V62 mobile arena HUD regression '+JSON.stringify(m));
+ await cmd('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});
+ const reduced=await cmd('Runtime.evaluate',{expression:"(()=>({enabled:matchMedia('(prefers-reduced-motion: reduce)').matches,transition:getComputedStyle(document.querySelector('#draft-arena .cv-stage')).transitionDuration}))()",returnByValue:true});
+ if(!reduced.result?.value?.enabled||!reduced.result?.value?.transition.split(',').every(x=>parseFloat(x)===0))throw Error('V62 reduced-motion HUD regression '+JSON.stringify(reduced.result?.value));
+ console.log('V62_MOBILE_AND_REDUCED_PASS '+JSON.stringify(m));
+ await cmd('Emulation.setDeviceMetricsOverride',{width:1650,height:970,deviceScaleFactor:1,mobile:false});
+ await sleep(100);
  if(process.env.CAGE_CAPTURE_ARENA==='1'){const pic=await cmd('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});fs.writeFileSync(path.join(root,'visual-v62-arena.png'),Buffer.from(pic.data,'base64'));console.log('ARENA_SCREENSHOT_OK',Buffer.from(pic.data,'base64').length);}
  ws.close();
 }

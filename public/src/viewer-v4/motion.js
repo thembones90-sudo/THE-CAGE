@@ -4,7 +4,7 @@
 // Uses no random, network, mutation, timers, simulation or browser-only API.
 (function(root,factory){'use strict';const api=factory();if(typeof module!=='undefined'&&module.exports)module.exports=api;if(root)root.CageViewerMotion=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
 'use strict';
-const ATTACK=new Set(['carry','pass','through_ball','dribble_duel','wall_pass','shot_attempt','free_kick','goal']);
+const ATTACK=new Set(['carry','pass','through_ball','dribble_duel','wall_pass','shot_attempt','shot_miss','free_kick','goal']);
 const DEFENCE=new Set(['press','block','race','dribble_duel','wall_pass']);
 const LABEL={
  restart:'KICK-OFF',turnover:'TURNOVER',carry:'CARRY',pass:'PASS',

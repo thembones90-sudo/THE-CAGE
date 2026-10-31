@@ -41,7 +41,7 @@ function createRenderer(canvas){
     const strength=Math.pow(Math.sin(Math.PI*phase),1.4);
     if(strength<.02)return;
     const kind=motion.type,role=motion.roles||{};
-    const shot=kind==='shot_attempt'||kind==='shot_miss'||kind==='free_kick';
+    const shot=kind==='shot_attempt'||kind==='shot_miss';
     const defensive=kind==='press'||kind==='block'||kind==='dribble_duel';
     const actor=role.actor&&f.players[role.actor]&&px(f.players[role.actor]);
     // A shot flash is centred at the sampled ball, not an invented goal contact.
