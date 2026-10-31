@@ -106,8 +106,14 @@ function createRenderer(canvas){
         }
         ctx.restore();
       }
-      ctx.fillStyle=col;ctx.beginPath();ctx.arc(p.x,p.y,R,0,Math.PI*2);ctx.fill();ctx.strokeStyle=ink;ctx.lineWidth=2;ctx.stroke();
-      ctx.fillStyle=ink;ctx.font='700 '+Math.round(R*.95)+'px system-ui, sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String(f.numbers&&f.numbers[id]||''),p.x,p.y+.5);
+      // Premium token finish: visual shading only. No positions, physics or event state change.
+      ctx.save();ctx.shadowColor='rgba(0,0,0,.7)';ctx.shadowBlur=R*.55;ctx.shadowOffsetY=2;
+      const metal=ctx.createRadialGradient(p.x-R*.35,p.y-R*.5,R*.06,p.x,p.y,R*1.15);
+      metal.addColorStop(0,'#f4f7f3');metal.addColorStop(.15,col);metal.addColorStop(.72,col);metal.addColorStop(1,'#101b22');
+      ctx.fillStyle=metal;ctx.beginPath();ctx.arc(p.x,p.y,R,0,Math.PI*2);ctx.fill();ctx.restore();
+      ctx.strokeStyle=ink;ctx.lineWidth=2.3;ctx.stroke();
+      ctx.strokeStyle='rgba(255,255,255,.5)';ctx.lineWidth=1;ctx.beginPath();ctx.arc(p.x,p.y,R*.77,Math.PI*1.12,Math.PI*1.83);ctx.stroke();
+      ctx.fillStyle=ink;ctx.font='800 '+Math.round(R*.95)+'px system-ui, sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String(f.numbers&&f.numbers[id]||''),p.x,p.y+.5);
       ctx.globalAlpha=1;}
     // Collision-aware legend labels are placed AFTER tokens so the whole
     // six-player shape can be considered. No player position is changed.
