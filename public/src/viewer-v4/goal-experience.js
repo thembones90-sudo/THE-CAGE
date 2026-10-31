@@ -12,7 +12,7 @@ function goalData(timeline,events,goal,teams,names,replay=false){
  const team=teams[goal.team],scorer=names(e.actor),assist=e.assist&&e.assist!==e.actor?names(e.assist):null;
  if(typeof team!=='string'||!team||typeof scorer!=='string'||!scorer)throw Error('Incomplete recorded goal identity');
  return Object.freeze({eventIndex:e.i,tau:goal.tau,team:goal.team,teamName:team,scorer,assist,round:timeline.round||null,
-  type:timeline.golden?'GOLDEN GOAL':'GOAL',replay:!!replay,source:'recorded-match-goal',isGolden:!!timeline.golden});
+  type:(goal.golden||timeline.golden)?'GOLDEN GOAL':'GOAL',replay:!!replay,source:'recorded-match-goal',isGolden:!!(goal.golden||timeline.golden),isWinner:!!(goal.golden||timeline.golden)&&goal.team===timeline.winner});
 }
 function phase(cue,tau,activeTime,now,reducedMotion=false){
  if(!cue||tau<cue.tau-1e-6)return Object.freeze({visible:false,progress:0,flash:0});
@@ -27,11 +27,11 @@ function markup(cue,score){
  const valid=Array.isArray(score)&&score.length===2&&score.every(n=>Number.isInteger(n)&&n>=0);
  const scoreHtml=valid?'<span class="cv-golden-score">'+score[0]+' : '+score[1]+'</span>':'';
  return '<div class="cv-golden-rail">THE CAGE <span>///</span> MATCH EVENT '+String(cue.eventIndex).padStart(3,'0')+'</div>'+
- '<div class="cv-golden-core"><span class="cv-golden-eyebrow">'+(cue.replay?'SLOW-MOTION REPLAY // ':'FINAL STRIKE // ')+escapeText(cue.type)+'</span>'+
+ '<div class="cv-golden-core"><span class="cv-golden-eyebrow">'+(cue.replay?'SLOW-MOTION REPLAY // ':cue.isGolden?'FINAL STRIKE // ':'REGULATION GOAL // ')+escapeText(cue.type)+'</span>'+
  '<span class="cv-golden-doors" aria-hidden="true"><i></i><i></i></span>'+
  '<strong class="cv-golden-title">GOAL<span class="cv-golden-period">.</span></strong>'+
  '<span class="cv-golden-scorer">'+scorer+'</span>'+assist+
- '<div class="cv-golden-winner"><span>WINNER // '+names+'</span>'+scoreHtml+'</div></div>'+
+ '<div class="cv-golden-winner"><span>'+(cue.isWinner?'WINNER // ':'GOAL FOR // ')+names+'</span>'+scoreHtml+'</div></div>'+
  '<div class="cv-golden-foot">RECORDED EVENT <span>◆</span> ACTUAL RESULT'+(cue.round?' <span>◆</span> ROUND '+cue.round:'')+'</div>';
 }
 return Object.freeze({DURATION,goalData,phase,markup,escapeText});

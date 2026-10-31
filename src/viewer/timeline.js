@@ -110,7 +110,7 @@ function buildTimeline(record,cfgIn){
         else if(e.outcome==='defender_wins'||e.outcome==='ball_won')P(.72,.95,{id:d});
         break;}
       case 'shot_attempt':gain(e.actor,0,.2);seg.win[e.actor]=[0,.6];break;
-      case 'goal':{const g=C.goalFor(e.team),side=L.unit(seed,e.i,'aim')*2-1;P(.02*mf,mf*.98,{pt:pt({u:g.u+(g.u?.012:-.012),v:.5+side*.06}),net:true});goals.push({i:e.i,team:e.team,actor:e.actor,assist:e.assist||null,kind:e.kind||null,transition:!!e.transition,tau:round(seg.tau0+m),replayFrom:null});score=score.slice();score[e.team]++;break;}
+      case 'goal':{const g=C.goalFor(e.team),side=L.unit(seed,e.i,'aim')*2-1;P(.02*mf,mf*.98,{pt:pt({u:g.u+(g.u?.012:-.012),v:.5+side*.06}),net:true});goals.push({i:e.i,team:e.team,actor:e.actor,assist:e.assist||null,kind:e.kind||null,transition:!!e.transition,golden:!!e.golden,tau:round(seg.tau0+m),replayFrom:null});score=score.slice();score[e.team]++;break;}
       case 'shot_miss':{const g=C.goalFor(e.team),sgn=L.unit(seed,e.i,'miss')<.5?-1:1,dv=e.outcome==='off_post_or_wide'?.105:.13+L.unit(seed,e.i,'wide')*.06,v=clamp01(.5+sgn*dv);P(.05,.5,{pt:pt({u:g.u+(g.u?.01:-.01),v}),post:e.outcome==='off_post_or_wide'});P(.5,.9,{pt:pt({u:g.u?g.u-.06:.06,v:clamp01(v+sgn*.05)}),wall:true});break;}
       case 'block':{const b=e.actor;P(.05,.35,{pt:end[b],block:true});P(.35,.7,{pt:pt({u:clamp01(end[b].u-C.attackDir(1-e.team)*.06),v:end[b].v})});break;}
       case 'rebound':P(.1,.7,{id:e.actor});seg.win[e.actor]=[0,.7];break;
@@ -144,7 +144,7 @@ function buildTimeline(record,cfgIn){
   const recorded=Array.isArray(rec.result.score)?rec.result.score.slice():null,warnings=[];
   if(recorded&&(recorded[0]!==score[0]||recorded[1]!==score[1]))warnings.push('Recorded score '+recorded.join('-')+' differs from goal events '+score.join('-')+'; showing the goal events.');
   return {version:VERSION,schema,mode:full?'full':'ball-only',timing:exactSteps?'exact':'approximate',notes,warnings,engineVersion:rec.engineVersion||null,round:rec.round||null,seed,teams,teamOf,ids,
-    eventCount:events.length,duration:events[events.length-1].t,total:round(tau),segments:segs,beats,goals,finalScore:score,winner:goals.length?goals[goals.length-1].team:(score[0]===score[1]?-1:score[0]>score[1]?0:1),golden:goals.length===1&&(!rec.config||rec.config.mode==='ko')};
+    eventCount:events.length,duration:events[events.length-1].t,total:round(tau),segments:segs,beats,goals,finalScore:score,winner:recorded?(recorded[0]===recorded[1]?-1:recorded[0]>recorded[1]?0:1):(score[0]===score[1]?-1:score[0]>score[1]?0:1),golden:goals.length===1&&(!rec.config||rec.config.mode==='ko'),goldenOvertime:rec.result.decidedBy==='golden_goal'};
 }
 // Point at `dist` cells from a toward b (a itself if they coincide: then offset along u).
 function near(a,b,dist){const dx=(b.u-a.u)*C.COLS,dy=(b.v-a.v)*C.ROWS,len=Math.hypot(dx,dy);const ux=len?dx/len:1,uy=len?dy/len:0,d=Math.min(dist,len||dist);return pt({u:a.u+ux*d/C.COLS,v:a.v+uy*d/C.ROWS});}

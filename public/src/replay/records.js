@@ -7,10 +7,25 @@ const LEGACY_V15_TRAITS=Object.freeze({"roy-keane":["Enforcer","Destroyer"],"pau
 function fingerprint(value){let h=2166136261;for(const c of JSON.stringify(value))h=Math.imul(h^c.charCodeAt(0),16777619)>>>0;return h.toString(16).padStart(8,'0');}
 function validResult(result,config){if(!result||!Array.isArray(result.events)||result.events.length>50000)throw Error('Invalid match history.');
 let prev=-1;for(let i=0;i<result.events.length;i++){const e=result.events[i];if(e.i!==i||!Number.isFinite(e.t)||e.t<0||e.t<prev||e.n!==3||![0,1].includes(e.team))throw Error('Invalid event order.');prev=e.t;if(e.actor&&!config.teams[e.team].includes(e.actor))throw Error('Event actor outside squad.');if(e.target&&!config.teams[e.team].includes(e.target))throw Error('Pass target outside squad.');if(e.opp&&!config.teams[1-e.team].includes(e.opp))throw Error('Opponent outside squad.');}
-const goals=result.events.filter(e=>e.type==='goal');if(goals.length!==1||result.events.at(-1)!==goals[0]||result.winner!==goals[0].team||!Array.isArray(result.score)||result.score.length!==2||result.score[goals[0].team]!==1||result.score[1-goals[0].team]!==0||result.duration!==goals[0].t)throw Error('Goal, winner and score do not agree.');
-if(goals[0].assist&&!config.teams[goals[0].team].includes(goals[0].assist))throw Error('Invalid assist.');}
+const goals=result.events.filter(e=>e.type==='goal');
+if(!Array.isArray(result.score)||result.score.length!==2||result.score.some(x=>!Number.isInteger(x)||x<0)||result.score[0]!==goals.filter(e=>e.team===0).length||result.score[1]!==goals.filter(e=>e.team===1).length||result.winner!==(result.score[0]>result.score[1]?0:result.score[1]>result.score[0]?1:-1))throw Error('Goal, winner and score do not agree.');
+if(config.mode==='score'){
+ if(!Number.isFinite(result.regulationSeconds)||result.regulationSeconds<=0||!Number.isFinite(result.regulationAt)||result.regulationAt<result.regulationSeconds||!Array.isArray(result.regulationScore)||result.regulationScore.length!==2||!['regulation','golden_goal'].includes(result.decidedBy)||result.winner===-1)throw Error('Invalid regulation result.');
+ const opening=goals.filter(e=>e.t<=result.regulationAt);
+ if(result.regulationScore.some((v,i)=>v!==opening.filter(g=>g.team===i).length))throw Error('Regulation score mismatch.');
+ const overtime=result.events.filter(e=>e.type==='golden_goal_start'),golden=goals.filter(e=>e.golden===true);
+ if(result.decidedBy==='regulation'){
+  if(result.regulationScore[0]===result.regulationScore[1]||overtime.length||golden.length||result.score.some((x,i)=>x!==result.regulationScore[i]))throw Error('Invalid full-time result.');
+ }else{
+  if(result.regulationScore[0]!==result.regulationScore[1]||overtime.length!==1||golden.length!==1||golden[0]!==goals.at(-1)||result.events.at(-1)!==golden[0]||golden[0].team!==result.winner||golden[0].t<overtime[0].t)throw Error('Invalid Golden Goal overtime.');
+ }
+}else if(config.mode==='ko'){
+ if(goals.length!==1||result.events.at(-1)!==goals[0]||result.winner!==goals[0].team||result.score[goals[0].team]!==1||result.score[1-goals[0].team]!==0||result.duration!==goals[0].t)throw Error('Invalid first-goal result.');
+}
+for(const g of goals)if(g.assist&&!config.teams[g.team].includes(g.assist))throw Error('Invalid assist.');
+}
 function validate(record){if(!record||record.schema!==SCHEMA||!Number.isInteger(record.round)||record.round<1||record.round>5)throw Error('Unsupported replay record.');
-const c=record.config;if(!c||c.mode!=='ko'||!Number.isInteger(c.seed)||c.seed<0||c.seed>0xffffffff||!Array.isArray(c.teams)||c.teams.length!==2||c.teams.some(t=>!Array.isArray(t)||t.length!==3||t.some(id=>typeof id!=='string'||!Object.hasOwn(E.BY_ID,id)))||new Set(c.teams.flat()).size!==6||!Array.isArray(c.tactics)||c.tactics.length!==2||c.tactics.some(t=>!Object.hasOwn(E.TACTICS,t)))throw Error('Invalid replay configuration.');
+const c=record.config;if(!c||!['ko','score'].includes(c.mode)||!Number.isInteger(c.seed)||c.seed<0||c.seed>0xffffffff||!Array.isArray(c.teams)||c.teams.length!==2||c.teams.some(t=>!Array.isArray(t)||t.length!==3||t.some(id=>typeof id!=='string'||!Object.hasOwn(E.BY_ID,id)))||new Set(c.teams.flat()).size!==6||!Array.isArray(c.tactics)||c.tactics.length!==2||c.tactics.some(t=>!Object.hasOwn(E.TACTICS,t)))throw Error('Invalid replay configuration.');
 if(c.traits!==undefined&&(!c.traits||c.traits.enabled!==true||Object.keys(c.traits).length!==1||!String(record.engineVersion).startsWith('cage-t3')))throw Error('Unsupported trait-mode replay configuration.');
 validResult(record.result,c);const engine=window.CAGE_ENGINE_REGISTRY?.[record.engineVersion]||(record.engineVersion===E.VERSION?E:null);if(engine?.hashEvents){if(record.result.eventHash!==engine.hashEvents(record.result.events))throw Error('Replay tactical event hash mismatch.');engine.validateEvidence(record.result.events,c);}return record;}
 function make(config,result,round){validResult(result,config);return E.freeze({schema:SCHEMA,round,createdAt:new Date().toISOString(),engineVersion:E.VERSION,paramsVersion:E.PARAMS_VERSION,rosterVersion:E.VERSION==='cage-0.4.0'?'editorial-v0.4-63':window.CAGE_ROSTER_VERSION||'editorial-v0.3',rosterFingerprint:fingerprint(replayRoster({engineVersion:E.VERSION,config})),config:copy(config),result:copy(result)});}

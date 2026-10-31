@@ -113,7 +113,7 @@ function mount(el,record,opts){
     card.hidden=false;
     card.innerHTML='<b>'+G.escapeText(cue.type)+'</b><span>'+G.escapeText(cue.scorer)+'</span>'+
       (cue.assist?'<small>assist '+G.escapeText(cue.assist)+'</small>':'')+
-      '<em>'+G.escapeText(cue.teamName.toUpperCase())+' WIN'+(tl.round?' ROUND '+tl.round:'')+'</em>'+
+      '<em>'+G.escapeText(cue.teamName.toUpperCase())+((cue.isWinner?' WINS':' SCORES')+(cue.isWinner&&tl.round?' ROUND '+tl.round:''))+'</em>'+
       (replay?'<i>REPLAY</i>':'');
     q('replay').disabled=false;
     sound.play(replay); // no sound unless user enabled it from a direct click
@@ -160,7 +160,7 @@ function mount(el,record,opts){
       surge.textContent=status.length?'LATE HIGH-PRESS SURGE · '+status.join(' / '):'';
     }
     q('onball').innerHTML=who?'<small>ON THE BALL</small> <b class="t'+tl.teamOf[who]+'">'+esc(name(who))+'</b>':'<small>LOOSE BALL</small>';
-    const b=q('banner');const ban=ev.type==='restart'&&seg.move===0||ev.type==='restart'&&T.phase(seg,tau)<.6?'KICK-OFF':ev.transition&&ev.type==='turnover'?'COUNTER':ev.type==='free_kick'?'FREE KICK':ev.type==='foul'?'FOUL':'';b.textContent=ban;b.classList.toggle('on',!!ban);
+    const b=q('banner');const ban=ev.type==='golden_goal_start'?'GOLDEN GOAL OVERTIME · NEXT GOAL WINS':ev.type==='restart'&&seg.move===0||ev.type==='restart'&&T.phase(seg,tau)<.6?'KICK-OFF':ev.transition&&ev.type==='turnover'?'COUNTER':ev.type==='free_kick'?'FREE KICK':ev.type==='foul'?'FOUL':'';b.textContent=ban;b.classList.toggle('on',!!ban);
     const action=q('action');action.textContent=motion.showEvent&&seg.type!=='goal'?motion.label+(motion.roles.actor?' / '+name(motion.roles.actor).toUpperCase():''):'';action.classList.toggle('on',!!action.textContent);const actionKind=action.textContent?M.actionKind(seg.type,!!seg.contact):'';action.dataset.kind=actionKind;q('action').closest('.cv-stage').dataset.action=actionKind;
     if(!goalShown&&tau<(tl.goals[0]||{tau:Infinity}).tau)q('goalcard').hidden=true;
     syncComm(tau);}

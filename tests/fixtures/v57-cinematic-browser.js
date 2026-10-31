@@ -23,8 +23,9 @@
   const g=ctl.timeline.goals[0];ok(g,'real match has no goal event');
   ctl.pause();ctl.seek(Math.max(0,g.tau-.23));ctl.play();ctl.playback.advance(2);ctl.render();
   ok(!overlay.hidden,'goal cinematic missing at real event crossing goalTau='+g.tau+' actualTau='+ctl.playback.tau+' state='+ctl.playback.state+' goalShown='+!holder.hidden+' inner='+overlay.textContent.slice(0,60));
-  ok(overlay.textContent.includes('FINAL STRIKE')&&overlay.textContent.includes('GOAL'),'golden goal reveal malformed');
-  const scorer=window.THE_CAGE_PLAYERS.find(p=>p.id===g.actor).name;
+  const shownGoal=ctl.timeline.goals.filter(x=>x.tau<=ctl.playback.tau+1e-6).at(-1)||g;
+  const strike=record.result.events[shownGoal.i].golden===true?'FINAL STRIKE':'REGULATION GOAL';ok(overlay.textContent.includes(strike)&&overlay.textContent.includes('GOAL'),'recorded regulation/Golden Goal reveal malformed');
+  const scorer=window.THE_CAGE_PLAYERS.find(p=>p.id===shownGoal.actor).name;
   ok(overlay.textContent.toLowerCase().includes(scorer.toLowerCase()),'wrong scorer name');
   ok(overlay.textContent.includes('RECORDED EVENT'),'goal not marked as recorded');
   if(matchMedia('(prefers-reduced-motion: reduce)').matches){

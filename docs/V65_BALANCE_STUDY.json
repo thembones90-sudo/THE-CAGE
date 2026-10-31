@@ -1,0 +1,501 @@
+{
+  "engine": "cage-t3-6",
+  "roster": 194,
+  "matchedPairSeeds": true,
+  "swappedStartingSides": true,
+  "newRegulationGoldenGoalMode": true,
+  "matchRule": "regulation + tied Golden Goal overtime",
+  "totalMatches": 8000,
+  "cohorts": [
+    {
+      "label": "TITAN creators vs ELITE all-round",
+      "a": [
+        "paolo-maldini",
+        "zinedine-zidane",
+        "ronaldo-nazario"
+      ],
+      "b": [
+        "ledley-king",
+        "claudio-marchisio",
+        "antonio-valencia"
+      ]
+    },
+    {
+      "label": "Legend balanced trios",
+      "a": [
+        "nemanja-vidic",
+        "andrea-pirlo",
+        "thierry-henry"
+      ],
+      "b": [
+        "jaap-stam",
+        "luka-modric",
+        "andriy-shevchenko"
+      ]
+    },
+    {
+      "label": "Attack-heavy vs defensive specialists",
+      "a": [
+        "lionel-messi",
+        "cristiano-ronaldo",
+        "thierry-henry"
+      ],
+      "b": [
+        "paolo-maldini",
+        "nemanja-vidic",
+        "jaap-stam"
+      ]
+    },
+    {
+      "label": "Midfield-heavy vs mixed trio",
+      "a": [
+        "luka-modric",
+        "andrea-pirlo",
+        "michael-ballack"
+      ],
+      "b": [
+        "giorgio-chiellini",
+        "francesco-totti",
+        "gabriel-batistuta"
+      ]
+    }
+  ],
+  "tactics": [
+    [
+      "balanced",
+      "balanced"
+    ],
+    [
+      "press",
+      "possession"
+    ],
+    [
+      "possession",
+      "press"
+    ],
+    [
+      "press",
+      "balanced"
+    ],
+    [
+      "balanced",
+      "possession"
+    ]
+  ],
+  "matrix": {
+    "balanced / balanced": {
+      "matches": 1600,
+      "winPct": 64.6,
+      "ci95": [
+        62.2,
+        66.9
+      ],
+      "cohorts": [
+        {
+          "label": "TITAN creators vs ELITE all-round",
+          "winPct": 82.8
+        },
+        {
+          "label": "Legend balanced trios",
+          "winPct": 26.5
+        },
+        {
+          "label": "Attack-heavy vs defensive specialists",
+          "winPct": 99.8
+        },
+        {
+          "label": "Midfield-heavy vs mixed trio",
+          "winPct": 49.3
+        }
+      ]
+    },
+    "press / possession": {
+      "matches": 1600,
+      "winPct": 74.9,
+      "ci95": [
+        72.7,
+        76.9
+      ],
+      "cohorts": [
+        {
+          "label": "TITAN creators vs ELITE all-round",
+          "winPct": 88.3
+        },
+        {
+          "label": "Legend balanced trios",
+          "winPct": 36.8
+        },
+        {
+          "label": "Attack-heavy vs defensive specialists",
+          "winPct": 100
+        },
+        {
+          "label": "Midfield-heavy vs mixed trio",
+          "winPct": 74.5
+        }
+      ]
+    },
+    "possession / press": {
+      "matches": 1600,
+      "winPct": 55.4,
+      "ci95": [
+        52.9,
+        57.8
+      ],
+      "cohorts": [
+        {
+          "label": "TITAN creators vs ELITE all-round",
+          "winPct": 46.5
+        },
+        {
+          "label": "Legend balanced trios",
+          "winPct": 20.3
+        },
+        {
+          "label": "Attack-heavy vs defensive specialists",
+          "winPct": 98.8
+        },
+        {
+          "label": "Midfield-heavy vs mixed trio",
+          "winPct": 56
+        }
+      ]
+    },
+    "press / balanced": {
+      "matches": 1600,
+      "winPct": 63.7,
+      "ci95": [
+        61.3,
+        66
+      ],
+      "cohorts": [
+        {
+          "label": "TITAN creators vs ELITE all-round",
+          "winPct": 73.5
+        },
+        {
+          "label": "Legend balanced trios",
+          "winPct": 18
+        },
+        {
+          "label": "Attack-heavy vs defensive specialists",
+          "winPct": 99.8
+        },
+        {
+          "label": "Midfield-heavy vs mixed trio",
+          "winPct": 63.5
+        }
+      ]
+    },
+    "balanced / possession": {
+      "matches": 1600,
+      "winPct": 76.1,
+      "ci95": [
+        74,
+        78.1
+      ],
+      "cohorts": [
+        {
+          "label": "TITAN creators vs ELITE all-round",
+          "winPct": 91
+        },
+        {
+          "label": "Legend balanced trios",
+          "winPct": 45.5
+        },
+        {
+          "label": "Attack-heavy vs defensive specialists",
+          "winPct": 100
+        },
+        {
+          "label": "Midfield-heavy vs mixed trio",
+          "winPct": 68
+        }
+      ]
+    }
+  },
+  "rows": [
+    {
+      "cohort": "TITAN creators vs ELITE all-round",
+      "tacticA": "balanced",
+      "tacticB": "balanced",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 82.8,
+      "ci95": [
+        78.7,
+        86.1
+      ],
+      "p95SimSeconds": 1349,
+      "multiGoalMatches": 397
+    },
+    {
+      "cohort": "TITAN creators vs ELITE all-round",
+      "tacticA": "press",
+      "tacticB": "possession",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 88.3,
+      "ci95": [
+        84.7,
+        91
+      ],
+      "p95SimSeconds": 1293,
+      "multiGoalMatches": 394
+    },
+    {
+      "cohort": "TITAN creators vs ELITE all-round",
+      "tacticA": "possession",
+      "tacticB": "press",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 46.5,
+      "ci95": [
+        41.7,
+        51.4
+      ],
+      "p95SimSeconds": 1389,
+      "multiGoalMatches": 396
+    },
+    {
+      "cohort": "TITAN creators vs ELITE all-round",
+      "tacticA": "press",
+      "tacticB": "balanced",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 73.5,
+      "ci95": [
+        69,
+        77.6
+      ],
+      "p95SimSeconds": 1293,
+      "multiGoalMatches": 395
+    },
+    {
+      "cohort": "TITAN creators vs ELITE all-round",
+      "tacticA": "balanced",
+      "tacticB": "possession",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 91,
+      "ci95": [
+        87.8,
+        93.4
+      ],
+      "p95SimSeconds": 1404,
+      "multiGoalMatches": 393
+    },
+    {
+      "cohort": "Legend balanced trios",
+      "tacticA": "balanced",
+      "tacticB": "balanced",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 26.5,
+      "ci95": [
+        22.4,
+        31
+      ],
+      "p95SimSeconds": 1261,
+      "multiGoalMatches": 400
+    },
+    {
+      "cohort": "Legend balanced trios",
+      "tacticA": "press",
+      "tacticB": "possession",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 36.8,
+      "ci95": [
+        32.2,
+        41.6
+      ],
+      "p95SimSeconds": 1323,
+      "multiGoalMatches": 400
+    },
+    {
+      "cohort": "Legend balanced trios",
+      "tacticA": "possession",
+      "tacticB": "press",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 20.3,
+      "ci95": [
+        16.6,
+        24.5
+      ],
+      "p95SimSeconds": 1294,
+      "multiGoalMatches": 400
+    },
+    {
+      "cohort": "Legend balanced trios",
+      "tacticA": "press",
+      "tacticB": "balanced",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 18,
+      "ci95": [
+        14.5,
+        22.1
+      ],
+      "p95SimSeconds": 1261,
+      "multiGoalMatches": 400
+    },
+    {
+      "cohort": "Legend balanced trios",
+      "tacticA": "balanced",
+      "tacticB": "possession",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 45.5,
+      "ci95": [
+        40.7,
+        50.4
+      ],
+      "p95SimSeconds": 1349,
+      "multiGoalMatches": 400
+    },
+    {
+      "cohort": "Attack-heavy vs defensive specialists",
+      "tacticA": "balanced",
+      "tacticB": "balanced",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 99.8,
+      "ci95": [
+        98.6,
+        100
+      ],
+      "p95SimSeconds": 1203,
+      "multiGoalMatches": 400
+    },
+    {
+      "cohort": "Attack-heavy vs defensive specialists",
+      "tacticA": "press",
+      "tacticB": "possession",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 100,
+      "ci95": [
+        99,
+        100
+      ],
+      "p95SimSeconds": 1203,
+      "multiGoalMatches": 399
+    },
+    {
+      "cohort": "Attack-heavy vs defensive specialists",
+      "tacticA": "possession",
+      "tacticB": "press",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 98.8,
+      "ci95": [
+        97.1,
+        99.5
+      ],
+      "p95SimSeconds": 1203,
+      "multiGoalMatches": 400
+    },
+    {
+      "cohort": "Attack-heavy vs defensive specialists",
+      "tacticA": "press",
+      "tacticB": "balanced",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 99.8,
+      "ci95": [
+        98.6,
+        100
+      ],
+      "p95SimSeconds": 1203,
+      "multiGoalMatches": 400
+    },
+    {
+      "cohort": "Attack-heavy vs defensive specialists",
+      "tacticA": "balanced",
+      "tacticB": "possession",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 100,
+      "ci95": [
+        99,
+        100
+      ],
+      "p95SimSeconds": 1203,
+      "multiGoalMatches": 399
+    },
+    {
+      "cohort": "Midfield-heavy vs mixed trio",
+      "tacticA": "balanced",
+      "tacticB": "balanced",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 49.3,
+      "ci95": [
+        44.4,
+        54.1
+      ],
+      "p95SimSeconds": 1251,
+      "multiGoalMatches": 400
+    },
+    {
+      "cohort": "Midfield-heavy vs mixed trio",
+      "tacticA": "press",
+      "tacticB": "possession",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 74.5,
+      "ci95": [
+        70,
+        78.5
+      ],
+      "p95SimSeconds": 1233,
+      "multiGoalMatches": 400
+    },
+    {
+      "cohort": "Midfield-heavy vs mixed trio",
+      "tacticA": "possession",
+      "tacticB": "press",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 56,
+      "ci95": [
+        51.1,
+        60.8
+      ],
+      "p95SimSeconds": 1286,
+      "multiGoalMatches": 400
+    },
+    {
+      "cohort": "Midfield-heavy vs mixed trio",
+      "tacticA": "press",
+      "tacticB": "balanced",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 63.5,
+      "ci95": [
+        58.7,
+        68.1
+      ],
+      "p95SimSeconds": 1291,
+      "multiGoalMatches": 400
+    },
+    {
+      "cohort": "Midfield-heavy vs mixed trio",
+      "tacticA": "balanced",
+      "tacticB": "possession",
+      "pairedSeeds": 200,
+      "matches": 400,
+      "winAPct": 68,
+      "ci95": [
+        63.3,
+        72.4
+      ],
+      "p95SimSeconds": 1299,
+      "multiGoalMatches": 400
+    }
+  ],
+  "methodology": "Four intentionally diverse fixed-trio matchups with all five tactics configurations, 200 identical seeds per matchup and swapped sides (8,000 simulations). Confidence intervals assume independent paired observations; this is exploratory, not a preregistered balance acceptance test. Team compositions may interact with tactics; no global win-rate is inferred. All 8,000 matches returned normally; multiGoalMatches counts results containing more than one recorded goal, not safety-cap failures.",
+  "date": "2026-10-31"
+}

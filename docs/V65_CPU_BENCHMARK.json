@@ -1,0 +1,48 @@
+{
+  "mode": "regulation+GoldenGoal",
+  "cohorts": 90,
+  "swappedSide": true,
+  "opponent": [
+    "ledley-king",
+    "claudio-marchisio",
+    "antonio-valencia"
+  ],
+  "levels": {
+    "casual": {
+      "matches": 180,
+      "winRatePct": 56.1,
+      "averageOVR": 88.18,
+      "completeTrioPct": 28.9,
+      "averageScoutingScore": 88.94,
+      "tactics": {
+        "balanced": 90
+      }
+    },
+    "competitive": {
+      "matches": 180,
+      "winRatePct": 62.2,
+      "averageOVR": 91.69,
+      "completeTrioPct": 100,
+      "averageScoutingScore": 97.28,
+      "tactics": {
+        "possession": 76,
+        "balanced": 7,
+        "counter": 2,
+        "press": 5
+      }
+    },
+    "ruthless": {
+      "matches": 180,
+      "winRatePct": 62.8,
+      "averageOVR": 92.2,
+      "completeTrioPct": 100,
+      "averageScoutingScore": 97.71,
+      "tactics": {
+        "balanced": 4,
+        "possession": 82,
+        "counter": 1,
+        "press": 3
+      }
+    }
+  }
+}

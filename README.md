@@ -1,3 +1,15 @@
+# THE CAGE V6.5 War Room + Regulation Scoring
+
+V6.5 uses full regulation goals: outscore the opponent at full time to win. If the score is tied, Golden Goal sudden-death overtime determines the victor. The 194-player T3-6 engine supports historical first-goal replays separately.
+
+The 15-player random draft includes THE WAR ROOM for two-card, 17-stat comparisons without spending picks, and IRON AI 2.0 for fair, improved offline solo play.
+
+Run `dist/TheCage-V65-WarRoom-Regulation-Preview.exe`. Default route: `/draft.html`; solo mode selection is on the intro screen. Historic V5.6 Classic replay: `/classic-v56/play.html`.
+
+See `docs/V65_WAR_ROOM_RELEASE_REPORT.md` and the V6.5 balance/CPU benchmarking JSON files for the full research and tests.
+
+---
+
 # THE CAGE V6.4 IRON INTELLIGENCE
 
 V6.4 adds fair offline solo drafting against IRON AI in three difficulties (Casual, Competitive and Ruthless), while preserving two-player hotseat and the existing 194-player T3-6 engine. The CPU receives only its fifteen candidates and revealed opponent choices. It cannot read future pools, modify cards or rig match outcomes.

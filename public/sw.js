@@ -1,5 +1,5 @@
 /* THE CAGE V5.7: generated from the canonical playable dependency list. */
-const CACHE='the-cage-full-v57-b9c43ab55238';
+const CACHE='the-cage-full-v57-bdeca3cb3dc0';
 const STATIC=[
   "./assets/cage-icon.svg",
   "./classic-v56/assets/cage-icon.svg",
@@ -139,7 +139,8 @@ const STATIC=[
   "./src/viewer/coords.js",
   "./src/viewer/layout.js",
   "./src/viewer/timeline.js",
-  "./src/viewer/viewer.css"
+  "./src/viewer/viewer.css",
+  "./src/war-room.js"
 ];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(STATIC)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k.startsWith('the-cage-full-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));

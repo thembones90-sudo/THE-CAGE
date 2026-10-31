@@ -238,9 +238,10 @@ const traitOn=traitConfig?.enabled===true;
 const trait=traitOn?window.CageTraits:null;if(traitOn&&!trait)throw Error('Trait decision module is unavailable.');
 if(!Array.isArray(teams)||teams.length!==2||teams.some(ids=>!Array.isArray(ids)||ids.length!==3||new Set(ids).size!==3||ids.some(id=>typeof id!=='string'||!Object.hasOwn(BY_ID,id))))throw Error('Each side requires three distinct supported identities.');
 if(!Array.isArray(tactics)||tactics.length!==2||tactics.some(t=>typeof t!=='string'||!Object.hasOwn(TACTICS,t)))throw Error('Unknown tactic.');
-if(!Number.isInteger(seed)||seed<0||seed>0xffffffff)throw Error('Seed must be an unsigned 32-bit integer.');if(!['ko','timed'].includes(mode))throw Error('Unknown match mode.');
+if(!Number.isInteger(seed)||seed<0||seed>0xffffffff)throw Error('Seed must be an unsigned 32-bit integer.');if(!['ko','timed','score'].includes(mode))throw Error('Unknown match mode.');
 const R=rng(seed),events=[],score=[0,0],T=teams.map((ids,ti)=>{const ps=ids.map(id=>({id,c:comp(BY_ID[id]),twoWay:C.phaseProfile(BY_ID[id]).twoWay,fat:0,oop:0,ti})),sh=shape(ids.map(id=>BY_ID[id]));sh.duty.forEach((pi,i)=>ps[pi].duty=['anchor','link','spear'][i]);const team={ti,ps,tac:TACTICS[tactics[ti]],policy:window.CagePolicy.derive(ids.map(id=>BY_ID[id]),tactics[ti]),shape:sh};S.initial(team);return team;});
 let t=0,poss=0,carrier=null,x=0,lane=1,lastPasser=null,transition=false,over=false,tick=0,lastRegain=null;
+let suddenDeath=false,regulationScore=null,regulationAt=null;
 const zone=()=>({x,lane:['left','centre','right'][lane]}),context=()=>S.context(T,poss,carrier,zone());
 const eff=(q,k)=>q.c[k]*(1-Math.min(1,q.fat/F.fatigueScale)*(['dribble','press','recover','rebound','tackle','intercept'].includes(k)?F.mobileLoss:F.otherLoss));
 const tire=(q,kind)=>{q.fat+=P.fatigueCost[kind]*(F.fatigueBase-q.c.a.sta/100)*T[q.ti].tac.fat;};
@@ -256,7 +257,7 @@ function recover(){for(const q of T[1-poss].ps)if(q.oop>0){const r=duel(eff(q,'r
 function shoot(kind){const sh=carrier,ctx=context();emit({type:'shot_attempt',team:poss,actor:sh.id,zone:zone(),kind,pressure:ctx.d?.id||null},ctx,true);t+=P.dt.shot;
 for(const bl of [ctx.d,ctx.helper].filter(Boolean)){const A=F.blockTackle*eff(bl,'tackle')+F.blockRead*eff(bl,'intercept'),b=(bl===ctx.d?P.block:P.blockCover)-P.support*ctx.supportQ+P.help*(bl===ctx.d?ctx.helpQ:0),r=duel(A,F.shotBlockTarget,b,null,false);if(r.win){emit({type:'block',team:1-poss,actor:bl.id,opp:sh.id,p:r.p,roll:r.roll,outcome:'blocked',roles:{blocker:bl.id},calc:r.calc},ctx,true);return loose('block');}}
 const base=kind==='fk'?P.shot.fk:x===3?P.shot.box[lane===1?'C':'S']:P.shot.edge[lane===1?'C':'S'],quality=kind==='box'||kind==='one_v_one'?eff(sh,'shot'):eff(sh,'long'),z=base+(quality-F.shotReference)/P.shot.q+(transition?P.shot.transition:0)+(ctx.d?P.shot.pressure:0)+(kind==='one_v_one'?F.clearShot:0),p=lim(logistic(z),F.shotMin,F.shotMax),roll=R();
-if(roll<p){score[poss]++;emit({type:'goal',team:poss,actor:sh.id,p,roll,kind,zone:zone(),assist:lastPasser,transition,calc:{quality:rounded(quality),logit:rounded(z)}},ctx,true);over=mode==='ko';if(!over)restart(1-poss,'kickoff');return;}
+if(roll<p){score[poss]++;emit({type:'goal',team:poss,actor:sh.id,p,roll,kind,zone:zone(),assist:lastPasser,transition,...(suddenDeath?{golden:true}:{}),calc:{quality:rounded(quality),logit:rounded(z)}},ctx,true);over=mode==='ko'||(mode==='score'&&suddenDeath);if(!over)restart(1-poss,'kickoff');return;}
 emit({type:'shot_miss',team:poss,actor:sh.id,p,roll,kind,outcome:roll<p+(1-p)*F.nearMiss?'off_post_or_wide':'wide'},ctx);loose('wall');}
 function loose(source){lastPasser=null;const ball=S.world(zone(),poss),rank=team=>team.ps.slice().sort((a,b)=>S.dist(a.pos,ball)-S.dist(b.pos,ball)||b.c.rebound-a.c.rebound),att=rank(T[poss])[0],def=rank(T[1-poss])[0],r=duel(eff(att,'rebound'),eff(def,'rebound')+F.reboundEdge,P.b.rebound),winner=r.win?att:def;emit({type:'rebound',team:winner.ti,actor:winner.id,opp:r.win?def.id:att.id,p:r.p,roll:r.roll,source,outcome:r.win?'attack_keeps':'defence_clears',calc:r.calc});
 if(r.win){carrier=att;x=3;lane=1;carrier.pos=S.world(zone(),poss);}else turnover(def,'rebound','second_ball');}
@@ -291,9 +292,17 @@ const movement=(receiver.c.a.agi+receiver.c.a.pace)/2,pressure=engaged?Q.pressPe
 t+=P.dt[action];tire(c,'pass');emit({type:action==='through'||action==='outlet'?'through_ball':'pass',team:poss,actor:c.id,target:receiver.id,opp:md?.id||null,p:r.p,roll:r.roll,zone:zb,to,outcome:r.win?'complete':'intercepted',tags:action==='outlet'?['direct_outlet']:[],roles:{receiver:receiver.id},calc:{...r.calc,weights,wasTransition:transition,forwardDistance:to.x-x}},passCtx,!!md);
 if(r.win){lastPasser=c.id;carrier=receiver;x=to.x;lane=receiver.pos.y;if(action!=='pass'&&md){const race=duel(.5*eff(receiver,'recover')+.5*receiver.c.dribble,eff(md,'recover'),.2);emit({type:'race',team:poss,actor:receiver.id,opp:md.id,p:race.p,roll:race.roll,outcome:race.win?'attacker_clear':'defender_recovers',calc:race.calc});if(race.win)md.oop=2;}return;}return turnover(md,'interception','read_pass');}
 }
-restart(R()<.5?0:1,'kickoff');while(!over){if(mode==='timed'&&t>=P.timedSeconds)break;step();if(t>P.maxSeconds&&!over)throw Error('Cage golden-goal safety limit: simulation exceeded 100 minutes without a goal.');}
+restart(R()<.5?0:1,'kickoff');while(!over){
+ if(mode==='timed'&&t>=P.timedSeconds)break;
+ if(mode==='score'&&!regulationScore&&t>=P.timedSeconds){
+   regulationScore=score.slice();regulationAt=t;
+   if(score[0]!==score[1])break;
+   suddenDeath=true;emit({type:'golden_goal_start',team:poss,actor:carrier.id,reason:'regulation_tied',score:score.slice(),zone:zone()});
+ }
+ step();if(t>P.maxSeconds&&!over)throw Error('Cage match safety limit: simulation exceeded 100 simulated minutes without a decision.');
+}
 const winner=score[0]>score[1]?0:score[1]>score[0]?1:-1;
-return freeze({events,score,winner,duration:t,draws:R.count(),shapes:T.map(team=>({duty:Object.fromEntries(team.ps.map(q=>[q.id,q.duty])),cover:team.shape.cover.map(rounded),policy:team.policy})),eventHash:hashEvents(events)});
+return freeze({events,score,winner,duration:t,draws:R.count(),...(mode==='score'?{regulationSeconds:P.timedSeconds,regulationAt,regulationScore:regulationScore||score.slice(),decidedBy:suddenDeath?'golden_goal':'regulation'}:{}),shapes:T.map(team=>({duty:Object.fromEntries(team.ps.map(q=>[q.id,q.duty])),cover:team.shape.cover.map(rounded),policy:team.policy})),eventHash:hashEvents(events)});
 }
 function stats(res,teams){const s=teams.map(ids=>({team:{poss:0,shots:0,onTarget:0,passes:0,passesOk:0,dribblesOk:0,tackles:0,interceptions:0,blocks:0,goals:0},players:Object.fromEntries(ids.map(id=>[id,{shots:0,goals:0,passesOk:0,dribblesOk:0,tackles:0,interceptions:0,blocks:0,chancesCreated:0}]))}));let prev=0,poss=null;for(const e of res.events){if(poss!==null)s[poss].team.poss+=e.t-prev;prev=e.t;const t=s[e.team],p=t.players[e.actor];if(['restart','turnover','rebound'].includes(e.type))poss=e.team;if(['pass','through_ball'].includes(e.type)){t.team.passes++;if(e.outcome==='complete'){t.team.passesOk++;p.passesOk++;}else{s[1-e.team].team.interceptions++;s[1-e.team].players[e.opp].interceptions++;}}if(['dribble_duel','wall_pass'].includes(e.type)){if(e.outcome==='attacker_wins'){t.team.dribblesOk++;p.dribblesOk++;}else if(e.outcome==='defender_wins'){s[1-e.team].team.tackles++;s[1-e.team].players[e.opp].tackles++;}}if(e.type==='shot_attempt'){t.team.shots++;p.shots++;}if(e.type==='goal'){t.team.goals++;t.team.onTarget++;p.goals++;if(e.assist)t.players[e.assist].chancesCreated++;}if(e.type==='block'){t.team.blocks++;p.blocks++;}if(e.type==='press'&&e.outcome==='ball_won'){t.team.tackles++;p.tackles++;}}const total=s[0].team.poss+s[1].team.poss||1;s[0].team.poss=Math.round(100*s[0].team.poss/total);s[1].team.poss=100-s[0].team.poss;return s;}
 window.CageEngine={VERSION:'cage-t3-6',PARAMS_VERSION:window.CageTacticalParams.VERSION,simulate,stats,ROSTER,BY_ID,comp,shape,TACTICS,P,freeze,hashEvents,probability,policy:window.CagePolicy.derive,validateEvidence:window.CageEvidence.validate};
