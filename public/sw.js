@@ -1,5 +1,5 @@
 /* THE CAGE V5.7: generated from the canonical playable dependency list. */
-const CACHE='the-cage-full-v57-b1d0d7a08d16';
+const CACHE='the-cage-full-v57-b9c43ab55238';
 const STATIC=[
   "./assets/cage-icon.svg",
   "./classic-v56/assets/cage-icon.svg",
@@ -92,6 +92,7 @@ const STATIC=[
   "./src/cage-engine-draft.js",
   "./src/cage-engine.js",
   "./src/cage-ui.css",
+  "./src/cpu-draft.js",
   "./src/di-canio-recruitment-v1.js",
   "./src/elite-ovr-approved-v21.js",
   "./src/engine/legacy-v04.js",

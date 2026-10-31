@@ -1,3 +1,13 @@
+# THE CAGE V6.4 IRON INTELLIGENCE
+
+V6.4 adds fair offline solo drafting against IRON AI in three difficulties (Casual, Competitive and Ruthless), while preserving two-player hotseat and the existing 194-player T3-6 engine. The CPU receives only its fifteen candidates and revealed opponent choices. It cannot read future pools, modify cards or rig match outcomes.
+
+Run `dist/TheCage-V64-Iron-Intelligence-Preview.exe`, which opens the 15-candidate draft at `/draft.html`. Select **Solo vs IRON AI** before the coin toss. The CPU drafts three cards and locks a tactical plan. Historic saved hotseat games continue under the same key.
+
+See `docs/V64_IRON_RELEASE_REPORT.md` and `docs/V64_BALANCE_AUDIT.json` for acceptance checks and the initial competitive balance research.
+
+---
+
 # THE CAGE V6.3 Goal & Action Preview
 
 V6.3 combines the recorded-goal broadcast with V6.2's 194-player T3 game, cinematic, 15-card random draft and accessibility refinements. The goal presentation and action styles read recorded events only. Reduced motion hides decorative goal doors.

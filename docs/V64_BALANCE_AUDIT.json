@@ -1,0 +1,148 @@
+{
+  "version": "V6.4 initial 194-player paired-seed audit",
+  "engine": "cage-t3-6",
+  "roster": 194,
+  "traitsEnabled": true,
+  "seedPairsPerScenario": 100,
+  "totalMatches": 1000,
+  "tierOverallRanges": {
+    "LEGEND": {
+      "count": 71,
+      "min": 80,
+      "median": 89,
+      "max": 95
+    },
+    "ELITE": {
+      "count": 72,
+      "min": 85,
+      "median": 88,
+      "max": 91
+    },
+    "TITAN": {
+      "count": 30,
+      "min": 88,
+      "median": 92,
+      "max": 96
+    },
+    "ACE": {
+      "count": 4,
+      "min": 75,
+      "median": 79,
+      "max": 81
+    },
+    "STALWART": {
+      "count": 17,
+      "min": 81,
+      "median": 83,
+      "max": 87
+    }
+  },
+  "scenarios": [
+    {
+      "label": "Prime creators vs elite all-round trio",
+      "matches": 200,
+      "pairedSeeds": 100,
+      "sideAWinPct": 60.5,
+      "sideBWinPct": 39.5,
+      "safetyCaps": 0,
+      "p50Seconds": 145,
+      "p95Seconds": 598,
+      "uniqueEventHashes": 200
+    },
+    {
+      "label": "Three defenders vs conventional balance",
+      "matches": 200,
+      "pairedSeeds": 100,
+      "sideAWinPct": 18,
+      "sideBWinPct": 82,
+      "safetyCaps": 0,
+      "p50Seconds": 130,
+      "p95Seconds": 505,
+      "uniqueEventHashes": 200
+    },
+    {
+      "label": "Three forwards vs balanced high-end",
+      "matches": 200,
+      "pairedSeeds": 100,
+      "sideAWinPct": 43.5,
+      "sideBWinPct": 56.5,
+      "safetyCaps": 0,
+      "p50Seconds": 68,
+      "p95Seconds": 265,
+      "uniqueEventHashes": 200
+    },
+    {
+      "label": "Three midfielders vs conventional balance",
+      "matches": 200,
+      "pairedSeeds": 100,
+      "sideAWinPct": 42.5,
+      "sideBWinPct": 57.5,
+      "safetyCaps": 0,
+      "p50Seconds": 70,
+      "p95Seconds": 308,
+      "uniqueEventHashes": 200
+    },
+    {
+      "label": "Press vs possession tactical differential",
+      "matches": 200,
+      "pairedSeeds": 100,
+      "sideAWinPct": 70.5,
+      "sideBWinPct": 29.5,
+      "safetyCaps": 0,
+      "p50Seconds": 111,
+      "p95Seconds": 444,
+      "uniqueEventHashes": 200
+    }
+  ],
+  "note": "Diagnostic, not a calibrated game-balance acceptance threshold; asymmetric squads vary in talent. Each seed is repeated with both sides reversed.",
+  "controlledTactics": {
+    "explanation": "Same two fixed trios and paired seeds, with only tactics changed; side positions reversed to reduce side bias. Not a global conclusion about tactics.",
+    "teamA": [
+      "paolo-maldini",
+      "michael-ballack",
+      "ronaldo-nazario"
+    ],
+    "teamB": [
+      "ledley-king",
+      "luka-modric",
+      "thierry-henry"
+    ],
+    "rows": [
+      {
+        "commanderTactic": "balanced",
+        "opponentTactic": "balanced",
+        "matches": 200,
+        "commanderWinsPct": 53,
+        "safetyCaps": 0
+      },
+      {
+        "commanderTactic": "press",
+        "opponentTactic": "possession",
+        "matches": 200,
+        "commanderWinsPct": 72.5,
+        "safetyCaps": 0
+      },
+      {
+        "commanderTactic": "press",
+        "opponentTactic": "balanced",
+        "matches": 200,
+        "commanderWinsPct": 65,
+        "safetyCaps": 0
+      },
+      {
+        "commanderTactic": "balanced",
+        "opponentTactic": "possession",
+        "matches": 200,
+        "commanderWinsPct": 65,
+        "safetyCaps": 0
+      },
+      {
+        "commanderTactic": "possession",
+        "opponentTactic": "press",
+        "matches": 200,
+        "commanderWinsPct": 50.5,
+        "safetyCaps": 0
+      }
+    ]
+  }
+}

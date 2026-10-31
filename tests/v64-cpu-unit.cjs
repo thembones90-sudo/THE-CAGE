@@ -1,0 +1,30 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const C=require('../src/cpu-draft.js');
+const make=(id,r,overall)=>({id,name:id,role:r,overall,r:{pace:80,tech:80,pass:80,finish:80,def:80,phys:80,stamina:80,composure:80}});
+const fifteen=Array.from({length:15},(_,i)=>make('p'+i,i%3===0?'D':i%3===1?'M':'F',76+i));
+const rng=()=>.25,teams=[make('own','D',87),make('their','F',91)];
+for(const level of C.LEVELS){
+ const x=C.choose({candidates:fifteen,selected:[teams[0]],opponent:[teams[1]],level,rng,rerollsLeft:0});
+ assert(fifteen.some(p=>p.id===x.id),level+' choice not in own 15');
+ assert(!x.reroll,level+' rerolled without token');
+ assert(C.TACTICS.includes(C.tactic([teams[0],make('mid','M',90),make('fwd','F',89)],teams,level,rng)));
+}
+assert.equal(C.role(make('D','CB',89)),'D');
+assert.equal(C.role(make('M','CAM',85)),'M');
+assert.equal(C.role(make('F','ST',90)),'F');
+const repeated=C.choose({candidates:fifteen,selected:[teams[0]],opponent:[teams[1]],level:'ruthless',rng,rerollsLeft:0});
+assert.equal(repeated.id,C.choose({candidates:fifteen,selected:[teams[0]],opponent:[teams[1]],level:'ruthless',rng,rerollsLeft:0}).id);
+const weak=Array.from({length:15},(_,i)=>make('weak-'+i,i%3===0?'D':i%3===1?'M':'F',48));
+const wanted=C.choose({candidates:weak,level:'ruthless',rng,rerollsLeft:1});
+assert.equal(wanted.reroll,true,'Ruthless CPU should use its single reroll on a weak pool');
+assert.equal(wanted.id,null);
+assert.equal(C.choose({candidates:weak,level:'ruthless',rng,rerollsLeft:0}).reroll,false,'CPU cannot exceed its reroll allowance');
+assert.throws(()=>C.choose({candidates:fifteen.slice(1),level:'casual',rng}),/exactly 15/);
+assert.throws(()=>C.choose({candidates:fifteen,level:'impossible',rng}),/Invalid CPU/);
+const before=JSON.stringify(fifteen);
+C.choose({candidates:fifteen,selected:teams,opponent:teams,level:'ruthless',rng});
+assert.equal(JSON.stringify(fifteen),before,'CPU mutated input');
+const main=fs.readFileSync(path.join(__dirname,'../src/cpu-draft.js'),'utf8');
+assert(!/\.simulate\(|CageEngine|CageRecords|matchResult|eventHash/.test(main),'CPU must have no match-engine access');
+console.log('V64_CPU_UNIT_PASS 3 difficulties, fair 15-card input, no reroll cheating, deterministic tactical evaluation, no engine or mutation access');
