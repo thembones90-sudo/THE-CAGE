@@ -33,8 +33,13 @@ for(const [id,min,max] of [
  ['andrea-pirlo',88,94],['andres-iniesta',90,96],['xavi-hernandez',89,95],
  ['luka-modric',89,95],['juan-roman-riquelme',85,92],['ngolo-kante',84,93],
  ['sergio-busquets',84,93],['nemanja-vidic',84,93],['roy-makaay',87,94],
- ['juan-carlos-valeron',89,96]
+ ['juan-carlos-valeron',85,89]
  ]){const v=named[id].overall;assert(v>=min&&v<=max,id+' failed reference range: '+v);}
+const valeron=named['juan-carlos-valeron'];
+assert.equal(valeron.overall,87,'Valeron historical calibration');
+assert.equal(valeron.careerTier,'ELITE','Valeron must remain ELITE under the owner-locked historical tier standard');
+assert.equal(api.raw(valeron),87,'Valeron must be formula-derived, not overridden');
+assert.deepEqual([valeron.r.tech,valeron.r.pass,valeron.r.first_touch,valeron.r.dribbling,valeron.r.vision,valeron.r.composure],[90,90,92,87,92,87]);
 const alex=named['alex-de-souza'];
 assert.equal(alex.careerTier,'ELITE');assert.equal(api.raw(alex),94);assert.equal(alex.overall,89);
 assert.equal(api.REVIEW_OVERRIDES['alex-de-souza'].status,'provisional-pending-owner-approval');

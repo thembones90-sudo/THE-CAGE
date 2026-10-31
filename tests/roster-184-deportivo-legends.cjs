@@ -26,7 +26,7 @@ const expectedPos={'juan-carlos-valeron':['CAM',['CM']],'roy-makaay':['ST',['CF'
 const keys=['pace','tech','pass','finish','def','phys','first_touch','dribbling','passing','vision','finishing','shooting','stamina','physical','tackling','positioning','composure'];
 for(const s of source.players){
  const p=byId.get(s.id);assert(p,'Missing new player: '+s.id);
- assert.equal(p.name,s.name);assert.equal(p.careerTier,'LEGEND');
+ assert.equal(p.name,s.name);assert.equal(p.careerTier,s.tier);
  assert.deepEqual(Array.from(p.folklore),s.folklore);
  assert.deepEqual([p.traits.primary,p.traits.secondary],s.traits);
  assert.deepEqual([p.position,Array.from(p.secondaryPositions)],expectedPos[s.id]);
@@ -56,4 +56,4 @@ for(const [team1,team2] of games)for(const seed of [10,37,88]){
  assert.deepEqual(JSON.parse(JSON.stringify(a)),JSON.parse(JSON.stringify(b)),'nondeterministic T3 seed '+seed);
  assert([0,1].includes(a.winner));
 }
-console.log('PASS: 184 unique players, Valeron + Makaay LEGEND dossiers, 17 core/extended ratings + 5 tactical stats, badges, traits, search, 182 existing players preserved, six deterministic T3 matches.');
+console.log('PASS: 184 unique players, Valeron ELITE + Makaay LEGEND dossiers, 17 core/extended ratings + 5 tactical stats, badges, traits, search, 182 existing players preserved, six deterministic T3 matches.');

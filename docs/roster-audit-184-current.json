@@ -5,8 +5,8 @@
   "warnings": [],
   "distribution": {
     "tier": {
-      "ELITE": 56,
-      "LEGEND": 80,
+      "ELITE": 57,
+      "LEGEND": 79,
       "STALWART": 18,
       "TITAN": 30
     },
@@ -6883,7 +6883,7 @@
       "secondaryPositions": [
         "CM"
       ],
-      "careerTier": "LEGEND",
+      "careerTier": "ELITE",
       "folklore": [
         "STREET HERO",
         "TALISMAN",
@@ -6896,23 +6896,23 @@
       "ratingType": "editorial-recruit-v1.6",
       "provisionalTactical": true,
       "r": {
-        "pace": 67,
-        "tech": 97,
-        "pass": 98,
-        "finish": 72,
+        "pace": 64,
+        "tech": 90,
+        "pass": 90,
+        "finish": 70,
         "def": 35,
-        "phys": 59,
-        "first_touch": 98,
-        "dribbling": 92,
-        "passing": 98,
-        "vision": 99,
-        "finishing": 72,
-        "shooting": 73,
-        "stamina": 76,
-        "physical": 59,
+        "phys": 58,
+        "first_touch": 92,
+        "dribbling": 87,
+        "passing": 90,
+        "vision": 92,
+        "finishing": 70,
+        "shooting": 72,
+        "stamina": 75,
+        "physical": 58,
         "tackling": 35,
-        "positioning": 85,
-        "composure": 97
+        "positioning": 80,
+        "composure": 87
       }
     },
     {
@@ -7448,15 +7448,15 @@
         "v": 99
       },
       {
-        "id": "juan-carlos-valeron",
-        "v": 99
-      },
-      {
         "id": "xavi-hernandez",
         "v": 98
       },
       {
         "id": "andres-iniesta",
+        "v": 98
+      },
+      {
+        "id": "david-silva",
         "v": 98
       }
     ],
@@ -7652,12 +7652,12 @@
     "tech": {
       "min": 56,
       "max": 100,
-      "mean": 86.1
+      "mean": 86
     },
     "pass": {
       "min": 61,
       "max": 99,
-      "mean": 83.6
+      "mean": 83.5
     },
     "finish": {
       "min": 25,
@@ -7687,7 +7687,7 @@
     "passing": {
       "min": 61,
       "max": 99,
-      "mean": 83.6
+      "mean": 83.5
     },
     "vision": {
       "min": 60,
@@ -7727,7 +7727,7 @@
     "composure": {
       "min": 42,
       "max": 100,
-      "mean": 82.6
+      "mean": 82.5
     }
   },
   "rosterVersion": "editorial-v1.6-184+ratings-v1.1-provisional",

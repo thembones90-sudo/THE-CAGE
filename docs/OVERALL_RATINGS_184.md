@@ -6,8 +6,8 @@
 
 | OVR band | Players |
 |---|---:|
-| 90–99 | 74 |
-| 85–89 | 89 |
+| 90–99 | 73 |
+| 85–89 | 90 |
 | 80–84 | 17 |
 | 75–79 | 4 |
 | 1–74 | 0 |
@@ -24,7 +24,6 @@
 | **94** | Alan Shearer | ST | Poacher | TITAN |
 | **94** | Cristiano Ronaldo | LW | Goalscoring winger | TITAN |
 | **94** | Dejan Savićević | CAM | Classic playmaker | LEGEND |
-| **94** | Juan Carlos Valerón | CAM | Classic playmaker | LEGEND |
 | **94** | Thierry Henry | LW | Goalscoring winger | TITAN |
 | **94** | Zlatan Ibrahimović | ST | Poacher | TITAN |
 | **93** | Adriano | ST | Poacher | ELITE |
@@ -143,6 +142,7 @@
 | **87** | Dejan Stanković | CM | Deep orchestrator | LEGEND |
 | **87** | Jamie Vardy | ST | Poacher | ELITE |
 | **87** | Jefferson Farfán | RW | Goalscoring winger | ELITE |
+| **87** | Juan Carlos Valerón | CAM | Classic playmaker | LEGEND |
 | **87** | Ledley King | CB | Traditional centre-back | ELITE |
 | **87** | Mario Balotelli | ST | Poacher | STALWART |
 | **87** | Michael Essien | CM | Ball winner | ELITE |
