@@ -4,7 +4,7 @@ main>.top{position:sticky;top:0;z-index:5;background:#101e2bf5;padding:10px 0;bo
 .slot>label,.slot>div{grid-column:1/-1}.slot>label{margin:0}.slot>input{min-width:0}
 .slot.claimed{display:block;border-left:3px solid #4ec9aa;padding:12px}.b .slot.claimed{border-left-color:#f1a85d}
 .slot.claimed>label,.slot.claimed>input,.slot.claimed>button{display:none}.slot.claimed>div{margin-top:0!important}
-.slot strong{display:block;font-size:17px;color:#edf2f6}.player-detail{display:block;color:#b5c6d3;font-size:12px;line-height:1.7;margin-top:4px}
+.slot strong{display:block;font-size:17px;color:#edf2f6}.overall-rating{float:right;display:inline-grid;place-items:center;min-width:72px;padding:7px 10px;margin:0 0 4px 8px;border-radius:9px;border:1px solid #f0c56e;background:linear-gradient(145deg,#645021,#2c271c);color:#ffe1a0;font-size:18px;font-weight:900;font-variant-numeric:tabular-nums;letter-spacing:.03em}.match-view .overall-rating{padding:4px 7px;min-width:61px;font-size:14px}.player-detail{display:block;color:#b5c6d3;font-size:12px;line-height:1.7;margin-top:4px}
 .match-view main>.grid .panel{padding:12px}.match-view main>.grid .panel>label,.match-view main>.grid .panel>select,.match-view main>.grid .panel>button{display:none}
 .match-view .player-detail{display:none}.match-view .slot{margin:6px 0;padding:8px}
 #reset{background:transparent;border-color:#536475}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #7debc4;outline-offset:3px}

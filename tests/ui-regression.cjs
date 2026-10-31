@@ -11,7 +11,7 @@ check([...document.querySelectorAll('input')].every(e=>e.value===''),'initial bl
 let slot=search('A',0,'Jaap Stam');check(slot.querySelector('.confirm'),'Stam resolves');
 slot.querySelector('input').value='Invented';slot.querySelector('input').dispatchEvent(new Event('input'));
 check(!slot.querySelector('.confirm'),'stale confirmation cleared');
-claim('A',0,'R9');check($('slotsA').children[0].querySelector('input').value==='Ronaldo Nazário','canonical input');
+claim('A',0,'R9');check($('slotsA').children[0].querySelector('input').value==='Ronaldo Nazário','canonical input');check($('slotsA').children[0].querySelector('.overall-rating')?.textContent==='OVR '+window.CageOverall.read(window.THE_CAGE_PLAYERS.find(p=>p.id==='ronaldo-nazario')),'claimed tile overall badge');
 slot=search('B',0,'Ronaldo Nazario');check(!slot.querySelector('.confirm')&&slot.textContent.includes('already claimed'),'early unavailable feedback');
 // UI boundary fixture: choose real seeded results with a specified winner to cover 2-2 and a fifth round.
 const real=window.CageEngine.simulate,sequence=[0,1,0,1,0];let roundIndex=0;
