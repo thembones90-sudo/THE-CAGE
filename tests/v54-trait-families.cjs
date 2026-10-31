@@ -6,7 +6,7 @@ const family=x=>Object.keys(families).find(k=>families[k].includes(x));
 const originals=require('../proposals/trait-family-v16-reviewed.json').rows;
 assert.equal(players.length,182);assert.equal(traits.CATALOG.length,15);
 assert.equal(W.CAGE_ROSTER_VERSION,W.CAGE_TACTICAL_CALIBRATION.rosterVersion);
-assert.equal(W.CageEngine.VERSION,'cage-t3-5');
+assert.equal(W.CageEngine.VERSION,'cage-t3-6');
 assert.equal(W.CAGE_TRAIT_REFINEMENT.corrected,110);
 assert.equal(Object.keys(originals).length,110);
 assert.equal(players.some(p=>p.traits.primary==='Tracker'||p.traits.secondary==='Tracker'),false);

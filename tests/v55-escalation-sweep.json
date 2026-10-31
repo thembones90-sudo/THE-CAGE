@@ -1,0 +1,58 @@
+{
+  "rows": [
+    {
+      "threshold": 600,
+      "seedPairs": 400,
+      "matches": 800,
+      "completed": 798,
+      "caps": 2,
+      "winPossessionPct": 7.02,
+      "p95": 3229
+    },
+    {
+      "threshold": 900,
+      "seedPairs": 400,
+      "matches": 800,
+      "completed": 796,
+      "caps": 4,
+      "winPossessionPct": 9.55,
+      "p95": 3651
+    },
+    {
+      "threshold": 1200,
+      "seedPairs": 400,
+      "matches": 800,
+      "completed": 796,
+      "caps": 4,
+      "winPossessionPct": 12.69,
+      "p95": 3739
+    },
+    {
+      "threshold": 1500,
+      "seedPairs": 400,
+      "matches": 800,
+      "completed": 798,
+      "caps": 2,
+      "winPossessionPct": 14.04,
+      "p95": 3910
+    },
+    {
+      "threshold": 1800,
+      "seedPairs": 400,
+      "matches": 800,
+      "completed": 794,
+      "caps": 6,
+      "winPossessionPct": 16.25,
+      "p95": 3908
+    },
+    {
+      "threshold": 2100,
+      "seedPairs": 400,
+      "matches": 800,
+      "completed": 793,
+      "caps": 7,
+      "winPossessionPct": 16.52,
+      "p95": 4076
+    }
+  ]
+}

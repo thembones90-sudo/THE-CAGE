@@ -5,7 +5,7 @@ const script="\n(async()=>{\n const $=id=>document.getElementById(id),check=(v,m
 fs.writeFileSync(page,fs.readFileSync(path.join(root,'play.html'),'utf8').replace('</body>','<script>'+script+'</script></body>'));
 const t3=process.argv.includes('--t3'),chrome='C:/Program Files/Google/Chrome/Application/chrome.exe';
 const dir=path.join(root,'chrome-invalid-'+process.pid+(t3?'-t3':''));
-const url=(process.env.CAGE_E2E_BASE||'http://127.0.0.1:51864')+'/v53-invalid-recovery.html'+(t3?'?engine=t3':'');
+const url=(process.env.CAGE_E2E_BASE||'http://127.0.0.1:51865')+'/v53-invalid-recovery.html'+(t3?'?engine=t3':'');
 const r=cp.spawnSync(chrome,['--headless=new','--disable-gpu','--no-sandbox','--no-first-run','--disable-extensions','--user-data-dir='+dir,'--virtual-time-budget=18000','--dump-dom',url],{encoding:'utf8',timeout:60000,maxBuffer:18e6});
 if(r.error)throw r.error;
 const text=r.stdout.match(/<pre id="v53-invalid-result">([\s\S]*?)<\/pre>/)?.[1]||'No test result';

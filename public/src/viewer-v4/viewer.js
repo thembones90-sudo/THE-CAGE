@@ -36,6 +36,7 @@ function shell(el,o){el.innerHTML=`<div class="cv-root" tabindex="-1">
   <button class="cv-tap" data-k="tap" aria-label="Play or pause"></button>
  </div>
  <aside class="cv-side">
+  <div class="cv-tactics" data-k="tactics" role="note" aria-label="Recorded starting tactics"></div>
   <div class="cv-onball" data-k="onball">&nbsp;</div>
   <h2>Commentary <button class="cv-mini" data-k="commtoggle" aria-pressed="true">Hide</button></h2>
   <ol class="cv-comm" data-k="comm" aria-live="polite"></ol>
@@ -66,6 +67,15 @@ function mount(el,record,opts){
   el.querySelector('.cv-round').textContent=tl.round?'ROUND '+tl.round:'MATCH';
   el.querySelector('.cv-a').textContent=o.teamNames[0].toUpperCase();el.querySelector('.cv-b').textContent=o.teamNames[1].toUpperCase();
   q('showdown').textContent=o.showdown?o.showdown.A+'–'+o.showdown.B:'—';q('sdchip').textContent=o.showdown?(o.showdown.label||'BEFORE ROUND'):'NOT IN FILE';
+  // Starting tactical choices come DIRECTLY from the immutable match record.
+  // This is context, not live tactical intelligence invented by the viewer.
+  const recordedTactics=record.config&&Array.isArray(record.config.tactics)?record.config.tactics:null;
+  q('tactics').innerHTML=recordedTactics&&recordedTactics.length===2?
+    '<small>RECORDED TACTICS · '+esc(record.engineVersion||'UNKNOWN ENGINE')+'</small><div>'+
+    '<b class="t0">'+esc(String(recordedTactics[0]).toUpperCase())+'</b>'+
+    '<span>VS</span><b class="t1">'+esc(String(recordedTactics[1]).toUpperCase())+'</b></div>'+
+    '<div class="cv-surge" data-k="surge" hidden></div>':'';
+
   const inferredMotionNote='V5.2 body facing, acceleration trails, turning and ball-flight styling are deterministic inferred visuals from recorded positions; they are not measured individual footwork.';
   q('notes').innerHTML=tl.notes.concat(tl.warnings,[inferredMotionNote]).map(n=>'<li>'+esc(n)+'</li>').join('');
   q('speed').value=pb.speed;canvas.setAttribute('aria-label','Top-down cage pitch: '+tl.teams.map((t,i)=>o.teamNames[i]+' '+t.map(name).join(', ')).join(' versus '));
@@ -88,7 +98,18 @@ function mount(el,record,opts){
     const st=pb.inReplay?'REPLAY':pb.state==='ended'?'FULL TIME':pb.state==='playing'?(o.mode==='replay'?'▶ REPLAY':'● LIVE'):pb.state==='paused'?'❚❚ PAUSED':'READY';q('state').textContent=st;root.dataset.state=pb.inReplay||o.mode==='replay'?'replay':pb.state;
     q('play').textContent=pb.state==='playing'?'❚❚':'▶';q('play').setAttribute('aria-label',pb.state==='playing'?'Pause':'Play');
     q('seek').value=String(Math.round(1000*tau/tl.total));q('ptime').textContent=real(tau)+' / '+real(tl.total)+(seg.danger||pb.speed==='full'?'':' ≫');
-    const ev=events[seg.i],who=ball.owner||seg.carrier;q('onball').innerHTML=who?'<small>ON THE BALL</small> <b class="t'+tl.teamOf[who]+'">'+esc(name(who))+'</b>':'<small>LOOSE BALL</small>';
+    const ev=events[seg.i],who=ball.owner||seg.carrier;
+    const surge=q('surge');
+    if(surge){
+      const status=(record.result.shapes||[]).map((shape,side)=>{
+        const ids=record.config?.teams?.[side]||[];
+        const committed=ids.filter(id=>ev.calc?.commitment?.[id]===true).length;
+        return shape.policy?.latePressEligible&&ev.t>=1500&&committed>=2?o.teamNames[side]:null;
+      }).filter(Boolean);
+      surge.hidden=status.length===0;
+      surge.textContent=status.length?'LATE HIGH-PRESS SURGE · '+status.join(' / '):'';
+    }
+    q('onball').innerHTML=who?'<small>ON THE BALL</small> <b class="t'+tl.teamOf[who]+'">'+esc(name(who))+'</b>':'<small>LOOSE BALL</small>';
     const b=q('banner');const ban=ev.type==='restart'&&seg.move===0||ev.type==='restart'&&T.phase(seg,tau)<.6?'KICK-OFF':ev.transition&&ev.type==='turnover'?'COUNTER':ev.type==='free_kick'?'FREE KICK':ev.type==='foul'?'FOUL':'';b.textContent=ban;b.classList.toggle('on',!!ban);
     const action=q('action');action.textContent=motion.showEvent&&seg.type!=='goal'?motion.label+(motion.roles.actor?' / '+name(motion.roles.actor).toUpperCase():''):'';action.classList.toggle('on',!!action.textContent);
     if(!goalShown&&tau<(tl.goals[0]||{tau:Infinity}).tau)q('goalcard').hidden=true;

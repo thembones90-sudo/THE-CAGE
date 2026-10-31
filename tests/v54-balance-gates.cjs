@@ -5,12 +5,12 @@ const before=JSON.parse(fs.readFileSync(path.join(root,'tests/v54-balance-before
 const after=JSON.parse(fs.readFileSync(path.join(root,'tests/v54-balance-after.json'),'utf8'));
 const W=require('./viewer/harness.cjs').loadEngine(),E=W.CageEngine;
 assert.equal(W.THE_CAGE_PLAYERS.length,182);
-assert.equal(E.VERSION,'cage-t3-5');
-assert.equal(E.PARAMS_VERSION,'t3-space-4');
+assert.equal(E.VERSION,'cage-t3-6');
+assert.equal(E.PARAMS_VERSION,'t3-space-5');
 assert.equal(E.P.shot.q,15);
 assert.equal(E.P.resolution.shotReference,68);
 assert.equal(before.version,'cage-t3-3');
-assert.equal(after.version,E.VERSION);
+assert.equal(after.version,'cage-t3-5');
 assert.equal(before.rows.length,after.rows.length);
 let nonDDDMaxShift=0;
 for(let i=0;i<before.rows.length;i++){

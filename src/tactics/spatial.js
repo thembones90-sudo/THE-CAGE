@@ -1,6 +1,6 @@
 (()=>{'use strict';const dist=(a,b)=>Math.abs(a.x-b.x)+Math.abs(a.y-b.y),lim=window.CageCapabilities.lim;
 const world=(zone,team)=>({x:team===0?zone.x:3-zone.x,y:{left:0,centre:1,right:2}[zone.lane]}),oriented=(p,team)=>team===0?p.x:3-p.x;
-function commitment(team){const order=team.ps.slice().sort((a,b)=>(b.c.ATT-b.c.DEF)-(a.c.ATT-a.c.DEF));order.forEach((p,i)=>p.committed=i<team.policy.commitForward);}
+function commitment(team){const order=team.ps.slice().sort((a,b)=>(b.c.ATT-b.c.DEF)-(a.c.ATT-a.c.DEF));order.forEach((p,i)=>p.committed=i<(team.policy.commitForward+(team.lateSurge?1:0)));}
 function initial(team){commitment(team);for(const [i,p] of team.ps.entries()){p.pos={x:team.ti===0?{anchor:0,link:1,spear:2}[p.duty]:3-{anchor:0,link:1,spear:2}[p.duty],y:i};p.moveCredit=1;}}
 function move(p,target){const m=window.CageTacticalParams.P.movement;p.moveCredit=Math.min(m.creditCap,p.moveCredit+m.creditBase+m.agilityCredit*p.c.a.agi/100);if(p.moveCredit<1)return;p.moveCredit--;if(Math.abs(target.x-p.pos.x)>=Math.abs(target.y-p.pos.y)&&target.x!==p.pos.x)p.pos.x+=Math.sign(target.x-p.pos.x);else if(target.y!==p.pos.y)p.pos.y+=Math.sign(target.y-p.pos.y);}
 function duties(team){const ranked=team.ps.slice().sort((a,b)=>oriented(a.pos,team.ti)-oriented(b.pos,team.ti)||b.c.DEF-a.c.DEF);ranked.forEach((q,i)=>q.duty=['anchor','link','spear'][i]);}

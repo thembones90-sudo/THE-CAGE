@@ -5,7 +5,7 @@ const testCode="\n(async()=>{\nconst out=document.createElement('pre');out.id='f
 const fixture=path.join(root,'full-v5-e2e.html');
 const src=fs.readFileSync(path.join(root,'play.html'),'utf8');
 fs.writeFileSync(fixture,src.replace('</body>','<script>'+testCode+'</script></body>'));
-const url=(process.env.CAGE_E2E_BASE||'http://127.0.0.1:51864')+'/full-v5-e2e.html'+(process.argv.includes('--t3')?(process.argv.includes('--traits-preview')?'?engine=t3&traits=preview':'?engine=t3'):'');
+const url=(process.env.CAGE_E2E_BASE||'http://127.0.0.1:51865')+'/full-v5-e2e.html'+(process.argv.includes('--t3')?(process.argv.includes('--traits-preview')?'?engine=t3&traits=preview':'?engine=t3'):'');
 const chrome='C:/Program Files/Google/Chrome/Application/chrome.exe';
 const r=cp.spawnSync(chrome,['--headless=new','--disable-gpu','--no-sandbox','--no-first-run','--disable-extensions','--user-data-dir='+path.join(root,'chrome-e2e-'+process.pid+'-'+(process.argv.includes('--t3')?'t3':'legacy')),'--virtual-time-budget=50000','--dump-dom',url],{encoding:'utf8',timeout:90000,maxBuffer:20e6});
 if(r.error)throw r.error;

@@ -1,0 +1,751 @@
+{
+  "engine": "cage-t3-5",
+  "seedsPerPair": 70,
+  "mode": "mirrored",
+  "rows": [
+    {
+      "lineup": 0,
+      "tactics": [
+        "balanced",
+        "balanced"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 66.4,
+      "p95Sec": 364,
+      "eventsPerGame": 78.54,
+      "shotsPerGame": 3.71,
+      "passesPerGame": 15.21,
+      "pressPerGame": 1.34,
+      "pressWinRatePct": 31.6,
+      "turnoversPerGame": 8.91,
+      "throughPerGame": 4.61,
+      "pressX": [
+        64,
+        123,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        193,
+        327
+      ]
+    },
+    {
+      "lineup": 0,
+      "tactics": [
+        "press",
+        "balanced"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 67.1,
+      "p95Sec": 280,
+      "eventsPerGame": 68.69,
+      "shotsPerGame": 3.32,
+      "passesPerGame": 10.44,
+      "pressPerGame": 1.24,
+      "pressWinRatePct": 30.5,
+      "turnoversPerGame": 7.54,
+      "throughPerGame": 3.32,
+      "pressX": [
+        59,
+        115,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        129,
+        336
+      ]
+    },
+    {
+      "lineup": 0,
+      "tactics": [
+        "counter",
+        "balanced"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 64.3,
+      "p95Sec": 284,
+      "eventsPerGame": 62.61,
+      "shotsPerGame": 3.01,
+      "passesPerGame": 11.44,
+      "pressPerGame": 1.09,
+      "pressWinRatePct": 30.9,
+      "turnoversPerGame": 7.03,
+      "throughPerGame": 3.78,
+      "pressX": [
+        46,
+        106,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        150,
+        271
+      ]
+    },
+    {
+      "lineup": 0,
+      "tactics": [
+        "possession",
+        "balanced"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 54.3,
+      "p95Sec": 446,
+      "eventsPerGame": 92.33,
+      "shotsPerGame": 4.22,
+      "passesPerGame": 20.85,
+      "pressPerGame": 1.42,
+      "pressWinRatePct": 32.2,
+      "turnoversPerGame": 10.16,
+      "throughPerGame": 4.59,
+      "pressX": [
+        57,
+        142,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        216,
+        375
+      ]
+    },
+    {
+      "lineup": 0,
+      "tactics": [
+        "press",
+        "counter"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 60.7,
+      "p95Sec": 261,
+      "eventsPerGame": 63.49,
+      "shotsPerGame": 3.48,
+      "passesPerGame": 9.56,
+      "pressPerGame": 1.4,
+      "pressWinRatePct": 31.6,
+      "turnoversPerGame": 7.38,
+      "throughPerGame": 3.13,
+      "pressX": [
+        73,
+        123,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        152,
+        335
+      ]
+    },
+    {
+      "lineup": 0,
+      "tactics": [
+        "possession",
+        "press"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 50,
+      "p95Sec": 417,
+      "eventsPerGame": 96.14,
+      "shotsPerGame": 4.54,
+      "passesPerGame": 19.62,
+      "pressPerGame": 2.44,
+      "pressWinRatePct": 30.7,
+      "turnoversPerGame": 10.33,
+      "throughPerGame": 3.63,
+      "pressX": [
+        147,
+        195,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        141,
+        494
+      ]
+    },
+    {
+      "lineup": 1,
+      "tactics": [
+        "balanced",
+        "balanced"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 52.9,
+      "p95Sec": 3771,
+      "eventsPerGame": 692.68,
+      "shotsPerGame": 13.5,
+      "passesPerGame": 244.59,
+      "pressPerGame": 19.04,
+      "pressWinRatePct": 36.5,
+      "turnoversPerGame": 91.54,
+      "throughPerGame": 46.55,
+      "pressX": [
+        501,
+        2165,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        388,
+        1502
+      ]
+    },
+    {
+      "lineup": 1,
+      "tactics": [
+        "press",
+        "balanced"
+      ],
+      "matches": 140,
+      "completed": 138,
+      "caps": 2,
+      "winPctA": 78.3,
+      "p95Sec": 4743,
+      "eventsPerGame": 707.46,
+      "shotsPerGame": 20.59,
+      "passesPerGame": 208.77,
+      "pressPerGame": 38.66,
+      "pressWinRatePct": 30.9,
+      "turnoversPerGame": 92.7,
+      "throughPerGame": 45.87,
+      "pressX": [
+        1799,
+        3536,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        298,
+        2543
+      ]
+    },
+    {
+      "lineup": 1,
+      "tactics": [
+        "counter",
+        "balanced"
+      ],
+      "matches": 140,
+      "completed": 138,
+      "caps": 2,
+      "winPctA": 52.2,
+      "p95Sec": 3432,
+      "eventsPerGame": 592.17,
+      "shotsPerGame": 13.65,
+      "passesPerGame": 196.96,
+      "pressPerGame": 11.24,
+      "pressWinRatePct": 38.2,
+      "turnoversPerGame": 77.29,
+      "throughPerGame": 44.36,
+      "pressX": [
+        221,
+        1330,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        377,
+        1507
+      ]
+    },
+    {
+      "lineup": 1,
+      "tactics": [
+        "possession",
+        "balanced"
+      ],
+      "matches": 140,
+      "completed": 132,
+      "caps": 8,
+      "winPctA": 34.1,
+      "p95Sec": 4449,
+      "eventsPerGame": 725.48,
+      "shotsPerGame": 12.8,
+      "passesPerGame": 280.66,
+      "pressPerGame": 15.05,
+      "pressWinRatePct": 38.2,
+      "turnoversPerGame": 93.2,
+      "throughPerGame": 42.75,
+      "pressX": [
+        322,
+        1665,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        387,
+        1302
+      ]
+    },
+    {
+      "lineup": 1,
+      "tactics": [
+        "press",
+        "counter"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 69.3,
+      "p95Sec": 2947,
+      "eventsPerGame": 589.63,
+      "shotsPerGame": 17.49,
+      "passesPerGame": 144.17,
+      "pressPerGame": 33.91,
+      "pressWinRatePct": 31.1,
+      "turnoversPerGame": 77.52,
+      "throughPerGame": 48.17,
+      "pressX": [
+        1297,
+        3451,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        301,
+        2148
+      ]
+    },
+    {
+      "lineup": 1,
+      "tactics": [
+        "possession",
+        "press"
+      ],
+      "matches": 140,
+      "completed": 138,
+      "caps": 2,
+      "winPctA": 3.6,
+      "p95Sec": 2527,
+      "eventsPerGame": 461.74,
+      "shotsPerGame": 14.07,
+      "passesPerGame": 160.43,
+      "pressPerGame": 12.17,
+      "pressWinRatePct": 39,
+      "turnoversPerGame": 64.55,
+      "throughPerGame": 25.29,
+      "pressX": [
+        479,
+        1201,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        130,
+        1812
+      ]
+    },
+    {
+      "lineup": 2,
+      "tactics": [
+        "balanced",
+        "balanced"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 43.6,
+      "p95Sec": 242,
+      "eventsPerGame": 59.29,
+      "shotsPerGame": 2.59,
+      "passesPerGame": 8.77,
+      "pressPerGame": 0.84,
+      "pressWinRatePct": 30.8,
+      "turnoversPerGame": 4.94,
+      "throughPerGame": 2.52,
+      "pressX": [
+        63,
+        54,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        93,
+        270
+      ]
+    },
+    {
+      "lineup": 2,
+      "tactics": [
+        "press",
+        "balanced"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 52.1,
+      "p95Sec": 275,
+      "eventsPerGame": 57.74,
+      "shotsPerGame": 2.66,
+      "passesPerGame": 7.64,
+      "pressPerGame": 1.17,
+      "pressWinRatePct": 26.8,
+      "turnoversPerGame": 4.72,
+      "throughPerGame": 2.26,
+      "pressX": [
+        82,
+        82,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        80,
+        293
+      ]
+    },
+    {
+      "lineup": 2,
+      "tactics": [
+        "counter",
+        "balanced"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 35,
+      "p95Sec": 240,
+      "eventsPerGame": 55.3,
+      "shotsPerGame": 2.51,
+      "passesPerGame": 9.09,
+      "pressPerGame": 0.74,
+      "pressWinRatePct": 31.1,
+      "turnoversPerGame": 4.62,
+      "throughPerGame": 2.67,
+      "pressX": [
+        54,
+        49,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        85,
+        266
+      ]
+    },
+    {
+      "lineup": 2,
+      "tactics": [
+        "possession",
+        "balanced"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 37.9,
+      "p95Sec": 291,
+      "eventsPerGame": 60.67,
+      "shotsPerGame": 2.63,
+      "passesPerGame": 10.84,
+      "pressPerGame": 0.77,
+      "pressWinRatePct": 32.4,
+      "turnoversPerGame": 4.91,
+      "throughPerGame": 2.59,
+      "pressX": [
+        53,
+        55,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        99,
+        269
+      ]
+    },
+    {
+      "lineup": 2,
+      "tactics": [
+        "press",
+        "counter"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 46.4,
+      "p95Sec": 246,
+      "eventsPerGame": 52.96,
+      "shotsPerGame": 2.57,
+      "passesPerGame": 6.91,
+      "pressPerGame": 1.25,
+      "pressWinRatePct": 20,
+      "turnoversPerGame": 4.49,
+      "throughPerGame": 2.22,
+      "pressX": [
+        78,
+        97,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        115,
+        245
+      ]
+    },
+    {
+      "lineup": 2,
+      "tactics": [
+        "possession",
+        "press"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 37.1,
+      "p95Sec": 268,
+      "eventsPerGame": 60.74,
+      "shotsPerGame": 2.75,
+      "passesPerGame": 8.63,
+      "pressPerGame": 1.14,
+      "pressWinRatePct": 34,
+      "turnoversPerGame": 4.8,
+      "throughPerGame": 1.62,
+      "pressX": [
+        102,
+        57,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        87,
+        298
+      ]
+    },
+    {
+      "lineup": 3,
+      "tactics": [
+        "balanced",
+        "balanced"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 36.4,
+      "p95Sec": 456,
+      "eventsPerGame": 93.96,
+      "shotsPerGame": 3.68,
+      "passesPerGame": 19.24,
+      "pressPerGame": 1.38,
+      "pressWinRatePct": 44.6,
+      "turnoversPerGame": 10.16,
+      "throughPerGame": 5.46,
+      "pressX": [
+        76,
+        117,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        89,
+        426
+      ]
+    },
+    {
+      "lineup": 3,
+      "tactics": [
+        "press",
+        "balanced"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 62.9,
+      "p95Sec": 366,
+      "eventsPerGame": 88.53,
+      "shotsPerGame": 3.9,
+      "passesPerGame": 16.04,
+      "pressPerGame": 1.86,
+      "pressWinRatePct": 41.2,
+      "turnoversPerGame": 9.6,
+      "throughPerGame": 4.06,
+      "pressX": [
+        123,
+        137,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        60,
+        486
+      ]
+    },
+    {
+      "lineup": 3,
+      "tactics": [
+        "counter",
+        "balanced"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 37.9,
+      "p95Sec": 472,
+      "eventsPerGame": 91.51,
+      "shotsPerGame": 3.46,
+      "passesPerGame": 19.4,
+      "pressPerGame": 1.46,
+      "pressWinRatePct": 35.3,
+      "turnoversPerGame": 10.05,
+      "throughPerGame": 6.09,
+      "pressX": [
+        75,
+        129,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        81,
+        404
+      ]
+    },
+    {
+      "lineup": 3,
+      "tactics": [
+        "possession",
+        "balanced"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 38.6,
+      "p95Sec": 552,
+      "eventsPerGame": 111.86,
+      "shotsPerGame": 3.81,
+      "passesPerGame": 28.39,
+      "pressPerGame": 1.46,
+      "pressWinRatePct": 40.5,
+      "turnoversPerGame": 11.8,
+      "throughPerGame": 5.76,
+      "pressX": [
+        49,
+        156,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        128,
+        405
+      ]
+    },
+    {
+      "lineup": 3,
+      "tactics": [
+        "press",
+        "counter"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 59.3,
+      "p95Sec": 365,
+      "eventsPerGame": 90.21,
+      "shotsPerGame": 4.24,
+      "passesPerGame": 15.84,
+      "pressPerGame": 2.41,
+      "pressWinRatePct": 34.9,
+      "turnoversPerGame": 10.09,
+      "throughPerGame": 4.79,
+      "pressX": [
+        132,
+        206,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        126,
+        467
+      ]
+    },
+    {
+      "lineup": 3,
+      "tactics": [
+        "possession",
+        "press"
+      ],
+      "matches": 140,
+      "completed": 140,
+      "caps": 0,
+      "winPctA": 32.1,
+      "p95Sec": 468,
+      "eventsPerGame": 114.56,
+      "shotsPerGame": 3.96,
+      "passesPerGame": 24.46,
+      "pressPerGame": 2.25,
+      "pressWinRatePct": 42.2,
+      "turnoversPerGame": 11.88,
+      "throughPerGame": 4.54,
+      "pressX": [
+        125,
+        190,
+        0,
+        0
+      ],
+      "shotX": [
+        0,
+        0,
+        84,
+        471
+      ]
+    }
+  ]
+}

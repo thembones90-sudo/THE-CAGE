@@ -1,0 +1,11 @@
+'use strict';
+const fs=require('node:fs'),cp=require('node:child_process'),path=require('node:path'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..');
+const fixture=fs.readFileSync(path.join(__dirname,'fixtures/v55-surge-browser.js'),'utf8');
+const html=fs.readFileSync(path.join(root,'play.html'),'utf8');
+fs.writeFileSync(path.join(root,'v55-surge-browser.html'),html.replace('</body>','<script>'+fixture+'</script></body>'));
+const url=(process.env.CAGE_E2E_BASE||'http://127.0.0.1:51865')+'/v55-surge-browser.html?engine=t3';
+const result=cp.spawnSync('C:/Program Files/Google/Chrome/Application/chrome.exe',['--headless=new','--no-sandbox','--disable-gpu','--no-first-run','--disable-extensions','--user-data-dir='+path.join(root,'chrome-v55-surge-'+process.pid),'--virtual-time-budget=12000','--dump-dom',url],{encoding:'utf8',timeout:72000,maxBuffer:16e6});
+if(result.error)throw result.error;
+const message=result.stdout.match(/<pre id="v55-surge-result">([\s\S]*?)<\/pre>/)?.[1]||'No result';
+console.log(message);assert(message.startsWith('V55_SURGE_VIEWER_PASS'),message+'\n'+result.stderr.slice(-1600));

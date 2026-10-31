@@ -1,0 +1,100 @@
+{
+  "seedPairs": 450,
+  "roster": 182,
+  "exactSameSeeds": true,
+  "conditions": [
+    {
+      "name": "DDD Possession vs Press",
+      "versions": [
+        {
+          "engine": "cage-t3-5",
+          "games": 900,
+          "completed": 894,
+          "caps": 6,
+          "winPctA": 7.49,
+          "p95": 3025,
+          "kickoffSide0Pct": 50.11
+        },
+        {
+          "engine": "cage-t3-6",
+          "games": 900,
+          "completed": 898,
+          "caps": 2,
+          "winPctA": 13.25,
+          "p95": 3933,
+          "kickoffSide0Pct": 50.33
+        }
+      ]
+    },
+    {
+      "name": "DDD Press vs Counter",
+      "versions": [
+        {
+          "engine": "cage-t3-5",
+          "games": 900,
+          "completed": 897,
+          "caps": 3,
+          "winPctA": 71.57,
+          "p95": 3182,
+          "kickoffSide0Pct": 51.17
+        },
+        {
+          "engine": "cage-t3-6",
+          "games": 900,
+          "completed": 895,
+          "caps": 5,
+          "winPctA": 61.68,
+          "p95": 3716,
+          "kickoffSide0Pct": 49.27
+        }
+      ]
+    },
+    {
+      "name": "Balanced Press vs Balanced",
+      "versions": [
+        {
+          "engine": "cage-t3-5",
+          "games": 900,
+          "completed": 900,
+          "caps": 0,
+          "winPctA": 65,
+          "p95": 354,
+          "kickoffSide0Pct": 48.11
+        },
+        {
+          "engine": "cage-t3-6",
+          "games": 900,
+          "completed": 900,
+          "caps": 0,
+          "winPctA": 63.89,
+          "p95": 313,
+          "kickoffSide0Pct": 49.67
+        }
+      ]
+    },
+    {
+      "name": "Attack Possession vs Press",
+      "versions": [
+        {
+          "engine": "cage-t3-5",
+          "games": 900,
+          "completed": 900,
+          "caps": 0,
+          "winPctA": 36.33,
+          "p95": 258,
+          "kickoffSide0Pct": 51.89
+        },
+        {
+          "engine": "cage-t3-6",
+          "games": 900,
+          "completed": 900,
+          "caps": 0,
+          "winPctA": 37.11,
+          "p95": 272,
+          "kickoffSide0Pct": 52.22
+        }
+      ]
+    }
+  ],
+  "notes": "Safety limits counted as failures. No forced goals and no replay re-rolls."
+}

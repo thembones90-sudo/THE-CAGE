@@ -55,17 +55,22 @@ const P={k:22,clampLo:.12,clampHi:.88,b:{dribble:-.35,pass:2.3,through:.1,wall:-
 const TACTICS={balanced:{rest:0,engageHigh:.35,cp:1,tempo:1,risk:1,direct:1,fat:1},possession:{rest:0,engageHigh:.25,cp:.8,tempo:1.5,risk:.8,direct:.6,fat:.9},press:{rest:-1,engageHigh:.8,cp:1.6,tempo:1,risk:1,direct:1,fat:1.3},counter:{rest:1,engageHigh:.1,cp:.6,tempo:.7,risk:1.1,direct:1.8,fat:.9}};
 P.movement={creditBase:.55,agilityCredit:.45,creditCap:2,rotationPeriodBase:10,rotationPeriodScale:7,rotationPeriodMin:3,rotationDeficit:18,rotationPass:70,compactHelp:.7};
 P.resolution={fatigueScale:140,mobileLoss:.25,otherLoss:.08,fatigueBase:1.6,recoveryTarget:72,reboundEdge:6,shotBlockTarget:75,blockTackle:.35,blockRead:.65,shotMin:.01,shotMax:.8,shotReference:68,clearShot:.9,nearMiss:.35};
-P.decisions={floor:.03,boxMin:.45,boxBase:1.2,boxReference:75,boxScale:40,edgeReference:80,edgeScale:12,engagedShot:.7,openShot:1.6,clearShot:6,dribbleBase:.4,dribbleScale:20,dribbleSupport:.25,carry:1.2,passBase:.5,passReference:70,passScale:25,engagedPass:1.3,safeOutlet:.2,throughReference:78,throughScale:10,transitionThrough:1.6,wallReference:84,wallScale:10,wallSupport:.2,shieldReference:72,shieldScale:15,outlet:.8,deepDiscipline:.6,boxDiscipline:.2,committedDiscipline:1.2,restPass:1.6,pressEscapeReference:70,pressEscapeScale:30,pressPenalty:-.5,forwardPass:-.5,recyclePass:.4};
-window.CageTacticalParams={VERSION:'t3-space-4',P,TACTICS};})();
+P.decisions={pressSurgeAfter:1500,floor:.03,boxMin:.45,boxBase:1.2,boxReference:75,boxScale:40,edgeReference:80,edgeScale:12,engagedShot:.7,openShot:1.6,clearShot:6,dribbleBase:.4,dribbleScale:20,dribbleSupport:.25,carry:1.2,passBase:.5,passReference:70,passScale:25,engagedPass:1.3,safeOutlet:.2,throughReference:78,throughScale:10,transitionThrough:1.6,wallReference:84,wallScale:10,wallSupport:.2,shieldReference:72,shieldScale:15,outlet:.8,deepDiscipline:.6,boxDiscipline:.2,committedDiscipline:1.2,restPass:1.6,pressEscapeReference:70,pressEscapeScale:30,pressPenalty:-.5,forwardPass:-.5,recyclePass:.4};
+window.CageTacticalParams={VERSION:'t3-space-5',P,TACTICS};})();
 
 (()=>{'use strict';const C=window.CageCapabilities,lim=C.lim;
-function derive(players,tactic='balanced',params=window.CageTacticalParams.P){const tac=window.CageTacticalParams.TACTICS[tactic];if(!tac)throw Error('Unknown tactic.');const c=players.map(C.comp),raw=C.raw(players),a=params.policy,wr=C.avg(c.map(x=>x.a.wr)),press=C.avg(c.map(x=>x.press)),sta=C.avg(c.map(x=>x.a.sta));const natural=c.filter(x=>x.DEF>=x.ATT+a.restGap).length,rest=lim(Math.min(2,natural)+tac.rest,0,2);const twoWay=players.filter(p=>C.phaseProfile(p).twoWay).length;
-return Object.freeze({blockHeight:lim(tac.engageHigh*lim(press/75,.6,1.3),0,.95),restDefence:rest,commitForward:3-rest,tempo:tac.tempo*lim(1+(raw.MC-raw.TE)/a.tempoScale,.85,1.15),riskAppetite:tac.risk*lim(1+(raw.AT-raw.DS)/a.riskScale,.7,1.4),pressTrigger:lim((press-a.pressBase)/a.pressScale,0,1)*tac.cp*lim(sta/80,.6,1.2),directness:tac.direct*lim(1+(raw.DS-raw.AT)/a.directScale,.7,1.5),rotation:lim(params.spatial.rotationFloor+raw.TA/params.spatial.rotationScale+twoWay*.1,0,.95),compactness:lim(a.compactBase+a.workCompact*wr/100+a.defCompact*(raw.DS>raw.AT?1:0),.3,1),AT:raw.AT,DS:raw.DS,MC:raw.MC,TE:raw.TE,PD:raw.PD,TA:raw.TA});}
+function derive(players,tactic='balanced',params=window.CageTacticalParams.P){const tac=window.CageTacticalParams.TACTICS[tactic];if(!tac)throw Error('Unknown tactic.');const c=players.map(C.comp),raw=C.raw(players),a=params.policy,wr=C.avg(c.map(x=>x.a.wr)),press=C.avg(c.map(x=>x.press)),sta=C.avg(c.map(x=>x.a.sta));const natural=c.filter(x=>x.DEF>=x.ATT+a.restGap).length;
+const highPressDefenderOnly=tactic==='press'&&natural===3;
+// An all-specialist defensive trio does not start with two makeshift forwards.
+// If a REAL long match remains scoreless, the high-press coach may commit a
+// second defender after the tactical escalation point to search for a goal.
+const rest=highPressDefenderOnly?2:lim(Math.min(2,natural)+tac.rest,0,2);const twoWay=players.filter(p=>C.phaseProfile(p).twoWay).length;
+return Object.freeze({blockHeight:lim(tac.engageHigh*lim(press/75,.6,1.3),0,.95),restDefence:rest,commitForward:3-rest,latePressEligible:highPressDefenderOnly,tempo:tac.tempo*lim(1+(raw.MC-raw.TE)/a.tempoScale,.85,1.15),riskAppetite:tac.risk*lim(1+(raw.AT-raw.DS)/a.riskScale,.7,1.4),pressTrigger:lim((press-a.pressBase)/a.pressScale,0,1)*tac.cp*lim(sta/80,.6,1.2),directness:tac.direct*lim(1+(raw.DS-raw.AT)/a.directScale,.7,1.5),rotation:lim(params.spatial.rotationFloor+raw.TA/params.spatial.rotationScale+twoWay*.1,0,.95),compactness:lim(a.compactBase+a.workCompact*wr/100+a.defCompact*(raw.DS>raw.AT?1:0),.3,1),AT:raw.AT,DS:raw.DS,MC:raw.MC,TE:raw.TE,PD:raw.PD,TA:raw.TA});}
 window.CagePolicy={derive};})();
 
 (()=>{'use strict';const dist=(a,b)=>Math.abs(a.x-b.x)+Math.abs(a.y-b.y),lim=window.CageCapabilities.lim;
 const world=(zone,team)=>({x:team===0?zone.x:3-zone.x,y:{left:0,centre:1,right:2}[zone.lane]}),oriented=(p,team)=>team===0?p.x:3-p.x;
-function commitment(team){const order=team.ps.slice().sort((a,b)=>(b.c.ATT-b.c.DEF)-(a.c.ATT-a.c.DEF));order.forEach((p,i)=>p.committed=i<team.policy.commitForward);}
+function commitment(team){const order=team.ps.slice().sort((a,b)=>(b.c.ATT-b.c.DEF)-(a.c.ATT-a.c.DEF));order.forEach((p,i)=>p.committed=i<(team.policy.commitForward+(team.lateSurge?1:0)));}
 function initial(team){commitment(team);for(const [i,p] of team.ps.entries()){p.pos={x:team.ti===0?{anchor:0,link:1,spear:2}[p.duty]:3-{anchor:0,link:1,spear:2}[p.duty],y:i};p.moveCredit=1;}}
 function move(p,target){const m=window.CageTacticalParams.P.movement;p.moveCredit=Math.min(m.creditCap,p.moveCredit+m.creditBase+m.agilityCredit*p.c.a.agi/100);if(p.moveCredit<1)return;p.moveCredit--;if(Math.abs(target.x-p.pos.x)>=Math.abs(target.y-p.pos.y)&&target.x!==p.pos.x)p.pos.x+=Math.sign(target.x-p.pos.x);else if(target.y!==p.pos.y)p.pos.y+=Math.sign(target.y-p.pos.y);}
 function duties(team){const ranked=team.ps.slice().sort((a,b)=>oriented(a.pos,team.ti)-oriented(b.pos,team.ti)||b.c.DEF-a.c.DEF);ranked.forEach((q,i)=>q.duty=['anchor','link','spear'][i]);}
@@ -80,6 +85,44 @@ return {d,helper,support,ball,attackers:1+support.length,defenders:near.length,d
 function passingDefenders(teams,poss,from,to){const cells=[];let p={...from};cells.push({...p});while(p.x!==to.x||p.y!==to.y){if(p.x!==to.x)p.x+=Math.sign(to.x-p.x);else p.y+=Math.sign(to.y-p.y);cells.push({...p});}return teams[1-poss].ps.filter(q=>q.oop===0).map(q=>({q,distance:Math.min(...cells.map(p=>dist(p,q.pos)))})).filter(v=>v.distance<=1).sort((a,b)=>a.distance-b.distance||(b.q.c.intercept-a.q.c.intercept)).map(v=>v.q);}
 window.CageSpatial={dist,world,oriented,commitment,initial,update,context,passingDefenders};})();
 
+// THE CAGE V5.5 — deterministic, evidence-based football decisions.
+// Tactical intent only. Never selects or manufactures an event outcome.
+(()=>{'use strict';
+const lim=(v,a,b)=>Math.min(b,Math.max(a,v));
+function engagement(zoneX,defensivePolicy,recentRegain,params){
+ if(!Number.isInteger(zoneX)||zoneX<0||zoneX>3)throw Error('Invalid attacking zone');
+ const h=lim(defensivePolicy.blockHeight,0,.95),tr=lim(defensivePolicy.pressTrigger,0,1.25);
+ if(zoneX===3)return 1; // physically nearby defenders always challenge in the box
+ if(zoneX===2)return lim(.79+.09*h+.055*tr,0,.95);
+ const base=h+(zoneX===1?.15:0)+(recentRegain?.2*tr:0);
+ // Pressing has an effect at the earliest stages of a counter too, but
+ // counter-pressing is still gated by ACTUAL recent regain and reachable defense.
+ return lim(base+(zoneX===1?.07:.025)*tr,0,.95);
+}
+// Only existing teammates ahead of the carrier qualify; positions from the
+// authoritative 4x3 state. No extra run, fabricated receiver or magic pass.
+function forwardTarget(forwards,carrier,team,spatial,teams){
+ if(!forwards.length)return null;
+ const laneRisk=q=>spatial.passingDefenders(teams,team,carrier.pos,q.pos).length;
+ const from=spatial.oriented(carrier.pos,team);
+ const rank=q=>{
+  const depth=spatial.oriented(q.pos,team)-from;
+  const pace=q.c?.a?.pace||50,attack=q.c?.ATT||50;
+  const defenders=laneRisk(q);
+  return depth*2.6+(pace-50)*.014+(attack-50)*.018-defenders*2.15;
+ };
+ return forwards.slice().sort((a,b)=>rank(b)-rank(a)||spatial.oriented(b.pos,team)-spatial.oriented(a.pos,team)||(String(a.id)<String(b.id)?-1:String(a.id)>String(b.id)?1:0))[0];
+}
+function outletWeight(transition,runner,policy,defensivePolicy,params){
+ if(!transition||!runner)return 0;
+ // Direct counterplay matters ONLY if the carrier has a real forward route.
+ // Against a high line, choose that outlet more often; a trapped ball carrier
+ // must still face real interceptors and the original pass-duel probabilities.
+ const exposure=lim(defensivePolicy.blockHeight,0,.95);
+ return params.decisions.outlet*policy.directness*(1+exposure*.60);
+}
+window.CageTacticalIntelligence=Object.freeze({engagement,forwardTarget,outletWeight});
+})();
 // Independent event-evidence checks used by replay imports and tactical tests.
 (()=>{'use strict';const S=window.CageSpatial,allowed=new Set(['overload','help_defence','rest_defence_exposed','counter_press','direct_outlet']);
 function validate(events,config){const ids=config.teams.flat();if(new Set(ids).size!==6)return true;const require_=(ok,message)=>{if(!ok)throw Error('Tactical evidence: '+message);};
@@ -182,7 +225,7 @@ window.CageTraits=Object.freeze({VERSION:'traits-preview-0.2',CATALOG,COUNTERPLA
 })();
 
 (()=>{'use strict';
-const ROSTER=window.THE_CAGE_PLAYERS,BY_ID=Object.fromEntries(ROSTER.map(p=>[p.id,p])),C=window.CageCapabilities,S=window.CageSpatial,{P,TACTICS}=window.CageTacticalParams,Q=P.decisions,F=P.resolution,comp=C.comp,shape=C.shape;
+const ROSTER=window.THE_CAGE_PLAYERS,BY_ID=Object.fromEntries(ROSTER.map(p=>[p.id,p])),C=window.CageCapabilities,S=window.CageSpatial,I=window.CageTacticalIntelligence,{P,TACTICS}=window.CageTacticalParams,Q=P.decisions,F=P.resolution,comp=C.comp,shape=C.shape;
 const lim=C.lim,rounded=v=>Math.round(v*10000)/10000;
 const imul=Math.imul,stringify=JSON.stringify,values=Object.values,isFrozen=Object.isFrozen,freezeObject=Object.freeze;
 const logistic=x=>window.CAGE_SIGMOID_LUT[lim(Math.round(x*256)+3072,0,6144)]/1e6;
@@ -217,13 +260,22 @@ if(roll<p){score[poss]++;emit({type:'goal',team:poss,actor:sh.id,p,roll,kind,zon
 emit({type:'shot_miss',team:poss,actor:sh.id,p,roll,kind,outcome:roll<p+(1-p)*F.nearMiss?'off_post_or_wide':'wide'},ctx);loose('wall');}
 function loose(source){lastPasser=null;const ball=S.world(zone(),poss),rank=team=>team.ps.slice().sort((a,b)=>S.dist(a.pos,ball)-S.dist(b.pos,ball)||b.c.rebound-a.c.rebound),att=rank(T[poss])[0],def=rank(T[1-poss])[0],r=duel(eff(att,'rebound'),eff(def,'rebound')+F.reboundEdge,P.b.rebound),winner=r.win?att:def;emit({type:'rebound',team:winner.ti,actor:winner.id,opp:r.win?def.id:att.id,p:r.p,roll:r.roll,source,outcome:r.win?'attack_keeps':'defence_clears',calc:r.calc});
 if(r.win){carrier=att;x=3;lane=1;carrier.pos=S.world(zone(),poss);}else turnover(def,'rebound','second_ball');}
-function step(){tick++;const rotations=S.update(T,poss,carrier,zone(),tick);recover();if(rotations.length)emit({type:'rotation',team:poss,actor:rotations[0],target:rotations[1],zone:zone(),outcome:'duties_swapped'});
-const c=carrier,pol=T[poss].policy,dpol=T[1-poss].policy,ctx=context(),d=ctx.d,recentRegain=lastRegain&&lastRegain.team===poss&&tick-lastRegain.tick<=1,engage=x===3?1:x===2?.85:lim(dpol.blockHeight+(x===1?.15:0)+(recentRegain?.2*dpol.pressTrigger:0),0,.95),engaged=!!d&&R()<(traitOn?trait.engagement(d.id,engage,{x,transition}):engage),mates=T[poss].ps.filter(q=>q!==c),U={};
+function step(){tick++;
+// A late, scoreless high-press surge is a tactical shape change, NOT a goal.
+// It only affects eligible all-defender sides and is reflected in subsequent
+// logged commitment/position snapshots, which remain deterministic.
+for(const team of T){
+ if(team.policy.latePressEligible&&!team.lateSurge&&t>=P.decisions.pressSurgeAfter){
+  team.lateSurge=true;S.commitment(team);
+ }
+}
+const rotations=S.update(T,poss,carrier,zone(),tick);recover();if(rotations.length)emit({type:'rotation',team:poss,actor:rotations[0],target:rotations[1],zone:zone(),outcome:'duties_swapped'});
+const c=carrier,pol=T[poss].policy,dpol=T[1-poss].policy,ctx=context(),d=ctx.d,recentRegain=lastRegain&&lastRegain.team===poss&&tick-lastRegain.tick<=1,engage=I.engagement(x,dpol,recentRegain,P),engaged=!!d&&R()<(traitOn?trait.engagement(d.id,engage,{x,transition}):engage),mates=T[poss].ps.filter(q=>q!==c),U={};
 if(x>=2)U.shoot=(x===3?Math.max(Q.boxMin,Q.boxBase+(c.c.shot-Q.boxReference)/Q.boxScale):(c.c.long-Q.edgeReference)/Q.edgeScale)*pol.riskAppetite*(engaged?Q.engagedShot:Q.openShot);if(!d&&x>=2)U.shoot=Q.clearShot;
 if(engaged)U.dribble=(Q.dribbleBase+(c.c.dribble-d.c.tackle)/Q.dribbleScale+Q.dribbleSupport*ctx.support.length)*pol.riskAppetite;if(!engaged&&x<3)U.carry=Q.carry;
 const safe=mates.filter(q=>S.dist(q.pos,ctx.ball)<=1&&S.oriented(q.pos,poss)<=x).length;U.pass=(Q.passBase+(c.c.pass-Q.passReference)/Q.passScale)*pol.tempo*(engaged?Q.engagedPass:1)*(1+Q.safeOutlet*safe);
-const forward=mates.filter(q=>S.oriented(q.pos,poss)>x).sort((a,b)=>S.oriented(b.pos,poss)-S.oriented(a.pos,poss)||b.c.ATT-a.c.ATT),runner=forward[0];if(runner&&x>=1&&x<=2)U.through=(c.c.vision-Q.throughReference)/Q.throughScale*(transition?Q.transitionThrough:1)*pol.riskAppetite;
-if(engaged&&x>=1)U.wall=(((c.c.dribble+c.c.pass)/2-Q.wallReference)/Q.wallScale+Q.wallSupport*ctx.support.length)*pol.riskAppetite;if(engaged&&x<=1)U.shield=(c.c.escape-Q.shieldReference)/Q.shieldScale;if(transition&&runner)U.outlet=Q.outlet*pol.directness;
+const forward=mates.filter(q=>S.oriented(q.pos,poss)>x).sort((a,b)=>S.oriented(b.pos,poss)-S.oriented(a.pos,poss)||b.c.ATT-a.c.ATT),runner=I.forwardTarget(forward,c,poss,S,T);if(runner&&x>=1&&x<=2)U.through=(c.c.vision-Q.throughReference)/Q.throughScale*(transition?Q.transitionThrough:1)*pol.riskAppetite;
+if(engaged&&x>=1)U.wall=(((c.c.dribble+c.c.pass)/2-Q.wallReference)/Q.wallScale+Q.wallSupport*ctx.support.length)*pol.riskAppetite;if(engaged&&x<=1)U.shield=(c.c.escape-Q.shieldReference)/Q.shieldScale;if(transition&&runner)U.outlet=I.outletWeight(transition,runner,pol,dpol,P);
 const discipline=!c.committed?(x>=2?Q.boxDiscipline:Q.deepDiscipline):Q.committedDiscipline;for(const k of ['carry','dribble','shoot','wall'])if(U[k]!==undefined)U[k]*=discipline;if(!c.committed)U.pass*=Q.restPass;
 if(traitOn){const covered=T[poss].ps.some(q=>q!==c&&!q.committed);const adjusted=trait.weights(c.id,U,{x,engaged,transition,hasRunner:!!runner,covered,support:ctx.support.length});Object.assign(U,adjusted.weights);}
 const actions=Object.entries(U).map(([a,u])=>[a,Math.max(Q.floor,u)]),total=actions.reduce((s,a)=>s+a[1],0);let roll=R()*total,action=actions.at(-1)[0];for(const [a,u] of actions)if((roll-=u)<0){action=a;break;}
@@ -244,7 +296,7 @@ const winner=score[0]>score[1]?0:score[1]>score[0]?1:-1;
 return freeze({events,score,winner,duration:t,draws:R.count(),shapes:T.map(team=>({duty:Object.fromEntries(team.ps.map(q=>[q.id,q.duty])),cover:team.shape.cover.map(rounded),policy:team.policy})),eventHash:hashEvents(events)});
 }
 function stats(res,teams){const s=teams.map(ids=>({team:{poss:0,shots:0,onTarget:0,passes:0,passesOk:0,dribblesOk:0,tackles:0,interceptions:0,blocks:0,goals:0},players:Object.fromEntries(ids.map(id=>[id,{shots:0,goals:0,passesOk:0,dribblesOk:0,tackles:0,interceptions:0,blocks:0,chancesCreated:0}]))}));let prev=0,poss=null;for(const e of res.events){if(poss!==null)s[poss].team.poss+=e.t-prev;prev=e.t;const t=s[e.team],p=t.players[e.actor];if(['restart','turnover','rebound'].includes(e.type))poss=e.team;if(['pass','through_ball'].includes(e.type)){t.team.passes++;if(e.outcome==='complete'){t.team.passesOk++;p.passesOk++;}else{s[1-e.team].team.interceptions++;s[1-e.team].players[e.opp].interceptions++;}}if(['dribble_duel','wall_pass'].includes(e.type)){if(e.outcome==='attacker_wins'){t.team.dribblesOk++;p.dribblesOk++;}else if(e.outcome==='defender_wins'){s[1-e.team].team.tackles++;s[1-e.team].players[e.opp].tackles++;}}if(e.type==='shot_attempt'){t.team.shots++;p.shots++;}if(e.type==='goal'){t.team.goals++;t.team.onTarget++;p.goals++;if(e.assist)t.players[e.assist].chancesCreated++;}if(e.type==='block'){t.team.blocks++;p.blocks++;}if(e.type==='press'&&e.outcome==='ball_won'){t.team.tackles++;p.tackles++;}}const total=s[0].team.poss+s[1].team.poss||1;s[0].team.poss=Math.round(100*s[0].team.poss/total);s[1].team.poss=100-s[0].team.poss;return s;}
-window.CageEngine={VERSION:'cage-t3-5',PARAMS_VERSION:window.CageTacticalParams.VERSION,simulate,stats,ROSTER,BY_ID,comp,shape,TACTICS,P,freeze,hashEvents,probability,policy:window.CagePolicy.derive,validateEvidence:window.CageEvidence.validate};
+window.CageEngine={VERSION:'cage-t3-6',PARAMS_VERSION:window.CageTacticalParams.VERSION,simulate,stats,ROSTER,BY_ID,comp,shape,TACTICS,P,freeze,hashEvents,probability,policy:window.CagePolicy.derive,validateEvidence:window.CageEvidence.validate};
 })();
 
 window.CAGE_ENGINE_REGISTRY={"cage-0.4.0":window.CageLegacyEngine,[window.CageEngine.VERSION]:window.CageEngine};

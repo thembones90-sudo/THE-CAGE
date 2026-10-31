@@ -1,5 +1,5 @@
 (()=>{'use strict';
-const ROSTER=window.THE_CAGE_PLAYERS,BY_ID=Object.fromEntries(ROSTER.map(p=>[p.id,p])),C=window.CageCapabilities,S=window.CageSpatial,{P,TACTICS}=window.CageTacticalParams,Q=P.decisions,F=P.resolution,comp=C.comp,shape=C.shape;
+const ROSTER=window.THE_CAGE_PLAYERS,BY_ID=Object.fromEntries(ROSTER.map(p=>[p.id,p])),C=window.CageCapabilities,S=window.CageSpatial,I=window.CageTacticalIntelligence,{P,TACTICS}=window.CageTacticalParams,Q=P.decisions,F=P.resolution,comp=C.comp,shape=C.shape;
 const lim=C.lim,rounded=v=>Math.round(v*10000)/10000;
 const imul=Math.imul,stringify=JSON.stringify,values=Object.values,isFrozen=Object.isFrozen,freezeObject=Object.freeze;
 const logistic=x=>window.CAGE_SIGMOID_LUT[lim(Math.round(x*256)+3072,0,6144)]/1e6;
@@ -34,13 +34,22 @@ if(roll<p){score[poss]++;emit({type:'goal',team:poss,actor:sh.id,p,roll,kind,zon
 emit({type:'shot_miss',team:poss,actor:sh.id,p,roll,kind,outcome:roll<p+(1-p)*F.nearMiss?'off_post_or_wide':'wide'},ctx);loose('wall');}
 function loose(source){lastPasser=null;const ball=S.world(zone(),poss),rank=team=>team.ps.slice().sort((a,b)=>S.dist(a.pos,ball)-S.dist(b.pos,ball)||b.c.rebound-a.c.rebound),att=rank(T[poss])[0],def=rank(T[1-poss])[0],r=duel(eff(att,'rebound'),eff(def,'rebound')+F.reboundEdge,P.b.rebound),winner=r.win?att:def;emit({type:'rebound',team:winner.ti,actor:winner.id,opp:r.win?def.id:att.id,p:r.p,roll:r.roll,source,outcome:r.win?'attack_keeps':'defence_clears',calc:r.calc});
 if(r.win){carrier=att;x=3;lane=1;carrier.pos=S.world(zone(),poss);}else turnover(def,'rebound','second_ball');}
-function step(){tick++;const rotations=S.update(T,poss,carrier,zone(),tick);recover();if(rotations.length)emit({type:'rotation',team:poss,actor:rotations[0],target:rotations[1],zone:zone(),outcome:'duties_swapped'});
-const c=carrier,pol=T[poss].policy,dpol=T[1-poss].policy,ctx=context(),d=ctx.d,recentRegain=lastRegain&&lastRegain.team===poss&&tick-lastRegain.tick<=1,engage=x===3?1:x===2?.85:lim(dpol.blockHeight+(x===1?.15:0)+(recentRegain?.2*dpol.pressTrigger:0),0,.95),engaged=!!d&&R()<(traitOn?trait.engagement(d.id,engage,{x,transition}):engage),mates=T[poss].ps.filter(q=>q!==c),U={};
+function step(){tick++;
+// A late, scoreless high-press surge is a tactical shape change, NOT a goal.
+// It only affects eligible all-defender sides and is reflected in subsequent
+// logged commitment/position snapshots, which remain deterministic.
+for(const team of T){
+ if(team.policy.latePressEligible&&!team.lateSurge&&t>=P.decisions.pressSurgeAfter){
+  team.lateSurge=true;S.commitment(team);
+ }
+}
+const rotations=S.update(T,poss,carrier,zone(),tick);recover();if(rotations.length)emit({type:'rotation',team:poss,actor:rotations[0],target:rotations[1],zone:zone(),outcome:'duties_swapped'});
+const c=carrier,pol=T[poss].policy,dpol=T[1-poss].policy,ctx=context(),d=ctx.d,recentRegain=lastRegain&&lastRegain.team===poss&&tick-lastRegain.tick<=1,engage=I.engagement(x,dpol,recentRegain,P),engaged=!!d&&R()<(traitOn?trait.engagement(d.id,engage,{x,transition}):engage),mates=T[poss].ps.filter(q=>q!==c),U={};
 if(x>=2)U.shoot=(x===3?Math.max(Q.boxMin,Q.boxBase+(c.c.shot-Q.boxReference)/Q.boxScale):(c.c.long-Q.edgeReference)/Q.edgeScale)*pol.riskAppetite*(engaged?Q.engagedShot:Q.openShot);if(!d&&x>=2)U.shoot=Q.clearShot;
 if(engaged)U.dribble=(Q.dribbleBase+(c.c.dribble-d.c.tackle)/Q.dribbleScale+Q.dribbleSupport*ctx.support.length)*pol.riskAppetite;if(!engaged&&x<3)U.carry=Q.carry;
 const safe=mates.filter(q=>S.dist(q.pos,ctx.ball)<=1&&S.oriented(q.pos,poss)<=x).length;U.pass=(Q.passBase+(c.c.pass-Q.passReference)/Q.passScale)*pol.tempo*(engaged?Q.engagedPass:1)*(1+Q.safeOutlet*safe);
-const forward=mates.filter(q=>S.oriented(q.pos,poss)>x).sort((a,b)=>S.oriented(b.pos,poss)-S.oriented(a.pos,poss)||b.c.ATT-a.c.ATT),runner=forward[0];if(runner&&x>=1&&x<=2)U.through=(c.c.vision-Q.throughReference)/Q.throughScale*(transition?Q.transitionThrough:1)*pol.riskAppetite;
-if(engaged&&x>=1)U.wall=(((c.c.dribble+c.c.pass)/2-Q.wallReference)/Q.wallScale+Q.wallSupport*ctx.support.length)*pol.riskAppetite;if(engaged&&x<=1)U.shield=(c.c.escape-Q.shieldReference)/Q.shieldScale;if(transition&&runner)U.outlet=Q.outlet*pol.directness;
+const forward=mates.filter(q=>S.oriented(q.pos,poss)>x).sort((a,b)=>S.oriented(b.pos,poss)-S.oriented(a.pos,poss)||b.c.ATT-a.c.ATT),runner=I.forwardTarget(forward,c,poss,S,T);if(runner&&x>=1&&x<=2)U.through=(c.c.vision-Q.throughReference)/Q.throughScale*(transition?Q.transitionThrough:1)*pol.riskAppetite;
+if(engaged&&x>=1)U.wall=(((c.c.dribble+c.c.pass)/2-Q.wallReference)/Q.wallScale+Q.wallSupport*ctx.support.length)*pol.riskAppetite;if(engaged&&x<=1)U.shield=(c.c.escape-Q.shieldReference)/Q.shieldScale;if(transition&&runner)U.outlet=I.outletWeight(transition,runner,pol,dpol,P);
 const discipline=!c.committed?(x>=2?Q.boxDiscipline:Q.deepDiscipline):Q.committedDiscipline;for(const k of ['carry','dribble','shoot','wall'])if(U[k]!==undefined)U[k]*=discipline;if(!c.committed)U.pass*=Q.restPass;
 if(traitOn){const covered=T[poss].ps.some(q=>q!==c&&!q.committed);const adjusted=trait.weights(c.id,U,{x,engaged,transition,hasRunner:!!runner,covered,support:ctx.support.length});Object.assign(U,adjusted.weights);}
 const actions=Object.entries(U).map(([a,u])=>[a,Math.max(Q.floor,u)]),total=actions.reduce((s,a)=>s+a[1],0);let roll=R()*total,action=actions.at(-1)[0];for(const [a,u] of actions)if((roll-=u)<0){action=a;break;}
@@ -61,5 +70,5 @@ const winner=score[0]>score[1]?0:score[1]>score[0]?1:-1;
 return freeze({events,score,winner,duration:t,draws:R.count(),shapes:T.map(team=>({duty:Object.fromEntries(team.ps.map(q=>[q.id,q.duty])),cover:team.shape.cover.map(rounded),policy:team.policy})),eventHash:hashEvents(events)});
 }
 function stats(res,teams){const s=teams.map(ids=>({team:{poss:0,shots:0,onTarget:0,passes:0,passesOk:0,dribblesOk:0,tackles:0,interceptions:0,blocks:0,goals:0},players:Object.fromEntries(ids.map(id=>[id,{shots:0,goals:0,passesOk:0,dribblesOk:0,tackles:0,interceptions:0,blocks:0,chancesCreated:0}]))}));let prev=0,poss=null;for(const e of res.events){if(poss!==null)s[poss].team.poss+=e.t-prev;prev=e.t;const t=s[e.team],p=t.players[e.actor];if(['restart','turnover','rebound'].includes(e.type))poss=e.team;if(['pass','through_ball'].includes(e.type)){t.team.passes++;if(e.outcome==='complete'){t.team.passesOk++;p.passesOk++;}else{s[1-e.team].team.interceptions++;s[1-e.team].players[e.opp].interceptions++;}}if(['dribble_duel','wall_pass'].includes(e.type)){if(e.outcome==='attacker_wins'){t.team.dribblesOk++;p.dribblesOk++;}else if(e.outcome==='defender_wins'){s[1-e.team].team.tackles++;s[1-e.team].players[e.opp].tackles++;}}if(e.type==='shot_attempt'){t.team.shots++;p.shots++;}if(e.type==='goal'){t.team.goals++;t.team.onTarget++;p.goals++;if(e.assist)t.players[e.assist].chancesCreated++;}if(e.type==='block'){t.team.blocks++;p.blocks++;}if(e.type==='press'&&e.outcome==='ball_won'){t.team.tackles++;p.tackles++;}}const total=s[0].team.poss+s[1].team.poss||1;s[0].team.poss=Math.round(100*s[0].team.poss/total);s[1].team.poss=100-s[0].team.poss;return s;}
-window.CageEngine={VERSION:'cage-t3-5',PARAMS_VERSION:window.CageTacticalParams.VERSION,simulate,stats,ROSTER,BY_ID,comp,shape,TACTICS,P,freeze,hashEvents,probability,policy:window.CagePolicy.derive,validateEvidence:window.CageEvidence.validate};
+window.CageEngine={VERSION:'cage-t3-6',PARAMS_VERSION:window.CageTacticalParams.VERSION,simulate,stats,ROSTER,BY_ID,comp,shape,TACTICS,P,freeze,hashEvents,probability,policy:window.CagePolicy.derive,validateEvidence:window.CageEvidence.validate};
 })();

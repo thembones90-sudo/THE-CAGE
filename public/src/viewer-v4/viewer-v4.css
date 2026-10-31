@@ -41,3 +41,16 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.08;ba
 .cv-stage .cv-action.on{opacity:1}
 @media(max-width:650px){.cv-stage .cv-action{left:5px;top:4px;padding:3px 6px;max-width:79%;font-size:8px;letter-spacing:.04em;border-width:1px}}
 @media(prefers-reduced-motion:reduce){.cv-stage .cv-action{transition:none}}
+
+/* V5.5: static, verifiable match tactical plans. */
+.cv-tactics{margin:0 0 9px;padding:9px 11px;border:1px solid rgba(149,159,158,.28);border-radius:4px;background:rgba(12,23,26,.62);color:#dbd7c8}
+.cv-tactics:empty{display:none}
+.cv-tactics small{display:block;font:600 9px/1.4 system-ui,sans-serif;letter-spacing:.08em;color:#a8b7b4}
+.cv-tactics div{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:5px;font:800 11px/1.25 system-ui,sans-serif;letter-spacing:.07em}
+.cv-tactics div span{color:#849695;font:600 9px/1 system-ui,sans-serif}
+.cv-tactics b.t0{color:#91dfef}.cv-tactics b.t1{color:#f3a6a8}
+@media(max-width:650px){.cv-tactics{padding:7px 8px}.cv-tactics div{font-size:10px;gap:7px}}
+
+/* V5.5 recorded late shape changes. Never announced without actual event evidence. */
+.cv-tactics .cv-surge{margin-top:8px;padding:6px 7px;border:1px solid rgba(233,188,91,.55);border-radius:2px;background:rgba(185,123,38,.11);color:#f5d58e;font:800 9px/1.25 system-ui,sans-serif;letter-spacing:.08em}
+.cv-tactics .cv-surge[hidden]{display:none!important}
