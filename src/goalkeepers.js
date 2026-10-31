@@ -1,6 +1,7 @@
 // THE CAGE V6.6. Provisional historical goalkeeper roster, pending owner ratings review.
 // Role-specific overall is derived from exactly seven goalkeeper attributes.
 (function(root,factory){const api=factory();root.CageGoalkeepers=api;if(typeof module==='object'&&module.exports)module.exports=api;})(typeof window!=='undefined'?window:globalThis,function(){'use strict';
+const RATINGS_VERSION='gk30-v66-provisional-20261031';
 const ATTRS=Object.freeze(['reflexes','positioning','handling','oneOnOne','aerialControl','distribution','sweeping']);
 const CLASSES=Object.freeze(['REFLEX MONSTER','SWEEPER KEEPER','COMMANDER','GUARDIAN','DISTRIBUTOR']);
 const TIERS=Object.freeze(['TITAN','LEGEND','ELITE','STALWART','ACE']);
@@ -42,5 +43,5 @@ function rawOverall(p){if(!p||!p.r)throw Error('Goalkeeper attributes missing');
 const players=Object.freeze(entries.map(([id,name,country,tier,keeperClass,...attrs])=>{const r=Object.freeze(Object.fromEntries(ATTRS.map((k,i)=>[k,attrs[i]])));return Object.freeze({id,name,country,careerTier:tier,keeperClass,r,overall:rawOverall({r})});}));
 const BY_ID=Object.freeze(Object.fromEntries(players.map(p=>[p.id,p])));
 function validate(){if(players.length!==30||Object.keys(BY_ID).length!==30)throw Error('Expected 30 unique goalkeeper cards');for(const p of players){if(!TIERS.includes(p.careerTier)||!CLASSES.includes(p.keeperClass)||p.overall!==rawOverall(p))throw Error('Invalid goalkeeper metadata: '+p.id);if(Object.keys(p.r).length!==7)throw Error('Goalkeeper must have seven attributes');}return true;}
-validate();return Object.freeze({players,BY_ID,ATTRS,CLASSES,TIERS,WEIGHTS,rawOverall,validate});
+validate();return Object.freeze({RATINGS_VERSION,players,BY_ID,ATTRS,CLASSES,TIERS,WEIGHTS,rawOverall,validate});
 });

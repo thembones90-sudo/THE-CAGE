@@ -94,11 +94,7 @@ function revealKeeper(){
  const side=state.side,isCpu=game.mode==='solo'&&side==='B';
  $('gkReveal').classList.add('hidden');$('gkActive').classList.toggle('hidden',isCpu);$('gkPool').replaceChildren();
  if(!isCpu){
-  for(const id of state.offer){const g=GKS.BY_ID[id],btn=document.createElement('button');btn.type='button';btn.className='gk-choice';
-   const name=document.createElement('strong');name.textContent=g.name;const tier=document.createElement('span');tier.className='gk-class';tier.textContent=g.careerTier+' · '+g.keeperClass;
-   const rate=document.createElement('span');rate.className='gk-ovr';rate.textContent=g.overall+' GK OVR';
-   const nums=document.createElement('span');nums.className='gk-stat';nums.textContent='REF '+g.r.reflexes+'  POS '+g.r.positioning+'  HAN '+g.r.handling+'  1V1 '+g.r.oneOnOne+'  AIR '+g.r.aerialControl+'  DIS '+g.r.distribution+'  SWP '+g.r.sweeping;
-   btn.append(name,tier,rate,nums);btn.addEventListener('click',()=>claimKeeper(id));$('gkPool').append(btn);
+  for(const id of state.offer){const g=GKS.BY_ID[id],btn=window.CageKeeperCards.make(g,claimKeeper,document);$('gkPool').append(btn);
   }
  }
  saveShowdown();keeperClockTick();
@@ -176,7 +172,7 @@ function validateKeeperShowdown(s){
  if(s.schema!==2||!Array.isArray(s.keeperUsed)||new Set(s.keeperUsed).size!==s.keeperUsed.length||s.keeperUsed.some(id=>!GKS.BY_ID[id]))throw Error('Invalid goalkeeper exhaustion state.');
  const used=new Set(),observed=new Set();
  for(const r of records){
-  if(r.schema!==2||!['cage-t3-7','cage-t3-8'].includes(r.engineVersion)||!Array.isArray(r.config?.keepers)||r.config.keepers.length!==2)throw Error('Keeper-mode round must use T3-7 schema2.');
+  if(r.schema!==2||!['cage-t3-7','cage-t3-8','cage-t3-9'].includes(r.engineVersion)||!Array.isArray(r.config?.keepers)||r.config.keepers.length!==2)throw Error('Keeper-mode round must use a supported T3-7/8/9 schema2 engine.');
   for(const id of r.config.keepers){if(used.has(id))throw Error('Goalkeeper repeated across showdown rounds.');used.add(id);observed.add(id);}
  }
  if(s.keeperState){

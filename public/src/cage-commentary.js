@@ -73,7 +73,7 @@ function commentate(res, seed, teamNames = ['Home', 'Away']) {
       case 'gk_distribution': say(e,(window.CageGoalkeepers?.BY_ID[e.gk]?.name||'The goalkeeper')+(e.outcome==='complete'?' distributes '+e.kind+' to '+nm(e.target)+'.':' tries the '+e.kind+' release, but it is intercepted.'),1);break;
       case 'gk_sweep': say(e,(window.CageGoalkeepers?.BY_ID[e.gk]?.name||'The goalkeeper')+(e.outcome==='cleared'?' charges out and sweeps up the through ball!':' comes out, but '+nm(e.actor)+' beats the sweep!'),2);break;
       case 'golden_goal_pressure':say(e,'Deep into Golden Goal. Both sides push forward; the cage is opening up.',2);break;
-      case 'shot_attempt': say(e, res.keepers&&e.kind==='one_v_one'?nm(e.actor)+' faces the goalkeeper one-on-one!':fill(pick(e.kind === 'one_v_one' ? 'shot_build_ovo' : 'shot_build', e.i), e), 2); break;
+      case 'shot_attempt': if(e.keeperExposed)say(e,nm(e.actor)+' has the goalkeeper caught off the line!',2);say(e, res.keepers&&e.kind==='one_v_one'?nm(e.actor)+' faces the goalkeeper one-on-one!':fill(pick(e.kind === 'one_v_one' ? 'shot_build_ovo' : 'shot_build', e.i), e), 2); break;
       case 'block': say(e, fill(pick('block', e.i), e), 3); break;
       case 'shot_miss': say(e, fill(pick(e.outcome === 'off_post_or_wide' ? 'miss_near' : 'miss', e.i), e), 3); break;
       case 'goal': { let s = fill(pick('goal', e.i), e); if (e.assist && e.assist !== e.actor) s += ` Made by ${nm(e.assist)}.`; say(e, s, 3); break; }

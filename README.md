@@ -1,3 +1,9 @@
+# THE CAGE V6.7: GOALKEEPER SCOUTING (EXPERIMENTAL)
+
+New keeper selection cards with all seven attributes, T3-9 exposure risk after beaten sweeps, and versioned historical replay compatibility. Read [Claude & Qwen audit](docs/V67_CLAUDE_QWEN_GK_REPORT.md). Goalkeeper ratings remain provisional and **unchanged** until owner review.
+
+---
+
 # THE CAGE V6.6 T3-8 - Goalkeeper Dynamics (EXPERIMENTAL)
 
 A separate opt-in 3+1 goalkeeper mode now records active distribution, sweeping, save/parry classification and a documented prolonged-Golden-Goal pressure phase. For the full measured changes, calibration limitations, legacy replay policy and Windows build details read `docs/V66_GK_DYNAMICS_FINAL_REPORT.md`. Full regression: `powershell -ExecutionPolicy Bypass -File tools/v66-experimental-gate.ps1`. The original V6.6 build remains preserved.

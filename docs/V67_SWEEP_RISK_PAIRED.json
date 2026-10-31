@@ -1,0 +1,111 @@
+{
+  "seedStart": 881200,
+  "sampleCount": 90,
+  "description": "Same initial seeds, independent event paths once RNG diverges. T3-8 and T3-9 goalkeeper exposure impact.",
+  "rows": [
+    {
+      "squad": "mixed",
+      "pair": "Strong",
+      "engine": "T38",
+      "matches": 90,
+      "caps": 0,
+      "goals": 534,
+      "golden": 12,
+      "exposed": 0,
+      "beaten": 735,
+      "goalsPerCompleted": 5.93,
+      "goldenPct": 13.3
+    },
+    {
+      "squad": "mixed",
+      "pair": "Strong",
+      "engine": "T39",
+      "matches": 90,
+      "caps": 0,
+      "goals": 552,
+      "golden": 15,
+      "exposed": 217,
+      "beaten": 750,
+      "goalsPerCompleted": 6.13,
+      "goldenPct": 16.7
+    },
+    {
+      "squad": "mixed",
+      "pair": "Street",
+      "engine": "T38",
+      "matches": 90,
+      "caps": 0,
+      "goals": 604,
+      "golden": 11,
+      "exposed": 0,
+      "beaten": 800,
+      "goalsPerCompleted": 6.71,
+      "goldenPct": 12.2
+    },
+    {
+      "squad": "mixed",
+      "pair": "Street",
+      "engine": "T39",
+      "matches": 90,
+      "caps": 0,
+      "goals": 618,
+      "golden": 11,
+      "exposed": 201,
+      "beaten": 780,
+      "goalsPerCompleted": 6.87,
+      "goldenPct": 12.2
+    },
+    {
+      "squad": "defense",
+      "pair": "Strong",
+      "engine": "T38",
+      "matches": 90,
+      "caps": 0,
+      "goals": 95,
+      "golden": 69,
+      "exposed": 0,
+      "beaten": 911,
+      "goalsPerCompleted": 1.06,
+      "goldenPct": 76.7
+    },
+    {
+      "squad": "defense",
+      "pair": "Strong",
+      "engine": "T39",
+      "matches": 90,
+      "caps": 0,
+      "goals": 95,
+      "golden": 69,
+      "exposed": 131,
+      "beaten": 910,
+      "goalsPerCompleted": 1.06,
+      "goldenPct": 76.7
+    },
+    {
+      "squad": "defense",
+      "pair": "Street",
+      "engine": "T38",
+      "matches": 90,
+      "caps": 0,
+      "goals": 102,
+      "golden": 61,
+      "exposed": 0,
+      "beaten": 931,
+      "goalsPerCompleted": 1.13,
+      "goldenPct": 67.8
+    },
+    {
+      "squad": "defense",
+      "pair": "Street",
+      "engine": "T39",
+      "matches": 90,
+      "caps": 0,
+      "goals": 102,
+      "golden": 59,
+      "exposed": 100,
+      "beaten": 910,
+      "goalsPerCompleted": 1.13,
+      "goldenPct": 65.6
+    }
+  ]
+}

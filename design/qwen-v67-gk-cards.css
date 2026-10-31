@@ -1,0 +1,266 @@
+/*
+ * THE CAGE - GOALKEEPER SELECTION CARDS (CSS-ONLY)
+ * Theme: Industrial Underground (Gunmetal/Gold/Steel)
+ * Author: QWEN Esports UI Engineer
+ */
+
+/* =========================================
+   1. CORE VARIABLES & RESET
+   ========================================= */
+:root {
+    /* Palette: Gunmetal Deck & Muted Gold Accent */
+    --c-bg-deep: #0f1215;
+    --c-bg-card: #161b21;
+    --c-bg-card-hover: #1e242b;
+    --c-border-steel: #2a3540;
+    --c-border-gold: #c5a059;
+    --c-text-main: #e0e6ed;
+    --c-text-muted: #7d8a99;
+    --c-accent-blue: #2b6cb0; /* Defense */
+    --c-accent-red: #9c2734;  /* Attackers */
+    --c-accent-yellow: #eaa531; /* Mids */
+
+    /* Typography & Spacing */
+    --f-size-name: 1.1rem;
+    --f-size-stat: 0.85rem;
+    --r-radius-card: 6px;
+    --r-radius-tiny: 2px;
+    --s-gap-grid: 12px;
+
+    /* Effects */
+    --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 15px rgba(197, 160, 89, 0.15);
+    --anim-speed: 200ms;
+}
+
+/* =========================================
+   2. GRID LAYOUT (RESPONSIVE)
+   ========================================= */
+#keeperDraftPhase .gk-pool {
+    display: grid;
+    /* Desktop: Exactly 5 columns if space permits, otherwise auto-fit */
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--s-gap-grid);
+    margin-top: 12px;
+    padding: 0 4px; /* Tight padding for max density */
+}
+
+/* Tablet (Max-width ~768px) -> 3 Columns */
+@media (max-width: 900px) {
+    #keeperDraftPhase .gk-pool {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile (Max-width ~480px) -> 2 Columns */
+@media (max-width: 600px) {
+    #keeperDraftPhase .gk-pool {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px; /* Tighter gap for mobile */
+        padding: 0 2px;
+    }
+}
+
+/* Small Mobile (Max-width ~360px) -> 1 Column */
+@media (max-width: 375px) {
+    #keeperDraftPhase .gk-pool {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   3. CARD CONTAINER & BASE STYLES
+   ========================================= */
+.gk-choice {
+    position: relative;
+    background: linear-gradient(145deg, var(--c-bg-card) 0%, #12161b 100%);
+    border: 1px solid var(--c-border-steel);
+    border-radius: var(--r-radius-card);
+    padding: 8px;
+    cursor: pointer;
+    transition: transform var(--anim-speed) ease, box-shadow var(--anim-speed) ease, border-color var(--anim-speed) ease;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 180px; /* Ensure consistent height */
+    user-select: none;
+}
+
+/* Hover & Focus States (Tactile Feedback) */
+.gk-choice:hover,
+.gk-choice:focus-visible {
+    border-color: var(--c-border-gold);
+    box-shadow: var(--shadow-glow), 0 8px 15px rgba(0,0,0,0.3);
+    transform: translateY(-2px) scale(1.01);
+    z-index: 2;
+}
+
+/* Disabled State */
+.gk-choice:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    filter: grayscale(0.8);
+    transform: none;
+}
+
+/* =========================================
+   4. CARD HEADER & TIER BADGE
+   ========================================= */
+.gk-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.gk-tier {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 2px 6px;
+    border-radius: var(--r-radius-tiny);
+    background: rgba(0, 0, 0, 0.4);
+    color: var(--c-text-muted);
+    border: 1px solid var(--c-border-steel);
+}
+
+/* Tier Specific Colors (using data-tier attribute) */
+[data-tier="TITAN"] .gk-tier {
+    background: linear-gradient(90deg, #2b6cb0, #4a89dc);
+    color: white;
+    border-color: var(--c-accent-blue);
+    box-shadow: 0 0 10px rgba(43, 108, 176, 0.3);
+}
+
+[data-tier="LEGEND"] .gk-tier {
+    background: linear-gradient(90deg, #eaa531, #fbd062);
+    color: #2b1d0e;
+    border-color: var(--c-border-gold);
+    box-shadow: 0 0 10px rgba(234, 165, 49, 0.3);
+}
+
+[data-tier="ELITE"] .gk-tier {
+    background: linear-gradient(90deg, #9c2734, #d64a58);
+    color: white;
+    border-color: var(--c-accent-red);
+}
+
+[data-tier="STALWART"] .gk-tier {
+    background: linear-gradient(90deg, #7d8a99, #9caab3);
+    color: #1e242b;
+    border-color: var(--c-border-steel);
+}
+
+/* =========================================
+   5. PLAYER NAME & CLASS
+   ========================================= */
+.gk-choice strong {
+    font-size: var(--f-size-name);
+    font-weight: 700;
+    color: var(--c-text-main);
+    line-height: 1.2;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+.gk-class {
+    font-size: 0.75rem;
+    color: var(--c-accent-yellow); /* Default Mid */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(234, 165, 49, 0.1);
+    padding: 1px 4px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Class Color Modifiers */
+[data-class="KEEPER"] .gk-class { color: var(--c-accent-blue); background: rgba(43, 108, 176, 0.15); }
+[data-class="SWEEPER"] .gk-class { color: var(--c-accent-red); background: rgba(156, 39, 52, 0.15); }
+
+/* =========================================
+   6. OVERALL RATING (OVR)
+   ========================================= */
+.gk-ovr {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--c-text-main);
+    text-align: center;
+    margin: 2px 0;
+    line-height: 1;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* =========================================
+   7. STATISTICS GRID (FUTURE FEATURE)
+   ========================================= */
+.gk-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr)); /* all seven stats */
+    gap: 2px;
+    margin-top: auto; /* Push to bottom if content varies */
+    background: rgba(0, 0, 0, 0.3);
+    padding: 4px;
+    border-radius: var(--r-radius-card);
+}
+
+.gk-attribute {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--f-size-stat);
+    color: var(--c-text-muted);
+    text-align: center;
+    line-height: 1.1;
+}
+
+.gk-label {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    margin-bottom: 1px;
+    opacity: 0.8;
+}
+
+.gk-number {
+    font-weight: 700;
+    color: var(--c-text-main);
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   8. SPECIALTY BANNER (Bottom Strip)
+   ========================================= */
+.gk-specialty {
+    margin-top: 4px;
+    font-size: 0.65rem;
+    color: var(--c-border-gold);
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 4px;
+    font-style: italic;
+}
+
+/* =========================================
+   9. ACCESSIBILITY & REDUCED MOTION
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+    .gk-choice {
+        transition: none;
+    }
+}
+
+.gk-choice:focus-visible {
+    outline: 2px solid var(--c-border-gold);
+    outline-offset: -2px;
+}
+
+/* =========================================
+   10. UTILITY: SELECTION STATE (Visual)
+   ========================================= */
+/* Optional: If JS adds a .selected class later */
+.gk-choice.selected {
+    border-color: var(--c-accent-blue);
+    box-shadow: 0 0 20px rgba(43, 108, 176, 0.2);
+}

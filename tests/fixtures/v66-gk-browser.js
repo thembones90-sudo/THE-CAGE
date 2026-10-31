@@ -16,7 +16,16 @@
      check(!$('keeperDraftPhase').classList.contains('hidden'),'keeper phase must be visible');
      if(s.keeperStage==='pending'){if(!$('gkReveal').classList.contains('hidden'))$('gkReveal').click();}
      if(s.keeperStage==='pickingA'){
-       const all=$('gkPool').querySelectorAll('.gk-choice');if(all.length===5){firstOffer=[...all].map(x=>x.querySelector('strong')?.textContent);all[0].click();}
+       const all=$('gkPool').querySelectorAll('.gk-choice');if(all.length===5){
+         check(getComputedStyle($('gkPool')).display==='grid','GK offers lost responsive grid layout');
+         for(const card of all){
+           check(['TITAN','LEGEND','ELITE','STALWART','ACE'].includes(card.dataset.tier),'Missing tier styling');
+           check(card.querySelectorAll('.gk-attribute').length===7,'Goalkeeper card must show all seven attributes');
+           check(card.querySelector('.gk-ovr')?.textContent.trim().length>0,'GK OVR invisible');
+           check(card.getAttribute('aria-label')?.includes('Select goalkeeper'),'GK card needs accessible selection label');
+         }
+         firstOffer=[...all].map(x=>x.querySelector('strong')?.textContent);all[0].click();
+       }
      }
      if(s.keeperStage==='handoffB'||s.keeperStage==='pickingB'){
        stageBSeen=true;

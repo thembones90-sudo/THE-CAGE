@@ -1,5 +1,5 @@
-/* THE CAGE V6.6 EXPERIMENTAL: generated from the canonical playable dependency list. */
-const CACHE='the-cage-full-v66-82597a1d8478';
+/* THE CAGE V6.7 GOALKEEPER SCOUTING EXPERIMENTAL: generated from the canonical playable dependency list. */
+const CACHE='the-cage-full-v67-a9e4e71aa4fb';
 const STATIC=[
   "./assets/cage-icon.svg",
   "./classic-v56/assets/cage-icon.svg",
@@ -83,6 +83,8 @@ const STATIC=[
   "./design/qwen-30b/arena/arena-golden.svg",
   "./design/qwen-30b/arena/arena.svg",
   "./design/qwen-30b/arena/relic-ball.svg",
+  "./design/qwen-v67-gk-cards.css",
+  "./design/qwen-v67-integration.css",
   "./draft.html",
   "./index.html",
   "./manifest.webmanifest",
@@ -92,6 +94,7 @@ const STATIC=[
   "./src/cage-engine-draft.js",
   "./src/cage-engine-v65.js",
   "./src/cage-engine-v66.js",
+  "./src/cage-engine-v68.js",
   "./src/cage-engine.js",
   "./src/cage-ui.css",
   "./src/cpu-draft.js",
@@ -101,6 +104,7 @@ const STATIC=[
   "./src/full-cage.css",
   "./src/goalkeepers.js",
   "./src/identity/search.js",
+  "./src/keeper-card-ui.js",
   "./src/keeper-draft.js",
   "./src/natural-positions.js",
   "./src/overall.js",
