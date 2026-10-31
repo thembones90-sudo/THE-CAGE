@@ -9,7 +9,7 @@ if(stage==='reload'){
  check(Math.max(s.wins.A,s.wins.B)===3,'victory count retained');
  check(s.history.length>=3&&s.history.length<=5,'history retained');
  check(s.used.length===s.history.length*6,'exhaustion retained');
- check($('next-round').classList.contains('hidden'),'champion cannot start another round');
+ check($('next-round').classList.contains('hidden'),'champion cannot start another round');check(!!$('champion-celebration'),'champion banner missing after page reload');
  sessionStorage.removeItem('cage-five-fixture-stage');
  localStorage.removeItem('the-cage.random-showdown.v60');
  o.textContent='FIVE_ROUND_TEST_PASS '+s.history.length+' rounds / '+s.used.length+' unique players / champion '+s.champion+' / restore safe';return;
@@ -40,7 +40,9 @@ for(let round=1;round<=5;round++){
  check(state.history.length===round,'round not finalized');
  check(state.wins.A+state.wins.B===round,'wins not accounted');
  check($('result').textContent.includes('WINS'),'no winner displayed');check(!$('arena-outcome').classList.contains('hidden'),'no result panel underneath arena');check($('arena-summary').textContent.includes('SHOWDOWN'),'arena result missing series score');
+ const beforeScore={A:state.wins.A,B:state.wins.B};beforeScore[saved.pending?.result?.winner===0?'A':'B']--;
  $('watch-again').click();check(ctl.playback.mode==='replay','replay mode false');
+ const displayed=document.querySelector('#draft-arena [data-k="showdown"]')?.textContent?.trim();check(displayed===beforeScore.A+' : '+beforeScore.B,'replay shows future series score '+displayed+' expected '+beforeScore.A+' : '+beforeScore.B);
  check(JSON.parse(localStorage.getItem('the-cage.random-showdown.v60')).history[round-1].config.seed===seed,'replay changed seed');
  const champion=Math.max(state.wins.A,state.wins.B)>=3;
  if(champion){check(state.champion!==null,'champion not declared');check($('next-round').classList.contains('hidden'),'next allowed for champion');check($('arena-next').classList.contains('hidden'),'arena advance allowed after champion');check(!!$('champion-celebration'),'champion crown must survive final-score update');break;}
