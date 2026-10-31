@@ -9,7 +9,7 @@ assert.equal(cue.eventIndex,goal.i);assert.equal(cue.source,'recorded-match-goal
 assert.equal(cue.team,goal.team);assert.equal(cue.scorer,names(goal.actor));assert.equal(cue.replay,false);
 assert(Object.isFrozen(cue));assert.equal(cue.isGolden,tl.golden);
 assert(G.markup(cue,[1,0]).includes('RECORDED EVENT'));
-assert(G.markup(cue,[1,0]).includes('1 : 0'));
+assert(G.markup(cue,[1,0]).includes('1 : 0'));assert(G.markup(cue,[1,0]).includes('cv-golden-doors'));
 const hostile=G.goalData(tl,record.result.events,goal,['<img src=x>','<img src=x>'],()=>'<script>danger</script>',true);
 const html=G.markup(hostile,[1,0]);
 assert(!html.includes('<script>')&&!html.includes('<img'));

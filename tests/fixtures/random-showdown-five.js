@@ -47,6 +47,10 @@ for(let round=1;round<=5;round++){
  const champion=Math.max(state.wins.A,state.wins.B)>=3;
  if(champion){check(state.champion!==null,'champion not declared');check($('next-round').classList.contains('hidden'),'next allowed for champion');check($('arena-next').classList.contains('hidden'),'arena advance allowed after champion');check(!!$('champion-celebration'),'champion crown must survive final-score update');break;}
  $('arena-next').click();
+ check(!$('round-intermission').classList.contains('hidden'),'intermission not visible on next round');
+ check($('intermission-result').textContent.includes('WON ROUND '+round),'intermission shows incorrect last winner');
+ check($('intermission-score').textContent==='SERIES '+state.wins.A+' : '+state.wins.B,'intermission score not sourced from true wins');
+ check($('intermission-exhausted').textContent===(round*6)+' PLAYERS EXHAUSTED','intermission exhausted count drifted');
  check(window.CageRandomDraft.snapshot().used.length===round*6,'exhausted list reset on new round');
  check(window.CageRandomDraft.snapshot().rerolls.A===1,'reroll not reset');
 }

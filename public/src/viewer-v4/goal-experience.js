@@ -28,6 +28,7 @@ function markup(cue,score){
  const scoreHtml=valid?'<span class="cv-golden-score">'+score[0]+' : '+score[1]+'</span>':'';
  return '<div class="cv-golden-rail">THE CAGE <span>///</span> MATCH EVENT '+String(cue.eventIndex).padStart(3,'0')+'</div>'+
  '<div class="cv-golden-core"><span class="cv-golden-eyebrow">'+(cue.replay?'SLOW-MOTION REPLAY // ':'FINAL STRIKE // ')+escapeText(cue.type)+'</span>'+
+ '<span class="cv-golden-doors" aria-hidden="true"><i></i><i></i></span>'+
  '<strong class="cv-golden-title">GOAL<span class="cv-golden-period">.</span></strong>'+
  '<span class="cv-golden-scorer">'+scorer+'</span>'+assist+
  '<div class="cv-golden-winner"><span>WINNER // '+names+'</span>'+scoreHtml+'</div></div>'+

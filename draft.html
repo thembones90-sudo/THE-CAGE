@@ -176,6 +176,32 @@ button:focus-visible{outline:3px solid #f6d18b;outline-offset:3px}
 #arena-next{background:linear-gradient(160deg,#9d723a,#56401f);border:1px solid #e5c77b;font-weight:950}
 #arena-replay{background:#1c3f4c;border:1px solid #6292a5}
 @media(max-width:760px){.arena-outcome{flex-wrap:wrap}.arena-outcome-actions{width:100%;justify-content:stretch}.arena-outcome-actions button{flex:1}.view-toggle{width:100%}}
+</style><style id="v63-broadcast-polish">
+/* The goal shutter effect is rendered ONLY inside the recorded-goal overlay. */
+.cv-golden-doors{position:absolute;z-index:0;inset:10% 2%;pointer-events:none;display:flex;justify-content:space-between;opacity:.5}
+.cv-golden-doors i{display:block;height:100%;width:27%;border:2px solid #c79c4e;background:
+ repeating-linear-gradient(54deg,transparent 0 18px,#d7b77635 18px 19px,transparent 19px 32px,#d7b77635 32px 33px),
+ repeating-linear-gradient(-54deg,transparent 0 18px,#d7b77635 18px 19px,transparent 19px 32px,#d7b77635 32px 33px),
+ linear-gradient(90deg,#6c522b50,#0b182060);
+ box-shadow:inset 0 0 28px #000a,0 0 21px #dbb25a48}
+.cv-golden-doors i:first-child{transform:translateX(-105%);animation:v63-open-left .8s cubic-bezier(.19,.6,.2,1) both}
+.cv-golden-doors i:last-child{transform:translateX(105%);animation:v63-open-right .8s cubic-bezier(.19,.6,.2,1) both}
+.cv-root.cv-goal-in-progress[data-goal-side="a"] .cv-scoreboard{border-bottom:3px solid #5dc7ed;box-shadow:inset 0 -11px 26px #2e8eb121}
+.cv-root.cv-goal-in-progress[data-goal-side="b"] .cv-scoreboard{border-bottom:3px solid #f27983;box-shadow:inset 0 -11px 26px #a53e4c24}
+.cv-golden-core{position:relative;z-index:2}
+.cv-golden-winner{border:1px solid #cba356!important;border-radius:4px;box-shadow:inset 0 0 18px #d3a45630,0 0 20px #c39a5340}
+.cv-golden-scorer{padding:3px 12px;border-bottom:1px solid #e0b76d66}
+@keyframes v63-open-left{0%{transform:translateX(0);opacity:1}100%{transform:translateX(-106%);opacity:.5}}
+@keyframes v63-open-right{0%{transform:translateX(0);opacity:1}100%{transform:translateX(106%);opacity:.5}}
+.round-intermission{width:min(100%,760px);margin:0 auto 22px;padding:20px 24px;border:1px solid #d4a95c;border-radius:12px;background:radial-gradient(ellipse at 50% 0%,#574025,#182c35 62%,#0c1822);box-shadow:0 14px 40px #0008,0 0 25px #ca9c4c1e}
+.round-intermission.hidden{display:none}
+.intermission-kicker{font-size:11px;letter-spacing:.2em;color:#f5d28c;font-weight:950}
+.round-intermission h3{font-size:clamp(21px,3.5vw,36px);letter-spacing:.055em;color:#fff1bd;margin:10px 0}
+.intermission-stats{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+.intermission-stats span{padding:8px 12px;background:#0e1c25;border:1px solid #81714b;border-radius:7px;color:#e0d4b8;font-weight:800;font-size:13px}
+.round-intermission p{color:#c3d3d8;font-size:12px;margin:14px 0 0}
+@media(max-width:650px){.cv-golden-doors{display:none}.round-intermission{padding:15px 10px;margin-bottom:16px}.intermission-stats span{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.cv-golden-doors i{animation:none!important;transform:none!important;opacity:.35}}
 </style></head><body><main><div class="top"><div><h1>THE CAGE</h1><div class="muted">BEST OF FIVE · RANDOM DRAFT · KNOW BALL OR FALL</div></div><a href="index.html">Main game</a></div>
 <section class="showdown-strip" aria-label="Showdown standings"><strong>THE CAGE SHOWDOWN</strong><span id="showdown-score">COMMANDER 0 : 0 OPPONENT</span><span id="round-number">ROUND 1 / 5</span><div id="round-history" aria-label="Round history"></div></section>
 <section id="intro" class="panel intro-command">
@@ -220,7 +246,7 @@ button:focus-visible{outline:3px solid #f6d18b;outline-offset:3px}
     </div>
   </div>
 </section>
-<section id="handoff" class="panel center hidden"><h2 id="passTitle">PASS THE DEVICE</h2><p class="muted">Only the active drafter should view the next pool. Local hotseat mode: this is a courtesy privacy screen, not online server-side secrecy.</p><button id="reveal">REVEAL MY 15 PLAYERS</button></section>
+<section id="handoff" class="panel center hidden"><div id="round-intermission" class="round-intermission hidden" aria-label="Previous round recap"><span class="intermission-kicker">THE CAGE · NEXT ROUND</span><h3 id="intermission-result"></h3><div class="intermission-stats"><span id="intermission-score"></span><span id="intermission-exhausted"></span></div><p>New round. Fresh candidates. Previous footballers remain exhausted.</p></div><h2 id="passTitle">PASS THE DEVICE</h2><p class="muted">Only the active drafter should view the next pool. Local hotseat mode: this is a courtesy privacy screen, not online server-side secrecy.</p><button id="reveal">REVEAL MY 15 PLAYERS</button></section>
 <section id="game" class="hidden"><section class="panel bar"><div><strong id="phase">PICK 1 / 6</strong><p class="muted" id="current"></p></div><div class="draft-clock-shell" aria-label="Time remaining"><div class="clock" id="clock">20</div><small>SECONDS</small></div><div id="draft-progress" class="draft-progress" aria-label="Draft progress"></div><div class="bar"><button id="reroll">REROLL 15</button><button id="restart">NEW SHOWDOWN</button></div></section>
 <div class="squads"><section class="panel team"><h2>COMMANDER</h2><div id="squadA"></div></section><section class="panel team"><h2>OPPONENT</h2><div id="squadB"></div></section></div>
 <section class="panel" id="selection"><div class="pool-toolbar"><h2>YOUR 15 CANDIDATES</h2><button id="viewToggle" class="view-toggle" type="button" aria-pressed="false">QUICK VIEW · ALL 15</button></div><p class="muted">Choose one. Pick locks immediately. Your opponent never sees this pool.</p><div id="counterAdvice" class="hint hidden"></div><div class="pool" id="pool"></div></section>

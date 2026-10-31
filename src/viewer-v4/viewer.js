@@ -96,6 +96,7 @@ function mount(el,record,opts){
     // It never calls the game engine or modifies the result, score or clock.
     const cue=G.goalData(tl,events,goal,o.teamNames,name,replay);
     goldenCue=cue;goldenAt=now;
+    root.dataset.goalSide=cue.team===0?'a':'b';
     const overlay=q('golden');
     overlay.innerHTML=G.markup(cue,T.scoreAt(tl,goal.tau+0.0001));
     overlay.hidden=false;overlay.classList.toggle('cv-golden-replay',!!replay);
@@ -104,6 +105,7 @@ function mount(el,record,opts){
       // UI-only handoff, independent of throttled animation frames.
       goldenTimer=null;goldenCue=null;overlay.hidden=true;
       root.classList.remove('cv-goal-in-progress');
+      delete root.dataset.goalSide;
       q('goalcard').hidden=!(goalShown&&tl.goals.some(g=>pb.tau>=g.tau));
     },G.DURATION*1000);
     goalShown=true;flashUntil=now+.6;
@@ -125,6 +127,7 @@ function mount(el,record,opts){
     if(goldenTimer!==null)clearTimeout(goldenTimer);
     goldenTimer=null;goldenCue=null;q('golden').hidden=true;
     root.classList.remove('cv-goal-in-progress');
+    delete root.dataset.goalSide;
   }
   function syncComm(tau){const target=lines.filter(l=>l.tau<=tau).length;if(target===shown)return;const ol=q('comm');if(target<shown){ol.innerHTML='';shown=0;}
     const frag=document.createDocumentFragment();for(let k=Math.max(0,shown);k<target;k++){const l=lines[k],li=document.createElement('li');li.className='imp'+(l.imp||0);li.innerHTML='<time>'+mmss(l.t)+'</time> '+esc(l.text);frag.appendChild(li);}ol.appendChild(frag);shown=target;ol.scrollTop=ol.scrollHeight;
