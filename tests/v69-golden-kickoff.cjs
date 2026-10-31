@@ -3,8 +3,8 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
 const c={window:{location:{search:''}}};vm.createContext(c);
 for(const m of read('play.html').matchAll(/<script src="(src\/[^"]+)"><\/script>/g)){vm.runInContext(read(m[1]),c,{filename:m[1]});if(m[1]==='src/replay/records.js')break;}
-const W=c.window,E=W.CageEngine,old=W.CageEngineT310,Records=W.CageRecords;
-assert.equal(E.VERSION,'cage-t3-11');assert.equal(old.VERSION,'cage-t3-10');assert.equal(W.CAGE_ENGINE_REGISTRY['cage-t3-10'],old);
+const W=c.window,E=W.CageEngineT311,old=W.CageEngineT310,Records=W.CageRecords;
+assert.equal(E.VERSION,'cage-t3-11');assert.equal(W.CageEngine.VERSION,'cage-t3-12');assert.equal(old.VERSION,'cage-t3-10');assert.equal(W.CAGE_ENGINE_REGISTRY['cage-t3-10'],old);
 const set={
  mixed:[['paolo-maldini','michael-ballack','ronaldo-nazario'],['ledley-king','claudio-marchisio','antonio-valencia']],
  defenders:[['paolo-maldini','nemanja-vidic','alessandro-nesta'],['rio-ferdinand','ledley-king','john-terry']]
@@ -19,7 +19,7 @@ for(const [group,teams] of Object.entries(set))for(const withKeepers of [false,t
  assert(r.winner===0||r.winner===1);
  assert.deepEqual(JSON.stringify(E.simulate(cfg)),JSON.stringify(r),'T3-11 RNG must be deterministic');
  if(baseline){
-  const rec=JSON.parse(JSON.stringify(Records.make(cfg,r,1)));rec.engineVersion='cage-t3-10';rec.result=JSON.parse(JSON.stringify(baseline));
+  const rec=JSON.parse(JSON.stringify(Records.make(cfg,W.CageEngine.simulate(cfg),1)));rec.engineVersion='cage-t3-10';rec.paramsVersion=old.PARAMS_VERSION;rec.result=JSON.parse(JSON.stringify(baseline));
   assert.equal(Records.reproduce(rec).eventHash,baseline.eventHash,'Archived T3-10 must replay exactly');counters.oldReplays++;
   if(baseline.decidedBy==='regulation'){assert.equal(r.eventHash,baseline.eventHash,'Regulation outcome must stay identical');counters.regulationUnchanged++;}
  }
@@ -38,7 +38,7 @@ for(const [group,teams] of Object.entries(set))for(const withKeepers of [false,t
   assert.equal(e.reason,'prolonged_overtime_risk');
   assert(e.t>=r.regulationSeconds+900);
  }
- const saved=Records.make(cfg,r,1);assert.equal(Records.reproduce(saved).eventHash,r.eventHash);
+ const saved=Records.make(cfg,W.CageEngine.simulate(cfg),1);assert.equal(Records.reproduce(saved).eventHash,saved.result.eventHash);
 }
 assert.equal(counters.newCapped,0,'New Golden Goal must finish in controlled sample');
 assert(counters.goldenKickoffs>0&&counters.nonGKOvertime>0);

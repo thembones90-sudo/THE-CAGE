@@ -1,0 +1,347 @@
+{
+  "baseline": "cage-t3-11",
+  "candidate": "cage-t3-12",
+  "seedStart": 944300,
+  "seeds": 40,
+  "tacticAssignments": 2,
+  "sideSwaps": 2,
+  "method": "Both sides assigned both tactics, both sides swapped, same seeds and goalkeeper identities. Only 3 archetype pairings.",
+  "rows": [
+    {
+      "group": "mixed",
+      "tacticA": "press",
+      "tacticB": "possession",
+      "baseline": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 65.6,
+        "goalsPerMatch": 5.33,
+        "goldenPct": 12.5,
+        "possAPct": 43.7,
+        "linked": 0,
+        "linkGoals": 0,
+        "blockPct": 36.3
+      },
+      "candidate": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 63.1,
+        "goalsPerMatch": 5.59,
+        "goldenPct": 12.5,
+        "possAPct": 46.2,
+        "linked": 402,
+        "linkGoals": 54,
+        "blockPct": 36.1
+      },
+      "deltaWinAPoints": -2.5
+    },
+    {
+      "group": "mixed",
+      "tacticA": "possession",
+      "tacticB": "balanced",
+      "baseline": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 45.6,
+        "goalsPerMatch": 4.92,
+        "goldenPct": 12.5,
+        "possAPct": 54.2,
+        "linked": 0,
+        "linkGoals": 0,
+        "blockPct": 41.4
+      },
+      "candidate": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 48.8,
+        "goalsPerMatch": 5.78,
+        "goldenPct": 10,
+        "possAPct": 51.2,
+        "linked": 521,
+        "linkGoals": 112,
+        "blockPct": 40.4
+      },
+      "deltaWinAPoints": 3.2
+    },
+    {
+      "group": "mixed",
+      "tacticA": "counter",
+      "tacticB": "press",
+      "baseline": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 42.5,
+        "goalsPerMatch": 6.91,
+        "goldenPct": 8.8,
+        "possAPct": 53.6,
+        "linked": 0,
+        "linkGoals": 0,
+        "blockPct": 35.8
+      },
+      "candidate": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 42.5,
+        "goalsPerMatch": 6.57,
+        "goldenPct": 10.6,
+        "possAPct": 53.5,
+        "linked": 385,
+        "linkGoals": 62,
+        "blockPct": 35.8
+      },
+      "deltaWinAPoints": 0
+    },
+    {
+      "group": "mixed",
+      "tacticA": "counter",
+      "tacticB": "balanced",
+      "baseline": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 48.8,
+        "goalsPerMatch": 6.47,
+        "goldenPct": 6.3,
+        "possAPct": 51,
+        "linked": 0,
+        "linkGoals": 0,
+        "blockPct": 41.5
+      },
+      "candidate": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 48.8,
+        "goalsPerMatch": 6.47,
+        "goldenPct": 6.3,
+        "possAPct": 50.9,
+        "linked": 634,
+        "linkGoals": 144,
+        "blockPct": 41.4
+      },
+      "deltaWinAPoints": 0
+    },
+    {
+      "group": "creators",
+      "tacticA": "press",
+      "tacticB": "possession",
+      "baseline": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 53.1,
+        "goalsPerMatch": 11.26,
+        "goldenPct": 10.6,
+        "possAPct": 47.8,
+        "linked": 0,
+        "linkGoals": 0,
+        "blockPct": 21.3
+      },
+      "candidate": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 44.4,
+        "goalsPerMatch": 12.06,
+        "goldenPct": 6.9,
+        "possAPct": 49.1,
+        "linked": 323,
+        "linkGoals": 134,
+        "blockPct": 21.4
+      },
+      "deltaWinAPoints": -8.7
+    },
+    {
+      "group": "creators",
+      "tacticA": "possession",
+      "tacticB": "balanced",
+      "baseline": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 51.3,
+        "goalsPerMatch": 10.94,
+        "goldenPct": 10.6,
+        "possAPct": 52.5,
+        "linked": 0,
+        "linkGoals": 0,
+        "blockPct": 21.2
+      },
+      "candidate": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 51.3,
+        "goalsPerMatch": 11.58,
+        "goldenPct": 8.8,
+        "possAPct": 50.9,
+        "linked": 292,
+        "linkGoals": 110,
+        "blockPct": 21.1
+      },
+      "deltaWinAPoints": 0
+    },
+    {
+      "group": "creators",
+      "tacticA": "counter",
+      "tacticB": "press",
+      "baseline": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 51.3,
+        "goalsPerMatch": 11.43,
+        "goldenPct": 6.9,
+        "possAPct": 50.6,
+        "linked": 0,
+        "linkGoals": 0,
+        "blockPct": 22.3
+      },
+      "candidate": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 61.3,
+        "goalsPerMatch": 11.31,
+        "goldenPct": 10,
+        "possAPct": 50.1,
+        "linked": 472,
+        "linkGoals": 198,
+        "blockPct": 22.5
+      },
+      "deltaWinAPoints": 10
+    },
+    {
+      "group": "creators",
+      "tacticA": "counter",
+      "tacticB": "balanced",
+      "baseline": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 46.9,
+        "goalsPerMatch": 11.04,
+        "goldenPct": 16.3,
+        "possAPct": 49.8,
+        "linked": 0,
+        "linkGoals": 0,
+        "blockPct": 21
+      },
+      "candidate": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 46.3,
+        "goalsPerMatch": 11.11,
+        "goldenPct": 15,
+        "possAPct": 49.8,
+        "linked": 467,
+        "linkGoals": 191,
+        "blockPct": 20.9
+      },
+      "deltaWinAPoints": -0.6
+    },
+    {
+      "group": "defenders",
+      "tacticA": "press",
+      "tacticB": "possession",
+      "baseline": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 76.9,
+        "goalsPerMatch": 1.13,
+        "goldenPct": 70,
+        "possAPct": 46.7,
+        "linked": 0,
+        "linkGoals": 0,
+        "blockPct": 43.9
+      },
+      "candidate": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 64.4,
+        "goalsPerMatch": 1.1,
+        "goldenPct": 63.8,
+        "possAPct": 48.5,
+        "linked": 0,
+        "linkGoals": 0,
+        "blockPct": 46.5
+      },
+      "deltaWinAPoints": -12.5
+    },
+    {
+      "group": "defenders",
+      "tacticA": "possession",
+      "tacticB": "balanced",
+      "baseline": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 35,
+        "goalsPerMatch": 1.09,
+        "goldenPct": 62.5,
+        "possAPct": 52,
+        "linked": 0,
+        "linkGoals": 0,
+        "blockPct": 46
+      },
+      "candidate": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 43.1,
+        "goalsPerMatch": 1.17,
+        "goldenPct": 65,
+        "possAPct": 51.4,
+        "linked": 0,
+        "linkGoals": 0,
+        "blockPct": 45.9
+      },
+      "deltaWinAPoints": 8.1
+    },
+    {
+      "group": "defenders",
+      "tacticA": "counter",
+      "tacticB": "press",
+      "baseline": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 41.3,
+        "goalsPerMatch": 1.28,
+        "goldenPct": 59.4,
+        "possAPct": 48.5,
+        "linked": 0,
+        "linkGoals": 0,
+        "blockPct": 44.7
+      },
+      "candidate": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 40,
+        "goalsPerMatch": 1.26,
+        "goldenPct": 59.4,
+        "possAPct": 48.5,
+        "linked": 0,
+        "linkGoals": 0,
+        "blockPct": 46.4
+      },
+      "deltaWinAPoints": -1.3
+    },
+    {
+      "group": "defenders",
+      "tacticA": "counter",
+      "tacticB": "balanced",
+      "baseline": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 49.4,
+        "goalsPerMatch": 1.26,
+        "goldenPct": 58.8,
+        "possAPct": 47.4,
+        "linked": 0,
+        "linkGoals": 0,
+        "blockPct": 45.6
+      },
+      "candidate": {
+        "games": 160,
+        "failures": 0,
+        "winAPct": 49.4,
+        "goalsPerMatch": 1.26,
+        "goldenPct": 58.8,
+        "possAPct": 47.4,
+        "linked": 0,
+        "linkGoals": 0,
+        "blockPct": 45.6
+      },
+      "deltaWinAPoints": 0
+    }
+  ]
+}
