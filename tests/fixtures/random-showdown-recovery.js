@@ -3,6 +3,20 @@ const o=document.createElement('pre');o.id='recover-test';document.body.append(o
 const $=id=>document.getElementById(id);const check=(x,m)=>{if(!x)throw Error(m)};
 try{
  const stage=sessionStorage.getItem('cage-recover-stage');
+ if(stage==='round2-unplayed'){
+  const s=window.CageRandomDraft.snapshot();
+  check(s.round===2&&s.history.length===1&&s.finished&&!s.pending,'round 2 reload lost pre-match state');
+  check(s.used.length===12,'round 2 exhausted player count incorrect');
+  check(!$('fight').disabled,'fight disabled after round 2 draft reload');
+  check($('next-round').classList.contains('hidden'),'next round incorrectly enabled before playing round 2');
+  $('fight').click();
+  check(window.CageRandomDraft.snapshot().pending,'round 2 match not started after reload');
+  const saved=JSON.parse(localStorage.getItem('the-cage.random-showdown.v60'));
+  check(saved.pending.round===2,'wrong round replay');
+  localStorage.removeItem('the-cage.random-showdown.v60');
+  sessionStorage.removeItem('cage-recover-stage');
+  o.textContent='RECOVERY_TEST_PASS candidate pool and timer, pending match, round-2 pre-match reload, no duplicate players';return;
+ }
  if(stage==='pending'){
   const s=window.CageRandomDraft.snapshot();
   check(s.pending,'pending match missing on reload');check(s.history.length===0,'match awarded before completion');
@@ -14,8 +28,10 @@ try{
   const end=window.CageRandomDraft.snapshot();
   check(end.history.length===1&&end.wins.A+end.wins.B===1,'pending match not finalized after resumed playback');
   check(end.used.length===6,'player exhaustion changed on reload');
-  localStorage.removeItem('the-cage.random-showdown.v60');sessionStorage.removeItem('cage-recover-stage');
-  o.textContent='RECOVERY_TEST_PASS saved 15 candidate pool and timer, restored recorded pending match, finished once';return;
+  $('next-round').click();check(window.CageRandomDraft.snapshot().round===2,'round 2 not started');
+  for(let i=0;i<6;i++){ $('reveal').click();const next=window.CageRandomDraft.snapshot();check(next.pool.length===15,'round 2 pool missing');check(next.pool.every(id=>!end.used.includes(id)),'round 1 player appeared in round 2');$('pool').querySelector('button.card').click(); }
+  check(window.CageRandomDraft.snapshot().finished,'round 2 draft not locked');
+  sessionStorage.setItem('cage-recover-stage','round2-unplayed');location.reload();return;
  }
  if(stage==='pool'){
   const saved=JSON.parse(localStorage.getItem('the-cage.random-showdown.v60'));

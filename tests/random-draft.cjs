@@ -24,7 +24,7 @@ for(let i=0;i<6;i++){
 }
 check(g.finished&&count.A===3&&count.B===3,'both squads 3');
 let mounted=null, mounts=0;const originalMount=window.CageViewer.mount;window.CageViewer.mount=(...args)=>{mounts++;mounted=originalMount(...args);return mounted;};$('fight').click();check(!$('draft-arena').classList.contains('hidden'),'arena must open '+$('error').textContent);check(!!document.querySelector('#draft-arena .cv-canvas'),'existing CAGE pitch must render');check($('result').textContent==='MATCH IN PROGRESS','result must wait for match playback');check($('fight').disabled&&$('tacticA').disabled&&$('tacticB').disabled,'match and tactics locked against result rerolls');mounted.setSpeed('instant');check($('result').textContent.includes('WINS'),'match result only at full time');check(!$('watch-again').classList.contains('hidden'),'recorded replay offered');$('watch-again').click();check(mounts===2&&mounted.playback.mode==='replay','replay mounts original record');window.CageViewer.mount=originalMount;
-$('restart').click();$('begin').click();$('reveal').click();
+const originalConfirm=window.confirm;window.confirm=()=>false;$('restart').click();check(window.CageRandomDraft.snapshot().history.length===1,'cancelled reset must preserve completed match');window.confirm=()=>true;$('restart').click();window.confirm=originalConfirm;$('begin').click();$('reveal').click();
 const realNow=Date.now;Date.now=()=>realNow()+25000;
 await new Promise(resolve=>setTimeout(resolve,400));Date.now=realNow;
 const timeoutState=window.CageRandomDraft.snapshot();

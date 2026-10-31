@@ -86,6 +86,9 @@ function restoreShowdown(){
   if(!Array.isArray(s.picks)||s.picks.length>6||s.picks.some(x=>!['A','B'].includes(x.side)||!byId.has(x.id)))throw Error('Invalid draft picks');
   const completedCurrent=s.history.length===s.round&&!s.pending;if(completedCurrent){const teams=['A','B'].map(side=>s.picks.filter(x=>x.side===side).map(x=>x.id));if(JSON.stringify(teams)!==JSON.stringify(s.history.at(-1).config.teams))throw Error('Current picks differ from completed round');}else for(const x of s.picks){if(ids.has(x.id))throw Error('Footballer reused in another round');ids.add(x.id);}
   if(ids.size!==s.used.length||s.used.some(id=>!ids.has(id)))throw Error('Exhaustion mismatch');
+  if(!Array.isArray(s.pool)||![0,15].includes(s.pool.length)||new Set(s.pool).size!==s.pool.length||s.pool.some(id=>!byId.has(id)||ids.has(id)))throw Error('Invalid saved candidate pool');
+  if(!s.rerolls||!Number.isInteger(s.rerolls.A)||!Number.isInteger(s.rerolls.B)||![0,1].includes(s.rerolls.A)||![0,1].includes(s.rerolls.B))throw Error('Invalid saved rerolls');
+  if(!Number.isFinite(s.deadline)||s.deadline<0||typeof s.active!=='boolean'||(s.active&&s.pool.length!==15))throw Error('Invalid saved draft timer');
   if(s.picks.length===6&&s.pending){const teams=['A','B'].map(side=>s.picks.filter(x=>x.side===side).map(x=>x.id));if(JSON.stringify(teams)!==JSON.stringify(s.pending.config.teams))throw Error('Pending squads differ from draft');}
   game.round=s.round;game.wins={A:a,B:b};game.history=s.history;game.used=new Set(s.used);
   game.picks=s.picks;game.claimed=new Set(s.picks.map(x=>x.id));
@@ -94,7 +97,9 @@ function restoreShowdown(){
   game.finished=!!s.finished;game.pending=s.pending||null;game.champion=s.champion||null;
   if(game.champion && game.wins[game.champion]!==3)throw Error('Invalid champion');
   $('intro').classList.add('hidden');$('game').classList.remove('hidden');standings();squads();
-  if(game.finished){finishDraft();matchRecord=game.pending||game.history.at(-1)||null;
+  if(game.finished){finishDraft();const currentRoundCompleted=game.history.length===game.round;
+    matchRecord=game.pending||(currentRoundCompleted?game.history.at(-1):null);
+    if(!matchRecord){$('fight').disabled=false;$('tacticA').disabled=false;$('tacticB').disabled=false;$('next-round').classList.add('hidden');$('watch-again').classList.add('hidden');$('result').textContent='SQUADS LOCKED · READY TO ENTER THE CAGE';}
     if(matchRecord){$('fight').disabled=true;$('tacticA').disabled=true;$('tacticB').disabled=true;
       $('tacticA').value=matchRecord.config.tactics[0];$('tacticB').value=matchRecord.config.tactics[1];
       $('watch-again').classList.remove('hidden');
@@ -145,7 +150,7 @@ function fight(){
 $('begin').addEventListener('click',begin);
 $('reveal').addEventListener('click',startPick);
 $('reroll').addEventListener('click',()=>{if(!game.active)return;const s=currentSide();if(!game.rerolls[s])return;if(Date.now()>=game.deadline){tick();return;}game.rerolls[s]=0;const old=game.pool.slice();game.pool=candidates(old);if(game.pool.length===0)game.pool=candidates();render();saveShowdown();$('selection').focus({preventScroll:true});});
-$('restart').addEventListener('click',()=>{localStorage.removeItem(SAVE_KEY);game.round=1;game.wins={A:0,B:0};game.used.clear();game.history=[];game.pending=null;game.champion=null;standings();clearMatchViewer();matchRecord=null;$('watch-again').classList.add('hidden');$('fight').disabled=false;$('tacticA').disabled=false;$('tacticB').disabled=false;stopClock();$('intro').classList.remove('hidden');$('game').classList.add('hidden');$('handoff').classList.add('hidden');$('hints').checked=false;game.finished=false;});
+$('restart').addEventListener('click',()=>{if((game.history.length>0||game.pending||game.finished)&&!window.confirm('Discard this showdown, all round results, and its saved progress?'))return;localStorage.removeItem(SAVE_KEY);game.round=1;game.wins={A:0,B:0};game.used.clear();game.history=[];game.pending=null;game.champion=null;standings();clearMatchViewer();matchRecord=null;$('watch-again').classList.add('hidden');$('fight').disabled=false;$('tacticA').disabled=false;$('tacticB').disabled=false;stopClock();$('intro').classList.remove('hidden');$('game').classList.add('hidden');$('handoff').classList.add('hidden');$('hints').checked=false;game.finished=false;});
 $('fight').addEventListener('click',fight);
 $('next-round').addEventListener('click',nextRound);
 $('watch-again').addEventListener('click',()=>{
