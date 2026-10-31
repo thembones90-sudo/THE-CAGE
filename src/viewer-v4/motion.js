@@ -6,6 +6,16 @@
 'use strict';
 const ATTACK=new Set(['carry','pass','through_ball','dribble_duel','wall_pass','shot_attempt','shot_miss','free_kick','goal']);
 const DEFENCE=new Set(['press','block','race','dribble_duel','wall_pass']);
+// Match the visible broadcast style to the current recorded event only.
+// A wall pass gets contact styling solely when its timeline contains a recorded contact.
+function actionKind(type,recordedContact=false){
+ if(type==='shot_attempt'||type==='shot_miss')return 'shot';
+ if(type==='free_kick')return 'setpiece';
+ if(['press','block','dribble_duel','race'].includes(type))return 'contact';
+ if(type==='wall_pass')return recordedContact?'contact':'pass';
+ if(type==='pass'||type==='through_ball')return 'pass';
+ return 'carry';
+}
 const LABEL={
  restart:'KICK-OFF',turnover:'TURNOVER',carry:'CARRY',pass:'PASS',
  through_ball:'THROUGH BALL',dribble_duel:'ONE ON ONE',wall_pass:'WALL PASS',
@@ -32,7 +42,7 @@ function sample(tl,events,tau,T){
  for(const id of tl.ids)pos[id]={u:raw[id].u,v:raw[id].v};
  const b=T.ballAt(tl,t),early=T.ballAt(tl,clamp(t-.105,0,tl.total));
  const role={actor:event.actor||null,receiver:event.target||null,defender:null,focus:null};
- if(DEFENCE.has(event.type))role.defender=event.type==='press'||event.type==='block'?event.actor:event.opp||null;
+ if(DEFENCE.has(event.type))role.defender=event.type==='press'||event.type==='block'?event.actor:(seg.contact?.id||event.opp||null);
  if(role.defender&&!pos[role.defender])role.defender=null;
  if(role.actor&&!pos[role.actor])role.actor=null;
  if(role.receiver&&!pos[role.receiver])role.receiver=null;
@@ -74,5 +84,5 @@ function sample(tl,events,tau,T){
   inferred:true
  };
 }
-return {sample,cellSafe,LABEL,ATTACK,DEFENCE};
+return {sample,cellSafe,LABEL,ATTACK,DEFENCE,actionKind};
 });

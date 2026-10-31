@@ -1,3 +1,13 @@
+# THE CAGE V6.3 Goal & Action Preview
+
+V6.3 combines the recorded-goal broadcast with V6.2's 194-player T3 game, cinematic, 15-card random draft and accessibility refinements. The goal presentation and action styles read recorded events only. Reduced motion hides decorative goal doors.
+
+Run `dist/TheCage-V63-Goal-Action-Preview.exe` locally. Main game: `/play.html`; draft: `/draft.html`; preserved historical Classic: `/classic-v56/play.html`.
+
+For verification and branch details, read `docs/V63_COMBINED_RELEASE_REPORT.md`.
+
+---
+
 # THE CAGE V5.7 Combined Preview
 
 This worktree contains the integrated 194-player T3 game and the V5.6 Golden Goal cinematic. Start the offline Windows preview at `dist/TheCage-V57-Combined-Preview.exe` or serve this directory locally.
