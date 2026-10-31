@@ -1,4 +1,4 @@
-// THE CAGE Overall Rating V1.0. A positional skill indicator, not a career ranking.
+// THE CAGE Overall Rating V1.1. Positional indicator with explicit provisional individual calibrations.
 // Uses prime ratings only; tiers, folklore, provisional T3 attributes and traits never enter OVR.
 // Core categories and relevant extended skills are weighted to 100%; CM and RB support alternate tactical profiles.
 // OVR does not influence the match engine, draft probability, or historical category.
@@ -18,6 +18,11 @@ const W=Object.freeze({
  RB:{pace:14,tech:8,pass:10,def:42,phys:11,stamina:5,tackling:10},
  CB:{pace:12,tech:3.5,pass:8.5,def:46,phys:18,tackling:6,positioning:6}
 });
+// Explicit, visible editorial exceptions pending a full cross-position OVR audit.
+// They never alter the underlying 17 prime stats or match engine inputs.
+const CALIBRATIONS=Object.freeze({
+ 'alex-de-souza':Object.freeze({overall:89,status:'provisional-owner-review',reason:'The CAM formula overcounts correlated technique, passing, vision and first-touch ratings. Formula-only 95 is not a credible cross-position OVR.'})
+});
 const ALTERNATES=Object.freeze({
  CM:[Object.freeze({pace:10,tech:10,pass:12,def:38,phys:10,tackling:8,positioning:5,stamina:7})],
  RB:[Object.freeze({pace:15,tech:19,pass:32,def:18,phys:5,vision:7,stamina:4})],
@@ -28,7 +33,7 @@ for(const [pos,weights] of [...Object.entries(W),...Object.entries(ALTERNATES).f
  if(Math.abs(total-100)>0.00001)throw Error('OVR weights invalid for '+pos+': '+total);
  Object.freeze(weights);
 }
-function compute(player){
+function raw(player){
  if(!player||typeof player!=='object'||!player.r)throw Error('OVR requires a player with ratings');
  const pos=player.position||(player.role==='D'?'CB':player.role==='M'?'CM':'ST');
  const weights=W[pos];if(!weights)throw Error('Unsupported natural position for OVR: '+pos);
@@ -39,6 +44,12 @@ function compute(player){
   return total+n*weight;
  },0)));
  return Math.max(1,Math.min(99,Math.round(best/100)));
+}
+function compute(player){
+ const base=raw(player);
+ const editorial=CALIBRATIONS[player.id];
+ if(editorial){if(!Number.isInteger(editorial.overall)||editorial.overall<1||editorial.overall>99)throw Error('Invalid OVR calibration '+player.id);return editorial.overall;}
+ return base;
 }
 function apply(roster){
  if(!Array.isArray(roster))throw Error('Expected roster array');
@@ -53,5 +64,5 @@ function apply(roster){
  return roster.length;
 }
 const count=apply(window.THE_CAGE_PLAYERS);
-window.CageOverall=Object.freeze({VERSION:'overall-v1.0',WEIGHTS:W,ALTERNATES,compute,read:p=>p.overall??compute(p),apply,loadedPlayers:count});
+window.CageOverall=Object.freeze({VERSION:'overall-v1.1',WEIGHTS:W,ALTERNATES,CALIBRATIONS,raw,compute,read:p=>p.overall??compute(p),apply,loadedPlayers:count});
 })();
