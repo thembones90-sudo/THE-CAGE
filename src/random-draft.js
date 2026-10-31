@@ -19,12 +19,41 @@ function startPick(){if(game.picks.length>=6){finishDraft();return;}game.pool=ca
 function claim(id,automatic){if(!game.active||!game.pool.includes(id)||game.claimed.has(id))return;if(!automatic&&Date.now()>=game.deadline){id=game.pool[randomInt(game.pool.length)];automatic=true;}const s=currentSide();stopClock();game.claimed.add(id);game.picks.push({side:s,id,automatic:!!automatic});squads();showError(automatic?'Time expired: '+byId.get(id).name+' automatically drafted for '+sideName(s):sideName(s)+' selected '+byId.get(id).name);game.pool=[];handoffAfterClaim();}
 function handoffAfterClaim(){if(game.picks.length===6){finishDraft();return;}handoff();}
 function finishDraft(){stopClock();game.finished=true;game.pool=[];$('handoff').classList.add('hidden');$('selection').classList.add('hidden');$('finished').classList.remove('hidden');$('phase').textContent='DRAFT COMPLETE';$('current').textContent='Both squads locked · 3 players each';$('clock').textContent='✓';$('reroll').disabled=true;squads();}
-function begin(){stopClock();game.winner=randomInt(2)?'A':'B';game.picks=[];game.claimed.clear();game.rerolls={A:1,B:1};game.pool=[];game.finished=false;showError('');$('coinResult').textContent='COIN TOSS: '+sideName(game.winner)+' WINS FIRST PICK';$('intro').classList.add('hidden');$('game').classList.remove('hidden');$('result').textContent='';$('details').replaceChildren();handoff();}
-function fight(){if(!game.finished||!engine||typeof engine.simulate!=='function'){showError('Match engine unavailable.');return;}const teams=['A','B'].map(side=>game.picks.filter(p=>p.side===side).map(p=>p.id)),seed=crypto.getRandomValues(new Uint32Array(1))[0];try{const result=engine.simulate({teams,tactics:[$('tacticA').value,$('tacticB').value],seed,mode:'ko'});$('result').textContent=(result.winner===0?'COMMANDER':'OPPONENT')+' WINS · '+result.score.join(' : ');const d=$('details');d.replaceChildren();const summary=document.createElement('p');summary.textContent='Seed '+seed+' · '+(result.events?.length||0)+' events · '+(result.duration||0).toFixed(1)+' simulated seconds';d.append(summary);if(result.events){const goal=result.events.find(x=>x.type==='goal');if(goal){const g=document.createElement('p');g.textContent='Winning goal: '+(byId.get(goal.actor)?.name||goal.actor);d.append(g);}}}catch(e){showError('Match engine error: '+e.message);}}
+function begin(){clearMatchViewer();stopClock();game.winner=randomInt(2)?'A':'B';game.picks=[];game.claimed.clear();game.rerolls={A:1,B:1};game.pool=[];game.finished=false;showError('');$('coinResult').textContent='COIN TOSS: '+sideName(game.winner)+' WINS FIRST PICK';$('intro').classList.add('hidden');$('game').classList.remove('hidden');$('result').textContent='';$('details').replaceChildren();handoff();}
+let matchViewer=null;
+function clearMatchViewer(){
+  if(matchViewer){matchViewer.destroy();matchViewer=null;}
+  $('draft-arena').classList.add('hidden');
+  $('draft-arena-viewer').replaceChildren();
+}
+function fight(){
+  if(!game.finished||!engine||typeof engine.simulate!=='function'){showError('Match engine unavailable.');return;}
+  clearMatchViewer();
+  const teams=['A','B'].map(side=>game.picks.filter(p=>p.side===side).map(p=>p.id));
+  const seed=crypto.getRandomValues(new Uint32Array(1))[0];
+  const config={teams,tactics:[$('tacticA').value,$('tacticB').value],seed,mode:'ko',traits:{enabled:true}};
+  try{
+    const result=engine.simulate(config);
+    const record=window.CageRecords.make(config,result,1);
+    const names=Object.fromEntries(teams.flat().map(id=>[id,byId.get(id)?.name||id]));
+    const lines=window.CageCommentary.commentate(result,seed,['Commander','Opponent']);
+    $('result').textContent='MATCH IN PROGRESS';
+    $('details').replaceChildren();
+    $('draft-arena').classList.remove('hidden');
+    matchViewer=window.CageViewer.mount($('draft-arena-viewer'),record,{mode:'live',speed:'dynamic',autoplay:false,names,lines});
+    matchViewer.on('end',()=>{
+      $('result').textContent=(result.winner===0?'COMMANDER':'OPPONENT')+' WINS · '+result.score.join(' : ');
+      const goal=result.events.find(e=>e.type==='goal');
+      $('details').textContent=goal?'Winning goal: '+(byId.get(goal.actor)?.name||goal.actor):'Match completed';
+    });
+    matchViewer.play();
+    $('draft-arena').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+  }catch(e){clearMatchViewer();showError('Match viewer error: '+e.message);}
+}
 $('begin').addEventListener('click',begin);
 $('reveal').addEventListener('click',startPick);
 $('reroll').addEventListener('click',()=>{if(!game.active)return;const s=currentSide();if(!game.rerolls[s])return;if(Date.now()>=game.deadline){tick();return;}game.rerolls[s]=0;const old=game.pool.slice();game.pool=candidates(old);if(game.pool.length===0)game.pool=candidates();render();});
-$('restart').addEventListener('click',()=>{stopClock();$('intro').classList.remove('hidden');$('game').classList.add('hidden');$('handoff').classList.add('hidden');$('hints').checked=false;game.finished=false;});
+$('restart').addEventListener('click',()=>{clearMatchViewer();stopClock();$('intro').classList.remove('hidden');$('game').classList.add('hidden');$('handoff').classList.add('hidden');$('hints').checked=false;game.finished=false;});
 $('fight').addEventListener('click',fight);
 $('hints').addEventListener('change',()=>{$('hintNote').textContent=$('hints').checked?'Indicators require verified class-counter relationships. No speculative advice is shown.':'Optional guidance shows only when supported by actual player class data.';});
 window.CageRandomDraft={snapshot:()=>({winner:game.winner,picks:game.picks.map(x=>({...x})),rerolls:{...game.rerolls},pool:game.pool.slice(),active:game.active,finished:game.finished}),sample};
