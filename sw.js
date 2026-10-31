@@ -1,5 +1,5 @@
-/* THE CAGE V6.8 GK50 RANKED EXPERIMENTAL: generated from the canonical playable dependency list. */
-const CACHE='the-cage-full-v68-8402affbc9ba';
+/* THE CAGE V6.9 ENGINE EXPERIMENTAL: generated from the canonical playable dependency list. */
+const CACHE='the-cage-full-v69-e038bc3c1dd9';
 const STATIC=[
   "./assets/cage-icon.svg",
   "./classic-v56/assets/cage-icon.svg",
@@ -93,6 +93,7 @@ const STATIC=[
   "./src/ace-recruitment-v1.js",
   "./src/cage-commentary.js",
   "./src/cage-engine-draft.js",
+  "./src/cage-engine-v610.js",
   "./src/cage-engine-v65.js",
   "./src/cage-engine-v66.js",
   "./src/cage-engine-v68.js",

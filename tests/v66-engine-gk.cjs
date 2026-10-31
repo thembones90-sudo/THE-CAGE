@@ -3,9 +3,9 @@ const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f
 const files=[...read('play.html').matchAll(/<script src="(src\/[^"]+)"><\/script>/g)].map(m=>m[1]);
 const ctx={window:{location:{search:''}}};vm.createContext(ctx);
 for(const f of files){vm.runInContext(read(f),ctx,{filename:f});if(f==='src/replay/records.js')break;}
-const E=ctx.window.CageEngine,old=ctx.window.CageEngineV65,oldKeeper=ctx.window.CageEngineV66,oldT38=ctx.window.CageEngineT38,G=ctx.window.CageGoalkeepers,Records=ctx.window.CageRecords;
-assert.equal(E.VERSION,'cage-t3-10');assert.equal(oldT38.VERSION,'cage-t3-8');assert.equal(oldKeeper.VERSION,'cage-t3-7');assert.equal(old.VERSION,'cage-t3-6');assert.equal(G.players.length,50);assert.equal(ctx.window.CageEngineT39.VERSION,'cage-t3-9');
-assert.equal(ctx.window.CAGE_ENGINE_REGISTRY['cage-t3-6'].VERSION,'cage-t3-6');assert.equal(ctx.window.CAGE_ENGINE_REGISTRY['cage-t3-7'].VERSION,'cage-t3-7');assert.equal(ctx.window.CAGE_ENGINE_REGISTRY['cage-t3-8'].VERSION,'cage-t3-8');
+const E=ctx.window.CageEngine,old=ctx.window.CageEngineV65,oldKeeper=ctx.window.CageEngineV66,oldT38=ctx.window.CageEngineT38,oldT310=ctx.window.CageEngineT310,G=ctx.window.CageGoalkeepers,Records=ctx.window.CageRecords;
+assert.equal(E.VERSION,'cage-t3-11');assert.equal(oldT38.VERSION,'cage-t3-8');assert.equal(oldKeeper.VERSION,'cage-t3-7');assert.equal(old.VERSION,'cage-t3-6');assert.equal(G.players.length,50);assert.equal(ctx.window.CageEngineT39.VERSION,'cage-t3-9');
+assert.equal(ctx.window.CAGE_ENGINE_REGISTRY['cage-t3-6'].VERSION,'cage-t3-6');assert.equal(ctx.window.CAGE_ENGINE_REGISTRY['cage-t3-7'].VERSION,'cage-t3-7');assert.equal(ctx.window.CAGE_ENGINE_REGISTRY['cage-t3-8'].VERSION,'cage-t3-8');assert.equal(oldT310.VERSION,'cage-t3-10');
 const team=[['paolo-maldini','michael-ballack','ronaldo-nazario'],['ledley-king','claudio-marchisio','antonio-valencia']];
 const base={teams:team,tactics:['balanced','press'],mode:'score',traits:{enabled:true}},pair=['gianluigi-buffon','rene-higuita'];
 // Pinned original T3-7 GK event hashes from the immutable f0acb82 checkpoint.
@@ -14,12 +14,12 @@ for(const [seed,hash] of Object.entries(HISTORIC_T37)){const result=oldKeeper.si
 let saves=0,parries=0,multi=0,goals=0;
 for(let seed=100;seed<145;seed++){
  const config={...base,seed},a=old.simulate(config),b=E.simulate(config);
- assert.equal(a.eventHash,b.eventHash,'no-GK simulation must reproduce V6.5 exactly: seed '+seed);
- assert.equal(JSON.stringify(a),JSON.stringify(b),'no GK version changes must preserve all V6.5 result bytes');
- const originalRecord=Records.make(config,a,1);assert.equal(Records.reproduce(originalRecord).eventHash,a.eventHash);
- const historical=JSON.parse(JSON.stringify(originalRecord));historical.engineVersion='cage-t3-6';assert.equal(Records.reproduce(historical).eventHash,a.eventHash,'V65 historical T3 replay must use archived engine');
+ const oldCheckpoint=oldT310.simulate(config);assert.equal(a.eventHash,oldCheckpoint.eventHash,'Frozen T3-10 no-GK engine must reproduce prior V6.5 hashes');
+ if(oldCheckpoint.decidedBy==='regulation'){assert.equal(a.eventHash,b.eventHash,'Completed regulation event hashes must remain unchanged: seed '+seed);assert.equal(JSON.stringify(a),JSON.stringify(b));}
+ const originalRecord=Records.make(config,b,1);assert.equal(Records.reproduce(originalRecord).eventHash,b.eventHash);
+ const historical=JSON.parse(JSON.stringify(originalRecord));historical.engineVersion='cage-t3-6';historical.result=JSON.parse(JSON.stringify(a));assert.equal(Records.reproduce(historical).eventHash,a.eventHash,'V65 historical T3 replay must use archived engine');
  const cg={...config,keepers:pair},x=E.simulate(cg),y=E.simulate(cg);
- const oldGK=oldKeeper.simulate(cg),legacyKeeper=Records.make(cg,oldGK,1),archived=JSON.parse(JSON.stringify(legacyKeeper));
+ const oldGK=oldKeeper.simulate(cg),legacyKeeper=Records.make(cg,x,1),archived=JSON.parse(JSON.stringify(legacyKeeper));archived.result=JSON.parse(JSON.stringify(oldGK));delete archived.keeperRatingsVersion;
  archived.engineVersion='cage-t3-7';assert.equal(Records.reproduce(archived).eventHash,oldGK.eventHash,'Original V6.6 GK replays must reproduce from frozen T3-7');
 
  assert.equal(JSON.stringify(x),JSON.stringify(y),'keeper deterministic simulation');
