@@ -106,8 +106,14 @@ function createRenderer(canvas){
         }
         ctx.restore();
       }
-      ctx.fillStyle=col;ctx.beginPath();ctx.arc(p.x,p.y,R,0,Math.PI*2);ctx.fill();ctx.strokeStyle=ink;ctx.lineWidth=2;ctx.stroke();
-      ctx.fillStyle=ink;ctx.font='700 '+Math.round(R*.95)+'px system-ui, sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String(f.numbers&&f.numbers[id]||''),p.x,p.y+.5);
+      // Premium token finish: visual shading only. No positions, physics or event state change.
+      ctx.save();ctx.shadowColor='rgba(0,0,0,.7)';ctx.shadowBlur=R*.55;ctx.shadowOffsetY=2;
+      const metal=ctx.createRadialGradient(p.x-R*.35,p.y-R*.5,R*.06,p.x,p.y,R*1.15);
+      metal.addColorStop(0,'#f4f7f3');metal.addColorStop(.15,col);metal.addColorStop(.72,col);metal.addColorStop(1,'#101b22');
+      ctx.fillStyle=metal;ctx.beginPath();ctx.arc(p.x,p.y,R,0,Math.PI*2);ctx.fill();ctx.restore();
+      ctx.strokeStyle=ink;ctx.lineWidth=2.3;ctx.stroke();
+      ctx.strokeStyle='rgba(255,255,255,.5)';ctx.lineWidth=1;ctx.beginPath();ctx.arc(p.x,p.y,R*.77,Math.PI*1.12,Math.PI*1.83);ctx.stroke();
+      ctx.fillStyle=ink;ctx.font='800 '+Math.round(R*.95)+'px system-ui, sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String(f.numbers&&f.numbers[id]||''),p.x,p.y+.5);
       ctx.globalAlpha=1;}
     // Collision-aware legend labels are placed AFTER tokens so the whole
     // six-player shape can be considered. No player position is changed.
@@ -138,11 +144,11 @@ function createRenderer(canvas){
         ctx.beginPath();ctx.moveTo(b.x-ux*trail,b.y-uy*trail);ctx.lineTo(b.x-ux*br*.45,b.y-uy*br*.45);ctx.stroke();
         ctx.restore();
       }
-      const golden=img.ball,ballR=Math.max(5,br*1.35);
+      const golden=img.ball,ballR=Math.max(6,br*1.55);
       if(golden&&golden.complete&&golden.naturalWidth){ctx.save();ctx.translate(b.x,b.y-lift*8);
         if(kb&&!f.reducedMotion&&kb.flight&&kb.speed>45){ctx.rotate(kb.heading);ctx.scale(1+Math.min(.25,kb.intensity*.25),1-Math.min(.13,kb.intensity*.13));}
         ctx.rotate(kb?kb.spin:motion?motion.spin:(f.tau||0)*6);
-        ctx.shadowColor='#d3a14090';ctx.shadowBlur=4;ctx.drawImage(golden,-ballR,-ballR,ballR*2,ballR*2);ctx.restore();}
+        ctx.shadowColor='#f3c55bc0';ctx.shadowBlur=9;ctx.drawImage(golden,-ballR,-ballR,ballR*2,ballR*2);ctx.restore();}
       else{ctx.fillStyle='#d6a447';ctx.beginPath();ctx.arc(b.x,b.y-lift*8,ballR,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#382407';ctx.lineWidth=1.5;ctx.stroke();}}
     if(f.cues){ctx.save();ctx.translate(world.x,world.y);ctx.scale(world.scale,world.scale);
       FX.paintEffects(ctx,f.cues,f.tau,f.reducedMotion);ctx.restore();}

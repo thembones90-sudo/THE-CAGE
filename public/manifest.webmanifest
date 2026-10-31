@@ -1,8 +1,8 @@
 {
-  "name": "THE CAGE - Golden Goal Showdown",
+  "name": "THE CAGE - Random Draft Showdown",
   "short_name": "THE CAGE",
-  "description": "Remember. Claim. Play a legendary 3v3 golden goal showdown.",
-  "start_url": "./play.html",
+  "description": "Draft 15 candidates per pick, survive the iron cage, first to three wins.",
+  "start_url": "./draft.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",

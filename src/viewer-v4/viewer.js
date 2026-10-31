@@ -67,8 +67,8 @@ function mount(el,record,opts){
   const q=shell(el,o),root=el.querySelector('.cv-root'),canvas=el.querySelector('canvas'),renderer=Rn.createRenderer(canvas),pb=K.createPlayback(tl,{speed:o.speed,mode:o.mode});
   const listeners={},emit=(n,d)=>(listeners[n]||[]).slice().forEach(f=>f(d));
   const reduce=typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-  el.querySelector('.cv-round').textContent=o.draftMatch?'DRAFT MATCH':tl.round?'ROUND '+tl.round:'MATCH';
-  if(o.draftMatch){const badge=el.querySelector('.cv-showdown');badge.querySelector('small').textContent='MODE';q('showdown').textContent='3 VS 3';q('sdchip').textContent='FIRST GOAL WINS';}
+  el.querySelector('.cv-round').textContent=o.draftMatch?'DRAFT MATCH · ROUND '+(tl.round||1):tl.round?'ROUND '+tl.round:'MATCH';
+  if(o.draftMatch){const badge=el.querySelector('.cv-showdown');badge.querySelector('small').textContent='SHOWDOWN';q('showdown').textContent=o.showdown?o.showdown.A+' : '+o.showdown.B:'0 : 0';q('sdchip').textContent='FIRST TO 3 WINS';}
   el.querySelector('.cv-a').textContent=o.teamNames[0].toUpperCase();el.querySelector('.cv-b').textContent=o.teamNames[1].toUpperCase();
   if(!o.draftMatch){q('showdown').textContent=o.showdown?o.showdown.A+'–'+o.showdown.B:'—';q('sdchip').textContent=o.showdown?(o.showdown.label||'BEFORE ROUND'):'NOT IN FILE';}
   // Starting tactical choices come DIRECTLY from the immutable match record.
