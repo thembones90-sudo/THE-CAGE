@@ -6,6 +6,8 @@ const TOKENS={'--cage-turf':'#1f4d2b','--cage-turf-2':'#225430','--cage-line':'r
   '--team-a':'#3aa0ff','--team-a-ink':'#04121f','--team-b':'#ff5a52','--team-b-ink':'#1f0504','--ball':'#ffffff','--danger':'#e0283c','--momentum':'#ffb627','--verified':'#3ccf6e','--label-font':'600 11px system-ui, sans-serif','--grid':'rgba(255,255,255,.07)'};
 function readTokens(el){const cs=el&&typeof getComputedStyle==='function'?getComputedStyle(el):null,o={};for(const k in TOKENS){const v=cs&&cs.getPropertyValue(k).trim();o[k]=v||TOKENS[k];}return o;}
 
+// Guard shared by the real canvas drawing path and reduced-motion regression.
+function shouldPaintRecordedAction(f){return !!(f.motion&&f.motion.showEvent&&!f.reducedMotion);}
 function createRenderer(canvas){
   const ctx=canvas.getContext('2d');let tk=readTokens(canvas),arena=null,rect=null,W=0,H=0,dpr=1,world=null,arenaKey='';
   const img={};for(const [key,url] of Object.entries({
@@ -36,13 +38,13 @@ function createRenderer(canvas){
   // replay positions. It never creates new passes, shots, collisions or goals.
   function paintRecordedAction(f,R){
     const motion=f.motion;
-    if(!motion||!motion.showEvent||f.reducedMotion)return;
+    if(!shouldPaintRecordedAction(f))return;
     const phase=Math.max(0,Math.min(1,motion.phase||0));
     const strength=Math.pow(Math.sin(Math.PI*phase),1.4);
     if(strength<.02)return;
     const kind=motion.type,role=motion.roles||{};
     const shot=kind==='shot_attempt'||kind==='shot_miss';
-    const defensive=kind==='press'||kind==='block'||kind==='dribble_duel';
+    const defensive=['press','block','dribble_duel','race'].includes(kind)||(kind==='wall_pass'&&motion.challenge);
     const actor=role.actor&&f.players[role.actor]&&px(f.players[role.actor]);
     // A shot flash is centred at the sampled ball, not an invented goal contact.
     if(shot&&f.ball){
@@ -69,7 +71,7 @@ function createRenderer(canvas){
       }ctx.restore();
     }
     // Actor spotlight is a subtle ground marker; it never changes team roles.
-    if(actor&&['carry','dribble_duel','through_ball','pass','press','block'].includes(kind)){
+    if(actor&&['carry','dribble_duel','through_ball','pass','press','block','race','wall_pass'].includes(kind)){
       ctx.save();ctx.globalAlpha=strength*.64;
       ctx.strokeStyle=defensive?'#ed9197':'#e6c77e';ctx.lineWidth=1.8;
       ctx.setLineDash([5,4]);
@@ -216,5 +218,5 @@ function createRenderer(canvas){
   }
   return {resize,draw,get rect(){return rect;},tokens:()=>tk};
 }
-window.CageViewerRenderer={TOKENS,createRenderer,v4:true};
+window.CageViewerRenderer={TOKENS,createRenderer,shouldPaintRecordedAction,v4:true};
 })();
