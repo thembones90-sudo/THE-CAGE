@@ -121,7 +121,7 @@ function mount(el,record,opts){
   }));
   unsub.push(pb.on('segment',d=>emit('beat',d)));
   unsub.push(pb.on('end',d=>emit('end',d)));
-  unsub.push(pb.on('replayStart',()=>{if(goldenTimer!==null)clearTimeout(goldenTimer);goldenTimer=null;q('goalcard').hidden=true;q('golden').hidden=true;goldenCue=null;trail=[];}));
+  unsub.push(pb.on('replayStart',()=>{if(goldenTimer!==null)clearTimeout(goldenTimer);goldenTimer=null;q('goalcard').hidden=true;q('golden').hidden=true;goldenCue=null;delete root.dataset.goalSide;root.classList.remove('cv-goal-in-progress');trail=[];}));
   unsub.push(pb.on('replayEnd',()=>emit('replayEnd',{})));
   function dismissCinematic(){
     if(goldenTimer!==null)clearTimeout(goldenTimer);

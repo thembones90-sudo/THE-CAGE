@@ -3,16 +3,25 @@ $root=Split-Path $PSScriptRoot -Parent
 Set-Location $root
 & python tools/package-v5-web.py
 if($LASTEXITCODE -ne 0){throw 'FAILED: web package'}
+$listener=[System.Net.Sockets.TcpListener]::new([System.Net.IPAddress]::Loopback,0)
+$listener.Start()
+$port=$listener.LocalEndpoint.Port
+$listener.Stop()
+$origin='http://127.0.0.1:'+ $port
 $started=$null
 try {
- try { $null=Invoke-WebRequest 'http://127.0.0.1:51910/play.html' -UseBasicParsing -TimeoutSec 2 }
- catch {
-  $py=(Get-Command python).Source
-  $started=Start-Process -FilePath $py -ArgumentList @('-m','http.server','51910','--bind','127.0.0.1') -WorkingDirectory $root -PassThru
-  Start-Sleep -Seconds 2
-  $null=Invoke-WebRequest 'http://127.0.0.1:51910/play.html' -UseBasicParsing -TimeoutSec 4
+ $py=(Get-Command python).Source
+ $started=Start-Process -FilePath $py -ArgumentList @('-m','http.server',"$port",'--bind','127.0.0.1') -WorkingDirectory $root -PassThru
+ $verified=$false
+ for($i=0;$i -lt 30;$i++){
+  Start-Sleep -Milliseconds 200
+  try{
+   $asset=Invoke-WebRequest ($origin+'/src/viewer-v4/goal-experience.js') -UseBasicParsing -TimeoutSec 2
+   if($asset.StatusCode -eq 200 -and $asset.Content.Contains('cv-golden-doors')){$verified=$true;break}
+  }catch{}
  }
- $env:CAGE_E2E_BASE='http://127.0.0.1:51910'
+ if(-not $verified){throw 'FAILED: private release server did not serve V6.3 goal assets'}
+ $env:CAGE_E2E_BASE=$origin
  $cases=@(
   @('tests/v57-roster-194.cjs'),
   @('tests/v57-trait-families.cjs','--strict'),
