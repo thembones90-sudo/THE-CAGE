@@ -1,0 +1,8 @@
+/* THE CAGE: historical goalkeeper folklore and rankings. */
+#keeperDraftPhase .gk-world-rank{display:block;font-size:.66rem;font-weight:800;letter-spacing:.12em;color:#d2c2a0;text-transform:uppercase;margin:2px 0 6px;}
+#keeperDraftPhase .gk-folklore{display:flex;flex-wrap:wrap;gap:5px;margin:5px 0 8px;}
+#keeperDraftPhase .gk-special{display:inline-flex;align-items:center;gap:4px;border:1px solid #b38b49;border-radius:4px;background:#292419;color:#ffe8a7;font-size:.61rem;font-weight:850;letter-spacing:.045em;padding:3px 5px;line-height:1.3;}
+#keeperDraftPhase .gk-special.special-street-villain{background:#381d27;border-color:#b86370;color:#ffd2d6;}
+#keeperDraftPhase .gk-special.special-street-hero{background:#192d38;border-color:#5fa9c7;color:#c7eeff;}
+#keeperDraftPhase .gk-special.special-talisman{background:#332a13;border-color:#c49b3d;color:#ffe6a3;}
+#keeperDraftPhase .gk-special svg{width:20px;height:18px;flex:none;}

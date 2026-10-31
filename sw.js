@@ -1,5 +1,5 @@
-/* THE CAGE V6.7 GOALKEEPER SCOUTING EXPERIMENTAL: generated from the canonical playable dependency list. */
-const CACHE='the-cage-full-v67-a9e4e71aa4fb';
+/* THE CAGE V6.8 GK50 RANKED EXPERIMENTAL: generated from the canonical playable dependency list. */
+const CACHE='the-cage-full-v68-8402affbc9ba';
 const STATIC=[
   "./assets/cage-icon.svg",
   "./classic-v56/assets/cage-icon.svg",
@@ -85,6 +85,7 @@ const STATIC=[
   "./design/qwen-30b/arena/relic-ball.svg",
   "./design/qwen-v67-gk-cards.css",
   "./design/qwen-v67-integration.css",
+  "./design/v68-gk-legends.css",
   "./draft.html",
   "./index.html",
   "./manifest.webmanifest",
@@ -95,6 +96,7 @@ const STATIC=[
   "./src/cage-engine-v65.js",
   "./src/cage-engine-v66.js",
   "./src/cage-engine-v68.js",
+  "./src/cage-engine-v69.js",
   "./src/cage-engine.js",
   "./src/cage-ui.css",
   "./src/cpu-draft.js",
@@ -102,6 +104,7 @@ const STATIC=[
   "./src/elite-ovr-approved-v21.js",
   "./src/engine/legacy-v04.js",
   "./src/full-cage.css",
+  "./src/goalkeepers-gk30.js",
   "./src/goalkeepers.js",
   "./src/identity/search.js",
   "./src/keeper-card-ui.js",

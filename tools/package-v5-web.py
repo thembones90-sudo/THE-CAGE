@@ -11,7 +11,7 @@ canonical=canonical[:canonical.index("src/showdown.js")]
 assert scripts[:len(canonical)]==canonical,"Playable scripts differ from canonical 194-player game. Run tools/sync-v53-game.py and review."
 assert "src/roster-182.js" in scripts
 styles=re.findall(r'<link\s+rel="stylesheet"\s+href="([^"]+)"',html)
-assets={"play.html","draft.html","src/random-draft.js","src/cpu-draft.js","src/war-room.js","design/qwen-v67-gk-cards.css","design/qwen-v67-integration.css","src/keeper-card-ui.js","src/keeper-draft.js","src/goalkeepers.js","src/tactics/goalkeeper-rules.js","src/cage-engine-v66.js","src/cage-engine-v68.js","src/cage-engine-draft.js","manifest.webmanifest","assets/cage-icon.svg","sw.js",
+assets={"play.html","draft.html","src/random-draft.js","src/cpu-draft.js","src/war-room.js","design/qwen-v67-gk-cards.css","design/qwen-v67-integration.css","design/v68-gk-legends.css","src/keeper-card-ui.js","src/keeper-draft.js","src/goalkeepers.js","src/tactics/goalkeeper-rules.js","src/cage-engine-v66.js","src/cage-engine-v68.js","src/cage-engine-v69.js","src/goalkeepers-gk30.js","src/cage-engine-draft.js","manifest.webmanifest","assets/cage-icon.svg","sw.js",
  "design/qwen-30b/arena/arena.svg","design/qwen-30b/arena/arena-golden.svg",
  "design/qwen-30b/arena/relic-ball.svg"}
 assets.update(scripts);assets.update(styles)
@@ -30,8 +30,8 @@ sw=root/"sw.js"
 current=sw.read_text(encoding="utf-8-sig")
 body=current[current.index("self.addEventListener('install'"):]
 cache_files=sorted((assets-{"sw.js"})|{"index.html"})
-worker=("/* THE CAGE V6.7 GOALKEEPER SCOUTING EXPERIMENTAL: generated from the canonical playable dependency list. */\n"
-        +"const CACHE='the-cage-full-v67-"+revision+"';\n"
+worker=("/* THE CAGE V6.8 GK50 RANKED EXPERIMENTAL: generated from the canonical playable dependency list. */\n"
+        +"const CACHE='the-cage-full-v68-"+revision+"';\n"
         +"const STATIC="+json.dumps(["./"+x for x in cache_files],indent=2,ensure_ascii=False)+";\n"+body)
 sw.write_text(worker,encoding="utf-8")
 if public.exists():shutil.rmtree(public)
@@ -46,4 +46,4 @@ config={"version":2,"framework":None,"outputDirectory":"public",
             {"source":"/play.html","headers":[{"key":"Cache-Control","value":"no-cache"}]},
             {"source":"/(.*)","headers":[{"key":"X-Content-Type-Options","value":"nosniff"},{"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"}]}]}
 (root/"vercel.json").write_text(json.dumps(config,indent=2)+"\n",encoding="utf-8")
-print("V67_SCOUTING_WEB_PACKAGE_PASS",len(assets)+1,"files","roster",194,"cache",revision,"bytes",sum(p.stat().st_size for p in public.rglob('*') if p.is_file()))
+print("V68_GK50_WEB_PACKAGE_PASS",len(assets)+1,"files","roster",194,"cache",revision,"bytes",sum(p.stat().st_size for p in public.rglob('*') if p.is_file()))

@@ -3,7 +3,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8'),files=[...read('play.html').matchAll(/<script src="(src\/[^"]+)"><\/script>/g)].map(m=>m[1]),ctx={window:{location:{search:''}}};vm.createContext(ctx);
 for(const f of files){vm.runInContext(read(f),ctx,{filename:f});if(f==='src/replay/records.js')break;}
 const E=ctx.window.CageEngine,old=ctx.window.CageEngineT38,R=ctx.window.CageRecords,G=ctx.window.CageGoalkeepers;
-assert.equal(E.VERSION,'cage-t3-9');assert.equal(old.VERSION,'cage-t3-8');assert(G.RATINGS_VERSION.includes('v66'));
+assert.equal(E.VERSION,'cage-t3-10');assert.equal(old.VERSION,'cage-t3-8');assert(G.RATINGS_VERSION.includes('v68'));
 const base={teams:[['paolo-maldini','michael-ballack','ronaldo-nazario'],['ledley-king','claudio-marchisio','antonio-valencia']],tactics:['balanced','press'],mode:'score',traits:{enabled:true},keepers:['gianluigi-buffon','rene-higuita']};
 const hashes={100:'95be1c5d',101:'4483cdf2',102:'822c2162',103:'5ab0f48d',1500:'e60dbf5d',1570:'61fe5c6f',9999:'7b2f98b9'};
 for(const [seed,hash] of Object.entries(hashes)){const cfg={...base,seed:+seed},r=old.simulate(cfg);assert.equal(r.eventHash,hash,'T3-8 archived event hash changed '+seed);const rec=R.make(cfg,r,1),legacy=JSON.parse(JSON.stringify(rec));legacy.engineVersion='cage-t3-8';delete legacy.keeperRatingsVersion;assert.equal(R.reproduce(legacy).eventHash,hash);}
@@ -17,7 +17,7 @@ for(let seed=4000;seed<4100;seed++){
   if(e.type==='shot_attempt'&&e.keeperExposed){exposedShots++;assert(cfg.teams[e.team].includes(e.actor));}
   if((e.type==='goal'||e.type==='gk_save'||e.type==='gk_parry'||e.type==='shot_miss')&&e.calc?.exposureLogit===.52)exposedResolved++;
  }
- if(seed===4000){const rec=JSON.parse(JSON.stringify(R.make(cfg,r,1)));rec.keeperRatingsVersion='wrong-v';assert.throws(()=>R.validate(rec),/ratings version mismatch/);}
+ if(seed===4000){const rec=JSON.parse(JSON.stringify(R.make(cfg,r,1)));rec.keeperRatingsVersion='wrong-v';assert.throws(()=>R.validate(rec),/ratings version mismatch|Unknown goalkeeper ratings catalog/);}
 }
 assert(failedSweeps>0&&exposedShots>0&&exposedResolved>0&&changed>0,'Failed keeper sweeps must create real, recorded shot exposure');
 for(let seed=4000;seed<4050;seed++){const cfg={...base,seed};delete cfg.keepers;assert.equal(E.simulate(cfg).eventHash,old.simulate(cfg).eventHash,'No-keeper gameplay hash changed');}

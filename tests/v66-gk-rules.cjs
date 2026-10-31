@@ -9,4 +9,4 @@ assert(sample.some(x=>x.type==='gk_save'));assert(sample.some(x=>x.type==='gk_pa
 assert.equal(R.validateKeepers(['gianluigi-buffon','manuel-neuer'],G.BY_ID).length,2);
 assert.throws(()=>R.validateKeepers(['gianluigi-buffon','gianluigi-buffon'],G.BY_ID));
 assert.throws(()=>R.afterMiss(G.players[0],'box',1));
-console.log('V66_GK_RULES_PASS reference-shift zero, 30 keeper contexts, bounded goal logit, save/parry/wide split, unique keeper validation');
+console.log('V66_GK_RULES_PASS reference-shift zero, 50 keeper contexts, bounded goal logit, save/parry/wide split, unique keeper validation');

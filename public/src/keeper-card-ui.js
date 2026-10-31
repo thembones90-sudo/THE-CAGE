@@ -10,9 +10,26 @@ function make(player,choose,doc){if(!player||typeof choose!=='function')throw Er
  add(identification,'span','gk-tier',player.careerTier);add(identification,'strong','gk-name',player.name);
  const rate=add(head,'span','gk-ovr',player.overall);rate.setAttribute('aria-label','Overall '+player.overall);
  add(btn,'span','gk-class',player.keeperClass);add(btn,'span','gk-specialty',ROLES[player.keeperClass]||'GOALKEEPER');
+ const rank=(typeof window!=='undefined'?window.CageGoalkeepers?.RANK_BY_ID?.[player.id]:null);
+ if(rank)add(btn,'span','gk-world-rank','GK ROSTER RANK #'+rank);
+ const folklore=Array.isArray(player.folklore)?player.folklore:[];
+ if(folklore.length){const group=add(btn,'span','gk-folklore');
+   for(const tag of folklore){const chip=add(group,'span','gk-special special-'+tag.toLowerCase().replace(/[^a-z]+/g,'-'),tag.replace('STREET ','ST. '));
+     chip.title=tag;
+     if(tag==='TALISMAN'){
+       const NS='http://www.w3.org/2000/svg',svg=document_.createElementNS(NS,'svg');
+       svg.setAttribute('viewBox','0 0 36 32');svg.setAttribute('aria-hidden','true');
+       const heart=document_.createElementNS(NS,'path');
+       heart.setAttribute('d','M18 28L5 15C-1 8 7-1 15 6l3 3 3-3C29-1 37 8 31 15Z');heart.setAttribute('fill','#e4b848');heart.setAttribute('stroke','#f6d875');heart.setAttribute('stroke-width','1.5');
+       const line=document_.createElementNS(NS,'polyline');
+       line.setAttribute('points','5,16 11,16 14,11 17,21 20,14 23,16 31,16');line.setAttribute('stroke','#fff7c1');line.setAttribute('stroke-width','1.8');line.setAttribute('fill','none');
+       svg.append(heart,line);chip.prepend(svg);
+     }
+   }
+ }
  const stat=add(btn,'span','gk-stats-grid');
  for(const [key,label] of STATS){const cell=add(stat,'span','gk-attribute');add(cell,'span','gk-label',label);add(cell,'span','gk-number',player.r[key]);}
- btn.setAttribute('aria-label',player.name+', '+player.careerTier+', '+player.keeperClass+', '+player.overall+' overall. '+STATS.map(([key,label])=>label+' '+player.r[key]).join(', ')+'. Select goalkeeper.');
+ btn.setAttribute('aria-label',player.name+', '+player.careerTier+', '+player.keeperClass+', '+player.overall+' overall. '+STATS.map(([key,label])=>label+' '+player.r[key]).join(', ')+(folklore.length?'. Special labels: '+folklore.join(', '):'')+'. Select goalkeeper.');
  btn.addEventListener('click',()=>choose(player.id));return btn;
 }
 return Object.freeze({STATS,ROLES,make});

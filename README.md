@@ -1,3 +1,9 @@
+# THE CAGE V6.8: 50 RANKED GOALKEEPERS (EXPERIMENTAL)
+
+50 historic goalkeepers with tier-first rank and 7-attribute grades. **OWNER-APPROVED:** Jose Luis Chilavert is LEGEND with STREET HERO + STREET VILLAIN + TALISMAN; his **90 OVR is a provisional formula-derived proposal**, not an approved attribute audit. The original 30-card historical catalog remains frozen for older T3-7/8/9 replays. See [full goalkeeper ranking and grades](docs/V68_GOALKEEPER_50_RANKINGS.md).
+
+---
+
 # THE CAGE V6.7: GOALKEEPER SCOUTING (EXPERIMENTAL)
 
 New keeper selection cards with all seven attributes, T3-9 exposure risk after beaten sweeps, and versioned historical replay compatibility. Read [Claude & Qwen audit](docs/V67_CLAUDE_QWEN_GK_REPORT.md). Goalkeeper ratings remain provisional and **unchanged** until owner review.

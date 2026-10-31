@@ -3,7 +3,13 @@
  const $=id=>document.getElementById(id),check=(x,m)=>{if(!x)throw Error(m)};
  try{
  const errors=[];window.addEventListener('error',e=>errors.push(e.message));
- check(window.CageGoalkeepers?.players.length===30,'missing keeper catalog');
+ check(window.CageGoalkeepers?.players.length===50,'missing keeper catalog');
+ const ch=window.CageGoalkeepers.BY_ID['jose-luis-chilavert'],chCard=window.CageKeeperCards.make(ch,()=>{},document);
+ check(ch.careerTier==='LEGEND'&&ch.overall===90,'Chilavert owner status and grade incorrect');
+ check(chCard.querySelectorAll('.gk-special').length===3,'Chilavert must have three special labels');
+ check(chCard.querySelector('.special-talisman svg path')&&chCard.querySelector('.special-talisman svg polyline'),'Golden heart with heartbeat icon missing');
+ check(chCard.querySelector('.gk-world-rank')&&chCard.querySelectorAll('.gk-attribute').length===7,'GK rank or attributes missing');
+
  $('keeperMode').checked=true;$('gameMode').value='solo';$('gameMode').dispatchEvent(new Event('change'));$('cpuDifficulty').value='competitive';
  $('begin').click();let ticks=0,firstOffer=null,stageBSeen=false;
  const poll=setInterval(()=>{
