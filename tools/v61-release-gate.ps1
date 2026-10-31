@@ -1,4 +1,4 @@
-﻿$ErrorActionPreference='Stop'
+$ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot -Parent
 Set-Location $root
 & python tools/package-v5-web.py
@@ -48,4 +48,3 @@ try {
  Write-Output ('V61_VISUAL_RELEASE_GATE_PASS '+$n+' automated cases + build-t3 --check')
 }
 finally {if($started){Stop-Process -Id $started.Id -Force -ErrorAction SilentlyContinue}}
-
