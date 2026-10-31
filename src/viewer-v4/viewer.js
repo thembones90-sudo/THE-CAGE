@@ -67,9 +67,10 @@ function mount(el,record,opts){
   const q=shell(el,o),root=el.querySelector('.cv-root'),canvas=el.querySelector('canvas'),renderer=Rn.createRenderer(canvas),pb=K.createPlayback(tl,{speed:o.speed,mode:o.mode});
   const listeners={},emit=(n,d)=>(listeners[n]||[]).slice().forEach(f=>f(d));
   const reduce=typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-  el.querySelector('.cv-round').textContent=tl.round?'ROUND '+tl.round:'MATCH';
+  el.querySelector('.cv-round').textContent=o.draftMatch?'DRAFT MATCH':tl.round?'ROUND '+tl.round:'MATCH';
+  if(o.draftMatch){const badge=el.querySelector('.cv-showdown');badge.querySelector('small').textContent='MODE';q('showdown').textContent='3 VS 3';q('sdchip').textContent='FIRST GOAL WINS';}
   el.querySelector('.cv-a').textContent=o.teamNames[0].toUpperCase();el.querySelector('.cv-b').textContent=o.teamNames[1].toUpperCase();
-  q('showdown').textContent=o.showdown?o.showdown.A+'–'+o.showdown.B:'—';q('sdchip').textContent=o.showdown?(o.showdown.label||'BEFORE ROUND'):'NOT IN FILE';
+  if(!o.draftMatch){q('showdown').textContent=o.showdown?o.showdown.A+'–'+o.showdown.B:'—';q('sdchip').textContent=o.showdown?(o.showdown.label||'BEFORE ROUND'):'NOT IN FILE';}
   // Starting tactical choices come DIRECTLY from the immutable match record.
   // This is context, not live tactical intelligence invented by the viewer.
   const recordedTactics=record.config&&Array.isArray(record.config.tactics)?record.config.tactics:null;

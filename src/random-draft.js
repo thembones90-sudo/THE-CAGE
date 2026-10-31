@@ -29,8 +29,8 @@ function handoff(){stopClock();$('selection').classList.add('hidden');$('handoff
 function startPick(){if(game.active)return;if(game.picks.length>=6){finishDraft();return;}game.pool=candidates();if(game.pool.length===0){showError('No eligible footballers remain.');return;}game.deadline=Date.now()+20000;game.active=true;$('handoff').classList.add('hidden');$('selection').classList.remove('hidden');render();$('selection').setAttribute('tabindex','-1');$('selection').focus({preventScroll:true});game.clock=setInterval(tick,150);}
 function claim(id,automatic){if(!game.active||!game.pool.includes(id)||game.claimed.has(id))return;if(!automatic&&Date.now()>=game.deadline){id=game.pool[randomInt(game.pool.length)];automatic=true;}const s=currentSide();stopClock();game.claimed.add(id);game.picks.push({side:s,id,automatic:!!automatic});squads();showError(automatic?'Time expired: '+byId.get(id).name+' automatically drafted for '+sideName(s):sideName(s)+' selected '+byId.get(id).name);game.pool=[];handoffAfterClaim();if(game.picks.length<6)$('reveal').focus({preventScroll:true});}
 function handoffAfterClaim(){if(game.picks.length===6){finishDraft();return;}handoff();}
-function finishDraft(){stopClock();game.finished=true;game.pool=[];$('handoff').classList.add('hidden');$('selection').classList.add('hidden');$('finished').classList.remove('hidden');$('phase').textContent='DRAFT COMPLETE';$('current').textContent='Both squads locked · 3 players each';$('clock').textContent='✓';$('reroll').disabled=true;squads();}
-function begin(){clearMatchViewer();matchRecord=null;$('fight').disabled=false;$('tacticA').disabled=false;$('tacticB').disabled=false;stopClock();game.winner=randomInt(2)?'A':'B';game.picks=[];game.claimed.clear();game.rerolls={A:1,B:1};game.pool=[];game.finished=false;showError('');$('coinResult').textContent='COIN TOSS: '+sideName(game.winner)+' WINS FIRST PICK';$('intro').classList.add('hidden');$('game').classList.remove('hidden');$('result').textContent='';$('details').replaceChildren();handoff();}
+function finishDraft(){stopClock();const vs=$('versus-line');vs.replaceChildren();for(const side of ['A','VS','B']){const e=document.createElement('div');if(side==='VS'){e.className='versus-vs';e.textContent='VS';}else{e.className='versus-team '+side.toLowerCase();const h=document.createElement('h3');h.textContent=sideName(side);e.append(h);for(const pick of game.picks.filter(x=>x.side===side)){const line=document.createElement('span');line.textContent=byId.get(pick.id).name;e.append(line);}}vs.append(e);} game.finished=true;game.pool=[];$('handoff').classList.add('hidden');$('selection').classList.add('hidden');$('finished').classList.remove('hidden');$('phase').textContent='DRAFT COMPLETE';$('current').textContent='Both squads locked · 3 players each';$('clock').textContent='✓';$('reroll').disabled=true;squads();}
+function begin(){clearMatchViewer();matchRecord=null;$('watch-again').classList.add('hidden');$('fight').disabled=false;$('tacticA').disabled=false;$('tacticB').disabled=false;stopClock();game.winner=randomInt(2)?'A':'B';game.picks=[];game.claimed.clear();game.rerolls={A:1,B:1};game.pool=[];game.finished=false;showError('');$('coinResult').textContent='COIN TOSS: '+sideName(game.winner)+' WINS FIRST PICK';$('intro').classList.add('hidden');$('game').classList.remove('hidden');$('result').textContent='';$('details').replaceChildren();handoff();}
 let matchViewer=null, matchRecord=null;
 function clearMatchViewer(){
   if(matchViewer){matchViewer.destroy();matchViewer=null;}
@@ -52,8 +52,8 @@ function fight(){
     $('result').textContent='MATCH IN PROGRESS';
     $('details').replaceChildren();
     $('draft-arena').classList.remove('hidden');
-    matchViewer=window.CageViewer.mount($('draft-arena-viewer'),record,{mode:'live',speed:'dynamic',autoplay:false,names,lines});
-    matchViewer.on('end',()=>{
+    matchViewer=window.CageViewer.mount($('draft-arena-viewer'),record,{mode:'live',speed:'dynamic',autoplay:false,draftMatch:true,names,lines});
+    matchViewer.on('end',()=>{ $('watch-again').classList.remove('hidden');
       $('result').textContent=(result.winner===0?'COMMANDER':'OPPONENT')+' WINS · '+result.score.join(' : ');
       const goal=result.events.find(e=>e.type==='goal');
       $('details').textContent=goal?'Winning goal: '+(byId.get(goal.actor)?.name||goal.actor):'Match completed';
@@ -67,8 +67,20 @@ function fight(){
 $('begin').addEventListener('click',begin);
 $('reveal').addEventListener('click',startPick);
 $('reroll').addEventListener('click',()=>{if(!game.active)return;const s=currentSide();if(!game.rerolls[s])return;if(Date.now()>=game.deadline){tick();return;}game.rerolls[s]=0;const old=game.pool.slice();game.pool=candidates(old);if(game.pool.length===0)game.pool=candidates();render();$('selection').focus({preventScroll:true});});
-$('restart').addEventListener('click',()=>{clearMatchViewer();matchRecord=null;$('fight').disabled=false;$('tacticA').disabled=false;$('tacticB').disabled=false;stopClock();$('intro').classList.remove('hidden');$('game').classList.add('hidden');$('handoff').classList.add('hidden');$('hints').checked=false;game.finished=false;});
+$('restart').addEventListener('click',()=>{clearMatchViewer();matchRecord=null;$('watch-again').classList.add('hidden');$('fight').disabled=false;$('tacticA').disabled=false;$('tacticB').disabled=false;stopClock();$('intro').classList.remove('hidden');$('game').classList.add('hidden');$('handoff').classList.add('hidden');$('hints').checked=false;game.finished=false;});
 $('fight').addEventListener('click',fight);
+$('watch-again').addEventListener('click',()=>{
+  if(!matchRecord)return;
+  clearMatchViewer();
+  const teams=matchRecord.config.teams;
+  const names=Object.fromEntries(teams.flat().map(id=>[id,byId.get(id)?.name||id]));
+  const lines=window.CageCommentary.commentate(matchRecord.result,matchRecord.config.seed,['Commander','Opponent']);
+  $('draft-arena').classList.remove('hidden');
+  matchViewer=window.CageViewer.mount($('draft-arena-viewer'),matchRecord,{mode:'replay',draftMatch:true,speed:'dynamic',autoplay:false,names,lines});
+  matchViewer.play();
+  $('draft-arena').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+});
+
 $('hints').addEventListener('change',()=>{$('hintNote').textContent=$('hints').checked?'Indicators require verified class-counter relationships. No speculative advice is shown.':'Optional guidance shows only when supported by actual player class data.';});
 window.CageRandomDraft={snapshot:()=>({winner:game.winner,picks:game.picks.map(x=>({...x})),rerolls:{...game.rerolls},pool:game.pool.slice(),active:game.active,finished:game.finished}),sample};
 if(roster.length<21)showError('Roster failed to load or has insufficient distinct players.');
