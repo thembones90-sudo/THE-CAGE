@@ -62,7 +62,8 @@ const out={total:ps.length,uniqueIds:idMap.size,errors:problems,warnings,distrib
  underdogs:ps.filter(p=>(p.folklore||[]).includes('UNDERDOG')).map(p=>p.id),
  villains:ps.filter(p=>(p.folklore||[]).includes('STREET VILLAIN')).map(p=>p.id),
  topScores:scoreTop,scoreSummary:scoreExtreme,rosterVersion:ctx.window.CAGE_ROSTER_VERSION,
- engineVersion:ctx.window.CageEngine?.VERSION};
+ engineVersion:ctx.window.CageEngine?.VERSION,
+ ownerTierDecisions:ctx.window.CAGE_OWNER_TIER_DECISIONS||null};
 const dir=path.join(root,'docs');fs.mkdirSync(dir,{recursive:true});const f=path.join(dir,'roster-audit-'+ps.length+'-current.json');fs.writeFileSync(f,JSON.stringify(out,null,2)+'\n');
 console.log('AUDIT OUTPUT '+f);
 const {players:allPlayers,...summary}=out;console.log(JSON.stringify({...summary,unclassified:unclassified.slice(0,12),topScores:undefined,scoreSummary:undefined},null,2));

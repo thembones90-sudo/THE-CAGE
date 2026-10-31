@@ -2,6 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
 const html=read('index.html'),prior=JSON.parse(read('docs/roster-audit-178-refined.json'));
+const ownerElite=new Set(JSON.parse(read('proposals/owner-tier-revisions-10-v17.json')).players.map(p=>p.id));
 const source=JSON.parse(read('proposals/world-street-heroes-4.json'));
 const ctx={window:{location:{search:'?engine=t3'}}};vm.createContext(ctx);
 for(const m of html.matchAll(/<script src="(src\/[^"]+)"><\/script>/g)){if(m[1]==='src/cage-commentary.js')break;vm.runInContext(read(m[1]),ctx,{filename:m[1]});}
@@ -12,7 +13,7 @@ assert(w.CAGE_ROSTER_VERSION.includes('184'));assert(w.CageEngine.VERSION.starts
 assert.equal(Object.keys(w.CAGE_ROSTER_EXTRA_RATINGS).length,45);
 for(const former of prior.players){
  const p=byId.get(former.id);assert(p,'missing historical roster player '+former.id);
- assert.equal(p.careerTier,former.careerTier,'tier accidentally changed '+p.id);
+ assert.equal(p.careerTier,ownerElite.has(p.id)?'ELITE':former.careerTier,'tier changed without owner authorization '+p.id);
  assert.deepEqual(Array.from(p.folklore),former.folklore,'badge accidentally changed '+p.id);
  assert.deepEqual(JSON.parse(JSON.stringify(p.traits)),former.traits,'trait accidentally changed '+p.id);
  assert.deepEqual(JSON.parse(JSON.stringify(p.r)),former.r,'ratings accidentally changed '+p.id);

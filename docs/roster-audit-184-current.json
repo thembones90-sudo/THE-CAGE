@@ -5,8 +5,8 @@
   "warnings": [],
   "distribution": {
     "tier": {
-      "ELITE": 57,
-      "LEGEND": 79,
+      "ELITE": 67,
+      "LEGEND": 69,
       "STALWART": 18,
       "TITAN": 30
     },
@@ -4379,7 +4379,7 @@
       "role": "M",
       "position": "CM",
       "secondaryPositions": [],
-      "careerTier": "LEGEND",
+      "careerTier": "ELITE",
       "folklore": [],
       "traits": {
         "primary": "Engine",
@@ -5252,7 +5252,7 @@
       "secondaryPositions": [
         "CM"
       ],
-      "careerTier": "LEGEND",
+      "careerTier": "ELITE",
       "folklore": [
         "STREET HERO"
       ],
@@ -5609,7 +5609,7 @@
       "secondaryPositions": [
         "CM"
       ],
-      "careerTier": "LEGEND",
+      "careerTier": "ELITE",
       "folklore": [
         "STREET HERO"
       ],
@@ -5646,7 +5646,7 @@
       "role": "F",
       "position": "ST",
       "secondaryPositions": [],
-      "careerTier": "LEGEND",
+      "careerTier": "ELITE",
       "folklore": [
         "STREET HERO"
       ],
@@ -5683,7 +5683,7 @@
       "role": "D",
       "position": "CB",
       "secondaryPositions": [],
-      "careerTier": "LEGEND",
+      "careerTier": "ELITE",
       "folklore": [],
       "traits": {
         "primary": "Libero",
@@ -5718,7 +5718,7 @@
       "role": "M",
       "position": "CAM",
       "secondaryPositions": [],
-      "careerTier": "LEGEND",
+      "careerTier": "ELITE",
       "folklore": [
         "STREET HERO",
         "TALISMAN"
@@ -5797,7 +5797,7 @@
       "secondaryPositions": [
         "CF"
       ],
-      "careerTier": "LEGEND",
+      "careerTier": "ELITE",
       "folklore": [
         "STREET HERO"
       ],
@@ -5947,7 +5947,7 @@
       "secondaryPositions": [
         "ST"
       ],
-      "careerTier": "LEGEND",
+      "careerTier": "ELITE",
       "folklore": [
         "STREET HERO",
         "UNDERDOG"
@@ -6333,7 +6333,7 @@
         "RM",
         "CM"
       ],
-      "careerTier": "LEGEND",
+      "careerTier": "ELITE",
       "folklore": [
         "STREET HERO",
         "TALISMAN"
@@ -6490,7 +6490,7 @@
       "secondaryPositions": [
         "RW"
       ],
-      "careerTier": "LEGEND",
+      "careerTier": "ELITE",
       "folklore": [
         "STREET HERO",
         "TALISMAN"
@@ -7731,5 +7731,21 @@
     }
   },
   "rosterVersion": "editorial-v1.6-184+ratings-v1.1-provisional",
-  "engineVersion": "cage-t3-3"
+  "engineVersion": "cage-t3-3",
+  "ownerTierDecisions": {
+    "version": "owner-tier-decisions-v1.7",
+    "movedIds": [
+      "hidetoshi-nakata",
+      "shunsuke-nakamura",
+      "ariel-ortega",
+      "robert-prosinecki",
+      "darko-pancev",
+      "alen-boksic",
+      "ilkay-gundogan",
+      "miodrag-belodedici",
+      "safet-susic",
+      "nwankwo-kanu"
+    ],
+    "lockedLegend": "jay-jay-okocha"
+  }
 }

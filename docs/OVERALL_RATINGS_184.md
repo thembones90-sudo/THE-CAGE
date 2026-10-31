@@ -20,7 +20,7 @@
 | **96** | Ronaldo Nazário | ST | Mobile striker | TITAN |
 | **96** | Zinedine Zidane | CAM | Classic playmaker | TITAN |
 | **95** | Dragan Stojković | CAM | Classic playmaker | LEGEND |
-| **95** | Safet Sušić | CAM | Classic playmaker | LEGEND |
+| **95** | Safet Sušić | CAM | Classic playmaker | ELITE |
 | **94** | Alan Shearer | ST | Poacher | TITAN |
 | **94** | Cristiano Ronaldo | LW | Goalscoring winger | TITAN |
 | **94** | Dejan Savićević | CAM | Classic playmaker | LEGEND |
@@ -33,7 +33,7 @@
 | **93** | Erling Haaland | ST | Poacher | LEGEND |
 | **93** | Kylian Mbappé | ST | Mobile striker | LEGEND |
 | **93** | Neymar Jr. | LW | Wide creator | TITAN |
-| **93** | Robert Prosinečki | CAM | Classic playmaker | LEGEND |
+| **93** | Robert Prosinečki | CAM | Classic playmaker | ELITE |
 | **93** | Ronaldinho | LW | Wide creator | TITAN |
 | **93** | Ruud Gullit | CAM | Classic playmaker | TITAN |
 | **93** | Sami Hyypiä | CB | Traditional centre-back | ELITE |
@@ -47,12 +47,12 @@
 | **92** | Kaká | CAM | Classic playmaker | LEGEND |
 | **92** | Luis Suárez | ST | Poacher | TITAN |
 | **92** | Matt Le Tissier | CAM | Classic playmaker | ELITE |
-| **92** | Miodrag Belodedici | CB | Traditional centre-back | LEGEND |
+| **92** | Miodrag Belodedici | CB | Traditional centre-back | ELITE |
 | **92** | Rivaldo | LW | Wide creator | TITAN |
 | **92** | Robert Lewandowski | ST | Poacher | TITAN |
-| **92** | Shunsuke Nakamura | CAM | Classic playmaker | LEGEND |
+| **92** | Shunsuke Nakamura | CAM | Classic playmaker | ELITE |
 | **91** | Alessandro Del Piero | CF | False nine | LEGEND |
-| **91** | Ariel Ortega | CAM | Classic playmaker | LEGEND |
+| **91** | Ariel Ortega | CAM | Classic playmaker | ELITE |
 | **91** | Eden Hazard | LW | Wide creator | LEGEND |
 | **91** | Fabio Cannavaro | CB | Traditional centre-back | TITAN |
 | **91** | Francesco Totti | CF | False nine | LEGEND |
@@ -90,16 +90,16 @@
 | **90** | Toni Kroos | CM | Deep orchestrator | TITAN |
 | **90** | Vincent Kompany | CB | Traditional centre-back | LEGEND |
 | **89** | Aílton | ST | Poacher | ELITE |
-| **89** | Alen Bokšić | ST | Mobile striker | LEGEND |
+| **89** | Alen Bokšić | ST | Mobile striker | ELITE |
 | **89** | Alex de Souza | CAM | Classic playmaker | ELITE |
 | **89** | Andrey Arshavin | LW | Wide creator | ELITE |
 | **89** | Bernardo Silva | CAM | Classic playmaker | ELITE |
-| **89** | Darko Pančev | ST | Poacher | LEGEND |
+| **89** | Darko Pančev | ST | Poacher | ELITE |
 | **89** | Diego Tristán | ST | Poacher | ELITE |
 | **89** | Djalminha | CAM | Classic playmaker | ELITE |
 | **89** | Giorgio Chiellini | CB | Traditional centre-back | LEGEND |
 | **89** | Hernán Crespo | ST | Poacher | LEGEND |
-| **89** | Hidetoshi Nakata | CAM | Classic playmaker | LEGEND |
+| **89** | Hidetoshi Nakata | CAM | Classic playmaker | ELITE |
 | **89** | Hulk | RW | Goalscoring winger | ELITE |
 | **89** | Iván Zamorano | ST | Poacher | ELITE |
 | **89** | John Terry | CB | Traditional centre-back | LEGEND |
@@ -120,12 +120,12 @@
 | **88** | Clarence Seedorf | CM | Deep orchestrator | LEGEND |
 | **88** | Declan Rice | CDM | Defensive screen | ELITE |
 | **88** | Djibril Cissé | ST | Mobile striker | ELITE |
-| **88** | İlkay Gündoğan | CM | Deep orchestrator | LEGEND |
+| **88** | İlkay Gündoğan | CM | Deep orchestrator | ELITE |
 | **88** | Javier Zanetti | RB | Defending fullback | LEGEND |
 | **88** | Jay-Jay Okocha | CAM | Classic playmaker | LEGEND |
 | **88** | Juan Román Riquelme | CAM | Classic playmaker | LEGEND |
 | **88** | Lilian Thuram | RB | Defending fullback | LEGEND |
-| **88** | Nwankwo Kanu | CF | False nine | LEGEND |
+| **88** | Nwankwo Kanu | CF | False nine | ELITE |
 | **88** | Paolo Maldini | LB | Defending fullback | TITAN |
 | **88** | Patrick Vieira | CM | Ball winner | LEGEND |
 | **88** | Philipp Lahm | RB | Defending fullback | TITAN |
@@ -142,7 +142,7 @@
 | **87** | Dejan Stanković | CM | Deep orchestrator | LEGEND |
 | **87** | Jamie Vardy | ST | Poacher | ELITE |
 | **87** | Jefferson Farfán | RW | Goalscoring winger | ELITE |
-| **87** | Juan Carlos Valerón | CAM | Classic playmaker | LEGEND |
+| **87** | Juan Carlos Valerón | CAM | Classic playmaker | ELITE |
 | **87** | Ledley King | CB | Traditional centre-back | ELITE |
 | **87** | Mario Balotelli | ST | Poacher | STALWART |
 | **87** | Michael Essien | CM | Ball winner | ELITE |

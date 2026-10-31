@@ -4,6 +4,7 @@ const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f
 const pre=JSON.parse(read('docs/roster-audit-178.json'));
 const definitions=JSON.parse(read('proposals/roster-178-classifications-v1.json'));
 const traitProposals=JSON.parse(read('proposals/trait-pairs-missing-61.json')).traits;
+const ownerElite=new Set(JSON.parse(read('proposals/owner-tier-revisions-10-v17.json')).players.map(p=>p.id));
 const html=read('index.html');
 const ctx={window:{location:{search:'?engine=t3'}}};vm.createContext(ctx);
 for(const m of html.matchAll(new RegExp('<script src="(src/[^"]+)"></script>','g'))){if(m[1]==='src/cage-commentary.js')break;vm.runInContext(read(m[1]),ctx,{filename:m[1]});}
@@ -29,13 +30,13 @@ for(const prior of pre.players){
  assert.equal(!!p.attributesProvisional,prior.provisionalTactical,'tactical rating status changed '+p.id);
  if(prior.careerTier){
    approvedPreserved++;
-   assert.equal(p.careerTier,prior.careerTier,'approved tier changed '+p.id);
+   assert.equal(p.careerTier,ownerElite.has(p.id)?'ELITE':prior.careerTier,'approved tier changed without owner decision '+p.id);
    assert.deepEqual(Array.from(p.folklore),prior.folklore,'approved folklore changed '+p.id);
    assert.deepEqual(JSON.parse(JSON.stringify(p.traits)),prior.traits,'approved traits changed '+p.id);
  }else{
    restored++;
    assert(definitions.classifications[p.id],'not included in classification proposal '+p.id);
-   assert(['editorial-reviewed-v1.3','editorial-refined-v1.4'].includes(p.classificationStatus),'editorial status missing '+p.id);
+   assert(ownerElite.has(p.id)?p.classificationStatus==='owner-confirmed-v1.7':['editorial-reviewed-v1.3','editorial-refined-v1.4'].includes(p.classificationStatus),'editorial status missing '+p.id);
    if(prior.traits)assert.deepEqual(JSON.parse(JSON.stringify(p.traits)),prior.traits,'existing trait pair overwritten '+p.id);
    else{
      newTraits++;

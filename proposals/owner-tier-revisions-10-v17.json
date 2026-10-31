@@ -1,0 +1,82 @@
+{
+  "version": "owner-tier-decisions-v1.7",
+  "decision": "LEGEND to ELITE after owner review",
+  "lockedLegend": "jay-jay-okocha",
+  "baseline": {
+    "roster": 184,
+    "titan": 30,
+    "legend": 79,
+    "elite": 57,
+    "stalwart": 18
+  },
+  "expected": {
+    "roster": 184,
+    "titan": 30,
+    "legend": 69,
+    "elite": 67,
+    "stalwart": 18
+  },
+  "players": [
+    {
+      "id": "hidetoshi-nakata",
+      "name": "Hidetoshi Nakata",
+      "from": "LEGEND",
+      "to": "ELITE"
+    },
+    {
+      "id": "shunsuke-nakamura",
+      "name": "Shunsuke Nakamura",
+      "from": "LEGEND",
+      "to": "ELITE"
+    },
+    {
+      "id": "ariel-ortega",
+      "name": "Ariel Ortega",
+      "from": "LEGEND",
+      "to": "ELITE"
+    },
+    {
+      "id": "robert-prosinecki",
+      "name": "Robert Prosinečki",
+      "from": "LEGEND",
+      "to": "ELITE"
+    },
+    {
+      "id": "darko-pancev",
+      "name": "Darko Pančev",
+      "from": "LEGEND",
+      "to": "ELITE"
+    },
+    {
+      "id": "alen-boksic",
+      "name": "Alen Bokšić",
+      "from": "LEGEND",
+      "to": "ELITE"
+    },
+    {
+      "id": "ilkay-gundogan",
+      "name": "İlkay Gündoğan",
+      "from": "LEGEND",
+      "to": "ELITE"
+    },
+    {
+      "id": "miodrag-belodedici",
+      "name": "Miodrag Belodedici",
+      "from": "LEGEND",
+      "to": "ELITE"
+    },
+    {
+      "id": "safet-susic",
+      "name": "Safet Sušić",
+      "from": "LEGEND",
+      "to": "ELITE"
+    },
+    {
+      "id": "nwankwo-kanu",
+      "name": "Nwankwo Kanu",
+      "from": "LEGEND",
+      "to": "ELITE"
+    }
+  ],
+  "restrictions": "Tier-only; preserve ratings, OVR calculations, folklore, special traits, positions, tactical attributes. Okocha remains LEGEND."
+}

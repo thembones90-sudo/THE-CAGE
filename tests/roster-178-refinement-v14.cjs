@@ -4,6 +4,7 @@ const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f
 const before=json('docs/roster-audit-178-current.json'),old=json('docs/roster-audit-178.json');
 const baseline=json('docs/provisional-115-baseline.json'),review=json('proposals/tactical-115-reviewed-v1.4.json');
 const change=json('proposals/roster-178-refinement-v1.4.json');
+const ownerElite=new Set(JSON.parse(read('proposals/owner-tier-revisions-10-v17.json')).players.map(p=>p.id));
 const html=read('index.html'),ctx={window:{location:{search:'?engine=t3'}}};vm.createContext(ctx);
 for(const m of html.matchAll(/<script src="(src\/[^"]+)"><\/script>/g)){if(m[1]==='src/cage-commentary.js')break;vm.runInContext(read(m[1]),ctx,{filename:m[1]});}
 const w=ctx.window,roster=w.THE_CAGE_PLAYERS,byId=new Map(roster.map(p=>[p.id,p]));
@@ -22,7 +23,7 @@ for(const p of roster.filter(v=>prior.has(v.id))){
  assert.deepEqual(JSON.parse(JSON.stringify(p.traits)),was.traits,'trait changed '+p.id);
  if(locked.careerTier){
   owner++;
-  assert.equal(p.careerTier,locked.careerTier,'approved tier overwritten '+p.id);
+  assert.equal(p.careerTier,ownerElite.has(p.id)?'ELITE':locked.careerTier,'approved tier overwritten without newer owner decision '+p.id);
   assert.deepEqual(Array.from(p.folklore),locked.folklore,'approved badge overwritten '+p.id);
  }else{
   editorial++;
@@ -32,7 +33,7 @@ for(const p of roster.filter(v=>prior.has(v.id))){
    if(ch.careerTier)assert.equal(p.careerTier,ch.careerTier,'tier refinement '+p.id);
    if(ch.removeFolklore)for(const b of ch.removeFolklore)assert(!p.folklore.includes(b),'badge not removed '+p.id);
   }else{
-   assert.equal(p.careerTier,was.careerTier,'unrequested tier changed '+p.id);
+   assert.equal(p.careerTier,ownerElite.has(p.id)?'ELITE':was.careerTier,'unrequested tier changed '+p.id);
    assert.deepEqual(Array.from(p.folklore),was.folklore,'unrequested badges changed '+p.id);
   }
  }

@@ -7,7 +7,7 @@ for(const file of scripts){if(file==='src/cage-commentary.js')break;vm.runInCont
 const players=ctx.window.THE_CAGE_PLAYERS,p=players.find(p=>p.id==='hidetoshi-nakata');
 assert.equal(players.length,184);assert.equal(new Set(players.map(p=>p.id)).size,184);
 assert(p,'missing Nakata');assert.equal(p.position,'CAM');assert.deepEqual(Array.from(p.secondaryPositions),['CM']);
-assert.equal(p.careerTier,'LEGEND');assert.deepEqual(Array.from(p.folklore),['STREET HERO']);
+assert.equal(p.careerTier,'ELITE');assert.deepEqual(Array.from(p.folklore),['STREET HERO']);
 assert.equal(p.traits.primary,'Surgeon');assert.equal(p.traits.secondary,'Engine');
 assert.equal(p.r.pace,83);assert.equal(p.r.tech,88);assert.equal(p.r.pass,92);
 assert.equal(p.r.vision,95);assert.equal(p.r.shooting,90);assert.equal(Object.keys(p.r).length,17);
@@ -19,4 +19,4 @@ assert.equal(ctx.window.CageTraits.traits(p.id)[0][0],'Surgeon');
 const E=ctx.window.CageEngine;assert(E.VERSION.startsWith('cage-t3'));
 const input={teams:[['hidetoshi-nakata','filippo-inzaghi','paolo-maldini'],['jay-jay-okocha','roy-keane','ronaldo-nazario']],tactics:['balanced','press'],seed:314,mode:'ko'};
 const a=E.simulate(input),b=E.simulate(input);assert.deepEqual(JSON.parse(JSON.stringify(a)),JSON.parse(JSON.stringify(b)));assert([0,1].includes(a.winner));
-console.log('PASS: 184 players; Nakata LEGEND/STREET HERO, CAM/CM, Surgeon/Engine, full ratings, search aliases, deterministic tactical match.');
+console.log('PASS: 184 players; Nakata ELITE/STREET HERO, CAM/CM, Surgeon/Engine, full ratings, search aliases, deterministic tactical match.');

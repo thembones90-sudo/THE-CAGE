@@ -2,6 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
 const html=read('index.html'),previous=JSON.parse(read('docs/roster-audit-182-current.json'));
+const ownerElite=new Set(JSON.parse(read('proposals/owner-tier-revisions-10-v17.json')).players.map(p=>p.id));
 const source=JSON.parse(read('proposals/deportivo-legends-2-approved.json'));
 const c={window:{location:{search:'?engine=t3'}}};vm.createContext(c);
 for(const m of html.matchAll(/<script src="(src\/[^"]+)"><\/script>/g)){if(m[1]==='src/cage-commentary.js')break;vm.runInContext(read(m[1]),c,{filename:m[1]});}
@@ -14,7 +15,7 @@ assert(w.CageEngine.VERSION.startsWith('cage-t3'));
 assert.equal(Object.keys(w.CAGE_ROSTER_EXTRA_RATINGS).length,45);
 for(const old of previous.players){
  const p=byId.get(old.id);assert(p,old.id+' disappeared');
- assert.equal(p.careerTier,old.careerTier,old.id+' tier');
+ assert.equal(p.careerTier,ownerElite.has(p.id)?'ELITE':old.careerTier,old.id+' tier');
  assert.deepEqual(Array.from(p.folklore),old.folklore,old.id+' folklore');
  assert.deepEqual(JSON.parse(JSON.stringify(p.traits)),old.traits,old.id+' traits');
  assert.deepEqual(JSON.parse(JSON.stringify(p.r)),old.r,old.id+' prime stats');
