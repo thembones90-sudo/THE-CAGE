@@ -158,7 +158,7 @@ function mount(el,record,opts){
     }
     q('onball').innerHTML=who?'<small>ON THE BALL</small> <b class="t'+tl.teamOf[who]+'">'+esc(name(who))+'</b>':'<small>LOOSE BALL</small>';
     const b=q('banner');const ban=ev.type==='restart'&&seg.move===0||ev.type==='restart'&&T.phase(seg,tau)<.6?'KICK-OFF':ev.transition&&ev.type==='turnover'?'COUNTER':ev.type==='free_kick'?'FREE KICK':ev.type==='foul'?'FOUL':'';b.textContent=ban;b.classList.toggle('on',!!ban);
-    const action=q('action');action.textContent=motion.showEvent&&seg.type!=='goal'?motion.label+(motion.roles.actor?' / '+name(motion.roles.actor).toUpperCase():''):'';action.classList.toggle('on',!!action.textContent);
+    const action=q('action');action.textContent=motion.showEvent&&seg.type!=='goal'?motion.label+(motion.roles.actor?' / '+name(motion.roles.actor).toUpperCase():''):'';action.classList.toggle('on',!!action.textContent);const actionKind=action.textContent?(['shot_attempt','shot_miss','free_kick'].includes(seg.type)?'shot':['press','block','dribble_duel'].includes(seg.type)?'contact':['pass','through_ball','wall_pass'].includes(seg.type)?'pass':'carry'):'';action.dataset.kind=actionKind;q('action').closest('.cv-stage').dataset.action=actionKind;
     if(!goalShown&&tau<(tl.goals[0]||{tau:Infinity}).tau)q('goalcard').hidden=true;
     syncComm(tau);}
   function loop(ts){raf=requestAnimationFrame(loop);const dt=last===null?0:Math.min(.1,(ts-last)/1000);last=ts;now+=dt;pb.advance(dt);frame();}

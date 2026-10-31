@@ -115,3 +115,26 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.08;ba
 @media(prefers-reduced-motion:reduce){
 .cv-stage .cv-golden,.cv-golden-title,.cv-golden:after{animation:none!important;transition:none!important;filter:none!important}
 }
+
+/* V6.2 ARENA ACTION BROADCAST: purely event-classified visuals, no simulated outcomes. */
+.cv-stage{border:2px solid #78919a;box-shadow:0 18px 62px #000b,0 0 0 1px #b9a27033;transition:border-color .16s,box-shadow .16s}
+.cv-stage[data-action="shot"]{border-color:#dbb366;box-shadow:0 18px 62px #000b,0 0 24px #f1c16c44}
+.cv-stage[data-action="contact"]{border-color:#b87175}
+.cv-stage[data-action="pass"]{border-color:#7aaebf}
+.cv-stage .cv-action{font-size:clamp(11px,1.15vw,15px);padding:9px 14px;
+  font-weight:1000;letter-spacing:.11em;border-left:4px solid #d6b166;
+  background:linear-gradient(100deg,#0a1a23f2,#283841df);box-shadow:0 7px 25px #000a,0 0 17px #d6b16622}
+.cv-stage .cv-action[data-kind="shot"]{color:#fff1c1;border-color:#f2c16b;
+  background:linear-gradient(100deg,#573e1cd9,#17232bec)}
+.cv-stage .cv-action[data-kind="contact"]{color:#ffc3c1;border-color:#e57b85;
+  background:linear-gradient(100deg,#50222cdc,#16212bdc)}
+.cv-stage .cv-action[data-kind="pass"]{color:#bceaf3;border-color:#68c3df;
+  background:linear-gradient(100deg,#173e51df,#111e29e8)}
+.cv-root .cv-score{border-color:#b4985c;background:linear-gradient(#17232b,#070c10);text-shadow:0 0 10px #ffffff22}
+.cv-root .cv-clock span{font-variant-numeric:tabular-nums;text-shadow:0 0 14px #d9ae5d35}
+.cv-root .cv-onball{border-left:3px solid #b99c66}
+@media(max-width:650px){
+  .cv-stage .cv-action{top:4px;left:5px;max-width:80%;font-size:9px;letter-spacing:.035em;padding:4px 7px;border-left-width:3px}
+  .cv-stage{border-width:1px}
+}
+@media(prefers-reduced-motion:reduce){.cv-stage{transition:none}}

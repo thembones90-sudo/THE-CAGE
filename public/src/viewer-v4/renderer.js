@@ -32,6 +32,52 @@ function createRenderer(canvas){
     // steel cage frame
     g.strokeStyle=tk['--cage-steel'];g.lineWidth=5;const m=r.h*.035;g.beginPath();if(g.roundRect)g.roundRect(r.x-m-r.w*.03,r.y-m,r.w+2*m+r.w*.06,r.h+2*m,10);else g.rect(r.x-m-r.w*.03,r.y-m,r.w+2*m+r.w*.06,r.h+2*m);g.stroke();
     return off;}
+  // V6.2: action lighting reads ONLY the recorded event segment and sampled
+  // replay positions. It never creates new passes, shots, collisions or goals.
+  function paintRecordedAction(f,R){
+    const motion=f.motion;
+    if(!motion||!motion.showEvent||f.reducedMotion)return;
+    const phase=Math.max(0,Math.min(1,motion.phase||0));
+    const strength=Math.pow(Math.sin(Math.PI*phase),1.4);
+    if(strength<.02)return;
+    const kind=motion.type,role=motion.roles||{};
+    const shot=kind==='shot_attempt'||kind==='shot_miss'||kind==='free_kick';
+    const defensive=kind==='press'||kind==='block'||kind==='dribble_duel';
+    const actor=role.actor&&f.players[role.actor]&&px(f.players[role.actor]);
+    // A shot flash is centred at the sampled ball, not an invented goal contact.
+    if(shot&&f.ball){
+      const b=px(f.ball),radius=R*(1.9+phase*1.35);
+      ctx.save();ctx.globalAlpha=strength*.78;
+      const light=ctx.createRadialGradient(b.x,b.y,0,b.x,b.y,radius*2.4);
+      light.addColorStop(0,'rgba(255,231,148,.47)');
+      light.addColorStop(.32,'rgba(242,180,77,.22)');
+      light.addColorStop(1,'rgba(242,180,77,0)');
+      ctx.fillStyle=light;ctx.beginPath();ctx.arc(b.x,b.y,radius*2.4,0,Math.PI*2);ctx.fill();
+      ctx.strokeStyle='#ffe3a0';ctx.lineWidth=2.2;
+      ctx.beginPath();ctx.arc(b.x,b.y,radius,0,Math.PI*2);ctx.stroke();ctx.restore();
+    }
+    // Tackle/press feedback appears only for recorded challenges and contacts.
+    if(defensive&&motion.challenge&&role.defender&&f.players[role.defender]){
+      const p=px(f.players[role.defender]),radius=R*(1.35+phase*.95);
+      ctx.save();ctx.globalAlpha=strength*.8;
+      ctx.strokeStyle='#f1a0a3';ctx.lineWidth=2.3;
+      ctx.beginPath();ctx.arc(p.x,p.y,radius,-.6,Math.PI+.8);ctx.stroke();
+      for(let i=0;i<5;i++){
+        const a=(i*2.4)+phase*.35;
+        ctx.beginPath();ctx.moveTo(p.x+Math.cos(a)*radius*1.12,p.y+Math.sin(a)*radius*1.12);
+        ctx.lineTo(p.x+Math.cos(a)*radius*1.45,p.y+Math.sin(a)*radius*1.45);ctx.stroke();
+      }ctx.restore();
+    }
+    // Actor spotlight is a subtle ground marker; it never changes team roles.
+    if(actor&&['carry','dribble_duel','through_ball','pass','press','block'].includes(kind)){
+      ctx.save();ctx.globalAlpha=strength*.64;
+      ctx.strokeStyle=defensive?'#ed9197':'#e6c77e';ctx.lineWidth=1.8;
+      ctx.setLineDash([5,4]);
+      ctx.beginPath();ctx.ellipse(actor.x,actor.y,R*2.1,R*1.23,0,0,Math.PI*2);ctx.stroke();
+      ctx.restore();
+    }
+  }
+
   // frame: {players, ball, teamOf, labels, carrier, contact:[ids], oop:[ids], flash, trail:[{u,v}], reducedMotion, showLabels, focus}
   function draw(f){if(!rect)resize();if(!arena||arenaKey!==selectedVariant()){arena=drawArena();arenaKey=selectedVariant();}ctx.setTransform(1,0,0,1,0,0);ctx.drawImage(arena,0,0);ctx.setTransform(dpr,0,0,dpr,0,0);
     if(f.cues){ctx.save();ctx.translate(world.x,world.y);ctx.scale(world.scale,world.scale);
@@ -43,9 +89,14 @@ function createRenderer(canvas){
     if(motion&&!f.reducedMotion){
       if(motion.pass&&motion.ball.flight){
         const start=px(motion.pass.from),end=px(motion.pass.to);
-        ctx.save();ctx.lineCap='round';ctx.strokeStyle='rgba(234,184,91,.72)';
-        ctx.setLineDash([3,5]);ctx.lineWidth=2.2;ctx.beginPath();ctx.moveTo(start.x,start.y);ctx.lineTo(end.x,end.y);ctx.stroke();
-        ctx.setLineDash([]);ctx.restore();
+        ctx.save();ctx.lineCap='round';
+        const beam=ctx.createLinearGradient(start.x,start.y,end.x,end.y);
+        beam.addColorStop(0,'rgba(246,212,136,.12)');
+        beam.addColorStop(.45,'rgba(255,220,143,.65)');
+        beam.addColorStop(1,'rgba(255,243,190,.92)');
+        ctx.shadowColor='rgba(241,177,76,.63)';ctx.shadowBlur=5;
+        ctx.strokeStyle=beam;ctx.lineWidth=2.4;ctx.beginPath();ctx.moveTo(start.x,start.y);ctx.lineTo(end.x,end.y);ctx.stroke();
+        ctx.restore();
       }
       ctx.save();ctx.lineCap='round';
       for(const runner of motion.runners){
@@ -62,6 +113,7 @@ function createRenderer(canvas){
     }
     // ball trail (presentation)
     if(!f.reducedMotion&&f.trail&&f.trail.length>1){ctx.lineCap='round';for(let i=1;i<f.trail.length;i++){const a=px(f.trail[i-1]),b=px(f.trail[i]);ctx.strokeStyle='rgba(225,176,75,'+(.05+.28*i/f.trail.length)+')';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}
+    paintRecordedAction(f,R);
     for(const id of ids){const p=px(f.players[id]);ctx.fillStyle='rgba(0,0,0,.35)';ctx.beginPath();ctx.ellipse(p.x+2,p.y+R*.75,R*.9,R*.38,0,0,Math.PI*2);ctx.fill();}
     for(const id of ids){const p=px(f.players[id]),team=f.teamOf[id],col=team===0?tk['--team-a']:tk['--team-b'],ink=team===0?tk['--team-a-ink']:tk['--team-b-ink'],dim=f.oop&&f.oop.includes(id);
       ctx.globalAlpha=dim?.5:1;
@@ -81,7 +133,7 @@ function createRenderer(canvas){
           ctx.beginPath();ctx.arc(p.x,p.y,R+6,0,Math.PI*2);ctx.stroke();ctx.restore();
         }
       }
-      if(id===f.carrier){ctx.strokeStyle=tk['--momentum'];ctx.lineWidth=3;ctx.beginPath();ctx.arc(p.x,p.y,R+3,0,Math.PI*2);ctx.stroke();}
+      if(id===f.carrier){ctx.save();ctx.strokeStyle=tk['--momentum'];ctx.lineWidth=3;ctx.shadowColor='#f5c65a';ctx.shadowBlur=8;ctx.beginPath();ctx.arc(p.x,p.y,R+4,0,Math.PI*2);ctx.stroke();ctx.shadowBlur=0;ctx.lineWidth=1.2;ctx.strokeStyle='rgba(255,246,194,.8)';ctx.beginPath();ctx.arc(p.x,p.y,R+7,-Math.PI*.66,Math.PI*.23);ctx.stroke();ctx.restore();}
       // V5.2: a deterministic heading notch and compact moving-foot cues.
       // These only paint cosmetic graphics. No centerpoint or match cell changes.
       if(kinetics&&kinetics.players[id]){
@@ -124,9 +176,12 @@ function createRenderer(canvas){
       const safe={x:Math.max(0,rect.x+2),y:Math.max(0,rect.y+2),w:Math.min(W,rect.x+rect.w-2)-Math.max(0,rect.x+2),h:Math.min(H,rect.y+rect.h-2)-Math.max(0,rect.y+2)};
       const labelBoxes=Names.place(labelPlayers,safe,R,{carrier:f.carrier,actor:motion&&motion.roles.actor,defender:motion&&motion.roles.defender,height:W<650?13:15,gap:3});
       for(const b of labelBoxes){
-        ctx.fillStyle='rgba(5,12,16,.89)';ctx.fillRect(b.x,b.y,b.w,b.h);
-        ctx.strokeStyle=b.id===f.carrier?'rgba(226,183,89,.9)':'rgba(134,155,157,.48)';ctx.lineWidth=.8;ctx.strokeRect(b.x+.4,b.y+.4,b.w-.8,b.h-.8);
-        ctx.fillStyle=b.id===f.carrier||b.id===f.focus?tk['--momentum']:'#edf6f4';
+        const teamColor=f.teamOf[b.id]===0?tk['--team-a']:tk['--team-b'];
+        ctx.save();ctx.shadowColor='rgba(0,0,0,.7)';ctx.shadowBlur=5;
+        ctx.fillStyle='rgba(5,12,16,.94)';ctx.fillRect(b.x,b.y,b.w,b.h);ctx.restore();
+        ctx.fillStyle=teamColor;ctx.fillRect(b.x,b.y,3,b.h);
+        ctx.strokeStyle=b.id===f.carrier?'rgba(244,201,105,.95)':'rgba(134,155,157,.54)';ctx.lineWidth=.9;ctx.strokeRect(b.x+.45,b.y+.45,b.w-.9,b.h-.9);
+        ctx.fillStyle=b.id===f.carrier||b.id===f.focus?tk['--momentum']:'#f2f6f4';
         ctx.fillText(b.name,b.x+b.w/2,b.y+b.h/2+.5);
       }
       ctx.restore();
@@ -145,6 +200,10 @@ function createRenderer(canvas){
         ctx.restore();
       }
       const golden=img.ball,ballR=Math.max(6,br*1.55);
+      ctx.save();
+      ctx.strokeStyle='rgba(249,214,121,.69)';ctx.lineWidth=1.2;
+      ctx.beginPath();ctx.arc(b.x,b.y-lift*8,ballR+2,0,Math.PI*2);ctx.stroke();
+      ctx.restore();
       if(golden&&golden.complete&&golden.naturalWidth){ctx.save();ctx.translate(b.x,b.y-lift*8);
         if(kb&&!f.reducedMotion&&kb.flight&&kb.speed>45){ctx.rotate(kb.heading);ctx.scale(1+Math.min(.25,kb.intensity*.25),1-Math.min(.13,kb.intensity*.13));}
         ctx.rotate(kb?kb.spin:motion?motion.spin:(f.tau||0)*6);
