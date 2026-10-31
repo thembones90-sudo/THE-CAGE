@@ -90,7 +90,7 @@ function createRenderer(canvas){
       if(active&&event.zone?.lane){const target={left:.39,centre:.5,right:.61}[event.zone.lane]??.5;
         lane=f.reducedMotion?target:.5+(target-.5)*Math.sin(Math.PI*phase/2);
       }
-      const at=px({u:side===0?.035:.965,v:lane}),radius=R*.82;
+      const outSweep=active&&event.type==='gk_sweep',at=px({u:side===0?(outSweep?.12:.035):(outSweep?.88:.965),v:lane}),radius=R*.82;
       ctx.save();
       ctx.fillStyle='rgba(4,13,21,.80)';ctx.strokeStyle=side===0?'#78c9ff':'#ffbd88';ctx.lineWidth=2;
       ctx.beginPath();ctx.arc(at.x,at.y,radius+2,0,Math.PI*2);ctx.fill();ctx.stroke();

@@ -31,7 +31,7 @@ const BANK = {
   block: ['HE SHOOTS! Blocked by {D}!', 'The strike comes in, and {D} throws himself in the way!', '{D} gets a body on it! Superb defending!'],
   miss_near: ['HE SHOOTS! Inches wide!', 'Off the frame! So close!', 'Fizzing past the post! The cage groans!'],
   miss: ['HE SHOOTS... wide, and it cannons back off the wall.', 'Snatched at. Well wide.', 'Pulled across the face of the little goal and away.'],
-  goal: ['GOAL! {A}! THE CAGE ERUPTS!', '{A}! IT\'S IN! First goal, and it wins it!', 'IT\'S THERE! {A} FINDS THE NET!'],
+  goal: ['GOAL! {A}! THE CAGE ERUPTS!', '{A}! IT\'S IN! A superb finish!', 'IT\'S THERE! {A} FINDS THE NET!'],
   rebound_att: ['Off the boards, and {A} is first to it!', 'The wall gives it back and {A} pounces!'],
   rebound_def: ['Loose off the wall, {A} gets there first and clears the danger.', '{A} reacts quickest to the rebound and calms everything down.'],
   quiet: ['Patient stuff from {TEAM}, moving it around without forcing anything.', 'A lull. {TEAM} keep it, probing.', 'Composed spell of possession for {TEAM}.'],
@@ -68,7 +68,12 @@ function commentate(res, seed, teamNames = ['Home', 'Away']) {
       case 'press': say(e, fill(pick(e.outcome === 'ball_won' ? 'press_won' : 'press_beaten', e.i), e), 1); break;
       case 'foul': say(e, fill(pick('foul', e.i), { ...e }), 1); break;
       case 'free_kick': say(e, fill(pick('free_kick', e.i), e), 2); break;
-      case 'shot_attempt': say(e, fill(pick(e.kind === 'one_v_one' ? 'shot_build_ovo' : 'shot_build', e.i), e), 2); break;
+      case 'gk_save': say(e,(window.CageGoalkeepers?.BY_ID[e.gk]?.name||'The goalkeeper')+' holds the shot.',2);break;
+      case 'gk_parry': say(e,(window.CageGoalkeepers?.BY_ID[e.gk]?.name||'The goalkeeper')+' parries it back into play!',2);break;
+      case 'gk_distribution': say(e,(window.CageGoalkeepers?.BY_ID[e.gk]?.name||'The goalkeeper')+(e.outcome==='complete'?' distributes '+e.kind+' to '+nm(e.target)+'.':' tries the '+e.kind+' release, but it is intercepted.'),1);break;
+      case 'gk_sweep': say(e,(window.CageGoalkeepers?.BY_ID[e.gk]?.name||'The goalkeeper')+(e.outcome==='cleared'?' charges out and sweeps up the through ball!':' comes out, but '+nm(e.actor)+' beats the sweep!'),2);break;
+      case 'golden_goal_pressure':say(e,'Deep into Golden Goal. Both sides push forward; the cage is opening up.',2);break;
+      case 'shot_attempt': say(e, res.keepers&&e.kind==='one_v_one'?nm(e.actor)+' faces the goalkeeper one-on-one!':fill(pick(e.kind === 'one_v_one' ? 'shot_build_ovo' : 'shot_build', e.i), e), 2); break;
       case 'block': say(e, fill(pick('block', e.i), e), 3); break;
       case 'shot_miss': say(e, fill(pick(e.outcome === 'off_post_or_wide' ? 'miss_near' : 'miss', e.i), e), 3); break;
       case 'goal': { let s = fill(pick('goal', e.i), e); if (e.assist && e.assist !== e.actor) s += ` Made by ${nm(e.assist)}.`; say(e, s, 3); break; }

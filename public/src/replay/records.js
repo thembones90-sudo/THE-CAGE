@@ -26,18 +26,40 @@ for(const g of goals)if(g.assist&&!config.teams[g.team].includes(g.assist))throw
 }
 function validate(record){if(!record||![SCHEMA,2].includes(record.schema)||!Number.isInteger(record.round)||record.round<1||record.round>5)throw Error('Unsupported replay record.');
 const c=record.config;if(!c||!['ko','score'].includes(c.mode)||!Number.isInteger(c.seed)||c.seed<0||c.seed>0xffffffff||!Array.isArray(c.teams)||c.teams.length!==2||c.teams.some(t=>!Array.isArray(t)||t.length!==3||t.some(id=>typeof id!=='string'||!Object.hasOwn(E.BY_ID,id)))||new Set(c.teams.flat()).size!==6||!Array.isArray(c.tactics)||c.tactics.length!==2||c.tactics.some(t=>!Object.hasOwn(E.TACTICS,t)))throw Error('Invalid replay configuration.');
+if(c.retryCount!==undefined&&(!Number.isInteger(c.retryCount)||c.retryCount<1||c.retryCount>4||record.engineVersion!=='cage-t3-8'||!c.keepers))throw Error('Invalid safety replay seed retry metadata.');
 if(c.traits!==undefined&&(!c.traits||c.traits.enabled!==true||Object.keys(c.traits).length!==1||!String(record.engineVersion).startsWith('cage-t3')))throw Error('Unsupported trait-mode replay configuration.');
-if(c.keepers===undefined){if(record.schema===2||record.result.keepers||record.result.keeperStats||record.result.events.some(e=>['gk_save','gk_parry'].includes(e.type)||e.gk))throw Error('Goalkeeper event in non-goalkeeper match.');}
+if(c.keepers===undefined){if(record.schema===2||record.result.keepers||record.result.keeperStats||record.result.events.some(e=>['gk_save','gk_parry','gk_sweep','gk_distribution'].includes(e.type)||e.gk))throw Error('Goalkeeper event in non-goalkeeper match.');}
 if(c.keepers!==undefined){if(c.mode!=='score')throw Error('Keeper replay requires regulation scoring.');
- if(record.schema!==2||record.engineVersion!=='cage-t3-7')throw Error('Keeper replay requires GK schema 2 and T3-7.');
+ if(record.schema!==2||!['cage-t3-7','cage-t3-8'].includes(record.engineVersion))throw Error('Keeper replay requires GK schema 2 and T3-7.');
  window.CageGoalkeeperRules.validateKeepers(c.keepers,window.CageGoalkeepers.BY_ID);
  if(!Array.isArray(record.result.keepers)||JSON.stringify(record.result.keepers)!==JSON.stringify(c.keepers))throw Error('Keeper IDs disagree with replay config.');
  const acts=record.result.events.filter(e=>['gk_save','gk_parry'].includes(e.type));
+ const distributions=record.result.events.filter(e=>e.type==='gk_distribution');
+ const sweeps=record.result.events.filter(e=>e.type==='gk_sweep');
+ if(record.engineVersion==='cage-t3-8'){
+  for(const e of record.result.events.filter(e=>['shot_miss','gk_save','gk_parry'].includes(e.type)&&e.gk)){
+   const g=window.CageGoalkeepers.BY_ID[e.gk];
+   if(e.gk!==c.keepers[1-e.team]||!Number.isFinite(e.catRoll)||e.catRoll<0||e.catRoll>=1)throw Error('Missing or invalid recorded goalkeeper classification roll.');
+   const expected=window.CageGoalkeeperRules.afterMiss(g,e.kind,e.catRoll);
+   if(e.type!==expected.type||e.outcome!==expected.outcome||e.onTarget!==expected.onTarget||e.onTargetP!==expected.onTargetP||e.parryP!==expected.parryP)throw Error('Recorded goalkeeper save/parry classification disagrees with actual roll.');
+  }
+  const phases=record.result.events.filter(e=>e.type==='golden_goal_pressure');
+  if(phases.length>1||phases.some(e=>e.reason!=='prolonged_overtime_risk'||e.t<E.P.timedSeconds+900||record.result.decidedBy!=='golden_goal'))throw Error('Invalid Golden Goal pressure phase.');
+ }
+
+ if(record.engineVersion==='cage-t3-7'&&(distributions.length||sweeps.length))throw Error('Archived T3-7 cannot contain goalkeeper dynamics.');
+ for(const e of distributions){
+  if(record.engineVersion!=='cage-t3-8'||e.p!==window.CageGoalkeeperRules.distribute(window.CageGoalkeepers.BY_ID[e.gk],E.TACTICS[c.tactics[1-e.team]].engageHigh,e.roll,e.kind==='long').p||e.gk!==c.keepers[e.team]||!c.teams[e.team].includes(e.actor)||!c.teams[e.team].includes(e.target)||!['complete','intercepted'].includes(e.outcome)||!Number.isFinite(e.p)||!Number.isFinite(e.roll)||e.outcome==='complete'!==(e.roll<e.p)||!e.to||![1,2].includes(e.to.x)||!['long','short'].includes(e.kind)||e.to.x!==(e.kind==='long'?2:1))throw Error('Invalid recorded goalkeeper distribution.');
+  if(e.outcome==='intercepted'&&!c.teams[1-e.team].includes(e.opp))throw Error('Keeper intercepted release lacks opponent.');
+ }
+ for(const e of sweeps)if(record.engineVersion!=='cage-t3-8'||e.p!==window.CageGoalkeeperRules.sweep(window.CageGoalkeepers.BY_ID[e.gk],e.zone?.x,e.roll).p||e.gk!==c.keepers[1-e.team]||!c.teams[e.team].includes(e.actor)||!['cleared','beaten'].includes(e.outcome)||!Number.isFinite(e.p)||!Number.isFinite(e.roll)||e.outcome==='cleared'!==(e.roll<e.p))throw Error('Invalid recorded goalkeeper sweeping.');
+
  for(const e of acts)if(e.gk!==c.keepers[1-e.team]||!c.teams[e.team].includes(e.actor)||!Number.isFinite(e.p)||!Number.isFinite(e.roll))throw Error('Invalid recorded goalkeeper action.');
  for(const e of record.result.events.filter(e=>e.type==='goal'))if(e.gk!==c.keepers[1-e.team])throw Error('Goalkeeper goal mismatch.');
  if(!record.result.keeperStats||Object.keys(record.result.keeperStats).length!==2)throw Error('Missing goalkeeper statistics.');
  for(let side=0;side<2;side++){const id=c.keepers[side],st=record.result.keeperStats[id];
   if(!st||st.saves!==acts.filter(e=>e.type==='gk_save'&&e.gk===id).length||st.parries!==acts.filter(e=>e.type==='gk_parry'&&e.gk===id).length||st.conceded!==record.result.score[1-side])throw Error('Goalkeeper statistics disagree with logged events.');
+  if(record.engineVersion==='cage-t3-8'&&(st.distributions!==distributions.filter(e=>e.gk===id).length||st.completedDistributions!==distributions.filter(e=>e.gk===id&&e.outcome==='complete').length||st.sweeps!==sweeps.filter(e=>e.gk===id&&e.outcome==='cleared').length))throw Error('Goalkeeper distributions/sweeps disagree with event log.');
  }
  }else if(record.schema===2)throw Error('GK schema must include keeper IDs.');
  validResult(record.result,c);const engine=window.CAGE_ENGINE_REGISTRY?.[record.engineVersion]||(record.engineVersion===E.VERSION?E:null);if(engine?.hashEvents){if(record.result.eventHash!==engine.hashEvents(record.result.events))throw Error('Replay tactical event hash mismatch.');engine.validateEvidence(record.result.events,c);}return record;}

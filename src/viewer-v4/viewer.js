@@ -143,7 +143,7 @@ function mount(el,record,opts){
     const confirmedGoal=goalShown&&tl.goals.some(g=>tau>=g.tau);
     q('goalcard').hidden=goldenPhase.visible||!confirmedGoal;
     const contact=seg.contact?[seg.contact.id,seg.contact.carrier||seg.carrier].filter(Boolean):null;
-    renderer.draw({tau,cues,motion,kinetics,players,ball,teamOf:tl.teamOf,keepers:tl.keepers,keeperEvent:['gk_save','gk_parry'].includes(events[seg.i]?.type)?events[seg.i]:null,keeperPhase:T.phase(seg,tau),labels,numbers,carrier:ball.owner,contact,oop:seg.oop,flash:Math.max(0,(flashUntil-now)/.6),trail,reducedMotion:reduce,focus:seg.carrier});
+    renderer.draw({tau,cues,motion,kinetics,players,ball,teamOf:tl.teamOf,keepers:tl.keepers,keeperEvent:['gk_save','gk_parry','gk_sweep','gk_distribution'].includes(events[seg.i]?.type)?events[seg.i]:null,keeperPhase:T.phase(seg,tau),labels,numbers,carrier:ball.owner,contact,oop:seg.oop,flash:Math.max(0,(flashUntil-now)/.6),trail,reducedMotion:reduce,focus:seg.carrier});
     q('score').textContent=score[0]+'–'+score[1];q('clock').textContent=mmss(T.clockAt(tl,tau));
     const st=pb.inReplay?'REPLAY':pb.state==='ended'?'FULL TIME':pb.state==='playing'?(o.mode==='replay'?'▶ REPLAY':'● LIVE'):pb.state==='paused'?'❚❚ PAUSED':'READY';q('state').textContent=st;root.dataset.state=pb.inReplay||o.mode==='replay'?'replay':pb.state;
     q('play').textContent=pb.state==='playing'?'❚❚':'▶';q('play').setAttribute('aria-label',pb.state==='playing'?'Pause':'Play');

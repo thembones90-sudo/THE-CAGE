@@ -1,3 +1,9 @@
+# THE CAGE V6.6 T3-8 - Goalkeeper Dynamics (EXPERIMENTAL)
+
+A separate opt-in 3+1 goalkeeper mode now records active distribution, sweeping, save/parry classification and a documented prolonged-Golden-Goal pressure phase. For the full measured changes, calibration limitations, legacy replay policy and Windows build details read `docs/V66_GK_DYNAMICS_FINAL_REPORT.md`. Full regression: `powershell -ExecutionPolicy Bypass -File tools/v66-experimental-gate.ps1`. The original V6.6 build remains preserved.
+
+---
+
 # THE CAGE V6.6: THE LAST LINE (EXPERIMENTAL)
 
 This branch is an EARLY DEVELOPMENT PREVIEW of goalkeeper drafting and T3-7. It is not a final calibrated release and goalkeeper career tiers/ratings are provisional.
@@ -61,7 +67,7 @@ Read `V57_COMBINED_RELEASE_REPORT.md` for the verification log, preservation of 
 
 ## Historical project documentation (v0.4 and earlier)
 
-# THE CAGE — v0.4
+# THE CAGE â€” v0.4
 
 Canonical project: `A:\THE CAGE`. The current playable source is `index.html`; earlier prototypes remain as references.
 

@@ -176,7 +176,7 @@ function validateKeeperShowdown(s){
  if(s.schema!==2||!Array.isArray(s.keeperUsed)||new Set(s.keeperUsed).size!==s.keeperUsed.length||s.keeperUsed.some(id=>!GKS.BY_ID[id]))throw Error('Invalid goalkeeper exhaustion state.');
  const used=new Set(),observed=new Set();
  for(const r of records){
-  if(r.schema!==2||r.engineVersion!=='cage-t3-7'||!Array.isArray(r.config?.keepers)||r.config.keepers.length!==2)throw Error('Keeper-mode round must use T3-7 schema2.');
+  if(r.schema!==2||!['cage-t3-7','cage-t3-8'].includes(r.engineVersion)||!Array.isArray(r.config?.keepers)||r.config.keepers.length!==2)throw Error('Keeper-mode round must use T3-7 schema2.');
   for(const id of r.config.keepers){if(used.has(id))throw Error('Goalkeeper repeated across showdown rounds.');used.add(id);observed.add(id);}
  }
  if(s.keeperState){
@@ -249,11 +249,19 @@ function fight(){
   const seed=crypto.getRandomValues(new Uint32Array(1))[0];
   const config={teams,tactics:[$('tacticA').value,$('tacticB').value],seed,mode:'score',traits:{enabled:true}};if(game.keeperMode){if(!game.keeperCtl?.complete)throw Error('Two goalkeepers must be locked');config.keepers=[game.keeperCtl.picks.A,game.keeperCtl.picks.B];}
   try{
-    const result=engine.simulate(config);
+    let result,safetyRetries=0;
+    while(true){
+      try{result=engine.simulate(config);break;}
+      catch(err){
+        if(!game.keeperMode||!String(err.message).includes('Cage match safety limit')||safetyRetries>=4)throw err;
+        safetyRetries++;config.seed=crypto.getRandomValues(new Uint32Array(1))[0];
+      }
+    }
+    if(safetyRetries){config.retryCount=safetyRetries;showError('A deadlocked Golden Goal exceeded the safety limit. Retried with a fresh recorded match seed ('+safetyRetries+').');}
     const record=window.CageRecords.make(config,result,game.round);
     game.pending=record;matchRecord=record;saveShowdown();
     const names=Object.fromEntries(teams.flat().map(id=>[id,byId.get(id)?.name||id]));
-    const lines=window.CageCommentary.commentate(result,seed,['Commander',game.mode==='solo'?'Iron AI':'Opponent']);
+    const lines=window.CageCommentary.commentate(result,config.seed,['Commander',game.mode==='solo'?'Iron AI':'Opponent']);
     $('result').textContent='MATCH IN PROGRESS';
     $('details').replaceChildren();
     $('draft-arena').classList.remove('hidden');

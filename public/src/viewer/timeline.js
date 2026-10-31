@@ -6,10 +6,10 @@
 (()=>{'use strict';
 const C=window.CageViewerCoords,L=window.CageViewerLayout;
 const VERSION='viewer-timeline-1',MAX_SCHEMA=2;
-const ACTION={restart:1,carry:1,pass:1,through_ball:1,dribble_duel:1,wall_pass:1,press:1,shot_attempt:1,free_kick:1};
+const ACTION={restart:1,carry:1,pass:1,through_ball:1,dribble_duel:1,wall_pass:1,press:1,shot_attempt:1,free_kick:1,gk_distribution:1,gk_sweep:1,golden_goal_pressure:1};
 const PRE={recovery_run:1,rotation:1};
 // Presentation holds (seconds of timeline at 1x "Full") for events that take no simulation time.
-const HOLD={turnover:.35,race:.5,block:.4,gk_save:.7,gk_parry:.8,shot_miss:.5,rebound:.5,foul:.6,goal:1.6,free_kick:.9,restart:.8,recovery_run:.15,rotation:.25,shot_attempt:.5};
+const HOLD={turnover:.35,race:.5,block:.4,gk_save:.7,gk_parry:.8,gk_sweep:.65,gk_distribution:.65,golden_goal_pressure:.65,shot_miss:.5,rebound:.5,foul:.6,goal:1.6,free_kick:.9,restart:.8,recovery_run:.15,rotation:.25,shot_attempt:.5};
 // Extra frozen-clock tail after a timed event (the clock stops while the moment lands).
 const POST={restart:.6,goal:1.6};
 const DEFAULTS={secPerSim:.35,minMove:.45,jitter:true};
@@ -20,7 +20,7 @@ const DEFAULTS={secPerSim:.35,minMove:.45,jitter:true};
 const TRAVEL_BUDGET_PX_S=340;
 const TRAVEL_EASE_MAX=1.5; // cubic smoothstep peak derivative
 
-const DANGER_TYPES={shot_attempt:1,goal:1,through_ball:1,race:1,free_kick:1,foul:1,block:1,shot_miss:1,rebound:1};
+const DANGER_TYPES={shot_attempt:1,goal:1,through_ball:1,race:1,free_kick:1,foul:1,block:1,shot_miss:1,rebound:1,gk_sweep:1,gk_distribution:1,golden_goal_pressure:1};
 
 const ease=k=>k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;
 const clamp01=k=>k<0?0:k>1?1:k;
@@ -103,7 +103,18 @@ function buildTimeline(record,cfgIn){
         if(r&&e.outcome==='complete'){seg.win[r]=[0,.85];P(.55,1,{pt:end[r],toward:r});ball={id:r};}
         else if(r){const I=e.opp,from=end[e.actor],to=end[r];let cut=to;if(I&&end[I]){const dx=to.u-from.u,dy=to.v-from.v,len=dx*dx+dy*dy;const k=len?clamp01(((end[I].u-from.u)*dx+(end[I].v-from.v)*dy)/len):1;cut=pt({u:from.u+dx*k,v:from.v+dy*k});seg.win[I]=[0,.8];}seg.win[r]=[0,.85];P(.55,.9,{pt:cut,intercepted:true});}
         break;}
-      case 'race':{const r=e.actor,d=e.opp;if(d&&end[d]&&end[r]){seg.contact={id:d,at:.6,p:near(end[r],end[d],.45)};seg.win[r]=[0,.6];}break;}
+      case 'gk_distribution':{
+  const goal=C.goalFor(1-e.team);
+  P(.01,.1,{pt:pt(goal)});
+  if(e.outcome==='complete'&&e.target)P(.1,.82,{id:e.target});
+  else if(e.opp)P(.1,.82,{id:e.opp});
+  break;
+ }
+ case 'gk_sweep':{
+  if(e.outcome==='cleared')P(.2,.85,{pt:pt(C.goalFor(e.team))});
+  break;
+ }
+ case 'race':{const r=e.actor,d=e.opp;if(d&&end[d]&&end[r]){seg.contact={id:d,at:.6,p:near(end[r],end[d],.45)};seg.win[r]=[0,.6];}break;}
       case 'dribble_duel':case 'wall_pass':case 'press':{const cc=e.type==='press'?e.opp:e.actor,d=e.type==='press'?e.actor:e.opp;gain(cc,0,.2);
         if(d&&end[d]&&end[cc]){seg.contact={id:d,at:.7,p:near(end[cc],end[d],.35),carrier:cc};seg.win[cc]=[0,.7];}
         if(e.type==='wall_pass'){const cell=end[cc],board=cell.v<.5?0:1;P(.3,.5,{pt:pt({u:clamp01(cell.u+C.attackDir(e.team)*.05),v:board}),board:true});P(.5,.75,e.outcome==='defender_wins'?{id:d}:{id:cc});}

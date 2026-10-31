@@ -11,6 +11,8 @@ try{
   @('tests/v66-gk-rules.cjs'),
   @('tests/v66-keeper-draft.cjs'),
   @('tests/v66-engine-gk.cjs'),
+  @('tests/v66-gk-dynamics.cjs'),
+  @('tests/v66-golden-pressure.cjs'),
   @('tests/v66-gk-browser.cjs'),
   @('tests/v66-gk-five.cjs'),
   @('tests/v66-gk-restore.cjs'),
@@ -30,5 +32,5 @@ try{
  foreach($case in $tests){Write-Output ('RUN '+($passed+1)+'/'+$tests.Count+' '+($case -join ' '));& node @case;if($LASTEXITCODE -ne 0){throw ('FAILED '+($case -join ' '))};$passed++}
  node tools/build-t3.cjs --check
  if($LASTEXITCODE -ne 0){throw 'T3 build unreproducible'}
- Write-Output ('V66_EXPERIMENTAL_GATE_PASS '+$passed+' suites + reproducible T3-7')
+ Write-Output ('V66_EXPERIMENTAL_GATE_PASS '+$passed+' suites + reproducible T3-8')
 }finally{if($server){Stop-Process $server.Id -Force -ErrorAction SilentlyContinue}}

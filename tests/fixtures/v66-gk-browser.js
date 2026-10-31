@@ -31,9 +31,12 @@
      check(saved.schema===2&&saved.keeperMode===true,'GK save schema mismatch');
      check(saved.keeperState.picks.A===s.keepers.A&&saved.keeperState.picks.B===s.keepers.B,'saved keeper picks differ');
      check(!$('fight').disabled,'match unavailable');
-     $('fight').click();
+     const originalSim=window.CageEngine.simulate;let trials=0;
+     window.CageEngine.simulate=(config)=>{if(trials++===0)throw Error('Cage match safety limit: simulated fixture deadlock.');return originalSim(config);};
+     $('fight').click();window.CageEngine.simulate=originalSim;
+     check(trials===2,'match safety retry did not occur exactly once');
      const record=JSON.parse(localStorage.getItem('the-cage.random-showdown.v66-gk')).pending;
-     check(record?.schema===2,'keeper match record schema 2');
+     check(record?.schema===2,'keeper match record schema 2');check(record.config.retryCount===1,'bounded safety retry not included in recorded config');
      check(record.config.keepers[0]===s.keepers.A&&record.config.keepers[1]===s.keepers.B,'engine keeper IDs differ');
      check(window.CageRecords.reproduce(record).eventHash===record.result.eventHash,'keeper replay fails reproduction');
      check(errors.length===0,'script errors: '+errors.join('; '));
