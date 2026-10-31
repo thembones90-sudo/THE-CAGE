@@ -53,7 +53,7 @@ function pulse(cue,tau){
  }
  return 0;
 }
-function paintNet(ctx,cues,tau,side){
+function paintNet(ctx,cues,tau,side,reducedMotion=false){
  const left=side==='left',x0=left?27:1102,y0=245,width=71,height=160;
  ctx.save();
  ctx.fillStyle='#111b21';ctx.strokeStyle='#80949a';ctx.lineWidth=3;
@@ -61,7 +61,7 @@ function paintNet(ctx,cues,tau,side){
  ctx.fillStyle='#223239';ctx.fillRect(x0+3,y0+3,width-6,height-6);
  for(let row=0;row<7;row++)for(let col=0;col<4;col++){
   const x=x0+11+col*17+(row%2)*2.4,y=y0+13+row*22;
-  const shift=strongestNet(cues,tau,side,y);
+  const shift=reducedMotion?0:strongestNet(cues,tau,side,y);
   ctx.save();ctx.translate(x+shift,y);ctx.rotate((row+col)%2?-.42:.42);
   ctx.beginPath();ctx.ellipse(0,0,5.2,9.2,0,0,2*Math.PI);
   ctx.strokeStyle='#03090c';ctx.lineWidth=6.5;ctx.stroke();
@@ -72,6 +72,43 @@ function paintNet(ctx,cues,tau,side){
   ctx.restore();
  }
  ctx.restore();
+}
+// Event-anchored metallic goal pulse: all particles and rays are derived from
+// goal index and elapsed *playback* time, with no Math.random or game mutations.
+function goldenParticles(cue,tau){
+ if(!cue||cue.type!=='goal')return [];
+ const age=tau-cue.at;
+ if(age<0||age>2.1)return [];
+ const side=cue.side==='right'?1:-1;
+ const cx=side===1?WORLD.rightGoal:WORLD.leftGoal,y=cue.impactY;
+ const scale=age/2.1,fade=Math.pow(1-scale,1.7);
+ return Array.from({length:22},(_,i)=>{
+  const angle=(i*2.399963229728653)+cue.goalEventIndex*.23;
+  const speed=46+(i%7)*15;
+  return {x:cx-side*(12+speed*age*.6),y:y+Math.sin(angle)*speed*age*.84+(i%4-1.5)*4,
+    angle,life:fade,size:2+(i%4),source:'recorded-goal'};
+ });
+}
+function paintGolden(ctx,cues,tau,reducedMotion){
+ if(reducedMotion)return;
+ for(const cue of cues){
+  if(cue.type!=='goal')continue;
+  const age=tau-cue.at;if(age<0||age>2.1)continue;
+  const x=cue.side==='right'?WORLD.rightGoal:WORLD.leftGoal,y=cue.impactY;
+  const fall=Math.pow(1-age/2.1,2);
+  ctx.save();ctx.lineWidth=2.5;
+  for(let ring=0;ring<3;ring++){
+   const r=13+age*(85+ring*36);
+   ctx.strokeStyle='rgba(255,206,115,'+(fall*(.38-ring*.08)).toFixed(3)+')';
+   ctx.beginPath();ctx.ellipse(x,y,r,r*.61,0,0,Math.PI*2);ctx.stroke();
+  }
+  for(const part of goldenParticles(cue,tau)){
+   ctx.save();ctx.translate(part.x,part.y);ctx.rotate(part.angle);
+   ctx.fillStyle='rgba(248,206,123,'+(part.life*.6).toFixed(3)+')';
+   ctx.fillRect(-part.size*.9,-.85,part.size*2.2,1.7);ctx.restore();
+  }
+  ctx.restore();
+ }
 }
 function paintEffects(ctx,cues,tau,reducedMotion){
  if(reducedMotion)return;
@@ -93,7 +130,8 @@ function paintEffects(ctx,cues,tau,reducedMotion){
   }
   ctx.fillStyle=grad;ctx.beginPath();ctx.arc(x,y,radius,0,Math.PI*2);ctx.fill();ctx.restore();
  }
+ paintGolden(ctx,cues,tau,reducedMotion);
 }
 function fit(w,h){const scale=Math.min(w/WORLD.w,h/WORLD.h);return {scale,x:(w-WORLD.w*scale)/2,y:(h-WORLD.h*scale)/2,w:WORLD.w*scale,h:WORLD.h*scale};}
-return {WORLD,buildCues,netOffset,strongestNet,pulse,paintNet,paintEffects,fit};
+return {WORLD,buildCues,netOffset,strongestNet,pulse,paintNet,paintEffects,goldenParticles,paintGolden,fit};
 });

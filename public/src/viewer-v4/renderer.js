@@ -35,7 +35,7 @@ function createRenderer(canvas){
   // frame: {players, ball, teamOf, labels, carrier, contact:[ids], oop:[ids], flash, trail:[{u,v}], reducedMotion, showLabels, focus}
   function draw(f){if(!rect)resize();if(!arena||arenaKey!==selectedVariant()){arena=drawArena();arenaKey=selectedVariant();}ctx.setTransform(1,0,0,1,0,0);ctx.drawImage(arena,0,0);ctx.setTransform(dpr,0,0,dpr,0,0);
     if(f.cues){ctx.save();ctx.translate(world.x,world.y);ctx.scale(world.scale,world.scale);
-      FX.paintNet(ctx,f.cues,f.tau,'left');FX.paintNet(ctx,f.cues,f.tau,'right');ctx.restore();}
+      FX.paintNet(ctx,f.cues,f.tau,'left',f.reducedMotion);FX.paintNet(ctx,f.cues,f.tau,'right',f.reducedMotion);ctx.restore();}
     const R=Math.max(7,rect.h*.042),ids=Object.keys(f.players).sort((a,b)=>f.players[a].v-f.players[b].v);
     // V5.1 MOVEMENT READABILITY: subtle momentum ticks & recorded pass trail.
     // Both are pure presentation. NEVER alter the sampled score or event outcome.

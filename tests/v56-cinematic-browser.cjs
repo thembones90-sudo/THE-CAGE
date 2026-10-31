@@ -1,0 +1,11 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..'),html=fs.readFileSync(path.join(root,'play.html'),'utf8');
+const script=fs.readFileSync(path.join(__dirname,'fixtures/v56-cinematic-browser.js'),'utf8');
+const fixture=path.join(root,'v56-cinematic-browser.html');fs.writeFileSync(fixture,html.replace('</body>','<script>'+script+'</script></body>'));
+const url=(process.env.CAGE_E2E_BASE||'http://127.0.0.1:51866')+'/v56-cinematic-browser.html?engine=t3&traits=preview';
+const reduce=process.argv.includes('--reduced-motion');
+const r=cp.spawnSync('C:/Program Files/Google/Chrome/Application/chrome.exe',[...(reduce?['--force-prefers-reduced-motion=reduce']:[]),'--headless=new','--disable-gpu','--no-sandbox','--no-first-run','--disable-extensions','--user-data-dir='+path.join(root,'chrome-v56-cinema-'+process.pid),'--virtual-time-budget=25000','--dump-dom',url],{encoding:'utf8',timeout:75000,maxBuffer:20e6});
+if(r.error)throw r.error;
+const message=r.stdout.match(/<pre id="v56-cinema-test">([\s\S]*?)<\/pre>/)?.[1]||'No result';
+console.log(message);assert(message.startsWith('V56_CINEMATIC_BROWSER_PASS'),message+'\n'+r.stderr.slice(-1300));

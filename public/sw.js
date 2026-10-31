@@ -1,5 +1,5 @@
-/* THE CAGE V5.5: generated from the canonical playable dependency list. */
-const CACHE='the-cage-full-v55-261a7b0ea72c';
+/* THE CAGE V5.6: generated from the canonical playable dependency list. */
+const CACHE='the-cage-full-v56-44fd8c983e4e';
 const STATIC=[
   "./assets/cage-icon.svg",
   "./design/qwen-30b/arena/arena-golden.svg",
@@ -37,6 +37,8 @@ const STATIC=[
   "./src/showdown-v5.js",
   "./src/tactical-refinement.js",
   "./src/viewer-v4/fx.js",
+  "./src/viewer-v4/goal-audio.js",
+  "./src/viewer-v4/goal-experience.js",
   "./src/viewer-v4/kinetics.js",
   "./src/viewer-v4/label-layout.js",
   "./src/viewer-v4/motion.js",

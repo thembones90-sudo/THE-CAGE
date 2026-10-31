@@ -4,7 +4,7 @@
 // score anywhere, and never invents gameplay. Commentary lines are supplied by the host
 // (CageCommentary over the same events) and only scheduled here.
 (()=>{'use strict';
-const T=window.CageViewerTimeline,K=window.CageViewerClock,Rn=window.CageViewerRenderer,L=window.CageViewerLayout,M=window.CageViewerMotion,Kin=window.CageKinetics;
+const T=window.CageViewerTimeline,K=window.CageViewerClock,Rn=window.CageViewerRenderer,L=window.CageViewerLayout,M=window.CageViewerMotion,Kin=window.CageKinetics,G=window.CageGoalExperience,Audio=window.CageGoalAudio;
 const mmss=t=>{t=Math.max(0,Math.floor(t));return String(Math.floor(t/60)).padStart(2,'0')+':'+String(t%60).padStart(2,'0');};
 const real=s=>{s=Math.max(0,Math.round(s));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');};
 function freeze(v){if(v&&typeof v==='object'&&!Object.isFrozen(v)){Object.values(v).forEach(freeze);Object.freeze(v);}return v;}
@@ -33,6 +33,7 @@ function shell(el,o){el.innerHTML=`<div class="cv-root" tabindex="-1">
   <div class="cv-banner" data-k="banner" aria-hidden="true"></div>
   <div class="cv-action" data-k="action" aria-hidden="true"></div>
   <div class="cv-goalcard" data-k="goalcard" hidden></div>
+  <div class="cv-golden" data-k="golden" role="status" aria-live="polite" aria-atomic="true" hidden></div>
   <button class="cv-tap" data-k="tap" aria-label="Play or pause"></button>
  </div>
  <aside class="cv-side">
@@ -47,6 +48,7 @@ function shell(el,o){el.innerHTML=`<div class="cv-root" tabindex="-1">
  <button data-k="restart" aria-label="Restart">⏮</button>
  <button data-k="play" class="cv-primary" aria-label="Play">▶</button>
  <label class="cv-speed">Speed <select data-k="speed">${Object.entries(K.SPEEDS).map(([k,v])=>`<option value="${k}">${v.label}</option>`).join('')}</select></label>
+ <button data-k="sound" aria-pressed="false" aria-label="Enable goal sound" title="Original synthetic goal sound; optional and off by default">Sound: Off</button>
  <button data-k="replay" disabled>⟲ Goal replay</button>
  <input data-k="seek" type="range" min="0" max="1000" value="0" aria-label="Seek">
  <span class="cv-ptime" data-k="ptime" title="Playback time (real) vs timeline">0:00 / 0:00</span>
@@ -55,6 +57,7 @@ function shell(el,o){el.innerHTML=`<div class="cv-root" tabindex="-1">
 </div>`;const q=k=>el.querySelector('[data-k="'+k+'"]');return q;}
 
 function mount(el,record,opts){
+  if(!G||!Audio)throw Error('Golden Goal presentation dependencies missing');
   const o=Object.assign({speed:'dynamic',mode:'live',teamNames:['Commander','Opponent'],names:{},lines:null,showdown:null,autoplay:false},opts||{});
   freeze(record); // invariant I5: the viewer cannot write to the record
   const tl=T.buildTimeline(record,o.timeline),events=(record.result||record).events;
@@ -79,19 +82,62 @@ function mount(el,record,opts){
   const inferredMotionNote='V5.2 body facing, acceleration trails, turning and ball-flight styling are deterministic inferred visuals from recorded positions; they are not measured individual footwork.';
   q('notes').innerHTML=tl.notes.concat(tl.warnings,[inferredMotionNote]).map(n=>'<li>'+esc(n)+'</li>').join('');
   q('speed').value=pb.speed;canvas.setAttribute('aria-label','Top-down cage pitch: '+tl.teams.map((t,i)=>o.teamNames[i]+' '+t.map(name).join(', ')).join(' versus '));
-  let raf=0,last=null,shown=-1,flashUntil=0,trail=[],commHidden=false,lastSeg=-1,goalShown=false,now=0;
+  let raf=0,last=null,shown=-1,flashUntil=0,trail=[],commHidden=false,lastSeg=-1,goalShown=false,now=0,goldenCue=null,goldenAt=0,goldenTimer=null;
+  const sound=Audio.create();
+  if(sound.restore()){
+    const toggle=q('sound');toggle.textContent='Sound: On';
+    toggle.setAttribute('aria-pressed','true');toggle.setAttribute('aria-label','Disable goal sound');
+    toggle.classList.add('cv-audio-on');
+  }
   const unsub=[];
-  unsub.push(pb.on('goal',({goal,replay})=>{goalShown=true;flashUntil=now+.6;const card=q('goalcard');card.hidden=false;card.innerHTML=`<b>${tl.golden?'GOLDEN GOAL':'GOAL'}</b><span>${esc(name(goal.actor))}</span>${goal.assist&&goal.assist!==goal.actor?'<small>assist '+esc(name(goal.assist))+'</small>':''}<em>${esc(o.teamNames[goal.team].toUpperCase())} WIN${tl.round?' ROUND '+tl.round:''}</em>${replay?'<i>REPLAY</i>':''}`;q('replay').disabled=false;emit('goal',{goal,replay});}));
+  unsub.push(pb.on('goal',({goal,replay})=>{
+    // The cinematic is decoration around a REAL, already recorded goal.
+    // It never calls the game engine or modifies the result, score or clock.
+    const cue=G.goalData(tl,events,goal,o.teamNames,name,replay);
+    goldenCue=cue;goldenAt=now;
+    const overlay=q('golden');
+    overlay.innerHTML=G.markup(cue,T.scoreAt(tl,goal.tau+0.0001));
+    overlay.hidden=false;overlay.classList.toggle('cv-golden-replay',!!replay);
+    if(goldenTimer!==null)clearTimeout(goldenTimer);
+    goldenTimer=setTimeout(()=>{
+      // UI-only handoff, independent of throttled animation frames.
+      goldenTimer=null;goldenCue=null;overlay.hidden=true;
+      root.classList.remove('cv-goal-in-progress');
+      q('goalcard').hidden=!(goalShown&&tl.goals.some(g=>pb.tau>=g.tau));
+    },G.DURATION*1000);
+    goalShown=true;flashUntil=now+.6;
+    const card=q('goalcard');
+    card.hidden=false;
+    card.innerHTML='<b>'+G.escapeText(cue.type)+'</b><span>'+G.escapeText(cue.scorer)+'</span>'+
+      (cue.assist?'<small>assist '+G.escapeText(cue.assist)+'</small>':'')+
+      '<em>'+G.escapeText(cue.teamName.toUpperCase())+' WIN'+(tl.round?' ROUND '+tl.round:'')+'</em>'+
+      (replay?'<i>REPLAY</i>':'');
+    q('replay').disabled=false;
+    sound.play(replay); // no sound unless user enabled it from a direct click
+    emit('goal',{goal,replay});
+  }));
   unsub.push(pb.on('segment',d=>emit('beat',d)));
   unsub.push(pb.on('end',d=>emit('end',d)));
-  unsub.push(pb.on('replayStart',()=>{q('goalcard').hidden=true;trail=[];}));
+  unsub.push(pb.on('replayStart',()=>{if(goldenTimer!==null)clearTimeout(goldenTimer);goldenTimer=null;q('goalcard').hidden=true;q('golden').hidden=true;goldenCue=null;trail=[];}));
   unsub.push(pb.on('replayEnd',()=>emit('replayEnd',{})));
+  function dismissCinematic(){
+    if(goldenTimer!==null)clearTimeout(goldenTimer);
+    goldenTimer=null;goldenCue=null;q('golden').hidden=true;
+    root.classList.remove('cv-goal-in-progress');
+  }
   function syncComm(tau){const target=lines.filter(l=>l.tau<=tau).length;if(target===shown)return;const ol=q('comm');if(target<shown){ol.innerHTML='';shown=0;}
     const frag=document.createDocumentFragment();for(let k=Math.max(0,shown);k<target;k++){const l=lines[k],li=document.createElement('li');li.className='imp'+(l.imp||0);li.innerHTML='<time>'+mmss(l.t)+'</time> '+esc(l.text);frag.appendChild(li);}ol.appendChild(frag);shown=target;ol.scrollTop=ol.scrollHeight;
     if(target){q('ticker').textContent=lines[target-1].text;}}
   function frame(){const tau=pb.tau,si=T.segmentIndex(tl,tau),seg=tl.segments[si],motion=M.sample(tl,events,tau,T),kinetics=Kin.sample(tl,T,tau,motion),players=motion.positions,ball=motion.ball,score=T.scoreAt(tl,tau);
     if(si!==lastSeg&&tau<(tl.segments[lastSeg]||{tau0:-1}).tau0)trail=[];lastSeg=si;
     if(!reduce){trail.push({u:ball.u,v:ball.v});if(trail.length>14)trail.shift();}
+    const goldenPhase=G.phase(goldenCue,tau,goldenAt,now,reduce);
+    const golden=q('golden');golden.hidden=!goldenPhase.visible;
+    root.classList.toggle('cv-goal-in-progress',goldenPhase.visible);
+    // Cinematic first, persistent goal card second. Also protect seeking
+    // backwards: the goal card must never be visible before the real event.
+    const confirmedGoal=goalShown&&tl.goals.some(g=>tau>=g.tau);
+    q('goalcard').hidden=goldenPhase.visible||!confirmedGoal;
     const contact=seg.contact?[seg.contact.id,seg.contact.carrier||seg.carrier].filter(Boolean):null;
     renderer.draw({tau,cues,motion,kinetics,players,ball,teamOf:tl.teamOf,labels,numbers,carrier:ball.owner,contact,oop:seg.oop,flash:Math.max(0,(flashUntil-now)/.6),trail,reducedMotion:reduce,focus:seg.carrier});
     q('score').textContent=score[0]+'–'+score[1];q('clock').textContent=mmss(T.clockAt(tl,tau));
@@ -117,21 +163,29 @@ function mount(el,record,opts){
   function loop(ts){raf=requestAnimationFrame(loop);const dt=last===null?0:Math.min(.1,(ts-last)/1000);last=ts;now+=dt;pb.advance(dt);frame();}
   const on=(k,ev,fn)=>{const n=q(k);n.addEventListener(ev,fn);unsub.push(()=>n.removeEventListener(ev,fn));};
   on('play','click',()=>{pb.toggle();});on('tap','click',()=>{pb.toggle();});
-  on('restart','click',()=>{pb.seek(0);goalShown=false;q('goalcard').hidden=true;trail=[];});
+  on('restart','click',()=>{pb.seek(0);dismissCinematic();goalShown=false;q('goalcard').hidden=true;trail=[];});
   on('speed','change',e=>{pb.setSpeed(e.target.value);});
+  on('sound','click',()=>{
+    const active=sound.setEnabled(!sound.enabled);
+    const button=q('sound');
+    button.textContent=active?'Sound: On':'Sound: Off';
+    button.setAttribute('aria-pressed',String(active));
+    button.setAttribute('aria-label',active?'Disable goal sound':'Enable goal sound');
+    button.classList.toggle('cv-audio-on',active);
+  });
   on('replay','click',()=>{pb.replayGoal();});
-  on('seek','input',e=>{pb.seek(tl.total*e.target.value/1000);trail=[];goalShown=pb.tau>=(tl.goals[0]||{tau:Infinity}).tau&&goalShown;});
+  on('seek','input',e=>{pb.seek(tl.total*e.target.value/1000);dismissCinematic();trail=[];goalShown=pb.tau>=(tl.goals[0]||{tau:Infinity}).tau&&goalShown;});
   on('commtoggle','click',e=>{commHidden=!commHidden;root.classList.toggle('cv-nocomm',commHidden);e.target.textContent=commHidden?'Show':'Hide';e.target.setAttribute('aria-pressed',String(!commHidden));});
-  const key=e=>{if(e.target&&/INPUT|SELECT|TEXTAREA/.test(e.target.tagName))return;if(e.code==='Space'){e.preventDefault();pb.toggle();}else if(e.code==='ArrowRight')pb.seek(pb.tau+3);else if(e.code==='ArrowLeft')pb.seek(pb.tau-3);};
+  const key=e=>{if(e.target&&/INPUT|SELECT|TEXTAREA/.test(e.target.tagName))return;if(e.code==='Space'){e.preventDefault();pb.toggle();}else if(e.code==='ArrowRight'){pb.seek(pb.tau+3);dismissCinematic();}else if(e.code==='ArrowLeft'){pb.seek(pb.tau-3);dismissCinematic();}};
   root.addEventListener('keydown',key);unsub.push(()=>root.removeEventListener('keydown',key));
   const vis=()=>{if(document.hidden)pb.pause();};document.addEventListener('visibilitychange',vis);unsub.push(()=>document.removeEventListener('visibilitychange',vis));
   const rs=()=>{renderer.resize();frame();};const ro=typeof ResizeObserver==='function'?new ResizeObserver(rs):null;if(ro){ro.observe(canvas);unsub.push(()=>ro.disconnect());}else{window.addEventListener('resize',rs);unsub.push(()=>window.removeEventListener('resize',rs));}
   renderer.resize();frame();raf=requestAnimationFrame(loop);if(o.autoplay)pb.play();
   const ctl={timeline:tl,cues,playback:pb,
     play(){pb.play();return ctl;},pause(){pb.pause();return ctl;},resume(){pb.resume();return ctl;},toggle(){pb.toggle();return ctl;},
-    seek(tau){pb.seek(tau);return ctl;},render(){frame();return ctl;},setSpeed(s){pb.setSpeed(s);q('speed').value=s;return ctl;},replayGoal(){return pb.replayGoal();},
+    seek(tau){pb.seek(tau);if(goldenCue&&pb.tau<goldenCue.tau)dismissCinematic();return ctl;},render(){frame();return ctl;},setSpeed(s){pb.setSpeed(s);q('speed').value=s;return ctl;},replayGoal(){return pb.replayGoal();},
     on(n,fn){(listeners[n]=listeners[n]||[]).push(fn);return ()=>{listeners[n]=listeners[n].filter(f=>f!==fn);};},
-    destroy(){cancelAnimationFrame(raf);unsub.forEach(f=>f());el.innerHTML='';}};
+    destroy(){cancelAnimationFrame(raf);if(goldenTimer!==null)clearTimeout(goldenTimer);goldenTimer=null;sound.dispose();unsub.forEach(f=>f());el.innerHTML='';}};
   return ctl;}
 window.CageViewer={mount,basicLines};
 })();

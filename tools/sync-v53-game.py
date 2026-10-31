@@ -8,7 +8,8 @@ assert "src/roster-182.js" in main_scripts and "src/showdown.js" in main_scripts
 main_scripts=main_scripts[:main_scripts.index("src/showdown.js")]
 v53_scripts=["src/viewer/coords.js","src/viewer/layout.js","src/viewer/timeline.js","src/viewer/clock.js",
              "src/viewer-v4/fx.js","src/viewer-v4/motion.js","src/viewer-v4/kinetics.js",
-             "src/viewer-v4/label-layout.js","src/viewer-v4/renderer.js","src/viewer-v4/viewer.js"]
+             "src/viewer-v4/label-layout.js","src/viewer-v4/renderer.js",
+             "src/viewer-v4/goal-experience.js","src/viewer-v4/goal-audio.js","src/viewer-v4/viewer.js"]
 start=page.index('<script src="src/players.js"></script>')
 end=page.index('<script>window.CageViewerV4Variant',start)
 new_scripts=main_scripts+v53_scripts
