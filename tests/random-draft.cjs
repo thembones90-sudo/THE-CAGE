@@ -23,7 +23,7 @@ for(let i=0;i<6;i++){
  used.add(g.picks[i].id);count[expected]++;check($('squad'+expected).textContent.includes('OVR '),'squad roster shows overall');
 }
 check(g.finished&&count.A===3&&count.B===3,'both squads 3');
-$('fight').click();check(!$('draft-arena').classList.contains('hidden'),'arena must open '+$('error').textContent);check(!!document.querySelector('#draft-arena .cv-canvas'),'existing CAGE pitch must render');check($('result').textContent==='MATCH IN PROGRESS','result must wait for match playback');
+$('fight').click();check(!$('draft-arena').classList.contains('hidden'),'arena must open '+$('error').textContent);check(!!document.querySelector('#draft-arena .cv-canvas'),'existing CAGE pitch must render');check($('result').textContent==='MATCH IN PROGRESS','result must wait for match playback');check($('fight').disabled&&$('tacticA').disabled&&$('tacticB').disabled,'match and tactics locked against result rerolls');
 $('restart').click();$('begin').click();$('reveal').click();
 const realNow=Date.now;Date.now=()=>realNow()+25000;
 await new Promise(resolve=>setTimeout(resolve,400));Date.now=realNow;
