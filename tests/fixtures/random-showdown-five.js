@@ -39,12 +39,12 @@ for(let round=1;round<=5;round++){
  state=window.CageRandomDraft.snapshot();
  check(state.history.length===round,'round not finalized');
  check(state.wins.A+state.wins.B===round,'wins not accounted');
- check($('result').textContent.includes('WINS'),'no winner displayed');
+ check($('result').textContent.includes('WINS'),'no winner displayed');check(!$('arena-outcome').classList.contains('hidden'),'no result panel underneath arena');check($('arena-summary').textContent.includes('SHOWDOWN'),'arena result missing series score');
  $('watch-again').click();check(ctl.playback.mode==='replay','replay mode false');
  check(JSON.parse(localStorage.getItem('the-cage.random-showdown.v60')).history[round-1].config.seed===seed,'replay changed seed');
  const champion=Math.max(state.wins.A,state.wins.B)>=3;
- if(champion){check(state.champion!==null,'champion not declared');check($('next-round').classList.contains('hidden'),'next allowed for champion');break;}
- $('next-round').click();
+ if(champion){check(state.champion!==null,'champion not declared');check($('next-round').classList.contains('hidden'),'next allowed for champion');check($('arena-next').classList.contains('hidden'),'arena advance allowed after champion');check(!!$('champion-celebration'),'champion crown must survive final-score update');break;}
+ $('arena-next').click();
  check(window.CageRandomDraft.snapshot().used.length===round*6,'exhausted list reset on new round');
  check(window.CageRandomDraft.snapshot().rerolls.A===1,'reroll not reset');
 }

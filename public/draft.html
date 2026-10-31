@@ -96,13 +96,147 @@ button:focus-visible{outline:3px solid #f6d18b;outline-offset:3px}
 #champion-celebration{border:2px solid #dfb868;background:radial-gradient(circle at center,#654a1d 0,#1a2027 68%);padding:24px;border-radius:14px;text-align:center;box-shadow:0 0 35px #e7b84a55}
 @media(max-width:1150px){#draft-arena .cv-main{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.draft-pip.filled{animation:none}}
+</style><style id="v60-tactical-trait-icons">
+.draft-traits span{display:inline-flex;gap:5px;align-items:center;font-weight:800;padding:3px 6px}
+.draft-trait-icon{width:22px;height:22px;flex:none;display:grid;place-items:center;border:1px solid currentColor;border-radius:4px;background:#0004}
+.draft-trait-icon svg{width:18px;height:18px;display:block}
+.draft-traits .trait-def{color:#88dfff;border-color:#3d8ab0;background:#123245}
+.draft-traits .trait-mid{color:#f5d878;border-color:#a9903b;background:#3e3214}
+.draft-traits .trait-att{color:#ff9e9d;border-color:#a44b52;background:#421f29}
+</style><style id="cage-v61-visual">
+/* V6.1 presentation only: all draft, roster, clock and match rules remain unchanged. */
+.intro-command{padding:0!important;overflow:hidden;background:linear-gradient(115deg,#172b35,#08131c 62%)!important;border-color:#92713d!important}
+.intro-stage{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);align-items:stretch;min-height:430px}
+.intro-copy{padding:clamp(24px,3.8vw,54px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:14px}
+.intro-eyebrow{color:#c6a46a;font-size:11px;letter-spacing:.17em;font-weight:900}
+.intro-signal{display:inline-block;width:8px;height:8px;border-radius:50%;background:#eac679;box-shadow:0 0 12px #d2a353;margin-right:7px}
+.intro-copy h2{font-size:clamp(28px,3.5vw,54px);line-height:1.03;font-weight:1000;letter-spacing:.05em;margin:0}
+.intro-copy h2 span{display:block;color:#e8bd6c}
+.intro-lede{font-size:clamp(14px,1.2vw,17px);color:#becdd5;max-width:560px;line-height:1.6;margin:0}
+.intro-rules{display:flex;gap:10px;flex-wrap:wrap;margin:4px 0}
+.intro-rules span{display:flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid #445f69;border-radius:5px;background:#0b1c27;color:#b9ccd2;font-size:10px;letter-spacing:.07em;font-weight:800}
+.intro-rules strong{font-size:21px;color:#f5d080}
+.intro-assist{font-size:13px;color:#d5e4e9;display:flex;gap:9px;align-items:center}
+.intro-assist small{font-size:10px;color:#a7a7a7}
+#hintNote{font-size:11px;margin:0}
+.intro-start{border:2px solid #f1c676;background:linear-gradient(160deg,#9d7130,#4e371e);font-size:15px;font-weight:1000;letter-spacing:.12em;padding:14px 20px;box-shadow:0 7px 24px #bc8a3b44;cursor:pointer}
+.intro-start span{font-size:21px;padding-left:11px}
+.intro-art{position:relative;overflow:hidden;background:radial-gradient(ellipse at center,#2c3130,#0a1821 65%);border-left:1px solid #6a6a5385;display:flex;flex-direction:column;justify-content:space-between;align-items:stretch}
+.intro-art:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 18px,#a7c3c408 18px 19px);pointer-events:none}
+.intro-art svg{display:block;width:100%;height:min(335px,100%);filter:drop-shadow(0 16px 30px #000b);position:relative}
+.intro-art-header,.intro-art-footer{position:relative;padding:14px 20px;display:flex;justify-content:space-between;font-size:10px;color:#bbd0d3;letter-spacing:.18em;font-weight:900;background:#0b1720b8}
+.intro-art-footer{justify-content:center;color:#e5c27e}
+.intro-art-header span{color:#bfa36f}
+#intro{max-width:none}
+.pool{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.draft-card-wrap{min-width:0;border-radius:9px;transition:border-color .16s,box-shadow .16s}
+.draft-card-wrap>.card{min-height:264px;padding:15px 13px 12px}
+.card .name{font-size:17px;max-width:none;line-height:1.25}
+.draft-card-wrap .meta{font-size:11px;line-height:1.3}
+.draft-card-wrap .draft-stat{font-size:11px;grid-template-columns:31px minmax(20px,1fr) 24px;gap:5px}
+.draft-card-wrap .draft-stat-track{height:5px}
+.draft-card-wrap .draft-traits{margin-top:13px}
+.draft-card-wrap .draft-traits span{font-size:10px}
+.draft-card-wrap .card-ovr{min-width:58px;font-size:29px}
+.draft-scout summary{padding:2px 0}
+#selection{border-top:3px solid #ae884d;scroll-margin-top:115px}
+#game>.panel.bar{top:0;margin-top:8px}
+#draft-arena{scroll-margin-top:12px}
+#draft-arena .cv-root{max-width:100%}
+#draft-arena .cv-scoreboard{border:1px solid #7c694d}
+@media(max-width:1370px){.pool{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:1020px){.pool{grid-template-columns:repeat(3,minmax(0,1fr))}.intro-stage{grid-template-columns:minmax(0,1fr) 35%}.intro-art{min-width:0}}
+@media(max-width:760px){.pool{grid-template-columns:repeat(2,minmax(0,1fr))}.intro-stage{grid-template-columns:1fr}.intro-art{display:none}.intro-copy{padding:24px}.intro-copy h2{font-size:34px}}
+@media(max-width:420px){.pool{grid-template-columns:minmax(0,1fr)}.draft-card-wrap>.card{min-height:240px}.draft-card-wrap .stats{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){.draft-card-wrap{transition:none}}
+</style><style id="cage-v61-match-finish">
+.pool-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.pool-toolbar h2{margin:0}
+.view-toggle{padding:9px 14px;font-size:12px;font-weight:900;letter-spacing:.08em;border:1px solid #a98951;background:#1f2b33;color:#f2d8a2;border-radius:7px;cursor:pointer}
+.view-toggle[aria-pressed="true"]{background:#7b5829;border-color:#e3bf74;color:#fff2d1}
+#selection.quick-view .pool{gap:8px}
+#selection.quick-view .draft-card-wrap>.card{min-height:116px;padding:9px 11px}
+#selection.quick-view .draft-card-wrap .stats,
+#selection.quick-view .draft-card-wrap .draft-traits,
+#selection.quick-view .draft-card-wrap .draft-folklore,
+#selection.quick-view .draft-card-wrap .meta,
+#selection.quick-view .draft-scout{display:none}
+#selection.quick-view .draft-card-wrap .name{font-size:15px}
+#selection.quick-view .draft-card-wrap .card-ovr{font-size:24px;min-width:46px}
+#selection.quick-view .draft-card-wrap .draft-role{margin-top:8px}
+#selection.quick-view .draft-card-wrap .draft-tier{margin-top:7px}
+.arena-outcome{display:flex;align-items:center;gap:17px;border:1px solid #ceaa65;border-radius:9px;margin:12px 0 3px;padding:14px 19px;background:linear-gradient(110deg,#1c343d,#101c24 56%,#39301e);box-shadow:0 0 28px #cba45f28}
+.arena-outcome.hidden{display:none}
+.arena-outcome-mark{display:grid;place-items:center;border:2px solid #d9b46a;width:57px;height:57px;flex:none;border-radius:50%;font-size:31px;color:#f4d48b;background:radial-gradient(#62491f,#211a12)}
+.arena-outcome-main{flex:1;min-width:0}
+.arena-outcome-kicker{font-size:10px;font-weight:900;letter-spacing:.16em;color:#d3ba86}
+.arena-outcome h2{font-size:clamp(19px,2.3vw,30px);color:#fff0bd;margin:2px 0}
+.arena-outcome p{color:#bdd3db;font-size:12px;margin:0}
+.arena-outcome-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+#arena-next{background:linear-gradient(160deg,#9d723a,#56401f);border:1px solid #e5c77b;font-weight:950}
+#arena-replay{background:#1c3f4c;border:1px solid #6292a5}
+@media(max-width:760px){.arena-outcome{flex-wrap:wrap}.arena-outcome-actions{width:100%;justify-content:stretch}.arena-outcome-actions button{flex:1}.view-toggle{width:100%}}
 </style></head><body><main><div class="top"><div><h1>THE CAGE</h1><div class="muted">BEST OF FIVE · RANDOM DRAFT · KNOW BALL OR FALL</div></div><a href="index.html">Main game</a></div>
 <section class="showdown-strip" aria-label="Showdown standings"><strong>THE CAGE SHOWDOWN</strong><span id="showdown-score">COMMANDER 0 : 0 OPPONENT</span><span id="round-number">ROUND 1 / 5</span><div id="round-history" aria-label="Round history"></div></section>
-<section id="intro" class="panel center"><div class="coin">🪙</div><h2>THE COIN DECIDES</h2><p>ABABAB · 15 candidates · 20 seconds · one reroll each · no guarantees</p><label><input type="checkbox" id="hints"> Counter indicators (OFF by default)</label><p class="muted" id="hintNote">Optional guidance shows only when supported by actual player class data.</p><button id="begin">TOSS THE COIN</button><p id="coinResult" class="gold"></p></section>
+<section id="intro" class="panel intro-command">
+  <div class="intro-stage">
+    <div class="intro-copy">
+      <div class="intro-eyebrow"><span class="intro-signal"></span> UNDERGROUND FOOTBALL · SEASON 01</div>
+      <h2>NO SANCTUARY.<span>ONLY FOOTBALL.</span></h2>
+      <p class="intro-lede">Build your trio from fifteen mystery footballers every pick. Six selections. One golden goal. First to three wins takes the showdown.</p>
+      <div class="intro-rules" aria-label="Draft rules">
+        <span><strong>15</strong> CANDIDATES / PICK</span>
+        <span><strong>20s</strong> PICK CLOCK</span>
+        <span><strong>3</strong> WINS TO RULE</span>
+      </div>
+      <label class="intro-assist"><input type="checkbox" id="hints"> Optional matchup indicators <small>OFF by default</small></label>
+      <p class="muted" id="hintNote">Only verified class-counter guidance is shown.</p>
+      <button id="begin" class="intro-start">TOSS THE COIN <span aria-hidden="true">↗</span></button>
+      <p id="coinResult" class="gold" role="status"></p>
+    </div>
+    <div class="intro-art" role="img" aria-label="Golden football emblem inside a steel cage">
+      <div class="intro-art-header">THE CAGE <span>EST. 2026</span></div>
+      <svg viewBox="0 0 400 390" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <radialGradient id="cagecoin" cx="30%" cy="20%" r="75%"><stop offset="0" stop-color="#fff2be"/><stop offset=".28" stop-color="#f4ca64"/><stop offset=".65" stop-color="#b47d2e"/><stop offset="1" stop-color="#59401f"/></radialGradient>
+          <linearGradient id="cagerail" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#8fa4a6"/><stop offset=".48" stop-color="#263a43"/><stop offset="1" stop-color="#71858a"/></linearGradient>
+        </defs>
+        <path d="M45 68H355V322H45Z" stroke="url(#cagerail)" stroke-width="13" fill="#07151c"/>
+        <g stroke="#66868a" stroke-width=".8" opacity=".3">
+          <path d="M45 68L355 322M45 112L308 322M92 68L355 278M45 278L255 68M45 322L300 68M92 322L355 112M141 322L355 156M45 156L212 322"/>
+        </g>
+        <circle cx="200" cy="190" r="107" stroke="#8b662e" stroke-width="7" fill="#0b1b24"/>
+        <circle cx="200" cy="190" r="94" fill="url(#cagecoin)" stroke="#ffe7a2" stroke-width="3"/>
+        <circle cx="200" cy="190" r="79" fill="none" stroke="#74471c" stroke-width="4" opacity=".8"/>
+        <path d="M200 113l56 34v76l-56 33-57-33v-76z" stroke="#623b18" stroke-width="7" fill="none"/>
+        <path d="M200 141l34 20v49l-34 20-34-20v-49z" fill="#6b461d" stroke="#fff1bd" stroke-width="2"/>
+        <path d="M170 177l28-17 30 18-11 32h-34z" fill="#f4d37c"/>
+        <path d="M200 102v34M200 244v33M117 190h27M256 190h27" stroke="#fff1ba" stroke-width="4"/>
+        <path d="M64 335h272" stroke="#b59254" stroke-width="3"/>
+        <path d="M78 349h245" stroke="#506e76" stroke-width="2"/>
+        <text x="200" y="371" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="900" letter-spacing="3" fill="#d9b16b">FIRST TO THREE WINS</text>
+      </svg>
+      <div class="intro-art-footer">THE IRON HOLDS. THE BALL DECIDES.</div>
+    </div>
+  </div>
+</section>
 <section id="handoff" class="panel center hidden"><h2 id="passTitle">PASS THE DEVICE</h2><p class="muted">Only the active drafter should view the next pool. Local hotseat mode: this is a courtesy privacy screen, not online server-side secrecy.</p><button id="reveal">REVEAL MY 15 PLAYERS</button></section>
 <section id="game" class="hidden"><section class="panel bar"><div><strong id="phase">PICK 1 / 6</strong><p class="muted" id="current"></p></div><div class="draft-clock-shell" aria-label="Time remaining"><div class="clock" id="clock">20</div><small>SECONDS</small></div><div id="draft-progress" class="draft-progress" aria-label="Draft progress"></div><div class="bar"><button id="reroll">REROLL 15</button><button id="restart">NEW SHOWDOWN</button></div></section>
 <div class="squads"><section class="panel team"><h2>COMMANDER</h2><div id="squadA"></div></section><section class="panel team"><h2>OPPONENT</h2><div id="squadB"></div></section></div>
-<section class="panel" id="selection"><h2>YOUR 15 CANDIDATES</h2><p class="muted">Choose one. Pick locks immediately. Your opponent never sees this pool.</p><div id="counterAdvice" class="hint hidden"></div><div class="pool" id="pool"></div></section>
+<section class="panel" id="selection"><div class="pool-toolbar"><h2>YOUR 15 CANDIDATES</h2><button id="viewToggle" class="view-toggle" type="button" aria-pressed="false">QUICK VIEW · ALL 15</button></div><p class="muted">Choose one. Pick locks immediately. Your opponent never sees this pool.</p><div id="counterAdvice" class="hint hidden"></div><div class="pool" id="pool"></div></section>
 <section class="panel hidden" id="finished"><h2>SQUADS LOCKED</h2><p class="hint" role="note">TACTICAL RULESET: T3 · 15 CLASS TRAITS ACTIVE · FIRST GOAL WINS</p><div id="versus-line" class="versus-line" aria-label="Locked squads"></div><p>Choose tactics and play through the existing CAGE match engine.</p><div class="bar"><label>Commander <select id="tacticA"><option value="balanced">Balanced</option><option value="press">High Press</option><option value="possession">Possession</option><option value="counter">Counterattack</option></select></label><label>Opponent <select id="tacticB"><option value="balanced">Balanced</option><option value="press">High Press</option><option value="possession">Possession</option><option value="counter">Counterattack</option></select></label><button id="fight">ENTER THE CAGE</button><button id="watch-again" class="hidden" type="button">WATCH RECORDED REPLAY</button><button id="next-round" class="hidden" type="button">NEXT ROUND · FRESH DRAFT</button></div><h2 class="gold" id="result"></h2><div id="details"></div></section>
-</section><section id="draft-arena" class="hidden" aria-label="THE CAGE live arena"><h2>LIVE IN THE CAGE</h2><div id="draft-arena-viewer"></div></section><p id="error" role="status" class="gold"></p></main>
+</section><section id="draft-arena" class="hidden" aria-label="THE CAGE live arena"><h2>LIVE IN THE CAGE</h2><div id="draft-arena-viewer"></div>
+  <div id="arena-outcome" class="arena-outcome hidden" role="status" aria-live="polite">
+    <div class="arena-outcome-mark" aria-hidden="true">★</div>
+    <div class="arena-outcome-main">
+      <span class="arena-outcome-kicker">ROUND COMPLETE · THE CAGE</span>
+      <h2 id="arena-winner">MATCH COMPLETE</h2>
+      <p id="arena-summary"></p>
+    </div>
+    <div class="arena-outcome-actions">
+      <button id="arena-next" type="button">NEXT ROUND</button>
+      <button id="arena-replay" type="button">WATCH REPLAY</button>
+    </div>
+  </div>
+</section><p id="error" role="status" class="gold"></p></main>
 <script src="src/players.js"></script><script src="src/roster-expansion.js"></script><script src="src/roster-100.js"></script><script src="src/roster-101.js"></script><script src="src/roster-103.js"></script><script src="src/roster-pl-134.js"></script><script src="src/roster-135.js"></script><script src="src/roster-136.js"></script><script src="src/roster-139.js"></script><script src="src/roster-140.js"></script><script src="src/roster-141.js"></script><script src="src/roster-149.js"></script><script src="src/roster-165.js"></script><script src="src/roster-178.js"></script><script src="src/roster-classification.js"></script><script src="src/roster-refinement.js"></script><script src="src/tactical-refinement.js"></script><script src="src/roster-182.js"></script><script src="src/roster-trait-family-v16.js"></script><script src="src/roster-184.js"></script><script src="src/owner-tier-decisions-v17.js"></script><script src="src/natural-positions.js"></script><script src="src/elite-ovr-approved-v21.js"></script><script src="src/stalwart-ovr-approved-v1.js"></script><script src="src/overall.js"></script><script src="src/ace-recruitment-v1.js"></script><script src="src/di-canio-recruitment-v1.js"></script><script src="src/recruitment-four-v1.js"></script><script src="src/engine/legacy-v04.js"></script><script src="src/cage-engine-draft.js"></script><script src="src/cage-commentary.js"></script><script src="src/replay/records.js"></script><script src="src/viewer/coords.js"></script><script src="src/viewer/layout.js"></script><script src="src/viewer/timeline.js"></script><script src="src/viewer/clock.js"></script><script src="src/viewer-v4/fx.js"></script><script src="src/viewer-v4/motion.js"></script><script src="src/viewer-v4/kinetics.js"></script><script src="src/viewer-v4/label-layout.js"></script><script src="src/viewer-v4/renderer.js"></script><script src="src/viewer-v4/goal-experience.js"></script><script src="src/viewer-v4/goal-audio.js"></script><script src="src/viewer-v4/viewer.js"></script><script src="src/random-draft.js"></script></body></html>
