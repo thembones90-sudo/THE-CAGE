@@ -66,7 +66,19 @@ function createRenderer(canvas){
         const a=(i*2.4)+phase*.35;
         ctx.beginPath();ctx.moveTo(p.x+Math.cos(a)*radius*1.12,p.y+Math.sin(a)*radius*1.12);
         ctx.lineTo(p.x+Math.cos(a)*radius*1.45,p.y+Math.sin(a)*radius*1.45);ctx.stroke();
-      }ctx.restore();
+      }
+      // A planted-cleat brace is drawn at the *recorded* defender, and only
+      // during a logged contact. No displacement, win/loss or impact is claimed.
+      const gait=f.kinetics&&f.kinetics.players[role.defender];
+      if(gait){
+        ctx.translate(p.x,p.y);ctx.rotate(gait.heading);
+        ctx.strokeStyle='#ffd6a9';ctx.lineWidth=2.8;ctx.lineCap='round';
+        for(const side of [-1,1]){
+          ctx.beginPath();ctx.moveTo(-R*.4,side*R*.72);
+          ctx.lineTo(-R*1.2,side*R*.96);ctx.stroke();
+        }
+      }
+      ctx.restore();
     }
     // Actor spotlight is a subtle ground marker; it never changes team roles.
     if(actor&&['carry','dribble_duel','through_ball','pass','press','block'].includes(kind)){
@@ -134,17 +146,30 @@ function createRenderer(canvas){
         }
       }
       if(id===f.carrier){ctx.save();ctx.strokeStyle=tk['--momentum'];ctx.lineWidth=3;ctx.shadowColor='#f5c65a';ctx.shadowBlur=8;ctx.beginPath();ctx.arc(p.x,p.y,R+4,0,Math.PI*2);ctx.stroke();ctx.shadowBlur=0;ctx.lineWidth=1.2;ctx.strokeStyle='rgba(255,246,194,.8)';ctx.beginPath();ctx.arc(p.x,p.y,R+7,-Math.PI*.66,Math.PI*.23);ctx.stroke();ctx.restore();}
-      // V5.2: a deterministic heading notch and compact moving-foot cues.
-      // These only paint cosmetic graphics. No centerpoint or match cell changes.
+      // V6.4: directional sprint silhouette, braking and banking. Grounded in
+      // recorded travel samples; player centers and game state never change.
       if(kinetics&&kinetics.players[id]){
-        const gait=kinetics.players[id],angle=gait.heading,run=gait.gait==='sprint',jog=gait.gait==='jog';
+        const gait=kinetics.players[id],pose=window.CageKinetics.visualPose(gait,id,f.tau||0,f.reducedMotion);
+        const angle=pose.heading,run=pose.mode==='sprint',jog=pose.mode==='jog';
         ctx.save();ctx.translate(p.x,p.y);ctx.rotate(angle);
+        // Body direction is a painted chevron, never a displaced character.
+        if(!f.reducedMotion&&(run||jog)){
+          const teamGlow=team===0?'rgba(100,211,250,':'rgba(255,138,148,';
+          ctx.save();ctx.translate(-R-3,0);
+          ctx.strokeStyle=teamGlow+(pose.trail*.65).toFixed(3)+')';
+          ctx.lineWidth=1.5+pose.trail*1.3;ctx.lineCap='round';
+          for(const side of [-1,1]){
+            ctx.beginPath();ctx.moveTo(-R*.65,-side*R*.38);
+            ctx.lineTo(-R*(1.15+pose.trail*.55),-side*(R*.35+pose.bank*2));ctx.stroke();
+          }
+          ctx.restore();
+        }
+        ctx.save();ctx.rotate(pose.bank*.25);
         ctx.fillStyle=run?'rgba(240,228,188,.92)':jog?'rgba(215,227,220,.80)':'rgba(151,173,174,.61)';
         ctx.beginPath();ctx.moveTo(R+7,0);ctx.lineTo(R+1,-3.2);ctx.lineTo(R+1,3.2);ctx.closePath();ctx.fill();
         if(!f.reducedMotion&&(run||jog)){
-          const cadence=Math.min(16,4+gait.speed*.055);
-          const swing=Math.sin((f.tau||0)*cadence+String(id).length*.7)*1.6;
-          const intensity=run?1:.55;
+          const swing=pose.stride*1.8;
+          const intensity=run?1:.6;
           ctx.lineWidth=1.9;ctx.strokeStyle=team===0?'rgba(130,232,240,.88)':'rgba(252,157,164,.88)';
           ctx.lineCap='round';
           for(const side of [-1,1]){
@@ -152,11 +177,17 @@ function createRenderer(canvas){
             ctx.beginPath();ctx.moveTo(back,side*(R*.54));ctx.lineTo(back-4,side*(R*.54)+side*.7);ctx.stroke();
           }
           if(run&&Math.abs(gait.turnRate)>1.5){
-            ctx.strokeStyle='rgba(255,232,173,.70)';ctx.lineWidth=1;
-            ctx.beginPath();ctx.arc(0,0,R+10,-.25,.25,gait.turnRate<0);ctx.stroke();
+            ctx.strokeStyle='rgba(255,232,173,.78)';ctx.lineWidth=1.3;
+            ctx.beginPath();ctx.arc(0,0,R+10,-.6,.6,gait.turnRate<0);ctx.stroke();
+          }
+          // Acceleration and braking add a short streak opposite heading.
+          if(Math.abs(pose.lean)>.07){
+            ctx.strokeStyle=pose.lean>0?'rgba(136,229,188,.72)':'rgba(250,179,111,.72)';
+            ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(-R-2,0);
+            ctx.lineTo(-R-3-Math.abs(pose.lean)*17,0);ctx.stroke();
           }
         }
-        ctx.restore();
+        ctx.restore();ctx.restore();
       }
       // Premium token finish: visual shading only. No positions, physics or event state change.
       ctx.save();ctx.shadowColor='rgba(0,0,0,.7)';ctx.shadowBlur=R*.55;ctx.shadowOffsetY=2;
