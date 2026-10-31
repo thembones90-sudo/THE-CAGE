@@ -1,11 +1,11 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process');
-const root=path.resolve(__dirname,'..'),profile=path.join(root,'chrome-v62-visual-'+process.pid),port=9242;
+const root=path.resolve(__dirname,'..'),profile=path.join(root,'chrome-v62-visual-'+process.pid),port=0;
 const chrome='C:/Program Files/Google/Chrome/Application/chrome.exe';
 const browser=cp.spawn(chrome,['--headless=new','--no-sandbox','--disable-gpu','--no-first-run','--disable-extensions','--remote-debugging-port='+port,'--remote-allow-origins=*','--user-data-dir='+profile,'--window-size=1680,1050','about:blank'],{stdio:'ignore'});
 const sleep=t=>new Promise(r=>setTimeout(r,t));
 async function go(){
- let info;for(let i=0;i<70;i++){try{const a=await(await fetch('http://127.0.0.1:'+port+'/json')).json();info=a.find(x=>x.type==='page'&&x.webSocketDebuggerUrl);if(info)break;}catch{}await sleep(100);}
+ let info;for(let i=0;i<70;i++){try{const ownPort=Number(fs.readFileSync(path.join(profile,'DevToolsActivePort'),'utf8').split(/\r?\n/)[0]);if(!ownPort)throw Error('Chrome port not ready');const a=await(await fetch('http://127.0.0.1:'+ownPort+'/json')).json();info=a.find(x=>x.type==='page'&&x.webSocketDebuggerUrl);if(info)break;}catch{}await sleep(100);}
  if(!info)throw Error('Chrome CDP not ready');
  const ws=new WebSocket(info.webSocketDebuggerUrl),pending=new Map();let seq=0;
  ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.id&&pending.has(m.id)){const p=pending.get(m.id);pending.delete(m.id);m.error?p.reject(Error(JSON.stringify(m.error))):p.resolve(m.result);}};
