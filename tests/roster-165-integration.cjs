@@ -1,3 +1,4 @@
+const {expectedRatings,expectedPosition,expectedAlternates,expectedStat}=require('./elite-v21-helpers.cjs');
 // THE CAGE: owner-approved sixteen-player roster addition regression.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),html=fs.readFileSync(path.join(root,'index.html'),'utf8');
@@ -20,7 +21,7 @@ for(const [id,tier,folklore,pos,alternate,primary,secondary,stat,value,query] of
  assert.deepEqual(Array.from(p.secondaryPositions),alternate,id+' alternatives');
  assert.equal(p.traits.primary,primary,id+' primary');
  assert.equal(p.traits.secondary,secondary,id+' secondary');
- assert.equal(p.r[stat],value,id+' signature rating');
+ assert.equal(p.r[stat],expectedStat(id,stat,value),id+' signature rating');
  assert.equal(Object.keys(p.r).length,17,id+' full prime stats');
  assert.equal(Object.keys(p.attributes).length,5,id+' tactical stats');
  assert(p.attributesProvisional,id+' provisional tactical stats marker');

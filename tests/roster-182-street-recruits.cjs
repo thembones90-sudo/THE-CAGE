@@ -1,3 +1,4 @@
+const {expectedRatings,expectedPosition,expectedAlternates,expectedStat}=require('./elite-v21-helpers.cjs');
 // THE CAGE: four owner-approved cult footballers, 184-player roster, all 178 previous locks intact, after Valeron/Makaay.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
@@ -16,8 +17,8 @@ for(const former of prior.players){
  assert.equal(p.careerTier,ownerElite.has(p.id)?'ELITE':former.careerTier,'tier changed without owner authorization '+p.id);
  assert.deepEqual(Array.from(p.folklore),former.folklore,'badge accidentally changed '+p.id);
  assert.deepEqual(JSON.parse(JSON.stringify(p.traits)),former.traits,'trait accidentally changed '+p.id);
- assert.deepEqual(JSON.parse(JSON.stringify(p.r)),former.r,'ratings accidentally changed '+p.id);
- assert.equal(p.position,former.position,'natural position changed '+p.id);
+ assert.deepEqual(JSON.parse(JSON.stringify(p.r)),expectedRatings(former),'ratings changed without ELITE approval '+p.id);
+ assert.equal(p.position,expectedPosition(former),'natural position changed without ELITE approval '+p.id);
  assert.equal(!!p.attributesProvisional,former.provisionalTactical,'tactical approval state changed '+p.id);
 }
 const positions={ailton:['ST',[]],'marcelinho-hertha':['CAM',['CM']],'juan-arango':['CAM',['LM']],'jefferson-farfan':['RW',['ST']]};
@@ -31,7 +32,7 @@ for(const proposed of source.players){
  assert.deepEqual(Array.from(p.secondaryPositions),positions[p.id][1]);
  assert.equal(p.ratingType,'editorial-provisional-v1.5');
  const checks={pace:proposed.core[0],tech:proposed.core[1],pass:proposed.core[2],finish:proposed.core[3],def:proposed.core[4],phys:proposed.core[5],first_touch:proposed.detail[0],dribbling:proposed.detail[1],passing:proposed.detail[2],vision:proposed.detail[3],finishing:proposed.detail[4],shooting:proposed.detail[5],stamina:proposed.detail[6],physical:proposed.detail[7],tackling:proposed.detail[8],positioning:proposed.detail[9],composure:proposed.detail[10]};
- assert.deepEqual(JSON.parse(JSON.stringify(p.r)),checks,p.id+' 17 prime ratings');
+ assert.deepEqual(JSON.parse(JSON.stringify(p.r)),expectedRatings({id:p.id,r:checks}),p.id+' 17 prime ratings after owner-approved ELITE correction');
  assert.equal(Object.keys(p.attributes).length,5,p.id+' five T3 ratings');
  assert.equal(p.attributesProvisional,true,p.id+' must remain provisional');
  assert.equal(w.CageTraits.traits(p.id)[0][0],proposed.traits[0]);

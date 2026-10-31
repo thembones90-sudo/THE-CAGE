@@ -1,3 +1,4 @@
+const {expectedRatings,expectedPosition,expectedAlternates,expectedStat}=require('./elite-v21-helpers.cjs');
 // THE CAGE: add Valeron and Makaay without touching the previous 182.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
@@ -18,9 +19,9 @@ for(const old of previous.players){
  assert.equal(p.careerTier,ownerElite.has(p.id)?'ELITE':old.careerTier,old.id+' tier');
  assert.deepEqual(Array.from(p.folklore),old.folklore,old.id+' folklore');
  assert.deepEqual(JSON.parse(JSON.stringify(p.traits)),old.traits,old.id+' traits');
- assert.deepEqual(JSON.parse(JSON.stringify(p.r)),old.r,old.id+' prime stats');
- assert.equal(p.position,old.position,old.id+' natural position');
- assert.deepEqual(Array.from(p.secondaryPositions),old.secondaryPositions,old.id+' alternates');
+ assert.deepEqual(JSON.parse(JSON.stringify(p.r)),expectedRatings(old),old.id+' prime stats');
+ assert.equal(p.position,expectedPosition(old),old.id+' natural position');
+ assert.deepEqual(Array.from(p.secondaryPositions),expectedAlternates(old),old.id+' alternates');
  assert.equal(!!p.attributesProvisional,old.provisionalTactical,old.id+' provisional status');
 }
 const expectedPos={'juan-carlos-valeron':['CAM',['CM']],'roy-makaay':['ST',['CF']]};

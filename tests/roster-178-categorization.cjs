@@ -1,3 +1,4 @@
+const {expectedRatings,expectedPosition,expectedAlternates,expectedStat}=require('./elite-v21-helpers.cjs');
 // THE CAGE: all 178 editorial classifications; prior approved player metadata must remain byte-for-byte equivalent in values.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
@@ -25,8 +26,8 @@ for(const prior of pre.players){
  for(const b of p.folklore)assert(badges.has(b),'invalid folklore '+p.id+': '+b);
  assert(p.traits&&traits.has(p.traits.primary)&&traits.has(p.traits.secondary)&&p.traits.primary!==p.traits.secondary,'traits '+p.id);
  assert.equal(Object.keys(p.r).length,17,'ratings '+p.id);assert.equal(Object.keys(p.attributes).length,5,'T3 ratings '+p.id);
- assert.equal(p.position,prior.position,'position changed '+p.id);
- assert.deepEqual(JSON.parse(JSON.stringify(p.r)),prior.r,'prime ratings changed '+p.id);
+ assert.equal(p.position,expectedPosition(prior),'position changed without ELITE approval '+p.id);
+ assert.deepEqual(JSON.parse(JSON.stringify(p.r)),expectedRatings(prior),'unapproved prime ratings change '+p.id);
  assert.equal(!!p.attributesProvisional,prior.provisionalTactical,'tactical rating status changed '+p.id);
  if(prior.careerTier){
    approvedPreserved++;

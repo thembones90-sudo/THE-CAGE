@@ -1,3 +1,4 @@
+const {expectedRatings,expectedPosition,expectedAlternates,expectedStat}=require('./elite-v21-helpers.cjs');
 // THE CAGE: verify approved Nakata identity and current roster after adding player #141.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),html=fs.readFileSync(path.join(root,'index.html'),'utf8');
@@ -9,8 +10,8 @@ assert.equal(players.length,184);assert.equal(new Set(players.map(p=>p.id)).size
 assert(p,'missing Nakata');assert.equal(p.position,'CAM');assert.deepEqual(Array.from(p.secondaryPositions),['CM']);
 assert.equal(p.careerTier,'ELITE');assert.deepEqual(Array.from(p.folklore),['STREET HERO']);
 assert.equal(p.traits.primary,'Surgeon');assert.equal(p.traits.secondary,'Engine');
-assert.equal(p.r.pace,83);assert.equal(p.r.tech,88);assert.equal(p.r.pass,92);
-assert.equal(p.r.vision,95);assert.equal(p.r.shooting,90);assert.equal(Object.keys(p.r).length,17);
+assert.equal(p.r.pace,83);assert.equal(p.r.tech,88);assert.equal(p.r.pass,expectedStat('hidetoshi-nakata','pass',92));
+assert.equal(p.r.vision,expectedStat('hidetoshi-nakata','vision',95));assert.equal(p.r.shooting,90);assert.equal(Object.keys(p.r).length,17);
 assert.equal(p.attributes.work_rate,82);assert.equal(p.attributes.stamina,85);
 assert.equal(Object.keys(p.attributes).length,5);
 for(const query of ['Nakata','Hidetoshi Nakata','H Nakata','nakata hidetoshi'])

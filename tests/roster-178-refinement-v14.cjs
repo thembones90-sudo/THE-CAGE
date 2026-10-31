@@ -1,3 +1,4 @@
+const {expectedRatings,expectedPosition,expectedAlternates,expectedStat}=require('./elite-v21-helpers.cjs');
 // THE CAGE V1.4: preserve prior approvals and verify all 115 provisional tactical reviews.
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8'),json=f=>JSON.parse(read(f));
@@ -18,8 +19,8 @@ let owner=0,editorial=0,approvedProfiles=0;
 for(const p of roster.filter(v=>prior.has(v.id))){
  const was=prior.get(p.id),locked=initial.get(p.id);
  assert(was&&locked,'not in prior roster '+p.id);
- assert.equal(p.position,was.position,'position modified '+p.id);
- assert.deepEqual(JSON.parse(JSON.stringify(p.r)),was.r,'prime ratings changed '+p.id);
+ assert.equal(p.position,expectedPosition(was),'position modified without ELITE approval '+p.id);
+ assert.deepEqual(JSON.parse(JSON.stringify(p.r)),expectedRatings(was),'unapproved prime ratings change '+p.id);
  assert.deepEqual(JSON.parse(JSON.stringify(p.traits)),was.traits,'trait changed '+p.id);
  if(locked.careerTier){
   owner++;

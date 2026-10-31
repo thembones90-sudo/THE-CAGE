@@ -43,11 +43,13 @@ const PROFILES=Object.freeze({
  ],
  LB:[
   {name:'Defending fullback',w:{mobility:13,control:7,creation:10,intelligence:4,defending:53,power:10,engine:3}},
-  {name:'Attacking fullback',w:{mobility:22,control:12,creation:25,intelligence:8,defending:23,power:6,engine:4}}
+  {name:'Attacking fullback',w:{mobility:22,control:12,creation:25,intelligence:8,defending:23,power:6,engine:4}},
+  {name:'Inverted playmaker',w:{mobility:12,control:27,creation:40,intelligence:6,defending:10,power:2,engine:3}}
  ],
  RB:[
   {name:'Defending fullback',w:{mobility:13,control:7,creation:10,intelligence:4,defending:53,power:10,engine:3}},
-  {name:'Attacking fullback',w:{mobility:22,control:12,creation:25,intelligence:8,defending:23,power:6,engine:4}}
+  {name:'Attacking fullback',w:{mobility:22,control:12,creation:25,intelligence:8,defending:23,power:6,engine:4}},
+  {name:'Inverted playmaker',w:{mobility:12,control:27,creation:40,intelligence:6,defending:10,power:2,engine:3}}
  ],
  CB:[
   {name:'Traditional centre-back',w:{mobility:5,control:2,creation:2,intelligence:5,defending:70,power:15,engine:1}},
@@ -97,14 +99,15 @@ function evaluate(player){
  const winner=options.reduce((best,v)=>v.score>best.score?v:best);
  return Object.freeze({position:pos,archetype:winner.archetype,score:Number(winner.score.toFixed(3)),domains:parts});
 }
-// A limited exception remains visible instead of stealth-editing Alex's prime ratings.
-// It must be removed when the full 184-player ratings themselves are editorially calibrated.
-const REVIEW_OVERRIDES=Object.freeze({
- 'alex-de-souza':Object.freeze({overall:89,status:'provisional-pending-owner-approval',reason:'Prime technical ratings currently make the raw CAM score disproportionately high; requires full input audit.'})
-});
+// All 67 ELITE ratings are now generated directly from approved prime attributes; no individual OVR overrides.
+const REVIEW_OVERRIDES=Object.freeze({});
 function raw(p){const value=evaluate(p).score;return Math.max(1,Math.min(99,Math.round(value)));}
 function compute(p){const patch=REVIEW_OVERRIDES[p.id];return patch?patch.overall:raw(p);}
 function apply(ps){if(!Array.isArray(ps))throw Error('Expected player array');const seen=new Set();for(const p of ps){if(seen.has(p.id))throw Error('Duplicate OVR player '+p.id);seen.add(p.id);p.overall=compute(p);}return ps.length;}
 const loadedPlayers=apply(window.THE_CAGE_PLAYERS);
-window.CageOverall=Object.freeze({VERSION:'overall-v2.0-provisional',PROFILES,REVIEW_OVERRIDES,domains,evaluate,raw,compute,read:p=>p.overall??compute(p),apply,loadedPlayers});
+if(window.CAGE_ELITE_OVR_APPROVED){
+ const target=window.CAGE_ELITE_OVR_APPROVED.targets;
+ for(const p of window.THE_CAGE_PLAYERS)if(Object.prototype.hasOwnProperty.call(target,p.id)&&p.overall!==target[p.id])throw Error('Owner-approved OVR failed '+p.id+': '+p.overall+' rather than '+target[p.id]);
+}
+window.CageOverall=Object.freeze({VERSION:'overall-v2.1-owner-approved',PROFILES,REVIEW_OVERRIDES,domains,evaluate,raw,compute,read:p=>p.overall??compute(p),apply,loadedPlayers});
 })();

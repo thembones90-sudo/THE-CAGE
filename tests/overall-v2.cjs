@@ -5,10 +5,10 @@ const roster=JSON.parse(read('docs/roster-audit-184-current.json')).players;
 const before=JSON.stringify(roster.map(p=>[p.id,p.r,p.careerTier,p.folklore,p.traits,p.position,p.secondaryPositions]));
 const context={window:{THE_CAGE_PLAYERS:roster}};vm.createContext(context);vm.runInContext(read('src/overall.js'),context,{filename:'src/overall.js'});
 const api=context.window.CageOverall;
-assert.equal(api.VERSION,'overall-v2.0-provisional');assert.equal(api.loadedPlayers,184);
-assert.equal(Object.values(api.PROFILES).reduce((s,list)=>s+list.length,0),25);
+assert.equal(api.VERSION,'overall-v2.1-owner-approved');assert.equal(api.loadedPlayers,184);
+assert.equal(Object.values(api.PROFILES).reduce((s,list)=>s+list.length,0),27);
 assert.equal(Object.keys(api.PROFILES).length,12);
-assert.deepEqual(Object.keys(api.REVIEW_OVERRIDES),['alex-de-souza'],'only visible, provisional override');
+assert.deepEqual(Object.keys(api.REVIEW_OVERRIDES),[],'No individual OVR overrides under V2.1');
 assert.equal(JSON.stringify(roster.map(p=>[p.id,p.r,p.careerTier,p.folklore,p.traits,p.position,p.secondaryPositions])),before,'OVR must not change roster attributes');
 const ids=new Set();
 for(const p of roster){
@@ -24,7 +24,7 @@ for(const p of roster){
  assert.equal(api.compute(clone),p.overall,p.id+' OVR illegally depends on tactical supplements');
  const noMeta={...p,careerTier:'ACE',folklore:[],traits:{primary:'Wall',secondary:'Phantom'}};
  assert.equal(api.compute(noMeta),p.overall,p.id+' OVR illegally depends on metadata');
- if(p.id!=='alex-de-souza')assert.equal(api.compute(p),api.raw(p),p.id+' hidden editorial override');
+ assert.equal(api.compute(p),api.raw(p),p.id+' hidden editorial override');
 }
 assert.equal(ids.size,184);
 const named=Object.fromEntries(roster.map(p=>[p.id,p]));
@@ -41,6 +41,5 @@ assert.equal(valeron.careerTier,'ELITE','Valeron must remain ELITE under the own
 assert.equal(api.raw(valeron),87,'Valeron must be formula-derived, not overridden');
 assert.deepEqual([valeron.r.tech,valeron.r.pass,valeron.r.first_touch,valeron.r.dribbling,valeron.r.vision,valeron.r.composure],[90,90,92,87,92,87]);
 const alex=named['alex-de-souza'];
-assert.equal(alex.careerTier,'ELITE');assert.equal(api.raw(alex),94);assert.equal(alex.overall,89);
-assert.equal(api.REVIEW_OVERRIDES['alex-de-souza'].status,'provisional-pending-owner-approval');
-console.log('OVR_V2_PASS: 184 players, 12 positions, 25 archetypes, 8 skill domains, 14 unduplicated inputs, 0 gameplay/tier bonuses, only Alex transparent provisional 89.');
+assert.equal(alex.careerTier,'ELITE');assert.equal(api.raw(alex),89);assert.equal(alex.overall,89);
+console.log('OVR_V21_PASS: 184 players, 12 positions, 27 archetypes, 8 skill domains, 14 unique inputs, zero individual overrides, 67 approved ELITE target ratings.');

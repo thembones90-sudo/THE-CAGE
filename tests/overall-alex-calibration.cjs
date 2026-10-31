@@ -1,13 +1,19 @@
-const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('node:assert/strict');
+// Alex is now formula-derived at 89, not a manual override.
+const fs=require('fs'),vm=require('vm'),path=require('path'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
-const ps=JSON.parse(read('docs/roster-audit-184-current.json')).players;
-const ctx={window:{THE_CAGE_PLAYERS:ps}};vm.createContext(ctx);vm.runInContext(read('src/overall.js'),ctx);
-const v=ctx.window.CageOverall,alex=ps.find(p=>p.id==='alex-de-souza');
-assert.equal(v.VERSION,'overall-v2.0-provisional');
+const audit=JSON.parse(read('docs/roster-audit-184-current.json'));
+const origin=JSON.parse(read('docs/roster-audit-182-current.json')).players.find(p=>p.id==='alex-de-souza');
+const approved=JSON.parse(read('proposals/ELITE_OVR_67_APPROVED.json')).players.find(p=>p.id==='alex-de-souza');
+const ctx={window:{THE_CAGE_PLAYERS:audit.players}};vm.createContext(ctx);vm.runInContext(read('src/overall.js'),ctx);
+const api=ctx.window.CageOverall,alex=audit.players.find(p=>p.id==='alex-de-souza');
+assert.equal(api.VERSION,'overall-v2.1-owner-approved');
+assert.equal(api.loadedPlayers,184);
+assert.deepEqual(Object.keys(api.REVIEW_OVERRIDES),[]);
+assert(origin&&alex&&approved);
 assert.equal(alex.careerTier,'ELITE');
-assert.equal(v.raw(alex),94);
-assert.equal(v.compute(alex),89);
-assert.deepEqual(Object.keys(v.REVIEW_OVERRIDES),['alex-de-souza']);
-assert.equal(v.REVIEW_OVERRIDES[alex.id].status,'provisional-pending-owner-approval');
-for(const p of ps)if(p!==alex)assert.equal(p.overall,v.raw(p),'Hidden individual OVR override on '+p.id);
-console.log('PASS: Alex raw V2 94, explicitly provisional display 89; remaining 183 have no overrides.');
+const source={...origin.r};for(const [key,vals] of Object.entries(approved.changes)){assert.equal(source[key],vals[0],key);source[key]=vals[1];}
+assert.deepEqual(alex.r,source,'Alex underlying prime attributes must be visibly recalibrated');
+assert.equal(api.raw(alex),89);assert.equal(alex.overall,89);assert.equal(api.compute(alex),89);
+assert.equal(approved.previous,89);assert.equal(approved.approvedOVR,89);
+for(const p of audit.players)assert.equal(api.compute(p),api.raw(p),'Identity OVR exception '+p.id);
+console.log('PASS ALEX_V21: raw/formula/display all 89; no manual patches; 184 players directly rated.');

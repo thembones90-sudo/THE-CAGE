@@ -1,6 +1,6 @@
-# THE CAGE: OVR V2.0 Formula and Archetypes
+# THE CAGE: OVR V2.1 Formula and Archetypes
 
-> V2.0 PROVISIONAL: a custom, position-sensitive formula for our 17 prime attributes. Three attributes are duplicated aliases, so we use 14 unique skills.
+> V2.1 OWNER-APPROVED ELITE calibration: a custom positional formula using 14 independent prime attribute inputs, 27 positional archetypes, and no individual OVR overrides.
 
 ## 1. Eight skill domains
 
@@ -44,8 +44,10 @@ Each card computes every archetype of its natural position and keeps the highest
 | RM | Wide playmaker | 17 | 24 | 32 | 6 | 4 | 4 | 10 | 3 |
 | LB | Defending fullback | 13 | 7 | 10 | 0 | 53 | 10 | 4 | 3 |
 | LB | Attacking fullback | 22 | 12 | 25 | 0 | 23 | 6 | 8 | 4 |
+| LB | Inverted playmaker | 12 | 27 | 40 | 0 | 10 | 2 | 6 | 3 |
 | RB | Defending fullback | 13 | 7 | 10 | 0 | 53 | 10 | 4 | 3 |
 | RB | Attacking fullback | 22 | 12 | 25 | 0 | 23 | 6 | 8 | 4 |
+| RB | Inverted playmaker | 12 | 27 | 40 | 0 | 10 | 2 | 6 | 3 |
 | CB | Traditional centre-back | 5 | 2 | 2 | 0 | 70 | 15 | 5 | 1 |
 | CB | Ball-playing centre-back | 7 | 12 | 18 | 0 | 43 | 10 | 8 | 2 |
 
@@ -53,15 +55,15 @@ Each card computes every archetype of its natural position and keeps the highest
 
 For each archetype: score = SUM(domain value × positional percentage) / 100.
 Raw OVR = clamp(round(highest archetype score), 1, 99).
-Displayed OVR = raw OVR, unless a transparent provisional correction is recorded.
+Displayed OVR = raw formula OVR. All 67 approved ELITE targets come from recalibrated input stats rather than overrides.
 
 ## 4. Exclusions and limitations
 
 - Career tier, fame, trophies, club, folklore, nationality and special traits provide zero OVR bonus.
 - OVR is display-only. It does not influence match results, tactics or card selection probability.
-- Prime rating inputs are unchanged. Most of the 184 historical attribute dossiers are still editorial estimates and require further auditing.
-- Exactly one explicit, provisional calibration remains: Alex de Souza displays 89 despite raw V2 = 94. His technical input grades are still too generous to treat the raw calculation as authoritative.
-- No individual overrides for the other 183 players.
+- The owner-approved 67 ELITE targets were applied through explicit source-attribute revisions; all 117 non-ELITE player profiles remain unchanged. Historical ratings outside this batch remain subject to future review.
+- Alex de Souza now has 89 RAW formula OVR, with playmaking inputs recalibrated. No hidden manual adjustment remains.
+- No individual OVR overrides for any of the 184 players. Approved source: proposals/ELITE_OVR_67_APPROVED.json.
 - Source code: src/overall.js. This document is generated from the same weights as the game.
 
 ## Verification

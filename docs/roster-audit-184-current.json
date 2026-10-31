@@ -63,11 +63,11 @@
     },
     "position": {
       "CAM": 29,
-      "CB": 23,
+      "CB": 24,
       "CDM": 15,
       "CF": 11,
       "CM": 24,
-      "LB": 6,
+      "LB": 5,
       "LM": 5,
       "LW": 13,
       "RB": 8,
@@ -239,11 +239,11 @@
       "ratingType": "editorial-v0.3",
       "provisionalTactical": false,
       "r": {
-        "pace": 87,
+        "pace": 90,
         "tech": 78,
         "pass": 81,
         "finish": 78,
-        "def": 91,
+        "def": 96,
         "phys": 94,
         "first_touch": 79,
         "dribbling": 78,
@@ -253,8 +253,8 @@
         "shooting": 83,
         "stamina": 91,
         "physical": 94,
-        "tackling": 91,
-        "positioning": 86,
+        "tackling": 93,
+        "positioning": 87,
         "composure": 78
       }
     },
@@ -422,13 +422,13 @@
       "r": {
         "pace": 81,
         "tech": 94,
-        "pass": 91,
+        "pass": 93,
         "finish": 78,
         "def": 64,
         "phys": 66,
         "first_touch": 93,
         "dribbling": 94,
-        "passing": 91,
+        "passing": 93,
         "vision": 93,
         "finishing": 78,
         "shooting": 74,
@@ -436,7 +436,7 @@
         "physical": 66,
         "tackling": 64,
         "positioning": 78,
-        "composure": 86
+        "composure": 88
       }
     },
     {
@@ -459,21 +459,21 @@
       "r": {
         "pace": 67,
         "tech": 72,
-        "pass": 78,
+        "pass": 88,
         "finish": 49,
-        "def": 91,
-        "phys": 87,
+        "def": 96,
+        "phys": 93,
         "first_touch": 74,
         "dribbling": 72,
-        "passing": 78,
-        "vision": 75,
+        "passing": 88,
+        "vision": 82,
         "finishing": 49,
         "shooting": 62,
         "stamina": 77,
-        "physical": 87,
-        "tackling": 91,
-        "positioning": 85,
-        "composure": 61
+        "physical": 93,
+        "tackling": 96,
+        "positioning": 98,
+        "composure": 70
       }
     },
     {
@@ -529,23 +529,23 @@
       "ratingType": "editorial-v0.3",
       "provisionalTactical": false,
       "r": {
-        "pace": 80,
-        "tech": 92,
-        "pass": 90,
+        "pace": 88,
+        "tech": 96,
+        "pass": 95,
         "finish": 85,
         "def": 41,
         "phys": 63,
-        "first_touch": 91,
-        "dribbling": 92,
-        "passing": 90,
-        "vision": 91,
+        "first_touch": 96,
+        "dribbling": 97,
+        "passing": 95,
+        "vision": 97,
         "finishing": 85,
         "shooting": 78,
         "stamina": 72,
         "physical": 63,
         "tackling": 41,
         "positioning": 66,
-        "composure": 89
+        "composure": 96
       }
     },
     {
@@ -644,23 +644,23 @@
       "ratingType": "editorial-v0.3",
       "provisionalTactical": false,
       "r": {
-        "pace": 73,
+        "pace": 74,
         "tech": 72,
-        "pass": 81,
+        "pass": 94,
         "finish": 45,
-        "def": 93,
-        "phys": 83,
+        "def": 96,
+        "phys": 91,
         "first_touch": 75,
         "dribbling": 72,
-        "passing": 81,
-        "vision": 77,
+        "passing": 94,
+        "vision": 86,
         "finishing": 45,
         "shooting": 58,
-        "stamina": 78,
-        "physical": 83,
-        "tackling": 93,
-        "positioning": 87,
-        "composure": 59
+        "stamina": 79,
+        "physical": 91,
+        "tackling": 96,
+        "positioning": 97,
+        "composure": 69
       }
     },
     {
@@ -830,23 +830,23 @@
       "ratingType": "editorial-v0.3",
       "provisionalTactical": false,
       "r": {
-        "pace": 86,
+        "pace": 90,
         "tech": 92,
-        "pass": 78,
+        "pass": 81,
         "finish": 76,
         "def": 24,
         "phys": 55,
-        "first_touch": 87,
-        "dribbling": 92,
-        "passing": 78,
-        "vision": 85,
+        "first_touch": 88,
+        "dribbling": 93,
+        "passing": 81,
+        "vision": 86,
         "finishing": 76,
         "shooting": 69,
         "stamina": 71,
         "physical": 55,
         "tackling": 24,
         "positioning": 51,
-        "composure": 84
+        "composure": 86
       }
     },
     {
@@ -944,15 +944,15 @@
         "pace": 91,
         "tech": 86,
         "pass": 70,
-        "finish": 96,
+        "finish": 90,
         "def": 25,
         "phys": 98,
         "first_touch": 81,
         "dribbling": 86,
         "passing": 70,
         "vision": 78,
-        "finishing": 96,
-        "shooting": 97,
+        "finishing": 90,
+        "shooting": 96,
         "stamina": 95,
         "physical": 98,
         "tackling": 25,
@@ -1376,8 +1376,11 @@
       "name": "Siniša Mihajlović",
       "country": "Serbia",
       "role": "D",
-      "position": "LB",
-      "secondaryPositions": [],
+      "position": "CB",
+      "secondaryPositions": [
+        "LB",
+        "CDM"
+      ],
       "careerTier": "ELITE",
       "folklore": [
         "STREET HERO"
@@ -1393,8 +1396,8 @@
         "tech": 70,
         "pass": 88,
         "finish": 54,
-        "def": 78,
-        "phys": 76,
+        "def": 92,
+        "phys": 80,
         "first_touch": 76,
         "dribbling": 70,
         "passing": 88,
@@ -1402,9 +1405,9 @@
         "finishing": 54,
         "shooting": 61,
         "stamina": 68,
-        "physical": 76,
-        "tackling": 78,
-        "positioning": 83,
+        "physical": 80,
+        "tackling": 87,
+        "positioning": 90,
         "composure": 62
       }
     },
@@ -1468,14 +1471,14 @@
         "pace": 61,
         "tech": 95,
         "pass": 85,
-        "finish": 92,
+        "finish": 98,
         "def": 32,
         "phys": 78,
         "first_touch": 92,
         "dribbling": 95,
         "passing": 85,
         "vision": 90,
-        "finishing": 92,
+        "finishing": 98,
         "shooting": 87,
         "stamina": 70,
         "physical": 78,
@@ -1795,13 +1798,13 @@
       "r": {
         "pace": 85,
         "tech": 96,
-        "pass": 91,
+        "pass": 89,
         "finish": 77,
         "def": 37,
         "phys": 56,
         "first_touch": 94,
         "dribbling": 96,
-        "passing": 91,
+        "passing": 89,
         "vision": 94,
         "finishing": 77,
         "shooting": 70,
@@ -1809,7 +1812,7 @@
         "physical": 56,
         "tackling": 37,
         "positioning": 64,
-        "composure": 87
+        "composure": 86
       }
     },
     {
@@ -1907,21 +1910,21 @@
       "r": {
         "pace": 76,
         "tech": 94,
-        "pass": 92,
+        "pass": 86,
         "finish": 76,
         "def": 40,
         "phys": 58,
-        "first_touch": 93,
-        "dribbling": 94,
-        "passing": 92,
-        "vision": 93,
+        "first_touch": 92,
+        "dribbling": 93,
+        "passing": 86,
+        "vision": 89,
         "finishing": 76,
         "shooting": 70,
         "stamina": 67,
         "physical": 58,
         "tackling": 40,
         "positioning": 66,
-        "composure": 85
+        "composure": 79
       }
     },
     {
@@ -2204,21 +2207,21 @@
       "r": {
         "pace": 72,
         "tech": 95,
-        "pass": 91,
+        "pass": 85,
         "finish": 80,
         "def": 30,
         "phys": 52,
         "first_touch": 94,
         "dribbling": 95,
-        "passing": 91,
-        "vision": 93,
+        "passing": 85,
+        "vision": 90,
         "finishing": 80,
         "shooting": 71,
         "stamina": 62,
         "physical": 52,
         "tackling": 30,
         "positioning": 61,
-        "composure": 88
+        "composure": 83
       }
     },
     {
@@ -2276,7 +2279,7 @@
         "tech": 68,
         "pass": 76,
         "finish": 30,
-        "def": 94,
+        "def": 99,
         "phys": 80,
         "first_touch": 72,
         "dribbling": 68,
@@ -2286,8 +2289,8 @@
         "shooting": 55,
         "stamina": 77,
         "physical": 80,
-        "tackling": 94,
-        "positioning": 85,
+        "tackling": 98,
+        "positioning": 88,
         "composure": 49
       }
     },
@@ -3962,12 +3965,12 @@
       "ratingType": "editorial-pl-v0.1-provisional",
       "provisionalTactical": true,
       "r": {
-        "pace": 69,
+        "pace": 72,
         "tech": 74,
         "pass": 82,
         "finish": 42,
-        "def": 90,
-        "phys": 77,
+        "def": 99,
+        "phys": 78,
         "first_touch": 78,
         "dribbling": 74,
         "passing": 82,
@@ -3975,9 +3978,9 @@
         "finishing": 42,
         "shooting": 60,
         "stamina": 73,
-        "physical": 77,
-        "tackling": 90,
-        "positioning": 86,
+        "physical": 78,
+        "tackling": 96,
+        "positioning": 91,
         "composure": 58
       }
     },
@@ -3997,11 +4000,11 @@
       "ratingType": "editorial-pl-v0.1-provisional",
       "provisionalTactical": true,
       "r": {
-        "pace": 88,
+        "pace": 89,
         "tech": 83,
         "pass": 83,
         "finish": 52,
-        "def": 90,
+        "def": 98,
         "phys": 78,
         "first_touch": 83,
         "dribbling": 83,
@@ -4011,8 +4014,8 @@
         "shooting": 65,
         "stamina": 83,
         "physical": 78,
-        "tackling": 90,
-        "positioning": 87,
+        "tackling": 94,
+        "positioning": 90,
         "composure": 68
       }
     },
@@ -4104,12 +4107,12 @@
       "ratingType": "editorial-pl-v0.1-provisional",
       "provisionalTactical": true,
       "r": {
-        "pace": 68,
+        "pace": 70,
         "tech": 71,
         "pass": 72,
         "finish": 66,
-        "def": 92,
-        "phys": 95,
+        "def": 99,
+        "phys": 96,
         "first_touch": 72,
         "dribbling": 71,
         "passing": 72,
@@ -4117,9 +4120,9 @@
         "finishing": 66,
         "shooting": 81,
         "stamina": 82,
-        "physical": 95,
-        "tackling": 92,
-        "positioning": 82,
+        "physical": 96,
+        "tackling": 98,
+        "positioning": 87,
         "composure": 69
       }
     },
@@ -4176,7 +4179,7 @@
       "ratingType": "editorial-pl-v0.1-provisional",
       "provisionalTactical": true,
       "r": {
-        "pace": 76,
+        "pace": 77,
         "tech": 88,
         "pass": 98,
         "finish": 63,
@@ -4185,7 +4188,7 @@
         "first_touch": 93,
         "dribbling": 88,
         "passing": 98,
-        "vision": 93,
+        "vision": 96,
         "finishing": 63,
         "shooting": 66,
         "stamina": 73,
@@ -4215,7 +4218,7 @@
         "tech": 78,
         "pass": 88,
         "finish": 45,
-        "def": 89,
+        "def": 96,
         "phys": 76,
         "first_touch": 83,
         "dribbling": 78,
@@ -4225,8 +4228,8 @@
         "shooting": 61,
         "stamina": 83,
         "physical": 76,
-        "tackling": 89,
-        "positioning": 89,
+        "tackling": 92,
+        "positioning": 91,
         "composure": 62
       }
     },
@@ -4320,21 +4323,21 @@
       "r": {
         "pace": 61,
         "tech": 81,
-        "pass": 94,
+        "pass": 99,
         "finish": 67,
-        "def": 81,
+        "def": 88,
         "phys": 76,
         "first_touch": 88,
         "dribbling": 81,
-        "passing": 94,
-        "vision": 88,
+        "passing": 99,
+        "vision": 95,
         "finishing": 67,
         "shooting": 72,
         "stamina": 69,
         "physical": 76,
-        "tackling": 81,
-        "positioning": 88,
-        "composure": 74
+        "tackling": 85,
+        "positioning": 90,
+        "composure": 80
       }
     },
     {
@@ -4355,21 +4358,21 @@
       "r": {
         "pace": 77,
         "tech": 77,
-        "pass": 84,
+        "pass": 87,
         "finish": 63,
-        "def": 93,
-        "phys": 84,
+        "def": 99,
+        "phys": 85,
         "first_touch": 81,
         "dribbling": 77,
-        "passing": 84,
-        "vision": 81,
+        "passing": 87,
+        "vision": 82,
         "finishing": 63,
         "shooting": 74,
         "stamina": 81,
-        "physical": 84,
-        "tackling": 93,
-        "positioning": 89,
-        "composure": 70
+        "physical": 85,
+        "tackling": 99,
+        "positioning": 95,
+        "composure": 72
       }
     },
     {
@@ -4390,21 +4393,21 @@
       "r": {
         "pace": 73,
         "tech": 89,
-        "pass": 91,
+        "pass": 93,
         "finish": 88,
         "def": 71,
         "phys": 75,
         "first_touch": 90,
         "dribbling": 89,
-        "passing": 91,
-        "vision": 90,
+        "passing": 93,
+        "vision": 91,
         "finishing": 88,
         "shooting": 82,
         "stamina": 74,
         "physical": 75,
         "tackling": 71,
         "positioning": 81,
-        "composure": 89
+        "composure": 91
       }
     },
     {
@@ -4427,13 +4430,13 @@
       "r": {
         "pace": 77,
         "tech": 96,
-        "pass": 95,
+        "pass": 93,
         "finish": 78,
         "def": 44,
         "phys": 56,
         "first_touch": 96,
         "dribbling": 96,
-        "passing": 95,
+        "passing": 93,
         "vision": 96,
         "finishing": 78,
         "shooting": 67,
@@ -4441,7 +4444,7 @@
         "physical": 56,
         "tackling": 44,
         "positioning": 70,
-        "composure": 87
+        "composure": 86
       }
     },
     {
@@ -4462,21 +4465,21 @@
       "r": {
         "pace": 78,
         "tech": 85,
-        "pass": 92,
+        "pass": 96,
         "finish": 89,
         "def": 57,
         "phys": 72,
         "first_touch": 89,
         "dribbling": 85,
-        "passing": 92,
-        "vision": 89,
+        "passing": 96,
+        "vision": 90,
         "finishing": 89,
         "shooting": 81,
         "stamina": 75,
         "physical": 72,
         "tackling": 57,
         "positioning": 75,
-        "composure": 87
+        "composure": 90
       }
     },
     {
@@ -4497,13 +4500,13 @@
       "r": {
         "pace": 70,
         "tech": 87,
-        "pass": 95,
+        "pass": 96,
         "finish": 82,
         "def": 51,
         "phys": 63,
         "first_touch": 91,
         "dribbling": 87,
-        "passing": 95,
+        "passing": 96,
         "vision": 91,
         "finishing": 82,
         "shooting": 73,
@@ -4511,7 +4514,7 @@
         "physical": 63,
         "tackling": 51,
         "positioning": 73,
-        "composure": 85
+        "composure": 86
       }
     },
     {
@@ -4532,21 +4535,21 @@
       "r": {
         "pace": 80,
         "tech": 93,
-        "pass": 92,
+        "pass": 89,
         "finish": 84,
         "def": 66,
         "phys": 93,
         "first_touch": 93,
         "dribbling": 93,
-        "passing": 92,
-        "vision": 93,
+        "passing": 89,
+        "vision": 92,
         "finishing": 84,
         "shooting": 89,
         "stamina": 87,
         "physical": 93,
         "tackling": 66,
         "positioning": 79,
-        "composure": 89
+        "composure": 86
       }
     },
     {
@@ -4569,13 +4572,13 @@
       "r": {
         "pace": 79,
         "tech": 95,
-        "pass": 86,
+        "pass": 88,
         "finish": 66,
         "def": 79,
         "phys": 94,
         "first_touch": 91,
         "dribbling": 95,
-        "passing": 86,
+        "passing": 88,
         "vision": 91,
         "finishing": 66,
         "shooting": 80,
@@ -4583,7 +4586,7 @@
         "physical": 94,
         "tackling": 79,
         "positioning": 83,
-        "composure": 81
+        "composure": 82
       }
     },
     {
@@ -4606,7 +4609,7 @@
         "tech": 82,
         "pass": 86,
         "finish": 75,
-        "def": 93,
+        "def": 97,
         "phys": 91,
         "first_touch": 84,
         "dribbling": 82,
@@ -4616,7 +4619,7 @@
         "shooting": 83,
         "stamina": 85,
         "physical": 91,
-        "tackling": 93,
+        "tackling": 94,
         "positioning": 90,
         "composure": 79
       }
@@ -4967,23 +4970,23 @@
       "ratingType": "editorial-pl-v0.1-provisional",
       "provisionalTactical": true,
       "r": {
-        "pace": 83,
+        "pace": 86,
         "tech": 96,
-        "pass": 86,
+        "pass": 88,
         "finish": 85,
         "def": 39,
         "phys": 65,
         "first_touch": 91,
         "dribbling": 96,
-        "passing": 86,
-        "vision": 91,
+        "passing": 88,
+        "vision": 92,
         "finishing": 85,
         "shooting": 75,
         "stamina": 74,
         "physical": 65,
         "tackling": 39,
         "positioning": 63,
-        "composure": 91
+        "composure": 92
       }
     },
     {
@@ -5008,14 +5011,14 @@
         "pace": 95,
         "tech": 78,
         "pass": 66,
-        "finish": 93,
+        "finish": 99,
         "def": 45,
         "phys": 80,
         "first_touch": 72,
         "dribbling": 78,
         "passing": 66,
         "vision": 72,
-        "finishing": 93,
+        "finishing": 99,
         "shooting": 87,
         "stamina": 88,
         "physical": 80,
@@ -5044,8 +5047,8 @@
         "tech": 73,
         "pass": 77,
         "finish": 32,
-        "def": 97,
-        "phys": 90,
+        "def": 88,
+        "phys": 89,
         "first_touch": 76,
         "dribbling": 70,
         "passing": 77,
@@ -5053,9 +5056,9 @@
         "finishing": 32,
         "shooting": 47,
         "stamina": 85,
-        "physical": 90,
-        "tackling": 97,
-        "positioning": 96,
+        "physical": 89,
+        "tackling": 91,
+        "positioning": 92,
         "composure": 88
       }
     },
@@ -5080,21 +5083,21 @@
       "r": {
         "pace": 62,
         "tech": 96,
-        "pass": 90,
+        "pass": 85,
         "finish": 96,
         "def": 28,
         "phys": 72,
         "first_touch": 97,
         "dribbling": 93,
-        "passing": 90,
-        "vision": 93,
+        "passing": 85,
+        "vision": 91,
         "finishing": 96,
         "shooting": 98,
         "stamina": 69,
         "physical": 72,
         "tackling": 28,
         "positioning": 67,
-        "composure": 94
+        "composure": 89
       }
     },
     {
@@ -5265,21 +5268,21 @@
       "r": {
         "pace": 83,
         "tech": 88,
-        "pass": 92,
+        "pass": 86,
         "finish": 81,
         "def": 53,
         "phys": 76,
-        "first_touch": 89,
-        "dribbling": 86,
-        "passing": 92,
-        "vision": 95,
+        "first_touch": 88,
+        "dribbling": 85,
+        "passing": 86,
+        "vision": 92,
         "finishing": 81,
         "shooting": 90,
         "stamina": 85,
         "physical": 76,
         "tackling": 54,
         "positioning": 76,
-        "composure": 88
+        "composure": 83
       }
     },
     {
@@ -5386,14 +5389,14 @@
         "pace": 69,
         "tech": 88,
         "pass": 81,
-        "finish": 93,
+        "finish": 87,
         "def": 29,
         "phys": 94,
         "first_touch": 92,
         "dribbling": 85,
         "passing": 81,
         "vision": 82,
-        "finishing": 93,
+        "finishing": 87,
         "shooting": 91,
         "stamina": 74,
         "physical": 94,
@@ -5621,22 +5624,22 @@
       "provisionalTactical": true,
       "r": {
         "pace": 75,
-        "tech": 97,
-        "pass": 94,
+        "tech": 95,
+        "pass": 85,
         "finish": 81,
         "def": 42,
         "phys": 68,
         "first_touch": 98,
-        "dribbling": 96,
-        "passing": 94,
-        "vision": 97,
+        "dribbling": 93,
+        "passing": 85,
+        "vision": 90,
         "finishing": 81,
         "shooting": 84,
         "stamina": 76,
         "physical": 68,
         "tackling": 42,
         "positioning": 79,
-        "composure": 91
+        "composure": 82
       }
     },
     {
@@ -5662,18 +5665,18 @@
         "pass": 66,
         "finish": 99,
         "def": 25,
-        "phys": 78,
+        "phys": 76,
         "first_touch": 83,
         "dribbling": 75,
         "passing": 66,
         "vision": 71,
         "finishing": 99,
-        "shooting": 94,
+        "shooting": 91,
         "stamina": 79,
-        "physical": 78,
+        "physical": 76,
         "tackling": 25,
         "positioning": 99,
-        "composure": 96
+        "composure": 95
       }
     },
     {
@@ -5696,8 +5699,8 @@
         "tech": 86,
         "pass": 83,
         "finish": 35,
-        "def": 97,
-        "phys": 80,
+        "def": 89,
+        "phys": 79,
         "first_touch": 86,
         "dribbling": 79,
         "passing": 83,
@@ -5705,9 +5708,9 @@
         "finishing": 35,
         "shooting": 51,
         "stamina": 81,
-        "physical": 80,
-        "tackling": 96,
-        "positioning": 98,
+        "physical": 79,
+        "tackling": 91,
+        "positioning": 94,
         "composure": 92
       }
     },
@@ -5731,14 +5734,14 @@
       "provisionalTactical": true,
       "r": {
         "pace": 80,
-        "tech": 98,
-        "pass": 97,
+        "tech": 94,
+        "pass": 90,
         "finish": 85,
         "def": 30,
         "phys": 65,
-        "first_touch": 98,
-        "dribbling": 97,
-        "passing": 97,
+        "first_touch": 93,
+        "dribbling": 92,
+        "passing": 90,
         "vision": 99,
         "finishing": 85,
         "shooting": 87,
@@ -5746,7 +5749,7 @@
         "physical": 65,
         "tackling": 30,
         "positioning": 82,
-        "composure": 93
+        "composure": 81
       }
     },
     {
@@ -5808,17 +5811,17 @@
       "ratingType": "editorial-user-approved-v1",
       "provisionalTactical": true,
       "r": {
-        "pace": 92,
+        "pace": 90,
         "tech": 87,
         "pass": 77,
-        "finish": 90,
+        "finish": 88,
         "def": 29,
         "phys": 91,
         "first_touch": 87,
         "dribbling": 89,
         "passing": 77,
         "vision": 78,
-        "finishing": 90,
+        "finishing": 88,
         "shooting": 88,
         "stamina": 84,
         "physical": 91,
@@ -5846,14 +5849,14 @@
         "pace": 75,
         "tech": 78,
         "pass": 69,
-        "finish": 93,
+        "finish": 90,
         "def": 33,
         "phys": 88,
         "first_touch": 82,
         "dribbling": 75,
         "passing": 69,
         "vision": 74,
-        "finishing": 93,
+        "finishing": 90,
         "shooting": 91,
         "stamina": 83,
         "physical": 88,
@@ -5883,22 +5886,22 @@
       "provisionalTactical": true,
       "r": {
         "pace": 75,
-        "tech": 96,
-        "pass": 91,
+        "tech": 95,
+        "pass": 83,
         "finish": 92,
         "def": 32,
         "phys": 71,
-        "first_touch": 95,
-        "dribbling": 94,
-        "passing": 91,
-        "vision": 94,
+        "first_touch": 93,
+        "dribbling": 92,
+        "passing": 83,
+        "vision": 89,
         "finishing": 92,
         "shooting": 96,
         "stamina": 77,
         "physical": 71,
         "tackling": 32,
         "positioning": 85,
-        "composure": 91
+        "composure": 84
       }
     },
     {
@@ -5921,21 +5924,21 @@
       "r": {
         "pace": 78,
         "tech": 84,
-        "pass": 88,
+        "pass": 91,
         "finish": 78,
         "def": 86,
         "phys": 84,
         "first_touch": 86,
         "dribbling": 82,
-        "passing": 88,
-        "vision": 87,
+        "passing": 91,
+        "vision": 88,
         "finishing": 78,
         "shooting": 83,
         "stamina": 91,
         "physical": 84,
         "tackling": 86,
         "positioning": 86,
-        "composure": 90
+        "composure": 93
       }
     },
     {
@@ -5998,22 +6001,22 @@
       "provisionalTactical": true,
       "r": {
         "pace": 67,
-        "tech": 96,
-        "pass": 97,
+        "tech": 95,
+        "pass": 89,
         "finish": 92,
         "def": 32,
         "phys": 70,
-        "first_touch": 96,
-        "dribbling": 91,
-        "passing": 97,
-        "vision": 98,
+        "first_touch": 94,
+        "dribbling": 89,
+        "passing": 89,
+        "vision": 92,
         "finishing": 92,
         "shooting": 93,
         "stamina": 76,
         "physical": 70,
         "tackling": 32,
         "positioning": 85,
-        "composure": 96
+        "composure": 88
       }
     },
     {
@@ -6036,15 +6039,15 @@
       "ratingType": "editorial-user-approved-v1",
       "provisionalTactical": true,
       "r": {
-        "pace": 88,
+        "pace": 86,
         "tech": 93,
-        "pass": 87,
+        "pass": 85,
         "finish": 89,
         "def": 30,
         "phys": 64,
         "first_touch": 93,
         "dribbling": 94,
-        "passing": 87,
+        "passing": 85,
         "vision": 91,
         "finishing": 89,
         "shooting": 88,
@@ -6075,17 +6078,17 @@
       "ratingType": "editorial-user-approved-v1",
       "provisionalTactical": true,
       "r": {
-        "pace": 90,
+        "pace": 89,
         "tech": 87,
         "pass": 80,
-        "finish": 91,
+        "finish": 89,
         "def": 39,
         "phys": 98,
         "first_touch": 85,
         "dribbling": 88,
         "passing": 80,
         "vision": 80,
-        "finishing": 91,
+        "finishing": 89,
         "shooting": 99,
         "stamina": 82,
         "physical": 98,
@@ -6228,17 +6231,17 @@
       "ratingType": "editorial-user-approved-v1",
       "provisionalTactical": true,
       "r": {
-        "pace": 97,
+        "pace": 92,
         "tech": 80,
         "pass": 66,
-        "finish": 91,
+        "finish": 86,
         "def": 29,
         "phys": 81,
         "first_touch": 80,
         "dribbling": 84,
         "passing": 66,
         "vision": 69,
-        "finishing": 91,
+        "finishing": 86,
         "shooting": 94,
         "stamina": 82,
         "physical": 81,
@@ -6307,15 +6310,15 @@
         "pace": 71,
         "tech": 84,
         "pass": 76,
-        "finish": 94,
+        "finish": 88,
         "def": 32,
         "phys": 92,
         "first_touch": 84,
         "dribbling": 79,
         "passing": 76,
         "vision": 79,
-        "finishing": 94,
-        "shooting": 97,
+        "finishing": 88,
+        "shooting": 96,
         "stamina": 81,
         "physical": 92,
         "tackling": 32,
@@ -6346,22 +6349,22 @@
       "provisionalTactical": true,
       "r": {
         "pace": 73,
-        "tech": 96,
-        "pass": 96,
+        "tech": 92,
+        "pass": 90,
         "finish": 83,
         "def": 40,
         "phys": 62,
-        "first_touch": 95,
-        "dribbling": 89,
-        "passing": 96,
-        "vision": 95,
+        "first_touch": 90,
+        "dribbling": 84,
+        "passing": 90,
+        "vision": 87,
         "finishing": 83,
         "shooting": 97,
         "stamina": 82,
         "physical": 62,
         "tackling": 40,
         "positioning": 82,
-        "composure": 94
+        "composure": 82
       }
     },
     {
@@ -6465,14 +6468,14 @@
         "pace": 78,
         "tech": 89,
         "pass": 77,
-        "finish": 95,
+        "finish": 89,
         "def": 29,
         "phys": 78,
         "first_touch": 92,
         "dribbling": 87,
         "passing": 77,
         "vision": 81,
-        "finishing": 95,
+        "finishing": 89,
         "shooting": 94,
         "stamina": 80,
         "physical": 78,
@@ -6503,22 +6506,22 @@
       "provisionalTactical": true,
       "r": {
         "pace": 87,
-        "tech": 98,
-        "pass": 91,
+        "tech": 97,
+        "pass": 84,
         "finish": 82,
         "def": 30,
         "phys": 61,
-        "first_touch": 97,
-        "dribbling": 99,
-        "passing": 91,
-        "vision": 96,
+        "first_touch": 95,
+        "dribbling": 97,
+        "passing": 84,
+        "vision": 91,
         "finishing": 82,
         "shooting": 85,
         "stamina": 78,
         "physical": 61,
         "tackling": 30,
         "positioning": 85,
-        "composure": 86
+        "composure": 79
       }
     },
     {
@@ -6545,20 +6548,20 @@
         "pace": 87,
         "tech": 85,
         "pass": 72,
-        "finish": 94,
+        "finish": 84,
         "def": 31,
-        "phys": 93,
+        "phys": 92,
         "first_touch": 86,
         "dribbling": 84,
         "passing": 72,
         "vision": 76,
-        "finishing": 94,
-        "shooting": 97,
+        "finishing": 84,
+        "shooting": 94,
         "stamina": 84,
-        "physical": 93,
+        "physical": 92,
         "tackling": 31,
         "positioning": 94,
-        "composure": 90
+        "composure": 89
       }
     },
     {
@@ -6583,7 +6586,7 @@
         "tech": 73,
         "pass": 76,
         "finish": 42,
-        "def": 95,
+        "def": 88,
         "phys": 92,
         "first_touch": 75,
         "dribbling": 61,
@@ -6593,8 +6596,8 @@
         "shooting": 72,
         "stamina": 81,
         "physical": 92,
-        "tackling": 96,
-        "positioning": 97,
+        "tackling": 92,
+        "positioning": 95,
         "composure": 94
       }
     },
@@ -6619,17 +6622,17 @@
       "ratingType": "editorial-user-approved-v1",
       "provisionalTactical": true,
       "r": {
-        "pace": 91,
+        "pace": 90,
         "tech": 84,
         "pass": 70,
-        "finish": 87,
+        "finish": 86,
         "def": 30,
         "phys": 77,
         "first_touch": 83,
         "dribbling": 87,
         "passing": 70,
         "vision": 73,
-        "finishing": 87,
+        "finishing": 86,
         "shooting": 85,
         "stamina": 86,
         "physical": 77,
@@ -6741,14 +6744,14 @@
         "pace": 90,
         "tech": 81,
         "pass": 65,
-        "finish": 95,
+        "finish": 92,
         "def": 30,
         "phys": 86,
         "first_touch": 84,
         "dribbling": 84,
         "passing": 65,
         "vision": 68,
-        "finishing": 95,
+        "finishing": 92,
         "shooting": 93,
         "stamina": 84,
         "physical": 86,
@@ -6778,22 +6781,22 @@
       "provisionalTactical": true,
       "r": {
         "pace": 82,
-        "tech": 96,
-        "pass": 93,
+        "tech": 95,
+        "pass": 86,
         "finish": 84,
         "def": 34,
         "phys": 65,
-        "first_touch": 95,
-        "dribbling": 96,
-        "passing": 93,
-        "vision": 94,
+        "first_touch": 93,
+        "dribbling": 94,
+        "passing": 86,
+        "vision": 89,
         "finishing": 84,
         "shooting": 91,
         "stamina": 82,
         "physical": 65,
         "tackling": 34,
         "positioning": 82,
-        "composure": 88
+        "composure": 81
       }
     },
     {
@@ -6818,21 +6821,21 @@
       "r": {
         "pace": 70,
         "tech": 92,
-        "pass": 95,
+        "pass": 88,
         "finish": 82,
         "def": 45,
         "phys": 69,
-        "first_touch": 93,
-        "dribbling": 87,
-        "passing": 95,
-        "vision": 95,
+        "first_touch": 92,
+        "dribbling": 86,
+        "passing": 88,
+        "vision": 91,
         "finishing": 82,
         "shooting": 96,
         "stamina": 82,
         "physical": 69,
         "tackling": 45,
         "positioning": 82,
-        "composure": 91
+        "composure": 84
       }
     },
     {
@@ -7266,15 +7269,15 @@
         "v": 99
       },
       {
+        "id": "michael-carrick",
+        "v": 99
+      },
+      {
         "id": "kevin-de-bruyne",
         "v": 98
       },
       {
         "id": "zinedine-zidane",
-        "v": 98
-      },
-      {
-        "id": "david-beckham",
         "v": 98
       }
     ],
@@ -7310,24 +7313,24 @@
         "v": 99
       },
       {
+        "id": "ricardo-carvalho",
+        "v": 99
+      },
+      {
         "id": "alessandro-nesta",
         "v": 99
       },
       {
-        "id": "ngolo-kante",
-        "v": 98
+        "id": "gary-neville",
+        "v": 99
       },
       {
-        "id": "fabio-cannavaro",
-        "v": 98
+        "id": "branislav-ivanovic",
+        "v": 99
       },
       {
-        "id": "giorgio-chiellini",
-        "v": 97
-      },
-      {
-        "id": "lilian-thuram",
-        "v": 97
+        "id": "fernandinho",
+        "v": 99
       }
     ],
     "phys": [
@@ -7422,15 +7425,15 @@
         "v": 99
       },
       {
+        "id": "michael-carrick",
+        "v": 99
+      },
+      {
         "id": "kevin-de-bruyne",
         "v": 98
       },
       {
         "id": "zinedine-zidane",
-        "v": 98
-      },
-      {
-        "id": "david-beckham",
         "v": 98
       }
     ],
@@ -7508,7 +7511,7 @@
         "v": 98
       },
       {
-        "id": "adriano",
+        "id": "gabriel-batistuta",
         "v": 97
       }
     ],
@@ -7574,20 +7577,20 @@
         "v": 99
       },
       {
+        "id": "fernandinho",
+        "v": 99
+      },
+      {
         "id": "ngolo-kante",
+        "v": 98
+      },
+      {
+        "id": "ricardo-carvalho",
         "v": 98
       },
       {
         "id": "fabio-cannavaro",
         "v": 98
-      },
-      {
-        "id": "giorgio-chiellini",
-        "v": 97
-      },
-      {
-        "id": "lilian-thuram",
-        "v": 97
       }
     ],
     "positioning": [
@@ -7604,7 +7607,7 @@
         "v": 99
       },
       {
-        "id": "miodrag-belodedici",
+        "id": "gilberto-silva",
         "v": 98
       },
       {
@@ -7612,7 +7615,7 @@
         "v": 98
       },
       {
-        "id": "davor-suker",
+        "id": "javier-mascherano",
         "v": 97
       }
     ],
@@ -7647,7 +7650,7 @@
     "pace": {
       "min": 42,
       "max": 99,
-      "mean": 79.4
+      "mean": 79.5
     },
     "tech": {
       "min": 56,
@@ -7657,47 +7660,47 @@
     "pass": {
       "min": 61,
       "max": 99,
-      "mean": 83.5
+      "mean": 83.3
     },
     "finish": {
       "min": 25,
       "max": 99,
-      "mean": 77.1
+      "mean": 76.9
     },
     "def": {
       "min": 20,
       "max": 99,
-      "mean": 56.8
+      "mean": 57.1
     },
     "phys": {
       "min": 50,
       "max": 99,
-      "mean": 79
+      "mean": 79.1
     },
     "first_touch": {
       "min": 59,
       "max": 100,
-      "mean": 86
+      "mean": 85.9
     },
     "dribbling": {
       "min": 56,
       "max": 100,
-      "mean": 85.5
+      "mean": 85.4
     },
     "passing": {
       "min": 61,
       "max": 99,
-      "mean": 83.5
+      "mean": 83.3
     },
     "vision": {
       "min": 60,
       "max": 99,
-      "mean": 84.8
+      "mean": 84.7
     },
     "finishing": {
       "min": 25,
       "max": 99,
-      "mean": 77.1
+      "mean": 76.9
     },
     "shooting": {
       "min": 47,
@@ -7712,22 +7715,22 @@
     "physical": {
       "min": 50,
       "max": 99,
-      "mean": 79
+      "mean": 79.1
     },
     "tackling": {
       "min": 20,
       "max": 99,
-      "mean": 56.9
+      "mean": 57.1
     },
     "positioning": {
       "min": 43,
       "max": 100,
-      "mean": 77.4
+      "mean": 77.6
     },
     "composure": {
       "min": 42,
       "max": 100,
-      "mean": 82.5
+      "mean": 82.3
     }
   },
   "rosterVersion": "editorial-v1.6-184+ratings-v1.1-provisional",

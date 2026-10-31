@@ -6,9 +6,9 @@ const c={window:{THE_CAGE_PLAYERS:ps}};vm.createContext(c);vm.runInContext(read(
 const o=c.window.CageOverall,sorted=ps.slice().sort((a,b)=>b.overall-a.overall||a.name.localeCompare(b.name,'en'));
 const bins={};for(const p of sorted){const band=p.overall>=90?'90–99':p.overall>=85?'85–89':p.overall>=80?'80–84':p.overall>=75?'75–79':'1–74';bins[band]=(bins[band]||0)+1;}
 const method=[
- '# THE CAGE: OVR V2.0 Formula and Archetypes',
+ '# THE CAGE: OVR V2.1 Formula and Archetypes',
  '',
- '> V2.0 PROVISIONAL: a custom, position-sensitive formula for our 17 prime attributes. Three attributes are duplicated aliases, so we use 14 unique skills.',
+ '> V2.1 OWNER-APPROVED ELITE calibration: a custom positional formula using 14 independent prime attribute inputs, 27 positional archetypes, and no individual OVR overrides.',
  '',
  '## 1. Eight skill domains',
  '',
@@ -37,15 +37,15 @@ const method=[
  '',
  'For each archetype: score = SUM(domain value × positional percentage) / 100.',
  'Raw OVR = clamp(round(highest archetype score), 1, 99).',
- 'Displayed OVR = raw OVR, unless a transparent provisional correction is recorded.',
+ 'Displayed OVR = raw formula OVR. All 67 approved ELITE targets come from recalibrated input stats rather than overrides.',
  '',
  '## 4. Exclusions and limitations',
  '',
  '- Career tier, fame, trophies, club, folklore, nationality and special traits provide zero OVR bonus.',
  '- OVR is display-only. It does not influence match results, tactics or card selection probability.',
- '- Prime rating inputs are unchanged. Most of the 184 historical attribute dossiers are still editorial estimates and require further auditing.',
- '- Exactly one explicit, provisional calibration remains: Alex de Souza displays 89 despite raw V2 = 94. His technical input grades are still too generous to treat the raw calculation as authoritative.',
- '- No individual overrides for the other 183 players.',
+ '- The owner-approved 67 ELITE targets were applied through explicit source-attribute revisions; all 117 non-ELITE player profiles remain unchanged. Historical ratings outside this batch remain subject to future review.',
+ '- Alex de Souza now has 89 RAW formula OVR, with playmaking inputs recalibrated. No hidden manual adjustment remains.',
+ '- No individual OVR overrides for any of the 184 players. Approved source: proposals/ELITE_OVR_67_APPROVED.json.',
  '- Source code: src/overall.js. This document is generated from the same weights as the game.',
  '',
  '## Verification',
@@ -57,9 +57,9 @@ const method=[
  ''
 ];
 const overview=[
- '# THE CAGE: All 184 OVR Ratings, V2.0',
+ '# THE CAGE: All 184 OVR Ratings, V2.1',
  '',
- '> Provisional, transparent positional formula using 14 unique prime attributes and 25 archetypes. Career tier is separate from OVR.',
+ '> Owner-approved ELITE 67 prime skill recalibration; 27 archetypes; no hardcoded OVR values. Career tier remains separate from OVR.',
  '',
  '## Distribution',
  '',
@@ -73,13 +73,13 @@ const overview=[
  '|---:|---|---|---|---|',
  ...sorted.map(p=>'| **'+p.overall+'** | '+p.name.replace(/\|/g,'\\|')+' | '+p.position+' | '+o.evaluate(p).archetype+' | '+p.careerTier+' |'),
  '',
- '## Important exception',
+ '## Owner-approved 67-player ELITE calibration',
  '',
- 'Alex de Souza: raw V2 OVR 94, displayed 89 pending owner review of his unusually high technical inputs. No other player has an individual OVR override.',
+ 'All 67 approved ELITE target OVRs are formula-derived, including Alex de Souza at 89. No player has an individual OVR override. See proposals/ELITE_OVR_67_APPROVED.json for every before/after prime-rating change.',
  '',
  'Formula reference: docs/OVERALL_V2_METHOD.md. Runtime: src/overall.js.',
  ''
 ];
 fs.writeFileSync(path.join(root,'docs/OVERALL_V2_METHOD.md'),method.join('\n').trimEnd()+'\n','utf8');
 fs.writeFileSync(path.join(root,'docs/OVERALL_RATINGS_184.md'),overview.join('\n').trimEnd()+'\n','utf8');
-console.log('WROTE V2 method, '+sorted.length+' player OVRs, '+Object.values(o.PROFILES).reduce((n,a)=>n+a.length,0)+' archetypes, distribution '+JSON.stringify(bins));
+console.log('WROTE V2.1 method, '+sorted.length+' player OVRs, '+Object.values(o.PROFILES).reduce((n,a)=>n+a.length,0)+' archetypes, distribution '+JSON.stringify(bins));
