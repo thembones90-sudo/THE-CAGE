@@ -1,30 +1,65 @@
-// THE CAGE OVR register. Rebuild after any roster/ratings/formula change.
-const fs=require('fs'),vm=require('vm'),path=require('path');
+// THE CAGE V2: generate formula documentation and 184-player OVR registry from source of truth.
+const fs=require('fs'),path=require('path'),vm=require('vm');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
-const players=JSON.parse(read('docs/roster-audit-184-current.json')).players;
-const c={window:{THE_CAGE_PLAYERS:players}};vm.createContext(c);vm.runInContext(read('src/overall.js'),c);
-const listed=players.slice().sort((a,b)=>b.overall-a.overall||a.name.localeCompare(b.name,'en'));
-const bins={};for(const p of listed){const tier=p.overall>=90?'90–99':p.overall>=85?'85–89':p.overall>=80?'80–84':p.overall>=75?'75–79':'1–74';bins[tier]=(bins[tier]||0)+1}
-const lines=[
- '# THE CAGE: 184 Player Overall Ratings',
+const ps=JSON.parse(read('docs/roster-audit-184-current.json')).players;
+const c={window:{THE_CAGE_PLAYERS:ps}};vm.createContext(c);vm.runInContext(read('src/overall.js'),c);
+const o=c.window.CageOverall,sorted=ps.slice().sort((a,b)=>b.overall-a.overall||a.name.localeCompare(b.name,'en'));
+const bins={};for(const p of sorted){const band=p.overall>=90?'90–99':p.overall>=85?'85–89':p.overall>=80?'80–84':p.overall>=75?'75–79':'1–74';bins[band]=(bins[band]||0)+1;}
+const method=[
+ '# THE CAGE: OVR V2.0 Formula and Archetypes',
  '',
- '> **OVR V1.1 · provisional position-aware editorial indicator with explicitly documented calibration.** Not a FIFA/EA FC rating, objective historical ranking, career tier, or match engine input.',
+ '> V2.0 PROVISIONAL: a custom, position-sensitive formula for our 17 prime attributes. Three attributes are duplicated aliases, so we use 14 unique skills.',
  '',
- '## Method',
+ '## 1. Eight skill domains',
  '',
- '- **Position-aware:** weighted combination of core and relevant extended prime ratings, rounded to nearest integer.',
- '- **No tier inflation:** TITAN, LEGEND, ELITE, folklore, traits, and provisional tactical attributes contribute zero to OVR.',
- '- **Position profiles:** CM supports a ball-winning profile; fullbacks support a playmaking profile. The higher relevant value applies without changing player position.',
- '- **Bounds:** integer 1–99. The uncalibrated value uses prime ratings. Editorial exceptions are explicitly recorded and subject to individual review.',
- '- **Match impact:** none. OVR is for card display only; simulations use the existing engine and player inputs.',
- '- **Raw ratings remain untouched.** OVR is recomputed from the current rated player.',
+ '| Domain | Calculation |',
+ '|---|---|',
+ '| Mobility | PACE |',
+ '| Ball mastery | 0.30 TECH + 0.35 FIRST TOUCH + 0.35 DRIBBLING |',
+ '| Creation | 0.58 PASS + 0.42 VISION |',
+ '| Scoring | 0.70 FINISH + 0.30 SHOOTING |',
+ '| Defending | 0.45 DEF + 0.30 TACKLING + 0.25 POSITIONING |',
+ '| Physical | PHYS |',
+ '| Composure | COMPOSURE |',
+ '| Endurance | STAMINA |',
  '',
- '## Provisional manual calibration',
+ 'PASS and PASSING, FINISH and FINISHING, PHYS and PHYSICAL are duplicate fields; the extra copies contribute nothing. No tactical supplemental attributes are included.',
  '',
- '- **Alex de Souza:** uncalibrated CAM score **95**; displayed OVR **89** pending owner review. His underlying 17 attributes, career tier and folklore remain unchanged.',
- '- **Reason:** the CAM weights heavily double-count correlated technique, passing, vision and first-touch attributes, leading to an implausibly high cross-position OVR.',
- '- **Limitation:** the broader positional OVR model remains an editorial draft. Other surprising ratings, especially midfield specialists, still need holistic review. No other overall value was changed in V1.1.',
- '- **Source of explicit calibration:** `CageOverall.CALIBRATIONS` in `src/overall.js`.',
+ '## 2. Position archetypes (all percentages)',
+ '',
+ 'Each card computes every archetype of its natural position and keeps the highest result. Every row below has weights summing to exactly 100%. This rewards a traditional poacher, a false nine, a deep orchestrator, a midfield ball-winner or a defending fullback for their actual strengths rather than one universal skill mix.',
+ '',
+ '| Position | Archetype | Mobility | Control | Creation | Scoring | Defending | Physical | Composure | Endurance |',
+ '|---|---|---:|---:|---:|---:|---:|---:|---:|---:|',
+ ...Object.entries(o.PROFILES).flatMap(([pos,arr])=>arr.map(v=>'| '+[pos,v.name,...['mobility','control','creation','scoring','defending','power','intelligence','engine'].map(k=>v.w[k]||0)].join(' | ')+' |')),
+ '',
+ '## 3. Final formula',
+ '',
+ 'For each archetype: score = SUM(domain value × positional percentage) / 100.',
+ 'Raw OVR = clamp(round(highest archetype score), 1, 99).',
+ 'Displayed OVR = raw OVR, unless a transparent provisional correction is recorded.',
+ '',
+ '## 4. Exclusions and limitations',
+ '',
+ '- Career tier, fame, trophies, club, folklore, nationality and special traits provide zero OVR bonus.',
+ '- OVR is display-only. It does not influence match results, tactics or card selection probability.',
+ '- Prime rating inputs are unchanged. Most of the 184 historical attribute dossiers are still editorial estimates and require further auditing.',
+ '- Exactly one explicit, provisional calibration remains: Alex de Souza displays 89 despite raw V2 = 94. His technical input grades are still too generous to treat the raw calculation as authoritative.',
+ '- No individual overrides for the other 183 players.',
+ '- Source code: src/overall.js. This document is generated from the same weights as the game.',
+ '',
+ '## Verification',
+ '',
+ 'Run: node tests/overall-v2.cjs',
+ 'Run: node tests/overall-match-invariance.cjs',
+ 'Run: node tests/ui-regression.cjs',
+ 'Run: node tests/random-draft.cjs',
+ ''
+];
+const overview=[
+ '# THE CAGE: All 184 OVR Ratings, V2.0',
+ '',
+ '> Provisional, transparent positional formula using 14 unique prime attributes and 25 archetypes. Career tier is separate from OVR.',
  '',
  '## Distribution',
  '',
@@ -32,21 +67,19 @@ const lines=[
  '|---|---:|',
  ...['90–99','85–89','80–84','75–79','1–74'].map(k=>'| '+k+' | '+(bins[k]||0)+' |'),
  '',
- '## Full roster',
+ '## All players',
  '',
- '| OVR | Player | Position | Career tier |',
- '|---:|---|---|---|',
- ...listed.map(p=>'| **'+p.overall+'** | '+p.name.replace(/\|/g,'\\|')+' | '+p.position+' | '+(p.careerTier||'')+' |'),
+ '| OVR | Player | Natural position | Strongest archetype | Career tier |',
+ '|---:|---|---|---|---|',
+ ...sorted.map(p=>'| **'+p.overall+'** | '+p.name.replace(/\|/g,'\\|')+' | '+p.position+' | '+o.evaluate(p).archetype+' | '+p.careerTier+' |'),
  '',
- '## Verification',
+ '## Important exception',
  '',
- '- Run node tests/overall-184.cjs to check all 184 ratings and invariants.',
- '- Run node tests/overall-alex-calibration.cjs to prove Alex 95 → 89 while other 183 remain identical.',
- '- Run node tests/overall-match-invariance.cjs to verify T3 results are identical with and without OVR.',
- '- Run node tests/ui-regression.cjs to check claimed-tile OVR in headless Chrome.',
- '- Run node tests/random-draft.cjs to check all card badges and squad ratings.',
+ 'Alex de Souza: raw V2 OVR 94, displayed 89 pending owner review of his unusually high technical inputs. No other player has an individual OVR override.',
  '',
- '**Source:** src/overall.js. Main card UI: src/showdown.js. Draft card UI: src/random-draft.js.'
+ 'Formula reference: docs/OVERALL_V2_METHOD.md. Runtime: src/overall.js.',
+ ''
 ];
-fs.writeFileSync(path.join(root,'docs/OVERALL_RATINGS_184.md'),lines.join('\n')+'\n');
-console.log('Created 184-entry OVR register, distribution '+JSON.stringify(bins));
+fs.writeFileSync(path.join(root,'docs/OVERALL_V2_METHOD.md'),method.join('\n').trimEnd()+'\n','utf8');
+fs.writeFileSync(path.join(root,'docs/OVERALL_RATINGS_184.md'),overview.join('\n').trimEnd()+'\n','utf8');
+console.log('WROTE V2 method, '+sorted.length+' player OVRs, '+Object.values(o.PROFILES).reduce((n,a)=>n+a.length,0)+' archetypes, distribution '+JSON.stringify(bins));

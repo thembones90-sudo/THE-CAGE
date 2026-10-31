@@ -1,228 +1,208 @@
-# THE CAGE: 184 Player Overall Ratings
+# THE CAGE: All 184 OVR Ratings, V2.0
 
-> **OVR V1.1 · provisional position-aware editorial indicator with explicitly documented calibration.** Not a FIFA/EA FC rating, objective historical ranking, career tier, or match engine input.
-
-## Method
-
-- **Position-aware:** weighted combination of core and relevant extended prime ratings, rounded to nearest integer.
-- **No tier inflation:** TITAN, LEGEND, ELITE, folklore, traits, and provisional tactical attributes contribute zero to OVR.
-- **Position profiles:** CM supports a ball-winning profile; fullbacks support a playmaking profile. The higher relevant value applies without changing player position.
-- **Bounds:** integer 1–99. The uncalibrated value uses prime ratings. Editorial exceptions are explicitly recorded and subject to individual review.
-- **Match impact:** none. OVR is for card display only; simulations use the existing engine and player inputs.
-- **Raw ratings remain untouched.** OVR is recomputed from the current rated player.
-
-## Provisional manual calibration
-
-- **Alex de Souza:** uncalibrated CAM score **95**; displayed OVR **89** pending owner review. His underlying 17 attributes, career tier and folklore remain unchanged.
-- **Reason:** the CAM weights heavily double-count correlated technique, passing, vision and first-touch attributes, leading to an implausibly high cross-position OVR.
-- **Limitation:** the broader positional OVR model remains an editorial draft. Other surprising ratings, especially midfield specialists, still need holistic review. No other overall value was changed in V1.1.
-- **Source of explicit calibration:** `CageOverall.CALIBRATIONS` in `src/overall.js`.
+> Provisional, transparent positional formula using 14 unique prime attributes and 25 archetypes. Career tier is separate from OVR.
 
 ## Distribution
 
 | OVR band | Players |
 |---|---:|
-| 90–99 | 76 |
-| 85–89 | 81 |
-| 80–84 | 21 |
-| 75–79 | 6 |
+| 90–99 | 74 |
+| 85–89 | 89 |
+| 80–84 | 17 |
+| 75–79 | 4 |
 | 1–74 | 0 |
 
-## Full roster
+## All players
 
-| OVR | Player | Position | Career tier |
-|---:|---|---|---|
-| **97** | Lionel Messi | RW | TITAN |
-| **97** | Ronaldo Nazário | ST | TITAN |
-| **97** | Zinedine Zidane | CAM | TITAN |
-| **95** | Cristiano Ronaldo | LW | TITAN |
-| **95** | David Silva | CAM | LEGEND |
-| **95** | Dragan Stojković | CAM | LEGEND |
-| **95** | Safet Sušić | CAM | LEGEND |
-| **94** | Dejan Savićević | CAM | LEGEND |
-| **94** | Dennis Bergkamp | CF | TITAN |
-| **94** | Juan Carlos Valerón | CAM | LEGEND |
-| **94** | Kylian Mbappé | ST | LEGEND |
-| **94** | Neymar Jr. | LW | TITAN |
-| **94** | Ronaldinho | LW | TITAN |
-| **94** | Thierry Henry | LW | TITAN |
-| **93** | Kevin De Bruyne | CAM | LEGEND |
-| **93** | Mesut Özil | CAM | LEGEND |
-| **93** | Mohamed Salah | RW | LEGEND |
-| **93** | Rivaldo | LW | TITAN |
-| **93** | Robert Prosinečki | CAM | LEGEND |
-| **93** | Ruud Gullit | CAM | TITAN |
-| **93** | Sergio Agüero | ST | LEGEND |
-| **93** | Shunsuke Nakamura | CAM | LEGEND |
-| **93** | Virgil van Dijk | CB | LEGEND |
-| **92** | Adriano | ST | ELITE |
-| **92** | Alan Shearer | ST | TITAN |
-| **92** | Alessandro Del Piero | CF | LEGEND |
-| **92** | Alessandro Nesta | CB | LEGEND |
-| **92** | Ariel Ortega | CAM | LEGEND |
-| **92** | Erling Haaland | ST | LEGEND |
-| **92** | Francesco Totti | CF | LEGEND |
-| **92** | Gianfranco Zola | CF | LEGEND |
-| **92** | Josip Iličić | CAM | ELITE |
-| **92** | Juan Arango | CAM | ELITE |
-| **92** | Karim Benzema | CF | TITAN |
-| **92** | Marcel Desailly | CB | LEGEND |
-| **92** | Marcelinho | CAM | ELITE |
-| **92** | Matt Le Tissier | CAM | ELITE |
-| **92** | Predrag Mijatović | CF | LEGEND |
-| **92** | Roberto Baggio | CF | TITAN |
-| **92** | Samuel Eto'o | ST | TITAN |
-| **92** | Zlatan Ibrahimović | ST | TITAN |
-| **91** | Eden Hazard | LW | LEGEND |
-| **91** | Fabio Cannavaro | CB | TITAN |
-| **91** | Fernando Torres | ST | LEGEND |
-| **91** | Franz Beckenbauer | CB | TITAN |
-| **91** | Gareth Bale | RW | LEGEND |
-| **91** | Juan Román Riquelme | CAM | LEGEND |
-| **91** | Kaká | CAM | LEGEND |
-| **91** | Kyle Walker | RB | ELITE |
-| **91** | Luis Suárez | ST | TITAN |
-| **91** | Pablo Aimar | CAM | ELITE |
-| **91** | Rodri | CDM | LEGEND |
-| **91** | Roy Makaay | ST | LEGEND |
-| **91** | Sergio Ramos | CB | TITAN |
-| **91** | Youri Djorkaeff | CAM | LEGEND |
-| **90** | Andrea Barzagli | CB | ELITE |
-| **90** | Andrés D'Alessandro | CAM | ELITE |
-| **90** | Bernardo Silva | CAM | ELITE |
-| **90** | Carles Puyol | CB | LEGEND |
-| **90** | Davor Šuker | ST | LEGEND |
-| **90** | Didier Drogba | ST | LEGEND |
-| **90** | Djalminha | CAM | ELITE |
-| **90** | Hidetoshi Nakata | CAM | LEGEND |
-| **90** | Lilian Thuram | RB | LEGEND |
-| **90** | Lúcio | CB | LEGEND |
-| **90** | Miodrag Belodedici | CB | LEGEND |
-| **90** | N'Golo Kanté | CM | LEGEND |
-| **90** | Paolo Maldini | LB | TITAN |
-| **90** | Patrick Mboma | ST | ELITE |
-| **90** | Rio Ferdinand | CB | LEGEND |
-| **90** | Robert Lewandowski | ST | TITAN |
-| **90** | Rúben Dias | CB | ELITE |
-| **90** | Sergio Busquets | CDM | LEGEND |
-| **90** | Sol Campbell | CB | LEGEND |
-| **90** | Vincent Kompany | CB | LEGEND |
-| **90** | Wayne Rooney | CF | TITAN |
-| **89** | Adel Taarabt | CAM | STALWART |
-| **89** | Aílton | ST | ELITE |
-| **89** | Alen Bokšić | ST | LEGEND |
-| **89** | Alex de Souza | CAM | ELITE |
-| **89** | Álvaro Recoba | CF | ELITE |
-| **89** | Andrey Arshavin | LW | ELITE |
-| **89** | Antonio Cassano | CF | ELITE |
-| **89** | Ashley Cole | LB | LEGEND |
-| **89** | Christian Eriksen | CAM | ELITE |
-| **89** | Declan Rice | CDM | ELITE |
-| **89** | Djibril Cissé | ST | ELITE |
-| **89** | Gabriel Batistuta | ST | LEGEND |
-| **89** | Giorgio Chiellini | CB | LEGEND |
-| **89** | Hernán Crespo | ST | LEGEND |
-| **89** | Javier Zanetti | RB | LEGEND |
-| **89** | Jay-Jay Okocha | CAM | LEGEND |
-| **89** | Marcelo Salas | ST | ELITE |
-| **89** | Nwankwo Kanu | CF | LEGEND |
-| **89** | Patrick Vieira | CM | LEGEND |
-| **89** | Philipp Lahm | RB | TITAN |
-| **89** | Riyad Mahrez | RW | ELITE |
-| **89** | Robin van Persie | ST | LEGEND |
-| **89** | Sadio Mané | LW | LEGEND |
-| **89** | Sami Hyypiä | CB | ELITE |
-| **89** | Son Heung-min | LW | LEGEND |
-| **88** | Bruno Fernandes | CAM | ELITE |
-| **88** | Cafu | RB | TITAN |
-| **88** | Darko Pančev | ST | LEGEND |
-| **88** | Diego Tristán | ST | ELITE |
-| **88** | Harry Kane | ST | LEGEND |
-| **88** | Hulk | RW | ELITE |
-| **88** | Jamie Vardy | ST | ELITE |
-| **88** | John Terry | CB | LEGEND |
-| **88** | Luka Modrić | CM | TITAN |
-| **88** | Michael Essien | CM | ELITE |
-| **88** | Michael Owen | ST | LEGEND |
-| **88** | Paul Pogba | CM | ELITE |
-| **88** | Roberto Carlos | LB | TITAN |
-| **88** | Yaya Touré | CM | LEGEND |
-| **87** | Claude Makélélé | CDM | LEGEND |
-| **87** | Fernandinho | CDM | ELITE |
-| **87** | Hatem Ben Arfa | RW | STALWART |
-| **87** | Iván Zamorano | ST | ELITE |
-| **87** | Jaap Stam | CB | LEGEND |
-| **87** | Jefferson Farfán | RW | ELITE |
-| **87** | Kolo Touré | CB | ELITE |
-| **87** | Ledley King | CB | ELITE |
-| **87** | Mario Balotelli | ST | STALWART |
-| **87** | Mark Viduka | ST | ELITE |
-| **87** | Nani | LW | STALWART |
-| **87** | Patrice Evra | LB | ELITE |
-| **87** | Pierre van Hooijdonk | ST | ELITE |
-| **87** | Roy Keane | CDM | LEGEND |
-| **87** | Ruud van Nistelrooy | ST | LEGEND |
-| **87** | Steven Gerrard | CM | LEGEND |
-| **86** | Andrés Iniesta | CM | TITAN |
-| **86** | Andrew Robertson | LB | ELITE |
-| **86** | Clarence Seedorf | CM | LEGEND |
-| **86** | Daniele De Rossi | CDM | LEGEND |
-| **86** | Dejan Stanković | CM | LEGEND |
-| **86** | Filippo Inzaghi | ST | LEGEND |
-| **86** | Gennaro Gattuso | CDM | LEGEND |
-| **86** | Jamie Carragher | CB | ELITE |
-| **86** | Mousa Dembélé | CM | ELITE |
-| **86** | Nemanja Vidić | CB | LEGEND |
-| **86** | Obafemi Martins | ST | STALWART |
-| **86** | Ricardo Carvalho | CB | ELITE |
-| **86** | Ryan Giggs | LM | LEGEND |
-| **86** | Toni Kroos | CM | TITAN |
-| **86** | Vladimir Jugović | CM | ELITE |
-| **86** | Xavi Hernández | CM | TITAN |
-| **85** | Alberto Luque | LW | STALWART |
-| **85** | Bastian Schweinsteiger | CM | LEGEND |
-| **85** | Branislav Ivanović | RB | ELITE |
-| **85** | David Beckham | RM | LEGEND |
-| **85** | İlkay Gündoğan | CM | LEGEND |
-| **85** | Javier Mascherano | CDM | ELITE |
-| **85** | Milan Baroš | ST | ELITE |
-| **85** | Papiss Cissé | ST | STALWART |
-| **85** | Savo Milošević | ST | ELITE |
-| **85** | Trent Alexander-Arnold | RB | ELITE |
-| **84** | Andrea Pirlo | CM | TITAN |
-| **84** | Dimitar Berbatov | ST | ELITE |
-| **84** | Michael Ballack | CM | LEGEND |
-| **84** | Michael Carrick | CDM | ELITE |
-| **84** | Paul Scholes | CM | LEGEND |
-| **84** | Ricardo Quaresma | RW | ELITE |
-| **84** | Robert Pirès | LM | ELITE |
-| **84** | Xabi Alonso | CDM | LEGEND |
-| **83** | Cesc Fàbregas | CM | LEGEND |
-| **83** | Denílson | LW | STALWART |
-| **83** | Gary Neville | RB | ELITE |
-| **83** | Gilberto Silva | CDM | ELITE |
-| **83** | Tijjani Babangida | RW | STALWART |
-| **82** | Frank Lampard | CM | LEGEND |
-| **82** | Park Ji-sung | LM | LEGEND |
-| **82** | Santi Cazorla | CM | ELITE |
-| **82** | Yannick Bolasie | LW | STALWART |
-| **81** | Edgar Davids | CDM | LEGEND |
-| **81** | Nenê | LM | STALWART |
-| **80** | Aiden McGeady | RW | STALWART |
-| **80** | Peter Crouch | ST | STALWART |
-| **78** | Marouane Fellaini | CM | STALWART |
-| **78** | Morten Gamst Pedersen | LM | STALWART |
-| **77** | Steed Malbranque | CM | STALWART |
-| **77** | Thomas Gravesen | CDM | STALWART |
-| **76** | Siniša Mihajlović | LB | ELITE |
-| **76** | Tugay Kerimoğlu | CDM | STALWART |
+| OVR | Player | Natural position | Strongest archetype | Career tier |
+|---:|---|---|---|---|
+| **96** | Lionel Messi | RW | Wide creator | TITAN |
+| **96** | Ronaldo Nazário | ST | Mobile striker | TITAN |
+| **96** | Zinedine Zidane | CAM | Classic playmaker | TITAN |
+| **95** | Dragan Stojković | CAM | Classic playmaker | LEGEND |
+| **95** | Safet Sušić | CAM | Classic playmaker | LEGEND |
+| **94** | Alan Shearer | ST | Poacher | TITAN |
+| **94** | Cristiano Ronaldo | LW | Goalscoring winger | TITAN |
+| **94** | Dejan Savićević | CAM | Classic playmaker | LEGEND |
+| **94** | Juan Carlos Valerón | CAM | Classic playmaker | LEGEND |
+| **94** | Thierry Henry | LW | Goalscoring winger | TITAN |
+| **94** | Zlatan Ibrahimović | ST | Poacher | TITAN |
+| **93** | Adriano | ST | Poacher | ELITE |
+| **93** | Andrea Barzagli | CB | Traditional centre-back | ELITE |
+| **93** | David Silva | CAM | Classic playmaker | LEGEND |
+| **93** | Dennis Bergkamp | CF | False nine | TITAN |
+| **93** | Erling Haaland | ST | Poacher | LEGEND |
+| **93** | Kylian Mbappé | ST | Mobile striker | LEGEND |
+| **93** | Neymar Jr. | LW | Wide creator | TITAN |
+| **93** | Robert Prosinečki | CAM | Classic playmaker | LEGEND |
+| **93** | Ronaldinho | LW | Wide creator | TITAN |
+| **93** | Ruud Gullit | CAM | Classic playmaker | TITAN |
+| **93** | Sami Hyypiä | CB | Traditional centre-back | ELITE |
+| **93** | Virgil van Dijk | CB | Traditional centre-back | LEGEND |
+| **92** | Alessandro Nesta | CB | Traditional centre-back | LEGEND |
+| **92** | Andrés Iniesta | CM | Deep orchestrator | TITAN |
+| **92** | Didier Drogba | ST | Poacher | LEGEND |
+| **92** | Franz Beckenbauer | CB | Traditional centre-back | TITAN |
+| **92** | Gareth Bale | RW | Goalscoring winger | LEGEND |
+| **92** | Josip Iličić | CAM | Classic playmaker | ELITE |
+| **92** | Kaká | CAM | Classic playmaker | LEGEND |
+| **92** | Luis Suárez | ST | Poacher | TITAN |
+| **92** | Matt Le Tissier | CAM | Classic playmaker | ELITE |
+| **92** | Miodrag Belodedici | CB | Traditional centre-back | LEGEND |
+| **92** | Rivaldo | LW | Wide creator | TITAN |
+| **92** | Robert Lewandowski | ST | Poacher | TITAN |
+| **92** | Shunsuke Nakamura | CAM | Classic playmaker | LEGEND |
+| **91** | Alessandro Del Piero | CF | False nine | LEGEND |
+| **91** | Ariel Ortega | CAM | Classic playmaker | LEGEND |
+| **91** | Eden Hazard | LW | Wide creator | LEGEND |
+| **91** | Fabio Cannavaro | CB | Traditional centre-back | TITAN |
+| **91** | Francesco Totti | CF | False nine | LEGEND |
+| **91** | Gabriel Batistuta | ST | Poacher | LEGEND |
+| **91** | Gianfranco Zola | CF | False nine | LEGEND |
+| **91** | Juan Arango | CAM | Classic playmaker | ELITE |
+| **91** | Karim Benzema | CF | False nine | TITAN |
+| **91** | Kevin De Bruyne | CAM | Classic playmaker | LEGEND |
+| **91** | Luka Modrić | CM | Deep orchestrator | TITAN |
+| **91** | Marcel Desailly | CB | Traditional centre-back | LEGEND |
+| **91** | Marcelinho | CAM | Classic playmaker | ELITE |
+| **91** | Mesut Özil | CAM | Classic playmaker | LEGEND |
+| **91** | Mohamed Salah | RW | Goalscoring winger | LEGEND |
+| **91** | Patrick Mboma | ST | Poacher | ELITE |
+| **91** | Predrag Mijatović | CF | False nine | LEGEND |
+| **91** | Roy Makaay | ST | Poacher | LEGEND |
+| **91** | Sergio Agüero | ST | Poacher | LEGEND |
+| **91** | Sergio Ramos | CB | Traditional centre-back | TITAN |
+| **91** | Wayne Rooney | CF | Second striker | TITAN |
+| **91** | Xavi Hernández | CM | Deep orchestrator | TITAN |
+| **91** | Youri Djorkaeff | CAM | Classic playmaker | LEGEND |
+| **90** | Andrea Pirlo | CM | Deep orchestrator | TITAN |
+| **90** | Carles Puyol | CB | Traditional centre-back | LEGEND |
+| **90** | Davor Šuker | ST | Poacher | LEGEND |
+| **90** | Fernando Torres | ST | Mobile striker | LEGEND |
+| **90** | Harry Kane | ST | Poacher | LEGEND |
+| **90** | Pablo Aimar | CAM | Classic playmaker | ELITE |
+| **90** | Paul Pogba | CM | Deep orchestrator | ELITE |
+| **90** | Rio Ferdinand | CB | Traditional centre-back | LEGEND |
+| **90** | Roberto Baggio | CF | False nine | TITAN |
+| **90** | Rúben Dias | CB | Traditional centre-back | ELITE |
+| **90** | Samuel Eto'o | ST | Mobile striker | TITAN |
+| **90** | Santi Cazorla | CM | Deep orchestrator | ELITE |
+| **90** | Sol Campbell | CB | Traditional centre-back | LEGEND |
+| **90** | Toni Kroos | CM | Deep orchestrator | TITAN |
+| **90** | Vincent Kompany | CB | Traditional centre-back | LEGEND |
+| **89** | Aílton | ST | Poacher | ELITE |
+| **89** | Alen Bokšić | ST | Mobile striker | LEGEND |
+| **89** | Alex de Souza | CAM | Classic playmaker | ELITE |
+| **89** | Andrey Arshavin | LW | Wide creator | ELITE |
+| **89** | Bernardo Silva | CAM | Classic playmaker | ELITE |
+| **89** | Darko Pančev | ST | Poacher | LEGEND |
+| **89** | Diego Tristán | ST | Poacher | ELITE |
+| **89** | Djalminha | CAM | Classic playmaker | ELITE |
+| **89** | Giorgio Chiellini | CB | Traditional centre-back | LEGEND |
+| **89** | Hernán Crespo | ST | Poacher | LEGEND |
+| **89** | Hidetoshi Nakata | CAM | Classic playmaker | LEGEND |
+| **89** | Hulk | RW | Goalscoring winger | ELITE |
+| **89** | Iván Zamorano | ST | Poacher | ELITE |
+| **89** | John Terry | CB | Traditional centre-back | LEGEND |
+| **89** | Kyle Walker | RB | Defending fullback | ELITE |
+| **89** | Lúcio | CB | Traditional centre-back | LEGEND |
+| **89** | Marcelo Salas | ST | Poacher | ELITE |
+| **89** | Mark Viduka | ST | Poacher | ELITE |
+| **89** | Paul Scholes | CM | Deep orchestrator | LEGEND |
+| **89** | Pierre van Hooijdonk | ST | Poacher | ELITE |
+| **89** | Robin van Persie | ST | Poacher | LEGEND |
+| **89** | Rodri | CDM | Defensive screen | LEGEND |
+| **89** | Sadio Mané | LW | Goalscoring winger | LEGEND |
+| **89** | Son Heung-min | LW | Goalscoring winger | LEGEND |
+| **88** | Álvaro Recoba | CF | False nine | ELITE |
+| **88** | Andrés D'Alessandro | CAM | Classic playmaker | ELITE |
+| **88** | Cafu | RB | Defending fullback | TITAN |
+| **88** | Cesc Fàbregas | CM | Deep orchestrator | LEGEND |
+| **88** | Clarence Seedorf | CM | Deep orchestrator | LEGEND |
+| **88** | Declan Rice | CDM | Defensive screen | ELITE |
+| **88** | Djibril Cissé | ST | Mobile striker | ELITE |
+| **88** | İlkay Gündoğan | CM | Deep orchestrator | LEGEND |
+| **88** | Javier Zanetti | RB | Defending fullback | LEGEND |
+| **88** | Jay-Jay Okocha | CAM | Classic playmaker | LEGEND |
+| **88** | Juan Román Riquelme | CAM | Classic playmaker | LEGEND |
+| **88** | Lilian Thuram | RB | Defending fullback | LEGEND |
+| **88** | Nwankwo Kanu | CF | False nine | LEGEND |
+| **88** | Paolo Maldini | LB | Defending fullback | TITAN |
+| **88** | Patrick Vieira | CM | Ball winner | LEGEND |
+| **88** | Philipp Lahm | RB | Defending fullback | TITAN |
+| **88** | Riyad Mahrez | RW | Wide creator | ELITE |
+| **88** | Roberto Carlos | LB | Defending fullback | TITAN |
+| **88** | Ruud van Nistelrooy | ST | Poacher | LEGEND |
+| **88** | Steven Gerrard | CM | Deep orchestrator | LEGEND |
+| **88** | Yaya Touré | CM | Deep orchestrator | LEGEND |
+| **87** | Adel Taarabt | CAM | Classic playmaker | STALWART |
+| **87** | Antonio Cassano | CF | False nine | ELITE |
+| **87** | Ashley Cole | LB | Defending fullback | LEGEND |
+| **87** | Bruno Fernandes | CAM | Classic playmaker | ELITE |
+| **87** | Christian Eriksen | CAM | Classic playmaker | ELITE |
+| **87** | Dejan Stanković | CM | Deep orchestrator | LEGEND |
+| **87** | Jamie Vardy | ST | Poacher | ELITE |
+| **87** | Jefferson Farfán | RW | Goalscoring winger | ELITE |
+| **87** | Ledley King | CB | Traditional centre-back | ELITE |
+| **87** | Mario Balotelli | ST | Poacher | STALWART |
+| **87** | Michael Essien | CM | Ball winner | ELITE |
+| **87** | Mousa Dembélé | CM | Deep orchestrator | ELITE |
+| **87** | N'Golo Kanté | CM | Ball winner | LEGEND |
+| **87** | Nemanja Vidić | CB | Traditional centre-back | LEGEND |
+| **87** | Ryan Giggs | LM | Wide playmaker | LEGEND |
+| **87** | Savo Milošević | ST | Poacher | ELITE |
+| **87** | Sergio Busquets | CDM | Defensive screen | LEGEND |
+| **87** | Vladimir Jugović | CM | Deep orchestrator | ELITE |
+| **86** | Bastian Schweinsteiger | CM | Deep orchestrator | LEGEND |
+| **86** | David Beckham | RM | Wide playmaker | LEGEND |
+| **86** | Dimitar Berbatov | ST | Poacher | ELITE |
+| **86** | Filippo Inzaghi | ST | Poacher | LEGEND |
+| **86** | Hatem Ben Arfa | RW | Wide creator | STALWART |
+| **86** | Jaap Stam | CB | Traditional centre-back | LEGEND |
+| **86** | Jamie Carragher | CB | Traditional centre-back | ELITE |
+| **86** | Kolo Touré | CB | Traditional centre-back | ELITE |
+| **86** | Michael Owen | ST | Mobile striker | LEGEND |
+| **86** | Milan Baroš | ST | Mobile striker | ELITE |
+| **86** | Nani | LW | Wide creator | STALWART |
+| **86** | Obafemi Martins | ST | Mobile striker | STALWART |
+| **86** | Papiss Cissé | ST | Poacher | STALWART |
+| **86** | Patrice Evra | LB | Defending fullback | ELITE |
+| **86** | Ricardo Carvalho | CB | Traditional centre-back | ELITE |
+| **86** | Roy Keane | CDM | Defensive screen | LEGEND |
+| **85** | Alberto Luque | LW | Goalscoring winger | STALWART |
+| **85** | Andrew Robertson | LB | Defending fullback | ELITE |
+| **85** | Claude Makélélé | CDM | Defensive screen | LEGEND |
+| **85** | Daniele De Rossi | CDM | Defensive screen | LEGEND |
+| **85** | Fernandinho | CDM | Defensive screen | ELITE |
+| **85** | Frank Lampard | CM | Deep orchestrator | LEGEND |
+| **85** | Gennaro Gattuso | CDM | Defensive screen | LEGEND |
+| **85** | Michael Ballack | CM | Deep orchestrator | LEGEND |
+| **85** | Robert Pirès | LM | Wide playmaker | ELITE |
+| **85** | Xabi Alonso | CDM | Deep distributor | LEGEND |
+| **84** | Michael Carrick | CDM | Deep distributor | ELITE |
+| **83** | Branislav Ivanović | RB | Defending fullback | ELITE |
+| **83** | Denílson | LW | Wide creator | STALWART |
+| **83** | Javier Mascherano | CDM | Defensive screen | ELITE |
+| **83** | Park Ji-sung | LM | Two-way wide midfielder | LEGEND |
+| **83** | Peter Crouch | ST | Poacher | STALWART |
+| **83** | Ricardo Quaresma | RW | Wide creator | ELITE |
+| **83** | Yannick Bolasie | LW | Wide creator | STALWART |
+| **82** | Gary Neville | RB | Defending fullback | ELITE |
+| **82** | Steed Malbranque | CM | Deep orchestrator | STALWART |
+| **82** | Tijjani Babangida | RW | Goalscoring winger | STALWART |
+| **82** | Trent Alexander-Arnold | RB | Attacking fullback | ELITE |
+| **81** | Gilberto Silva | CDM | Defensive screen | ELITE |
+| **81** | Nenê | LM | Wide playmaker | STALWART |
+| **80** | Aiden McGeady | RW | Wide creator | STALWART |
+| **80** | Edgar Davids | CDM | Defensive screen | LEGEND |
+| **80** | Tugay Kerimoğlu | CDM | Deep distributor | STALWART |
+| **79** | Morten Gamst Pedersen | LM | Wide playmaker | STALWART |
+| **76** | Marouane Fellaini | CM | Ball winner | STALWART |
+| **76** | Thomas Gravesen | CDM | Defensive screen | STALWART |
+| **75** | Siniša Mihajlović | LB | Defending fullback | ELITE |
 
-## Verification
+## Important exception
 
-- Run node tests/overall-184.cjs to check all 184 ratings and invariants.
-- Run node tests/overall-alex-calibration.cjs to prove Alex 95 → 89 while other 183 remain identical.
-- Run node tests/overall-match-invariance.cjs to verify T3 results are identical with and without OVR.
-- Run node tests/ui-regression.cjs to check claimed-tile OVR in headless Chrome.
-- Run node tests/random-draft.cjs to check all card badges and squad ratings.
+Alex de Souza: raw V2 OVR 94, displayed 89 pending owner review of his unusually high technical inputs. No other player has an individual OVR override.
 
-**Source:** src/overall.js. Main card UI: src/showdown.js. Draft card UI: src/random-draft.js.
+Formula reference: docs/OVERALL_V2_METHOD.md. Runtime: src/overall.js.

@@ -12,7 +12,8 @@ const a=roster[0],val=a.overall;
 a.careerTier='TITAN';a.folklore=['STREET HERO'];a.traits={primary:'Magician',secondary:'Wall'};
 assert.equal(api.compute(a),val,'overall illegally depends on tier/folklore/traits');
 a.position='ST';assert.notEqual(api.compute(a),val,'overall should depend on natural position');
-const fake={id:'cb-synthetic',position:'CB',r:{pace:70,tech:65,pass:65,finish:0,def:98,phys:95,tackling:98,positioning:98}},striker={id:'st-synthetic',position:'ST',r:{pace:95,tech:90,pass:68,finish:98,def:0,phys:88,positioning:98,shooting:98,composure:95}};
+const cbBase=roster.find(p=>p.position==='CB'),stBase=roster.find(p=>p.position==='ST');
+const fake={id:'cb-synthetic',position:'CB',r:{...cbBase.r,pace:70,tech:65,pass:65,finish:0,def:98,phys:95,tackling:98,positioning:98}},striker={id:'st-synthetic',position:'ST',r:{...stBase.r,pace:95,tech:90,pass:68,finish:98,def:0,phys:88,positioning:98,shooting:98,composure:95}};
 assert(api.compute(fake)>=84,'elite CB penalized for finishing');assert(api.compute(striker)>=90,'elite ST penalized for defence');
 const stats=[...ovr.entries()].map(([id,n])=>({id,name:roster.find(p=>p.id===id).name,n,position:roster.find(p=>p.id===id).position})).sort((a,b)=>b.n-a.n||a.name.localeCompare(b.name));
 const bins={};for(const o of stats){const k=o.n>=90?'90–99':o.n>=85?'85–89':o.n>=80?'80–84':o.n>=75?'75–79':'<75';bins[k]=(bins[k]||0)+1;}
