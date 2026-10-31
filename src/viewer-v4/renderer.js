@@ -80,6 +80,29 @@ function createRenderer(canvas){
     }
   }
 
+  // Keeper markers are SEPARATE from the six recorded outfield positions.
+  // A lateral save motion occurs only during a logged goalkeeper action.
+  function paintGoalkeepers(f,R){
+    if(!Array.isArray(f.keepers)||f.keepers.length!==2)return;
+    for(const side of [0,1]){
+      const id=f.keepers[side],event=f.keeperEvent,active=event&&event.gk===id,phase=Math.max(0,Math.min(1,f.keeperPhase||0));
+      let lane=.5;
+      if(active&&event.zone?.lane){const target={left:.39,centre:.5,right:.61}[event.zone.lane]??.5;
+        lane=f.reducedMotion?target:.5+(target-.5)*Math.sin(Math.PI*phase/2);
+      }
+      const at=px({u:side===0?.035:.965,v:lane}),radius=R*.82;
+      ctx.save();
+      ctx.fillStyle='rgba(4,13,21,.80)';ctx.strokeStyle=side===0?'#78c9ff':'#ffbd88';ctx.lineWidth=2;
+      ctx.beginPath();ctx.arc(at.x,at.y,radius+2,0,Math.PI*2);ctx.fill();ctx.stroke();
+      ctx.fillStyle='#f6d98b';ctx.font='800 '+Math.max(8,Math.round(radius*.83))+'px system-ui';
+      ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('GK',at.x,at.y);
+      if(active&&!f.reducedMotion){
+        const burst=Math.sin(Math.PI*phase);
+        if(burst>0){ctx.strokeStyle=event.type==='gk_parry'?'#ffbf67':'#9af0cc';ctx.globalAlpha=burst*.8;ctx.lineWidth=2.5;ctx.beginPath();ctx.arc(at.x,at.y,radius+6+burst*8,0,Math.PI*2);ctx.stroke();}
+      }
+      ctx.restore();
+    }
+  }
   // frame: {players, ball, teamOf, labels, carrier, contact:[ids], oop:[ids], flash, trail:[{u,v}], reducedMotion, showLabels, focus}
   function draw(f){if(!rect)resize();if(!arena||arenaKey!==selectedVariant()){arena=drawArena();arenaKey=selectedVariant();}ctx.setTransform(1,0,0,1,0,0);ctx.drawImage(arena,0,0);ctx.setTransform(dpr,0,0,dpr,0,0);
     if(f.cues){ctx.save();ctx.translate(world.x,world.y);ctx.scale(world.scale,world.scale);
@@ -116,6 +139,7 @@ function createRenderer(canvas){
     // ball trail (presentation)
     if(!f.reducedMotion&&f.trail&&f.trail.length>1){ctx.lineCap='round';for(let i=1;i<f.trail.length;i++){const a=px(f.trail[i-1]),b=px(f.trail[i]);ctx.strokeStyle='rgba(225,176,75,'+(.05+.28*i/f.trail.length)+')';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}
     paintRecordedAction(f,R);
+    paintGoalkeepers(f,R);
     for(const id of ids){const p=px(f.players[id]);ctx.fillStyle='rgba(0,0,0,.35)';ctx.beginPath();ctx.ellipse(p.x+2,p.y+R*.75,R*.9,R*.38,0,0,Math.PI*2);ctx.fill();}
     for(const id of ids){const p=px(f.players[id]),team=f.teamOf[id],col=team===0?tk['--team-a']:tk['--team-b'],ink=team===0?tk['--team-a-ink']:tk['--team-b-ink'],dim=f.oop&&f.oop.includes(id);
       ctx.globalAlpha=dim?.5:1;

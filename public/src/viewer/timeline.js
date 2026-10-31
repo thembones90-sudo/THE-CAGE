@@ -9,7 +9,7 @@ const VERSION='viewer-timeline-1',MAX_SCHEMA=2;
 const ACTION={restart:1,carry:1,pass:1,through_ball:1,dribble_duel:1,wall_pass:1,press:1,shot_attempt:1,free_kick:1};
 const PRE={recovery_run:1,rotation:1};
 // Presentation holds (seconds of timeline at 1x "Full") for events that take no simulation time.
-const HOLD={turnover:.35,race:.5,block:.4,shot_miss:.5,rebound:.5,foul:.6,goal:1.6,free_kick:.9,restart:.8,recovery_run:.15,rotation:.25,shot_attempt:.5};
+const HOLD={turnover:.35,race:.5,block:.4,gk_save:.7,gk_parry:.8,shot_miss:.5,rebound:.5,foul:.6,goal:1.6,free_kick:.9,restart:.8,recovery_run:.15,rotation:.25,shot_attempt:.5};
 // Extra frozen-clock tail after a timed event (the clock stops while the moment lands).
 const POST={restart:.6,goal:1.6};
 const DEFAULTS={secPerSim:.35,minMove:.45,jitter:true};
@@ -143,7 +143,7 @@ function buildTimeline(record,cfgIn){
   const beats=[];for(const s of segs){const b=beats[s.beat];if(!b)beats[s.beat]={index:s.beat,from:s.i,to:s.i,tau0:s.tau0,tau1:s.tau1};else{b.to=s.i;b.tau1=s.tau1;}}
   const recorded=Array.isArray(rec.result.score)?rec.result.score.slice():null,warnings=[];
   if(recorded&&(recorded[0]!==score[0]||recorded[1]!==score[1]))warnings.push('Recorded score '+recorded.join('-')+' differs from goal events '+score.join('-')+'; showing the goal events.');
-  return {version:VERSION,schema,mode:full?'full':'ball-only',timing:exactSteps?'exact':'approximate',notes,warnings,engineVersion:rec.engineVersion||null,round:rec.round||null,seed,teams,teamOf,ids,
+  return {version:VERSION,schema,...(rec.config?.keepers?{keepers:rec.config.keepers.slice()}:{}),mode:full?'full':'ball-only',timing:exactSteps?'exact':'approximate',notes,warnings,engineVersion:rec.engineVersion||null,round:rec.round||null,seed,teams,teamOf,ids,
     eventCount:events.length,duration:events[events.length-1].t,total:round(tau),segments:segs,beats,goals,finalScore:score,winner:recorded?(recorded[0]===recorded[1]?-1:recorded[0]>recorded[1]?0:1):(score[0]===score[1]?-1:score[0]>score[1]?0:1),golden:goals.length===1&&(!rec.config||rec.config.mode==='ko'),goldenOvertime:rec.result.decidedBy==='golden_goal'};
 }
 // Point at `dist` cells from a toward b (a itself if they coincide: then offset along u).

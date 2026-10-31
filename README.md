@@ -1,3 +1,19 @@
+# THE CAGE V6.6: THE LAST LINE (EXPERIMENTAL)
+
+This branch is an EARLY DEVELOPMENT PREVIEW of goalkeeper drafting and T3-7. It is not a final calibrated release and goalkeeper career tiers/ratings are provisional.
+
+- Keep the classic six outfield picks ABABAB and 194 outfield players.
+- Tick **Experimental 3+1 goalkeeper mode** on the 15-card random draft intro.
+- After the sixth outfield pick, choose one goalkeeper from five private candidates per side. The goalkeeper choice lasts 10 seconds with no reroll. Each goalkeeper may only play once per showdown.
+- The new GK engine logs authentic saves and parries and preserves full regulation + Golden Goal ONLY if tied.
+- Solo IRON AI chooses from its own five-card pool.
+- Historical T3-6/Classic match records and ordinary non-GK draft remain available.
+
+The V6.6 pilot EXE is at `dist/TheCage-V66-Last-Line-Experimental.exe`.
+Current limitations: manual audit still required for goalkeeper tiers, possession/press calibration, GK distribution/sweeping gameplay, and a safe overtime failure fallback. Do not deploy publicly.
+
+---
+
 # THE CAGE V6.5 War Room + Regulation Scoring
 
 V6.5 uses full regulation goals: outscore the opponent at full time to win. If the score is tied, Golden Goal sudden-death overtime determines the victor. The 194-player T3-6 engine supports historical first-goal replays separately.

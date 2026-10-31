@@ -8,7 +8,7 @@ config={"main":"launcher-complete.js","output":"sea-complete.blob","disableExper
 "assets":{f:"../public/"+f for f in files}}
 (root/"build-exe/sea-complete.json").write_text(json.dumps(config,indent=2)+"\n",encoding="utf-8")
 arr=json.dumps(files,ensure_ascii=True,indent=2)
-launcher="""/* THE CAGE V6.5 War Room + Regulation — Windows single executable. Bundled offline static site only. */
+launcher="""/* THE CAGE V6.6 The Last Line Experimental — Windows single executable. Bundled offline static site only. */
 'use strict';
 const http=require('node:http'),sea=require('node:sea'),{exec}=require('node:child_process');
 const PORT=Number(process.env.CAGE_PORT||4184);
@@ -29,7 +29,7 @@ const server=http.createServer((req,res)=>{
 server.on('error',e=>{console.error(e.code==='EADDRINUSE'?'Port '+PORT+' in use. Close the old THE CAGE or set CAGE_PORT to another port.':e.message);process.exitCode=1;});
 server.listen(PORT,'127.0.0.1',()=>{
  const url='http://127.0.0.1:'+server.address().port+'/draft.html';
- console.log('THE CAGE V6.5 WAR ROOM + REGULATION: '+url);
+ console.log('THE CAGE V6.6 THE LAST LINE EXPERIMENTAL: '+url);
  console.log('Close this window to end your local game server.');
  if(!process.env.CAGE_NO_BROWSER)exec('start "" "'+url+'"');
 });

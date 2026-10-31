@@ -68,7 +68,15 @@ function tactic(team,opponent=[],level='competitive',rng=Math.random){
  const noise=level==='ruthless'?0.2:4.6;
  return TACTICS.map(k=>({k,v:scores[k]+(rand(rng)-.5)*noise})).sort((a,b)=>b.v-a.v||a.k.localeCompare(b.k))[0].k;
 }
-const api=Object.freeze({LEVELS,TACTICS,role,score,choose,tactic});
+function chooseGoalkeeper({candidates,level='competitive',rng=Math.random}){
+ if(!LEVELS.includes(level))throw Error('Invalid CPU difficulty');
+ if(!Array.isArray(candidates)||candidates.length!==5||new Set(candidates.map(p=>p.id)).size!==5)throw Error('CPU goalkeeper draft expects five unique choices');
+ if(level==='casual')return candidates[Math.floor(rand(rng)*5)].id;
+ const quality=p=>p.r.reflexes*.24+p.r.positioning*.20+p.r.handling*.14+p.r.oneOnOne*.16+p.r.aerialControl*.09+p.r.distribution*.09+p.r.sweeping*.08;
+ const noise=level==='ruthless'?0.4:3.5;
+ return candidates.map(p=>({id:p.id,score:quality(p)+(rand(rng)-.5)*noise})).sort((a,b)=>b.score-a.score||a.id.localeCompare(b.id))[0].id;
+}
+const api=Object.freeze({LEVELS,TACTICS,role,score,choose,tactic,chooseGoalkeeper});
 root.CageCpu=api;
 if(typeof module==='object'&&module.exports)module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);

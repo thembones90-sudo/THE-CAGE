@@ -4,7 +4,7 @@ const roster=window.THE_CAGE_PLAYERS||[];
 const byId=new Map(roster.map(p=>[p.id,p]));
 const engine=window.CageEngine;
 const warRoom=window.CageWarRoom.create($('warRoom'));
-const game={winner:null,picks:[],claimed:new Set(),pool:[],rerolls:{A:1,B:1},deadline:0,clock:null,active:false,ready:false,finished:false,round:1,wins:{A:0,B:0},used:new Set(),history:[],pending:null,champion:null,mode:'hotseat',difficulty:'competitive'};
+const game={winner:null,picks:[],claimed:new Set(),pool:[],rerolls:{A:1,B:1},deadline:0,clock:null,active:false,ready:false,finished:false,round:1,wins:{A:0,B:0},used:new Set(),history:[],pending:null,champion:null,mode:'hotseat',difficulty:'competitive',keeperMode:false,keeperUsed:new Set(),keeperCtl:null,keeperTick:null};
 const sideName=s=>s==='A'?'COMMANDER':game.mode==='solo'?'IRON AI':'OPPONENT';
 const isCpuTurn=()=>game.mode==='solo'&&currentSide()==='B';
 let cpuTimer=null;
@@ -74,10 +74,63 @@ function handoff(){stopClock();warRoom.clear();
 function startPick(){if(game.active)return;if(game.picks.length>=6){finishDraft();return;}if(game.pool.length!==15||!game.deadline){game.pool=candidates();game.deadline=Date.now()+20000;}if(game.pool.length===0){showError('No eligible footballers remain.');return;}game.active=true;$('handoff').classList.toggle('hidden',!isCpuTurn());$('selection').classList.toggle('hidden',isCpuTurn());if(!isCpuTurn())render();saveShowdown();if(isCpuTurn()){cpuTimer=setTimeout(()=>{cpuTimer=null;runCpuPick();},360);return;}$('selection').setAttribute('tabindex','-1');$('selection').focus({preventScroll:true});$('selection').style.scrollMarginTop=(Math.ceil($('game').querySelector('.panel.bar').getBoundingClientRect().height)+12)+'px';$('selection').scrollIntoView({behavior:'auto',block:'start'});game.clock=setInterval(tick,150);}
 function claim(id,automatic){if(!game.active||!game.pool.includes(id)||game.claimed.has(id))return;if(!automatic&&Date.now()>=game.deadline){id=game.pool[randomInt(game.pool.length)];automatic=true;}const s=currentSide();stopClock();game.claimed.add(id);game.used.add(id);game.picks.push({side:s,id,automatic:!!automatic});squads();showError(automatic?'Time expired: '+byId.get(id).name+' automatically drafted for '+sideName(s):sideName(s)+' selected '+byId.get(id).name);game.pool=[];handoffAfterClaim();saveShowdown();if(game.picks.length<6)$('reveal').focus({preventScroll:true});}
 function handoffAfterClaim(){if(game.picks.length===6){finishDraft();return;}handoff();}
-function finishDraft(){stopClock();const vs=$('versus-line');vs.replaceChildren();for(const side of ['A','VS','B']){const e=document.createElement('div');if(side==='VS'){e.className='versus-vs';e.textContent='VS';}else{e.className='versus-team '+side.toLowerCase();const h=document.createElement('h3');h.textContent=sideName(side);e.append(h);for(const pick of game.picks.filter(x=>x.side===side)){const line=document.createElement('span');line.textContent=byId.get(pick.id).name;e.append(line);}}vs.append(e);} game.finished=true;game.pool=[];$('handoff').classList.add('hidden');$('selection').classList.add('hidden');$('finished').classList.remove('hidden');$('phase').textContent='DRAFT COMPLETE';$('current').textContent='Both squads locked · 3 players each';$('clock').textContent='✓';$('reroll').disabled=true;squads();saveShowdown();if(game.mode==='solo'){const team=game.picks.filter(p=>p.side==='B').map(p=>byId.get(p.id));const enemy=game.picks.filter(p=>p.side==='A').map(p=>byId.get(p.id));$('tacticB').value=window.CageCpu.tactic(team,enemy,game.difficulty,cpuRandom);$('tacticB').disabled=true;}else $('tacticB').disabled=false;$('finished').scrollIntoView({behavior:'auto',block:'start'});}
-function begin(fresh=true){hideArenaOutcome();if(fresh){game.mode=$('gameMode').value;game.difficulty=$('cpuDifficulty').value;game.round=1;game.wins={A:0,B:0};game.used.clear();game.history=[];game.pending=null;game.champion=null;}clearMatchViewer();matchRecord=null;$('watch-again').classList.add('hidden');$('fight').disabled=false;$('tacticA').disabled=false;$('tacticB').disabled=false;stopClock();game.winner=randomInt(2)?'A':'B';game.picks=[];game.claimed.clear();game.rerolls={A:1,B:1};game.pool=[];game.finished=false;showError('');$('coinResult').textContent='COIN TOSS: '+sideName(game.winner)+' WINS FIRST PICK';$('intro').classList.add('hidden');$('game').classList.remove('hidden');$('result').textContent='';$('details').replaceChildren();$('next-round').classList.add('hidden');handoff();standings();saveShowdown();}
+const GKS=window.CageGoalkeepers,KeeperDraft=window.CageKeeperDraft;
+function stopKeeperTimer(){if(game.keeperTick!==null){clearInterval(game.keeperTick);game.keeperTick=null;}if(cpuTimer!==null){clearTimeout(cpuTimer);cpuTimer=null;}}
+function keeperSide(){return game.keeperCtl?.stage==='pending'||game.keeperCtl?.stage==='pickingA'?'A':'B';}
+function keeperReady(){
+ stopKeeperTimer();$('selection').classList.add('hidden');$('handoff').classList.add('hidden');$('finished').classList.add('hidden');
+ $('keeperDraftPhase').classList.remove('hidden');$('gkActive').classList.add('hidden');$('gkPool').replaceChildren();
+ const side=keeperSide();$('gkTitle').textContent='THE LAST LINE · '+sideName(side);
+ $('gkPrivacy').textContent=side==='A'?'PRIVATE GOALKEEPER OFFER · 5 CARDS · 10 SECONDS':'PASS THE DEVICE. The first goalkeeper remains concealed until both are locked.';
+ $('gkReveal').classList.toggle('hidden',game.mode==='solo'&&side==='B');
+ if(game.mode==='solo'&&side==='B')cpuTimer=setTimeout(()=>{cpuTimer=null;revealKeeper();},350);
+ saveShowdown();
+}
+function revealKeeper(){
+ if(!game.keeperCtl)throw Error('Goalkeeper phase not initialized');
+ let state;
+ if(['pickingA','pickingB'].includes(game.keeperCtl.stage))state={side:keeperSide(),offer:game.keeperCtl.offer,deadline:game.keeperCtl.deadline};
+ else state=game.keeperCtl.reveal();
+ const side=state.side,isCpu=game.mode==='solo'&&side==='B';
+ $('gkReveal').classList.add('hidden');$('gkActive').classList.toggle('hidden',isCpu);$('gkPool').replaceChildren();
+ if(!isCpu){
+  for(const id of state.offer){const g=GKS.BY_ID[id],btn=document.createElement('button');btn.type='button';btn.className='gk-choice';
+   const name=document.createElement('strong');name.textContent=g.name;const tier=document.createElement('span');tier.className='gk-class';tier.textContent=g.careerTier+' · '+g.keeperClass;
+   const rate=document.createElement('span');rate.className='gk-ovr';rate.textContent=g.overall+' GK OVR';
+   const nums=document.createElement('span');nums.className='gk-stat';nums.textContent='REF '+g.r.reflexes+'  POS '+g.r.positioning+'  HAN '+g.r.handling+'  1V1 '+g.r.oneOnOne+'  AIR '+g.r.aerialControl+'  DIS '+g.r.distribution+'  SWP '+g.r.sweeping;
+   btn.append(name,tier,rate,nums);btn.addEventListener('click',()=>claimKeeper(id));$('gkPool').append(btn);
+  }
+ }
+ saveShowdown();keeperClockTick();
+ if(isCpu){cpuTimer=setTimeout(()=>{cpuTimer=null;if(game.keeperCtl?.stage!=='pickingB')return;const cards=game.keeperCtl.offer.map(id=>GKS.BY_ID[id]),selected=window.CageCpu.chooseGoalkeeper({candidates:cards,level:game.difficulty,rng:cpuRandom});claimKeeper(selected);},320);}
+ else game.keeperTick=setInterval(keeperClockTick,130);
+}
+function keeperClockTick(){
+ if(!game.keeperCtl||!['pickingA','pickingB'].includes(game.keeperCtl.stage))return;
+ const remain=Math.max(0,Math.ceil((game.keeperCtl.deadline-Date.now())/1000));$('gkClock').textContent=remain;
+ if(remain===0)claimKeeper(null);
+}
+function claimKeeper(id){
+ if(!game.keeperCtl||!['pickingA','pickingB'].includes(game.keeperCtl.stage))return;
+ stopKeeperTimer();const p=game.keeperCtl.pick(id);game.keeperUsed.add(p.id);
+ $('gkPool').replaceChildren();$('gkActive').classList.add('hidden');
+ showError((p.automatic?'Goalkeeper timeout: ':'Goalkeeper locked: ')+sideName(p.side));
+ saveShowdown();if(p.complete){$('keeperDraftPhase').classList.add('hidden');finishDraft();return;}keeperReady();
+}
+function startKeeperPhase(){
+ if(!GKS||!KeeperDraft||GKS.players.length<18){showError('Goalkeeper draft dependencies unavailable.');return;}
+ if(!game.keeperCtl)game.keeperCtl=KeeperDraft.create(GKS.players,game.keeperUsed,()=>cpuRandom());
+ const stage=game.keeperCtl.stage;
+ if(stage==='complete'){finishDraft();return;}
+ keeperReady();
+ if(['pickingA','pickingB'].includes(stage)&&game.mode==='solo'&&keeperSide()==='B')revealKeeper();
+}
+$('gkReveal').addEventListener('click',revealKeeper);
 
-const SAVE_KEY='the-cage.random-showdown.v60';
+function finishDraft(){if(game.keeperMode&&(!game.keeperCtl||!game.keeperCtl.complete)){startKeeperPhase();return;}stopKeeperTimer();stopClock();$('keeperDraftPhase').classList.add('hidden');const vs=$('versus-line');vs.replaceChildren();for(const side of ['A','VS','B']){const e=document.createElement('div');if(side==='VS'){e.className='versus-vs';e.textContent='VS';}else{e.className='versus-team '+side.toLowerCase();const h=document.createElement('h3');h.textContent=sideName(side);e.append(h);for(const pick of game.picks.filter(x=>x.side===side)){const line=document.createElement('span');line.textContent=byId.get(pick.id).name;e.append(line);}if(game.keeperMode&&game.keeperCtl?.complete){const g=GKS.BY_ID[game.keeperCtl.picks[side]],keeperLine=document.createElement('span');keeperLine.textContent='GK · '+g.name+' ('+g.overall+')';e.append(keeperLine);}}vs.append(e);} game.finished=true;game.pool=[];$('handoff').classList.add('hidden');$('selection').classList.add('hidden');$('finished').classList.remove('hidden');$('phase').textContent='DRAFT COMPLETE';$('current').textContent='Both squads locked · 3 players each';$('clock').textContent='✓';$('reroll').disabled=true;squads();saveShowdown();if(game.mode==='solo'){const team=game.picks.filter(p=>p.side==='B').map(p=>byId.get(p.id));const enemy=game.picks.filter(p=>p.side==='A').map(p=>byId.get(p.id));$('tacticB').value=window.CageCpu.tactic(team,enemy,game.difficulty,cpuRandom);$('tacticB').disabled=true;}else $('tacticB').disabled=false;$('finished').scrollIntoView({behavior:'auto',block:'start'});}
+function begin(fresh=true){hideArenaOutcome();if(fresh){game.mode=$('gameMode').value;game.difficulty=$('cpuDifficulty').value;game.keeperMode=$('keeperMode').checked;game.keeperUsed.clear();game.round=1;game.wins={A:0,B:0};game.used.clear();game.history=[];game.pending=null;game.champion=null;}clearMatchViewer();matchRecord=null;$('watch-again').classList.add('hidden');$('fight').disabled=false;$('tacticA').disabled=false;$('tacticB').disabled=false;stopClock();game.winner=randomInt(2)?'A':'B';game.picks=[];game.claimed.clear();game.rerolls={A:1,B:1};game.keeperCtl=null;stopKeeperTimer();$('keeperDraftPhase').classList.add('hidden');game.pool=[];game.finished=false;showError('');$('coinResult').textContent='COIN TOSS: '+sideName(game.winner)+' WINS FIRST PICK';$('intro').classList.add('hidden');$('game').classList.remove('hidden');$('result').textContent='';$('details').replaceChildren();$('next-round').classList.add('hidden');handoff();standings();saveShowdown();}
+
+const SAVE_KEY='the-cage.random-showdown.v60',GK_SAVE_KEY='the-cage.random-showdown.v66-gk',ACTIVE_KEY='the-cage.random-showdown.active-v66';
 function standings(){
  $('showdown-score').textContent='COMMANDER '+game.wins.A+' : '+game.wins.B+' '+sideName('B');$('cpuTeamLabel').textContent=sideName('B');$('cpuTacticLabel').textContent=sideName('B');
  $('round-number').textContent='ROUND '+game.round+' / 5';
@@ -85,10 +138,10 @@ function standings(){
  for(let i=0;i<5;i++){const mark=document.createElement('span');mark.className='round-mark'+(game.history[i]?(game.history[i].result.winner===0?' a':' b'):i===game.round-1?' current':'');mark.title=game.history[i]?'Round '+(i+1)+': '+sideName(game.history[i].result.winner===0?'A':'B')+' won':'Round '+(i+1);marks.append(mark);}
 }
 function saveShowdown(){
- const state={schema:1,round:game.round,wins:game.wins,used:[...game.used],history:game.history,
+ const state={schema:game.keeperMode?2:1,round:game.round,wins:game.wins,used:[...game.used],history:game.history,keeperMode:game.keeperMode,keeperUsed:[...game.keeperUsed],keeperState:game.keeperCtl?.snapshot()||null,
  pending:game.pending,picks:game.picks,winner:game.winner,rerolls:game.rerolls,mode:game.mode,difficulty:game.difficulty,
  pool:game.pool,deadline:game.deadline,active:game.active,finished:game.finished,champion:game.champion};
- try{localStorage.setItem(SAVE_KEY,JSON.stringify(state));}catch(e){showError('Unable to save showdown: '+e.message);}
+ try{localStorage.setItem(game.keeperMode?GK_SAVE_KEY:SAVE_KEY,JSON.stringify(state));localStorage.setItem(ACTIVE_KEY,game.keeperMode?'goalkeeper':'standard');}catch(e){showError('Unable to save showdown: '+e.message);}
 }
 function hideArenaOutcome(){$('arena-outcome').classList.add('hidden');}
 function showArenaOutcome(record){
@@ -114,11 +167,35 @@ function nextRound(){
  if(game.pending||!matchRecord||game.history.length!==game.round||game.champion||game.round>=5)return;
  game.round++;begin(false);
 }
+function validateKeeperShowdown(s){
+ const records=[...s.history,...(s.pending?[s.pending]:[])];
+ if(!s.keeperMode){
+  if(records.some(r=>r.schema===2||r.config?.keepers)||s.keeperState||(s.keeperUsed&&s.keeperUsed.length))throw Error('Standard showdown contains goalkeeper data.');
+  return;
+ }
+ if(s.schema!==2||!Array.isArray(s.keeperUsed)||new Set(s.keeperUsed).size!==s.keeperUsed.length||s.keeperUsed.some(id=>!GKS.BY_ID[id]))throw Error('Invalid goalkeeper exhaustion state.');
+ const used=new Set(),observed=new Set();
+ for(const r of records){
+  if(r.schema!==2||r.engineVersion!=='cage-t3-7'||!Array.isArray(r.config?.keepers)||r.config.keepers.length!==2)throw Error('Keeper-mode round must use T3-7 schema2.');
+  for(const id of r.config.keepers){if(used.has(id))throw Error('Goalkeeper repeated across showdown rounds.');used.add(id);observed.add(id);}
+ }
+ if(s.keeperState){
+  if(s.picks.length!==6)throw Error('Goalkeeper phase started before outfield draft completed.');
+  const machine=KeeperDraft.create(GKS.players,s.keeperUsed,()=>.5);
+  machine.restore(s.keeperState);
+  for(const id of Object.values(s.keeperState.picks).filter(Boolean))observed.add(id);
+  const roundRecord=s.pending||(s.history.length===s.round?s.history.at(-1):null);
+  if(roundRecord){
+   if(!machine.complete||roundRecord.config.keepers[0]!==machine.picks.A||roundRecord.config.keepers[1]!==machine.picks.B)throw Error('Current keeper picks differ from recorded match.');
+  }
+ }else if(s.picks.length===6&&!s.pending&&s.history.length!==s.round)throw Error('Finished outfield draft lacks goalkeeper phase.');
+ if(observed.size!==s.keeperUsed.length||s.keeperUsed.some(id=>!observed.has(id)))throw Error('Goalkeeper exhaustion disagrees with history and draft.');
+}
 function restoreShowdown(){
- let s;try{s=JSON.parse(localStorage.getItem(SAVE_KEY)||'null');}catch(e){showError('Saved showdown cannot be read. Existing file was not deleted.');return;}
+ let s;try{const active=localStorage.getItem(ACTIVE_KEY);const raw=active==='goalkeeper'?localStorage.getItem(GK_SAVE_KEY):active==='standard'?localStorage.getItem(SAVE_KEY):localStorage.getItem(SAVE_KEY)||localStorage.getItem(GK_SAVE_KEY);s=JSON.parse(raw||'null');}catch(e){showError('Saved showdown cannot be read. Existing file was not deleted.');return;}
  if(!s)return;
  try{
-  if(s.schema!==1||!['hotseat','solo'].includes(s.mode||'hotseat')||!window.CageCpu.LEVELS.includes(s.difficulty||'competitive')||!Number.isInteger(s.round)||s.round<1||s.round>5||!Array.isArray(s.history)||s.history.length>5||!Array.isArray(s.used)||new Set(s.used).size!==s.used.length||s.used.some(id=>!byId.has(id)))throw Error('Unsupported saved showdown');
+  if(![1,2].includes(s.schema)||!!s.keeperMode!==(s.schema===2)||!['hotseat','solo'].includes(s.mode||'hotseat')||!window.CageCpu.LEVELS.includes(s.difficulty||'competitive')||!Number.isInteger(s.round)||s.round<1||s.round>5||!Array.isArray(s.history)||s.history.length>5||!Array.isArray(s.used)||new Set(s.used).size!==s.used.length||s.used.some(id=>!byId.has(id)))throw Error('Unsupported saved showdown');
   let a=0,b=0,ids=new Set();
   for(let i=0;i<s.history.length;i++){const r=window.CageRecords.validate(s.history[i]);if(r.round!==i+1)throw Error('Round history mismatch');window.CageRecords.reproduce(r);for(const id of r.config.teams.flat()){if(ids.has(id))throw Error('Repeated historical player');ids.add(id);}if(r.result.winner===0)a++;else b++;}
   if(a!==s.wins.A||b!==s.wins.B)throw Error('Invalid recorded wins');
@@ -132,8 +209,9 @@ function restoreShowdown(){
   if(!Array.isArray(s.pool)||![0,15].includes(s.pool.length)||new Set(s.pool).size!==s.pool.length||s.pool.some(id=>!byId.has(id)||ids.has(id)))throw Error('Invalid saved candidate pool');
   if(!s.rerolls||!Number.isInteger(s.rerolls.A)||!Number.isInteger(s.rerolls.B)||![0,1].includes(s.rerolls.A)||![0,1].includes(s.rerolls.B))throw Error('Invalid saved rerolls');
   if(!Number.isFinite(s.deadline)||s.deadline<0||typeof s.active!=='boolean'||(s.active&&s.pool.length!==15))throw Error('Invalid saved draft timer');
+   validateKeeperShowdown(s);
   if(s.picks.length===6&&s.pending){const teams=['A','B'].map(side=>s.picks.filter(x=>x.side===side).map(x=>x.id));if(JSON.stringify(teams)!==JSON.stringify(s.pending.config.teams))throw Error('Pending squads differ from draft');}
-  game.mode=s.mode||'hotseat';game.difficulty=s.difficulty||'competitive';$('gameMode').value=game.mode;$('cpuDifficulty').value=game.difficulty;$('cpuDifficulty').disabled=game.mode!=='solo';game.round=s.round;game.wins={A:a,B:b};game.history=s.history;game.used=new Set(s.used);
+  game.mode=s.mode||'hotseat';game.difficulty=s.difficulty||'competitive';game.keeperMode=!!s.keeperMode;game.keeperUsed=new Set(s.keeperUsed||[]);$('keeperMode').checked=game.keeperMode;if(game.keeperMode){if([...game.keeperUsed].some(id=>!GKS.BY_ID[id])||game.keeperUsed.size!==(s.keeperUsed||[]).length)throw Error('Invalid keeper exhaustion');game.keeperCtl=s.keeperState?KeeperDraft.create(GKS.players,game.keeperUsed,cpuRandom):null;if(game.keeperCtl)game.keeperCtl.restore(s.keeperState);}else game.keeperCtl=null;$('gameMode').value=game.mode;$('cpuDifficulty').value=game.difficulty;$('cpuDifficulty').disabled=game.mode!=='solo';game.round=s.round;game.wins={A:a,B:b};game.history=s.history;game.used=new Set(s.used);
   game.picks=s.picks;game.claimed=new Set(s.picks.map(x=>x.id));
   game.winner=['A','B'].includes(s.winner)?s.winner:null;
   game.rerolls=s.rerolls||{A:1,B:1};game.pool=Array.isArray(s.pool)?s.pool:[];game.deadline=s.deadline||0;game.active=!!s.active;
@@ -151,7 +229,7 @@ function restoreShowdown(){
       if(game.champion){const crown=document.createElement('div');crown.id='champion-celebration';crown.textContent='THE CAGE CHAMPION: '+sideName(game.champion);$('details').replaceChildren(crown);}
     }
   }else{
-    game.active=false;handoff();game.pool=Array.isArray(s.pool)?s.pool:[];game.deadline=s.deadline||0;
+    game.active=false;if(game.keeperMode&&s.picks.length===6)startKeeperPhase();else handoff();game.pool=Array.isArray(s.pool)?s.pool:[];game.deadline=s.deadline||0;
   }
   showError('Saved showdown restored. Exhausted players remain unavailable.');
  }catch(e){showError('Saved showdown not loaded: '+e.message+'. Your saved data was preserved.');}
@@ -169,7 +247,7 @@ function fight(){
   clearMatchViewer();hideArenaOutcome();
   const teams=['A','B'].map(side=>game.picks.filter(p=>p.side===side).map(p=>p.id));
   const seed=crypto.getRandomValues(new Uint32Array(1))[0];
-  const config={teams,tactics:[$('tacticA').value,$('tacticB').value],seed,mode:'score',traits:{enabled:true}};
+  const config={teams,tactics:[$('tacticA').value,$('tacticB').value],seed,mode:'score',traits:{enabled:true}};if(game.keeperMode){if(!game.keeperCtl?.complete)throw Error('Two goalkeepers must be locked');config.keepers=[game.keeperCtl.picks.A,game.keeperCtl.picks.B];}
   try{
     const result=engine.simulate(config);
     const record=window.CageRecords.make(config,result,game.round);
@@ -195,7 +273,7 @@ $('gameMode').addEventListener('change',()=>{const solo=$('gameMode').value==='s
 $('begin').addEventListener('click',begin);
 $('reveal').addEventListener('click',startPick);
 $('reroll').addEventListener('click',()=>{if(!game.active)return;const s=currentSide();if(!game.rerolls[s])return;if(Date.now()>=game.deadline){tick();return;}game.rerolls[s]=0;const old=game.pool.slice();game.pool=candidates(old);if(game.pool.length===0)game.pool=candidates();render();saveShowdown();$('selection').focus({preventScroll:true});});
-$('restart').addEventListener('click',()=>{if((game.history.length>0||game.pending||game.finished||game.picks.length>0||game.active)&&!window.confirm('Discard this showdown, all round results, and its saved progress?'))return;localStorage.removeItem(SAVE_KEY);game.round=1;game.wins={A:0,B:0};game.used.clear();game.history=[];game.pending=null;game.champion=null;standings();hideArenaOutcome();clearMatchViewer();matchRecord=null;$('watch-again').classList.add('hidden');$('fight').disabled=false;$('tacticA').disabled=false;$('tacticB').disabled=false;stopClock();$('intro').classList.remove('hidden');$('game').classList.add('hidden');$('handoff').classList.add('hidden');$('hints').checked=false;$('hintNote').textContent='Only verified class-counter guidance is shown.';$('tacticB').disabled=false;game.finished=false;});
+$('restart').addEventListener('click',()=>{if((game.history.length>0||game.pending||game.finished||game.picks.length>0||game.active)&&!window.confirm('Discard this showdown, all round results, and its saved progress?'))return;stopKeeperTimer();localStorage.removeItem(game.keeperMode?GK_SAVE_KEY:SAVE_KEY);localStorage.setItem(ACTIVE_KEY,game.keeperMode?'goalkeeper':'standard');game.keeperMode=false;game.keeperCtl=null;game.keeperUsed.clear();game.picks=[];game.claimed.clear();game.pool=[];game.deadline=0;game.rerolls={A:1,B:1};$('keeperMode').checked=false;$('keeperDraftPhase').classList.add('hidden');game.round=1;game.wins={A:0,B:0};game.used.clear();game.history=[];game.pending=null;game.champion=null;standings();hideArenaOutcome();clearMatchViewer();matchRecord=null;$('watch-again').classList.add('hidden');$('fight').disabled=false;$('tacticA').disabled=false;$('tacticB').disabled=false;stopClock();$('intro').classList.remove('hidden');$('game').classList.add('hidden');$('handoff').classList.add('hidden');$('hints').checked=false;$('hintNote').textContent='Only verified class-counter guidance is shown.';$('tacticB').disabled=false;game.finished=false;});
 $('fight').addEventListener('click',fight);
 $('next-round').addEventListener('click',nextRound);
 $('arena-next').addEventListener('click',nextRound);
@@ -224,6 +302,6 @@ $('watch-again').addEventListener('click',()=>{
 });
 
 $('hints').addEventListener('change',()=>{$('hintNote').textContent=$('hints').checked?'Indicators require verified class-counter relationships. No speculative advice is shown.':'Optional guidance shows only when supported by actual player class data.';});
-window.CageRandomDraft={snapshot:()=>({mode:game.mode,difficulty:game.difficulty,winner:game.winner,picks:game.picks.map(x=>({...x})),rerolls:{...game.rerolls},pool:game.pool.slice(),active:game.active,finished:game.finished,round:game.round,wins:{...game.wins},used:[...game.used],history:game.history.map(r=>({round:r.round,winner:r.result.winner,teams:r.config.teams})),pending:!!game.pending,champion:game.champion}),sample};
+window.CageRandomDraft={snapshot:()=>({mode:game.mode,difficulty:game.difficulty,keeperMode:game.keeperMode,keeperStage:game.keeperCtl?.stage||'none',keeperUsedCount:game.keeperUsed.size,keepers:game.keeperCtl?.complete?game.keeperCtl.picks:null,winner:game.winner,picks:game.picks.map(x=>({...x})),rerolls:{...game.rerolls},pool:game.pool.slice(),active:game.active,finished:game.finished,round:game.round,wins:{...game.wins},used:[...game.used],history:game.history.map(r=>({round:r.round,winner:r.result.winner,teams:r.config.teams})),pending:!!game.pending,champion:game.champion}),sample};
 standings();if(roster.length<21)showError('Roster failed to load or has insufficient distinct players.');else restoreShowdown();
 })();

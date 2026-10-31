@@ -1,5 +1,5 @@
-/* THE CAGE V5.7: generated from the canonical playable dependency list. */
-const CACHE='the-cage-full-v57-bdeca3cb3dc0';
+/* THE CAGE V6.6 EXPERIMENTAL: generated from the canonical playable dependency list. */
+const CACHE='the-cage-full-v66-05e48002fd1b';
 const STATIC=[
   "./assets/cage-icon.svg",
   "./classic-v56/assets/cage-icon.svg",
@@ -90,6 +90,7 @@ const STATIC=[
   "./src/ace-recruitment-v1.js",
   "./src/cage-commentary.js",
   "./src/cage-engine-draft.js",
+  "./src/cage-engine-v65.js",
   "./src/cage-engine.js",
   "./src/cage-ui.css",
   "./src/cpu-draft.js",
@@ -97,7 +98,9 @@ const STATIC=[
   "./src/elite-ovr-approved-v21.js",
   "./src/engine/legacy-v04.js",
   "./src/full-cage.css",
+  "./src/goalkeepers.js",
   "./src/identity/search.js",
+  "./src/keeper-draft.js",
   "./src/natural-positions.js",
   "./src/overall.js",
   "./src/owner-tier-decisions-v17.js",
@@ -126,6 +129,7 @@ const STATIC=[
   "./src/showdown-v5.js",
   "./src/stalwart-ovr-approved-v1.js",
   "./src/tactical-refinement.js",
+  "./src/tactics/goalkeeper-rules.js",
   "./src/viewer-v4/fx.js",
   "./src/viewer-v4/goal-audio.js",
   "./src/viewer-v4/goal-experience.js",

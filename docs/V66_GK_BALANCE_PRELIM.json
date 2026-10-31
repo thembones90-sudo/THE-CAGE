@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-31",
+  "engine": "cage-t3-7",
+  "samplesPerPair": 250,
+  "description": "Early single-trio, paired-seed diagnostic: not final scoring calibration",
+  "rows": [
+    {
+      "mode": "NoGK",
+      "matches": 250,
+      "goalsPerMatch": 7.73,
+      "goldenPct": 13.6,
+      "meanDuration": 1212.6,
+      "saves": 0,
+      "parries": 0,
+      "failures": 0
+    },
+    {
+      "mode": "TopPair",
+      "matches": 250,
+      "goalsPerMatch": 6.27,
+      "goldenPct": 15.2,
+      "meanDuration": 1231.4,
+      "saves": 1201,
+      "parries": 442,
+      "failures": 0
+    },
+    {
+      "mode": "Mixed",
+      "matches": 250,
+      "goalsPerMatch": 6.66,
+      "goldenPct": 13.2,
+      "meanDuration": 1220.1,
+      "saves": 1128,
+      "parries": 451,
+      "failures": 0
+    },
+    {
+      "mode": "Lower",
+      "matches": 250,
+      "goalsPerMatch": 6.94,
+      "goldenPct": 13.6,
+      "meanDuration": 1217.3,
+      "saves": 940,
+      "parries": 545,
+      "failures": 0
+    }
+  ]
+}
