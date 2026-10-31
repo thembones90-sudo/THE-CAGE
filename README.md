@@ -1,3 +1,18 @@
+# THE CAGE V5.7 Combined Preview
+
+This worktree contains the integrated 194-player T3 game and the V5.6 Golden Goal cinematic. Start the offline Windows preview at `dist/TheCage-V57-Combined-Preview.exe` or serve this directory locally.
+
+- Main game: `/play.html` (T3-6 default)
+- Random Draft: `/draft.html`
+- Historical V5.6 Classic saves: `/classic-v56/play.html` (182-player archived engine)
+- Explicit current-roster legacy mode: `/play.html?engine=legacy`
+
+Read `V57_COMBINED_RELEASE_REPORT.md` for the verification log, preservation of old saves, and distribution notes.
+
+---
+
+## Historical project documentation (v0.4 and earlier)
+
 # THE CAGE — v0.4
 
 Canonical project: `A:\THE CAGE`. The current playable source is `index.html`; earlier prototypes remain as references.

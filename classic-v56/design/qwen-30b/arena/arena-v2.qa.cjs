@@ -1,0 +1,33 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const root=__dirname;
+const read=n=>fs.readFileSync(path.join(root,n),'utf8');
+const iron=read('arena.svg'),gold=read('arena-golden.svg'),ball=read('relic-ball.svg'),goal=read('iron-maw-detail.svg'),html=read('index.html'),css=read('styles.css'),js=read('script.js');
+const ids=['foundation','surface','markings','cage-frame','chain-net-left','chain-net-right','chain-links-left','chain-links-right','goal-left','goal-right','lights','environment-labels','variant-spill'];
+for(const [name,svg] of [['Iron Pit',iron],['Golden Arena',gold]]){
+  assert.match(svg,/viewBox="0 0 1200 650"/);
+  for(const id of ids)assert(svg.includes('id="'+id+'"'),name+' missing '+id);
+  assert(svg.includes('x="110" y="70" width="980" height="510"'),name+' geometry drifted');
+  assert.match(svg,/id="interlocked-chain"/);
+  assert.match(svg,/id="chain-links-left"/);
+  assert.match(svg,/id="chain-links-right"/);
+  assert(!/https?:\/\//.test(svg.replace(/xmlns="[^"]*"/g,'')),'external image URL');
+  assert.match(svg,/viewBox="0 0 1200 650"/);
+}
+assert.notEqual(iron,gold,'Golden Arena must be a distinct asset');
+assert(gold.includes('id="gold-flare"'),'warm floodlight missing');
+assert(iron.includes('id="perimeter-flare"'),'cool floodlight missing');
+assert.match(ball,/viewBox="0 0 200 200"/);
+assert.match(goal,/viewBox="0 0 650 380"/);
+assert(goal.includes('id="chains"')&&goal.includes('id="steel-goal-frame"'));
+assert(html.includes('src="./relic-ball.svg"')&&html.includes('src="./iron-maw-detail.svg"'));
+assert(html.includes('id="inspect-btn"'));
+assert(js.includes("'./arena-golden.svg'")&&js.includes("'./arena.svg'"));
+assert(js.includes("classList.toggle('pitch-only')"));
+assert(css.includes('max-width:650px')&&css.includes('max-width:460px'));
+for(const name of ['arena-v2-iron-desktop.png','arena-v2-golden-desktop.png','arena-v2-mobile.png'])assert(fs.statSync(path.join(root,name)).size>50000,name+' screenshot missing');
+const placed=[0,1,2,3].map(c=>110+(c+.5)*980/4);
+assert.deepEqual(placed.map(x=>x.toFixed(3)),['232.500','477.500','722.500','967.500']);
+console.log('ARENA_V2_QA_PASS: geometry, 13 independent groups per variant, separate nets and goals, ball/detail vectors, two real variants, controls, mobile rules and 3 Chrome screenshots.');

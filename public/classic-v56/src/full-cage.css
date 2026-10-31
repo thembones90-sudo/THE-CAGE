@@ -1,0 +1,64 @@
+/* THE CAGE Complete / Industrial Underground.
+   Full match gameplay uses V4 event-log viewer. No gameplay rules in CSS. */
+:root{--iv-bg:#080e12;--iv-surface:#16262c;--iv-outline:#4c646d;--iv-text:#e5eeea;--iv-muted:#91a8b0;--iv-gold:#d7b465;--iv-blue:#5bc6de;--iv-red:#eb7680;color-scheme:dark}
+html{scroll-behavior:smooth}body{background:radial-gradient(ellipse at 48% 5%,#283a3f 0,#131f25 34%,#070d11 74%);color:var(--iv-text);font-family:"Segoe UI",Arial,sans-serif;min-width:290px}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.07;background:repeating-linear-gradient(130deg,transparent 0 13px,#c3d7d833 13px 14px)}
+main{position:relative;max-width:1560px;padding:23px clamp(11px,3.5vw,52px) 45px}
+main>.top{top:0;margin:-23px 0 20px;padding:18px 3px 15px;background:linear-gradient(120deg,#111e23f7,#182931f7);border-bottom:1px solid #647b82aa;box-shadow:0 8px 25px #03080a88;backdrop-filter:blur(9px)}
+main>.top h1{font:900 clamp(42px,5.4vw,85px)/.98 Impact,"Arial Narrow",sans-serif;letter-spacing:.085em;color:#e9f0ed;text-shadow:0 4px 20px #0008}
+main>.top .badge{font-size:10px;letter-spacing:.19em;color:var(--iv-gold);font-weight:900}
+main>.top .sub{font-size:12px;color:var(--iv-muted);max-width:670px;line-height:1.5;letter-spacing:.02em;margin:8px 0}
+main>.top .score{border:1px solid #789096;background:#0b151b;min-width:150px;text-align:center;padding:12px 24px;font:900 clamp(28px,3.8vw,52px)/1 "Consolas",monospace;color:#e5cc8d;box-shadow:inset 0 2px 0 #c5dadf2c,0 10px 22px #03080d66}
+main>.top .score .small{font:900 10px/1.8 system-ui;letter-spacing:.11em;color:#a5bec3}
+.panel{border-radius:3px;background:linear-gradient(148deg,#1b2b32,#111e24);border:1px solid #536970;box-shadow:inset 0 1px 0 #b3ccd21c,0 10px 26px #0003;padding:clamp(12px,1.7vw,23px)}
+.panel h2{letter-spacing:.09em;font-weight:900;font-size:clamp(15px,1.4vw,19px);color:#e1e9e6}
+.panel.a{border-top:3px solid var(--iv-blue)}.panel.b{border-top:3px solid var(--iv-red)}
+.slot{border-radius:3px;background:#0b171c;border-color:#40545b;min-height:74px;position:relative}.slot.claimed{border-radius:2px}
+.slot input,select,input,button{border-radius:3px;min-height:43px;background:#15272e;border:1px solid #546b75;color:var(--iv-text)}
+.slot input{font-size:15px;letter-spacing:.015em}.slot>label{font-weight:800;letter-spacing:.13em;font-size:10px}
+button{font-weight:850;background:linear-gradient(150deg,#365662,#233840);transition:filter .14s,border-color .14s}button:disabled{opacity:.48}button:hover:not(:disabled){border-color:#dbbb72}
+button.confirm,.wide:not(:disabled){background:linear-gradient(135deg,#346d66,#1c514d);border-color:#518b7f}
+#play:not(:disabled){background:linear-gradient(135deg,#e9c87d,#b88b3f);color:#101b1e;border:1px solid #f0d49c;font-weight:950;box-shadow:0 4px 21px #a07d3b3b}
+#next:not(:disabled){background:linear-gradient(135deg,#66ccad,#277e74);color:#0c1717;box-shadow:0 4px 20px #48b7a24a}
+#reset{border-color:#5a7179;color:#c6d3d4;background:#23323a}
+#match-control{padding:clamp(11px,2.2vw,22px);border-top:3px solid #9d8655}
+#match-control>.top{padding-bottom:10px;border-bottom:1px solid #4f666c}
+#pool{font-weight:900;color:#d4bf87;font-size:11px;border-radius:3px;background:#0d161b}
+#match-control .actions{margin:16px 0 9px}#match-control .actions>*{flex:1 1 125px;min-width:110px;min-height:48px}
+#status{margin:9px 0;font-size:13px;line-height:1.5}
+#arena{padding:16px;border:1px solid #536a71;border-radius:3px;background:linear-gradient(180deg,#23343c,#111d24);color:#b6c7c9;font-size:12px}
+.integrated-viewer{margin:13px 0 0;border:1px solid #617980;background:#081218;box-shadow:0 18px 58px #0008}
+.v5-viewer-heading{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;padding:11px 14px;background:linear-gradient(90deg,#273a3e,#121f24);border-bottom:1px solid #5e7378;font-size:11px;font-weight:900;letter-spacing:.2em;color:#d9b96c}
+.v5-viewer-heading small{font-size:9px;color:#a3b5b9;letter-spacing:.12em}
+.integrated-viewer .cv-root{padding:10px;gap:10px}.integrated-viewer .cv-scoreboard{border-radius:3px;padding:11px;background:linear-gradient(135deg,#20323a,#101c22);border-color:#60777f}
+.integrated-viewer .cv-main{grid-template-columns:minmax(0,1fr) minmax(270px,330px)}
+.integrated-viewer .cv-stage{aspect-ratio:1200/650;border-radius:2px;min-height:0}.integrated-viewer .cv-goalcard{border-radius:3px}
+.integrated-viewer .cv-side{border-radius:3px;max-height:min(70vh,650px)}
+.integrated-viewer .cv-controls{border-radius:3px;padding:10px}
+.integrated-viewer .cv-match .cv-score{font-size:clamp(26px,3.3vw,43px)}
+.integrated-viewer .cv-scoreboard .cv-round{color:#ddb965}
+#history{margin-top:17px}.history-round{padding:15px 4px}.history-round strong{color:#e4c47e}.history-round button{min-height:44px}
+#recap{border:1px solid #79865b;background:#101e22;padding:14px}
+#recall-hint{margin:14px 4px 16px;font-size:12px;color:#9caeaf}
+#report .stat{display:grid;grid-template-columns:1fr 1.1fr 1fr;align-items:center;padding:9px 3px;border-bottom:1px solid #435961;font-variant-numeric:tabular-nums}
+#report .stat span:nth-child(2){text-align:center;color:#a2b4b9}#report .stat span:last-child{text-align:right}
+.match-view main>.grid{display:none}.match-view #recall-hint{display:none}.match-view #arena{display:none}.match-view #match-control>.grid{display:block}.match-view #match-control>.grid>div:first-child{display:none}.match-view #report{width:100%}
+.match-view .integrated-viewer:not(.hidden){display:block}.match-view main>.top{padding:10px 3px}.match-view main>.top h1{font-size:clamp(25px,3vw,43px)}.match-view main>.top .sub{display:none}.match-view main>.top .score{font-size:30px}
+.integrated-viewer.hidden{display:none!important}.hidden{display:none!important}
+@media(max-width:1110px){.integrated-viewer .cv-main{grid-template-columns:1fr}.integrated-viewer .cv-side{max-height:none}.integrated-viewer .cv-comm{max-height:160px;min-height:60px}}
+@media(max-width:720px){main{padding:10px 9px 30px}main>.top{margin:-10px 0 11px;padding:10px 2px}.panel{padding:12px}.slot{grid-template-columns:1fr}.slot button{width:100%}main>.top h1{font-size:38px}main>.top .score{min-width:100px;padding:9px 13px}main>.top .score .small{font-size:8px}main>.top .sub{max-width:260px;font-size:10px}.integrated-viewer .cv-root{padding:5px;gap:6px}.integrated-viewer .cv-stage{aspect-ratio:1200/650}.integrated-viewer .cv-scoreboard{grid-template-columns:1fr 1fr;gap:6px}.integrated-viewer .cv-match{grid-column:1/-1;order:-1}.integrated-viewer .cv-match .cv-score{font-size:25px}.integrated-viewer .cv-side{padding:9px}.integrated-viewer .cv-controls button,.integrated-viewer .cv-controls select{min-height:44px}.v5-viewer-heading{padding:9px}.v5-viewer-heading small{font-size:8px}.match-view main>.top h1{font-size:27px}.match-view main>.top .score{font-size:23px}#match-control .actions{gap:6px}#match-control .actions>*{min-width:calc(50% - 6px);flex-basis:calc(50% - 6px)}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* Phone: keep the golden goal celebration readable without hiding the whole pitch. */
+@media(max-width:650px){
+ .integrated-viewer .cv-goalcard{top:auto;bottom:6%;left:50%;transform:translateX(-50%);width:min(59%,280px);min-width:0;padding:8px 10px;gap:2px}
+ .integrated-viewer .cv-goalcard b{font-size:clamp(16px,4.2vw,24px);line-height:1}
+ .integrated-viewer .cv-goalcard span{font-size:clamp(13px,3.2vw,16px)}
+ .integrated-viewer .cv-goalcard small,.integrated-viewer .cv-goalcard em{font-size:9px}
+ .integrated-viewer .cv-goalcard i{font-size:8px}
+}
+
+/* Opt-in-only counterplay hints; no hints are mounted when OFF. */
+.cage-counter-toggle{display:flex;align-items:center;gap:9px;max-width:max-content;margin:12px 0;padding:9px 12px;border:1px solid rgba(104,140,148,.38);border-radius:6px;color:#bfced0;cursor:pointer;background:rgba(12,23,27,.42)}
+.cage-counter-toggle input{width:16px;height:16px;accent-color:#e5bd67;cursor:pointer}
+.cage-counter-hint{font-size:.75rem;line-height:1.45;max-width:100%;border-left:2px solid #a98c52;margin-top:8px;padding:7px 9px;background:rgba(212,180,105,.055)}

@@ -6,6 +6,14 @@ let wins={A:0,B:0},round=1,roundFinished=false,playing=false,timer=null,history=
 const tacticHelp={balanced:'Balanced: even priorities, with no specialist emphasis.',possession:'Possession: more patient passing and shielding; fewer direct runs and shots. Pressure can trap the buildup.',press:'High Press: more defensive engagement; higher fatigue and foul risk. Beaten pressure leaves recovery work.',counter:'Counterattack: deeper defence and more direct runs; less patient buildup and fewer pressing attempts.'};
 function node(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;}
 const storageNote=node('p','','small muted');storageNote.id='save-status';$('status').after(storageNote);
+// Historical Classic saves cannot be replayed using T3's different simulation schema.
+// Offer an explicit, lossless route back to the Classic engine instead of hiding the old key.
+if(E.VERSION.startsWith('cage-t3')&&localStorage.getItem('the-cage.showdown.v1')){
+ const notice=node('aside',undefined,'panel legacy-save-notice');notice.id='legacy-save-notice';notice.setAttribute('role','status');
+ notice.append(node('strong','Classic saved showdown detected. '),node('span','Your original save is preserved. '));
+ const link=node('a','Open saved Classic game');link.href='classic-v56/play.html';link.id='legacy-save-link';notice.append(link);
+ document.querySelector('main > .grid').before(notice);
+}
 const resumeBox=node('section',undefined,'panel resume-box hidden');resumeBox.id='resume-box';const resumeText=node('p'),continueButton=node('button','Continue showdown'),freshButton=node('button','Start fresh','secondary'),exportSavedButton=node('button','Export saved session (JSON)','secondary');exportSavedButton.id='export-saved-session';resumeBox.append(resumeText,continueButton,freshButton,exportSavedButton);
 exportSavedButton.onclick=()=>{const data=localStorage.getItem(KEY)||candidate&&JSON.stringify(candidate);if(!data){setStatus('No saved session is available for export.',true);return;}const blob=new Blob([data],{type:'application/json'}),url=URL.createObjectURL(blob),a=node('a');a.href=url;a.download='the-cage-saved-session-'+(E.VERSION.startsWith('cage-t3')?'t3':'classic')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);setStatus('Saved session exported; the original remains in browser storage.');};document.querySelector('main > .grid').before(resumeBox);
 const replayButton=node('button','Replay match');replayButton.id='replay-match';replayButton.disabled=true;$('next').after(replayButton);

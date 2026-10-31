@@ -1,0 +1,19 @@
+{
+  "name": "THE CAGE - Golden Goal Showdown",
+  "short_name": "THE CAGE",
+  "description": "Remember. Claim. Play a legendary 3v3 golden goal showdown.",
+  "start_url": "./play.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#081217",
+  "theme_color": "#132228",
+  "icons": [
+    {
+      "src": "./assets/cage-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

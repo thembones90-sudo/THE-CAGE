@@ -1,0 +1,1898 @@
+{
+  "version": "elite-ovr-approved-v2.1",
+  "status": "OWNER-ACCEPTED",
+  "baselineCommit": "c755401",
+  "method": "Underlier corrections, formula-derived OVR, zero hardcoded individual overall ratings",
+  "players": [
+    {
+      "id": "safet-susic",
+      "name": "Safet Sušić",
+      "previous": 95,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "CAM",
+      "archetype": "Classic playmaker",
+      "changes": {
+        "tech": [
+          98,
+          94
+        ],
+        "pass": [
+          97,
+          90
+        ],
+        "first_touch": [
+          98,
+          93
+        ],
+        "dribbling": [
+          97,
+          92
+        ],
+        "passing": [
+          97,
+          90
+        ],
+        "composure": [
+          93,
+          81
+        ]
+      },
+      "maxDiff": 12,
+      "score": 89.14
+    },
+    {
+      "id": "adriano",
+      "name": "Adriano",
+      "previous": 93,
+      "approvedOVR": 91,
+      "rawOVR": 91,
+      "position": "ST",
+      "archetype": "Poacher",
+      "changes": {
+        "finish": [
+          96,
+          90
+        ],
+        "finishing": [
+          96,
+          90
+        ],
+        "shooting": [
+          97,
+          96
+        ]
+      },
+      "maxDiff": 6,
+      "score": 91.123
+    },
+    {
+      "id": "andrea-barzagli",
+      "name": "Andrea Barzagli",
+      "previous": 93,
+      "approvedOVR": 88,
+      "rawOVR": 88,
+      "position": "CB",
+      "archetype": "Traditional centre-back",
+      "changes": {
+        "def": [
+          97,
+          88
+        ],
+        "phys": [
+          90,
+          89
+        ],
+        "physical": [
+          90,
+          89
+        ],
+        "tackling": [
+          97,
+          91
+        ],
+        "positioning": [
+          96,
+          92
+        ]
+      },
+      "maxDiff": 9,
+      "score": 88.047
+    },
+    {
+      "id": "robert-prosinecki",
+      "name": "Robert Prosinečki",
+      "previous": 93,
+      "approvedOVR": 87,
+      "rawOVR": 87,
+      "position": "CAM",
+      "archetype": "Classic playmaker",
+      "changes": {
+        "tech": [
+          97,
+          95
+        ],
+        "pass": [
+          94,
+          85
+        ],
+        "dribbling": [
+          96,
+          93
+        ],
+        "passing": [
+          94,
+          85
+        ],
+        "vision": [
+          97,
+          90
+        ],
+        "composure": [
+          91,
+          82
+        ]
+      },
+      "maxDiff": 9,
+      "score": 87.142
+    },
+    {
+      "id": "sami-hyypia",
+      "name": "Sami Hyypiä",
+      "previous": 93,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "CB",
+      "archetype": "Traditional centre-back",
+      "changes": {
+        "def": [
+          95,
+          88
+        ],
+        "tackling": [
+          96,
+          92
+        ],
+        "positioning": [
+          97,
+          95
+        ]
+      },
+      "maxDiff": 7,
+      "score": 89.11
+    },
+    {
+      "id": "josip-ilicic",
+      "name": "Josip Iličić",
+      "previous": 92,
+      "approvedOVR": 87,
+      "rawOVR": 87,
+      "position": "CAM",
+      "archetype": "Classic playmaker",
+      "changes": {
+        "tech": [
+          96,
+          95
+        ],
+        "pass": [
+          91,
+          83
+        ],
+        "first_touch": [
+          95,
+          93
+        ],
+        "dribbling": [
+          94,
+          92
+        ],
+        "passing": [
+          91,
+          83
+        ],
+        "vision": [
+          94,
+          89
+        ],
+        "composure": [
+          91,
+          84
+        ]
+      },
+      "maxDiff": 8,
+      "score": 87.127
+    },
+    {
+      "id": "matt-le-tissier",
+      "name": "Matt Le Tissier",
+      "previous": 92,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "CAM",
+      "archetype": "Classic playmaker",
+      "changes": {
+        "pass": [
+          90,
+          85
+        ],
+        "passing": [
+          90,
+          85
+        ],
+        "vision": [
+          93,
+          91
+        ],
+        "composure": [
+          94,
+          89
+        ]
+      },
+      "maxDiff": 5,
+      "score": 89.185
+    },
+    {
+      "id": "miodrag-belodedici",
+      "name": "Miodrag Belodedici",
+      "previous": 92,
+      "approvedOVR": 88,
+      "rawOVR": 88,
+      "position": "CB",
+      "archetype": "Traditional centre-back",
+      "changes": {
+        "def": [
+          97,
+          89
+        ],
+        "phys": [
+          80,
+          79
+        ],
+        "physical": [
+          80,
+          79
+        ],
+        "tackling": [
+          96,
+          91
+        ],
+        "positioning": [
+          98,
+          94
+        ]
+      },
+      "maxDiff": 8,
+      "score": 88.044
+    },
+    {
+      "id": "shunsuke-nakamura",
+      "name": "Shunsuke Nakamura",
+      "previous": 92,
+      "approvedOVR": 86,
+      "rawOVR": 86,
+      "position": "CAM",
+      "archetype": "Classic playmaker",
+      "changes": {
+        "tech": [
+          96,
+          92
+        ],
+        "pass": [
+          96,
+          90
+        ],
+        "first_touch": [
+          95,
+          90
+        ],
+        "dribbling": [
+          89,
+          84
+        ],
+        "passing": [
+          96,
+          90
+        ],
+        "vision": [
+          95,
+          87
+        ],
+        "composure": [
+          94,
+          82
+        ]
+      },
+      "maxDiff": 12,
+      "score": 86.021
+    },
+    {
+      "id": "ariel-ortega",
+      "name": "Ariel Ortega",
+      "previous": 91,
+      "approvedOVR": 87,
+      "rawOVR": 87,
+      "position": "CAM",
+      "archetype": "Classic playmaker",
+      "changes": {
+        "tech": [
+          98,
+          97
+        ],
+        "pass": [
+          91,
+          84
+        ],
+        "first_touch": [
+          97,
+          95
+        ],
+        "dribbling": [
+          99,
+          97
+        ],
+        "passing": [
+          91,
+          84
+        ],
+        "vision": [
+          96,
+          91
+        ],
+        "composure": [
+          86,
+          79
+        ]
+      },
+      "maxDiff": 7,
+      "score": 87.049
+    },
+    {
+      "id": "juan-arango",
+      "name": "Juan Arango",
+      "previous": 91,
+      "approvedOVR": 87,
+      "rawOVR": 87,
+      "position": "CAM",
+      "archetype": "Classic playmaker",
+      "changes": {
+        "pass": [
+          95,
+          88
+        ],
+        "first_touch": [
+          93,
+          92
+        ],
+        "dribbling": [
+          87,
+          86
+        ],
+        "passing": [
+          95,
+          88
+        ],
+        "vision": [
+          95,
+          91
+        ],
+        "composure": [
+          91,
+          84
+        ]
+      },
+      "maxDiff": 7,
+      "score": 87.029
+    },
+    {
+      "id": "marcelinho-hertha",
+      "name": "Marcelinho",
+      "previous": 91,
+      "approvedOVR": 87,
+      "rawOVR": 87,
+      "position": "CAM",
+      "archetype": "Classic playmaker",
+      "changes": {
+        "tech": [
+          96,
+          95
+        ],
+        "pass": [
+          93,
+          86
+        ],
+        "first_touch": [
+          95,
+          93
+        ],
+        "dribbling": [
+          96,
+          94
+        ],
+        "passing": [
+          93,
+          86
+        ],
+        "vision": [
+          94,
+          89
+        ],
+        "composure": [
+          88,
+          81
+        ]
+      },
+      "maxDiff": 7,
+      "score": 87.108
+    },
+    {
+      "id": "patrick-mboma",
+      "name": "Patrick Mboma",
+      "previous": 91,
+      "approvedOVR": 87,
+      "rawOVR": 87,
+      "position": "ST",
+      "archetype": "Poacher",
+      "changes": {
+        "finish": [
+          94,
+          84
+        ],
+        "phys": [
+          93,
+          92
+        ],
+        "finishing": [
+          94,
+          84
+        ],
+        "shooting": [
+          97,
+          94
+        ],
+        "physical": [
+          93,
+          92
+        ],
+        "composure": [
+          90,
+          89
+        ]
+      },
+      "maxDiff": 10,
+      "score": 86.877
+    },
+    {
+      "id": "pablo-aimar",
+      "name": "Pablo Aimar",
+      "previous": 90,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "CAM",
+      "archetype": "Classic playmaker",
+      "changes": {
+        "pass": [
+          91,
+          89
+        ],
+        "passing": [
+          91,
+          89
+        ],
+        "composure": [
+          87,
+          86
+        ]
+      },
+      "maxDiff": 2,
+      "score": 88.988
+    },
+    {
+      "id": "paul-pogba",
+      "name": "Paul Pogba",
+      "previous": 90,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "CM",
+      "archetype": "Deep orchestrator",
+      "changes": {
+        "pass": [
+          92,
+          89
+        ],
+        "passing": [
+          92,
+          89
+        ],
+        "vision": [
+          93,
+          92
+        ],
+        "composure": [
+          89,
+          86
+        ]
+      },
+      "maxDiff": 3,
+      "score": 89.051
+    },
+    {
+      "id": "ruben-dias",
+      "name": "Rúben Dias",
+      "previous": 90,
+      "approvedOVR": 90,
+      "rawOVR": 90,
+      "position": "CB",
+      "archetype": "Traditional centre-back",
+      "changes": {},
+      "maxDiff": 0,
+      "score": 90.324
+    },
+    {
+      "id": "santi-cazorla",
+      "name": "Santi Cazorla",
+      "previous": 90,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "CM",
+      "archetype": "Deep orchestrator",
+      "changes": {
+        "pass": [
+          95,
+          93
+        ],
+        "passing": [
+          95,
+          93
+        ],
+        "composure": [
+          87,
+          86
+        ]
+      },
+      "maxDiff": 2,
+      "score": 89.095
+    },
+    {
+      "id": "ailton",
+      "name": "Aílton",
+      "previous": 89,
+      "approvedOVR": 88,
+      "rawOVR": 88,
+      "position": "ST",
+      "archetype": "Poacher",
+      "changes": {
+        "finish": [
+          95,
+          92
+        ],
+        "finishing": [
+          95,
+          92
+        ]
+      },
+      "maxDiff": 3,
+      "score": 88.124
+    },
+    {
+      "id": "alen-boksic",
+      "name": "Alen Bokšić",
+      "previous": 89,
+      "approvedOVR": 88,
+      "rawOVR": 88,
+      "position": "ST",
+      "archetype": "Mobile striker",
+      "changes": {
+        "pace": [
+          92,
+          90
+        ],
+        "finish": [
+          90,
+          88
+        ],
+        "finishing": [
+          90,
+          88
+        ]
+      },
+      "maxDiff": 2,
+      "score": 87.974
+    },
+    {
+      "id": "alex-de-souza",
+      "name": "Alex de Souza",
+      "previous": 89,
+      "approvedOVR": 86,
+      "rawOVR": 86,
+      "position": "CAM",
+      "archetype": "Classic playmaker",
+      "changes": {
+        "tech": [
+          96,
+          91
+        ],
+        "pass": [
+          97,
+          86
+        ],
+        "finish": [
+          92,
+          85
+        ],
+        "first_touch": [
+          96,
+          90
+        ],
+        "dribbling": [
+          91,
+          87
+        ],
+        "passing": [
+          97,
+          86
+        ],
+        "vision": [
+          98,
+          89
+        ],
+        "finishing": [
+          92,
+          85
+        ],
+        "shooting": [
+          93,
+          90
+        ],
+        "composure": [
+          96,
+          84
+        ]
+      },
+      "maxDiff": 12,
+      "score": 85.929
+    },
+    {
+      "id": "andrey-arshavin",
+      "name": "Andrey Arshavin",
+      "previous": 89,
+      "approvedOVR": 88,
+      "rawOVR": 88,
+      "position": "LW",
+      "archetype": "Wide creator",
+      "changes": {
+        "pace": [
+          88,
+          86
+        ],
+        "pass": [
+          87,
+          85
+        ],
+        "passing": [
+          87,
+          85
+        ]
+      },
+      "maxDiff": 2,
+      "score": 88.137
+    },
+    {
+      "id": "bernardo-silva",
+      "name": "Bernardo Silva",
+      "previous": 89,
+      "approvedOVR": 90,
+      "rawOVR": 90,
+      "position": "CAM",
+      "archetype": "Classic playmaker",
+      "changes": {
+        "pass": [
+          91,
+          93
+        ],
+        "passing": [
+          91,
+          93
+        ],
+        "composure": [
+          86,
+          88
+        ]
+      },
+      "maxDiff": 2,
+      "score": 89.887
+    },
+    {
+      "id": "darko-pancev",
+      "name": "Darko Pančev",
+      "previous": 89,
+      "approvedOVR": 88,
+      "rawOVR": 88,
+      "position": "ST",
+      "archetype": "Poacher",
+      "changes": {
+        "phys": [
+          78,
+          76
+        ],
+        "shooting": [
+          94,
+          91
+        ],
+        "physical": [
+          78,
+          76
+        ],
+        "composure": [
+          96,
+          95
+        ]
+      },
+      "maxDiff": 3,
+      "score": 88.172
+    },
+    {
+      "id": "diego-tristan",
+      "name": "Diego Tristán",
+      "previous": 89,
+      "approvedOVR": 87,
+      "rawOVR": 87,
+      "position": "ST",
+      "archetype": "Poacher",
+      "changes": {
+        "finish": [
+          95,
+          89
+        ],
+        "finishing": [
+          95,
+          89
+        ]
+      },
+      "maxDiff": 6,
+      "score": 86.952
+    },
+    {
+      "id": "djalminha",
+      "name": "Djalminha",
+      "previous": 89,
+      "approvedOVR": 86,
+      "rawOVR": 86,
+      "position": "CAM",
+      "archetype": "Classic playmaker",
+      "changes": {
+        "pass": [
+          91,
+          85
+        ],
+        "passing": [
+          91,
+          85
+        ],
+        "vision": [
+          93,
+          90
+        ],
+        "composure": [
+          88,
+          83
+        ]
+      },
+      "maxDiff": 6,
+      "score": 86.184
+    },
+    {
+      "id": "hidetoshi-nakata",
+      "name": "Hidetoshi Nakata",
+      "previous": 89,
+      "approvedOVR": 86,
+      "rawOVR": 86,
+      "position": "CAM",
+      "archetype": "Classic playmaker",
+      "changes": {
+        "pass": [
+          92,
+          86
+        ],
+        "first_touch": [
+          89,
+          88
+        ],
+        "dribbling": [
+          86,
+          85
+        ],
+        "passing": [
+          92,
+          86
+        ],
+        "vision": [
+          95,
+          92
+        ],
+        "composure": [
+          88,
+          83
+        ]
+      },
+      "maxDiff": 6,
+      "score": 86.13
+    },
+    {
+      "id": "hulk",
+      "name": "Hulk",
+      "previous": 89,
+      "approvedOVR": 88,
+      "rawOVR": 88,
+      "position": "RW",
+      "archetype": "Goalscoring winger",
+      "changes": {
+        "pace": [
+          90,
+          89
+        ],
+        "finish": [
+          91,
+          89
+        ],
+        "finishing": [
+          91,
+          89
+        ]
+      },
+      "maxDiff": 2,
+      "score": 88.162
+    },
+    {
+      "id": "ivan-zamorano",
+      "name": "Iván Zamorano",
+      "previous": 89,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "ST",
+      "archetype": "Poacher",
+      "changes": {},
+      "maxDiff": 0,
+      "score": 88.583
+    },
+    {
+      "id": "kyle-walker",
+      "name": "Kyle Walker",
+      "previous": 89,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "RB",
+      "archetype": "Defending fullback",
+      "changes": {},
+      "maxDiff": 0,
+      "score": 88.877
+    },
+    {
+      "id": "marcelo-salas",
+      "name": "Marcelo Salas",
+      "previous": 89,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "ST",
+      "archetype": "Poacher",
+      "changes": {},
+      "maxDiff": 0,
+      "score": 88.893
+    },
+    {
+      "id": "mark-viduka",
+      "name": "Mark Viduka",
+      "previous": 89,
+      "approvedOVR": 87,
+      "rawOVR": 87,
+      "position": "ST",
+      "archetype": "Poacher",
+      "changes": {
+        "finish": [
+          93,
+          87
+        ],
+        "finishing": [
+          93,
+          87
+        ]
+      },
+      "maxDiff": 6,
+      "score": 86.858
+    },
+    {
+      "id": "pierre-van-hooijdonk",
+      "name": "Pierre van Hooijdonk",
+      "previous": 89,
+      "approvedOVR": 87,
+      "rawOVR": 87,
+      "position": "ST",
+      "archetype": "Poacher",
+      "changes": {
+        "finish": [
+          94,
+          88
+        ],
+        "finishing": [
+          94,
+          88
+        ],
+        "shooting": [
+          97,
+          96
+        ]
+      },
+      "maxDiff": 6,
+      "score": 87.107
+    },
+    {
+      "id": "alvaro-recoba",
+      "name": "Álvaro Recoba",
+      "previous": 88,
+      "approvedOVR": 88,
+      "rawOVR": 88,
+      "position": "CF",
+      "archetype": "False nine",
+      "changes": {},
+      "maxDiff": 0,
+      "score": 87.881
+    },
+    {
+      "id": "andres-dalessandro",
+      "name": "Andrés D'Alessandro",
+      "previous": 88,
+      "approvedOVR": 85,
+      "rawOVR": 85,
+      "position": "CAM",
+      "archetype": "Classic playmaker",
+      "changes": {
+        "pass": [
+          92,
+          86
+        ],
+        "first_touch": [
+          93,
+          92
+        ],
+        "dribbling": [
+          94,
+          93
+        ],
+        "passing": [
+          92,
+          86
+        ],
+        "vision": [
+          93,
+          89
+        ],
+        "composure": [
+          85,
+          79
+        ]
+      },
+      "maxDiff": 6,
+      "score": 85.064
+    },
+    {
+      "id": "declan-rice",
+      "name": "Declan Rice",
+      "previous": 88,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "CDM",
+      "archetype": "Defensive screen",
+      "changes": {
+        "def": [
+          93,
+          97
+        ],
+        "tackling": [
+          93,
+          94
+        ]
+      },
+      "maxDiff": 4,
+      "score": 88.914
+    },
+    {
+      "id": "djibril-cisse",
+      "name": "Djibril Cissé",
+      "previous": 88,
+      "approvedOVR": 86,
+      "rawOVR": 86,
+      "position": "ST",
+      "archetype": "Mobile striker",
+      "changes": {
+        "pace": [
+          97,
+          92
+        ],
+        "finish": [
+          91,
+          86
+        ],
+        "finishing": [
+          91,
+          86
+        ]
+      },
+      "maxDiff": 5,
+      "score": 85.992
+    },
+    {
+      "id": "ilkay-gundogan",
+      "name": "İlkay Gündoğan",
+      "previous": 88,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "CM",
+      "archetype": "Deep orchestrator",
+      "changes": {
+        "pass": [
+          91,
+          93
+        ],
+        "passing": [
+          91,
+          93
+        ],
+        "vision": [
+          90,
+          91
+        ],
+        "composure": [
+          89,
+          91
+        ]
+      },
+      "maxDiff": 2,
+      "score": 88.94
+    },
+    {
+      "id": "nwankwo-kanu",
+      "name": "Nwankwo Kanu",
+      "previous": 88,
+      "approvedOVR": 88,
+      "rawOVR": 88,
+      "position": "CF",
+      "archetype": "False nine",
+      "changes": {},
+      "maxDiff": 0,
+      "score": 88.009
+    },
+    {
+      "id": "riyad-mahrez",
+      "name": "Riyad Mahrez",
+      "previous": 88,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "RW",
+      "archetype": "Wide creator",
+      "changes": {
+        "pace": [
+          83,
+          86
+        ],
+        "pass": [
+          86,
+          88
+        ],
+        "passing": [
+          86,
+          88
+        ],
+        "vision": [
+          91,
+          92
+        ],
+        "composure": [
+          91,
+          92
+        ]
+      },
+      "maxDiff": 3,
+      "score": 88.842
+    },
+    {
+      "id": "antonio-cassano",
+      "name": "Antonio Cassano",
+      "previous": 87,
+      "approvedOVR": 87,
+      "rawOVR": 87,
+      "position": "CF",
+      "archetype": "False nine",
+      "changes": {},
+      "maxDiff": 0,
+      "score": 87.287
+    },
+    {
+      "id": "bruno-fernandes",
+      "name": "Bruno Fernandes",
+      "previous": 87,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "CAM",
+      "archetype": "Classic playmaker",
+      "changes": {
+        "pass": [
+          92,
+          96
+        ],
+        "passing": [
+          92,
+          96
+        ],
+        "vision": [
+          89,
+          90
+        ],
+        "composure": [
+          87,
+          90
+        ]
+      },
+      "maxDiff": 4,
+      "score": 89.02
+    },
+    {
+      "id": "christian-eriksen",
+      "name": "Christian Eriksen",
+      "previous": 87,
+      "approvedOVR": 88,
+      "rawOVR": 88,
+      "position": "CAM",
+      "archetype": "Classic playmaker",
+      "changes": {
+        "pass": [
+          95,
+          96
+        ],
+        "passing": [
+          95,
+          96
+        ],
+        "composure": [
+          85,
+          86
+        ]
+      },
+      "maxDiff": 1,
+      "score": 87.897
+    },
+    {
+      "id": "jamie-vardy",
+      "name": "Jamie Vardy",
+      "previous": 87,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "ST",
+      "archetype": "Poacher",
+      "changes": {
+        "finish": [
+          93,
+          99
+        ],
+        "finishing": [
+          93,
+          99
+        ]
+      },
+      "maxDiff": 6,
+      "score": 88.943
+    },
+    {
+      "id": "jefferson-farfan",
+      "name": "Jefferson Farfán",
+      "previous": 87,
+      "approvedOVR": 87,
+      "rawOVR": 87,
+      "position": "RW",
+      "archetype": "Goalscoring winger",
+      "changes": {},
+      "maxDiff": 0,
+      "score": 86.784
+    },
+    {
+      "id": "juan-carlos-valeron",
+      "name": "Juan Carlos Valerón",
+      "previous": 87,
+      "approvedOVR": 87,
+      "rawOVR": 87,
+      "position": "CAM",
+      "archetype": "Classic playmaker",
+      "changes": {},
+      "maxDiff": 0,
+      "score": 86.695
+    },
+    {
+      "id": "ledley-king",
+      "name": "Ledley King",
+      "previous": 87,
+      "approvedOVR": 87,
+      "rawOVR": 87,
+      "position": "CB",
+      "archetype": "Traditional centre-back",
+      "changes": {},
+      "maxDiff": 0,
+      "score": 86.537
+    },
+    {
+      "id": "michael-essien",
+      "name": "Michael Essien",
+      "previous": 87,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "CM",
+      "archetype": "Ball winner",
+      "changes": {
+        "pace": [
+          87,
+          90
+        ],
+        "def": [
+          91,
+          96
+        ],
+        "tackling": [
+          91,
+          93
+        ],
+        "positioning": [
+          86,
+          87
+        ]
+      },
+      "maxDiff": 5,
+      "score": 88.904
+    },
+    {
+      "id": "mousa-dembele",
+      "name": "Mousa Dembélé",
+      "previous": 87,
+      "approvedOVR": 88,
+      "rawOVR": 88,
+      "position": "CM",
+      "archetype": "Deep orchestrator",
+      "changes": {
+        "pass": [
+          86,
+          88
+        ],
+        "passing": [
+          86,
+          88
+        ],
+        "composure": [
+          81,
+          82
+        ]
+      },
+      "maxDiff": 2,
+      "score": 87.893
+    },
+    {
+      "id": "savo-milosevic",
+      "name": "Savo Milošević",
+      "previous": 87,
+      "approvedOVR": 86,
+      "rawOVR": 86,
+      "position": "ST",
+      "archetype": "Poacher",
+      "changes": {
+        "finish": [
+          93,
+          90
+        ],
+        "finishing": [
+          93,
+          90
+        ]
+      },
+      "maxDiff": 3,
+      "score": 86.073
+    },
+    {
+      "id": "vladimir-jugovic",
+      "name": "Vladimir Jugović",
+      "previous": 87,
+      "approvedOVR": 88,
+      "rawOVR": 88,
+      "position": "CM",
+      "archetype": "Deep orchestrator",
+      "changes": {
+        "pass": [
+          88,
+          91
+        ],
+        "passing": [
+          88,
+          91
+        ],
+        "vision": [
+          87,
+          88
+        ],
+        "composure": [
+          90,
+          93
+        ]
+      },
+      "maxDiff": 3,
+      "score": 87.936
+    },
+    {
+      "id": "dimitar-berbatov",
+      "name": "Dimitar Berbatov",
+      "previous": 86,
+      "approvedOVR": 88,
+      "rawOVR": 88,
+      "position": "ST",
+      "archetype": "Poacher",
+      "changes": {
+        "finish": [
+          92,
+          98
+        ],
+        "finishing": [
+          92,
+          98
+        ]
+      },
+      "maxDiff": 6,
+      "score": 87.815
+    },
+    {
+      "id": "jamie-carragher",
+      "name": "Jamie Carragher",
+      "previous": 86,
+      "approvedOVR": 86,
+      "rawOVR": 86,
+      "position": "CB",
+      "archetype": "Traditional centre-back",
+      "changes": {},
+      "maxDiff": 0,
+      "score": 86.474
+    },
+    {
+      "id": "kolo-toure",
+      "name": "Kolo Touré",
+      "previous": 86,
+      "approvedOVR": 86,
+      "rawOVR": 86,
+      "position": "CB",
+      "archetype": "Traditional centre-back",
+      "changes": {},
+      "maxDiff": 0,
+      "score": 86.065
+    },
+    {
+      "id": "milan-baros",
+      "name": "Milan Baroš",
+      "previous": 86,
+      "approvedOVR": 85,
+      "rawOVR": 85,
+      "position": "ST",
+      "archetype": "Mobile striker",
+      "changes": {
+        "pace": [
+          91,
+          90
+        ],
+        "finish": [
+          87,
+          86
+        ],
+        "finishing": [
+          87,
+          86
+        ]
+      },
+      "maxDiff": 1,
+      "score": 85.081
+    },
+    {
+      "id": "patrice-evra",
+      "name": "Patrice Evra",
+      "previous": 86,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "LB",
+      "archetype": "Defending fullback",
+      "changes": {
+        "pace": [
+          88,
+          89
+        ],
+        "def": [
+          90,
+          98
+        ],
+        "tackling": [
+          90,
+          94
+        ],
+        "positioning": [
+          87,
+          90
+        ]
+      },
+      "maxDiff": 8,
+      "score": 88.934
+    },
+    {
+      "id": "ricardo-carvalho",
+      "name": "Ricardo Carvalho",
+      "previous": 86,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "CB",
+      "archetype": "Traditional centre-back",
+      "changes": {
+        "def": [
+          94,
+          99
+        ],
+        "tackling": [
+          94,
+          98
+        ],
+        "positioning": [
+          85,
+          88
+        ]
+      },
+      "maxDiff": 5,
+      "score": 88.909
+    },
+    {
+      "id": "andrew-robertson",
+      "name": "Andrew Robertson",
+      "previous": 85,
+      "approvedOVR": 88,
+      "rawOVR": 88,
+      "position": "LB",
+      "archetype": "Defending fullback",
+      "changes": {
+        "def": [
+          89,
+          96
+        ],
+        "tackling": [
+          89,
+          92
+        ],
+        "positioning": [
+          89,
+          91
+        ]
+      },
+      "maxDiff": 7,
+      "score": 87.894
+    },
+    {
+      "id": "fernandinho",
+      "name": "Fernandinho",
+      "previous": 85,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "CDM",
+      "archetype": "Defensive screen",
+      "changes": {
+        "pass": [
+          84,
+          87
+        ],
+        "def": [
+          93,
+          99
+        ],
+        "phys": [
+          84,
+          85
+        ],
+        "passing": [
+          84,
+          87
+        ],
+        "vision": [
+          81,
+          82
+        ],
+        "physical": [
+          84,
+          85
+        ],
+        "tackling": [
+          93,
+          99
+        ],
+        "positioning": [
+          89,
+          95
+        ],
+        "composure": [
+          70,
+          72
+        ]
+      },
+      "maxDiff": 6,
+      "score": 88.901
+    },
+    {
+      "id": "robert-pires",
+      "name": "Robert Pirès",
+      "previous": 85,
+      "approvedOVR": 90,
+      "rawOVR": 90,
+      "position": "LM",
+      "archetype": "Wide playmaker",
+      "changes": {
+        "pace": [
+          80,
+          88
+        ],
+        "tech": [
+          92,
+          96
+        ],
+        "pass": [
+          90,
+          95
+        ],
+        "first_touch": [
+          91,
+          96
+        ],
+        "dribbling": [
+          92,
+          97
+        ],
+        "passing": [
+          90,
+          95
+        ],
+        "vision": [
+          91,
+          97
+        ],
+        "composure": [
+          89,
+          96
+        ]
+      },
+      "maxDiff": 8,
+      "score": 89.897
+    },
+    {
+      "id": "michael-carrick",
+      "name": "Michael Carrick",
+      "previous": 84,
+      "approvedOVR": 88,
+      "rawOVR": 88,
+      "position": "CDM",
+      "archetype": "Deep distributor",
+      "changes": {
+        "pass": [
+          94,
+          99
+        ],
+        "def": [
+          81,
+          88
+        ],
+        "passing": [
+          94,
+          99
+        ],
+        "vision": [
+          88,
+          95
+        ],
+        "tackling": [
+          81,
+          85
+        ],
+        "positioning": [
+          88,
+          90
+        ],
+        "composure": [
+          74,
+          80
+        ]
+      },
+      "maxDiff": 7,
+      "score": 87.894
+    },
+    {
+      "id": "branislav-ivanovic",
+      "name": "Branislav Ivanović",
+      "previous": 83,
+      "approvedOVR": 87,
+      "rawOVR": 87,
+      "position": "RB",
+      "archetype": "Defending fullback",
+      "changes": {
+        "pace": [
+          68,
+          70
+        ],
+        "def": [
+          92,
+          99
+        ],
+        "phys": [
+          95,
+          96
+        ],
+        "physical": [
+          95,
+          96
+        ],
+        "tackling": [
+          92,
+          98
+        ],
+        "positioning": [
+          82,
+          87
+        ]
+      },
+      "maxDiff": 7,
+      "score": 86.835
+    },
+    {
+      "id": "javier-mascherano",
+      "name": "Javier Mascherano",
+      "previous": 83,
+      "approvedOVR": 89,
+      "rawOVR": 89,
+      "position": "CDM",
+      "archetype": "Defensive screen",
+      "changes": {
+        "pace": [
+          73,
+          74
+        ],
+        "pass": [
+          81,
+          94
+        ],
+        "def": [
+          93,
+          96
+        ],
+        "phys": [
+          83,
+          91
+        ],
+        "passing": [
+          81,
+          94
+        ],
+        "vision": [
+          77,
+          86
+        ],
+        "stamina": [
+          78,
+          79
+        ],
+        "physical": [
+          83,
+          91
+        ],
+        "tackling": [
+          93,
+          96
+        ],
+        "positioning": [
+          87,
+          97
+        ],
+        "composure": [
+          59,
+          69
+        ]
+      },
+      "maxDiff": 13,
+      "score": 88.886
+    },
+    {
+      "id": "ricardo-quaresma",
+      "name": "Ricardo Quaresma",
+      "previous": 83,
+      "approvedOVR": 85,
+      "rawOVR": 85,
+      "position": "RW",
+      "archetype": "Wide creator",
+      "changes": {
+        "pace": [
+          86,
+          90
+        ],
+        "pass": [
+          78,
+          81
+        ],
+        "first_touch": [
+          87,
+          88
+        ],
+        "dribbling": [
+          92,
+          93
+        ],
+        "passing": [
+          78,
+          81
+        ],
+        "vision": [
+          85,
+          86
+        ],
+        "composure": [
+          84,
+          86
+        ]
+      },
+      "maxDiff": 4,
+      "score": 84.81
+    },
+    {
+      "id": "gary-neville",
+      "name": "Gary Neville",
+      "previous": 82,
+      "approvedOVR": 86,
+      "rawOVR": 86,
+      "position": "RB",
+      "archetype": "Defending fullback",
+      "changes": {
+        "pace": [
+          69,
+          72
+        ],
+        "def": [
+          90,
+          99
+        ],
+        "phys": [
+          77,
+          78
+        ],
+        "physical": [
+          77,
+          78
+        ],
+        "tackling": [
+          90,
+          96
+        ],
+        "positioning": [
+          86,
+          91
+        ]
+      },
+      "maxDiff": 9,
+      "score": 85.913
+    },
+    {
+      "id": "trent-alexander-arnold",
+      "name": "Trent Alexander-Arnold",
+      "previous": 82,
+      "approvedOVR": 88,
+      "rawOVR": 88,
+      "position": "RB",
+      "archetype": "Inverted playmaker",
+      "changes": {
+        "pace": [
+          76,
+          77
+        ],
+        "vision": [
+          93,
+          96
+        ]
+      },
+      "maxDiff": 3,
+      "score": 87.816
+    },
+    {
+      "id": "gilberto-silva",
+      "name": "Gilberto Silva",
+      "previous": 81,
+      "approvedOVR": 88,
+      "rawOVR": 88,
+      "position": "CDM",
+      "archetype": "Defensive screen",
+      "changes": {
+        "pass": [
+          78,
+          88
+        ],
+        "def": [
+          91,
+          96
+        ],
+        "phys": [
+          87,
+          93
+        ],
+        "passing": [
+          78,
+          88
+        ],
+        "vision": [
+          75,
+          82
+        ],
+        "physical": [
+          87,
+          93
+        ],
+        "tackling": [
+          91,
+          96
+        ],
+        "positioning": [
+          85,
+          98
+        ],
+        "composure": [
+          61,
+          70
+        ]
+      },
+      "maxDiff": 13,
+      "score": 87.882
+    },
+    {
+      "id": "sinisa-mihajlovic",
+      "name": "Siniša Mihajlović",
+      "previous": 75,
+      "approvedOVR": 85,
+      "rawOVR": 85,
+      "position": "CB",
+      "archetype": "Traditional centre-back",
+      "changes": {
+        "def": [
+          78,
+          92
+        ],
+        "phys": [
+          76,
+          80
+        ],
+        "physical": [
+          76,
+          80
+        ],
+        "tackling": [
+          78,
+          87
+        ],
+        "positioning": [
+          83,
+          90
+        ]
+      },
+      "maxDiff": 14,
+      "score": 84.856
+    }
+  ],
+  "positionCorrection": {
+    "id": "sinisa-mihajlovic",
+    "from": "LB",
+    "to": "CB",
+    "secondaryPositions": [
+      "LB",
+      "CDM"
+    ]
+  },
+  "summary": {
+    "revised": 55,
+    "unchanged": 12,
+    "maxAttributeDelta": 14,
+    "ownerConfirmedCount": 67
+  }
+}

@@ -1,0 +1,353 @@
+{
+  "version": "stalwart-ovr-v1-owner-approved",
+  "status": "OWNER-ACCEPTED",
+  "description": "18 STALWART prime attributes recalibrated to owner-approved formula OVR. No OVR overrides.",
+  "players": [
+    {
+      "id": "adel-taarabt",
+      "name": "Adel Taarabt",
+      "previous": 87,
+      "target": 83,
+      "position": "CAM",
+      "score": 83.29,
+      "changes": {
+        "pass": [
+          86,
+          77
+        ],
+        "passing": [
+          86,
+          77
+        ],
+        "composure": [
+          78,
+          69
+        ]
+      }
+    },
+    {
+      "id": "mario-balotelli",
+      "name": "Mario Balotelli",
+      "previous": 87,
+      "target": 85,
+      "position": "ST",
+      "score": 85.461,
+      "changes": {
+        "finish": [
+          91,
+          87
+        ],
+        "finishing": [
+          91,
+          87
+        ]
+      }
+    },
+    {
+      "id": "nani",
+      "name": "Nani",
+      "previous": 86,
+      "target": 87,
+      "position": "LW",
+      "score": 86.592,
+      "changes": {
+        "pass": [
+          80,
+          82
+        ],
+        "passing": [
+          80,
+          82
+        ]
+      }
+    },
+    {
+      "id": "obafemi-martins",
+      "name": "Obafemi Martins",
+      "previous": 86,
+      "target": 84,
+      "position": "ST",
+      "score": 84.399,
+      "changes": {
+        "finish": [
+          87,
+          82
+        ],
+        "finishing": [
+          87,
+          82
+        ]
+      }
+    },
+    {
+      "id": "hatem-ben-arfa",
+      "name": "Hatem Ben Arfa",
+      "previous": 86,
+      "target": 85,
+      "position": "RW",
+      "score": 85.483,
+      "changes": {
+        "pass": [
+          76,
+          71
+        ],
+        "passing": [
+          76,
+          71
+        ]
+      }
+    },
+    {
+      "id": "papiss-cisse",
+      "name": "Papiss Cissé",
+      "previous": 86,
+      "target": 83,
+      "position": "ST",
+      "score": 83.237,
+      "changes": {
+        "finish": [
+          94,
+          87
+        ],
+        "finishing": [
+          94,
+          87
+        ]
+      }
+    },
+    {
+      "id": "alberto-luque",
+      "name": "Alberto Luque",
+      "previous": 85,
+      "target": 84,
+      "position": "LW",
+      "score": 84.371,
+      "changes": {
+        "finish": [
+          87,
+          83
+        ],
+        "finishing": [
+          87,
+          83
+        ]
+      }
+    },
+    {
+      "id": "yannick-bolasie",
+      "name": "Yannick Bolasie",
+      "previous": 83,
+      "target": 81,
+      "position": "LW",
+      "score": 81.383,
+      "changes": {
+        "pass": [
+          71,
+          64
+        ],
+        "passing": [
+          71,
+          64
+        ],
+        "composure": [
+          81,
+          80
+        ]
+      }
+    },
+    {
+      "id": "denilson",
+      "name": "Denílson",
+      "previous": 83,
+      "target": 83,
+      "position": "LW",
+      "score": 83.46,
+      "changes": {}
+    },
+    {
+      "id": "peter-crouch",
+      "name": "Peter Crouch",
+      "previous": 83,
+      "target": 84,
+      "position": "ST",
+      "score": 83.797,
+      "changes": {
+        "finish": [
+          86,
+          88
+        ],
+        "finishing": [
+          86,
+          88
+        ]
+      }
+    },
+    {
+      "id": "steed-malbranque",
+      "name": "Steed Malbranque",
+      "previous": 82,
+      "target": 82,
+      "position": "CM",
+      "score": 81.956,
+      "changes": {}
+    },
+    {
+      "id": "tijjani-babangida",
+      "name": "Tijjani Babangida",
+      "previous": 82,
+      "target": 81,
+      "position": "RW",
+      "score": 81.447,
+      "changes": {
+        "finish": [
+          79,
+          75
+        ],
+        "finishing": [
+          79,
+          75
+        ]
+      }
+    },
+    {
+      "id": "nene",
+      "name": "Nenê",
+      "previous": 81,
+      "target": 84,
+      "position": "LM",
+      "score": 83.514,
+      "changes": {
+        "pass": [
+          86,
+          94
+        ],
+        "passing": [
+          86,
+          94
+        ],
+        "vision": [
+          88,
+          93
+        ]
+      }
+    },
+    {
+      "id": "tugay-kerimoglu",
+      "name": "Tugay Kerimoğlu",
+      "previous": 80,
+      "target": 83,
+      "position": "CDM",
+      "score": 82.584,
+      "changes": {
+        "def": [
+          65,
+          69
+        ],
+        "vision": [
+          89,
+          94
+        ],
+        "composure": [
+          79,
+          90
+        ]
+      }
+    },
+    {
+      "id": "aiden-mcgeady",
+      "name": "Aiden McGeady",
+      "previous": 80,
+      "target": 81,
+      "position": "RW",
+      "score": 80.6,
+      "changes": {
+        "pass": [
+          75,
+          78
+        ],
+        "passing": [
+          75,
+          78
+        ]
+      }
+    },
+    {
+      "id": "morten-gamst-pedersen",
+      "name": "Morten Gamst Pedersen",
+      "previous": 79,
+      "target": 82,
+      "position": "LM",
+      "score": 81.566,
+      "changes": {
+        "first_touch": [
+          82,
+          87
+        ],
+        "vision": [
+          82,
+          94
+        ],
+        "composure": [
+          78,
+          88
+        ]
+      }
+    },
+    {
+      "id": "thomas-gravesen",
+      "name": "Thomas Gravesen",
+      "previous": 76,
+      "target": 81,
+      "position": "CDM",
+      "score": 80.557,
+      "changes": {
+        "pass": [
+          74,
+          77
+        ],
+        "def": [
+          82,
+          94
+        ],
+        "passing": [
+          74,
+          77
+        ],
+        "tackling": [
+          82,
+          89
+        ],
+        "positioning": [
+          78,
+          80
+        ]
+      }
+    },
+    {
+      "id": "marouane-fellaini",
+      "name": "Marouane Fellaini",
+      "previous": 76,
+      "target": 84,
+      "position": "CM",
+      "score": 83.54,
+      "changes": {
+        "def": [
+          79,
+          98
+        ],
+        "stamina": [
+          84,
+          94
+        ],
+        "tackling": [
+          79,
+          94
+        ],
+        "positioning": [
+          86,
+          94
+        ]
+      }
+    }
+  ]
+}

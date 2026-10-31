@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark"><title>THE CAGE / Legendary Arena Concept</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="shell">
+  <header class="masthead">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">C</span><div><span class="eyebrow">PROJECT // THE CAGE</span><strong>THE CAGE<span class="brand-dot">.</span></strong></div></div>
+    <span class="masthead-right">ARENA DEVELOPMENT <b>002 / SURFACE REFINEMENT</b></span>
+  </header>
+  <main>
+    <section class="intro">
+      <div class="topline"><span class="line"></span><span>NO STADIUM. NO SANCTUARY.</span><span class="line"></span></div>
+      <div class="intro-grid"><div><span class="eyebrow gold">THE UNDERGROUND SERIES · CONCEPT 02</span><h1>FORGED<br><em>FOR FOOTBALL.</em></h1><p>Blackout turf. Gunmetal walls. Chain-linked goals.<br>One golden relic. Six legends. Nowhere to hide.</p></div><div class="seal" aria-hidden="true"><div class="seal-center"><span>THE</span><b>CAGE</b><span>EST. 2026</span></div></div></div>
+    </section>
+    <section class="viewer" aria-label="Legendary arena preview">
+      <div class="viewer-head"><div class="viewer-id"><span class="live-indicator"></span><span>ARENA // 01</span><b id="variant-label">THE IRON PIT</b></div><div class="head-status"><span class="small-status">TOP-DOWN 2D</span><span class="small-status">3 VS 3</span><span class="preview-tag">V2 · EDITABLE ARTWORK</span></div></div>
+      <div class="scorebar" aria-label="Demonstration scoreboard, not a simulated match">
+        <div class="side side-cyan"><i class="color-mark"></i><span>COMMANDER</span><small>DEMO</small></div>
+        <div class="score-mid"><strong>0 <span>:</span> 0</strong><small>SCHEMATIC VIEW · NO GAME IN PROGRESS</small></div>
+        <div class="side side-red"><small>DEMO</small><span>CHALLENGER</span><i class="color-mark"></i></div>
+      </div>
+      <div class="arena">
+        <img id="arena-art" class="arena-image" src="./arena.svg" alt="Top-down industrial gunmetal cage surrounding a dark tactical football pitch, with compact steel chain-net goals.">
+        <div class="arena-glint" aria-hidden="true"></div>
+        <div id="demo-players" class="players" aria-label="Six demonstration markers"></div>
+        <div id="gold-ball" class="ball" aria-label="Golden match ball"><img src="./relic-ball.svg" alt="Golden metallic football"></div>
+        <span class="pitch-caption left">IRON / 03</span><span class="pitch-caption right">THE GOLDEN RELIC</span>
+      </div>
+      <div class="viewer-foot"><div class="ticker"><span class="ticker-square"></span><b>DESIGN DEMONSTRATION</b><span id="motion-label">MOVEMENT / ACTIVE</span></div><div class="tactical-chips"><span>NO GENERATED MATCH EVENTS</span><span>READABILITY FIRST</span></div></div>
+    </section>
+    <section class="controls">
+      <div class="control-group"><span class="eyebrow">01 / ARENA FINISH</span><div class="segmented" role="group" aria-label="Arena finish"><button type="button" id="iron-btn" aria-pressed="true" class="active">IRON PIT</button><button type="button" id="gold-btn" aria-pressed="false">GOLDEN ARENA</button></div></div>
+      <div class="control-group"><span class="eyebrow">02 / ART INSPECTION</span><div class="motion-row"><button id="motion-btn" type="button" aria-pressed="true">PAUSE MOTION</button><button id="inspect-btn" type="button" aria-pressed="false">HIDE MARKERS</button><label for="speed">PACE</label><select id="speed"><option value="0.6">0.6×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></div></div>
+      <div class="control-group detail"><span class="eyebrow">03 / LOCKED MATERIALS</span><div class="swatches"><span title="Blackout turf" style="background:#192d25"></span><span title="Gunmetal" style="background:#303c43"></span><span title="Brushed steel" style="background:#82949a"></span><span title="Legendary gold" style="background:#d5a83e"></span></div></div>
+    </section>
+    <section class="asset-gallery" aria-label="Original arena material details">
+      <div class="asset-gallery-heading"><span class="eyebrow gold">OBJECTS OF THE CAGE</span><h2>STEEL AND GOLD.</h2><p>Both objects are independent vector assets, designed for real match animation.</p></div>
+      <div class="asset-cards">
+        <article class="asset-card"><div class="asset-art gold-art"><img src="./relic-ball.svg" alt="Large close-up of the original Golden Relic football, made of burnished gold, black engraved seams and polished angular panels." loading="lazy"></div><div class="asset-text"><span>ARTIFACT 01 / MATCH BALL</span><h3>THE GOLDEN RELIC</h3><p>A one-of-a-kind metallic ball. The single gold focal point against the arena's near-black field.</p></div></article>
+        <article class="asset-card"><div class="asset-art net-art"><img src="./iron-maw-detail.svg" alt="Close-up of a steel-framed small goal with individual interlocking oblong chain links." loading="lazy"></div><div class="asset-text"><span>ARTIFACT 02 / GOAL SYSTEM</span><h3>THE IRON MAW</h3><p>Compact reinforced steel. Real chain-link geometry, built as separate vector groups for later impact animation.</p></div></article>
+      </div>
+    </section>
+    <section class="lower"><div class="statement"><span class="eyebrow gold">THE RULE OF THE CAGE</span><p>The pitch is the battlefield. The football remains the truth.</p></div><div class="details"><div><b>01</b><span>BLACKOUT SURFACE</span></div><div><b>02</b><span>RIVETED GUNMETAL</span></div><div><b>03</b><span>STEEL CHAIN NETS</span></div><div><b>04</b><span>THE GOLDEN RELIC</span></div></div></section>
+  </main>
+  <footer class="footer"><span>THE CAGE / LEGENDARY ARENA / LIM-001 · ART V2</span><span>PROTOTYPE ONLY · THE VISUALIZER DOES NOT CALCULATE MATCH RESULTS</span></footer>
+</div>
+<script src="./script.js"></script>
+</body>
+</html>

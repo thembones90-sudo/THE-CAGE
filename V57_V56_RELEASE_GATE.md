@@ -1,3 +1,5 @@
+> **Superseded:** The first direct cherry-pick was blocked. The V5.7 features have since been explicitly ported into the V5.6 game, with a preserved 182-player Classic archive. See V57_COMBINED_RELEASE_REPORT.md for the current release gates.
+
 # THE CAGE: V5.7 + V5.6 final release gate
 Date: 2026-10-31
 Status: BLOCKED FOR COMBINED RELEASE. Component branches independently tested.
