@@ -96,6 +96,13 @@ button:focus-visible{outline:3px solid #f6d18b;outline-offset:3px}
 #champion-celebration{border:2px solid #dfb868;background:radial-gradient(circle at center,#654a1d 0,#1a2027 68%);padding:24px;border-radius:14px;text-align:center;box-shadow:0 0 35px #e7b84a55}
 @media(max-width:1150px){#draft-arena .cv-main{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.draft-pip.filled{animation:none}}
+</style><style id="v60-tactical-trait-icons">
+.draft-traits span{display:inline-flex;gap:5px;align-items:center;font-weight:800;padding:3px 6px}
+.draft-trait-icon{width:22px;height:22px;flex:none;display:grid;place-items:center;border:1px solid currentColor;border-radius:4px;background:#0004}
+.draft-trait-icon svg{width:18px;height:18px;display:block}
+.draft-traits .trait-def{color:#88dfff;border-color:#3d8ab0;background:#123245}
+.draft-traits .trait-mid{color:#f5d878;border-color:#a9903b;background:#3e3214}
+.draft-traits .trait-att{color:#ff9e9d;border-color:#a44b52;background:#421f29}
 </style></head><body><main><div class="top"><div><h1>THE CAGE</h1><div class="muted">BEST OF FIVE · RANDOM DRAFT · KNOW BALL OR FALL</div></div><a href="index.html">Main game</a></div>
 <section class="showdown-strip" aria-label="Showdown standings"><strong>THE CAGE SHOWDOWN</strong><span id="showdown-score">COMMANDER 0 : 0 OPPONENT</span><span id="round-number">ROUND 1 / 5</span><div id="round-history" aria-label="Round history"></div></section>
 <section id="intro" class="panel center"><div class="coin">🪙</div><h2>THE COIN DECIDES</h2><p>ABABAB · 15 candidates · 20 seconds · one reroll each · no guarantees</p><label><input type="checkbox" id="hints"> Counter indicators (OFF by default)</label><p class="muted" id="hintNote">Optional guidance shows only when supported by actual player class data.</p><button id="begin">TOSS THE COIN</button><p id="coinResult" class="gold"></p></section>
