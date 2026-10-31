@@ -23,10 +23,34 @@ h1{font-weight:1000;letter-spacing:.16em;text-shadow:0 4px 30px #000}
 button:focus-visible{outline:3px solid #f6d18b;outline-offset:3px}
 @media(max-width:650px){.pool{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.card{min-height:150px;padding:9px}.card .name{font-size:13px}.card-ovr{font-size:22px;min-width:44px}#game>.panel.bar{top:0}}
 @media(prefers-reduced-motion:reduce){.card{transition:none}.card:hover,.card:focus-visible{transform:none}}
+</style><style id="cage-draft-visual-v2">
+.draft-progress{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.draft-pip{width:29px;height:33px;display:grid;place-items:center;font-size:11px;font-weight:900;border:1px solid #48606c;background:#0b1b24;color:#a8b9c1;clip-path:polygon(16% 0,84% 0,100% 50%,84% 100%,16% 100%,0 50%)}
+.draft-pip.side-a{border-color:#5cc8e0}.draft-pip.side-b{border-color:#e46770}
+.draft-pip.filled.side-a{background:#225466;color:#c4f2ff}.draft-pip.filled.side-b{background:#6a3039;color:#ffccd0}
+.draft-clock-shell{display:flex;flex-direction:column;text-align:center;border:1px solid #876d48;background:#132129;border-radius:12px;padding:2px 14px;min-width:84px}
+.draft-clock-shell small{font-size:9px;letter-spacing:.2em;color:#d6ba87}
+.draft-clock-shell.urgent{border-color:#f07177;box-shadow:0 0 19px #e54d4e88}
+.draft-clock-shell.urgent .clock{color:#ff8b8e;text-shadow:0 0 17px #ec5558}
+.draft-card-wrap{min-width:0;display:flex;flex-direction:column;border:1px solid #506773;border-radius:12px;overflow:hidden;background:#101f29}
+.draft-card-wrap>.card{border:0;border-radius:0;flex:1;width:100%}
+.draft-card-wrap[data-family="def"]{border-color:#4ea4d9}.draft-card-wrap[data-family="mid"]{border-color:#d7b34d}.draft-card-wrap[data-family="att"]{border-color:#d96666}
+.draft-card-wrap[data-family="def"] .card:before{background:#4ea4d9}.draft-card-wrap[data-family="mid"] .card:before{background:#e2be5b}.draft-card-wrap[data-family="att"] .card:before{background:#df6868}
+.draft-role{display:inline-block;font:900 11px system-ui;letter-spacing:.07em;padding:3px 8px;border:1px solid #71818c;border-radius:5px;color:#e7e3d7}
+.draft-card-wrap .stats{display:grid;grid-template-columns:1fr 1fr;gap:3px 9px;margin-top:9px}
+.draft-stat{min-width:0;display:grid;grid-template-columns:33px 1fr 23px;align-items:center;gap:3px;font-size:10px}
+.draft-stat-track{height:4px;background:#35424c;border-radius:4px;overflow:hidden}
+.draft-stat-fill{display:block;height:100%;background:#d5b76b;border-radius:4px}
+.draft-traits{display:flex;gap:4px;flex-wrap:wrap;margin-top:7px}
+.draft-traits span{font-size:10px;border:1px solid #775c3c;color:#f6d79b;padding:3px 5px;border-radius:4px;background:#402e1f66}
+.draft-scout{padding:7px 10px;background:#0b1922;color:#c7d6df}
+.draft-scout summary{font-size:11px;font-weight:800;cursor:pointer}
+.draft-scout .stats{display:block;line-height:1.7}
+@media(max-width:650px){.draft-progress{gap:3px}.draft-pip{width:23px;height:26px}.draft-card-wrap .stats{grid-template-columns:1fr}.draft-stat{font-size:9px}.draft-clock-shell{min-width:64px;padding:2px 6px}}
 </style></head><body><main><div class="top"><div><h1>THE CAGE</h1><div class="muted">RANDOM DRAFT · KNOW BALL OR FALL</div></div><a href="index.html">Legacy mode</a></div>
 <section id="intro" class="panel center"><div class="coin">🪙</div><h2>THE COIN DECIDES</h2><p>ABABAB · 15 candidates · 20 seconds · one reroll each · no guarantees</p><label><input type="checkbox" id="hints"> Counter indicators (OFF by default)</label><p class="muted" id="hintNote">Optional guidance shows only when supported by actual player class data.</p><button id="begin">TOSS THE COIN</button><p id="coinResult" class="gold"></p></section>
 <section id="handoff" class="panel center hidden"><h2 id="passTitle">PASS THE DEVICE</h2><p class="muted">Only the active drafter should view the next pool. Local hotseat mode: this is a courtesy privacy screen, not online server-side secrecy.</p><button id="reveal">REVEAL MY 15 PLAYERS</button></section>
-<section id="game" class="hidden"><section class="panel bar"><div><strong id="phase">PICK 1 / 6</strong><p class="muted" id="current"></p></div><div class="clock" id="clock">20</div><div class="bar"><button id="reroll">REROLL 15</button><button id="restart">NEW DRAFT</button></div></section>
+<section id="game" class="hidden"><section class="panel bar"><div><strong id="phase">PICK 1 / 6</strong><p class="muted" id="current"></p></div><div class="draft-clock-shell" aria-label="Time remaining"><div class="clock" id="clock">20</div><small>SECONDS</small></div><div id="draft-progress" class="draft-progress" aria-label="Draft progress"></div><div class="bar"><button id="reroll">REROLL 15</button><button id="restart">NEW DRAFT</button></div></section>
 <div class="squads"><section class="panel team"><h2>COMMANDER</h2><div id="squadA"></div></section><section class="panel team"><h2>OPPONENT</h2><div id="squadB"></div></section></div>
 <section class="panel" id="selection"><h2>YOUR 15 CANDIDATES</h2><p class="muted">Choose one. Pick locks immediately. Your opponent never sees this pool.</p><div id="counterAdvice" class="hint hidden"></div><div class="pool" id="pool"></div></section>
 <section class="panel hidden" id="finished"><h2>SQUADS LOCKED</h2><p>Choose tactics and play through the existing CAGE match engine.</p><div class="bar"><label>Commander <select id="tacticA"><option value="balanced">Balanced</option><option value="press">High Press</option><option value="possession">Possession</option><option value="counter">Counterattack</option></select></label><label>Opponent <select id="tacticB"><option value="balanced">Balanced</option><option value="press">High Press</option><option value="possession">Possession</option><option value="counter">Counterattack</option></select></label><button id="fight">ENTER THE CAGE</button></div><h2 class="gold" id="result"></h2><div id="details"></div></section>
