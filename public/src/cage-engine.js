@@ -376,6 +376,67 @@ function validateKeepers(ids,players){if(!Array.isArray(ids)||ids.length!==2||id
 return Object.freeze({REFERENCE,MAX_LOGIT_SHIFT,score,logitShift,afterMiss,distribute,sweep,validateKeepers});
 });
 
+// T3-13 keeper rules (owner decision 3, 2026-11-01). EXECUTION comes ONLY from the seven visible attributes;
+// the keeper CLASS is a playing style that changes DECISIONS (how often a keeper comes out, rushes, claims or
+// goes long), never success probabilities. The original CageGoalkeeperRules stays untouched for historical engines.
+(function(root,factory){const api=factory();root.CageGoalkeeperRulesV2=api;if(typeof module==='object'&&module.exports)module.exports=api;})(typeof window!=='undefined'?window:globalThis,function(){'use strict';
+const REFERENCE=88,MAX_LOGIT_SHIFT=.35;
+const clamp=(x,a,b)=>Math.min(b,Math.max(a,x));
+// Style = decision propensities. sweep: comes for a through ball; rush: closes down a one-on-one instead of staying
+// to react; claim: comes for a loose ball in the box; longBias: preference for long distribution.
+const STYLE=Object.freeze({
+ 'REFLEX MONSTER':Object.freeze({sweep:.35,rush:.30,claim:.25,longBias:0,label:'Stays on the line and reacts'}),
+ 'GUARDIAN':Object.freeze({sweep:.35,rush:.45,claim:.35,longBias:0,label:'Positional; narrows angles from the line'}),
+ 'COMMANDER':Object.freeze({sweep:.55,rush:.60,claim:.65,longBias:0,label:'Dominates the box; comes for loose balls'}),
+ 'SWEEPER KEEPER':Object.freeze({sweep:.90,rush:.80,claim:.45,longBias:0,label:'Plays high; sweeps behind the defence'}),
+ 'DISTRIBUTOR':Object.freeze({sweep:.55,rush:.55,claim:.35,longBias:.08,label:'Starts attacks; ambitious distribution'})
+});
+const NEUTRAL=Object.freeze({sweep:.5,rush:.5,claim:.4,longBias:0,label:'Balanced'});
+function style(g){return STYLE[g?.keeperClass]||NEUTRAL;}
+// Shot-stopping from attributes only. In a one-on-one the keeper's DECISION picks which ability carries the save:
+// rushing leans on one-on-one skill, staying leans on reflexes.
+function score(g,context='box',mode=null){
+ if(!g?.r)throw Error('Missing goalkeeper card');
+ const r=g.r;let composite=r.reflexes*.34+r.positioning*.25+r.oneOnOne*.20+r.handling*.13+r.aerialControl*.08;
+ if(context==='one_v_one')composite+=mode==='stay'?.05*(r.reflexes-r.oneOnOne):.10*(r.oneOnOne-r.reflexes);
+ if(context==='fk')composite+=.05*(r.positioning-r.oneOnOne);
+ return composite;
+}
+function logitShift(g,context,mode=null){const shift=(REFERENCE-score(g,context,mode))*.021;return Math.abs(shift)<1e-12?0:clamp(shift,-MAX_LOGIT_SHIFT,MAX_LOGIT_SHIFT);}
+function afterMiss(g,shotKind,roll){
+ if(!g||!Number.isFinite(roll)||roll<0||roll>=1)throw Error('Invalid keeper shot context');
+ const onTarget=clamp(.46+(g.r.positioning-REFERENCE)*.001+(shotKind==='one_v_one'?.12:0),.3,.7);
+ const parry=clamp(.30-(g.r.handling-REFERENCE)*.004,.08,.44),normalized=roll/onTarget;
+ const evidence={onTargetP:onTarget,parryP:parry};
+ if(roll>=onTarget)return {type:'shot_miss',outcome:'wide',onTarget:false,...evidence};
+ if(normalized<parry)return {type:'gk_parry',outcome:'parried',onTarget:true,...evidence};
+ return {type:'gk_save',outcome:'held',onTarget:true,...evidence};
+}
+// Distribution quality = the distribution attribute. Style only shifts the CHOICE of long vs short.
+function distribute(g,oppositionPress=0,roll=0,long=false){
+ if(!g?.r||!Number.isFinite(roll)||roll<0||roll>=1)throw Error('Invalid goalkeeper distribution.');
+ const pressing=clamp(oppositionPress,0,1),quality=g.r.distribution;
+ const success=clamp(.82+(quality-85)*.007-pressing*.05-(long?.09:0),.53,.95);
+ const longChance=clamp(.24+(quality-82)*.014+style(g).longBias,.12,.62);
+ return {p:success,successful:roll<success,longChance,quality};
+}
+// Sweep execution when the keeper has DECIDED to come: sweeping and positioning only.
+function sweep(g,threat=2,roll=0){
+ if(!g?.r||!Number.isFinite(roll)||roll<0||roll>=1)throw Error('Invalid goalkeeper sweep.');
+ const ability=.75*g.r.sweeping+.25*g.r.positioning;
+ const p=clamp(.15+(ability-80)*.012+(threat>=3?.09:0),.06,.49);
+ return {p,cleared:roll<p,ability};
+}
+// Loose-ball claim execution when the keeper has DECIDED to come: aerial control and handling vs the attacker.
+function claim(g,attackerReach){
+ if(!g?.r)throw Error('Missing goalkeeper card');
+ const ability=.6*g.r.aerialControl+.4*g.r.handling;
+ return {p:clamp(.45+(ability-attackerReach)/60,.15,.8),ability};
+}
+function validateKeepers(ids,players){if(!Array.isArray(ids)||ids.length!==2||ids[0]===ids[1]||ids.some(id=>typeof id!=='string'||!Object.hasOwn(players,id)))throw Error('Exactly two different supported goalkeepers required');return ids.map(id=>players[id]);}
+return Object.freeze({VERSION:'gk-rules-v2-style',REFERENCE,MAX_LOGIT_SHIFT,STYLE,style,score,logitShift,afterMiss,distribute,sweep,claim,validateKeepers});
+});
+
 (()=>{'use strict';
 const ROSTER=window.THE_CAGE_PLAYERS,BY_ID=Object.fromEntries(ROSTER.map(p=>[p.id,p])),C=window.CageCapabilities,S=window.CageSpatial,I=window.CageTacticalIntelligence,{P}=window.CageTacticalParams,TACTICS=Object.freeze({...window.CageTacticalParams.TACTICS,possession:Object.freeze({...window.CageTacticalParams.TACTICS.possession,tempo:1.13,risk:.97}),press:Object.freeze({...window.CageTacticalParams.TACTICS.press,engageHigh:.69,cp:1.3})}),Q=P.decisions,F=P.resolution,comp=C.comp,shape=C.shape;
 const lim=C.lim,rounded=v=>Math.round(v*10000)/10000;
@@ -388,7 +449,7 @@ function rng(seed){let s=seed>>>0;const sm=()=>{s=(s+0x9e3779b9)>>>0;let z=s;z=M
 function simulate({teams,tactics,seed,mode='ko',traits:traitConfig,keepers}){
 const traitOn=traitConfig?.enabled===true;
 const trait=traitOn?window.CageTraits:null;if(traitOn&&!trait)throw Error('Trait decision module is unavailable.');
-const GK=window.CageGoalkeepers,GKRules=window.CageGoalkeeperRules,goalies=keepers===undefined?null:GKRules.validateKeepers(keepers,GK.BY_ID);
+const GK=window.CageGoalkeepers,GKRules=window.CageGoalkeeperRulesV2,goalies=keepers===undefined?null:GKRules.validateKeepers(keepers,GK.BY_ID);
 if(keepers!==undefined&&mode!=='score')throw Error('Goalkeepers currently require regulation scoring.');
 if(!Array.isArray(teams)||teams.length!==2||teams.some(ids=>!Array.isArray(ids)||ids.length!==3||new Set(ids).size!==3||ids.some(id=>typeof id!=='string'||!Object.hasOwn(BY_ID,id))))throw Error('Each side requires three distinct supported identities.');
 if(!Array.isArray(tactics)||tactics.length!==2||tactics.some(t=>typeof t!=='string'||!Object.hasOwn(TACTICS,t)))throw Error('Unknown tactic.');
@@ -427,15 +488,15 @@ emit({type:'turnover',team:poss,actor:winner.id,how,reason,zone:zone(),transitio
 function recover(){for(const q of T[1-poss].ps)if(q.oop>0){const r=duel(eff(q,'recover'),F.recoveryTarget,P.b.recover);q.oop--;if(r.win||q.oop<=0){q.oop=0;emit({type:'recovery_run',team:q.ti,actor:q.id,p:r.p,roll:r.roll,outcome:'back_in_shape',calc:r.calc});}}}
 function shoot(kind){const sh=carrier,ctx=context(),link=kind!=='fk'&&lastLink&&lastLink.receiver===sh.id&&tick-lastLink.tick<=2?lastLink:null,exposed=!!(goalies&&keeperExposed&&keeperExposed.side===1-poss&&tick<=keeperExposed.until);keeperExposed=null;lastLink=null;emit({type:'shot_attempt',team:poss,actor:sh.id,zone:zone(),kind,pressure:ctx.d?.id||null,...(link?{creator:link.passer,linkBoost:rounded(link.bonus)}:{}),...(goalies?{keeperExposed:exposed}:{})},ctx,true);t+=P.dt.shot;
 for(const bl of [ctx.d,ctx.helper].filter(Boolean)){const A=F.blockTackle*eff(bl,'tackle')+F.blockRead*eff(bl,'intercept'),b=(bl===ctx.d?P.block:P.blockCover)-P.support*ctx.supportQ+P.help*(bl===ctx.d?ctx.helpQ:0),r=duel(A,F.shotBlockTarget,b,null,false);if(r.win){emit({type:'block',team:1-poss,actor:bl.id,opp:sh.id,p:r.p,roll:r.roll,outcome:'blocked',roles:{blocker:bl.id},calc:r.calc},ctx,true);return loose('block');}}
-const base=kind==='fk'?P.shot.fk:x===3?P.shot.box[lane===1?'C':'S']:P.shot.edge[lane===1?'C':'S'],quality=kind==='box'||kind==='one_v_one'?eff(sh,'shot'):eff(sh,'long'),z=base+(quality-F.shotReference)/P.shot.q+(transition?P.shot.transition:0)+(ctx.d?P.shot.pressure:0)+(kind==='one_v_one'?F.clearShot:0)+(link?link.bonus:0),p=lim(logistic(z+(goalies?GKRules.logitShift(goalies[1-poss],kind):0)+(exposed?.52:0)),F.shotMin,F.shotMax),roll=R();
-if(roll<p){score[poss]++;emit({type:'goal',team:poss,actor:sh.id,p,roll,kind,zone:zone(),assist:lastPasser,transition,...(goalies?{gk:goalies[1-poss].id,keeperExposed:exposed}:{}),...(suddenDeath?{golden:true}:{}),calc:{quality:rounded(quality),logit:rounded(z),linkBoost:rounded(link?link.bonus:0),...(goalies?{exposureLogit:exposed?.52:0}:{})}},ctx,true);over=mode==='ko'||(mode==='score'&&suddenDeath);if(!over)restart(1-poss,'kickoff');return;}
+const keeperMode=goalies&&kind==='one_v_one'?(R()<GKRules.style(goalies[1-poss]).rush?'rush':'stay'):null;const base=kind==='fk'?P.shot.fk:x===3?P.shot.box[lane===1?'C':'S']:P.shot.edge[lane===1?'C':'S'],quality=kind==='box'||kind==='one_v_one'?eff(sh,'shot'):eff(sh,'long'),z=base+(quality-F.shotReference)/P.shot.q+(transition?P.shot.transition:0)+(ctx.d?P.shot.pressure:0)+(kind==='one_v_one'?F.clearShot:0)+(link?link.bonus:0),p=lim(logistic(z+(goalies?GKRules.logitShift(goalies[1-poss],kind,keeperMode):0)+(exposed?.52:0)),F.shotMin,F.shotMax),roll=R();
+if(roll<p){score[poss]++;emit({type:'goal',team:poss,actor:sh.id,p,roll,kind,zone:zone(),assist:lastPasser,transition,...(goalies?{gk:goalies[1-poss].id,keeperExposed:exposed}:{}),...(suddenDeath?{golden:true}:{}),calc:{quality:rounded(quality),logit:rounded(z),linkBoost:rounded(link?link.bonus:0),...(goalies?{exposureLogit:exposed?.52:0,keeperMode:keeperMode||undefined,style:goalies[1-poss].keeperClass}:{})}},ctx,true);over=mode==='ko'||(mode==='score'&&suddenDeath);if(!over)restart(1-poss,'kickoff');return;}
 if(goalies){const keeper=goalies[1-poss],catRoll=R(),decision=GKRules.afterMiss(keeper,kind,catRoll);
-  emit({type:decision.type,team:poss,actor:sh.id,gk:keeper.id,p,roll,kind,zone:zone(),outcome:decision.outcome,onTarget:decision.onTarget,catRoll,onTargetP:decision.onTargetP,parryP:decision.parryP,calc:{quality:rounded(quality),logit:rounded(z),linkBoost:rounded(link?link.bonus:0),gkShift:rounded(GKRules.logitShift(keeper,kind)),exposureLogit:exposed?.52:0}},ctx,true);
+  emit({type:decision.type,team:poss,actor:sh.id,gk:keeper.id,p,roll,kind,zone:zone(),outcome:decision.outcome,onTarget:decision.onTarget,catRoll,onTargetP:decision.onTargetP,parryP:decision.parryP,calc:{quality:rounded(quality),logit:rounded(z),linkBoost:rounded(link?link.bonus:0),gkShift:rounded(GKRules.logitShift(keeper,kind,keeperMode)),exposureLogit:exposed?.52:0,keeperMode:keeperMode||undefined,style:keeper.keeperClass}},ctx,true);
   if(decision.type==='gk_parry')return loose('goalkeeper');
   return keeperRestart(1-poss,decision.type==='gk_save'?'goalkeeper_distribution':'goal_kick');
 }
 emit({type:'shot_miss',team:poss,actor:sh.id,p,roll,kind,outcome:roll<p+(1-p)*F.nearMiss?'off_post_or_wide':'wide'},ctx);loose('wall');}
-function loose(source){lastPasser=null;lastLink=null;const ball=S.world(zone(),poss),rank=team=>team.ps.slice().sort((a,b)=>S.dist(a.pos,ball)-S.dist(b.pos,ball)||b.c.rebound-a.c.rebound),att=rank(T[poss])[0],def=rank(T[1-poss])[0],r=duel(eff(att,'rebound'),eff(def,'rebound')+F.reboundEdge,P.b.rebound),winner=r.win?att:def;emit({type:'rebound',team:winner.ti,actor:winner.id,opp:r.win?def.id:att.id,p:r.p,roll:r.roll,source,outcome:r.win?'attack_keeps':'defence_clears',calc:r.calc});
+function loose(source){lastPasser=null;lastLink=null;const ball=S.world(zone(),poss),rank=team=>team.ps.slice().sort((a,b)=>S.dist(a.pos,ball)-S.dist(b.pos,ball)||b.c.rebound-a.c.rebound),att=rank(T[poss])[0],def=rank(T[1-poss])[0];if(goalies&&x===3){const keeper=goalies[1-poss],keeperStyle=GKRules.style(keeper),comeRoll=R();if(comeRoll<keeperStyle.claim){const cl=GKRules.claim(keeper,eff(att,'rebound')),cr=R(),won=cr<cl.p;emit({type:'gk_claim',team:poss,actor:att.id,gk:keeper.id,p:rounded(cl.p),roll:cr,source,outcome:won?'claimed':'beaten',calc:{claim:rounded(cl.ability),decision:'come',style:keeper.keeperClass,comeP:keeperStyle.claim,comeRoll}});if(won)return keeperRestart(1-poss,'goalkeeper_claim');carrier=att;x=3;lane=1;carrier.pos=S.world(zone(),poss);keeperExposed={side:1-poss,until:tick+2};return;}}const r=duel(eff(att,'rebound'),eff(def,'rebound')+F.reboundEdge,P.b.rebound),winner=r.win?att:def;emit({type:'rebound',team:winner.ti,actor:winner.id,opp:r.win?def.id:att.id,p:r.p,roll:r.roll,source,outcome:r.win?'attack_keeps':'defence_clears',calc:r.calc});
 if(r.win){carrier=att;x=3;lane=1;carrier.pos=S.world(zone(),poss);}else turnover(def,'rebound','second_ball');}
 function step(){tick++;
 // A late, scoreless high-press surge is a tactical shape change, NOT a goal.
@@ -477,12 +538,12 @@ const movement=(receiver.c.a.agi+receiver.c.a.pace)/2,pressure=engaged?Q.pressPe
 t+=P.dt[action];tire(c,'pass');const crafted= r.win&&to.x>zb.x&&to.x>=2&&c.c.MID>=c.c.ATT-3&&c.c.MID>=c.c.DEF-3&&c.c.vision>=78?Math.min(.22,Math.max(0,(Math.min(c.c.vision,c.c.pass)-76)*.011)):0;emit({type:action==='through'||action==='outlet'?'through_ball':'pass',team:poss,actor:c.id,target:receiver.id,opp:md?.id||null,p:r.p,roll:r.roll,zone:zb,to,outcome:r.win?'complete':'intercepted',tags:action==='outlet'?['direct_outlet']:[],roles:{receiver:receiver.id},calc:{...r.calc,weights,wasTransition:transition,forwardDistance:to.x-x,creativeLink:rounded(crafted)}},passCtx,!!md);
 if(r.win){lastPasser=c.id;lastLink=crafted>0?{passer:c.id,receiver:receiver.id,tick,bonus:crafted}:null;carrier=receiver;x=to.x;lane=receiver.pos.y;if(action!=='pass'&&md){const race=duel(.5*eff(receiver,'recover')+.5*receiver.c.dribble,eff(md,'recover'),.2);emit({type:'race',team:poss,actor:receiver.id,opp:md.id,p:race.p,roll:race.roll,outcome:race.win?'attacker_clear':'defender_recovers',calc:race.calc});if(race.win)md.oop=2;}
 if(goalies&&(action==='through'||action==='outlet')&&x>=2){
- const keeper=goalies[1-poss],roll=R(),sweep=GKRules.sweep(keeper,x,roll);
+ const keeper=goalies[1-poss],keeperStyle=GKRules.style(keeper),comeRoll=R(),come=comeRoll<keeperStyle.sweep;if(come){const roll=R(),sweep=GKRules.sweep(keeper,x,roll);
  emit({type:'gk_sweep',team:poss,actor:receiver.id,gk:keeper.id,zone:zone(),
    p:sweep.p,roll,outcome:sweep.cleared?'cleared':'beaten',
-   calc:{sweeping:rounded(sweep.ability)}});
+   calc:{sweeping:rounded(sweep.ability),decision:'come',style:keeper.keeperClass,comeP:keeperStyle.sweep,comeRoll}});
  if(sweep.cleared)return keeperRestart(1-poss,'keeper_sweep');
- keeperExposed={side:1-poss,until:tick+2};
+ keeperExposed={side:1-poss,until:tick+2};}
 }
 return;}return turnover(md,'interception','read_pass');}
 }

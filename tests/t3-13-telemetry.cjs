@@ -11,7 +11,7 @@ const W = c.window, E = W.CageEngine, OLD = W.CAGE_ENGINE_REGISTRY['cage-t3-12']
 assert.equal(E.VERSION, CURRENT_ENGINE); assert.equal(E.VERSION, 'cage-t3-13'); assert(OLD && OLD.VERSION === 'cage-t3-12', 'frozen T3-12 must be registered for replay');
 const ids = E.ROSTER.map(p => p.id), tactics = ['balanced', 'press', 'possession', 'counter'];
 const strip = ev => ev.map(e => { const { step, targets, decision, ...rest } = e; return rest; });
-let n = 0, decisions = 0, actionsWithDecision = 0, shotNowChecked = 0;
+let n = 0, passiveChecked = 0, decisions = 0, actionsWithDecision = 0, shotNowChecked = 0;
 const DECISION_EVENTS = new Set(['carry', 'dribble_duel', 'wall_pass', 'press', 'pass', 'through_ball', 'shot_attempt']);
 for (let k = 0; k < 160; k++) {
   const t = []; for (let m = 0; t.length < 6; m++) { const id = ids[(k * 37 + m * 29) % ids.length]; if (!t.includes(id)) t.push(id); }
@@ -19,8 +19,10 @@ for (let k = 0; k < 160; k++) {
   const cfg = { teams: [t.slice(0, 3), t.slice(3)], tactics: [tactics[k % 4], tactics[(k >> 2) % 4]], seed: (k * 2654435761 + 99) >>> 0, mode: keepers && keepers.length === 2 ? 'score' : (k % 2 ? 'score' : 'ko'), ...(k % 5 !== 0 ? { traits: { enabled: true } } : {}), ...(keepers && keepers.length === 2 ? { keepers } : {}) };
   const a = E.simulate(cfg), b = OLD.simulate(cfg); n++;
   // 1. passive: identical football
-  assert.equal(JSON.stringify(strip(a.events)), JSON.stringify(b.events), 'T3-13 minus telemetry must equal T3-12 (config ' + k + ')');
-  for (const key of ['score', 'winner', 'duration', 'draws']) assert.equal(JSON.stringify(a[key]), JSON.stringify(b[key]), key + ' differs (config ' + k + ')');
+  // Without keepers, T3-13 football is unchanged; with keepers it differs by design (owner decision 3: style-based keeper decisions).
+  if (!cfg.keepers) { passiveChecked++;
+  assert.equal(JSON.stringify(strip(a.events)), JSON.stringify(b.events), 'T3-13 minus telemetry must equal T3-12 without keepers (config ' + k + ')');
+  for (const key of ['score', 'winner', 'duration', 'draws']) assert.equal(JSON.stringify(a[key]), JSON.stringify(b[key]), key + ' differs (config ' + k + ')'); }
   // 2. telemetry integrity
   let lastStep = -1; const team = [new Set(cfg.teams[0]), new Set(cfg.teams[1])];
   for (const e of a.events) {
@@ -47,4 +49,5 @@ for (let k = 0; k < 160; k++) {
     assert.equal(rec.engineVersion, 'cage-t3-13'); }
 }
 assert(decisions > 1000 && shotNowChecked > 100, 'telemetry must actually be produced');
-console.log(`T3_13_TELEMETRY_PASS ${n} configs: telemetry is passive (stripped events identical to T3-12, same score/winner/duration/draws), ${decisions} decisions logged, ${shotNowChecked} shot estimates, step/targets on every event, records replay`);
+assert(passiveChecked >= 40, 'enough no-keeper configs');
+console.log(`T3_13_TELEMETRY_PASS ${n} configs: telemetry is passive (${passiveChecked} no-keeper configs identical to T3-12 when stripped: events, score, winner, duration, draws), ${decisions} decisions logged, ${shotNowChecked} shot estimates, step/targets on every event, records replay`);

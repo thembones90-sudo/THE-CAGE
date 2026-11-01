@@ -32,6 +32,7 @@ try{
   @('tests/viewer/run-all.cjs'),
   @('tests/v64-locomotion.cjs'),
   @('tests/t3-13-telemetry.cjs'),
+  @('tests/t3-13-gk-style.cjs'),
   @('tests/elite-67-approved-ovr.cjs'),
   @('tests/overall-v2.cjs'),
   @('tests/overall-184.cjs'),
