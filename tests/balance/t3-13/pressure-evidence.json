@@ -1,0 +1,64 @@
+{
+ "engine": "cage-t3-13",
+ "rule": {
+  "pressure": "defender-quality-v1"
+ },
+ "pressureTerm": {
+  "paolo-maldini": -0.8570444104134763,
+  "sergio-ramos": -0.8303981623277182,
+  "juan-roman-riquelme": -0.3799387442572741
+ },
+ "trio": [
+  "X",
+  "michael-ballack",
+  "ronaldo-nazario"
+ ],
+ "opponents": [
+  "thierry-henry",
+  "zinedine-zidane",
+  "didier-drogba"
+ ],
+ "keepers": [
+  "victor-valdes",
+  "ederson-moraes"
+ ],
+ "seedsPerOrientation": 120,
+ "result": {
+  "off:paolo-maldini": {
+   "shotsUnderPressure": 3420,
+   "meanGoalChance": 0.4685,
+   "goalsPerUnblockedShot": 0.463,
+   "concededPerMatch": 6.02
+  },
+  "off:sergio-ramos": {
+   "shotsUnderPressure": 2977,
+   "meanGoalChance": 0.4766,
+   "goalsPerUnblockedShot": 0.476,
+   "concededPerMatch": 5.77
+  },
+  "off:juan-roman-riquelme": {
+   "shotsUnderPressure": 3035,
+   "meanGoalChance": 0.5166,
+   "goalsPerUnblockedShot": 0.529,
+   "concededPerMatch": 9.1
+  },
+  "on:paolo-maldini": {
+   "shotsUnderPressure": 3398,
+   "meanGoalChance": 0.4133,
+   "goalsPerUnblockedShot": 0.41,
+   "concededPerMatch": 5.36
+  },
+  "on:sergio-ramos": {
+   "shotsUnderPressure": 3028,
+   "meanGoalChance": 0.4257,
+   "goalsPerUnblockedShot": 0.428,
+   "concededPerMatch": 5.36
+  },
+  "on:juan-roman-riquelme": {
+   "shotsUnderPressure": 3013,
+   "meanGoalChance": 0.5659,
+   "goalsPerUnblockedShot": 0.576,
+   "concededPerMatch": 9.31
+  }
+ }
+}
