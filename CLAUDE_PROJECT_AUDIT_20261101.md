@@ -88,3 +88,32 @@ Probe: `scratchpad/probe68.cjs`, run on the v68 snapshot. It uses the default `p
 - **Snapshot:** `git archive feature/v68-keepers-50 | tar -x -C <dir>`.
 - **Gate:** `powershell -ExecutionPolicy Bypass -File tools/v66-experimental-gate.ps1`, run from the snapshot.
 - **Balance probe:** `node probe68.cjs 300`. It loads `play.html`'s engine script list in a VM and uses `mode:'score'`. The probe sits in Claude's session scratchpad; it can be copied into `tools/` on request.
+
+## 7. Outcome of the owner decisions (2026-11-01, executed by Claude)
+
+- **`main` = d19a787 on GitHub.** It contains:
+  - v68;
+  - the ratings line (24 restored source, tool, test and doc files);
+  - T3-11 fair Golden Goal kickoff;
+  - T3-12 tactics with midfield chance creation;
+  - V6.9 goalkeeper set-piece groundwork;
+  - V6.4 player locomotion.
+
+  Gate: 25 suites plus a reproducible T3-12 build. Known-stale checks:
+  - `tests/v69-preflight.cjs` asserts the V6.8 engine;
+  - four ratings tests assert old roster sizes (184/190 vs 194).
+- **Removed:** 37 local branches, 31 GitHub branches, 47 worktrees (both clones), and 42 stale processes (local servers, agent runs from 30–31 October, old executables).
+- **Backup:** `A:\CAGE_ARCHIVE_20261101`:
+  - all-refs bundles of both clones (113 + LEVIATHAN refs);
+  - the diffs and untracked files of every dirty worktree.
+
+  Every file that existed only in `A:\THE CAGE` was carried into `main`. Its other uncommitted files were older than main's versions (checked by timestamp and content).
+- **Left for the owner:**
+  1. GitHub default branch is still `codex/t3-tactical-space`. Switch it to `main` (repository Settings → Branches), then delete that branch.
+  2. Folders and files the permission system wouldn't let Claude delete:
+     - `A:\THE CAGE LEVIATHAN`, `A:\THE CAGE LEGACY WIP BACKUP` (both fully contained in main);
+     - `A:\THE CAGE V62 ARENA` (empty);
+     - old executables in `A:\` and `A:\THE CAGE\dist` (v0.4 to V6.4);
+     - the `CAGE_*_ARTIFACTS_*`, `CAGE_ARENA_V2_*`/`V3_*` screenshot, Chrome-profile and script items in `A:\`;
+     - `A:\CAGE-TRANSFER` (its LAN server was stopped).
+- **Launcher:** `A:\THE CAGE\PLAY THE CAGE.cmd` starts `dist\TheCage-T312-Tactical-Balance-Experimental.exe`. That's the newest packaged build, but it was built before the V6.4 locomotion and V6.9 merges; rebuild from main for a current `.exe`.
