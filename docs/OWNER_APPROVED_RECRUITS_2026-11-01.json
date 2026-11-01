@@ -1,0 +1,220 @@
+{
+  "status": "OWNER APPROVED - EXACT VALUES; LIVE INTEGRATION PENDING VALIDATION",
+  "date": "2026-11-01",
+  "scope": "Only these five players",
+  "attributes": [
+    "pace",
+    "technique",
+    "passing",
+    "finishing",
+    "defending",
+    "physical",
+    "first_touch",
+    "dribbling",
+    "vision",
+    "shooting",
+    "stamina",
+    "positioning",
+    "composure"
+  ],
+  "players": [
+    {
+      "id": "wesley-sneijder",
+      "name": "Wesley Sneijder",
+      "country": "Netherlands",
+      "role": "M",
+      "position": "CAM",
+      "secondaryPositions": [
+        "CM"
+      ],
+      "careerTier": "LEGEND",
+      "approvedOverall": 90,
+      "peak": "2009–2010",
+      "traits": {
+        "primary": "Architect",
+        "secondary": "Surgeon"
+      },
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "talismanClubs": [
+        "Inter Milan"
+      ],
+      "approvedAttributes": {
+        "pace": 75,
+        "technique": 92,
+        "passing": 93,
+        "finishing": 84,
+        "defending": 47,
+        "physical": 66,
+        "first_touch": 92,
+        "dribbling": 87,
+        "vision": 94,
+        "shooting": 93,
+        "stamina": 86,
+        "positioning": 85,
+        "composure": 89
+      }
+    },
+    {
+      "id": "diego-milito",
+      "name": "Diego Milito",
+      "country": "Argentina",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [
+        "CF"
+      ],
+      "careerTier": "ELITE",
+      "approvedOverall": 88,
+      "peak": "2009–2010",
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Executioner"
+      },
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN",
+        "UNDERDOG"
+      ],
+      "talismanClubs": [
+        "Inter Milan"
+      ],
+      "approvedAttributes": {
+        "pace": 78,
+        "technique": 85,
+        "passing": 72,
+        "finishing": 94,
+        "defending": 36,
+        "physical": 79,
+        "first_touch": 88,
+        "dribbling": 82,
+        "vision": 81,
+        "shooting": 92,
+        "stamina": 83,
+        "positioning": 95,
+        "composure": 95
+      }
+    },
+    {
+      "id": "edinson-cavani",
+      "name": "Edinson Cavani",
+      "country": "Uruguay",
+      "role": "F",
+      "position": "ST",
+      "secondaryPositions": [
+        "CF"
+      ],
+      "careerTier": "LEGEND",
+      "approvedOverall": 89,
+      "peak": "2012–2018",
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Engine"
+      },
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "talismanClubs": [
+        "Napoli"
+      ],
+      "approvedAttributes": {
+        "pace": 84,
+        "technique": 83,
+        "passing": 72,
+        "finishing": 92,
+        "defending": 61,
+        "physical": 85,
+        "first_touch": 86,
+        "dribbling": 80,
+        "vision": 82,
+        "shooting": 88,
+        "stamina": 96,
+        "positioning": 96,
+        "composure": 89
+      }
+    },
+    {
+      "id": "pep-guardiola",
+      "name": "Pep Guardiola",
+      "country": "Spain",
+      "role": "M",
+      "position": "CDM",
+      "secondaryPositions": [
+        "CM"
+      ],
+      "careerTier": "ELITE",
+      "approvedOverall": 87,
+      "peak": "1992–1996",
+      "traits": {
+        "primary": "Architect",
+        "secondary": "Anticipator"
+      },
+      "folklore": [],
+      "talismanClubs": [],
+      "approvedAttributes": {
+        "pace": 59,
+        "technique": 89,
+        "passing": 93,
+        "finishing": 39,
+        "defending": 70,
+        "physical": 61,
+        "first_touch": 92,
+        "dribbling": 74,
+        "vision": 94,
+        "shooting": 50,
+        "stamina": 82,
+        "positioning": 91,
+        "composure": 93
+      }
+    },
+    {
+      "id": "gaizka-mendieta",
+      "name": "Gaizka Mendieta",
+      "country": "Spain",
+      "role": "M",
+      "position": "CM",
+      "secondaryPositions": [
+        "RM"
+      ],
+      "careerTier": "ELITE",
+      "approvedOverall": 87,
+      "peak": "1999–2001",
+      "traits": {
+        "primary": "Engine",
+        "secondary": "Architect"
+      },
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "talismanClubs": [
+        "Valencia"
+      ],
+      "approvedAttributes": {
+        "pace": 77,
+        "technique": 88,
+        "passing": 88,
+        "finishing": 78,
+        "defending": 66,
+        "physical": 76,
+        "first_touch": 89,
+        "dribbling": 86,
+        "vision": 88,
+        "shooting": 87,
+        "stamina": 91,
+        "positioning": 87,
+        "composure": 89
+      }
+    }
+  ],
+  "integrationNotes": [
+    "OVR formula must reproduce approved OVR from exact attributes; do not insert an unexplained override.",
+    "Trait family rule needs resolution for Sneijder Architect/Surgeon, Milito Predator/Executioner, Mendieta Engine/Architect. Preserve approvals; do not silently replace traits.",
+    "Preserve unrelated uncommitted changes in working tree.",
+    "Do not confer Guardiola any special labels. Explicit owner correction supersedes prior provisional talisman claim."
+  ],
+  "specialLabelsStatus": "Owner approved four proposals; Guardiola explicitly no special labels (not a Barcelona talisman as player)."
+}

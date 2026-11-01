@@ -21,7 +21,7 @@
   ok(button.textContent==='Sound: Off'&&button.getAttribute('aria-pressed')==='false','sound must be silent by default');
   ok(overlay.hidden,'goal shown before recorded event');
   const g=ctl.timeline.goals[0];ok(g,'real match has no goal event');
-  ctl.pause();ctl.seek(Math.max(0,g.tau-.23));ctl.play();ctl.playback.advance(2);ctl.render();
+  ctl.pause();ctl.setSpeed('full');ctl.seek(Math.max(0,g.tau-.23));ctl.play();ctl.playback.advance(.3);ctl.render();
   ok(!overlay.hidden,'goal cinematic missing at real event crossing goalTau='+g.tau+' actualTau='+ctl.playback.tau+' state='+ctl.playback.state+' goalShown='+!holder.hidden+' inner='+overlay.textContent.slice(0,60));
   const shownGoal=ctl.timeline.goals.filter(x=>x.tau<=ctl.playback.tau+1e-6).at(-1)||g;
   const strike=record.result.events[shownGoal.i].golden===true?'FINAL STRIKE':'REGULATION GOAL';ok(overlay.textContent.includes(strike)&&overlay.textContent.includes('GOAL'),'recorded regulation/Golden Goal reveal malformed');
@@ -39,17 +39,20 @@
   const slider=document.querySelector('#integrated-viewer [data-k=seek]');
   slider.value='0';slider.dispatchEvent(new Event('input'));ctl.render();
   ok(overlay.hidden,'manual slider must immediately dismiss ongoing celebration');
-  ctl.seek(Math.max(0,g.tau-.23));ctl.play();ctl.playback.advance(2);ctl.render();
+  ctl.seek(Math.max(0,g.tau-.23));ctl.play();ctl.playback.advance(.3);ctl.render();
   ok(!overlay.hidden,'second authentic crossing should restore cinematic');
 
   await new Promise(r=>setTimeout(r,3100));ctl.render();
-  ok(overlay.hidden&&!holder.hidden,'cinematic did not hand off to persistent goal plaque');
+  ok(overlay.hidden&&holder.hidden,'goal presentation must expire without a persistent pitch plaque');
+  const nextKickoff=ctl.timeline.segments.find(s=>s.i>g.i&&record.result.events[s.i].type==='restart');
+  if(nextKickoff){ctl.seek(Math.max(0,g.tau-.23));ctl.play();ctl.playback.advance(.3);ctl.render();ok(!overlay.hidden,'goal crossing cue missing');ctl.playback.advance(nextKickoff.tau0-ctl.playback.tau+.01);ctl.render();ok(overlay.hidden&&holder.hidden,'celebration obstructs resumed play');}
   const beforeHash=record.result.eventHash;
   ctl.seek(0);ctl.render();ok(overlay.hidden,'scrub backward did not hide active celebration');
   button.click();ok(button.getAttribute('aria-pressed')==='true','sound opt-in switch failed');
   button.click();ok(button.getAttribute('aria-pressed')==='false','sound switch not reversible');
   ctl.seek(ctl.timeline.total-1);ctl.play();ctl.playback.advance(20);ctl.render();
   const finished=window.CageShowdown.snapshot();
+  ok(overlay.hidden&&holder.hidden,'full-time pitch must be unobstructed');
   ok(finished.history.length===1&&finished.wins.A+finished.wins.B===1,'goal not awarded exactly once');
   ok(finished.history[0].result.eventHash===beforeHash,'presentation changed recorded match');
   ok(ctl.replayGoal()===true,'replay unavailable');

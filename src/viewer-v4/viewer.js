@@ -28,6 +28,7 @@ function shell(el,o){el.innerHTML=`<div class="cv-root" tabindex="-1">
  <div class="cv-showdown" aria-label="Showdown score"><small>SHOWDOWN</small><span data-k="showdown">–</span><em class="cv-chip" data-k="sdchip"></em></div>
  <div class="cv-state" data-k="state">READY</div>
 </header>
+<div class="cv-key" aria-label="Pitch marker legend"><span><i class="cv-key-a" aria-hidden="true"></i><b data-k="key-a"></b></span><span><i class="cv-key-b" aria-hidden="true"></i><b data-k="key-b"></b></span><span><i class="cv-key-carrier" aria-hidden="true"></i>On the ball</span><span><i class="cv-key-keeper" aria-hidden="true">GK</i>Goalkeeper</span><span><i class="cv-key-ball" aria-hidden="true"></i>Ball</span></div>
 <div class="cv-main">
  <div class="cv-stage"><canvas class="cv-canvas" role="img" aria-label="Top-down cage pitch"></canvas>
   <div class="cv-banner" data-k="banner" aria-hidden="true"></div>
@@ -54,6 +55,7 @@ function shell(el,o){el.innerHTML=`<div class="cv-root" tabindex="-1">
  <span class="cv-ptime" data-k="ptime" title="Playback time (real) vs timeline">0:00 / 0:00</span>
 </div>
 <div class="cv-sr" data-k="ticker" aria-live="polite"></div>
+<section class="cv-final" data-k="final" role="status" aria-live="polite" hidden></section>
 </div>`;const q=k=>el.querySelector('[data-k="'+k+'"]');return q;}
 
 function mount(el,record,opts){
@@ -63,7 +65,7 @@ function mount(el,record,opts){
   const tl=T.buildTimeline(record,o.timeline),events=(record.result||record).events;
   // M2: draw the engine's recorded movement when the record has it; older records keep the inferred motion.
   const RM=window.CageRecordedMotion?window.CageRecordedMotion.create(tl,record):null,TP=RM?RM.timelineApi(T):T;
-  const name=id=>id?(o.names[id]||titleCase(id)):'';
+  const name=id=>id?(o.names[id]||window.CageGoalkeepers?.BY_ID[id]?.name||titleCase(id)):'';
   const labels={},numbers={};tl.ids.forEach(id=>{labels[id]=L.label(name(id));numbers[id]=tl.teams[tl.teamOf[id]].indexOf(id)+1;});
   const lines=T.schedule(tl,o.lines||basicLines(events,name));const cues=window.CageViewerV4FX.buildCues(tl,events);
   const q=shell(el,o),root=el.querySelector('.cv-root'),canvas=el.querySelector('canvas'),renderer=Rn.createRenderer(canvas),pb=K.createPlayback(tl,{speed:o.speed,mode:o.mode});
@@ -72,6 +74,7 @@ function mount(el,record,opts){
   el.querySelector('.cv-round').textContent=o.draftMatch?'DRAFT MATCH · ROUND '+(tl.round||1):tl.round?'ROUND '+tl.round:'MATCH';
   if(o.draftMatch){const badge=el.querySelector('.cv-showdown');badge.querySelector('small').textContent='SHOWDOWN';q('showdown').textContent=o.showdown?o.showdown.A+' : '+o.showdown.B:'0 : 0';q('sdchip').textContent='FIRST TO 3 WINS';}
   el.querySelector('.cv-a').textContent=o.teamNames[0].toUpperCase();el.querySelector('.cv-b').textContent=o.teamNames[1].toUpperCase();
+  q('key-a').textContent=o.teamNames[0];q('key-b').textContent=o.teamNames[1];
   if(!o.draftMatch){q('showdown').textContent=o.showdown?o.showdown.A+'–'+o.showdown.B:'—';q('sdchip').textContent=o.showdown?(o.showdown.label||'BEFORE ROUND'):'NOT IN FILE';}
   // Starting tactical choices come DIRECTLY from the immutable match record.
   // This is context, not live tactical intelligence invented by the viewer.
@@ -82,10 +85,10 @@ function mount(el,record,opts){
     '<span>VS</span><b class="t1">'+esc(String(recordedTactics[1]).toUpperCase())+'</b></div>'+
     '<div class="cv-surge" data-k="surge" hidden></div>':'';
 
-  const inferredMotionNote='V5.2 body facing, acceleration trails, turning and ball-flight styling are deterministic inferred visuals from recorded positions; they are not measured individual footwork.';
+  const inferredMotionNote='Body facing, trails, connector lines and the small owned-ball foot offset are inferred display styling. They never change recorded positions, events or outcomes.';
   q('notes').innerHTML=tl.notes.concat(tl.warnings,[RM?'Player, goalkeeper and ball positions are the recorded engine movement ('+RM.version+', 4 Hz), drawn as recorded.':inferredMotionNote]).map(n=>'<li>'+esc(n)+'</li>').join('');
-  q('speed').value=pb.speed;canvas.setAttribute('aria-label','Top-down cage pitch: '+tl.teams.map((t,i)=>o.teamNames[i]+' '+t.map(name).join(', ')).join(' versus '));
-  let raf=0,last=null,shown=-1,flashUntil=0,trail=[],commHidden=false,lastSeg=-1,goalShown=false,now=0,goldenCue=null,goldenAt=0,goldenTimer=null;
+  q('speed').value=pb.speed;canvas.setAttribute('aria-label','Top-down cage pitch: '+tl.teams.map((t,i)=>o.teamNames[i]+' '+t.map(name).join(', ')+(tl.keepers?.[i]?', goalkeeper '+name(tl.keepers[i]):'')).join(' versus '));
+  let raf=0,last=null,shown=-1,flashUntil=0,trail=[],commHidden=false,lastSeg=-1,now=0,goldenCue=null,goldenAt=0,goldenTimer=null,goldenEndTau=Infinity,viewEnded=false;
   const sound=Audio.create();
   if(sound.restore()){
     const toggle=q('sound');toggle.textContent='Sound: On';
@@ -98,6 +101,7 @@ function mount(el,record,opts){
     // It never calls the game engine or modifies the result, score or clock.
     const cue=G.goalData(tl,events,goal,o.teamNames,name,replay);
     goldenCue=cue;goldenAt=now;
+    goldenEndTau=tl.segments.find(s=>s.i>goal.i&&events[s.i].type==='restart')?.tau0??Infinity;
     root.dataset.goalSide=cue.team===0?'a':'b';
     const overlay=q('golden');
     overlay.innerHTML=G.markup(cue,T.scoreAt(tl,goal.tau+0.0001));
@@ -108,11 +112,11 @@ function mount(el,record,opts){
       goldenTimer=null;goldenCue=null;overlay.hidden=true;
       root.classList.remove('cv-goal-in-progress');
       delete root.dataset.goalSide;
-      q('goalcard').hidden=!(goalShown&&tl.goals.some(g=>pb.tau>=g.tau));
+      q('goalcard').hidden=true;
     },G.DURATION*1000);
-    goalShown=true;flashUntil=now+.6;
+    flashUntil=now+.6;
     const card=q('goalcard');
-    card.hidden=false;
+    card.hidden=true;
     card.innerHTML='<b>'+G.escapeText(cue.type)+'</b><span>'+G.escapeText(cue.scorer)+'</span>'+
       (cue.assist?'<small>assist '+G.escapeText(cue.assist)+'</small>':'')+
       '<em>'+G.escapeText(cue.teamName.toUpperCase())+((cue.isWinner?' WINS':' SCORES')+(cue.isWinner&&tl.round?' ROUND '+tl.round:''))+'</em>'+
@@ -122,12 +126,12 @@ function mount(el,record,opts){
     emit('goal',{goal,replay});
   }));
   unsub.push(pb.on('segment',d=>emit('beat',d)));
-  unsub.push(pb.on('end',d=>emit('end',d)));
-  unsub.push(pb.on('replayStart',()=>{dismissCinematic();q('goalcard').hidden=true;trail=[];}));
+  unsub.push(pb.on('end',d=>{dismissCinematic();emit('end',d);}));
+  unsub.push(pb.on('replayStart',()=>{dismissCinematic();viewEnded=false;trail=[];}));
   unsub.push(pb.on('replayEnd',()=>emit('replayEnd',{})));
   function dismissCinematic(){
     if(goldenTimer!==null)clearTimeout(goldenTimer);
-    goldenTimer=null;goldenCue=null;q('golden').hidden=true;
+    goldenTimer=null;goldenCue=null;goldenEndTau=Infinity;q('golden').hidden=true;q('goalcard').hidden=true;
     root.classList.remove('cv-goal-in-progress');
     delete root.dataset.goalSide;
   }
@@ -137,15 +141,17 @@ function mount(el,record,opts){
   function frame(){const tau=pb.tau,si=T.segmentIndex(tl,tau),seg=tl.segments[si],motion=M.sample(tl,events,tau,TP),kinetics=Kin.sample(tl,TP,tau,motion),players=motion.positions,ball=motion.ball,score=T.scoreAt(tl,tau);
     if(si!==lastSeg&&tau<(tl.segments[lastSeg]||{tau0:-1}).tau0)trail=[];lastSeg=si;
     if(!reduce){trail.push({u:ball.u,v:ball.v});if(trail.length>14)trail.shift();}
+    const ended=pb.state==='ended'&&!pb.inReplay&&tau>=tl.total;
+    if(goldenCue&&(tau<goldenCue.tau||tau>=goldenEndTau||ended))dismissCinematic();
     const goldenPhase=G.phase(goldenCue,tau,goldenAt,now,reduce);
     const golden=q('golden');golden.hidden=!goldenPhase.visible;
     root.classList.toggle('cv-goal-in-progress',goldenPhase.visible);
-    // Cinematic first, persistent goal card second. Also protect seeking
-    // backwards: the goal card must never be visible before the real event.
-    const confirmedGoal=goalShown&&tl.goals.some(g=>tau>=g.tau);
-    q('goalcard').hidden=goldenPhase.visible||!confirmedGoal;
+    // A goal is a temporary cue; the host owns the result panel below the pitch.
+    q('goalcard').hidden=true;
+    q('final').hidden=!ended||o.draftMatch;
+    if(ended&&!o.draftMatch)q('final').textContent='FULL TIME · '+(tl.winner>=0?o.teamNames[tl.winner].toUpperCase()+' WINS':'DRAW')+' · '+tl.finalScore.join(' – ');
     const contact=seg.contact?[seg.contact.id,seg.contact.carrier||seg.carrier].filter(Boolean):null;
-    renderer.draw({tau,cues,motion,kinetics,players,ball,teamOf:tl.teamOf,keepers:tl.keepers,keeperPos:RM&&RM.keepersAt(tau).every(Boolean)?RM.keepersAt(tau):Array.isArray(tl.keepers)&&tl.keepers.length===2?[0,1].map(side=>window.CageViewerRenderer.keeperStanceAt(tl,events,T,tl.keepers,tau,side,reduce)):null,keeperEvent:(['gk_save','gk_parry','gk_sweep','gk_distribution','gk_claim'].includes(events[seg.i]?.type)||(events[seg.i]?.gk&&events[seg.i]?.calc?.keeperMode))?events[seg.i]:null,keeperPhase:T.phase(seg,tau),labels,numbers,carrier:ball.owner,contact,oop:seg.oop,flash:Math.max(0,(flashUntil-now)/.6),trail,reducedMotion:reduce,focus:seg.carrier});
+    renderer.draw({tau,cues,motion,kinetics,players,ball,teamOf:tl.teamOf,keepers:tl.keepers,keeperLabels:Object.fromEntries((tl.keepers||[]).map(id=>[id,'GK · '+L.label(name(id))])),keeperPos:RM&&RM.keepersAt(tau).every(Boolean)?RM.keepersAt(tau):Array.isArray(tl.keepers)&&tl.keepers.length===2?[0,1].map(side=>window.CageViewerRenderer.keeperStanceAt(tl,events,T,tl.keepers,tau,side,reduce)):null,keeperEvent:(['gk_save','gk_parry','gk_sweep','gk_distribution','gk_claim'].includes(events[seg.i]?.type)||(events[seg.i]?.gk&&events[seg.i]?.calc?.keeperMode))?events[seg.i]:null,keeperPhase:T.phase(seg,tau),labels,numbers,carrier:ball.owner,contact,oop:seg.oop,flash:Math.max(0,(flashUntil-now)/.6),trail,reducedMotion:reduce,focus:seg.carrier});
     q('score').textContent=score[0]+'–'+score[1];q('clock').textContent=mmss(T.clockAt(tl,tau));
     const st=pb.inReplay?'REPLAY':pb.state==='ended'?'FULL TIME':pb.state==='playing'?(o.mode==='replay'?'▶ REPLAY':'● LIVE'):pb.state==='paused'?'❚❚ PAUSED':'READY';q('state').textContent=st;root.dataset.state=pb.inReplay||o.mode==='replay'?'replay':pb.state;
     q('play').textContent=pb.state==='playing'?'❚❚':'▶';q('play').setAttribute('aria-label',pb.state==='playing'?'Pause':'Play');
@@ -161,15 +167,16 @@ function mount(el,record,opts){
       surge.hidden=status.length===0;
       surge.textContent=status.length?'LATE HIGH-PRESS SURGE · '+status.join(' / '):'';
     }
-    q('onball').innerHTML=who?'<small>ON THE BALL</small> <b class="t'+tl.teamOf[who]+'">'+esc(name(who))+'</b>':'<small>LOOSE BALL</small>';
+    q('onball').innerHTML=ended?'<small>FULL TIME</small> <b>Match complete</b>':who?'<small>ON THE BALL</small> <b class="t'+tl.teamOf[who]+'">'+esc(name(who))+'</b>':'<small>LOOSE BALL</small>';
     const b=q('banner');const ban=ev.type==='golden_goal_start'?'GOLDEN GOAL OVERTIME · NEXT GOAL WINS':ev.type==='restart'&&seg.move===0||ev.type==='restart'&&T.phase(seg,tau)<.6?'KICK-OFF':ev.transition&&ev.type==='turnover'?'COUNTER':ev.type==='free_kick'?'FREE KICK':ev.type==='foul'?'FOUL':'';b.textContent=ban;b.classList.toggle('on',!!ban);
     const action=q('action');action.textContent=motion.showEvent&&seg.type!=='goal'?motion.label+(motion.roles.actor?' / '+name(motion.roles.actor).toUpperCase():''):'';action.classList.toggle('on',!!action.textContent);const actionKind=action.textContent?M.actionKind(seg.type,!!seg.contact):'';action.dataset.kind=actionKind;q('action').closest('.cv-stage').dataset.action=actionKind;
-    if(!goalShown&&tau<(tl.goals[0]||{tau:Infinity}).tau)q('goalcard').hidden=true;
-    syncComm(tau);}
+    if(ended){b.classList.remove('on');action.classList.remove('on');}
+    syncComm(tau);
+    if(ended&&!viewEnded){viewEnded=true;emit('viewEnd',{});}else if(!ended)viewEnded=false;}
   function loop(ts){raf=requestAnimationFrame(loop);const dt=last===null?0:Math.min(.1,(ts-last)/1000);last=ts;now+=dt;pb.advance(dt);frame();}
   const on=(k,ev,fn)=>{const n=q(k);n.addEventListener(ev,fn);unsub.push(()=>n.removeEventListener(ev,fn));};
   on('play','click',()=>{pb.toggle();});on('tap','click',()=>{pb.toggle();});
-  on('restart','click',()=>{pb.seek(0);dismissCinematic();goalShown=false;q('goalcard').hidden=true;trail=[];});
+  on('restart','click',()=>{pb.seek(0);dismissCinematic();trail=[];});
   on('speed','change',e=>{pb.setSpeed(e.target.value);});
   on('sound','click',()=>{
     const active=sound.setEnabled(!sound.enabled);
@@ -180,7 +187,7 @@ function mount(el,record,opts){
     button.classList.toggle('cv-audio-on',active);
   });
   on('replay','click',()=>{pb.replayGoal();});
-  on('seek','input',e=>{pb.seek(tl.total*e.target.value/1000);dismissCinematic();trail=[];goalShown=pb.tau>=(tl.goals[0]||{tau:Infinity}).tau&&goalShown;});
+  on('seek','input',e=>{pb.seek(tl.total*e.target.value/1000);dismissCinematic();trail=[];});
   on('commtoggle','click',e=>{commHidden=!commHidden;root.classList.toggle('cv-nocomm',commHidden);e.target.textContent=commHidden?'Show':'Hide';e.target.setAttribute('aria-pressed',String(!commHidden));});
   const key=e=>{if(e.target&&/INPUT|SELECT|TEXTAREA/.test(e.target.tagName))return;if(e.code==='Space'){e.preventDefault();pb.toggle();}else if(e.code==='ArrowRight'){pb.seek(pb.tau+3);dismissCinematic();}else if(e.code==='ArrowLeft'){pb.seek(pb.tau-3);dismissCinematic();}};
   root.addEventListener('keydown',key);unsub.push(()=>root.removeEventListener('keydown',key));
@@ -188,6 +195,7 @@ function mount(el,record,opts){
   const rs=()=>{renderer.resize();frame();};const ro=typeof ResizeObserver==='function'?new ResizeObserver(rs):null;if(ro){ro.observe(canvas);unsub.push(()=>ro.disconnect());}else{window.addEventListener('resize',rs);unsub.push(()=>window.removeEventListener('resize',rs));}
   renderer.resize();frame();raf=requestAnimationFrame(loop);if(o.autoplay)pb.play();
   const ctl={timeline:tl,cues,playback:pb,
+    setShowdown(score){if(score&&[score.A,score.B].every(n=>Number.isInteger(n)&&n>=0&&n<=3))q('showdown').textContent=score.A+' : '+score.B;return ctl;},
     play(){pb.play();return ctl;},pause(){pb.pause();return ctl;},resume(){pb.resume();return ctl;},toggle(){pb.toggle();return ctl;},
     seek(tau){pb.seek(tau);if(goldenCue&&pb.tau<goldenCue.tau)dismissCinematic();return ctl;},render(){frame();return ctl;},setSpeed(s){pb.setSpeed(s);q('speed').value=s;return ctl;},replayGoal(){return pb.replayGoal();},
     on(n,fn){(listeners[n]=listeners[n]||[]).push(fn);return ()=>{listeners[n]=listeners[n].filter(f=>f!==fn);};},

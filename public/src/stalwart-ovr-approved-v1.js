@@ -3,7 +3,7 @@ const records=[{"id":"adel-taarabt","target":83,"changes":{"pass":[86,77],"compo
 const players=window.THE_CAGE_PLAYERS,byId=new Map(players.map(p=>[p.id,p]));
 const aliases={pass:"passing",finish:"finishing",phys:"physical"};
 for(const row of records){
-const p=byId.get(row.id);if(!p||p.careerTier!=="STALWART")throw Error("STALWART missing "+row.id);
+const p=byId.get(row.id);if(!p||(p.careerTier!=="STALWART"&&!(["nani","mario-balotelli","obafemi-martins","peter-crouch"].includes(row.id)&&p.careerTier==="ELITE")))throw Error("STALWART source missing "+row.id);
 for(const [k,v] of Object.entries(row.changes)){if(p.r[k]!==v[0])throw Error("STALWART source mismatch "+row.id+" "+k);p.r[k]=v[1];if(aliases[k])p.r[aliases[k]]=v[1];}
 p.ratingReviewStatus="owner-approved-stalwart-ovr-v1";
 }

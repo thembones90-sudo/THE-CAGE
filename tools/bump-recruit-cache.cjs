@@ -1,0 +1,1 @@
+const fs=require('fs');for(const f of ['sw.js','public/sw.js']){let t=fs.readFileSync(f,'utf8');t=t.replace(/const CACHE='[^']+';/,"const CACHE='the-cage-full-t312-206-recruits-20261101';");fs.writeFileSync(f,t)}console.log('CACHE BUMP OK')

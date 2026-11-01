@@ -33,7 +33,7 @@ function shouldPaintRecordedAction(f){return !!(f.motion&&f.motion.showEvent&&!f
 function createRenderer(canvas){
   const ctx=canvas.getContext('2d');let tk=readTokens(canvas),arena=null,rect=null,W=0,H=0,dpr=1,world=null,arenaKey='';
   const img={};for(const [key,url] of Object.entries({
-    iron:'design/qwen-30b/arena/arena.svg',golden:'design/qwen-30b/arena/arena-golden.svg',ball:'design/qwen-30b/arena/relic-ball.svg'
+    iron:'design/qwen-30b/arena/arena.svg',golden:'design/qwen-30b/arena/arena-golden.svg'
   })){const i=new Image();img[key]=i;i.onload=()=>{arena=null;};i.onerror=()=>{console.warn('V4 arena image failed:',url);arena=null;};i.src=url;}
   const selectedVariant=()=>window.CageViewerV4Variant==='golden'?'golden':'iron';
   function resize(){const box=canvas.getBoundingClientRect();dpr=Math.min(2,window.devicePixelRatio||1);W=Math.max(1,Math.round(box.width));H=Math.max(1,Math.round(box.height));canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);world=FX.fit(W,H);rect={x:world.x+FX.WORLD.x0*world.scale,y:world.y+FX.WORLD.y0*world.scale,w:(FX.WORLD.x1-FX.WORLD.x0)*world.scale,h:(FX.WORLD.y1-FX.WORLD.y0)*world.scale};tk=readTokens(canvas);arena=drawArena();arenaKey=selectedVariant();}
@@ -51,8 +51,8 @@ function createRenderer(canvas){
     g.strokeStyle=tk['--grid'];g.setLineDash([4,6]);g.lineWidth=1;for(let i=1;i<C.COLS;i++){if(i===2)continue;const x=r.x+r.w*i/C.COLS;g.beginPath();g.moveTo(x,r.y);g.lineTo(x,r.y+r.h);g.stroke();}for(let j=1;j<C.ROWS;j++){const y=r.y+r.h*j/C.ROWS;g.beginPath();g.moveTo(r.x,y);g.lineTo(r.x+r.w,y);g.stroke();}g.setLineDash([]);
     g.strokeStyle=tk['--cage-line'];g.lineWidth=2;g.strokeRect(r.x,r.y,r.w,r.h);g.beginPath();g.moveTo(r.x+r.w/2,r.y);g.lineTo(r.x+r.w/2,r.y+r.h);g.stroke();
     g.beginPath();g.arc(r.x+r.w/2,r.y+r.h/2,r.h*.14,0,Math.PI*2);g.stroke();g.beginPath();g.arc(r.x+r.w/2,r.y+r.h/2,3,0,Math.PI*2);g.fillStyle=tk['--cage-line'];g.fill();
-    for(const side of [0,1]){const bx=side?r.x+r.w-r.w*.09:r.x;g.strokeRect(bx,r.y+r.h*.28,r.w*.09,r.h*.44);
-      const gx=side?r.x+r.w:r.x-r.w*.028,gw=r.w*.028;g.fillStyle='rgba(255,255,255,.12)';g.fillRect(gx,r.y+r.h*.4,gw,r.h*.2);g.strokeStyle=tk['--cage-steel'];g.lineWidth=3;g.strokeRect(gx,r.y+r.h*.4,gw,r.h*.2);g.strokeStyle=tk['--cage-line'];g.lineWidth=2;}
+    // Goal nets are always painted by FX at this same boundary, including fallback mode.
+    for(const side of [0,1]){const bx=side?r.x+r.w-r.w*.09:r.x;g.strokeRect(bx,r.y+r.h*.28,r.w*.09,r.h*.44);}
     // steel cage frame
     g.strokeStyle=tk['--cage-steel'];g.lineWidth=5;const m=r.h*.035;g.beginPath();if(g.roundRect)g.roundRect(r.x-m-r.w*.03,r.y-m,r.w+2*m+r.w*.06,r.h+2*m,10);else g.rect(r.x-m-r.w*.03,r.y-m,r.w+2*m+r.w*.06,r.h+2*m);g.stroke();
     return off;}
@@ -115,19 +115,25 @@ function createRenderer(canvas){
   }
 
   // Keeper markers are SEPARATE from the six recorded outfield positions.
-  // Goalkeeper stance (PRESENTATION ONLY; the engine records no keeper position). Every frame the keeper tracks the
-  // recorded ball across the goal to narrow the angle and steps off the line as play approaches. Logged keeper actions
-  // move the keeper further: sweeps and claims run out to the ball, a one-on-one 'rush' closes the shooter down,
-  // 'stay' holds the line. Derived only from recorded data, so it never changes outcomes.
-  function paintGoalkeepers(f,R){
-    if(!Array.isArray(f.keepers)||f.keepers.length!==2)return;
+  // Goalkeeper markers (separate from the six outfield positions). Position: the engine's recorded keeper movement
+  // when the record has it (f.keeperPos), otherwise the presentation stance that tracks the recorded ball and runs out
+  // for logged sweeps, claims and one-on-one rushes. Derived only from recorded data, so it never changes outcomes.
+  function goalkeeperMarkers(f,R){
+    if(!Array.isArray(f.keepers)||f.keepers.length!==2)return [];
+    const markers=[];
     for(const side of [0,1]){
       const id=f.keepers[side],event=f.keeperEvent,active=event&&event.gk===id,phase=Math.max(0,Math.min(1,f.keeperPhase||0));
       const st=f.keeperPos?.[side]||keeperStance(f,side,id,event,active,phase),at=px({u:st.u,v:st.v}),radius=R*.82;
+      markers.push({id,side,at,radius,active,phase,event});
+    }
+    return markers;
+  }
+  function paintGoalkeepers(f,markers){
+    for(const {side,at,radius,active,phase,event} of markers){
       ctx.save();
-      ctx.fillStyle='rgba(4,13,21,.80)';ctx.strokeStyle=side===0?'#78c9ff':'#ffbd88';ctx.lineWidth=2;
-      ctx.beginPath();ctx.arc(at.x,at.y,radius+2,0,Math.PI*2);ctx.fill();ctx.stroke();
-      ctx.fillStyle='#f6d98b';ctx.font='800 '+Math.max(8,Math.round(radius*.83))+'px system-ui';
+      ctx.fillStyle='#08151d';ctx.strokeStyle=side===0?tk['--team-a']:tk['--team-b'];ctx.lineWidth=2.5;
+      ctx.beginPath();ctx.moveTo(at.x-radius,at.y-radius);ctx.lineTo(at.x+radius,at.y-radius);ctx.lineTo(at.x+radius,at.y+radius*.4);ctx.lineTo(at.x,at.y+radius*1.2);ctx.lineTo(at.x-radius,at.y+radius*.4);ctx.closePath();ctx.fill();ctx.stroke();
+      ctx.fillStyle='#ffffff';ctx.font='900 '+Math.max(9,Math.round(radius*.83))+'px system-ui';
       ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('GK',at.x,at.y);
       if(active&&!f.reducedMotion){
         const burst=Math.sin(Math.PI*phase);
@@ -138,9 +144,9 @@ function createRenderer(canvas){
   }
   // frame: {players, ball, teamOf, labels, carrier, contact:[ids], oop:[ids], flash, trail:[{u,v}], reducedMotion, showLabels, focus}
   function draw(f){if(!rect)resize();if(!arena||arenaKey!==selectedVariant()){arena=drawArena();arenaKey=selectedVariant();}ctx.setTransform(1,0,0,1,0,0);ctx.drawImage(arena,0,0);ctx.setTransform(dpr,0,0,dpr,0,0);
-    if(f.cues){ctx.save();ctx.translate(world.x,world.y);ctx.scale(world.scale,world.scale);
-      FX.paintNet(ctx,f.cues,f.tau,'left',f.reducedMotion);FX.paintNet(ctx,f.cues,f.tau,'right',f.reducedMotion);ctx.restore();}
-    const R=Math.max(7,rect.h*.042),ids=Object.keys(f.players).sort((a,b)=>f.players[a].v-f.players[b].v);
+    {ctx.save();ctx.translate(world.x,world.y);ctx.scale(world.scale,world.scale);
+      FX.paintNet(ctx,f.cues,f.tau,'left',f.reducedMotion,{scale:world.scale,accent:tk['--team-a']});FX.paintNet(ctx,f.cues,f.tau,'right',f.reducedMotion,{scale:world.scale,accent:tk['--team-b']});ctx.restore();}
+    const R=Math.max(9,Math.min(19,rect.h*.042)),ids=Object.keys(f.players).sort((a,b)=>f.players[a].v-f.players[b].v),keepers=goalkeeperMarkers(f,R);
     // V5.1 MOVEMENT READABILITY: subtle momentum ticks & recorded pass trail.
     // Both are pure presentation. NEVER alter the sampled score or event outcome.
     const motion=f.motion,kinetics=f.kinetics;
@@ -172,7 +178,7 @@ function createRenderer(canvas){
     // ball trail (presentation)
     if(!f.reducedMotion&&f.trail&&f.trail.length>1){ctx.lineCap='round';for(let i=1;i<f.trail.length;i++){const a=px(f.trail[i-1]),b=px(f.trail[i]);ctx.strokeStyle='rgba(225,176,75,'+(.05+.28*i/f.trail.length)+')';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}
     paintRecordedAction(f,R);
-    paintGoalkeepers(f,R);
+    paintGoalkeepers(f,keepers);
     for(const id of ids){const p=px(f.players[id]);ctx.fillStyle='rgba(0,0,0,.35)';ctx.beginPath();ctx.ellipse(p.x+2,p.y+R*.75,R*.9,R*.38,0,0,Math.PI*2);ctx.fill();}
     for(const id of ids){const p=px(f.players[id]),team=f.teamOf[id],col=team===0?tk['--team-a']:tk['--team-b'],ink=team===0?tk['--team-a-ink']:tk['--team-b-ink'],dim=f.oop&&f.oop.includes(id);
       ctx.globalAlpha=dim?.5:1;
@@ -192,7 +198,7 @@ function createRenderer(canvas){
           ctx.beginPath();ctx.arc(p.x,p.y,R+6,0,Math.PI*2);ctx.stroke();ctx.restore();
         }
       }
-      if(id===f.carrier){ctx.save();ctx.strokeStyle=tk['--momentum'];ctx.lineWidth=3;ctx.shadowColor='#f5c65a';ctx.shadowBlur=8;ctx.beginPath();ctx.arc(p.x,p.y,R+4,0,Math.PI*2);ctx.stroke();ctx.shadowBlur=0;ctx.lineWidth=1.2;ctx.strokeStyle='rgba(255,246,194,.8)';ctx.beginPath();ctx.arc(p.x,p.y,R+7,-Math.PI*.66,Math.PI*.23);ctx.stroke();ctx.restore();}
+      if(id===f.carrier){ctx.save();ctx.strokeStyle='#0a1016';ctx.lineWidth=6;ctx.beginPath();ctx.arc(p.x,p.y,R+5,0,Math.PI*2);ctx.stroke();ctx.strokeStyle='#ffd166';ctx.lineWidth=3;ctx.stroke();ctx.strokeStyle='#ffffff';ctx.lineWidth=1.5;ctx.beginPath();ctx.arc(p.x,p.y,R+8,0,Math.PI*2);ctx.stroke();ctx.restore();}
       // V6.4: directional sprint silhouette, braking and banking. Grounded in
       // recorded travel samples; player centers and game state never change.
       if(kinetics&&kinetics.players[id]){
@@ -239,22 +245,25 @@ function createRenderer(canvas){
       // Premium token finish: visual shading only. No positions, physics or event state change.
       ctx.save();ctx.shadowColor='rgba(0,0,0,.7)';ctx.shadowBlur=R*.55;ctx.shadowOffsetY=2;
       const metal=ctx.createRadialGradient(p.x-R*.35,p.y-R*.5,R*.06,p.x,p.y,R*1.15);
-      metal.addColorStop(0,'#f4f7f3');metal.addColorStop(.15,col);metal.addColorStop(.72,col);metal.addColorStop(1,'#101b22');
-      ctx.fillStyle=metal;ctx.beginPath();ctx.arc(p.x,p.y,R,0,Math.PI*2);ctx.fill();ctx.restore();
+      metal.addColorStop(0,team===0?'#b6edff':'#ffc0ce');metal.addColorStop(.3,col);metal.addColorStop(.85,col);metal.addColorStop(1,ink);
+      ctx.fillStyle=metal;ctx.beginPath();if(team===1){if(ctx.roundRect)ctx.roundRect(p.x-R,p.y-R,R*2,R*2,R*.38);else ctx.rect(p.x-R,p.y-R,R*2,R*2);}else ctx.arc(p.x,p.y,R,0,Math.PI*2);ctx.fill();ctx.restore();
       ctx.strokeStyle=ink;ctx.lineWidth=2.3;ctx.stroke();
       ctx.strokeStyle='rgba(255,255,255,.5)';ctx.lineWidth=1;ctx.beginPath();ctx.arc(p.x,p.y,R*.77,Math.PI*1.12,Math.PI*1.83);ctx.stroke();
-      ctx.fillStyle=ink;ctx.font='800 '+Math.round(R*.95)+'px system-ui, sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String(f.numbers&&f.numbers[id]||''),p.x,p.y+.5);
+      ctx.fillStyle=ink;ctx.font='900 '+Math.max(9,Math.round(R*.78))+'px system-ui, sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText((team===0?'A':'B')+String(f.numbers&&f.numbers[id]||''),p.x,p.y+.5);
       ctx.globalAlpha=1;}
     // Collision-aware legend labels are placed AFTER tokens so the whole
     // six-player shape can be considered. No player position is changed.
     if(f.showLabels!==false){
-      ctx.save();ctx.font=W<650?'700 10px system-ui, sans-serif':tk['--label-font'];
+      ctx.save();ctx.font=W<650?'800 11px system-ui, sans-serif':'800 12px system-ui, sans-serif';
       ctx.textAlign='center';ctx.textBaseline='middle';
       const labelPlayers=ids.map(id=>{const p=px(f.players[id]),name=f.labels[id]||'';return {id,x:p.x,y:p.y,name,width:ctx.measureText(name).width+10};});
+      for(const k of keepers){const name=f.keeperLabels?.[k.id]||'GK';labelPlayers.push({id:k.id,x:k.at.x,y:k.at.y,name,width:ctx.measureText(name).width+12});}
       const safe={x:Math.max(0,rect.x+2),y:Math.max(0,rect.y+2),w:Math.min(W,rect.x+rect.w-2)-Math.max(0,rect.x+2),h:Math.min(H,rect.y+rect.h-2)-Math.max(0,rect.y+2)};
-      const labelBoxes=Names.place(labelPlayers,safe,R,{carrier:f.carrier,actor:motion&&motion.roles.actor,defender:motion&&motion.roles.defender,height:W<650?13:15,gap:3});
+      const labelBoxes=Names.place(labelPlayers,safe,R,{carrier:f.carrier,actor:motion&&motion.roles.actor,defender:motion&&motion.roles.defender,height:W<650?17:19,gap:4,obstacles:f.ball?[{x:px(f.ball).x-8,y:px(f.ball).y-8,w:16,h:16}]:[]});
       for(const b of labelBoxes){
-        const teamColor=f.teamOf[b.id]===0?tk['--team-a']:tk['--team-b'];
+        const side=f.teamOf[b.id]??keepers.find(k=>k.id===b.id)?.side,teamColor=side===0?tk['--team-a']:tk['--team-b'];
+        const near={x:Math.max(b.x,Math.min(b.x+b.w,b.anchorX)),y:Math.max(b.y,Math.min(b.y+b.h,b.anchorY))};
+        if(Math.hypot(near.x-b.anchorX,near.y-b.anchorY)>R+5){ctx.save();ctx.strokeStyle=teamColor;ctx.globalAlpha=.65;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(b.anchorX,b.anchorY);ctx.lineTo(near.x,near.y);ctx.stroke();ctx.restore();}
         ctx.save();ctx.shadowColor='rgba(0,0,0,.7)';ctx.shadowBlur=5;
         ctx.fillStyle='rgba(5,12,16,.94)';ctx.fillRect(b.x,b.y,b.w,b.h);ctx.restore();
         ctx.fillStyle=teamColor;ctx.fillRect(b.x,b.y,3,b.h);
@@ -264,7 +273,9 @@ function createRenderer(canvas){
       }
       ctx.restore();
     }
-    if(f.ball){const b=px(f.ball),lift=(f.reducedMotion?0:f.ball.lift||0),br=Math.max(3.5,R*.42)*(1+.35*lift),kb=kinetics&&kinetics.ball;
+    if(f.ball){const b=px(f.ball),lift=(f.reducedMotion?0:f.ball.lift||0),br=Math.max(4.5,Math.min(7,R*.34))*(1+.22*lift),kb=kinetics&&kinetics.ball;
+      const owner=f.ball.owner&&f.players[f.ball.owner]&&px(f.players[f.ball.owner]);
+      if(owner&&Math.hypot(b.x-owner.x,b.y-owner.y)<R*.7){b.x+=R*.85;b.y+=R*.75;}
       ctx.fillStyle='rgba(0,0,0,.4)';ctx.beginPath();ctx.ellipse(b.x+1+lift*4,b.y+br*.6+lift*6,br,br*.45,0,0,Math.PI*2);ctx.fill();
       if(kb&&kb.flight&&!f.reducedMotion&&kb.speed>18){
         const trail=Math.min(31,kb.trail),ux=Math.cos(kb.heading),uy=Math.sin(kb.heading);
@@ -277,16 +288,11 @@ function createRenderer(canvas){
         ctx.beginPath();ctx.moveTo(b.x-ux*trail,b.y-uy*trail);ctx.lineTo(b.x-ux*br*.45,b.y-uy*br*.45);ctx.stroke();
         ctx.restore();
       }
-      const golden=img.ball,ballR=Math.max(6,br*1.55);
-      ctx.save();
-      ctx.strokeStyle='rgba(249,214,121,.69)';ctx.lineWidth=1.2;
-      ctx.beginPath();ctx.arc(b.x,b.y-lift*8,ballR+2,0,Math.PI*2);ctx.stroke();
-      ctx.restore();
-      if(golden&&golden.complete&&golden.naturalWidth){ctx.save();ctx.translate(b.x,b.y-lift*8);
-        if(kb&&!f.reducedMotion&&kb.flight&&kb.speed>45){ctx.rotate(kb.heading);ctx.scale(1+Math.min(.25,kb.intensity*.25),1-Math.min(.13,kb.intensity*.13));}
-        ctx.rotate(kb?kb.spin:motion?motion.spin:(f.tau||0)*6);
-        ctx.shadowColor='#f3c55bc0';ctx.shadowBlur=9;ctx.drawImage(golden,-ballR,-ballR,ballR*2,ballR*2);ctx.restore();}
-      else{ctx.fillStyle='#d6a447';ctx.beginPath();ctx.arc(b.x,b.y-lift*8,ballR,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#382407';ctx.lineWidth=1.5;ctx.stroke();}}
+      // White-football treatment: always the same sampled ball, never an extra actor.
+      ctx.save();ctx.translate(b.x,b.y-lift*8);ctx.rotate(kb?kb.spin:motion?motion.spin:0);
+      ctx.shadowColor='#000000';ctx.shadowBlur=4;ctx.fillStyle='#ffffff';ctx.strokeStyle='#071019';ctx.lineWidth=1.6;ctx.beginPath();ctx.arc(0,0,br,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.shadowBlur=0;
+      ctx.fillStyle='#17232d';ctx.beginPath();for(let i=0;i<5;i++){const a=-Math.PI/2+i*Math.PI*2/5,x=Math.cos(a)*br*.44,y=Math.sin(a)*br*.44;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.closePath();ctx.fill();
+      ctx.strokeStyle='#17232d';ctx.lineWidth=.8;for(let i=0;i<5;i++){const a=-Math.PI/2+i*Math.PI*2/5;ctx.beginPath();ctx.moveTo(Math.cos(a)*br*.44,Math.sin(a)*br*.44);ctx.lineTo(Math.cos(a)*br*.93,Math.sin(a)*br*.93);ctx.stroke();}ctx.restore();}
     if(f.cues){ctx.save();ctx.translate(world.x,world.y);ctx.scale(world.scale,world.scale);
       FX.paintEffects(ctx,f.cues,f.tau,f.reducedMotion);ctx.restore();}
     // All goal flashes now derive solely from recorded goal cues, never arbitrary playback state.

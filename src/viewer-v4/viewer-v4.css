@@ -12,13 +12,21 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.08;ba
 .v4-tools{display:flex;align-items:center;gap:11px;flex-wrap:wrap;padding:18px 0 17px}.v4-tools label{display:flex;align-items:center;gap:9px;min-height:44px;font-size:10px;letter-spacing:.17em;color:#9caeb2;font-weight:900}
 .v4-tools select,.v4-tools button,.v4-import{background:linear-gradient(170deg,#2b4148,#17262d);border:1px solid #526c74;color:#e2eae8;border-radius:3px;min-height:44px;padding:0 14px;font:900 11px system-ui;letter-spacing:.1em;cursor:pointer}
 .v4-tools select{padding:0 20px 0 11px}.v4-tools button:hover,.v4-import:hover{border-color:#d8b363}.v4-import input{display:none}.v4-honesty{margin-left:auto;font-size:9px;color:#d1ac65;letter-spacing:.12em;font-weight:900}
-.cv-root{gap:12px}.cv-scoreboard{background:linear-gradient(155deg,#213239,#101b20);border:1px solid #667b80;border-radius:3px;box-shadow:inset 0 2px 0 #b7c9c91e;padding:13px 17px;gap:17px;min-height:80px}
+.cv-root{gap:12px;--team-a:#55d3ff;--team-a-ink:#04121f;--team-b:#ff758b;--team-b-ink:#230810}.cv-scoreboard{background:linear-gradient(155deg,#213239,#101b20);border:1px solid #667b80;border-radius:3px;box-shadow:inset 0 2px 0 #b7c9c91e;padding:13px 17px;gap:17px;min-height:80px}
+.cv-key{display:flex;align-items:center;flex-wrap:wrap;gap:12px 22px;padding:9px 12px;border:1px solid #38515e;border-radius:4px;background:#0d1a22;color:#d3e1e6;font-size:11px}
+.cv-key>span{display:inline-flex;align-items:center;gap:7px}.cv-key b{font-weight:700}.cv-key i{display:inline-block;flex:none;width:14px;height:14px}
+.cv-key-a{border-radius:50%;background:var(--team-a)}.cv-key-b{border-radius:4px;background:var(--team-b)}
+.cv-key-carrier{border:2px solid #ffd166;border-radius:50%;box-shadow:0 0 0 1px #fff}
+.cv-key .cv-key-keeper{width:23px;height:19px;background:#08151d;border:1px solid #a8cadb;clip-path:polygon(0 0,100% 0,100% 65%,50% 100%,0 65%);font-size:9px;font-style:normal;text-align:center;font-weight:900}
+.cv-key-ball{border:1px solid #071019;border-radius:50%;background:radial-gradient(#17232d 0 28%,#fff 32%)}
+@media(max-width:650px){.cv-key{font-size:10px;gap:9px 13px;padding:9px}.cv-key i{width:12px;height:12px}}
 .cv-scoreboard small{color:#93a8ad}.cv-round{font-size:12px;color:#d8b86b}.cv-team{font-size:clamp(11px,1.5vw,17px)}.cv-score{font-weight:900;font-size:clamp(26px,3.2vw,44px);background:#090f14;color:#ebf2ee;border:1px solid #6c7f80;border-radius:3px;padding:4px 18px;box-shadow:0 4px 20px #0009}
 .cv-clock span{font-size:clamp(18px,2vw,30px);color:#f0d28a}.cv-state{border:1px solid #465e65;border-radius:3px;background:#19262b}.cv-root[data-state=playing] .cv-state{color:#dbbd80}.cv-root[data-state=ended] .cv-state{color:#7de6c0}
 .cv-main{grid-template-columns:minmax(0,1fr) minmax(270px,330px);gap:12px}
 .cv-stage{aspect-ratio:1200/650;border:1px solid #668087;border-radius:3px;min-height:0;box-shadow:0 18px 60px #0009;overflow:hidden;background:#070e11}
 .cv-canvas{width:100%;height:100%;display:block}
-.cv-banner{top:15%;font-family:Impact,'Arial Narrow',sans-serif;text-shadow:0 4px 12px #000;letter-spacing:.12em}
+.cv-stage .cv-banner{top:8px;right:8px;left:auto;transform:none;max-width:45%;padding:4px 7px;border:1px solid #8b7953;border-radius:3px;background:#0b1724eb;font:800 11px/1 system-ui,sans-serif;text-align:right;color:#ffe1a0;letter-spacing:.08em;text-shadow:none}
+@media(max-width:650px){.cv-stage .cv-banner{top:2px;right:3px;padding:2px 4px;font-size:8px}}
 .cv-goalcard{border-radius:3px;border:1px solid #b29356;box-shadow:0 12px 45px #0009;background:#0b1419eb}
 .cv-goalcard b{font-family:Impact,'Arial Narrow',sans-serif;font-size:35px}.cv-goalcard em{color:#c6e8d1}
 .cv-side{background:linear-gradient(180deg,#1b2b32,#111b22);border-color:#506971;border-radius:3px;max-height:min(76vh,650px);padding:12px 14px;min-height:0}
@@ -140,6 +148,9 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.08;ba
 @media(prefers-reduced-motion:reduce){.cv-stage{transition:none}}
 
 /* A free-kick award is a set piece, not a recorded shot. */
+.cv-goalcard[hidden],.cv-final[hidden]{display:none!important}
+.cv-final{padding:18px 22px;border:1px solid #5b8d84;border-top:3px solid #72c7a5;border-radius:5px;background:linear-gradient(120deg,#1c3338,#101b22);font-size:clamp(16px,2vw,24px);font-weight:900;letter-spacing:.04em;color:#e8f3e8}
+@media(max-width:650px){.cv-controls{position:static}}
 .cv-stage .cv-action[data-kind="setpiece"]{color:#d2e8ee;border-color:#84c1cb;background:linear-gradient(100deg,#174047dc,#17242cec)}
 .cv-stage[data-action="setpiece"]{border-color:#638e9b}
 

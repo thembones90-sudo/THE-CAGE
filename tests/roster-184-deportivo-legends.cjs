@@ -1,4 +1,6 @@
 const {expectedRatings,expectedPosition,expectedAlternates,expectedStat}=require('./elite-v21-helpers.cjs');
+// Owner tier decisions of 2026-11-01 (classification only) are checked against the tier each player had before them.
+const tierOf=p=>p.tierDecision&&p.tierDecision.version==='owner-tier-decisions-2026-11-01'?p.tierDecision.from:p.careerTier;
 // THE CAGE: add Valeron and Makaay without touching the previous 182.
 const {CURRENT_ROSTER_SIZE,RECRUITMENTS_AFTER_184}=require('./baseline-current.cjs');
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
@@ -25,7 +27,7 @@ function sanctionedTraits(old){const t=JSON.parse(JSON.stringify(old.traits||nul
  const c=traitCorrections[old.id],norm=x=>x==='Tracker'?'Hunter':x;if(c&&t.primary===norm(c[0]))t.secondary=norm(c[2]);return t;}
 for(const old of previous.players){
  const p=byId.get(old.id);assert(p,old.id+' disappeared');
- assert.equal(p.careerTier,ownerElite.has(p.id)?'ELITE':old.careerTier,old.id+' tier');
+ assert.equal(tierOf(p),ownerElite.has(p.id)?'ELITE':old.careerTier,old.id+' tier');
  assert.deepEqual(Array.from(p.folklore),old.folklore,old.id+' folklore');
  assert.deepEqual(JSON.parse(JSON.stringify(p.traits)),sanctionedTraits(old),old.id+' traits (only approved V5.4.1 cross-family corrections allowed)');
  if(stalwart[old.id]){for(const [k,[,to]] of Object.entries(stalwart[old.id]))assert.equal(p.r[k],to,old.id+' approved STALWART change '+k);}// owner-approved STALWART-18 recalibration (after the 182 audit)
@@ -38,7 +40,7 @@ const expectedPos={'juan-carlos-valeron':['CAM',['CM']],'roy-makaay':['ST',['CF'
 const keys=['pace','tech','pass','finish','def','phys','first_touch','dribbling','passing','vision','finishing','shooting','stamina','physical','tackling','positioning','composure'];
 for(const s of source.players){
  const p=byId.get(s.id);assert(p,'Missing new player: '+s.id);
- assert.equal(p.name,s.name);assert.equal(p.careerTier,s.tier);
+ assert.equal(p.name,s.name);assert.equal(tierOf(p),s.tier);
  assert.deepEqual(Array.from(p.folklore),s.folklore);
  assert.deepEqual([p.traits.primary,p.traits.secondary],s.traits);
  assert.deepEqual([p.position,Array.from(p.secondaryPositions)],expectedPos[s.id]);

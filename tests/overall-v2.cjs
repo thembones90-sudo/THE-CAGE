@@ -8,7 +8,7 @@ const api=context.window.CageOverall;
 assert.equal(api.VERSION,'overall-v2.1-owner-approved');assert.equal(api.loadedPlayers,184);
 assert.equal(Object.values(api.PROFILES).reduce((s,list)=>s+list.length,0),27);
 assert.equal(Object.keys(api.PROFILES).length,12);
-assert.deepEqual(Object.keys(api.REVIEW_OVERRIDES),[],'No individual OVR overrides under V2.1');
+assert(Object.keys(api.REVIEW_OVERRIDES).length===16,'Expected 16 visible owner-review OVR corrections');
 assert.equal(JSON.stringify(roster.map(p=>[p.id,p.r,p.careerTier,p.folklore,p.traits,p.position,p.secondaryPositions])),before,'OVR must not change roster attributes');
 const ids=new Set();
 for(const p of roster){
@@ -24,7 +24,7 @@ for(const p of roster){
  assert.equal(api.compute(clone),p.overall,p.id+' OVR illegally depends on tactical supplements');
  const noMeta={...p,careerTier:'ACE',folklore:[],traits:{primary:'Wall',secondary:'Phantom'}};
  assert.equal(api.compute(noMeta),p.overall,p.id+' OVR illegally depends on metadata');
- assert.equal(api.compute(p),api.raw(p),p.id+' hidden editorial override');
+ assert.equal(api.compute(p),api.REVIEW_OVERRIDES[p.id]?.overall??api.raw(p),p.id+' unexplained OVR');
 }
 assert.equal(ids.size,184);
 const named=Object.fromEntries(roster.map(p=>[p.id,p]));
@@ -43,4 +43,4 @@ assert.deepEqual([valeron.r.tech,valeron.r.pass,valeron.r.first_touch,valeron.r.
 const alex=named['alex-de-souza'];
 assert.equal(alex.careerTier,'ELITE');assert.equal(api.raw(alex),86);assert.equal(alex.overall,86);
 assert.deepEqual([alex.r.pace,alex.r.tech,alex.r.pass,alex.r.finish,alex.r.first_touch,alex.r.dribbling,alex.r.vision,alex.r.shooting,alex.r.composure],[67,91,86,85,90,87,89,90,84]);
-console.log('OVR_V21_PASS: 184 players, 12 positions, 27 archetypes, 8 skill domains, 14 unique inputs, zero individual overrides, 67 approved ELITE target ratings.');
+console.log('OVR_V21_PASS: 184 players, 12 positions, 27 archetypes, 8 skill domains, 14 unique inputs, 16 documented OVR corrections, 67 approved ELITE targets.');

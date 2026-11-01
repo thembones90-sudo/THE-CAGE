@@ -25,11 +25,15 @@ function place(players,bounds,radius,opts={}){
    [p.x+R+gap,p.y+R+gap],[p.x-R-gap-w,p.y+R+gap],
    [p.x-w/2,p.y-R-gap-h*2],[p.x-w/2,p.y+R+gap+h],
   ];
+  // Extra rows and a bounded fallback keep crowded eight-player views readable.
+  for(let row=2;row<=6;row++)for(const direction of [-1,1])optsXY.push([p.x-w/2,p.y+direction*(R+gap+row*(h+gap))-h/2]);
+  for(let y=bounds.y;y+h<=bounds.y+bounds.h;y+=h+gap)for(let x=bounds.x;x+w<=bounds.x+bounds.w;x+=Math.max(24,w+gap))optsXY.push([x,y]);
   let best=null,bestCost=Infinity;
   for(let i=0;i<optsXY.length;i++){
    const [rawX,rawY]=optsXY[i],box=clampBox(rawX,rawY,w);
    let penalty=Math.hypot(box.x+w/2-p.x,box.y+h/2-p.y)*.09+i*.14;
    for(const prior of occupied)penalty+=intersect(box,prior)*85;
+   for(const obstacle of opts.obstacles||[])penalty+=intersect(box,obstacle)*55;
    for(const q of players){
     const qr=R+(q.id===p.id?-2:2);
     const disc={x:q.x-qr,y:q.y-qr,w:qr*2,h:qr*2};
@@ -39,7 +43,7 @@ function place(players,bounds,radius,opts={}){
    if(penalty<bestCost){bestCost=penalty;best=box;}
   }
   if(!best)continue;
-  const item={...best,id:p.id,name:p.name};
+  const item={...best,id:p.id,name:p.name,anchorX:p.x,anchorY:p.y};
   occupied.push(item);out.push(item);
  }
  return out;

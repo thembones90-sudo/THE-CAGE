@@ -1,0 +1,200 @@
+{
+  "date": "2026-11-01",
+  "status": "seven owner approvals recorded; engine integration pending verification",
+  "approved": [
+    {
+      "name": "George Weah",
+      "careerTier": "LEGEND",
+      "approvedOverall": 93,
+      "traits": {
+        "primary": "Juggernaut",
+        "secondary": "Magician"
+      },
+      "attributes": {
+        "pace": 95,
+        "technique": 94,
+        "passing": 82,
+        "finishing": 92,
+        "defending": 29,
+        "physical": 93,
+        "first_touch": 92,
+        "dribbling": 95,
+        "vision": 84,
+        "shooting": 93,
+        "stamina": 88,
+        "positioning": 94,
+        "composure": 91
+      },
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN",
+        "UNDERDOG"
+      ],
+      "talismanClubs": [
+        "Liberia"
+      ]
+    },
+    {
+      "name": "Dwight Yorke",
+      "careerTier": "ELITE",
+      "approvedOverall": 88,
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Architect"
+      },
+      "attributes": {
+        "pace": 83,
+        "technique": 89,
+        "passing": 86,
+        "finishing": 91,
+        "defending": 39,
+        "physical": 80,
+        "first_touch": 92,
+        "dribbling": 87,
+        "vision": 90,
+        "shooting": 89,
+        "stamina": 85,
+        "positioning": 92,
+        "composure": 91
+      },
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "talismanClubs": [
+        "Trinidad and Tobago"
+      ]
+    },
+    {
+      "name": "Andy Cole",
+      "careerTier": "ELITE",
+      "approvedOverall": 89,
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Engine"
+      },
+      "attributes": {
+        "pace": 88,
+        "technique": 86,
+        "passing": 77,
+        "finishing": 93,
+        "defending": 35,
+        "physical": 82,
+        "first_touch": 86,
+        "dribbling": 85,
+        "vision": 79,
+        "shooting": 90,
+        "stamina": 87,
+        "positioning": 96,
+        "composure": 89
+      },
+      "folklore": [
+        "STREET HERO"
+      ]
+    },
+    {
+      "name": "Tony Adams",
+      "careerTier": "LEGEND",
+      "approvedOverall": 90,
+      "traits": {
+        "primary": "Wall",
+        "secondary": "Engine"
+      },
+      "attributes": {
+        "pace": 66,
+        "technique": 76,
+        "passing": 75,
+        "finishing": 49,
+        "defending": 94,
+        "physical": 92,
+        "first_touch": 78,
+        "dribbling": 58,
+        "vision": 79,
+        "shooting": 61,
+        "stamina": 87,
+        "positioning": 97,
+        "composure": 94
+      },
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "talismanClubs": [
+        "Arsenal"
+      ]
+    },
+    {
+      "name": "Freddie Ljungberg",
+      "careerTier": "ELITE",
+      "approvedOverall": 87,
+      "traits": {
+        "primary": "Phantom",
+        "secondary": "Engine"
+      },
+      "attributes": {
+        "pace": 88,
+        "technique": 85,
+        "passing": 82,
+        "finishing": 84,
+        "defending": 59,
+        "physical": 72,
+        "first_touch": 85,
+        "dribbling": 86,
+        "vision": 83,
+        "shooting": 84,
+        "stamina": 94,
+        "positioning": 94,
+        "composure": 87
+      },
+      "folklore": [
+        "STREET HERO"
+      ]
+    },
+    {
+      "name": "Ole Gunnar Solskjær",
+      "careerTier": "ELITE",
+      "approvedOverall": 86,
+      "traits": {
+        "primary": "Executioner",
+        "secondary": "Anticipator"
+      },
+      "attributes": {
+        "pace": 77,
+        "technique": 85,
+        "passing": 73,
+        "finishing": 92,
+        "defending": 36,
+        "physical": 70,
+        "first_touch": 88,
+        "dribbling": 81,
+        "vision": 77,
+        "shooting": 91,
+        "stamina": 83,
+        "positioning": 95,
+        "composure": 95
+      },
+      "folklore": [
+        "STREET HERO",
+        "UNDERDOG"
+      ]
+    }
+  ],
+  "revisionPending": {
+    "name": "Nicky Butt",
+    "ownerDecision": "APPROVED: STALWART, 85 OVR",
+    "careerTier": "STALWART",
+    "approvedOverall": 85,
+    "traits": {
+      "primary": "Destroyer",
+      "secondary": "Enforcer"
+    },
+    "integrationStatus": "Approved rating; prime attributes and formula validation pending",
+    "folklore": []
+  },
+  "issues": [
+    "Weah proposed traits Juggernaut/Magician are both attacking family; must explicitly revise before integration.",
+    "Calculated OVR must match all targets; 13 displayed attributes do not include separate tackling required by game.",
+    "Do not alter existing uncommitted edits."
+  ],
+  "specialLabelsStatus": "Owner approved exact labels for all seven; no additional labels authorized"
+}

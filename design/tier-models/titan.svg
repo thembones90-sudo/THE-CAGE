@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="450" viewBox="0 0 300 450" role="img" aria-labelledby="title desc">
+    <title id="title">THE CAGE — TITAN base model</title><desc id="desc">Reusable TITAN frame with neutral placeholder shirt and identity slots. No real player data.</desc>
+    <defs>
+ <linearGradient id="paper" x2=".8" y2="1"><stop stop-color="#fff5d9" /><stop offset="1" stop-color="#d8cdb2" /></linearGradient>
+ <linearGradient id="copper" x2="1" y2="1"><stop stop-color="#f1c39b" /><stop offset=".24" stop-color="#9c5734" /><stop offset=".5" stop-color="#e6b98b" /><stop offset=".8" stop-color="#75412c" /><stop offset="1" stop-color="#c68d60" /></linearGradient>
+ <linearGradient id="silver" x2="1" y2=".8"><stop stop-color="#f4ffff" /><stop offset=".25" stop-color="#6c8ba4" /><stop offset=".5" stop-color="#e6f6ff" /><stop offset=".75" stop-color="#7692ad" /><stop offset="1" stop-color="#d8f2ff" /></linearGradient>
+ <linearGradient id="gold" x2=".8" y2="1"><stop stop-color="#ffedb1" /><stop offset=".22" stop-color="#ae7c2b" /><stop offset=".45" stop-color="#f5d785" /><stop offset=".7" stop-color="#95651f" /><stop offset="1" stop-color="#e9c36e" /></linearGradient>
+ <linearGradient id="foil" x2="1" y2="1"><stop stop-color="#a8f4ec" /><stop offset=".25" stop-color="#8d9ed9" /><stop offset=".48" stop-color="#f6dfb3" /><stop offset=".65" stop-color="#c39ece" /><stop offset=".82" stop-color="#6ab6cd" /><stop offset="1" stop-color="#d8f9eb" /></linearGradient>
+ <radialGradient id="chamber"><stop stop-color="#476275" /><stop offset=".7" stop-color="#1b3045" /><stop offset="1" stop-color="#101d2b" /></radialGradient>
+ <linearGradient id="shirt" x2=".8" y2="1"><stop stop-color="#f4f4e9" /><stop offset=".4" stop-color="#d4d8d3" /><stop offset="1" stop-color="#9ca9aa" /></linearGradient>
+ <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".45" fill="#504c39" opacity=".2" /><circle cx="4" cy="4" r=".3" fill="#504c39" opacity=".15" /></pattern>
+ <pattern id="brush" width="40" height="4" patternUnits="userSpaceOnUse"><path d="M0 1H40" stroke="#fff2d0" stroke-width=".5" opacity=".18" /></pattern>
+ <pattern id="halftone" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".7" fill="currentColor" opacity=".13" /></pattern>
+ <linearGradient id="titanPlate" x2=".3" y2="1"><stop stop-color="#25455b" /><stop offset=".4" stop-color="#142a3c" /><stop offset="1" stop-color="#091724" /></linearGradient>
+ <linearGradient id="titanEdge" x2="1" y2="1"><stop stop-color="#8df0e5" /><stop offset=".3" stop-color="#8da5ed" /><stop offset=".55" stop-color="#f2d59a" /><stop offset=".78" stop-color="#d28ecf" /><stop offset="1" stop-color="#86e4ec" /></linearGradient>
+ <linearGradient id="titanCrystal" x2=".2" y2="1"><stop stop-color="#d8fff7" stop-opacity=".85" /><stop offset=".45" stop-color="#8ec7ef" stop-opacity=".45" /><stop offset="1" stop-color="#b998e3" stop-opacity=".2" /></linearGradient>
+ <radialGradient id="titanGlow"><stop stop-color="#8ff1ea" stop-opacity=".55" /><stop offset=".55" stop-color="#7897e9" stop-opacity=".16" /><stop offset="1" stop-color="#0a1826" stop-opacity="0" /></radialGradient>
+<clipPath id="shirt-cut"><path d="M47 25L69 13Q90 24 111 13L133 25L158 56L139 74L126 60V138H54V60L41 74L22 56Z" /></clipPath><pattern id="shirt-fabric" width="2.5" height="2.5" patternUnits="userSpaceOnUse"><path d="M0 .6H2.5M.6 0V2.5" stroke="#4b6570" stroke-width=".3" opacity=".12" /></pattern><linearGradient id="shirt-volume" x1="0" y1="0" x2="1" y2=".7"><stop offset="0" stop-color="#fff" stop-opacity="0.42" /><stop offset=".28" stop-color="#fff" stop-opacity="0.05" /><stop offset=".72" stop-color="#17313c" stop-opacity="0.03" /><stop offset="1" stop-color="#17313c" stop-opacity="0.23" /></linearGradient></defs>
+<path data-part="card-depth" d="M152 3L221 18L279 43L300 85V372L281 414L227 436L152 451L77 436L23 414L4 372V85L25 43L83 18Z" fill="#02070c" opacity=".55" />
+<path data-part="card-depth" d="M150 0L217 15L274 39L295 81V368L277 409L223 431L150 446L77 431L23 409L5 368V81L26 39L83 15Z" fill="#7edbd6" opacity=".22" />
+<g data-part="frame"><path d="M150 1L219 16L277 41L298 83V370L279 412L225 434L150 449L75 434L21 412L2 370V83L23 41L81 16Z" fill="url(#foil)" />
+  <path d="M150 13L217 27L267 49L286 87V367L270 402L220 423L150 437L80 423L30 402L14 367V87L33 49L83 27Z" fill="#142536" />
+  <path d="M150 22L214 36L259 56L277 91V364L262 395L216 414L150 428L84 414L38 395L23 364V91L41 56L86 36Z" fill="url(#chamber)" stroke="#7aa0b4" stroke-width=".7" />
+  <path d="M2 83L23 41L81 16L70 36L38 58L29 103Z" fill="#c6e9dc" opacity=".7" />
+  <path d="M219 16L277 41L298 83L274 99L263 59L221 39Z" fill="#b8a6d5" />
+  <path d="M2 173L24 199V326L2 370Z" fill="#729fae" />
+  <path d="M298 123L277 148V306L298 278Z" fill="#d0b5c9" />
+  <path d="M21 412L75 434L150 449L135 429L80 416L38 393Z" fill="#a5d7cb" />
+  <path d="M225 434L279 412L298 370L275 364L261 395L218 416L164 431L150 449Z" fill="#969dd1" />
+  <path d="M150 76L235 96L265 143V229L233 269H67L35 229V143L65 96Z" fill="#122439" stroke="url(#foil)" stroke-width="1.6" />
+  <path d="M150 86L227 106L253 148V224L227 258H73L47 224V148L73 106Z" fill="url(#chamber)" stroke="#92baca" stroke-width=".5" />
+  <path d="M150 86V258M47 148L227 258M253 148L73 258M73 106L227 258M227 106L73 258" stroke="#b1b5e7" opacity=".17" />
+  <path d="M31 331L23 339V374L39 392M269 331L277 339V374L261 392" stroke="#b7a4ce" fill="none" />
+  <path d="M130 31L150 22L170 31L150 40Z" fill="url(#foil)" /><g data-part="signature-finish"><path d="M34 278L67 270H233L266 278" fill="none" stroke="#92d7e5" stroke-width="1.5" opacity=".85" /><path d="M40 287H260" stroke="#86b0cb" stroke-width=".7" opacity=".7" /><path d="M38 330L52 320H93M262 330L248 320H207" fill="none" stroke="#a5d9e5" stroke-width="1.3" /><path d="M37 404L62 421H102M263 404L238 421H198" fill="none" stroke="#bc95d8" stroke-width="1.3" /><path d="M150 415L156 423L150 431L144 423Z" fill="#b7eff6" opacity=".75" /></g></g>
+<g data-part="card-ornament" aria-hidden="true">
+  <g opacity=".65"><circle cx="150" cy="113" r="63" fill="url(#titanGlow)" /><circle cx="150" cy="213" r="42" fill="url(#titanGlow)" /></g>
+  <path d="M28 31H105L114 40V59H28L22 53V37Z" fill="url(#titanPlate)" stroke="url(#titanEdge)" stroke-width=".9" />
+  <path d="M31 35H104L109 40M31 55H103" fill="none" stroke="#8bc9d4" stroke-width=".55" opacity=".7" />
+  <path d="M28 59H114" stroke="url(#titanEdge)" stroke-width="1.2" />
+  <text x="108" y="72" text-anchor="end" font-family="Arial" font-size="5" letter-spacing="1.1" fill="#9bcdd7">RELIC 05</text>
+  <path d="M257 31L279 41V69L257 79L235 69V41Z" fill="url(#titanPlate)" stroke="url(#titanEdge)" stroke-width=".9" />
+  <path d="M257 37L273 45V65L257 73L241 65V45Z" fill="none" stroke="#8fe1e7" stroke-width=".5" opacity=".75" />
+  <path d="M150 28L160 41L150 54L140 41Z" fill="url(#titanCrystal)" stroke="url(#titanEdge)" stroke-width=".8" />
+  <path d="M150 34L155 41L150 48L145 41Z" fill="#b9f3ef" opacity=".55" />
+  <path d="M105 41H132M168 41H222" stroke="url(#titanEdge)" stroke-width=".55" opacity=".6" />
+  <path d="M18 93L29 87V132L18 138Z M282 93L271 87V132L282 138Z" fill="#1b3548" stroke="#7fb6c4" stroke-width=".6" />
+  <path d="M18 160L29 154V199L18 205Z M282 160L271 154V199L282 205Z" fill="#1b3548" stroke="#7fb6c4" stroke-width=".6" />
+  <path d="M18 227L29 221V266L18 272Z M282 227L271 221V266L282 272Z" fill="#1b3548" stroke="#7fb6c4" stroke-width=".6" />
+  <g stroke="#a9eef1" stroke-width=".7" opacity=".8"><path d="M22 101H26M22 108H25M22 115H26M22 122H25M274 101H278M274 108H277M274 115H278M274 122H277M22 168H26M22 175H25M22 182H26M22 189H25M274 168H278M274 175H277M274 182H278M274 189H277M22 235H26M22 242H25M22 249H26M22 256H25M274 235H278M274 242H277M274 249H278M274 256H277" /></g>
+  <path d="M35 80L67 96V143L35 229Z" fill="url(#titanCrystal)" opacity=".35" />
+  <path d="M265 80L233 96V143L265 229Z" fill="url(#titanCrystal)" opacity=".3" />
+  <path d="M35 143L67 143M233 143L265 143" stroke="url(#titanEdge)" stroke-width=".7" opacity=".55" />
+  <path d="M47 86L62 95L47 104Z M253 86L238 95L253 104Z M73 258L88 249L73 240Z M227 258L212 249L227 240Z" fill="url(#titanCrystal)" stroke="#9ddde4" stroke-width=".5" opacity=".8" />
+  <path d="M150 76L235 96L265 143V229L233 269H67L35 229V143L65 96Z" fill="none" stroke="url(#titanEdge)" stroke-width=".7" opacity=".75" />
+  <path d="M150 86L227 106L253 148V224L227 258H73L47 224V148L73 106Z" fill="none" stroke="#b4eff1" stroke-width=".6" opacity=".6" />
+  <text x="18" y="350" transform="rotate(-90 18 350)" text-anchor="middle" font-family="Arial" font-size="4.8" letter-spacing="1.7" fill="#9adfe4" opacity=".8">PRISMATIC RELIC · 05</text>
+  <path d="M219 392H273V414H219Z" fill="#0d2132" stroke="#77b7c6" stroke-width=".7" />
+  <path d="M222 395H270M222 410H262" stroke="#a5e6ed" stroke-width=".45" opacity=".7" />
+  <text x="246" y="407" text-anchor="middle" font-family="Arial" font-size="5" letter-spacing="1.1" fill="#b6edf0">RELIC / 05</text>
+  <path d="M215 397L219 393M273 393L277 397" stroke="url(#titanEdge)" stroke-width=".8" />
+  <path d="M109 414H191V434H109Z" fill="url(#titanPlate)" stroke="url(#titanEdge)" stroke-width=".8" />
+  <path d="M113 417H187M113 431H187" stroke="#8fd8df" stroke-width=".4" opacity=".65" />
+  <path d="M96 424L104 419M196 419L204 424M196 429L204 424M104 429L96 424" fill="none" stroke="#8dcbd7" stroke-width=".6" />
+  <circle cx="150" cy="437" r="2" fill="#b9f3ef" opacity=".8" />
+</g>
+<g data-part="shirt" transform="translate(46 93) scale(1.16)"><path d="M47 31L69 19Q90 30 111 19L133 31L158 62L139 80L126 66V144H54V66L41 80L22 62Z" fill="#081b25" opacity=".22" />
+    <path d="M47 25L69 13Q90 24 111 13L133 25L158 56L139 74L126 60V138H54V60L41 74L22 56Z" fill="url(#shirt)" stroke="#4b6069" stroke-width="1.2" />
+    <g clip-path="url(#shirt-cut)">
+      <path d="M78 23Q90 27 102 23V138H78Z" fill="#72868d" opacity=".48" />
+      <path d="M111 13L133 25L126 60V138H110Q119 79 111 13Z" fill="#243f4b" opacity=".12" />
+      <path d="M48 27L62 23L60 137H55V60L42 73L34 65Z" fill="#fff" opacity=".15" />
+      <rect x="20" y="10" width="140" height="130" fill="url(#shirt-fabric)" />
+      <path d="M47 25L69 13Q90 24 111 13L133 25L158 56L139 74L126 60V138H54V60L41 74L22 56Z" fill="url(#shirt-volume)" />
+      <path d="M60 70Q67 95 62 117M121 71Q114 98 120 119M67 124Q90 120 115 125" fill="none" stroke="#607681" stroke-width="1" opacity=".34" />
+      <path d="M63 73Q70 95 66 113M117 76Q112 97 116 115" fill="none" stroke="#fff" stroke-width="1.1" opacity=".3" />
+    </g>
+    <path d="M69 13L90 37L111 13L107 14L90 30L73 14Z" fill="#e7edeb" stroke="#5f747c" stroke-width=".9" />
+    <path d="M47 25L54 60M133 25L126 60" fill="none" stroke="#5e737b" stroke-width="1.1" />
+    <path d="M56 131H124M28 53L43 67M137 67L152 53" fill="none" stroke="#ebf1ed" stroke-width="1.8" opacity=".7" />
+    <path d="M56 134H124M30 56L42 68M138 68L150 56" fill="none" stroke="#71858c" stroke-width=".65" stroke-dasharray="1.4 1.5" />
+    <path d="M107 49L114 53V61L107 66L100 61V53Z" fill="#dce2dc" stroke="#627780" stroke-width=".8" />
+    <path d="M104 54L107 52L110 54V60L107 62L104 60Z" fill="none" stroke="#9fadb0" stroke-width=".6" /></g><g data-part="card-nameplate" aria-hidden="true">
+  <path d="M35 281H265V311H35L29 305V287Z" fill="url(#titanPlate)" stroke="#6fa9ba" stroke-width=".8" />
+  <path d="M39 285H261L265 289V303L261 307H39L35 303V289Z" fill="none" stroke="#a5e5ec" stroke-width=".5" opacity=".75" />
+  <path d="M35 311H265" stroke="url(#titanEdge)" stroke-width="1.2" opacity=".85" />
+  <path d="M42 288L47 285M258 288L253 285M258 307L253 311M42 307L47 311" stroke="#9ae3e9" stroke-width=".6" opacity=".75" />
+</g>
+<g font-family="Arial, sans-serif" fill="#e9f4f4" font-weight="800" data-part="identity"><text x="36" y="55" font-size="14" letter-spacing="2.5">TITAN</text>
+      <text x="257" y="58" text-anchor="middle" font-size="27">—</text>
+      <text x="257" y="71" text-anchor="middle" font-size="7" letter-spacing="1.5">OVR</text>
+      <text data-field="name" x="150" y="302" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="20" font-weight="900" letter-spacing=".6">PLAYER NAME</text><rect data-part="nationality-plate" x="43" y="314" width="214" height="20" rx="2" fill="#152d3d" opacity=".96" /><text data-field="nationality" x="150" y="328" text-anchor="middle" font-size="10.4" letter-spacing=".7" font-weight="600">POSITION · COUNTRY</text><path d="M43 342H257" stroke="#8bbdcb" stroke-width=".65" opacity=".65" /><g data-part="primary-style-slot"><rect x="76" y="349" width="148" height="27" rx="2" fill="#152d3d" stroke="#8bbdcb" stroke-width=".65" fill-opacity=".65" /><path d="M89 356L96 360V367L89 371L82 367V360Z" fill="none" stroke="#e9f4f4" stroke-width="1" /><text x="157" y="367" text-anchor="middle" font-size="10.1" letter-spacing=".5" font-weight="800">PRIMARY TRAIT</text></g><g data-part="secondary-style-slot"><circle cx="102" cy="389" r="3.3" fill="none" stroke="#8bbdcb" stroke-width=".8" /><text x="159" y="392" text-anchor="middle" font-size="8.8" letter-spacing=".6" font-weight="600" opacity=".86">SECONDARY TRAIT</text></g><text x="150" y="425" text-anchor="middle" font-size="7" letter-spacing="3" font-weight="600">T H E  C A G E</text></g></svg>

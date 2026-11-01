@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" width="1200" height="650" role="img" aria-labelledby="title desc">
-<title id="title">THE CAGE â€” The Iron Pit</title><desc id="desc">Top-down urban industrial football cage. Blackout turf, reinforced gunmetal perimeter, compact iron goals and metallic chain nets.</desc>
+<title id="title">THE CAGE â€” The Iron Pit</title><desc id="desc">Top-down urban industrial football cage. Blackout turf, reinforced gunmetal perimeter, recessed football goals with fine woven netting.</desc>
 <defs>
   <linearGradient id="qwenGunmetal" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2f4f6f"/><stop offset="100%" stop-color="#1a2a3a"/></linearGradient>
   <linearGradient id="outside" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#091015"/><stop offset=".45" stop-color="#1b262b"/><stop offset="1" stop-color="#080c11"/></linearGradient>
@@ -416,53 +416,7 @@
     <use href="#bolt" x="75" y="153"/><use href="#bolt" x="75" y="500"/><use href="#bolt" x="1126" y="153"/><use href="#bolt" x="1126" y="500"/>
   </g>
 </g>
-<!-- Independently animatable chain nets outside each small goal mouth. -->
-<g id="chain-net-left">
-
-  <rect x="23" y="241" width="78" height="168" rx="3" fill="#080f13" stroke="#0a1216" stroke-width="9"/>
-  <rect x="27" y="245" width="70" height="160" rx="2" fill="#142228" stroke="#6b7e82" stroke-width="2"/>
-  <g id="chain-links-left"><rect x="29" y="248" width="66" height="154" fill="url(#interlocked-chain)"/></g>
-  <path d="M26 248L97 402M26 402L97 248" stroke="#b9c7c6" stroke-width="1.8" opacity=".25"/>
-  <path d="M23 239H104M23 411H104" stroke="#cedad7" stroke-width="2.2" opacity=".5"/>
-  <g fill="#d5dbd5" opacity=".7"><circle cx="25" cy="248" r="2"/><circle cx="25" cy="402" r="2"/><circle cx="100" cy="248" r="2"/><circle cx="100" cy="402" r="2"/></g>
-
-</g>
-<g id="chain-net-right">
-
-  <rect x="1099" y="241" width="78" height="168" rx="3" fill="#080f13" stroke="#0a1216" stroke-width="9"/>
-  <rect x="1103" y="245" width="70" height="160" rx="2" fill="#142228" stroke="#6b7e82" stroke-width="2"/>
-  <g id="chain-links-right"><rect x="1105" y="248" width="66" height="154" fill="url(#interlocked-chain)"/></g>
-  <path d="M1103 248L1174 402M1103 402L1174 248" stroke="#b9c7c6" stroke-width="1.8" opacity=".25"/>
-  <path d="M1097 239H1178M1097 411H1178" stroke="#cedad7" stroke-width="2.2" opacity=".5"/>
-  <g fill="#d5dbd5" opacity=".7"><circle cx="1101" cy="248" r="2"/><circle cx="1101" cy="402" r="2"/><circle cx="1175" cy="248" r="2"/><circle cx="1175" cy="402" r="2"/></g>
-
-</g>
-<!-- Compact industrial reinforced posts. -->
-<g id="goal-left">
-
-  <!-- Triple-ribbed iron mouth: actual goal plane x=109, not outside net end. -->
-  <path d="M109 242H22V408H109" fill="none" stroke="#070c0f" stroke-width="18"/>
-  <path d="M109 242H22V408H109" fill="none" stroke="url(#steel-etched)" stroke-width="13"/>
-  <path d="M109 242H22V408H109" fill="none" stroke="#a2b6b8" stroke-width="2.3" opacity=".78"/>
-  <path d="M109 241V409" stroke="#080f12" stroke-width="14"/>
-  <path d="M109 241V409" stroke="url(#steel-etched)" stroke-width="8"/>
-  <path d="M112 242V408" stroke="#e7f3ed" stroke-width="2.5" opacity=".93"/>
-  <g fill="#303d42" stroke="#a3b3b5" stroke-width="1"><rect x="97" y="236" width="18" height="13" rx="2"/><rect x="97" y="401" width="18" height="13" rx="2"/></g>
-  <g fill="#c1cfcb"><circle cx="105" cy="242" r="2.5"/><circle cx="105" cy="408" r="2.5"/></g>
-
-</g>
-<g id="goal-right">
-
-  <path d="M1091 242H1178V408H1091" fill="none" stroke="#070c0f" stroke-width="18"/>
-  <path d="M1091 242H1178V408H1091" fill="none" stroke="url(#steel-etched)" stroke-width="13"/>
-  <path d="M1091 242H1178V408H1091" fill="none" stroke="#a2b6b8" stroke-width="2.3" opacity=".78"/>
-  <path d="M1091 241V409" stroke="#080f12" stroke-width="14"/>
-  <path d="M1091 241V409" stroke="url(#steel-etched)" stroke-width="8"/>
-  <path d="M1088 242V408" stroke="#e7f3ed" stroke-width="2.5" opacity=".93"/>
-  <g fill="#303d42" stroke="#a3b3b5" stroke-width="1"><rect x="1085" y="236" width="18" height="13" rx="2"/><rect x="1085" y="401" width="18" height="13" rx="2"/></g>
-  <g fill="#c1cfcb"><circle cx="1095" cy="242" r="2.5"/><circle cx="1095" cy="408" r="2.5"/></g>
-
-</g>
+<!-- Recessed goal frames and woven nets are drawn by CageViewerV4FX. -->
 <g id="lights">
 
   <g id="light-spills">

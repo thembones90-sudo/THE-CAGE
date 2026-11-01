@@ -46,6 +46,14 @@ try{
   @('tests/valeron-reassessment.cjs'),
   @('tests/di-canio-recruitment.cjs'),
   @('tests/v69-preflight.cjs'),
+  @('tests/approved-recruits-206.cjs'),
+  @('tests/approved-batch03-208.cjs'),
+  @('tests/batch03-final-216.cjs'),
+  @('tests/national-flag-models.cjs'),
+  @('tests/goal-net-design.cjs'),
+  @('tests/visual-readability.cjs'),
+  @('tests/sticker-cards.cjs'),
+  @('tests/david-luiz-recruitment.cjs'),
   @('tests/v60-package-parity.cjs')
  )
  $passed=0

@@ -2,7 +2,9 @@
    No scores or simulation here. CommonJS for offline contract tests. */
 (function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;if(root)root.CageViewerV4FX=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
 'use strict';
-const WORLD=Object.freeze({w:1200,h:650,x0:110,x1:1090,y0:70,y1:580,leftGoal:109,rightGoal:1091,netLeft:27,netRight:1102});
+// Match the painted boundary in BOTH arena SVGs, not their larger turf bed.
+// The goal mouth, normalized replay coordinates and effects share this plane.
+const WORLD=Object.freeze({w:1200,h:650,x0:133,x1:1067,y0:90,y1:560,leftGoal:133,rightGoal:1067,netLeft:81,netRight:1119});
 function bound(x,a,b){return Math.min(b,Math.max(a,x));}
 function buildCues(tl,events){
  if(!tl||!Array.isArray(tl.goals)||!Array.isArray(tl.segments)||!Array.isArray(events))throw Error('Authoritative timeline and events required');
@@ -22,7 +24,7 @@ function buildCues(tl,events){
   if(lane!=='left'&&lane!=='right')continue;
   const worldX=e.zone&&Number.isInteger(e.zone.x)?(e.team===0?e.zone.x:3-e.zone.x):1;
   cues.push({type:'wall_pass',side:lane==='left'?'top':'bottom',at:s.tau0+Math.min(.45,s.move*.45),
-   x:110+(bound(worldX,0,3)+.5)*245,source:'recorded-wall-pass',positionInferred:true,eventIndex:s.i});
+   x:WORLD.x0+(bound(worldX,0,3)+.5)*(WORLD.x1-WORLD.x0)/4,source:'recorded-wall-pass',positionInferred:true,eventIndex:s.i});
  }
  return cues.sort((a,b)=>a.at-b.at||(a.goalEventIndex??a.eventIndex)-(b.goalEventIndex??b.eventIndex));
 }
@@ -53,24 +55,38 @@ function pulse(cue,tau){
  }
  return 0;
 }
-function paintNet(ctx,cues,tau,side,reducedMotion=false){
- const left=side==='left',x0=left?27:1102,y0=245,width=71,height=160;
- ctx.save();
- ctx.fillStyle='#111b21';ctx.strokeStyle='#80949a';ctx.lineWidth=3;
- ctx.fillRect(x0,y0,width,height);ctx.strokeRect(x0,y0,width,height);
- ctx.fillStyle='#223239';ctx.fillRect(x0+3,y0+3,width-6,height-6);
- for(let row=0;row<7;row++)for(let col=0;col<4;col++){
-  const x=x0+11+col*17+(row%2)*2.4,y=y0+13+row*22;
-  const shift=reducedMotion?0:strongestNet(cues,tau,side,y);
-  ctx.save();ctx.translate(x+shift,y);ctx.rotate((row+col)%2?-.42:.42);
-  ctx.beginPath();ctx.ellipse(0,0,5.2,9.2,0,0,2*Math.PI);
-  ctx.strokeStyle='#03090c';ctx.lineWidth=6.5;ctx.stroke();
-  const metal=ctx.createLinearGradient(-7,-8,7,8);
-  metal.addColorStop(0,'#f1f8f4');metal.addColorStop(.3,'#a6b9b8');metal.addColorStop(.64,'#536a70');metal.addColorStop(1,'#d7e5df');
-  ctx.beginPath();ctx.ellipse(0,0,5.1,9.1,0,0,2*Math.PI);
-  ctx.strokeStyle=metal;ctx.lineWidth=3.4;ctx.stroke();
-  ctx.restore();
+// A recessed, tensioned net. Only the interior mesh deforms; posts and the
+// recorded scoring plane remain fixed. Exact impact height is inferred above.
+function netMesh(cues,tau,side,reducedMotion=false,scale=1){
+ const left=side==='left',front=left?WORLD.leftGoal:WORLD.rightGoal,back=front+(left?-52:52);
+ const rows=scale<.45?10:16,columns=scale<.45?2:4,source=Array.isArray(cues)?cues:[];
+ function point(depth,across){
+  const y=242+166*across;
+  const ripple=reducedMotion?0:strongestNet(source,tau,side,y)*Math.sin(Math.PI*depth)*Math.sin(Math.PI*across);
+  return {x:front+(back-front)*depth+ripple,y};
  }
+ const strands=[];
+ for(let col=1;col<=columns;col++)strands.push(Array.from({length:rows+1},(_,row)=>point(col/(columns+1),row/rows)));
+ for(let row=1;row<rows;row++)strands.push(Array.from({length:9},(_,col)=>point(col/8,row/rows)));
+ return {front,back,top:242,bottom:408,backTop:242,backBottom:408,strands};
+}
+function paintNet(ctx,cues,tau,side,reducedMotion=false,options={}){
+ const scale=Math.max(.1,Number(options.scale)||1),net=netMesh(cues,tau,side,reducedMotion,scale),{front,back,top,bottom,backTop,backBottom}=net;
+ const outline=()=>{ctx.beginPath();ctx.moveTo(front,top);ctx.lineTo(back,backTop);ctx.lineTo(back,backBottom);ctx.lineTo(front,bottom);ctx.closePath();};
+ ctx.save();ctx.lineJoin='miter';ctx.lineCap='butt';
+ // Straight football goal: shallow rectangular net, no taper or brackets.
+ outline();ctx.fillStyle='#142724';ctx.fill();
+ ctx.save();outline();ctx.clip();
+ const lineWidth=Math.min(2.1,Math.max(1.15,.5/scale));
+ for(const strand of net.strands){
+  ctx.beginPath();strand.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));
+  ctx.strokeStyle='rgba(225,238,229,.68)';ctx.lineWidth=lineWidth;ctx.stroke();
+ }
+ ctx.restore();
+ // Slim white rails with a slightly stronger pitch-facing crossbar.
+ ctx.beginPath();ctx.moveTo(front,top);ctx.lineTo(back,backTop);ctx.lineTo(back,backBottom);ctx.lineTo(front,bottom);
+ ctx.strokeStyle='#d8e4df';ctx.lineWidth=2.8;ctx.stroke();
+ ctx.beginPath();ctx.moveTo(front,top);ctx.lineTo(front,bottom);ctx.strokeStyle='#ffffff';ctx.lineWidth=4.5;ctx.stroke();
  ctx.restore();
 }
 // Event-anchored metallic goal pulse: all particles and rays are derived from
@@ -133,5 +149,5 @@ function paintEffects(ctx,cues,tau,reducedMotion){
  paintGolden(ctx,cues,tau,reducedMotion);
 }
 function fit(w,h){const scale=Math.min(w/WORLD.w,h/WORLD.h);return {scale,x:(w-WORLD.w*scale)/2,y:(h-WORLD.h*scale)/2,w:WORLD.w*scale,h:WORLD.h*scale};}
-return {WORLD,buildCues,netOffset,strongestNet,pulse,paintNet,paintEffects,goldenParticles,paintGolden,fit};
+return {WORLD,buildCues,netOffset,strongestNet,pulse,netMesh,paintNet,paintEffects,goldenParticles,paintGolden,fit};
 });

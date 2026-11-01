@@ -7,7 +7,7 @@ const byId=new Map(players.map(p=>[p.id,p]));
 if(byId.size!==184||byId.get('jay-jay-okocha')?.careerTier!=='LEGEND')throw Error('Roster/Okocha classification unexpectedly changed');
 const aliases={pass:'passing',finish:'finishing',phys:'physical'};
 for(const row of records){
-const p=byId.get(row.id);if(!p||p.careerTier!=='ELITE'||p.name!==row.name||!p.r)throw Error('Unexpected ELITE source '+row.id);
+const p=byId.get(row.id);if(!p||(p.careerTier!=='ELITE'&&!(['adriano','robert-pires','jamie-vardy','matt-le-tissier','michael-essien','dimitar-berbatov'].includes(row.id)&&p.careerTier==='LEGEND'))||p.name!==row.name||!p.r)throw Error('Unexpected ELITE source '+row.id);
 if(row.id==='sinisa-mihajlovic'){if(p.position&&p.position!=='LB')throw Error('Unexpected Mihajlovic position');p.position='CB';p.secondaryPositions=['LB','CDM'];}
 for(const [key,expected] of Object.entries(row.changes)){
 if(!Array.isArray(expected)||expected.length!==2||p.r[key]!==expected[0]||!Number.isInteger(expected[1])||expected[1]<0||expected[1]>100)throw Error('Unverified ELITE attribute '+row.id+' '+key);

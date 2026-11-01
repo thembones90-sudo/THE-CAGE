@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="450" viewBox="0 0 300 450" role="img" aria-labelledby="title desc">
+    <title id="title">THE CAGE — ELITE base model</title><desc id="desc">Reusable ELITE frame with neutral placeholder shirt and identity slots. No real player data.</desc>
+    <defs>
+ <linearGradient id="paper" x2=".8" y2="1"><stop stop-color="#fff5d9" /><stop offset="1" stop-color="#d8cdb2" /></linearGradient>
+ <linearGradient id="copper" x2="1" y2="1"><stop stop-color="#f1c39b" /><stop offset=".24" stop-color="#9c5734" /><stop offset=".5" stop-color="#e6b98b" /><stop offset=".8" stop-color="#75412c" /><stop offset="1" stop-color="#c68d60" /></linearGradient>
+ <linearGradient id="silver" x2="1" y2=".8"><stop stop-color="#f4ffff" /><stop offset=".25" stop-color="#6c8ba4" /><stop offset=".5" stop-color="#e6f6ff" /><stop offset=".75" stop-color="#7692ad" /><stop offset="1" stop-color="#d8f2ff" /></linearGradient>
+ <linearGradient id="gold" x2=".8" y2="1"><stop stop-color="#ffedb1" /><stop offset=".22" stop-color="#ae7c2b" /><stop offset=".45" stop-color="#f5d785" /><stop offset=".7" stop-color="#95651f" /><stop offset="1" stop-color="#e9c36e" /></linearGradient>
+ <linearGradient id="foil" x2="1" y2="1"><stop stop-color="#a8f4ec" /><stop offset=".25" stop-color="#8d9ed9" /><stop offset=".48" stop-color="#f6dfb3" /><stop offset=".65" stop-color="#c39ece" /><stop offset=".82" stop-color="#6ab6cd" /><stop offset="1" stop-color="#d8f9eb" /></linearGradient>
+ <radialGradient id="chamber"><stop stop-color="#476275" /><stop offset=".7" stop-color="#1b3045" /><stop offset="1" stop-color="#101d2b" /></radialGradient>
+ <linearGradient id="shirt" x2=".8" y2="1"><stop stop-color="#f4f4e9" /><stop offset=".4" stop-color="#d4d8d3" /><stop offset="1" stop-color="#9ca9aa" /></linearGradient>
+ <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".45" fill="#504c39" opacity=".2" /><circle cx="4" cy="4" r=".3" fill="#504c39" opacity=".15" /></pattern>
+ <pattern id="brush" width="40" height="4" patternUnits="userSpaceOnUse"><path d="M0 1H40" stroke="#fff2d0" stroke-width=".5" opacity=".18" /></pattern>
+ <pattern id="halftone" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".7" fill="currentColor" opacity=".13" /></pattern>
+ <linearGradient id="elitePlate" x2=".15" y2="1"><stop stop-color="#f7fdff" /><stop offset=".36" stop-color="#d8ebf4" /><stop offset=".7" stop-color="#b6d2e2" /><stop offset="1" stop-color="#eaf9ff" /></linearGradient>
+ <linearGradient id="eliteEdge" x2="1" y2="1"><stop stop-color="#effcff" /><stop offset=".45" stop-color="#78a5c3" /><stop offset=".7" stop-color="#dff7ff" /><stop offset="1" stop-color="#5f849f" /></linearGradient>
+ <linearGradient id="eliteCyan" x2="1"><stop stop-color="#5fc9df" /><stop offset=".5" stop-color="#c7f8ff" /><stop offset="1" stop-color="#7b9fe3" /></linearGradient>
+<clipPath id="shirt-cut"><path d="M47 25L69 13Q90 24 111 13L133 25L158 56L139 74L126 60V138H54V60L41 74L22 56Z" /></clipPath><pattern id="shirt-fabric" width="2.5" height="2.5" patternUnits="userSpaceOnUse"><path d="M0 .6H2.5M.6 0V2.5" stroke="#4b6570" stroke-width=".3" opacity=".12" /></pattern><linearGradient id="shirt-volume" x1="0" y1="0" x2="1" y2=".7"><stop offset="0" stop-color="#fff" stop-opacity="0.42" /><stop offset=".28" stop-color="#fff" stop-opacity="0.05" /><stop offset=".72" stop-color="#17313c" stop-opacity="0.03" /><stop offset="1" stop-color="#17313c" stop-opacity="0.23" /></linearGradient></defs>
+<path data-part="card-depth" d="M6 6H249L298 55V446H51L6 401Z" fill="#050d16" opacity=".34" />
+<path data-part="card-depth" d="M1 1H244L293 50V441H46L1 396Z" fill="#8fb0c4" opacity=".35" />
+<g data-part="frame"><path d="M4 4H247L296 53V444H49L4 399Z" fill="url(#silver)" />
+  <path d="M13 14H242L286 58V434H55L13 394Z" fill="#dae9ee" stroke="#324f69" />
+  <path d="M4 4H247L223 28H28L4 53Z" fill="#effaff" />
+  <path d="M247 4L296 53L271 70L223 28Z" fill="#7c9cb9" />
+  <path d="M296 53V444L277 422V71Z" fill="#b8d2e0" />
+  <path d="M4 399L49 444H92L57 415L24 380Z" fill="#6688a3" />
+  <path d="M31 80H232L269 117V274H68L31 237Z" fill="#8daabe" stroke="#f1fdff" stroke-width="1.3" />
+  <path d="M36 85H229L262 119V269H71L36 235Z" fill="#b9cfdb" />
+  <path d="M36 235L229 85H249L56 255Z" fill="#effaff" opacity=".36" />
+  <path d="M38 113L208 270M74 80L269 241M32 207L201 80" stroke="#edfaff" stroke-width=".6" opacity=".5" />
+  <path d="M26 284H251L272 306H49Z" fill="#a8c0d2" opacity=".45" />
+  <path d="M29 371L43 357M257 404L271 390 M38 418H165" stroke="#577d9c" fill="none" /><g data-part="signature-finish"><path d="M27 290L48 271H83M273 290L252 271H217" fill="none" stroke="#fff" stroke-width="2" opacity=".85" /><path d="M29 331L48 314H80M271 331L252 314H220" fill="none" stroke="#6488a4" stroke-width="2" /><path d="M30 413L64 436H101M270 413L236 436H199" fill="none" stroke="#f6ffff" stroke-width="1.2" opacity=".7" /></g></g>
+<g data-part="card-ornament" aria-hidden="true">
+  <path d="M29 31H112L121 40V59H29Z" fill="url(#elitePlate)" stroke="#456a86" stroke-width=".9" />
+  <path d="M33 35H110L116 41M33 55H113" fill="none" stroke="#f8feff" stroke-width=".65" opacity=".9" />
+  <path d="M29 59H121" stroke="#4f7895" stroke-width="1.1" />
+  <path d="M29 59H79" stroke="url(#eliteCyan)" stroke-width="1.6" />
+  <text x="116" y="71" text-anchor="end" font-family="Arial" font-size="5" letter-spacing="1.1" fill="#416582">SPEC 03</text>
+  <path d="M235 33H269L278 42V63L269 72H235L228 65V40Z" fill="url(#elitePlate)" stroke="#456a86" stroke-width=".9" />
+  <path d="M235 38H267L273 44M267 67H237" fill="none" stroke="#f8feff" stroke-width=".55" opacity=".85" />
+  <path d="M257 74L263 80L257 86L251 80Z" fill="#eafcff" stroke="#5c86a3" stroke-width=".6" />
+  <path d="M150 31L159 40L150 49L141 40Z" fill="#e8f8ff" stroke="#5d87a4" stroke-width=".7" />
+  <path d="M150 35L155 40L150 45L145 40Z" fill="url(#eliteCyan)" opacity=".75" />
+  <path d="M105 42H132M168 42H218" stroke="#5d87a4" stroke-width=".55" opacity=".55" />
+  <path d="M22 17L40 17L22 35Z M278 62L287 68L278 74Z M22 389L31 383L22 377Z M278 426L287 420L278 414Z" fill="#dff7ff" opacity=".55" />
+  <path d="M31 80H232L269 117V274H68L31 237Z" fill="none" stroke="#f5feff" stroke-width=".7" opacity=".9" />
+  <path d="M36 85H229L262 119V269H71L36 235Z" fill="none" stroke="url(#eliteCyan)" stroke-width="1" opacity=".75" />
+  <path d="M41 90H226L256 120V264H73L41 231Z" fill="none" stroke="#4f7895" stroke-width=".55" opacity=".65" />
+  <path d="M37 86H56L37 105Z M228 86H247L228 105Z M71 269H90L71 250Z M243 269H224L243 250Z" fill="#f8feff" opacity=".55" />
+  <g stroke="#567f9b" stroke-width=".55" opacity=".65"><path d="M283 92H288M283 102H286M283 112H288M283 122H286M283 132H288M283 142H286M283 152H288M283 162H286M283 172H288M283 182H286M283 192H288M283 202H286M283 212H288M283 222H286M283 232H288M283 242H286M283 252H288M283 262H286M283 272H288M283 282H286M283 292H288M283 302H286M283 312H288M283 322H286M283 332H288M283 342H286M283 352H288M283 362H286M283 372H288" /></g>
+  <text x="18" y="350" transform="rotate(-90 18 350)" text-anchor="middle" font-family="Arial" font-size="4.8" letter-spacing="1.7" fill="#5b829d" opacity=".8">PRECISION SILVER · SPEC 03</text>
+  <path d="M219 392H273V414H219L215 410V396Z" fill="url(#elitePlate)" stroke="#4b7390" stroke-width=".8" />
+  <path d="M222 395H269M222 410H258" stroke="#678da7" stroke-width=".5" opacity=".65" />
+  <text x="245" y="407" text-anchor="middle" font-family="Arial" font-size="5" letter-spacing="1.2" fill="#2c4d68">ELITE / 03</text>
+  <path d="M215 396L219 392M269 392L273 396M273 410L269 414" stroke="url(#eliteCyan)" stroke-width="1" />
+</g>
+<g data-part="shirt" transform="translate(46 93) scale(1.16)"><path d="M47 31L69 19Q90 30 111 19L133 31L158 62L139 80L126 66V144H54V66L41 80L22 62Z" fill="#081b25" opacity=".22" />
+    <path d="M47 25L69 13Q90 24 111 13L133 25L158 56L139 74L126 60V138H54V60L41 74L22 56Z" fill="url(#shirt)" stroke="#4b6069" stroke-width="1.2" />
+    <g clip-path="url(#shirt-cut)">
+      <path d="M78 23Q90 27 102 23V138H78Z" fill="#72868d" opacity=".48" />
+      <path d="M111 13L133 25L126 60V138H110Q119 79 111 13Z" fill="#243f4b" opacity=".12" />
+      <path d="M48 27L62 23L60 137H55V60L42 73L34 65Z" fill="#fff" opacity=".15" />
+      <rect x="20" y="10" width="140" height="130" fill="url(#shirt-fabric)" />
+      <path d="M47 25L69 13Q90 24 111 13L133 25L158 56L139 74L126 60V138H54V60L41 74L22 56Z" fill="url(#shirt-volume)" />
+      <path d="M60 70Q67 95 62 117M121 71Q114 98 120 119M67 124Q90 120 115 125" fill="none" stroke="#607681" stroke-width="1" opacity=".34" />
+      <path d="M63 73Q70 95 66 113M117 76Q112 97 116 115" fill="none" stroke="#fff" stroke-width="1.1" opacity=".3" />
+    </g>
+    <path d="M69 13L90 37L111 13L107 14L90 30L73 14Z" fill="#e7edeb" stroke="#5f747c" stroke-width=".9" />
+    <path d="M47 25L54 60M133 25L126 60" fill="none" stroke="#5e737b" stroke-width="1.1" />
+    <path d="M56 131H124M28 53L43 67M137 67L152 53" fill="none" stroke="#ebf1ed" stroke-width="1.8" opacity=".7" />
+    <path d="M56 134H124M30 56L42 68M138 68L150 56" fill="none" stroke="#71858c" stroke-width=".65" stroke-dasharray="1.4 1.5" />
+    <path d="M107 49L114 53V61L107 66L100 61V53Z" fill="#dce2dc" stroke="#627780" stroke-width=".8" />
+    <path d="M104 54L107 52L110 54V60L107 62L104 60Z" fill="none" stroke="#9fadb0" stroke-width=".6" /></g><g data-part="card-nameplate" aria-hidden="true">
+  <path d="M35 281H258L265 288V304L258 311H42L35 304V288Z" fill="url(#elitePlate)" stroke="#496f8b" stroke-width=".9" />
+  <path d="M39 285H255L259 289V303L255 307H45L39 303V289Z" fill="none" stroke="#f8feff" stroke-width=".55" opacity=".9" />
+  <path d="M39 307H255" stroke="url(#eliteCyan)" stroke-width="1.2" />
+  <path d="M43 285L47 281M253 285L249 281M253 307L249 311M43 307L47 311" stroke="#5c87a4" stroke-width=".7" />
+  <path d="M109 414H188L191 417V431L188 434H109L106 431V417Z" fill="url(#elitePlate)" stroke="#496f8b" stroke-width=".7" />
+  <path d="M112 417H186M112 431H186" stroke="#6c94ae" stroke-width=".45" opacity=".7" />
+  <path d="M97 424L103 419M197 419L203 424M197 429L203 424M103 429L97 424" fill="none" stroke="url(#eliteCyan)" stroke-width=".7" />
+</g>
+<g font-family="Arial, sans-serif" fill="#213d56" font-weight="800" data-part="identity"><text x="36" y="55" font-size="14" letter-spacing="2.5">ELITE</text>
+      <text x="257" y="58" text-anchor="middle" font-size="27">—</text>
+      <text x="257" y="71" text-anchor="middle" font-size="7" letter-spacing="1.5">OVR</text>
+      <text data-field="name" x="150" y="302" text-anchor="middle" font-family="Arial, sans-serif" font-size="20.5" font-weight="900" letter-spacing="1">PLAYER NAME</text><rect data-part="nationality-plate" x="43" y="314" width="214" height="20" rx="2" fill="#dceaf0" opacity=".96" /><text data-field="nationality" x="150" y="328" text-anchor="middle" font-size="10.4" letter-spacing=".7" font-weight="600">POSITION · COUNTRY</text><path d="M43 342H257" stroke="#7798b1" stroke-width=".65" opacity=".65" /><g data-part="primary-style-slot"><rect x="76" y="349" width="148" height="27" rx="2" fill="#dceaf0" stroke="#7798b1" stroke-width=".65" fill-opacity=".65" /><path d="M89 356L96 360V367L89 371L82 367V360Z" fill="none" stroke="#213d56" stroke-width="1" /><text x="157" y="367" text-anchor="middle" font-size="10.1" letter-spacing=".5" font-weight="800">PRIMARY TRAIT</text></g><g data-part="secondary-style-slot"><circle cx="102" cy="389" r="3.3" fill="none" stroke="#7798b1" stroke-width=".8" /><text x="159" y="392" text-anchor="middle" font-size="8.8" letter-spacing=".6" font-weight="600" opacity=".86">SECONDARY TRAIT</text></g><text x="150" y="425" text-anchor="middle" font-size="7" letter-spacing="3" font-weight="600">T H E  C A G E</text></g></svg>

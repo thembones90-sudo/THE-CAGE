@@ -1,0 +1,78 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>THE CAGE — Showdown</title><style>
+:root{color-scheme:dark;font-family:system-ui,Arial,sans-serif;background:#090e15;color:#edf2f6}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#1d3343,#090e15 65%)}main{max-width:1120px;margin:auto;padding:24px}h1{font-size:clamp(36px,6vw,68px);letter-spacing:.13em;margin:3px 0}h2{margin:0 0 12px;font-size:19px}.sub{color:#a7b4bf;margin:0 0 22px}.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.score{font-size:34px;font-weight:900;letter-spacing:.08em}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel{background:#14212ded;border:1px solid #344a59;border-radius:14px;padding:18px}.a{border-top:3px solid #4ec9aa}.b{border-top:3px solid #f1a85d}.slot{background:#0d1721;border:1px solid #34424d;border-radius:10px;padding:12px;margin:10px 0}label{display:block;color:#aabac7;font-size:12px;margin:9px 0 5px}input,select,button{font:inherit;border-radius:8px;padding:10px;color:#edf2f6;border:1px solid #436074;background:#0c1a25}input{width:100%}button{cursor:pointer;background:#245b62;font-weight:700}button:hover:not(:disabled){filter:brightness(1.15)}button:disabled{cursor:not-allowed;opacity:.5}.confirm{display:block;width:100%;margin-top:7px;background:#246349}.error{color:#ff91a1;font-size:13px}.ok{color:#7debc4;font-size:13px}.muted{color:#aabac7}.actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0}.actions>*{flex:1;min-width:130px}.wide{width:100%;margin-top:12px}.hidden{display:none}.event{border-bottom:1px solid #334653;padding:10px 0;display:flex;gap:12px}.clock{color:#88dcca;min-width:52px;font-variant-numeric:tabular-nums;font-weight:700}.goal{color:#ffe27c;font-weight:800}.board{background:repeating-linear-gradient(90deg,#172b33 0 70px,#13252f 70px 140px);border:3px solid #54717d;border-radius:9px;padding:18px;text-align:center;letter-spacing:.12em;font-weight:800;color:#b5cfda}.log{height:300px;overflow:auto}.chip{border:1px solid #56717c;border-radius:16px;padding:5px 10px;font-size:12px}.summary{font-size:18px;font-weight:800}.stat{display:flex;justify-content:space-between;border-bottom:1px solid #304451;padding:6px 0}.stats{font-size:13px}.badge{color:#77d4be}.small{font-size:12px} @media(max-width:720px){.grid{grid-template-columns:1fr}.score{font-size:26px}}
+</style><link rel="stylesheet" href="src/cage-ui.css"><link rel="stylesheet" href="src/viewer/viewer.css"><link rel="stylesheet" href="src/viewer-v4/viewer-v4.css"><link rel="stylesheet" href="src/full-cage.css"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/cage-icon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#132228"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head><body><main>
+<div class="top"><div><div class="badge small">3v3 · REGULATION + GOLDEN GOAL TIEBREAK · BEST OF FIVE</div><h1>THE CAGE</h1><p class="sub">Recall the legends. Claim six exclusive players. Outscore your opponent in regulation. Tied matches go to Golden Goal overtime. First to three rounds wins.</p></div><div class="score"><span id="winsA">0</span> : <span id="winsB">0</span><div class="small muted" id="round">ROUND 1 OF 5</div></div></div>
+<div class="grid"><section class="panel a"><h2>COMMANDER</h2><div id="slotsA"></div><label for="tacticA">Tactic</label><select id="tacticA"><option value="balanced">Balanced</option><option value="press">High Press</option><option value="possession">Possession</option><option value="counter">Counterattack</option></select><button class="wide" id="lockA">Lock trio</button></section>
+<section class="panel b"><h2>OPPONENT</h2><div id="slotsB"></div><label for="tacticB">Tactic</label><select id="tacticB"><option value="balanced">Balanced</option><option value="press">High Press</option><option value="possession">Possession</option><option value="counter">Counterattack</option></select><button class="wide" id="lockB">Lock trio</button></section></div>
+<section class="panel" id="match-control" style="margin-top:16px"><div class="top"><h2>THE IRON PIT / MATCH CONTROL</h2><span id="pool" class="chip">0 used / 194 available</span></div><div class="actions"><button id="play" disabled>START 2D MATCH</button><button id="next" disabled>Next round</button><button id="reset">New showdown</button><select id="pace" aria-label="Commentary pace"><option value="normal">Dynamic · ~45 sec</option><option value="fast">Fast · ~20 sec</option><option value="instant">Instant result</option><option value="dramatic">Dramatic · ~60 sec</option></select></div><p id="status" class="muted" role="status">Both competitors must claim three new footballers.</p><div class="board" id="arena">THE DOORS ARE CLOSED · THE CAGE AWAITS</div><div class="grid" style="margin-top:14px"><div><h2>Live commentary</h2><div id="commentary" class="log" aria-live="polite"></div></div><div><h2>Match report</h2><div id="report" class="stats"></div></div></div></section>
+</main><script src="src/players.js"></script><script src="src/roster-expansion.js"></script><script src="src/roster-100.js"></script><script src="src/roster-101.js"></script><script src="src/roster-103.js"></script><script src="src/roster-pl-134.js"></script><script src="src/roster-135.js"></script><script src="src/roster-136.js"></script><script src="src/roster-139.js"></script><script src="src/roster-140.js"></script><script src="src/roster-141.js"></script><script src="src/roster-149.js"></script><script src="src/roster-165.js"></script><script src="src/roster-178.js"></script><script src="src/roster-classification.js"></script><script src="src/roster-refinement.js"></script><script src="src/tactical-refinement.js"></script><script src="src/roster-182.js"></script><script src="src/roster-trait-family-v16.js"></script><script src="src/roster-184.js"></script><script src="src/owner-tier-decisions-v17.js"></script><script src="src/natural-positions.js"></script><script src="src/elite-ovr-approved-v21.js"></script><script src="src/stalwart-ovr-approved-v1.js"></script><script src="src/overall.js"></script><script src="src/ace-recruitment-v1.js"></script><script src="src/di-canio-recruitment-v1.js"></script><script src="src/recruitment-four-v1.js"></script><script src="src/identity/search.js"></script><script src="src/engine/legacy-v04.js"></script><script src="src/cage-engine-v65.js"></script><script src="src/cage-engine-v66.js"></script><script src="src/goalkeepers-gk30.js"></script><script src="src/cage-engine-v68.js"></script><script src="src/cage-engine-v69.js"></script><script src="src/cage-engine-v610.js"></script><script src="src/cage-engine-v611.js"></script><script src="src/cage-engine-v612.js"></script><script src="src/cage-engine.js"></script><script src="src/cage-commentary.js"></script><script src="src/replay/records.js"></script><script src="src/viewer/coords.js"></script><script src="src/viewer/layout.js"></script><script src="src/viewer/timeline.js"></script><script src="src/viewer/recorded-motion.js"></script><script src="src/viewer/clock.js"></script><script src="src/viewer-v4/fx.js"></script><script src="src/viewer-v4/motion.js"></script><script src="src/viewer-v4/kinetics.js"></script><script src="src/viewer-v4/label-layout.js"></script><script src="src/viewer-v4/renderer.js"></script><script src="src/viewer-v4/goal-experience.js"></script><script src="src/viewer-v4/goal-audio.js"></script><script src="src/viewer-v4/viewer.js"></script>
+<script>window.CageViewerV4Variant="iron";</script><script src="src/showdown-v5.js"></script>
+<script>if("serviceWorker" in navigator && location.protocol!=="file:"){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));}</script><script>(async()=>{
+ const out=document.createElement('pre');out.id='v56-cinema-test';document.body.append(out);
+ const ok=(x,msg)=>{if(!x)throw Error(msg)},$=id=>document.getElementById(id);
+ function claim(side,i,p){
+  const slot=$('slots'+side).children[i],input=slot.querySelector('input');
+  input.value=p.name;input.dispatchEvent(new Event('input'));slot.querySelector('button').click();
+  const confirm=[...slot.querySelectorAll('.confirm')].find(b=>b.textContent.includes(p.name))||slot.querySelector('.confirm');
+  ok(confirm,'unable to claim '+p.name);confirm.click();
+ }
+ try{
+  ok(window.THE_CAGE_PLAYERS.length===194,'roster missing');
+  const people=window.THE_CAGE_PLAYERS.filter(p=>window.CageIdentity.resolve(p.name).matches?.some(x=>x.id===p.id));
+  let j=0;for(let i=0;i<3;i++)for(const side of ['A','B'])claim(side,i,people[j++]);
+  $('lockA').click();$('lockB').click();$('pace').value='normal';$('play').click();
+  const ctl=window.CageShowdown.viewer(),snap=window.CageShowdown.snapshot();
+  ok(ctl&&snap.pending,'match viewer missing');
+  const record=snap.pending,overlay=document.querySelector('#integrated-viewer [data-k=golden]');
+  const button=document.querySelector('#integrated-viewer [data-k=sound]');
+  const holder=document.querySelector('#integrated-viewer [data-k=goalcard]');
+  ok(overlay&&button&&holder,'V5.6 controls not mounted');
+  ok(button.textContent==='Sound: Off'&&button.getAttribute('aria-pressed')==='false','sound must be silent by default');
+  ok(overlay.hidden,'goal shown before recorded event');
+  const g=ctl.timeline.goals[0];ok(g,'real match has no goal event');
+  ctl.pause();ctl.setSpeed('full');ctl.seek(Math.max(0,g.tau-.23));ctl.play();ctl.playback.advance(.3);ctl.render();
+  ok(!overlay.hidden,'goal cinematic missing at real event crossing goalTau='+g.tau+' actualTau='+ctl.playback.tau+' state='+ctl.playback.state+' goalShown='+!holder.hidden+' inner='+overlay.textContent.slice(0,60));
+  const shownGoal=ctl.timeline.goals.filter(x=>x.tau<=ctl.playback.tau+1e-6).at(-1)||g;
+  const strike=record.result.events[shownGoal.i].golden===true?'FINAL STRIKE':'REGULATION GOAL';ok(overlay.textContent.includes(strike)&&overlay.textContent.includes('GOAL'),'recorded regulation/Golden Goal reveal malformed');
+  const scorer=window.THE_CAGE_PLAYERS.find(p=>p.id===shownGoal.actor).name;
+  ok(overlay.textContent.toLowerCase().includes(scorer.toLowerCase()),'wrong scorer name');
+  ok(overlay.textContent.includes('RECORDED EVENT'),'goal not marked as recorded');
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){
+   ok(getComputedStyle(overlay).animationName==='none','reduced-motion cinematic still animates');
+   const reduced=window.CageGoalExperience.phase({tau:g.tau},g.tau,0,0,true);
+   ok(reduced.flash===0,'reduced-motion should suppress impact flashes');
+  }
+
+  ok(overlay.querySelector('.cv-golden-score'),'recorded score not displayed');
+  ok(holder.hidden,'old goal plaque must not obscure cinematic');
+  const slider=document.querySelector('#integrated-viewer [data-k=seek]');
+  slider.value='0';slider.dispatchEvent(new Event('input'));ctl.render();
+  ok(overlay.hidden,'manual slider must immediately dismiss ongoing celebration');
+  ctl.seek(Math.max(0,g.tau-.23));ctl.play();ctl.playback.advance(.3);ctl.render();
+  ok(!overlay.hidden,'second authentic crossing should restore cinematic');
+
+  await new Promise(r=>setTimeout(r,3100));ctl.render();
+  ok(overlay.hidden&&holder.hidden,'goal presentation must expire without a persistent pitch plaque');
+  const nextKickoff=ctl.timeline.segments.find(s=>s.i>g.i&&record.result.events[s.i].type==='restart');
+  if(nextKickoff){ctl.seek(Math.max(0,g.tau-.23));ctl.play();ctl.playback.advance(.3);ctl.render();ok(!overlay.hidden,'goal crossing cue missing');ctl.playback.advance(nextKickoff.tau0-ctl.playback.tau+.01);ctl.render();ok(overlay.hidden&&holder.hidden,'celebration obstructs resumed play');}
+  const beforeHash=record.result.eventHash;
+  ctl.seek(0);ctl.render();ok(overlay.hidden,'scrub backward did not hide active celebration');
+  button.click();ok(button.getAttribute('aria-pressed')==='true','sound opt-in switch failed');
+  button.click();ok(button.getAttribute('aria-pressed')==='false','sound switch not reversible');
+  ctl.seek(ctl.timeline.total-1);ctl.play();ctl.playback.advance(20);ctl.render();
+  const finished=window.CageShowdown.snapshot();
+  ok(overlay.hidden&&holder.hidden,'full-time pitch must be unobstructed');
+  ok(finished.history.length===1&&finished.wins.A+finished.wins.B===1,'goal not awarded exactly once');
+  ok(finished.history[0].result.eventHash===beforeHash,'presentation changed recorded match');
+  ok(ctl.replayGoal()===true,'replay unavailable');
+  let steps=0;while(ctl.playback.state==='playing'&&steps++<10000)ctl.playback.advance(1);
+  ctl.render();const after=window.CageShowdown.snapshot();
+  ok(after.history.length===1&&after.wins.A+after.wins.B===1,'goal replay awarded duplicate win');
+  ok(after.history[0].result.eventHash===beforeHash,'replay record changed');
+  ok(overlay.textContent.includes('SLOW-MOTION REPLAY'),'replay cinematic not distinguished');
+  out.textContent='V57_CINEMATIC_BROWSER_PASS 194 roster, real goal, original scorer and score, optional sound OFF/ON/OFF, seek hides overlay, replay no extra win, hash immutable';
+ }catch(e){out.textContent='V56_CINEMATIC_BROWSER_FAIL '+e.stack;}
+})();
+</script></body></html>

@@ -1,0 +1,342 @@
+{
+  "date": "2026-11-01",
+  "batch": "03",
+  "players": [
+    {
+      "name": "Abedi Pelé",
+      "country": "Ghana",
+      "position": "CAM",
+      "tier": "LEGEND",
+      "approvedOverall": 91,
+      "decision": "Approve",
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Architect"
+      },
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "talismanClubs": [
+        "Ghana"
+      ],
+      "attributes": {
+        "pace": 86,
+        "technique": 93,
+        "passing": 90,
+        "finishing": 82,
+        "defending": 38,
+        "physical": 75,
+        "first_touch": 94,
+        "dribbling": 94,
+        "vision": 92,
+        "shooting": 84,
+        "stamina": 85,
+        "positioning": 84,
+        "composure": 88
+      }
+    },
+    {
+      "name": "Rudi Völler",
+      "country": "Germany",
+      "position": "ST",
+      "tier": "LEGEND",
+      "approvedOverall": 91,
+      "decision": "Approve",
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Engine"
+      },
+      "folklore": [
+        "STREET HERO"
+      ],
+      "talismanClubs": [],
+      "attributes": {
+        "pace": 83,
+        "technique": 85,
+        "passing": 76,
+        "finishing": 93,
+        "defending": 37,
+        "physical": 86,
+        "first_touch": 86,
+        "dribbling": 82,
+        "vision": 79,
+        "shooting": 90,
+        "stamina": 88,
+        "positioning": 94,
+        "composure": 91
+      }
+    },
+    {
+      "name": "Jari Litmanen",
+      "country": "Finland",
+      "position": "CAM",
+      "tier": "LEGEND",
+      "approvedOverall": 89,
+      "decision": "Approve",
+      "traits": {
+        "primary": "Architect",
+        "secondary": "Phantom"
+      },
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "talismanClubs": [
+        "Finland"
+      ],
+      "attributes": {
+        "pace": 75,
+        "technique": 92,
+        "passing": 93,
+        "finishing": 89,
+        "defending": 45,
+        "physical": 70,
+        "first_touch": 95,
+        "dribbling": 88,
+        "vision": 96,
+        "shooting": 88,
+        "stamina": 86,
+        "positioning": 93,
+        "composure": 93
+      }
+    },
+    {
+      "name": "Antonio Di Natale",
+      "country": "Italy",
+      "position": "ST",
+      "tier": "LEGEND",
+      "approvedOverall": 89,
+      "decision": "Approve",
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Surgeon"
+      },
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "talismanClubs": [
+        "Udinese"
+      ],
+      "attributes": {
+        "pace": 82,
+        "technique": 89,
+        "passing": 80,
+        "finishing": 95,
+        "defending": 35,
+        "physical": 65,
+        "first_touch": 93,
+        "dribbling": 90,
+        "vision": 85,
+        "shooting": 94,
+        "stamina": 83,
+        "positioning": 96,
+        "composure": 94
+      }
+    },
+    {
+      "name": "Enzo Francescoli",
+      "country": "Uruguay",
+      "position": "CF",
+      "tier": "LEGEND",
+      "approvedOverall": 89,
+      "decision": "Approve",
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Architect"
+      },
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "talismanClubs": [
+        "River Plate"
+      ],
+      "attributes": {
+        "pace": 77,
+        "technique": 95,
+        "passing": 91,
+        "finishing": 88,
+        "defending": 35,
+        "physical": 72,
+        "first_touch": 96,
+        "dribbling": 94,
+        "vision": 94,
+        "shooting": 87,
+        "stamina": 82,
+        "positioning": 90,
+        "composure": 95
+      }
+    },
+    {
+      "name": "Henrik Larsson",
+      "country": "Sweden",
+      "position": "ST",
+      "tier": "LEGEND",
+      "approvedOverall": 90,
+      "decision": "Approve",
+      "traits": {
+        "primary": "Predator",
+        "secondary": "Engine"
+      },
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN",
+        "UNDERDOG"
+      ],
+      "talismanClubs": [
+        "Celtic"
+      ],
+      "attributes": {
+        "pace": 83,
+        "technique": 88,
+        "passing": 83,
+        "finishing": 94,
+        "defending": 47,
+        "physical": 78,
+        "first_touch": 92,
+        "dribbling": 84,
+        "vision": 87,
+        "shooting": 93,
+        "stamina": 90,
+        "positioning": 95,
+        "composure": 92
+      }
+    },
+    {
+      "name": "Paulo Futre",
+      "country": "Portugal",
+      "position": "LW",
+      "tier": "LEGEND",
+      "approvedOverall": 88,
+      "decision": "Approve",
+      "traits": {
+        "primary": "Magician",
+        "secondary": "Engine"
+      },
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "talismanClubs": [
+        "Atlético Madrid"
+      ],
+      "attributes": {
+        "pace": 94,
+        "technique": 94,
+        "passing": 83,
+        "finishing": 82,
+        "defending": 32,
+        "physical": 73,
+        "first_touch": 93,
+        "dribbling": 96,
+        "vision": 87,
+        "shooting": 83,
+        "stamina": 79,
+        "positioning": 85,
+        "composure": 87
+      }
+    },
+    {
+      "name": "Jürgen Kohler",
+      "country": "Germany",
+      "position": "CB",
+      "tier": "LEGEND",
+      "approvedOverall": 89,
+      "decision": "Approve",
+      "traits": {
+        "primary": "Wall",
+        "secondary": "Destroyer"
+      },
+      "folklore": [
+        "STREET HERO"
+      ],
+      "talismanClubs": [],
+      "attributes": {
+        "pace": 73,
+        "technique": 78,
+        "passing": 72,
+        "finishing": 42,
+        "defending": 96,
+        "physical": 92,
+        "first_touch": 79,
+        "dribbling": 60,
+        "vision": 75,
+        "shooting": 54,
+        "stamina": 89,
+        "positioning": 97,
+        "composure": 92
+      }
+    },
+    {
+      "name": "Rui Costa",
+      "country": "Portugal",
+      "position": "CAM",
+      "tier": "LEGEND",
+      "approvedOverall": 90,
+      "decision": "Approve",
+      "traits": {
+        "primary": "Maestro",
+        "secondary": "Phantom"
+      },
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "talismanClubs": [
+        "Fiorentina"
+      ],
+      "attributes": {
+        "pace": 72,
+        "technique": 95,
+        "passing": 96,
+        "finishing": 74,
+        "defending": 39,
+        "physical": 66,
+        "first_touch": 96,
+        "dribbling": 93,
+        "vision": 97,
+        "shooting": 79,
+        "stamina": 79,
+        "positioning": 85,
+        "composure": 92
+      }
+    },
+    {
+      "name": "Juan Sebastián Verón",
+      "country": "Argentina",
+      "position": "CM",
+      "tier": "LEGEND",
+      "approvedOverall": 90,
+      "decision": "Approve",
+      "traits": {
+        "primary": "Architect",
+        "secondary": "Anticipator"
+      },
+      "folklore": [
+        "STREET HERO",
+        "TALISMAN"
+      ],
+      "talismanClubs": [
+        "Estudiantes"
+      ],
+      "attributes": {
+        "pace": 73,
+        "technique": 90,
+        "passing": 94,
+        "finishing": 73,
+        "defending": 68,
+        "physical": 82,
+        "first_touch": 92,
+        "dribbling": 86,
+        "vision": 95,
+        "shooting": 88,
+        "stamina": 86,
+        "positioning": 84,
+        "composure": 90
+      }
+    }
+  ],
+  "note": "All ten owner-approved. Integration subject to formula validation."
+}

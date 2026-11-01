@@ -99,8 +99,26 @@ function evaluate(player){
  const winner=options.reduce((best,v)=>v.score>best.score?v:best);
  return Object.freeze({position:pos,archetype:winner.archetype,score:Number(winner.score.toFixed(3)),domains:parts});
 }
-// All 67 ELITE ratings are now generated directly from approved prime attributes; no individual OVR overrides.
-const REVIEW_OVERRIDES=Object.freeze({});
+// Owner-reviewed display-only OVR corrections. Raw formula and prime attributes remain unchanged.
+// TITAN four values explicitly set by owner; LEGEND values are midpoint selections from approved review ranges.
+const REVIEW_OVERRIDES=Object.freeze({
+  'paolo-maldini': Object.freeze({overall:95,reason:'owner-reviewed display OVR'}),
+  'philipp-lahm': Object.freeze({overall:91,reason:'owner-reviewed display OVR'}),
+  'cafu': Object.freeze({overall:93,reason:'owner-reviewed display OVR'}),
+  'roberto-carlos': Object.freeze({overall:92,reason:'owner-reviewed display OVR'}),
+  'edgar-davids': Object.freeze({overall:88,reason:'owner-reviewed display OVR'}),
+  'frank-lampard': Object.freeze({overall:91,reason:'owner-reviewed display OVR'}),
+  'michael-ballack': Object.freeze({overall:90,reason:'owner-reviewed display OVR'}),
+  'xabi-alonso': Object.freeze({overall:90,reason:'owner-reviewed display OVR'}),
+  'claude-makelele': Object.freeze({overall:89,reason:'owner-reviewed display OVR'}),
+  'roy-keane': Object.freeze({overall:90,reason:'owner-reviewed display OVR'}),
+  'steven-gerrard': Object.freeze({overall:92,reason:'owner-reviewed display OVR'}),
+  'patrick-vieira': Object.freeze({overall:91,reason:'owner-reviewed display OVR'}),
+  'nemanja-vidic': Object.freeze({overall:91,reason:'owner-reviewed display OVR'}),
+  'jaap-stam': Object.freeze({overall:90,reason:'owner-reviewed display OVR'}),
+  'bastian-schweinsteiger': Object.freeze({overall:90,reason:'owner-reviewed display OVR'}),
+  'david-beckham': Object.freeze({overall:89,reason:'owner-reviewed display OVR'})
+});
 function raw(p){const value=evaluate(p).score;return Math.max(1,Math.min(99,Math.round(value)));}
 function compute(p){const patch=REVIEW_OVERRIDES[p.id];return patch?patch.overall:raw(p);}
 function apply(ps){if(!Array.isArray(ps))throw Error('Expected player array');const seen=new Set();for(const p of ps){if(seen.has(p.id))throw Error('Duplicate OVR player '+p.id);seen.add(p.id);p.overall=compute(p);}return ps.length;}

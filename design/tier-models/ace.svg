@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="450" viewBox="0 0 300 450" role="img" aria-labelledby="title desc">
+    <title id="title">THE CAGE — ACE base model</title><desc id="desc">Reusable ACE frame with neutral placeholder shirt and identity slots. No real player data.</desc>
+    <defs>
+ <linearGradient id="paper" x2=".8" y2="1"><stop stop-color="#fff5d9" /><stop offset="1" stop-color="#d8cdb2" /></linearGradient>
+ <linearGradient id="copper" x2="1" y2="1"><stop stop-color="#f1c39b" /><stop offset=".24" stop-color="#9c5734" /><stop offset=".5" stop-color="#e6b98b" /><stop offset=".8" stop-color="#75412c" /><stop offset="1" stop-color="#c68d60" /></linearGradient>
+ <linearGradient id="silver" x2="1" y2=".8"><stop stop-color="#f4ffff" /><stop offset=".25" stop-color="#6c8ba4" /><stop offset=".5" stop-color="#e6f6ff" /><stop offset=".75" stop-color="#7692ad" /><stop offset="1" stop-color="#d8f2ff" /></linearGradient>
+ <linearGradient id="gold" x2=".8" y2="1"><stop stop-color="#ffedb1" /><stop offset=".22" stop-color="#ae7c2b" /><stop offset=".45" stop-color="#f5d785" /><stop offset=".7" stop-color="#95651f" /><stop offset="1" stop-color="#e9c36e" /></linearGradient>
+ <linearGradient id="foil" x2="1" y2="1"><stop stop-color="#a8f4ec" /><stop offset=".25" stop-color="#8d9ed9" /><stop offset=".48" stop-color="#f6dfb3" /><stop offset=".65" stop-color="#c39ece" /><stop offset=".82" stop-color="#6ab6cd" /><stop offset="1" stop-color="#d8f9eb" /></linearGradient>
+ <radialGradient id="chamber"><stop stop-color="#476275" /><stop offset=".7" stop-color="#1b3045" /><stop offset="1" stop-color="#101d2b" /></radialGradient>
+ <linearGradient id="shirt" x2=".8" y2="1"><stop stop-color="#f4f4e9" /><stop offset=".4" stop-color="#d4d8d3" /><stop offset="1" stop-color="#9ca9aa" /></linearGradient>
+ <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".45" fill="#504c39" opacity=".2" /><circle cx="4" cy="4" r=".3" fill="#504c39" opacity=".15" /></pattern>
+ <pattern id="brush" width="40" height="4" patternUnits="userSpaceOnUse"><path d="M0 1H40" stroke="#fff2d0" stroke-width=".5" opacity=".18" /></pattern>
+ <pattern id="halftone" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".7" fill="currentColor" opacity=".13" /></pattern>
+ <linearGradient id="acePlate" x2=".2" y2="1"><stop stop-color="#fcf6e4" /><stop offset=".55" stop-color="#efe5cc" /><stop offset="1" stop-color="#ded0ae" /></linearGradient>
+ <linearGradient id="aceTape" x2="1"><stop stop-color="#f8eab8" stop-opacity=".88" /><stop offset="1" stop-color="#d8c58b" stop-opacity=".3" /></linearGradient>
+<clipPath id="shirt-cut"><path d="M47 25L69 13Q90 24 111 13L133 25L158 56L139 74L126 60V138H54V60L41 74L22 56Z" /></clipPath><pattern id="shirt-fabric" width="2.5" height="2.5" patternUnits="userSpaceOnUse"><path d="M0 .6H2.5M.6 0V2.5" stroke="#4b6570" stroke-width=".3" opacity=".12" /></pattern><linearGradient id="shirt-volume" x1="0" y1="0" x2="1" y2=".7"><stop offset="0" stop-color="#fff" stop-opacity="0.42" /><stop offset=".28" stop-color="#fff" stop-opacity="0.05" /><stop offset=".72" stop-color="#17313c" stop-opacity="0.03" /><stop offset="1" stop-color="#17313c" stop-opacity="0.23" /></linearGradient></defs>
+<path data-part="card-depth" d="M11 9H278L293 25V444H11Z" fill="#0c0905" opacity=".3" />
+<path data-part="card-depth" d="M7 5H274L289 21V440H7Z" fill="#c8b992" opacity=".42" />
+<g data-part="frame"><path d="M9 7H276L291 23V442H9Z" fill="url(#paper)" />
+  <path d="M9 7H276L291 23V442H9Z" fill="url(#grain)" />
+  <path d="M276 7V23H291" fill="#fff8e7" stroke="#b8ac91" stroke-width=".7" />
+  <path d="M17 15H270M283 30V434H17V15" fill="none" stroke="#65725e" stroke-width=".8" />
+  <path d="M24 24H262M275 35V427H24V24" fill="none" stroke="#65725e" stroke-width=".4" />
+  <path d="M29 78H271V276H29Z" fill="#d1d8c7" stroke="#6c7766" stroke-width="1" />
+  <path d="M29 78H271V276H29Z" fill="url(#halftone)" color="#304c3d" />
+  <path d="M36 85H264V269H36Z" fill="none" stroke="#f6f3dd" stroke-width="3" />
+  <text x="41" y="96" font-family="Arial" font-size="6" letter-spacing="2" fill="#52664f">ORIGINAL EDITION</text><g data-part="signature-finish"><path d="M30 28H38M262 28H269M30 418H38M262 418H269" stroke="#65725e" stroke-width="1" /><path d="M37 276H263" stroke="#315044" stroke-width="2" opacity=".6" /><path d="M32 282H268" stroke="#fff4d0" stroke-width="1" /></g></g>
+<g data-part="card-ornament" aria-hidden="true">
+  <g opacity=".78"><path d="M7 9L66 3L72 19L13 25Z" fill="url(#aceTape)" stroke="#b8a878" stroke-width=".5" /><path d="M14 11L61 6M15 17L62 12" stroke="#fff8d8" stroke-width=".6" opacity=".7" /></g>
+  <path d="M29 31H122L127 36V59H29Z" fill="#faf3df" stroke="#65725e" stroke-width=".8" />
+  <path d="M32 35H119M32 56H119" stroke="#8b8b70" stroke-width=".45" opacity=".8" />
+  <text x="120" y="54" text-anchor="end" font-family="Arial" font-size="5" letter-spacing="1" fill="#65725e">PRINT 01</text>
+  <circle cx="257" cy="55" r="19" fill="#f7f0dc" stroke="#65725e" stroke-width=".8" />
+  <circle cx="257" cy="55" r="15.5" fill="none" stroke="#8b8d71" stroke-width=".55" stroke-dasharray="2 2.2" />
+  <g fill="none" stroke="#65725e" stroke-width=".55" opacity=".75"><circle cx="150" cy="41" r="7" /><circle cx="150" cy="41" r="10" /><path d="M150 29V37M150 45V53M138 41H143M157 41H162" /></g>
+  <path d="M29 78H271V276H29Z" fill="none" stroke="#b45445" stroke-width=".55" opacity=".3" transform="translate(1 .7)" />
+  <path d="M29 78H271V276H29Z" fill="none" stroke="#3f8c99" stroke-width=".55" opacity=".28" transform="translate(-1 -.7)" />
+  <path d="M34 92V84H42M258 84H266V92M266 262V270H258M34 262V270H42" fill="none" stroke="#4c5d4d" stroke-width="1" />
+  <path d="M36 85H264V269H36Z" fill="none" stroke="#f8f2d8" stroke-width=".75" opacity=".85" />
+  <g stroke="#65725e" stroke-width=".5" opacity=".58"><path d="M9 168L14 168M9 176L14 176M286 168L291 168M286 176L291 176" /><path d="M9 324L14 324M9 332L14 332M286 324L291 324M286 332L291 332" /></g>
+  <text x="18" y="350" transform="rotate(-90 18 350)" text-anchor="middle" font-family="Arial" font-size="4.8" letter-spacing="1.7" fill="#65725e" opacity=".72">ARCHIVAL PAPER · PRESS PROOF</text>
+  <g fill="#475244" opacity=".58"><rect x="225" y="392" width="1.3" height="16" /><rect x="228" y="392" width=".8" height="16" /><rect x="231" y="392" width="1.8" height="16" /><rect x="234.5" y="392" width=".7" height="16" /><rect x="237" y="392" width="1.2" height="16" /><rect x="240" y="392" width="2" height="16" /><rect x="244" y="392" width=".8" height="16" /><rect x="247" y="392" width="1.5" height="16" /><rect x="250.5" y="392" width=".7" height="16" /><rect x="254" y="392" width="1.1" height="16" /><rect x="257" y="392" width="2.1" height="16" /><rect x="261" y="392" width=".8" height="16" /></g>
+  <text x="270" y="419" text-anchor="end" font-family="Arial" font-size="4.7" letter-spacing="1.1" fill="#5d6654" opacity=".85">PRESS 001 / 300</text>
+  <path d="M13 361L18 366L13 371L8 366Z M287 361L292 366L287 371L282 366Z" fill="none" stroke="#7a7d64" stroke-width=".6" opacity=".6" />
+</g>
+<g data-part="shirt" transform="translate(46 93) scale(1.16)"><path d="M47 31L69 19Q90 30 111 19L133 31L158 62L139 80L126 66V144H54V66L41 80L22 62Z" fill="#081b25" opacity=".22" />
+    <path d="M47 25L69 13Q90 24 111 13L133 25L158 56L139 74L126 60V138H54V60L41 74L22 56Z" fill="url(#shirt)" stroke="#4b6069" stroke-width="1.2" />
+    <g clip-path="url(#shirt-cut)">
+      <path d="M78 23Q90 27 102 23V138H78Z" fill="#72868d" opacity=".48" />
+      <path d="M111 13L133 25L126 60V138H110Q119 79 111 13Z" fill="#243f4b" opacity=".12" />
+      <path d="M48 27L62 23L60 137H55V60L42 73L34 65Z" fill="#fff" opacity=".15" />
+      <rect x="20" y="10" width="140" height="130" fill="url(#shirt-fabric)" />
+      <path d="M47 25L69 13Q90 24 111 13L133 25L158 56L139 74L126 60V138H54V60L41 74L22 56Z" fill="url(#shirt-volume)" />
+      <path d="M60 70Q67 95 62 117M121 71Q114 98 120 119M67 124Q90 120 115 125" fill="none" stroke="#607681" stroke-width="1" opacity=".34" />
+      <path d="M63 73Q70 95 66 113M117 76Q112 97 116 115" fill="none" stroke="#fff" stroke-width="1.1" opacity=".3" />
+    </g>
+    <path d="M69 13L90 37L111 13L107 14L90 30L73 14Z" fill="#e7edeb" stroke="#5f747c" stroke-width=".9" />
+    <path d="M47 25L54 60M133 25L126 60" fill="none" stroke="#5e737b" stroke-width="1.1" />
+    <path d="M56 131H124M28 53L43 67M137 67L152 53" fill="none" stroke="#ebf1ed" stroke-width="1.8" opacity=".7" />
+    <path d="M56 134H124M30 56L42 68M138 68L150 56" fill="none" stroke="#71858c" stroke-width=".65" stroke-dasharray="1.4 1.5" />
+    <path d="M107 49L114 53V61L107 66L100 61V53Z" fill="#dce2dc" stroke="#627780" stroke-width=".8" />
+    <path d="M104 54L107 52L110 54V60L107 62L104 60Z" fill="none" stroke="#9fadb0" stroke-width=".6" /></g><g data-part="card-nameplate" aria-hidden="true">
+  <path d="M35 281H265V311H35Z" fill="url(#acePlate)" stroke="#6d7763" stroke-width=".7" />
+  <path d="M37 284H263M37 308H263" fill="none" stroke="#8b8b70" stroke-width=".5" stroke-dasharray="1 2.4" opacity=".85" />
+  <path d="M35 281H44L35 290Z" fill="#c8b995" opacity=".9" /><path d="M265 311H256L265 302Z" fill="#c8b995" opacity=".9" />
+  <path d="M46 281V285M254 307V311" stroke="#6d7763" stroke-width=".5" opacity=".55" />
+  <path d="M109 414H191V434H109Z" fill="#f3ead4" stroke="#778069" stroke-width=".6" />
+  <path d="M112 417H188M112 431H188" stroke="#9a967c" stroke-width=".45" stroke-dasharray="1 2" opacity=".9" />
+  <path d="M96 424L104 419M196 419L204 424M196 429L204 424M104 429L96 424" fill="none" stroke="#8a8c71" stroke-width=".6" />
+</g>
+<g font-family="Arial, sans-serif" fill="#2f4238" font-weight="800" data-part="identity"><text x="36" y="55" font-size="14" letter-spacing="2.5">ACE</text>
+      <text x="257" y="58" text-anchor="middle" font-size="27">—</text>
+      <text x="257" y="71" text-anchor="middle" font-size="7" letter-spacing="1.5">OVR</text>
+      <text data-field="name" x="150" y="302" text-anchor="middle" font-family="Arial, sans-serif" font-size="20.5" font-weight="900" letter-spacing=".5">PLAYER NAME</text><rect data-part="nationality-plate" x="43" y="314" width="214" height="20" rx="2" fill="#f2e9d0" opacity=".96" /><text data-field="nationality" x="150" y="328" text-anchor="middle" font-size="10.4" letter-spacing=".7" font-weight="600">POSITION · COUNTRY</text><path d="M43 342H257" stroke="#7b896e" stroke-width=".65" opacity=".65" /><g data-part="primary-style-slot"><rect x="76" y="349" width="148" height="27" rx="2" fill="#f2e9d0" stroke="#7b896e" stroke-width=".65" fill-opacity=".65" /><path d="M89 356L96 360V367L89 371L82 367V360Z" fill="none" stroke="#2f4238" stroke-width="1" /><text x="157" y="367" text-anchor="middle" font-size="10.1" letter-spacing=".5" font-weight="800">PRIMARY TRAIT</text></g><g data-part="secondary-style-slot"><circle cx="102" cy="389" r="3.3" fill="none" stroke="#7b896e" stroke-width=".8" /><text x="159" y="392" text-anchor="middle" font-size="8.8" letter-spacing=".6" font-weight="600" opacity=".86">SECONDARY TRAIT</text></g><text x="150" y="425" text-anchor="middle" font-size="7" letter-spacing="3" font-weight="600">T H E  C A G E</text></g></svg>

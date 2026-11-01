@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p));
-for(const file of ['draft.html','play.html','src/random-draft.js','src/cage-engine-draft.js','src/viewer-v4/viewer.js','src/viewer-v4/renderer.js','src/viewer-v4/viewer-v4.css','src/replay/records.js','manifest.webmanifest','sw.js']){
+for(const file of ['draft.html','play.html','src/random-draft.js','src/draft-cards.js','design/sticker-cards.css','src/cage-engine-draft.js','src/viewer-v4/viewer.js','src/viewer-v4/renderer.js','src/viewer-v4/viewer-v4.css','src/replay/records.js','manifest.webmanifest','sw.js']){
  assert(read(file).equals(read('public/'+file)),file+' packaged copy differs from tested source');
 }
 assert(read('src/cage-engine.js').equals(read('src/cage-engine-draft.js')),'draft engine drifted from canonical engine');

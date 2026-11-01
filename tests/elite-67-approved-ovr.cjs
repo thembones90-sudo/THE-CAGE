@@ -25,9 +25,13 @@ for(const file of scripts){
 const result=ctx.window.THE_CAGE_PLAYERS,byId=new Map(result.map(p=>[p.id,p])),original=new Map(baseline.map(p=>[p.id,p])),ovr=ctx.window.CageOverall;
 assert.equal(result.length,184);assert.equal(byId.size,184);
 assert.equal(ovr.VERSION,'overall-v2.1-owner-approved');
-assert.deepEqual(Object.keys(ovr.REVIEW_OVERRIDES),[]);
+// Owner decisions 2026-11-01: display-only OVR corrections for 16 TITAN/LEGEND players; never an approved ELITE value.
+for(const id of Object.keys(ovr.REVIEW_OVERRIDES))assert(byId.has(id)&&!spec.players?.some?.(x=>x.id===id),id+' display override must not touch an approved ELITE OVR');
+assert(Object.keys(ovr.REVIEW_OVERRIDES).length<=16,'only the 16 owner-reviewed display corrections');
 assert.equal(ctx.window.CAGE_ELITE_OVR_APPROVED.playerCount,67);
 assert.equal(Object.values(ovr.PROFILES).reduce((s,x)=>s+x.length,0),27);
+// Tier promotions of 2026-11-01 are later owner decisions (classification only): check the ELITE-67 overlay against each player's tier before them.
+const tierOf=p=>p.tierDecision&&p.tierDecision.version==='owner-tier-decisions-2026-11-01'?p.tierDecision.from:p.careerTier;
 let changed=0;
 for(const p of postOverlay){
  const prev=original.get(p.id),row=expected.get(p.id),final=byId.get(p.id);
@@ -36,7 +40,7 @@ for(const p of postOverlay){
   assert.deepEqual(JSON.parse(JSON.stringify(p[key]??null)),prev[key]??null,p.id+' unexpected edit '+key);
  }
  if(row){
-  changed++;assert.equal(p.careerTier,'ELITE',p.id+' tier');
+  changed++;assert.equal(tierOf(p),'ELITE',p.id+' tier');
   assert.equal(final.overall,row.approvedOVR,p.id+' approved OVR');
   assert.equal(ovr.raw(final),row.approvedOVR,p.id+' not formula-derived');
   assert.equal(p.ratingReviewStatus,'owner-approved-elite-ovr-v2.1');
@@ -57,7 +61,7 @@ for(const p of postOverlay){
   assert.deepEqual(JSON.parse(JSON.stringify(p.r)),prev.r,p.id+' non-ELITE ratings modified');
   assert.equal(p.position,prev.position,p.id+' non-ELITE position changed');
   assert.deepEqual(Array.from(p.secondaryPositions),prev.secondaryPositions,p.id+' non-ELITE secondary changed');
-  if(p.careerTier!=='STALWART')assert.equal(final.overall,ovr.compute({...final,r:prev.r,position:prev.position}),p.id+' non-ELITE/non-STALWART OVR changed');
+  if(tierOf(p)!=='STALWART'&&!ovr.REVIEW_OVERRIDES[p.id])assert.equal(final.overall,ovr.compute({...final,r:prev.r,position:prev.position}),p.id+' non-ELITE/non-STALWART OVR changed');
  }
 }
 assert.equal(changed,67);
@@ -66,5 +70,5 @@ assert.equal(byId.get('juan-carlos-valeron').overall,87);
 assert.equal(byId.get('alex-de-souza').overall,86);
 assert.equal(byId.get('sinisa-mihajlovic').overall,85);
 assert.equal(byId.get('trent-alexander-arnold').overall,88);
-for(const [tier,num] of Object.entries({TITAN:30,LEGEND:69,ELITE:67,STALWART:18}))assert.equal(result.filter(x=>x.careerTier===tier).length,num);
-console.log('PASS ELITE-67 OWNER-APPROVED: 67/67 exact formula OVR, unchanged 117 players, 27 archetypes, zero per-player OVR overrides; Okocha LEGEND, tiers intact.');
+for(const [tier,num] of Object.entries({TITAN:30,LEGEND:69,ELITE:67,STALWART:18}))assert.equal(result.filter(x=>tierOf(x)===tier).length,num);
+console.log('PASS ELITE-67 OWNER-APPROVED: 67/67 exact formula OVR, unchanged 117 players, 27 archetypes, only the 16 owner-reviewed display corrections (no ELITE); Okocha LEGEND, tiers intact.');

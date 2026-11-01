@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="450" viewBox="0 0 300 450" role="img" aria-labelledby="title desc">
+    <title id="title">THE CAGE — LEGEND base model</title><desc id="desc">Reusable LEGEND frame with neutral placeholder shirt and identity slots. No real player data.</desc>
+    <defs>
+ <linearGradient id="paper" x2=".8" y2="1"><stop stop-color="#fff5d9" /><stop offset="1" stop-color="#d8cdb2" /></linearGradient>
+ <linearGradient id="copper" x2="1" y2="1"><stop stop-color="#f1c39b" /><stop offset=".24" stop-color="#9c5734" /><stop offset=".5" stop-color="#e6b98b" /><stop offset=".8" stop-color="#75412c" /><stop offset="1" stop-color="#c68d60" /></linearGradient>
+ <linearGradient id="silver" x2="1" y2=".8"><stop stop-color="#f4ffff" /><stop offset=".25" stop-color="#6c8ba4" /><stop offset=".5" stop-color="#e6f6ff" /><stop offset=".75" stop-color="#7692ad" /><stop offset="1" stop-color="#d8f2ff" /></linearGradient>
+ <linearGradient id="gold" x2=".8" y2="1"><stop stop-color="#ffedb1" /><stop offset=".22" stop-color="#ae7c2b" /><stop offset=".45" stop-color="#f5d785" /><stop offset=".7" stop-color="#95651f" /><stop offset="1" stop-color="#e9c36e" /></linearGradient>
+ <linearGradient id="foil" x2="1" y2="1"><stop stop-color="#a8f4ec" /><stop offset=".25" stop-color="#8d9ed9" /><stop offset=".48" stop-color="#f6dfb3" /><stop offset=".65" stop-color="#c39ece" /><stop offset=".82" stop-color="#6ab6cd" /><stop offset="1" stop-color="#d8f9eb" /></linearGradient>
+ <radialGradient id="chamber"><stop stop-color="#476275" /><stop offset=".7" stop-color="#1b3045" /><stop offset="1" stop-color="#101d2b" /></radialGradient>
+ <linearGradient id="shirt" x2=".8" y2="1"><stop stop-color="#f4f4e9" /><stop offset=".4" stop-color="#d4d8d3" /><stop offset="1" stop-color="#9ca9aa" /></linearGradient>
+ <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".45" fill="#504c39" opacity=".2" /><circle cx="4" cy="4" r=".3" fill="#504c39" opacity=".15" /></pattern>
+ <pattern id="brush" width="40" height="4" patternUnits="userSpaceOnUse"><path d="M0 1H40" stroke="#fff2d0" stroke-width=".5" opacity=".18" /></pattern>
+ <pattern id="halftone" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".7" fill="currentColor" opacity=".13" /></pattern>
+ <linearGradient id="legendPlate" x2=".2" y2="1"><stop stop-color="#fff0ba" /><stop offset=".44" stop-color="#edd18a" /><stop offset="1" stop-color="#c49a48" /></linearGradient>
+ <linearGradient id="legendBead" x2="1" y2="1"><stop stop-color="#fff8d6" /><stop offset=".45" stop-color="#f0cf7c" /><stop offset="1" stop-color="#a97a27" /></linearGradient>
+ <radialGradient id="legendGlow"><stop stop-color="#fff3bd" stop-opacity=".75" /><stop offset=".55" stop-color="#f3cf72" stop-opacity=".22" /><stop offset="1" stop-color="#b98727" stop-opacity="0" /></radialGradient>
+<clipPath id="shirt-cut"><path d="M47 25L69 13Q90 24 111 13L133 25L158 56L139 74L126 60V138H54V60L41 74L22 56Z" /></clipPath><pattern id="shirt-fabric" width="2.5" height="2.5" patternUnits="userSpaceOnUse"><path d="M0 .6H2.5M.6 0V2.5" stroke="#4b6570" stroke-width=".3" opacity=".12" /></pattern><linearGradient id="shirt-volume" x1="0" y1="0" x2="1" y2=".7"><stop offset="0" stop-color="#fff" stop-opacity="0.42" /><stop offset=".28" stop-color="#fff" stop-opacity="0.05" /><stop offset=".72" stop-color="#17313c" stop-opacity="0.03" /><stop offset="1" stop-color="#17313c" stop-opacity="0.23" /></linearGradient></defs>
+<path data-part="card-depth" d="M6 82Q6 6 152 6Q298 6 298 82V445H6Z" fill="#160f02" opacity=".32" />
+<path data-part="card-depth" d="M2 78Q2 2 148 2Q294 2 294 78V441H2Z" fill="#9d7426" opacity=".38" />
+<g data-part="frame"><path d="M4 80Q4 4 150 4Q296 4 296 80V443H4Z" fill="url(#gold)" />
+  <path d="M14 84Q14 15 150 15Q286 15 286 84V433H14Z" fill="#f0dfad" stroke="#79551f" />
+  <path d="M21 87Q21 23 150 23Q279 23 279 87V426H21Z" fill="none" stroke="#a47c33" />
+  <path d="M36 177Q36 77 150 77Q264 77 264 177V275H36Z" fill="#b58a3c" stroke="#866124" stroke-width="2" />
+  <path d="M43 177Q43 84 150 84Q257 84 257 177V268H43Z" fill="#d5b866" stroke="#fff1bd" />
+  <path d="M150 90V269M86 107L167 269M214 107L133 269M47 182L257 253M253 182L43 253" stroke="#ffe9a7" opacity=".25" />
+  <path d="M49 260Q19 198 53 144M251 260Q281 198 247 144" stroke="#f7df93" stroke-width="2" fill="none" />
+  <g fill="#f8e3a5"><path d="M43 246Q24 237 34 223Q48 229 43 246Z M38 220Q22 208 35 197Q48 206 38 220Z M41 192Q28 178 43 170Q53 181 41 192Z M257 246Q276 237 266 223Q252 229 257 246Z M262 220Q278 208 265 197Q252 206 262 220Z M259 192Q272 178 257 170Q247 181 259 192Z" /></g>
+  <path d="M43 338Q150 345 257 338" fill="none" stroke="#ae8435" stroke-width=".8" />
+  <path d="M36 371L46 381L36 391L26 381Z M264 371L274 381L264 391L254 381Z" fill="none" stroke="#aa8032" />
+  <path d="M137 32L143 39L150 27L157 39L163 32L160 44H140Z" fill="#a57b2d" /><g data-part="signature-finish"><path d="M47 276Q150 281 253 276" fill="none" stroke="#9d701e" stroke-width="2" /><path d="M55 280Q150 284 245 280" fill="none" stroke="#fff0af" stroke-width="1" /><path d="M145 28L150 18L155 28L150 38Z" fill="#fff2b2" stroke="#9d722a" /><path d="M58 342Q150 355 242 342" fill="none" stroke="#b07e24" stroke-width="1.5" /><circle cx="150" cy="418" r="8" fill="none" stroke="#997327" stroke-width="1" /><path d="M150 412L153 418L150 424L147 418Z" fill="#996b22" /></g></g>
+<g data-part="card-ornament" aria-hidden="true">
+  <path d="M111 39Q150 26 189 39V59Q150 67 111 59Z" fill="url(#legendPlate)" stroke="#8a6424" stroke-width=".9" />
+  <path d="M116 42Q150 31 184 42V55Q150 62 116 55Z" fill="none" stroke="#fff2bd" stroke-width=".55" opacity=".9" />
+  <path d="M137 30L143 37L150 25L157 37L163 30L160 42H140Z" fill="url(#legendBead)" stroke="#7f5a1b" stroke-width=".6" />
+  <path d="M103 47Q91 48 86 57Q96 55 103 53M197 47Q209 48 214 57Q204 55 197 53" fill="none" stroke="#b58a39" stroke-width=".8" />
+  <circle cx="101" cy="48" r="1.6" fill="#f6dc94" stroke="#9d752a" stroke-width=".45" /><circle cx="199" cy="48" r="1.6" fill="#f6dc94" stroke="#9d752a" stroke-width=".45" />
+  <circle cx="257" cy="88" r="22" fill="url(#legendPlate)" stroke="#7f5a1b" stroke-width="1" />
+  <circle cx="257" cy="88" r="18" fill="none" stroke="#fff2bd" stroke-width=".7" />
+  <circle cx="257" cy="88" r="15" fill="none" stroke="#9d752a" stroke-width=".45" stroke-dasharray="1.4 2.2" />
+  <g fill="#f7e3a5" stroke="#9b7329" stroke-width=".45"><circle cx="257" cy="64" r="2" /><circle cx="257" cy="112" r="2" /><circle cx="233" cy="88" r="2" /><circle cx="281" cy="88" r="2" /></g>
+  <path d="M56 78Q150 60 244 78" fill="none" stroke="#fff0ad" stroke-width=".7" opacity=".8" />
+  <path d="M45 91Q150 71 255 91" fill="none" stroke="#9f772c" stroke-width=".45" opacity=".65" />
+  <path d="M42 172Q42 83 150 83Q258 83 258 172" fill="none" stroke="#fff2b0" stroke-width=".75" opacity=".85" />
+  <g fill="#f7e1a0" stroke="#956d25" stroke-width=".45"><path d="M48 90L54 96L48 102L42 96Z" /><path d="M252 90L258 96L252 102L246 96Z" /><path d="M45 263L51 269L45 275L39 269Z" /><path d="M255 263L261 269L255 275L249 269Z" /></g>
+  <g opacity=".9"><circle cx="48" cy="94" r="1.5" fill="#fff6ca" /><circle cx="252" cy="94" r="1.5" fill="#fff6ca" /><circle cx="45" cy="266" r="1.4" fill="#fff6ca" /><circle cx="255" cy="266" r="1.4" fill="#fff6ca" /></g>
+  <path d="M37 301Q27 316 32 338Q25 352 34 371M263 301Q273 316 268 338Q275 352 266 371" fill="none" stroke="#c39a45" stroke-width=".8" />
+  <g fill="#f4d989" stroke="#a47b2e" stroke-width=".4"><circle cx="33" cy="309" r="1.7" /><circle cx="33" cy="326" r="1.7" /><circle cx="29" cy="347" r="1.7" /><circle cx="32" cy="363" r="1.7" /><circle cx="267" cy="309" r="1.7" /><circle cx="267" cy="326" r="1.7" /><circle cx="271" cy="347" r="1.7" /><circle cx="268" cy="363" r="1.7" /></g>
+  <text x="18" y="350" transform="rotate(-90 18 350)" text-anchor="middle" font-family="Arial" font-size="4.8" letter-spacing="1.7" fill="#8b6523" opacity=".8">HERITAGE MEDALLION · 04</text>
+  <path d="M219 393H273V414H219Z" fill="#d4b162" stroke="#805b1d" stroke-width=".8" />
+  <path d="M222 396H270M222 410H264" stroke="#fff0b3" stroke-width=".5" opacity=".8" />
+  <text x="246" y="407" text-anchor="middle" font-family="Arial" font-size="5" letter-spacing="1.1" fill="#5b4113">HALL / 04</text>
+  <path d="M213 403L219 397M273 397L279 403" stroke="#b48a37" stroke-width=".7" />
+  <path d="M109 414H191V434H109Z" fill="#ecd794" stroke="#916a24" stroke-width=".7" />
+  <path d="M112 417H188M112 431H188" stroke="#fff1b9" stroke-width=".45" opacity=".8" />
+  <path d="M96 424L104 419M196 419L204 424M196 429L204 424M104 429L96 424" fill="none" stroke="#b08734" stroke-width=".7" />
+  <circle cx="150" cy="437" r="2" fill="#f4d989" stroke="#916a24" stroke-width=".45" />
+</g>
+<g data-part="shirt" transform="translate(46 93) scale(1.16)"><path d="M47 31L69 19Q90 30 111 19L133 31L158 62L139 80L126 66V144H54V66L41 80L22 62Z" fill="#081b25" opacity=".22" />
+    <path d="M47 25L69 13Q90 24 111 13L133 25L158 56L139 74L126 60V138H54V60L41 74L22 56Z" fill="url(#shirt)" stroke="#4b6069" stroke-width="1.2" />
+    <g clip-path="url(#shirt-cut)">
+      <path d="M78 23Q90 27 102 23V138H78Z" fill="#72868d" opacity=".48" />
+      <path d="M111 13L133 25L126 60V138H110Q119 79 111 13Z" fill="#243f4b" opacity=".12" />
+      <path d="M48 27L62 23L60 137H55V60L42 73L34 65Z" fill="#fff" opacity=".15" />
+      <rect x="20" y="10" width="140" height="130" fill="url(#shirt-fabric)" />
+      <path d="M47 25L69 13Q90 24 111 13L133 25L158 56L139 74L126 60V138H54V60L41 74L22 56Z" fill="url(#shirt-volume)" />
+      <path d="M60 70Q67 95 62 117M121 71Q114 98 120 119M67 124Q90 120 115 125" fill="none" stroke="#607681" stroke-width="1" opacity=".34" />
+      <path d="M63 73Q70 95 66 113M117 76Q112 97 116 115" fill="none" stroke="#fff" stroke-width="1.1" opacity=".3" />
+    </g>
+    <path d="M69 13L90 37L111 13L107 14L90 30L73 14Z" fill="#e7edeb" stroke="#5f747c" stroke-width=".9" />
+    <path d="M47 25L54 60M133 25L126 60" fill="none" stroke="#5e737b" stroke-width="1.1" />
+    <path d="M56 131H124M28 53L43 67M137 67L152 53" fill="none" stroke="#ebf1ed" stroke-width="1.8" opacity=".7" />
+    <path d="M56 134H124M30 56L42 68M138 68L150 56" fill="none" stroke="#71858c" stroke-width=".65" stroke-dasharray="1.4 1.5" />
+    <path d="M107 49L114 53V61L107 66L100 61V53Z" fill="#dce2dc" stroke="#627780" stroke-width=".8" />
+    <path d="M104 54L107 52L110 54V60L107 62L104 60Z" fill="none" stroke="#9fadb0" stroke-width=".6" /></g><g data-part="card-nameplate" aria-hidden="true">
+  <path d="M35 286Q150 277 265 286V308Q150 316 35 308Z" fill="url(#legendPlate)" stroke="#8a6424" stroke-width=".9" />
+  <path d="M39 289Q150 281 261 289V304Q150 311 39 304Z" fill="none" stroke="#fff2bd" stroke-width=".55" opacity=".9" />
+  <path d="M35 286Q150 277 265 286" fill="none" stroke="#a87d2c" stroke-width="1.2" />
+  <g fill="#f6dd98" stroke="#9d752a" stroke-width=".45"><circle cx="42" cy="288" r="2" /><circle cx="258" cy="288" r="2" /><circle cx="42" cy="306" r="2" /><circle cx="258" cy="306" r="2" /></g>
+</g>
+<g font-family="Arial, sans-serif" fill="#543b18" font-weight="800" data-part="identity"><text x="150" y="55" text-anchor="middle" font-size="15" letter-spacing="3">LEGEND</text>
+      <text x="257" y="91" text-anchor="middle" font-size="27">—</text>
+      <text x="257" y="104" text-anchor="middle" font-size="7" letter-spacing="1.5">OVR</text>
+      <text data-field="name" x="150" y="302" text-anchor="middle" font-family="Georgia, serif" font-size="20.5" font-weight="900" letter-spacing=".3">PLAYER NAME</text><rect data-part="nationality-plate" x="43" y="314" width="214" height="20" rx="2" fill="#efe0b2" opacity=".96" /><text data-field="nationality" x="150" y="328" text-anchor="middle" font-size="10.4" letter-spacing=".7" font-weight="600">POSITION · COUNTRY</text><path d="M43 342H257" stroke="#b08b42" stroke-width=".65" opacity=".65" /><g data-part="primary-style-slot"><rect x="76" y="349" width="148" height="27" rx="2" fill="#efe0b2" stroke="#b08b42" stroke-width=".65" fill-opacity=".65" /><path d="M89 356L96 360V367L89 371L82 367V360Z" fill="none" stroke="#543b18" stroke-width="1" /><text x="157" y="367" text-anchor="middle" font-size="10.1" letter-spacing=".5" font-weight="800">PRIMARY TRAIT</text></g><g data-part="secondary-style-slot"><circle cx="102" cy="389" r="3.3" fill="none" stroke="#b08b42" stroke-width=".8" /><text x="159" y="392" text-anchor="middle" font-size="8.8" letter-spacing=".6" font-weight="600" opacity=".86">SECONDARY TRAIT</text></g><text x="150" y="425" text-anchor="middle" font-size="7" letter-spacing="3" font-weight="600">T H E  C A G E</text></g></svg>

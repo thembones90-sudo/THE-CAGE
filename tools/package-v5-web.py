@@ -11,10 +11,15 @@ canonical=canonical[:canonical.index("src/showdown.js")]
 assert scripts[:len(canonical)]==canonical,"Playable scripts differ from canonical 194-player game. Run tools/sync-v53-game.py and review."
 assert "src/roster-182.js" in scripts
 styles=re.findall(r'<link\s+rel="stylesheet"\s+href="([^"]+)"',html)
-assets={"play.html","draft.html","src/random-draft.js","src/cpu-draft.js","src/war-room.js","design/qwen-v67-gk-cards.css","design/qwen-v67-integration.css","design/v68-gk-legends.css","src/keeper-card-ui.js","src/keeper-draft.js","src/goalkeepers.js","src/tactics/goalkeeper-rules.js","src/cage-engine-v66.js","src/cage-engine-v68.js","src/cage-engine-v69.js","src/cage-engine-v610.js","src/cage-engine-v611.js","src/cage-engine-v612.js","src/goalkeepers-gk30.js","src/cage-engine-draft.js","manifest.webmanifest","assets/cage-icon.svg","sw.js",
+assets={"src/draft-cards.js","design/sticker-cards.css","play.html","draft.html","src/random-draft.js","src/cpu-draft.js","src/war-room.js","design/qwen-v67-gk-cards.css","design/qwen-v67-integration.css","design/v68-gk-legends.css","src/keeper-card-ui.js","src/keeper-draft.js","src/goalkeepers.js","src/tactics/goalkeeper-rules.js","src/cage-engine-v66.js","src/cage-engine-v68.js","src/cage-engine-v69.js","src/cage-engine-v610.js","src/cage-engine-v611.js","src/cage-engine-v612.js","src/goalkeepers-gk30.js","src/cage-engine-draft.js","manifest.webmanifest","assets/cage-icon.svg","sw.js",
  "design/qwen-30b/arena/arena.svg","design/qwen-30b/arena/arena-golden.svg",
  "design/qwen-30b/arena/relic-ball.svg"}
 assets.update(scripts);assets.update(styles)
+# Everything the draft page (the main game) loads, including the approved recruits and draft cards.
+assets.update(re.findall(r'<script\s+src="(src/[^"]+)"\s*></script>',(root/"draft.html").read_text(encoding="utf-8-sig")))
+# Reusable five-tier model preview and nationality artwork are available offline.
+assets.update({'src/national-flags.js','src/tier-card-models.js'})
+assets.update(p.relative_to(root).as_posix() for folder in ['design/tier-models','assets/flags'] for p in (root/folder).rglob('*') if p.is_file())
 # Bundle immutable V5.6 Classic resources for historical save playback.
 assets.update(p.relative_to(root).as_posix() for p in (root/'classic-v56').rglob('*') if p.is_file() and p.name!='full-v56-archive-e2e.html')
 for rel in assets:

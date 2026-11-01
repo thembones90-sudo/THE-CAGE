@@ -1,0 +1,391 @@
+{
+  "upstream": "https://github.com/hampusborgos/country-flags",
+  "revision": "c09927e63705529bbf59ca6684cd9b23225dddad",
+  "assets": {
+    "ar": {
+      "sha256": "ecdd45e5a779592f59b4f833b20bc2c5979d480edf70ff3ed4d941b36866a7f9",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/ar.svg",
+      "viewBox": "0 0 800 500",
+      "width": null,
+      "height": null
+    },
+    "au": {
+      "sha256": "bd6f1a9373e02ac0f0ae46622e60e752b408a2183d7ea40dd575f901e869aed5",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/au.svg",
+      "viewBox": "0 0 10080 5040",
+      "width": null,
+      "height": null
+    },
+    "ba": {
+      "sha256": "1c097dff94ee5da3f2ec073c2a6700bfe7d85699fd6eef6f2a690f5268e7d605",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/ba.svg",
+      "viewBox": "0 0 16 8",
+      "width": null,
+      "height": null
+    },
+    "be": {
+      "sha256": "cedd0a665a0ab17ba183e8e41694e097db4c9c1c06040ed62924ca9292f24e4e",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/be.svg",
+      "viewBox": "0 0 45 39",
+      "width": null,
+      "height": null
+    },
+    "bg": {
+      "sha256": "345bc76ab317872c76a1192949d8ca9e4f562e9fe22c808785b770fe4d4fa105",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/bg.svg",
+      "viewBox": "0 0 5 3",
+      "width": null,
+      "height": null
+    },
+    "br": {
+      "sha256": "f3ec9e5b04044212720816960b6d269be2bc1cd127ccadf4cefb131036c78e6e",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/br.svg",
+      "viewBox": "-2100 -1470 4200 2940",
+      "width": null,
+      "height": null
+    },
+    "cd": {
+      "sha256": "bb659cd27a4bb065b2262ce406e9a0e5f1bf8c4e4c2e6e62b11a001d66efdf55",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/cd.svg",
+      "viewBox": "0 0 800 600",
+      "width": null,
+      "height": null
+    },
+    "ch": {
+      "sha256": "4c6adad3941f5a3188b3bcf3a64f9ab6b351c504f5b7c4d01548c74e72fa5149",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/ch.svg",
+      "viewBox": "0 0 32 32",
+      "width": null,
+      "height": null
+    },
+    "ci": {
+      "sha256": "d7f52c57bf9da6a6e63268a410bd597062374d1582280e37b4c46a4c523a3bfa",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/ci.svg",
+      "viewBox": "0 0 3 2",
+      "width": null,
+      "height": null
+    },
+    "cl": {
+      "sha256": "bac827bc619f621335f34ebdd4ecb5c9d6fddae8a980eb108aa9e22a446c9be3",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/cl.svg",
+      "viewBox": "-4 -4 24 16",
+      "width": null,
+      "height": null
+    },
+    "cm": {
+      "sha256": "7dededfb0347d1ca4f5b2e45673313d33066a7cdd806cf4671967b4b900481e2",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/cm.svg",
+      "viewBox": "0 0 90 60",
+      "width": null,
+      "height": null
+    },
+    "co": {
+      "sha256": "6de08e626dc2dfe251b8e2a149b6c4dea90e283f9a08edc9509fc33a4347fc73",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/co.svg",
+      "viewBox": "0 0 6 4",
+      "width": null,
+      "height": null
+    },
+    "cr": {
+      "sha256": "271e538f8cee5b2a605ef121e5a7067136d96c96e78266466b8bf9e66ddbdfd9",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/cr.svg",
+      "viewBox": "0 0 1000 600",
+      "width": null,
+      "height": null
+    },
+    "cz": {
+      "sha256": "a71bcb7e97223bdca2ff6105c4e261e96eaed1009d6326c404abe20011ed7dad",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/cz.svg",
+      "viewBox": "0 0 900 600",
+      "width": null,
+      "height": null
+    },
+    "de": {
+      "sha256": "2a4fa7f09552fdb73936549ee0e77c22f16594dd1a370245ce34132e6bb483d5",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/de.svg",
+      "viewBox": "0 0 5 3",
+      "width": null,
+      "height": null
+    },
+    "dk": {
+      "sha256": "dc4827058fb343b6fa6383fb5e3471f4ab744a82d0f6ec9d895e8ce5d2a969ff",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/dk.svg",
+      "viewBox": "0 0 370 280",
+      "width": null,
+      "height": null
+    },
+    "dz": {
+      "sha256": "de1442010432e1da1a1d3b08ca33a2057052aedcb66a88541d05bc44467a5c06",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/dz.svg",
+      "viewBox": "0 0 900 600",
+      "width": null,
+      "height": null
+    },
+    "ec": {
+      "sha256": "f6f0389ea432698999e82ad40917c06369c569d8abec100292d5c2142271fc53",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/ec.svg",
+      "viewBox": "0 0 1440 960",
+      "width": null,
+      "height": null
+    },
+    "eg": {
+      "sha256": "f157fdd22af1847ce1751c94bcb952ceb48e85ff459c922300ca28a6e633ce79",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/eg.svg",
+      "viewBox": "0 0 900 600",
+      "width": null,
+      "height": null
+    },
+    "es": {
+      "sha256": "e6ce1922eba61c4ac26f70845b8c54ff8f29e33ef64aa35a150c719c07f76ef3",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/es.svg",
+      "viewBox": "0 0 750 500",
+      "width": null,
+      "height": null
+    },
+    "fi": {
+      "sha256": "2f57f5b4ec3968d3127d25c1ba8973b593df0bfa8171a12d7c9f399a038ca071",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/fi.svg",
+      "viewBox": "0 0 1800 1100",
+      "width": null,
+      "height": null
+    },
+    "fr": {
+      "sha256": "7504bdf1bc9b381f89b44828e048e3d2aaa3c89e68aafbac13fe30998ad121f2",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/fr.svg",
+      "viewBox": "0 0 3 2",
+      "width": null,
+      "height": null
+    },
+    "gb-eng": {
+      "sha256": "32079efdded38df7c2a0956f73f32c42402e3e834e42cf343768833787ef98e0",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/gb-eng.svg",
+      "viewBox": "0 0 25 15",
+      "width": null,
+      "height": null
+    },
+    "gb-sct": {
+      "sha256": "4d7bcc93e461af9a7e3ec2b3e5f0856858ff591b7d01066a96a1172116a38497",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/gb-sct.svg",
+      "viewBox": "0 0 5 3",
+      "width": null,
+      "height": null
+    },
+    "gb-wls": {
+      "sha256": "cd9e84648e0d0bd9faa8b18db1a65e2604dcbffac3b056fd4b660989e5a37b17",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/gb-wls.svg",
+      "viewBox": "0 0 830 498",
+      "width": null,
+      "height": null
+    },
+    "gh": {
+      "sha256": "a5bd06898354acf1bce84ba5ae602181520d07bcac8e0e107f1688af7f185ab5",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/gh.svg",
+      "viewBox": "0 0 450 300",
+      "width": null,
+      "height": null
+    },
+    "hr": {
+      "sha256": "ecd619e1013f1de98ab10d4693d8d17ff1924494c099aaef02b0700636b51339",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/hr.svg",
+      "viewBox": "0 0 1200 600",
+      "width": null,
+      "height": null
+    },
+    "ie": {
+      "sha256": "82847f565fd12516c8f53fb6a46e9e0e85b477f8a9a307d49fc72e441995327f",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/ie.svg",
+      "viewBox": "0 0 6 3",
+      "width": null,
+      "height": null
+    },
+    "it": {
+      "sha256": "15777a0dc5a5dd8af5d75deacec27d2d6dab190aa7295d61db601a28a71b5c6f",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/it.svg",
+      "viewBox": "0 0 3 2",
+      "width": null,
+      "height": null
+    },
+    "jp": {
+      "sha256": "3ecfe5fb326152e5a1270206b34825cb6ecb71f02f5ffdbb0a905474a1c2ed0d",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/jp.svg",
+      "viewBox": "0 0 900 600",
+      "width": null,
+      "height": null
+    },
+    "kr": {
+      "sha256": "cc39b7490a894db19113b999831ebf252e1043516c31b4af0fcf4d95e11b15cd",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/kr.svg",
+      "viewBox": "-36 -24 72 48",
+      "width": null,
+      "height": null
+    },
+    "lr": {
+      "sha256": "69db91bd9390b9fa690c6ac9e2fb3a8fbf60e82ae00ebd3d2be2c43e8ffe7ab4",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/lr.svg",
+      "viewBox": "0 0 209 110",
+      "width": null,
+      "height": null
+    },
+    "ma": {
+      "sha256": "bde8b96d19af8ffbe3d5e861f019385b728233cb0e43a7880cf55d72416e29b6",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/ma.svg",
+      "viewBox": "0 0 9 6",
+      "width": null,
+      "height": null
+    },
+    "me": {
+      "sha256": "699a6eeb24d29d413543c6f9d5b86d5858a43ba0202e9840ce73e2b5c810f864",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/me.svg",
+      "viewBox": "0 0 640 320",
+      "width": null,
+      "height": null
+    },
+    "mk": {
+      "sha256": "7d69a93b4da13040879b5b387fc8b4ede87d20f0dd8647353849b7e6e5747629",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/mk.svg",
+      "viewBox": "-140 -70 280 140",
+      "width": null,
+      "height": null
+    },
+    "mx": {
+      "sha256": "0c57c70b48c496060fdf81230870a860011901720c0788f1e838b320c8f13f47",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/mx.svg",
+      "viewBox": "0 0 980 560",
+      "width": null,
+      "height": null
+    },
+    "ng": {
+      "sha256": "e57d72a09cc42bfe39a62df27be30e1455701fc84955e36be5166ff1e8ced0f1",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/ng.svg",
+      "viewBox": "0 0 6 3",
+      "width": null,
+      "height": null
+    },
+    "nl": {
+      "sha256": "0d04d9eadc49c5514881c1c3f7c465a10a37ead378bc5e61cf96fdfcb3599e54",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/nl.svg",
+      "viewBox": "0 0 9 6",
+      "width": null,
+      "height": null
+    },
+    "no": {
+      "sha256": "24aea913a6dee250a7d34a85ecc449169ebb51b7bca3e93e8c7d0484ee5dedb8",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/no.svg",
+      "viewBox": "0 0 22 16",
+      "width": null,
+      "height": null
+    },
+    "pe": {
+      "sha256": "03ea831319ec33cf48d9ef1bcd2d659a983cb7a54e4d407fa8fa027a92261dc1",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/pe.svg",
+      "viewBox": "0 0 900 600",
+      "width": null,
+      "height": null
+    },
+    "pl": {
+      "sha256": "608e5ed6a0820b02ac00e5ee7457a9822b5e5c1be9cba69d17c5a3e9ca4a4377",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/pl.svg",
+      "viewBox": "0 0 16 10",
+      "width": null,
+      "height": null
+    },
+    "pt": {
+      "sha256": "0cee5f059ba5f2c6fbdbfdd682d955f7695239a40fa9300ba99ccbe3f144565a",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/pt.svg",
+      "viewBox": "0 0 600 400",
+      "width": null,
+      "height": null
+    },
+    "py": {
+      "sha256": "e632a93f6e3e0288f8c2fd695b258d2afcea581c84f57cd8a3830ba32fe78ed5",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/py.svg",
+      "viewBox": "0 0 1200 660",
+      "width": null,
+      "height": null
+    },
+    "ro": {
+      "sha256": "ea3e3c17cfd414a403313ddc73a62a264cbc205d962214e272321566e0d78ce8",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/ro.svg",
+      "viewBox": "0 0 3 2",
+      "width": null,
+      "height": null
+    },
+    "rs": {
+      "sha256": "a985cc8f262e923dc1d83eeff6c495281bdb4f8ce6df38ccaa1e0f94e2cdb3c1",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/rs.svg",
+      "viewBox": "0 0 756.13 504.09",
+      "width": null,
+      "height": null
+    },
+    "ru": {
+      "sha256": "d3186a06e97966a28552e0134f08ffd6e30fb7325bd2d8b27c235193ed24fdf1",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/ru.svg",
+      "viewBox": "0 0 9 6",
+      "width": null,
+      "height": null
+    },
+    "se": {
+      "sha256": "1d7c3fc0594c8fb856d9fd0a13a752dfaf8643c8b073582909c88be24e7e416f",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/se.svg",
+      "viewBox": "0 0 16 10",
+      "width": null,
+      "height": null
+    },
+    "si": {
+      "sha256": "cb5fec5ac8527646e5e4afe2896b2bf6b978555ade411edc50d512ad296d6936",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/si.svg",
+      "viewBox": "0 0 12 6",
+      "width": null,
+      "height": null
+    },
+    "sn": {
+      "sha256": "703cc723bb89d12763271eaf19d3b927d12ebded09ee9408bf4b5704ab946117",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/sn.svg",
+      "viewBox": "0 0 900 600",
+      "width": null,
+      "height": null
+    },
+    "tr": {
+      "sha256": "03054d924491c213d26b12f6663d33481b1b4018caaa0c86e07d72846ce980d2",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/tr.svg",
+      "viewBox": "0 0 12 8",
+      "width": null,
+      "height": null
+    },
+    "tt": {
+      "sha256": "3899dfac3d4383b59a7e2817fcc99ad6fde428b6990a339aea6be4d1ceb7ac23",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/tt.svg",
+      "viewBox": "0 0 30 18",
+      "width": null,
+      "height": null
+    },
+    "ua": {
+      "sha256": "8b72b27e5bb712f269e28182fd85175175b65ebf8fd31fbff8e255a0058c54b9",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/ua.svg",
+      "viewBox": "0 0 3 2",
+      "width": null,
+      "height": null
+    },
+    "us": {
+      "sha256": "6b234bd17b00d498ac8d1c645a00025817e624641289fe4faec164c52eb43f20",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/us.svg",
+      "viewBox": "0 0 7410 3900",
+      "width": null,
+      "height": null
+    },
+    "uy": {
+      "sha256": "70a7ec0a17d0d950de791f23e550175d1265fb120dcc66ec691ad40410508717",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/uy.svg",
+      "viewBox": "-5 -5 945 630",
+      "width": null,
+      "height": null
+    },
+    "ve": {
+      "sha256": "ec24f2dce147ca51112c7825ffa1ca6c00845ad95d0447f5c0a945cedf8cc358",
+      "source": "https://raw.githubusercontent.com/hampusborgos/country-flags/c09927e63705529bbf59ca6684cd9b23225dddad/svg/ve.svg",
+      "viewBox": "0 0 180 120",
+      "width": null,
+      "height": null
+    }
+  }
+}

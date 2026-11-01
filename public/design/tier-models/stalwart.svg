@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="450" viewBox="0 0 300 450" role="img" aria-labelledby="title desc">
+    <title id="title">THE CAGE — STALWART base model</title><desc id="desc">Reusable STALWART frame with neutral placeholder shirt and identity slots. No real player data.</desc>
+    <defs>
+ <linearGradient id="paper" x2=".8" y2="1"><stop stop-color="#fff5d9" /><stop offset="1" stop-color="#d8cdb2" /></linearGradient>
+ <linearGradient id="copper" x2="1" y2="1"><stop stop-color="#f1c39b" /><stop offset=".24" stop-color="#9c5734" /><stop offset=".5" stop-color="#e6b98b" /><stop offset=".8" stop-color="#75412c" /><stop offset="1" stop-color="#c68d60" /></linearGradient>
+ <linearGradient id="silver" x2="1" y2=".8"><stop stop-color="#f4ffff" /><stop offset=".25" stop-color="#6c8ba4" /><stop offset=".5" stop-color="#e6f6ff" /><stop offset=".75" stop-color="#7692ad" /><stop offset="1" stop-color="#d8f2ff" /></linearGradient>
+ <linearGradient id="gold" x2=".8" y2="1"><stop stop-color="#ffedb1" /><stop offset=".22" stop-color="#ae7c2b" /><stop offset=".45" stop-color="#f5d785" /><stop offset=".7" stop-color="#95651f" /><stop offset="1" stop-color="#e9c36e" /></linearGradient>
+ <linearGradient id="foil" x2="1" y2="1"><stop stop-color="#a8f4ec" /><stop offset=".25" stop-color="#8d9ed9" /><stop offset=".48" stop-color="#f6dfb3" /><stop offset=".65" stop-color="#c39ece" /><stop offset=".82" stop-color="#6ab6cd" /><stop offset="1" stop-color="#d8f9eb" /></linearGradient>
+ <radialGradient id="chamber"><stop stop-color="#476275" /><stop offset=".7" stop-color="#1b3045" /><stop offset="1" stop-color="#101d2b" /></radialGradient>
+ <linearGradient id="shirt" x2=".8" y2="1"><stop stop-color="#f4f4e9" /><stop offset=".4" stop-color="#d4d8d3" /><stop offset="1" stop-color="#9ca9aa" /></linearGradient>
+ <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".45" fill="#504c39" opacity=".2" /><circle cx="4" cy="4" r=".3" fill="#504c39" opacity=".15" /></pattern>
+ <pattern id="brush" width="40" height="4" patternUnits="userSpaceOnUse"><path d="M0 1H40" stroke="#fff2d0" stroke-width=".5" opacity=".18" /></pattern>
+ <pattern id="halftone" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".7" fill="currentColor" opacity=".13" /></pattern>
+ <radialGradient id="rivet" cx=".34" cy=".28" r=".82"><stop stop-color="#ffe3bf" /><stop offset=".38" stop-color="#c1855c" /><stop offset=".76" stop-color="#8a5537" /><stop offset="1" stop-color="#40251b" /></radialGradient>
+ <linearGradient id="stalePlate" x2=".4" y2="1"><stop stop-color="#d8a879" /><stop offset=".48" stop-color="#bd865c" /><stop offset="1" stop-color="#8d5738" /></linearGradient>
+ <radialGradient id="patina"><stop stop-color="#5f9b84" stop-opacity=".28" /><stop offset="1" stop-color="#5f9b84" stop-opacity="0" /></radialGradient>
+<clipPath id="shirt-cut"><path d="M47 25L69 13Q90 24 111 13L133 25L158 56L139 74L126 60V138H54V60L41 74L22 56Z" /></clipPath><pattern id="shirt-fabric" width="2.5" height="2.5" patternUnits="userSpaceOnUse"><path d="M0 .6H2.5M.6 0V2.5" stroke="#4b6570" stroke-width=".3" opacity=".12" /></pattern><linearGradient id="shirt-volume" x1="0" y1="0" x2="1" y2=".7"><stop offset="0" stop-color="#fff" stop-opacity="0.42" /><stop offset=".28" stop-color="#fff" stop-opacity="0.05" /><stop offset=".72" stop-color="#17313c" stop-opacity="0.03" /><stop offset="1" stop-color="#17313c" stop-opacity="0.23" /></linearGradient></defs>
+<path data-part="card-depth" d="M22 7H282L298 23V432L282 448H22L6 432V23Z" fill="#0c0704" opacity=".38" />
+<path data-part="card-depth" d="M18 2H278L294 18V428L278 444H18L2 428V18Z" fill="#361f15" opacity=".65" />
+<g data-part="frame"><path d="M20 4H280L296 20V430L280 446H20L4 430V20Z" fill="#503629" />
+  <path d="M22 9H278L290 22V428L278 440H22L10 428V22Z" fill="url(#copper)" stroke="#d7aa7b" />
+  <path d="M22 9H278L290 22V428L278 440H22L10 428V22Z" fill="url(#brush)" />
+  <path d="M25 25H275V425H25Z" fill="#d6ac82" stroke="#5c3d2e" stroke-width="2" />
+  <path d="M32 80H268V277H32Z" fill="#604535" stroke="#f5cf9f" />
+  <path d="M40 88H260V269H40Z" fill="#9b7b5d" stroke="#322e28" stroke-width="2" />
+  <path d="M45 93H255V263H45Z" fill="url(#brush)" />
+  <path d="M36 69H264M36 282H264M22 333H28M272 333H278" stroke="#704c35" stroke-width="2" />
+  <g fill="#c58e5f" stroke="#422f27" stroke-width="1.5"><circle cx="18" cy="20" r="5" /><circle cx="282" cy="20" r="5" /><circle cx="18" cy="430" r="5" /><circle cx="282" cy="430" r="5" /></g>
+  <path d="M15 20H21M279 20H285M15 430H21M279 430H285" stroke="#513a2e" stroke-width="1.5" />
+  <path d="M33 373H45V401H33M267 373H255V401H267" stroke="#745038" fill="none" /><g data-part="signature-finish"><path d="M24 90V266M276 90V266" stroke="#f8cc9b" stroke-width="2" opacity=".55" /><path d="M28 101V258M272 101V258" stroke="#401d11" stroke-width="1" /><path d="M41 276H259" stroke="#422318" stroke-width="3" /><path d="M42 282H258" stroke="#ffdaae" stroke-width="1.2" /><path d="M33 342L40 336M260 336L267 342M33 406L40 412M260 412L267 406" stroke="#f6bd88" stroke-width="2" /></g></g>
+<g data-part="card-ornament" aria-hidden="true">
+  <path d="M28 31H136L141 37V60H28Z" fill="url(#copper)" stroke="#4c2f22" stroke-width="1" />
+  <path d="M31 34H134M31 57H134" fill="none" stroke="#f7cda0" stroke-width=".5" opacity=".8" />
+  <g fill="url(#rivet)" stroke="#3b241a" stroke-width=".7"><circle cx="33" cy="37" r="2.2" /><circle cx="135" cy="37" r="2.2" /><circle cx="33" cy="54" r="2.2" /><circle cx="135" cy="54" r="2.2" /></g>
+  <path d="M236 33H270L278 41V64L270 72H236Z" fill="url(#stalePlate)" stroke="#4b2e20" stroke-width="1" />
+  <circle cx="257" cy="55" r="15" fill="none" stroke="#f8cf9f" stroke-width=".7" opacity=".8" />
+  <g fill="url(#rivet)" stroke="#3b241a" stroke-width=".6"><circle cx="242" cy="39" r="1.7" /><circle cx="272" cy="39" r="1.7" /><circle cx="242" cy="68" r="1.7" /><circle cx="272" cy="68" r="1.7" /></g>
+  <path d="M38 68H262" stroke="#3f2418" stroke-width="1.2" opacity=".7" />
+  <path d="M38 67H262" stroke="#ffd8a8" stroke-width=".45" opacity=".65" />
+  <g fill="url(#rivet)" stroke="#3f2419" stroke-width=".7"><circle cx="16" cy="96" r="2.4" /><circle cx="284" cy="96" r="2.4" /><circle cx="16" cy="154" r="2.4" /><circle cx="284" cy="154" r="2.4" /><circle cx="16" cy="212" r="2.4" /><circle cx="284" cy="212" r="2.4" /><circle cx="16" cy="270" r="2.4" /><circle cx="284" cy="270" r="2.4" /><circle cx="16" cy="328" r="2.4" /><circle cx="284" cy="328" r="2.4" /><circle cx="16" cy="386" r="2.4" /><circle cx="284" cy="386" r="2.4" /></g>
+  <path d="M24 38V78M276 38V78M24 282V330M276 282V330" stroke="#5a3828" stroke-width="2" opacity=".75" />
+  <path d="M25 39V77M275 39V77M25 283V329M275 283V329" stroke="#f8cf9f" stroke-width=".6" opacity=".6" />
+  <path d="M41 89H259V268H41Z" fill="none" stroke="#f2c494" stroke-width=".7" opacity=".8" />
+  <path d="M41 89H51V99M249 89H259V99M259 258V268H249M51 268H41V258" fill="none" stroke="#ffd9ab" stroke-width="2.2" />
+  <path d="M35 82V92H45M265 82V92H255M265 265V275H255M35 275V265H45" fill="none" stroke="#3b2116" stroke-width="4" opacity=".65" />
+  <g fill="url(#rivet)" stroke="#3d251a" stroke-width=".8"><circle cx="44" cy="92" r="2.8" /><circle cx="256" cy="92" r="2.8" /><circle cx="44" cy="264" r="2.8" /><circle cx="256" cy="264" r="2.8" /></g>
+  <g opacity=".75"><circle cx="18" cy="260" r="13" fill="url(#patina)" /><circle cx="281" cy="322" r="16" fill="url(#patina)" /><circle cx="31" cy="404" r="11" fill="url(#patina)" /></g>
+  <text x="18" y="350" transform="rotate(-90 18 350)" text-anchor="middle" font-family="Arial" font-size="4.8" letter-spacing="1.7" fill="#f6ca9c" opacity=".82">FORGED COPPER · PLATE 02</text>
+  <path d="M219 392H273V414H219Z" fill="#77462f" stroke="#3a2117" stroke-width=".8" />
+  <path d="M222 395H270" stroke="#f6c897" stroke-width=".5" opacity=".65" />
+  <text x="246" y="408" text-anchor="middle" font-family="Arial" font-size="5.2" letter-spacing="1.1" fill="#ffd7a8">No. 002</text>
+  <g fill="url(#rivet)" stroke="#3b241a" stroke-width=".6"><circle cx="223" cy="396" r="1.5" /><circle cx="269" cy="396" r="1.5" /><circle cx="223" cy="410" r="1.5" /><circle cx="269" cy="410" r="1.5" /></g>
+  <path d="M12 15L24 15L12 27Z M288 15L276 15L288 27Z M12 435L24 435L12 423Z M288 435L276 435L288 423Z" fill="#d09a6b" opacity=".55" />
+</g>
+<g data-part="shirt" transform="translate(46 93) scale(1.16)"><path d="M47 31L69 19Q90 30 111 19L133 31L158 62L139 80L126 66V144H54V66L41 80L22 62Z" fill="#081b25" opacity=".22" />
+    <path d="M47 25L69 13Q90 24 111 13L133 25L158 56L139 74L126 60V138H54V60L41 74L22 56Z" fill="url(#shirt)" stroke="#4b6069" stroke-width="1.2" />
+    <g clip-path="url(#shirt-cut)">
+      <path d="M78 23Q90 27 102 23V138H78Z" fill="#72868d" opacity=".48" />
+      <path d="M111 13L133 25L126 60V138H110Q119 79 111 13Z" fill="#243f4b" opacity=".12" />
+      <path d="M48 27L62 23L60 137H55V60L42 73L34 65Z" fill="#fff" opacity=".15" />
+      <rect x="20" y="10" width="140" height="130" fill="url(#shirt-fabric)" />
+      <path d="M47 25L69 13Q90 24 111 13L133 25L158 56L139 74L126 60V138H54V60L41 74L22 56Z" fill="url(#shirt-volume)" />
+      <path d="M60 70Q67 95 62 117M121 71Q114 98 120 119M67 124Q90 120 115 125" fill="none" stroke="#607681" stroke-width="1" opacity=".34" />
+      <path d="M63 73Q70 95 66 113M117 76Q112 97 116 115" fill="none" stroke="#fff" stroke-width="1.1" opacity=".3" />
+    </g>
+    <path d="M69 13L90 37L111 13L107 14L90 30L73 14Z" fill="#e7edeb" stroke="#5f747c" stroke-width=".9" />
+    <path d="M47 25L54 60M133 25L126 60" fill="none" stroke="#5e737b" stroke-width="1.1" />
+    <path d="M56 131H124M28 53L43 67M137 67L152 53" fill="none" stroke="#ebf1ed" stroke-width="1.8" opacity=".7" />
+    <path d="M56 134H124M30 56L42 68M138 68L150 56" fill="none" stroke="#71858c" stroke-width=".65" stroke-dasharray="1.4 1.5" />
+    <path d="M107 49L114 53V61L107 66L100 61V53Z" fill="#dce2dc" stroke="#627780" stroke-width=".8" />
+    <path d="M104 54L107 52L110 54V60L107 62L104 60Z" fill="none" stroke="#9fadb0" stroke-width=".6" /></g><g data-part="card-nameplate" aria-hidden="true">
+  <path d="M35 281H265V311H35Z" fill="url(#stalePlate)" stroke="#41271c" stroke-width="1.2" />
+  <path d="M39 284H261V308H39Z" fill="none" stroke="#f1c395" stroke-width=".5" opacity=".7" />
+  <path d="M35 284H265M35 309H265" stroke="#5a3626" stroke-width="1" opacity=".8" />
+  <g fill="url(#rivet)" stroke="#3b241a" stroke-width=".6"><circle cx="42" cy="287" r="2" /><circle cx="258" cy="287" r="2" /><circle cx="42" cy="305" r="2" /><circle cx="258" cy="305" r="2" /></g>
+  <path d="M109 414H191V434H109Z" fill="url(#stalePlate)" stroke="#41271c" stroke-width=".8" />
+  <path d="M112 417H188M112 431H188" stroke="#f6c99b" stroke-width=".45" opacity=".8" />
+  <g fill="url(#rivet)" stroke="#3b241a" stroke-width=".5"><circle cx="113" cy="417.5" r="1.4" /><circle cx="187" cy="417.5" r="1.4" /><circle cx="113" cy="430.5" r="1.4" /><circle cx="187" cy="430.5" r="1.4" /></g>
+  <path d="M96 424L104 419M196 419L204 424M196 429L204 424M104 429L96 424" fill="none" stroke="#d49c6d" stroke-width=".7" />
+</g>
+<g font-family="Arial, sans-serif" fill="#3b251c" font-weight="800" data-part="identity"><text x="36" y="55" font-size="14" letter-spacing="2.5">STALWART</text>
+      <text x="257" y="58" text-anchor="middle" font-size="27">—</text>
+      <text x="257" y="71" text-anchor="middle" font-size="7" letter-spacing="1.5">OVR</text>
+      <text data-field="name" x="150" y="302" text-anchor="middle" font-family="Arial Narrow, Arial, sans-serif" font-size="21" font-weight="900" letter-spacing=".7">PLAYER NAME</text><rect data-part="nationality-plate" x="43" y="314" width="214" height="20" rx="2" fill="#d5a983" opacity=".96" /><text data-field="nationality" x="150" y="328" text-anchor="middle" font-size="10.4" letter-spacing=".7" font-weight="600">POSITION · COUNTRY</text><path d="M43 342H257" stroke="#7b4e33" stroke-width=".65" opacity=".65" /><g data-part="primary-style-slot"><rect x="76" y="349" width="148" height="27" rx="2" fill="#d5a983" stroke="#7b4e33" stroke-width=".65" fill-opacity=".65" /><path d="M89 356L96 360V367L89 371L82 367V360Z" fill="none" stroke="#3b251c" stroke-width="1" /><text x="157" y="367" text-anchor="middle" font-size="10.1" letter-spacing=".5" font-weight="800">PRIMARY TRAIT</text></g><g data-part="secondary-style-slot"><circle cx="102" cy="389" r="3.3" fill="none" stroke="#7b4e33" stroke-width=".8" /><text x="159" y="392" text-anchor="middle" font-size="8.8" letter-spacing=".6" font-weight="600" opacity=".86">SECONDARY TRAIT</text></g><text x="150" y="425" text-anchor="middle" font-size="7" letter-spacing="3" font-weight="600">T H E  C A G E</text></g></svg>

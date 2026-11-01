@@ -11,7 +11,7 @@ assert.equal(JSON.stringify(roster.map(p=>[p.id,p.r,p.careerTier,p.folklore,p.tr
 const a=roster[0],val=a.overall;
 a.careerTier='TITAN';a.folklore=['STREET HERO'];a.traits={primary:'Magician',secondary:'Wall'};
 assert.equal(api.compute(a),val,'overall illegally depends on tier/folklore/traits');
-a.position='ST';assert.notEqual(api.compute(a),val,'overall should depend on natural position');
+a.position='ST';assert.notEqual(api.raw(a),api.raw({...a,position:'CM'}),'raw overall should depend on natural position');
 const cbBase=roster.find(p=>p.position==='CB'),stBase=roster.find(p=>p.position==='ST');
 const fake={id:'cb-synthetic',position:'CB',r:{...cbBase.r,pace:70,tech:65,pass:65,finish:0,def:98,phys:95,tackling:98,positioning:98}},striker={id:'st-synthetic',position:'ST',r:{...stBase.r,pace:95,tech:90,pass:68,finish:98,def:0,phys:88,positioning:98,shooting:98,composure:95}};
 assert(api.compute(fake)>=84,'elite CB penalized for finishing');assert(api.compute(striker)>=90,'elite ST penalized for defence');

@@ -27,7 +27,7 @@ assert.equal(val.overall,87);
 assert.equal(o.raw(val),87);
 assert.equal(o.compute(val),87);
 assert.equal(o.REVIEW_OVERRIDES['juan-carlos-valeron'],undefined,'No hardcoded OVR fix allowed');
-assert.deepEqual(Object.keys(o.REVIEW_OVERRIDES),[],'No hardcoded OVR exceptions after approved 67-input review');
+assert(!('juan-carlos-valeron' in o.REVIEW_OVERRIDES)&&Object.keys(o.REVIEW_OVERRIDES).length<=16,'Valeron has no OVR override; only the 16 owner-reviewed display corrections of 2026-11-01 exist');
 assert.equal(audited.players.find(p=>p.id==='alex-de-souza').overall,86,'Alex 86 preserved by source attribute changes');
 for(const [id,minimum] of [['andres-iniesta',90],['xavi-hernandez',90],['luka-modric',90],['andrea-pirlo',89],['juan-roman-riquelme',88]]){const p=audited.players.find(x=>x.id===id);assert(p);assert(p.overall>=minimum,p.name+' benchmark undershoots');assert(val.overall<p.overall,val.name+' outranks '+p.name);}
 const makaay=recruitment.players.find(p=>p.id==='roy-makaay');

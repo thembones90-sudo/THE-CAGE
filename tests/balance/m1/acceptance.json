@@ -7,6 +7,6 @@
  "framesPerMatch": 4918,
  "contradictionsPerMatch": 4.7,
  "impossiblePerMatch": 2.88,
- "simMsWithMovement": 946,
- "simMsWithout": 565
+ "simMsWithMovement": 891,
+ "simMsWithout": 526
 }
