@@ -1,0 +1,202 @@
+{
+ "engine": "cage-t3-12",
+ "flags": [
+  "Q"
+ ],
+ "param": {
+  "Arad": 0,
+  "Atk": 0.6,
+  "Abias": 0.9,
+  "B1late": 240,
+  "C1ref": 60,
+  "C1scale": 40,
+  "C1max": 0.9,
+  "C2bias": -0.45,
+  "C2k": 12,
+  "C2hi": 0.96,
+  "Kw": 0.9,
+  "Kshift": 10,
+  "Kmin": 0.3,
+  "Kmax": 2,
+  "Kbias": 0,
+  "Qref": 65.3,
+  "Qscale": 30
+ },
+ "gk": true,
+ "traits": true,
+ "N": 200,
+ "caps": 0,
+ "goalsMedian": 7,
+ "goalsMean": 7.5,
+ "goldenPct": 15.1,
+ "durP99": 2113,
+ "anat": {
+  "DDD": {
+   "win": 30.5,
+   "gf": 1.15,
+   "ga": 2.13,
+   "shotsPerPossF": 0.15,
+   "shotsPerPossA": 0.26,
+   "convF": 0.158,
+   "convA": 0.175,
+   "reachA": 80.3,
+   "reachF": 70.4,
+   "carriesCheckedPct": 0,
+   "passPctF": 86.3
+  },
+  "DDM": {
+   "win": 45,
+   "gf": 1.94,
+   "ga": 2.04,
+   "shotsPerPossF": 0.17,
+   "shotsPerPossA": 0.264,
+   "convF": 0.241,
+   "convA": 0.168,
+   "reachA": 78.9,
+   "reachF": 71.4,
+   "carriesCheckedPct": 0,
+   "passPctF": 86.6
+  },
+  "DDF": {
+   "win": 69.5,
+   "gf": 3.91,
+   "ga": 2.21,
+   "shotsPerPossF": 0.297,
+   "shotsPerPossA": 0.247,
+   "convF": 0.273,
+   "convA": 0.185,
+   "reachA": 73.7,
+   "reachF": 74.9,
+   "carriesCheckedPct": 0,
+   "passPctF": 86.1
+  },
+  "DMM": {
+   "win": 48,
+   "gf": 2.85,
+   "ga": 3.01,
+   "shotsPerPossF": 0.229,
+   "shotsPerPossA": 0.277,
+   "convF": 0.266,
+   "convA": 0.235,
+   "reachA": 74.8,
+   "reachF": 75.8,
+   "carriesCheckedPct": 0,
+   "passPctF": 87
+  },
+  "DMF": {
+   "win": 62,
+   "gf": 3.9,
+   "ga": 3.08,
+   "shotsPerPossF": 0.31,
+   "shotsPerPossA": 0.265,
+   "convF": 0.266,
+   "convA": 0.244,
+   "reachA": 71.7,
+   "reachF": 77,
+   "carriesCheckedPct": 0,
+   "passPctF": 87.1
+  },
+  "DFF": {
+   "win": 70,
+   "gf": 5.05,
+   "ga": 3.48,
+   "shotsPerPossF": 0.376,
+   "shotsPerPossA": 0.28,
+   "convF": 0.283,
+   "convA": 0.256,
+   "reachA": 70.2,
+   "reachF": 77.2,
+   "carriesCheckedPct": 0,
+   "passPctF": 86.7
+  },
+  "MMM": {
+   "win": 39,
+   "gf": 3.31,
+   "ga": 4.57,
+   "shotsPerPossF": 0.261,
+   "shotsPerPossA": 0.304,
+   "convF": 0.277,
+   "convA": 0.327,
+   "reachA": 75.5,
+   "reachF": 77.2,
+   "carriesCheckedPct": 0,
+   "passPctF": 87.7
+  },
+  "MMF": {
+   "win": 50.5,
+   "gf": 4.47,
+   "ga": 4.95,
+   "shotsPerPossF": 0.318,
+   "shotsPerPossA": 0.304,
+   "convF": 0.305,
+   "convA": 0.35,
+   "reachA": 75.1,
+   "reachF": 77.1,
+   "carriesCheckedPct": 0,
+   "passPctF": 86.9
+  },
+  "MFF": {
+   "win": 53,
+   "gf": 5.5,
+   "ga": 5.46,
+   "shotsPerPossF": 0.385,
+   "shotsPerPossA": 0.316,
+   "convF": 0.316,
+   "convA": 0.377,
+   "reachA": 74.7,
+   "reachF": 77.1,
+   "carriesCheckedPct": 0,
+   "passPctF": 87.6
+  },
+  "FFF": {
+   "win": 38,
+   "gf": 5.26,
+   "ga": 6.71,
+   "shotsPerPossF": 0.411,
+   "shotsPerPossA": 0.368,
+   "convF": 0.293,
+   "convA": 0.408,
+   "reachA": 76.5,
+   "reachF": 75.6,
+   "carriesCheckedPct": 0,
+   "passPctF": 87.3
+  }
+ },
+ "gradient": [
+  {
+   "bin": "-99..-8",
+   "win": 0,
+   "n": 11
+  },
+  {
+   "bin": "-8..-4",
+   "win": 17.8,
+   "n": 163
+  },
+  {
+   "bin": "-4..-1.5",
+   "win": 39.8,
+   "n": 244
+  },
+  {
+   "bin": "-1.5..1.5",
+   "win": 48.7,
+   "n": 351
+  },
+  {
+   "bin": "1.5..4",
+   "win": 59.8,
+   "n": 246
+  },
+  {
+   "bin": "4..8",
+   "win": 75.9,
+   "n": 162
+  },
+  {
+   "bin": "8..99",
+   "win": 82.6,
+   "n": 23
+  }
+ ]
+}

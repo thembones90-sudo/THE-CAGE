@@ -1,0 +1,10 @@
+Beckenbauer+R.Carlos+Maldini   win 80.4 byTactic {"balanced":83.4,"press":86.3,"possession":70.3,"counter":81.6} gf 3.81 ga 1.68 xg/shot 0.403 pass% 84.9 lostDanger% 44.9
+Zidane+Kaka+Ballack            win 77.4 byTactic {"balanced":80.6,"press":78.1,"possession":77.8,"counter":73.1} gf 6.22 ga 3.72 xg/shot 0.466 pass% 82.6 lostDanger% 35.7
+Maldini+Ballack+R9             win 89 byTactic {"balanced":88.4,"press":89.4,"possession":88.1,"counter":90} gf 6.6 ga 2.88 xg/shot 0.467 pass% 83.4 lostDanger% 39.1
+Maldini+Cristiano+R9           win 90.2 byTactic {"balanced":89.7,"press":91.9,"possession":90.9,"counter":88.4} gf 7.38 ga 3.22 xg/shot 0.515 pass% 84.1 lostDanger% 40.3
+Pirlo+Maldini+R9               win 74 byTactic {"balanced":73.1,"press":65.3,"possession":71.9,"counter":85.6} gf 5.44 ga 3.35 xg/shot 0.491 pass% 83.3 lostDanger% 41.4
+Ronaldinho+Riquelme+Berbatov   win 33.3 byTactic {"balanced":31.6,"press":29.1,"possession":32.2,"counter":40.3} gf 3.95 ga 5.39 xg/shot 0.465 pass% 82.5 lostDanger% 42.5
+Gattuso+Makelele+Kante         win 38.7 byTactic {"balanced":38.1,"press":40.6,"possession":31.6,"counter":44.4} gf 1.24 ga 1.76 xg/shot 0.213 pass% 86.1 lostDanger% 55.1
+Pirlo+Gattuso+Lewandowski      win 78.1 byTactic {"balanced":82.5,"press":76.3,"possession":81.9,"counter":71.9} gf 5.48 ga 3.11 xg/shot 0.458 pass% 83.7 lostDanger% 40.2
+Pirlo+XabiAlonso+Lewandowski   win 64.1 byTactic {"balanced":64.4,"press":59.1,"possession":60,"counter":73.1} gf 5.41 ga 4.18 xg/shot 0.481 pass% 81.2 lostDanger% 39.9
+Makelele+Ballack+Drogba        win 89.6 byTactic {"balanced":92.2,"press":89.7,"possession":89.4,"counter":87.2} gf 6.5 ga 2.67 xg/shot 0.428 pass% 84.6 lostDanger% 39.6

@@ -12,6 +12,8 @@
 //   C2  pass success depends more on passing: wider spread and a .96 cap for normal passes (was .88)
 //   K   clearance: deep and engaged, a player may clear long to the furthest-forward team-mate, contested where it lands
 //   Q   shot pressure scales with the pressuring defender's tackling and reading (average defender = no change)
+//   X1  ablation: remove rest discipline (diagnostic only)
+//   X2  ablation: rest defence ignores natural-defender counts (diagnostic only)
 //   I   an intercepted pass is won where the interceptor stands (was: at the passer's feet)
 'use strict';
 const fs = require('fs'), path = require('path'), vm = require('vm');
@@ -70,6 +72,12 @@ function patchEngine(src) {
   // Q: shot pressure depends on WHO pressures. Same logit scale family as shooter quality; average defender (Qref) unchanged.
   src = rep(src, "(ctx.d?P.shot.pressure:0)",
     "(ctx.d?P.shot.pressure-(RF.Q?((.5*eff(ctx.d,'tackle')+.5*eff(ctx.d,'intercept'))-RP.Qref)/RP.Qscale:0):0)", 'Q');
+  // X1 (ablation): no rest discipline at all (uncommitted players act like committed ones)
+  src = rep(src, "if(!c.committed)U.pass*=Q.restPass;", "if(!c.committed&&!RF.X1)U.pass*=Q.restPass;", 'X1a');
+  src = rep(src, "const coveredCarrier=", "const xNoDisc=!!RF.X1;const coveredCarrier=", 'X1b');
+  src = rep(src, "const discipline=coveredCarrier?1:", "const discipline=xNoDisc?Q.committedDiscipline:coveredCarrier?1:", 'X1c');
+  // X2 (ablation): rest defence ignores 'natural defender' counts; only the tactic's rest offset applies (base 1)
+  src = rep(src, "const natural=c.filter(x=>x.DEF>=x.ATT+a.restGap).length;", "const natural=RF.X2?1:c.filter(x=>x.DEF>=x.ATT+a.restGap).length;", 'X2');
   // I: an intercepted pass is won where the interceptor stands, not at the passer's feet
   src = rep(src, "return turnover(md,'interception','read_pass');",
     "if(RF.I){x=S.oriented(md.pos,poss);lane=md.pos.y;}return turnover(md,'interception','read_pass');", 'I');
@@ -115,7 +123,8 @@ function play(A, B, ta, tb, swap) {
   const cfg = { teams: swap ? [B, A] : [A, B], tactics: swap ? [tb, ta] : [ta, tb], seed: Math.floor(R() * 2 ** 32), mode: 'score', ...(TRAITS ? { traits: { enabled: true } } : {}), ...(GK ? { keepers: keepers() } : {}) };
   return { r: E.simulate(cfg), me: swap ? 1 : 0 };
 }
-const comps = ['DDD', 'MMM', 'FFF', 'DMF', 'DDF', 'MMF'], refs = ['DMF', 'DDF', 'MMF', 'DFF', 'DMM', 'MFF'];
+const ALL10 = ['DDD', 'DDM', 'DDF', 'DMM', 'DMF', 'DFF', 'MMM', 'MMF', 'MFF', 'FFF'];
+const comps = opt('--comps') === 'all' ? ALL10 : ['DDD', 'MMM', 'FFF', 'DMF', 'DDF', 'MMF'], refs = opt('--opp') === 'all' ? ALL10 : ['DMF', 'DDF', 'MMF', 'DFF', 'DMM', 'MFF'];
 const anat = {}, durs = [], goals = []; let golden = 0, games = 0, caps = 0;
 for (const comp of comps) {
   const S = { n: 0, w: 0, gf: 0, ga: 0, sf: 0, sa: 0, possF: 0, possA: 0, reachF: 0, reachA: 0, checkedBy: 0, carriesA: 0, passF: 0, passOkF: 0 };

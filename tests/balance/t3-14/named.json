@@ -1,0 +1,837 @@
+{
+ "engine": "cage-t3-12",
+ "params": "t3-space-6",
+ "keepers": [
+  "victor-valdes",
+  "ederson-moraes"
+ ],
+ "pairsPerCell": 40,
+ "seeds": [
+  1592590336,
+  1592899177
+ ],
+ "named": {
+  "Beckenbauer+R.Carlos+Maldini": {
+   "ids": [
+    "franz-beckenbauer",
+    "roberto-carlos",
+    "paolo-maldini"
+   ],
+   "vsControls": {
+    "pairs": 640,
+    "winPct": 80.4,
+    "pairWinPct": 66.7,
+    "pairSplitPct": 27.3,
+    "gf": 3.81,
+    "ga": 1.68,
+    "shotsPerMatch": 13.8,
+    "xgPerShot": 0.403,
+    "conv": 0.275,
+    "blockedPct": 31.9,
+    "passPct": 84.9,
+    "fwdPassPct": 42.2,
+    "throughPerMatch": 20.4,
+    "throughOkPct": 72.4,
+    "keyPassesPerMatch": 9.75,
+    "recoveriesPerMatch": 39.3,
+    "pressWonPct": 28.5,
+    "dribOkPct": 65.3,
+    "lostPerMatch": 32.9,
+    "lostDangerPct": 44.9,
+    "coverFailPerMatch": 7.03,
+    "counterPossPct": 43.4,
+    "counterGoalPct": 48,
+    "rotationsPerMatch": 5.28,
+    "gkDistOkPct": 83.4,
+    "committedShareChasing": 0.42,
+    "committedShareLeading": 0.443,
+    "recyclePassWithFreeForwardMatePct": 6.1,
+    "edgeShotsWithFreeMateInBoxPct": 1.9,
+    "players": {
+     "paolo-maldini": {
+      "shots": 0.79,
+      "goals": 0.08,
+      "xgPerShot": 0.11,
+      "passPct": 85.8,
+      "passes": 38.3,
+      "keyPasses": 4.65,
+      "assists": 1.29,
+      "recoveries": 16.48,
+      "dribOkPct": 66.2,
+      "lost": 7.37
+     },
+     "franz-beckenbauer": {
+      "shots": 1.28,
+      "goals": 0.33,
+      "xgPerShot": 0.254,
+      "passPct": 82.4,
+      "passes": 38,
+      "keyPasses": 4.55,
+      "assists": 1.37,
+      "recoveries": 14.97,
+      "dribOkPct": 65.3,
+      "lost": 9.28
+     },
+     "roberto-carlos": {
+      "shots": 11.76,
+      "goals": 3.41,
+      "xgPerShot": 0.288,
+      "passPct": 87.2,
+      "passes": 27,
+      "keyPasses": 0.55,
+      "assists": 0.1,
+      "recoveries": 7.88,
+      "dribOkPct": 65.1,
+      "lost": 11.5
+     }
+    }
+   },
+   "winPctByTactic": {
+    "balanced": 83.4,
+    "press": 86.3,
+    "possession": 70.3,
+    "counter": 81.6
+   }
+  },
+  "Zidane+Kaka+Ballack": {
+   "ids": [
+    "zinedine-zidane",
+    "kaka",
+    "michael-ballack"
+   ],
+   "vsControls": {
+    "pairs": 640,
+    "winPct": 77.4,
+    "pairWinPct": 63,
+    "pairSplitPct": 28.9,
+    "gf": 6.22,
+    "ga": 3.72,
+    "shotsPerMatch": 18.1,
+    "xgPerShot": 0.466,
+    "conv": 0.344,
+    "blockedPct": 27.5,
+    "passPct": 82.6,
+    "fwdPassPct": 46.5,
+    "throughPerMatch": 17.2,
+    "throughOkPct": 67.9,
+    "keyPassesPerMatch": 10.68,
+    "recoveriesPerMatch": 33.3,
+    "pressWonPct": 27.9,
+    "dribOkPct": 72.2,
+    "lostPerMatch": 29,
+    "lostDangerPct": 35.7,
+    "coverFailPerMatch": 17.78,
+    "counterPossPct": 42.5,
+    "counterGoalPct": 42.3,
+    "rotationsPerMatch": 3.96,
+    "gkDistOkPct": 82.9,
+    "committedShareChasing": 0.906,
+    "committedShareLeading": 0.925,
+    "recyclePassWithFreeForwardMatePct": 4.3,
+    "edgeShotsWithFreeMateInBoxPct": 8.8,
+    "players": {
+     "michael-ballack": {
+      "shots": 6.39,
+      "goals": 1.91,
+      "xgPerShot": 0.298,
+      "passPct": 81.8,
+      "passes": 21.3,
+      "keyPasses": 2.85,
+      "assists": 1.14,
+      "recoveries": 11.97,
+      "dribOkPct": 69.5,
+      "lost": 6.94
+     },
+     "zinedine-zidane": {
+      "shots": 4.52,
+      "goals": 1.69,
+      "xgPerShot": 0.356,
+      "passPct": 84.5,
+      "passes": 24.1,
+      "keyPasses": 5.09,
+      "assists": 1.94,
+      "recoveries": 13.25,
+      "dribOkPct": 71.8,
+      "lost": 9.64
+     },
+     "kaka": {
+      "shots": 7.15,
+      "goals": 2.62,
+      "xgPerShot": 0.361,
+      "passPct": 80.9,
+      "passes": 18.3,
+      "keyPasses": 2.74,
+      "assists": 0.99,
+      "recoveries": 8.13,
+      "dribOkPct": 73.8,
+      "lost": 8.35
+     }
+    }
+   },
+   "winPctByTactic": {
+    "balanced": 80.6,
+    "press": 78.1,
+    "possession": 77.8,
+    "counter": 73.1
+   }
+  },
+  "Maldini+Ballack+R9": {
+   "ids": [
+    "paolo-maldini",
+    "michael-ballack",
+    "ronaldo-nazario"
+   ],
+   "vsControls": {
+    "pairs": 640,
+    "winPct": 89,
+    "pairWinPct": 79.1,
+    "pairSplitPct": 19.8,
+    "gf": 6.6,
+    "ga": 2.88,
+    "shotsPerMatch": 20.2,
+    "xgPerShot": 0.467,
+    "conv": 0.327,
+    "blockedPct": 30.7,
+    "passPct": 83.4,
+    "fwdPassPct": 44.1,
+    "throughPerMatch": 14.8,
+    "throughOkPct": 66.1,
+    "keyPassesPerMatch": 13.64,
+    "recoveriesPerMatch": 35,
+    "pressWonPct": 27.7,
+    "dribOkPct": 68.3,
+    "lostPerMatch": 28.6,
+    "lostDangerPct": 39.1,
+    "coverFailPerMatch": 13.25,
+    "counterPossPct": 41.5,
+    "counterGoalPct": 43.7,
+    "rotationsPerMatch": 0,
+    "gkDistOkPct": 84.6,
+    "committedShareChasing": 0.652,
+    "committedShareLeading": 0.666,
+    "recyclePassWithFreeForwardMatePct": 5.8,
+    "edgeShotsWithFreeMateInBoxPct": 6.5,
+    "players": {
+     "ronaldo-nazario": {
+      "shots": 11.44,
+      "goals": 4.25,
+      "xgPerShot": 0.367,
+      "passPct": 79.8,
+      "passes": 15.8,
+      "keyPasses": 1.81,
+      "assists": 0.56,
+      "recoveries": 4.54,
+      "dribOkPct": 69.6,
+      "lost": 9.22
+     },
+     "paolo-maldini": {
+      "shots": 1.66,
+      "goals": 0.23,
+      "xgPerShot": 0.125,
+      "passPct": 85.3,
+      "passes": 35,
+      "keyPasses": 7.97,
+      "assists": 2.67,
+      "recoveries": 22.55,
+      "dribOkPct": 66.1,
+      "lost": 8.51
+     },
+     "michael-ballack": {
+      "shots": 7.08,
+      "goals": 2.11,
+      "xgPerShot": 0.3,
+      "passPct": 83,
+      "passes": 21.7,
+      "keyPasses": 3.86,
+      "assists": 1.34,
+      "recoveries": 7.87,
+      "dribOkPct": 67.3,
+      "lost": 6.08
+     }
+    }
+   },
+   "winPctByTactic": {
+    "balanced": 88.4,
+    "press": 89.4,
+    "possession": 88.1,
+    "counter": 90
+   }
+  },
+  "Maldini+Cristiano+R9": {
+   "ids": [
+    "paolo-maldini",
+    "cristiano-ronaldo",
+    "ronaldo-nazario"
+   ],
+   "vsControls": {
+    "pairs": 640,
+    "winPct": 90.2,
+    "pairWinPct": 81.9,
+    "pairSplitPct": 16.7,
+    "gf": 7.38,
+    "ga": 3.22,
+    "shotsPerMatch": 20.1,
+    "xgPerShot": 0.515,
+    "conv": 0.366,
+    "blockedPct": 29.9,
+    "passPct": 84.1,
+    "fwdPassPct": 43.3,
+    "throughPerMatch": 13.4,
+    "throughOkPct": 68.8,
+    "keyPassesPerMatch": 12.75,
+    "recoveriesPerMatch": 32.7,
+    "pressWonPct": 25.2,
+    "dribOkPct": 71.3,
+    "lostPerMatch": 27.5,
+    "lostDangerPct": 40.3,
+    "coverFailPerMatch": 12.45,
+    "counterPossPct": 41.4,
+    "counterGoalPct": 44.8,
+    "rotationsPerMatch": 0,
+    "gkDistOkPct": 84.5,
+    "committedShareChasing": 0.643,
+    "committedShareLeading": 0.672,
+    "recyclePassWithFreeForwardMatePct": 5,
+    "edgeShotsWithFreeMateInBoxPct": 6.8,
+    "players": {
+     "ronaldo-nazario": {
+      "shots": 9.95,
+      "goals": 3.8,
+      "xgPerShot": 0.374,
+      "passPct": 80.8,
+      "passes": 14.4,
+      "keyPasses": 2.02,
+      "assists": 0.77,
+      "recoveries": 4.47,
+      "dribOkPct": 71.2,
+      "lost": 8.33
+     },
+     "cristiano-ronaldo": {
+      "shots": 8.72,
+      "goals": 3.41,
+      "xgPerShot": 0.387,
+      "passPct": 82.9,
+      "passes": 17.5,
+      "keyPasses": 3.08,
+      "assists": 1.17,
+      "recoveries": 8.12,
+      "dribOkPct": 72.9,
+      "lost": 7.56
+     },
+     "paolo-maldini": {
+      "shots": 1.47,
+      "goals": 0.17,
+      "xgPerShot": 0.124,
+      "passPct": 86.4,
+      "passes": 30.8,
+      "keyPasses": 7.65,
+      "assists": 3.04,
+      "recoveries": 20.15,
+      "dribOkPct": 68,
+      "lost": 7.38
+     }
+    }
+   },
+   "winPctByTactic": {
+    "balanced": 89.7,
+    "press": 91.9,
+    "possession": 90.9,
+    "counter": 88.4
+   }
+  },
+  "Pirlo+Maldini+R9": {
+   "ids": [
+    "andrea-pirlo",
+    "paolo-maldini",
+    "ronaldo-nazario"
+   ],
+   "vsControls": {
+    "pairs": 640,
+    "winPct": 74,
+    "pairWinPct": 57.7,
+    "pairSplitPct": 32.7,
+    "gf": 5.44,
+    "ga": 3.35,
+    "shotsPerMatch": 15.6,
+    "xgPerShot": 0.491,
+    "conv": 0.348,
+    "blockedPct": 29.6,
+    "passPct": 83.3,
+    "fwdPassPct": 42.9,
+    "throughPerMatch": 16.7,
+    "throughOkPct": 67.4,
+    "keyPassesPerMatch": 10.63,
+    "recoveriesPerMatch": 32.8,
+    "pressWonPct": 26.1,
+    "dribOkPct": 69.2,
+    "lostPerMatch": 30.2,
+    "lostDangerPct": 41.4,
+    "coverFailPerMatch": 13.64,
+    "counterPossPct": 42.6,
+    "counterGoalPct": 45.9,
+    "rotationsPerMatch": 0,
+    "gkDistOkPct": 83.5,
+    "committedShareChasing": 0.704,
+    "committedShareLeading": 0.643,
+    "recyclePassWithFreeForwardMatePct": 4.7,
+    "edgeShotsWithFreeMateInBoxPct": 5.3,
+    "players": {
+     "ronaldo-nazario": {
+      "shots": 11.7,
+      "goals": 4.45,
+      "xgPerShot": 0.377,
+      "passPct": 79.5,
+      "passes": 16.4,
+      "keyPasses": 0.91,
+      "assists": 0.28,
+      "recoveries": 4.22,
+      "dribOkPct": 71.1,
+      "lost": 9.61
+     },
+     "andrea-pirlo": {
+      "shots": 2.65,
+      "goals": 0.85,
+      "xgPerShot": 0.317,
+      "passPct": 83.1,
+      "passes": 27,
+      "keyPasses": 4.91,
+      "assists": 1.88,
+      "recoveries": 12.07,
+      "dribOkPct": 66.5,
+      "lost": 9.26
+     },
+     "paolo-maldini": {
+      "shots": 1.3,
+      "goals": 0.14,
+      "xgPerShot": 0.123,
+      "passPct": 85.5,
+      "passes": 30.6,
+      "keyPasses": 4.8,
+      "assists": 1.71,
+      "recoveries": 16.51,
+      "dribOkPct": 69,
+      "lost": 7.51
+     }
+    }
+   },
+   "winPctByTactic": {
+    "balanced": 73.1,
+    "press": 65.3,
+    "possession": 71.9,
+    "counter": 85.6
+   }
+  },
+  "Ronaldinho+Riquelme+Berbatov": {
+   "ids": [
+    "ronaldinho",
+    "juan-roman-riquelme",
+    "dimitar-berbatov"
+   ],
+   "vsControls": {
+    "pairs": 640,
+    "winPct": 33.3,
+    "pairWinPct": 15,
+    "pairSplitPct": 36.6,
+    "gf": 3.95,
+    "ga": 5.39,
+    "shotsPerMatch": 11.5,
+    "xgPerShot": 0.465,
+    "conv": 0.344,
+    "blockedPct": 27.5,
+    "passPct": 82.5,
+    "fwdPassPct": 43.3,
+    "throughPerMatch": 14.6,
+    "throughOkPct": 66.3,
+    "keyPassesPerMatch": 7.05,
+    "recoveriesPerMatch": 23.3,
+    "pressWonPct": 26.6,
+    "dribOkPct": 70.2,
+    "lostPerMatch": 28.9,
+    "lostDangerPct": 42.5,
+    "coverFailPerMatch": 15.35,
+    "counterPossPct": 39.9,
+    "counterGoalPct": 42.7,
+    "rotationsPerMatch": 0,
+    "gkDistOkPct": 84,
+    "committedShareChasing": 0.929,
+    "committedShareLeading": 0.907,
+    "recyclePassWithFreeForwardMatePct": 4.9,
+    "edgeShotsWithFreeMateInBoxPct": 8.8,
+    "players": {
+     "dimitar-berbatov": {
+      "shots": 5.14,
+      "goals": 1.75,
+      "xgPerShot": 0.34,
+      "passPct": 79.7,
+      "passes": 18.4,
+      "keyPasses": 1.88,
+      "assists": 0.74,
+      "recoveries": 7.17,
+      "dribOkPct": 69.9,
+      "lost": 9.15
+     },
+     "ronaldinho": {
+      "shots": 4.83,
+      "goals": 1.7,
+      "xgPerShot": 0.335,
+      "passPct": 83.4,
+      "passes": 20.7,
+      "keyPasses": 2.49,
+      "assists": 0.91,
+      "recoveries": 11.37,
+      "dribOkPct": 70.8,
+      "lost": 11.26
+     },
+     "juan-roman-riquelme": {
+      "shots": 1.5,
+      "goals": 0.5,
+      "xgPerShot": 0.336,
+      "passPct": 84.3,
+      "passes": 19.2,
+      "keyPasses": 2.67,
+      "assists": 1.03,
+      "recoveries": 4.71,
+      "dribOkPct": 68.7,
+      "lost": 5.46
+     }
+    }
+   },
+   "winPctByTactic": {
+    "balanced": 31.6,
+    "press": 29.1,
+    "possession": 32.2,
+    "counter": 40.3
+   }
+  },
+  "Gattuso+Makelele+Kante": {
+   "ids": [
+    "gennaro-gattuso",
+    "claude-makelele",
+    "ngolo-kante"
+   ],
+   "vsControls": {
+    "pairs": 640,
+    "winPct": 38.7,
+    "pairWinPct": 16.6,
+    "pairSplitPct": 44.2,
+    "gf": 1.24,
+    "ga": 1.76,
+    "shotsPerMatch": 8.3,
+    "xgPerShot": 0.213,
+    "conv": 0.149,
+    "blockedPct": 30.3,
+    "passPct": 86.1,
+    "fwdPassPct": 36.8,
+    "throughPerMatch": 18.7,
+    "throughOkPct": 77,
+    "keyPassesPerMatch": 5.04,
+    "recoveriesPerMatch": 37.7,
+    "pressWonPct": 34.1,
+    "dribOkPct": 62,
+    "lostPerMatch": 35.9,
+    "lostDangerPct": 55.1,
+    "coverFailPerMatch": 0.16,
+    "counterPossPct": 45.7,
+    "counterGoalPct": 52.6,
+    "rotationsPerMatch": 0,
+    "gkDistOkPct": 84,
+    "committedShareChasing": 0.333,
+    "committedShareLeading": 0.333,
+    "recyclePassWithFreeForwardMatePct": 6.1,
+    "edgeShotsWithFreeMateInBoxPct": 2.1,
+    "players": {
+     "claude-makelele": {
+      "shots": 0.17,
+      "goals": 0.01,
+      "xgPerShot": 0.062,
+      "passPct": 85.4,
+      "passes": 43.9,
+      "keyPasses": 2.46,
+      "assists": 0.44,
+      "recoveries": 7.9,
+      "dribOkPct": 66,
+      "lost": 7.58
+     },
+     "gennaro-gattuso": {
+      "shots": 0.86,
+      "goals": 0.11,
+      "xgPerShot": 0.114,
+      "passPct": 85,
+      "passes": 46.4,
+      "keyPasses": 2.45,
+      "assists": 0.38,
+      "recoveries": 12.12,
+      "dribOkPct": 61.6,
+      "lost": 8.26
+     },
+     "ngolo-kante": {
+      "shots": 7.23,
+      "goals": 1.11,
+      "xgPerShot": 0.154,
+      "passPct": 87.9,
+      "passes": 45.3,
+      "keyPasses": 0.13,
+      "assists": 0.01,
+      "recoveries": 17.68,
+      "dribOkPct": 61.4,
+      "lost": 14.58
+     }
+    }
+   },
+   "winPctByTactic": {
+    "balanced": 38.1,
+    "press": 40.6,
+    "possession": 31.6,
+    "counter": 44.4
+   }
+  },
+  "Pirlo+Gattuso+Lewandowski": {
+   "ids": [
+    "andrea-pirlo",
+    "gennaro-gattuso",
+    "robert-lewandowski"
+   ],
+   "vsControls": {
+    "pairs": 640,
+    "winPct": 78.1,
+    "pairWinPct": 61.3,
+    "pairSplitPct": 33.8,
+    "gf": 5.48,
+    "ga": 3.11,
+    "shotsPerMatch": 17.3,
+    "xgPerShot": 0.458,
+    "conv": 0.317,
+    "blockedPct": 31.2,
+    "passPct": 83.7,
+    "fwdPassPct": 41.1,
+    "throughPerMatch": 15.4,
+    "throughOkPct": 67.7,
+    "keyPassesPerMatch": 11.58,
+    "recoveriesPerMatch": 35.3,
+    "pressWonPct": 31.4,
+    "dribOkPct": 65.3,
+    "lostPerMatch": 31.3,
+    "lostDangerPct": 40.2,
+    "coverFailPerMatch": 14.5,
+    "counterPossPct": 42.2,
+    "counterGoalPct": 41,
+    "rotationsPerMatch": 3.79,
+    "gkDistOkPct": 84.3,
+    "committedShareChasing": 0.643,
+    "committedShareLeading": 0.665,
+    "recyclePassWithFreeForwardMatePct": 6.1,
+    "edgeShotsWithFreeMateInBoxPct": 7.5,
+    "players": {
+     "robert-lewandowski": {
+      "shots": 11.99,
+      "goals": 4.18,
+      "xgPerShot": 0.346,
+      "passPct": 82,
+      "passes": 19.2,
+      "keyPasses": 1.22,
+      "assists": 0.38,
+      "recoveries": 4.71,
+      "dribOkPct": 66.3,
+      "lost": 7.9
+     },
+     "andrea-pirlo": {
+      "shots": 3.28,
+      "goals": 1.03,
+      "xgPerShot": 0.316,
+      "passPct": 82.6,
+      "passes": 28.2,
+      "keyPasses": 4.81,
+      "assists": 1.65,
+      "recoveries": 12.05,
+      "dribOkPct": 63.7,
+      "lost": 10.57
+     },
+     "gennaro-gattuso": {
+      "shots": 2,
+      "goals": 0.27,
+      "xgPerShot": 0.133,
+      "passPct": 85.4,
+      "passes": 34.3,
+      "keyPasses": 5.55,
+      "assists": 1.78,
+      "recoveries": 18.54,
+      "dribOkPct": 67.2,
+      "lost": 7.73
+     }
+    }
+   },
+   "winPctByTactic": {
+    "balanced": 82.5,
+    "press": 76.3,
+    "possession": 81.9,
+    "counter": 71.9
+   }
+  },
+  "Pirlo+XabiAlonso+Lewandowski": {
+   "ids": [
+    "andrea-pirlo",
+    "xabi-alonso",
+    "robert-lewandowski"
+   ],
+   "vsControls": {
+    "pairs": 640,
+    "winPct": 64.1,
+    "pairWinPct": 44.1,
+    "pairSplitPct": 40.2,
+    "gf": 5.41,
+    "ga": 4.18,
+    "shotsPerMatch": 15.6,
+    "xgPerShot": 0.481,
+    "conv": 0.346,
+    "blockedPct": 28.3,
+    "passPct": 81.2,
+    "fwdPassPct": 43.5,
+    "throughPerMatch": 19.9,
+    "throughOkPct": 62.8,
+    "keyPassesPerMatch": 10.14,
+    "recoveriesPerMatch": 32.3,
+    "pressWonPct": 29.7,
+    "dribOkPct": 67.6,
+    "lostPerMatch": 30.6,
+    "lostDangerPct": 39.9,
+    "coverFailPerMatch": 17.42,
+    "counterPossPct": 42.5,
+    "counterGoalPct": 41.9,
+    "rotationsPerMatch": 4.02,
+    "gkDistOkPct": 84.6,
+    "committedShareChasing": 0.931,
+    "committedShareLeading": 0.914,
+    "recyclePassWithFreeForwardMatePct": 4.4,
+    "edgeShotsWithFreeMateInBoxPct": 8,
+    "players": {
+     "robert-lewandowski": {
+      "shots": 10.31,
+      "goals": 3.71,
+      "xgPerShot": 0.359,
+      "passPct": 81.8,
+      "passes": 16.1,
+      "keyPasses": 1.17,
+      "assists": 0.41,
+      "recoveries": 5.77,
+      "dribOkPct": 69.3,
+      "lost": 7.01
+     },
+     "xabi-alonso": {
+      "shots": 2.35,
+      "goals": 0.7,
+      "xgPerShot": 0.299,
+      "passPct": 80,
+      "passes": 29.6,
+      "keyPasses": 4.35,
+      "assists": 1.58,
+      "recoveries": 13.64,
+      "dribOkPct": 68.6,
+      "lost": 9.24
+     },
+     "andrea-pirlo": {
+      "shots": 2.97,
+      "goals": 0.99,
+      "xgPerShot": 0.334,
+      "passPct": 82.3,
+      "passes": 26.6,
+      "keyPasses": 4.62,
+      "assists": 1.68,
+      "recoveries": 12.88,
+      "dribOkPct": 65.9,
+      "lost": 10.37
+     }
+    }
+   },
+   "winPctByTactic": {
+    "balanced": 64.4,
+    "press": 59.1,
+    "possession": 60,
+    "counter": 73.1
+   }
+  },
+  "Makelele+Ballack+Drogba": {
+   "ids": [
+    "claude-makelele",
+    "michael-ballack",
+    "didier-drogba"
+   ],
+   "vsControls": {
+    "pairs": 640,
+    "winPct": 89.6,
+    "pairWinPct": 81.1,
+    "pairSplitPct": 17,
+    "gf": 6.5,
+    "ga": 2.67,
+    "shotsPerMatch": 22,
+    "xgPerShot": 0.428,
+    "conv": 0.295,
+    "blockedPct": 32.8,
+    "passPct": 84.6,
+    "fwdPassPct": 39.1,
+    "throughPerMatch": 12.8,
+    "throughOkPct": 69.3,
+    "keyPassesPerMatch": 15.36,
+    "recoveriesPerMatch": 35.9,
+    "pressWonPct": 31.5,
+    "dribOkPct": 64.7,
+    "lostPerMatch": 28.6,
+    "lostDangerPct": 39.6,
+    "coverFailPerMatch": 13.46,
+    "counterPossPct": 41.6,
+    "counterGoalPct": 44,
+    "rotationsPerMatch": 0,
+    "gkDistOkPct": 84.1,
+    "committedShareChasing": 0.625,
+    "committedShareLeading": 0.675,
+    "recyclePassWithFreeForwardMatePct": 6.5,
+    "edgeShotsWithFreeMateInBoxPct": 9.1,
+    "players": {
+     "didier-drogba": {
+      "shots": 13.18,
+      "goals": 4.19,
+      "xgPerShot": 0.31,
+      "passPct": 86.1,
+      "passes": 18.4,
+      "keyPasses": 2.22,
+      "assists": 0.65,
+      "recoveries": 4.96,
+      "dribOkPct": 65.5,
+      "lost": 6.97
+     },
+     "claude-makelele": {
+      "shots": 1.64,
+      "goals": 0.15,
+      "xgPerShot": 0.094,
+      "passPct": 84.7,
+      "passes": 38.1,
+      "keyPasses": 8.87,
+      "assists": 2.68,
+      "recoveries": 23.24,
+      "dribOkPct": 63.3,
+      "lost": 8.82
+     },
+     "michael-ballack": {
+      "shots": 7.22,
+      "goals": 2.16,
+      "xgPerShot": 0.291,
+      "passPct": 83.2,
+      "passes": 23.7,
+      "keyPasses": 4.28,
+      "assists": 1.38,
+      "recoveries": 7.7,
+      "dribOkPct": 64.5,
+      "lost": 6.5
+     }
+    }
+   },
+   "winPctByTactic": {
+    "balanced": 92.2,
+    "press": 89.7,
+    "possession": 89.4,
+    "counter": 87.2
+   }
+  }
+ },
+ "h2h": {},
+ "comp": null
+}
