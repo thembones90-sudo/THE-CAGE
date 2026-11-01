@@ -1,0 +1,69 @@
+{
+ "matches": 40,
+ "perMatch": {
+  "contradictions": 4.4,
+  "impossible": 3.3
+ },
+ "byEventType": {
+  "turnover": {
+   "perMatch": 2.8,
+   "impossiblePerMatch": 2.8,
+   "perEvent": 0.05
+  },
+  "shot_attempt": {
+   "perMatch": 0.3,
+   "impossiblePerMatch": 0.3,
+   "perEvent": 0.01
+  },
+  "carry": {
+   "perMatch": 0.3,
+   "impossiblePerMatch": 0,
+   "perEvent": 0.01
+  },
+  "shot_miss": {
+   "perMatch": 0.3,
+   "impossiblePerMatch": 0,
+   "perEvent": 0.03
+  },
+  "goal": {
+   "perMatch": 0.2,
+   "impossiblePerMatch": 0,
+   "perEvent": 0.02
+  },
+  "block": {
+   "perMatch": 0.1,
+   "impossiblePerMatch": 0,
+   "perEvent": 0.02
+  },
+  "free_kick": {
+   "perMatch": 0.1,
+   "impossiblePerMatch": 0.1,
+   "perEvent": 0.04
+  },
+  "gk_save": {
+   "perMatch": 0.1,
+   "impossiblePerMatch": 0,
+   "perEvent": 0.03
+  },
+  "wall_pass": {
+   "perMatch": 0.1,
+   "impossiblePerMatch": 0,
+   "perEvent": 0
+  },
+  "gk_parry": {
+   "perMatch": 0.1,
+   "impossiblePerMatch": 0,
+   "perEvent": 0.03
+  },
+  "dribble_duel": {
+   "perMatch": 0,
+   "impossiblePerMatch": 0,
+   "perEvent": 0
+  },
+  "recovery_run": {
+   "perMatch": 0,
+   "impossiblePerMatch": 0,
+   "perEvent": 0
+  }
+ }
+}

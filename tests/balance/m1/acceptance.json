@@ -1,0 +1,12 @@
+{
+ "engine": "cage-t3-13",
+ "movement": "m1-v1",
+ "matches": 24,
+ "avgMovementKB": 140.3,
+ "shareOfResult": 0.126,
+ "framesPerMatch": 4918,
+ "contradictionsPerMatch": 4.7,
+ "impossiblePerMatch": 2.88,
+ "simMsWithMovement": 946,
+ "simMsWithout": 565
+}
