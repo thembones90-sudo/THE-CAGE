@@ -1,0 +1,10 @@
+engine cage-t3-12 roster 194 goalkeepers ON (3+1, random distinct keepers)
+roles { D: 42, M: 74, F: 78 }
+equal-quality head-to-head (row comp win %, balanced v balanced, N=300):
+{"DMFvFFF":"51.7","DMFvMMM":"71.3","DMFvMMF":"58.0","FFFvMMM":"67.3","FFFvMMF":"53.0","DDDvDMF":"14.7","DDDvFFF":"18.7","DDDvMMM":"25.3","DDDvDDF":"13.3","DDDvMMF":"23.3","DDFvDMF":"48.7","DDFvFFF":"56.0","DDFvMMM":"73.3","DDFvMMF":"60.0","MMFvMMM":"61.7"}
+overall {"DMF":"63.5","FFF":"58.8","DDD":"19.1","MMM":"40.2","DDF":"64.9","MMF":"53.5"}
+games 4500 errors 0; duration median 1202s p99 1877s; goals/match median 7 mean 7.34; golden-goal deciders 13.8%
+quality gradient (A-B mean quality gap bins): -99..-8: 23.8% (n80) | -8..-4: 34.7% (n576) | -4..-1.5: 41.1% (n901) | -1.5..1.5: 50.1% (n1364) | 1.5..4: 58.6% (n900) | 4..8: 66.6% (n602) | 8..99: 84.4% (n77)
+DDD tactic vs random balanced {"balanced":"17.7","press":"26.3","possession":"16.0","counter":"25.3"}
+MMM tactic vs random balanced {"balanced":"37.3","press":"41.7","possession":"40.0","counter":"40.0"}
+FFF tactic vs random balanced {"balanced":"48.0","press":"45.0","possession":"53.0","counter":"49.7"}
