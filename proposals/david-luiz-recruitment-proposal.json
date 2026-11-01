@@ -2,7 +2,7 @@
  "version": "david-luiz-recruitment-v1-proposal",
  "date": "2026-11-01",
  "author": "Claude (draft for owner approval)",
- "status": "PROPOSAL. Not in the playable roster. Owner decision 5 (T3-14).",
+ "status": "PROVISIONAL ELITE (owner review decision 4). Not in the playable roster. OVR provisional pending owner review.",
  "player": {
   "id": "david-luiz",
   "name": "David Luiz",
@@ -29,7 +29,7 @@
    "tech": 84,
    "pass": 85,
    "finish": 60,
-   "def": 86,
+   "def": 89,
    "phys": 86,
    "first_touch": 84,
    "dribbling": 82,
@@ -39,9 +39,9 @@
    "shooting": 84,
    "stamina": 85,
    "physical": 86,
-   "tackling": 86,
-   "positioning": 76,
-   "composure": 68
+   "tackling": 89,
+   "positioning": 78,
+   "composure": 56
   },
   "ratingType": "proposal-david-luiz-v1",
   "attributes": {
@@ -54,7 +54,7 @@
   "ratingsVersion": "proposal",
   "attributesProvisional": true
  },
- "computedOverall": 83,
+ "computedOverall": 84,
  "overallNote": "Computed by the existing OVR V2.1 formula (src/overall.js compute). The formula selects the \"Traditional centre-back\" archetype, which values positioning and composure, his documented weaknesses. No per-player override is proposed; the owner may decide whether ELITE tier with an 83 OVR is acceptable (tier is career status, OVR is attributes).",
  "personality": {
   "discipline": 30,
@@ -74,5 +74,46 @@
   "ELITE tier (owner-specified) vs computed OVR 83",
   "secondary position CDM (Chelsea midfield spells)",
   "no folklore labels proposed"
- ]
+ ],
+ "revision": {
+  "date": "2026-11-01",
+  "reason": "Owner review: composure and full profile checked against all 24 roster centre-backs.",
+  "changes": {
+   "def": [
+    86,
+    89
+   ],
+   "tackling": [
+    86,
+    89
+   ],
+   "positioning": [
+    76,
+    78
+   ],
+   "composure_base": [
+    68,
+    56
+   ]
+  },
+  "evidence": {
+   "composure_base": "His v1.1 composure (74) places him with Chiellini 74, Mihajlovic 71, Stam 71 and Lucio 70, whose base composure is 50, 62, 42 and 58. The draft 68 sat above the CB mean (62); 56 aligns base and v1.1 rankings.",
+   "def_tackling": "Draft 86 was the lowest of 24 CBs (88-99). His documented weakness is positioning, rated separately, not duelling; 89 places him with Hyypia/Barzagli/Belodedici (88-89).",
+   "positioning": "78 equals Stam, the closest comparable for adventurous or erratic positioning; still the joint-lowest among CBs."
+  },
+  "unchangedAndWhy": "pace 79, tech 84, pass 85 (above CB means 73/76, below Beckenbauer), phys 86, shooting 84, v1.1 attributes (composure 74, marking 78, work rate 88, agility 82).",
+  "computedOverall": 84,
+  "archetype": "Traditional centre-back",
+  "domains": {
+   "mobility": 79,
+   "control": 83.3,
+   "creation": 84.58,
+   "scoring": 67.2,
+   "defending": 86.25,
+   "power": 86,
+   "intelligence": 56,
+   "engine": 85
+  },
+  "formulaChanged": false
+ }
 }

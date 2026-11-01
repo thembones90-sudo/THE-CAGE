@@ -1,6 +1,6 @@
 # THE CAGE: canonical football doctrine (traceable specification)
 
-**Status:** consolidation of owner-approved rulings, 2026-11-01. **No new principles are introduced.** Every item cites its source. Engine work references these IDs (for example "implements P-07").
+**Status: APPROVED as the canonical football doctrine (owner review decision 3, 2026-11-01).** Consolidation of owner-approved rulings. **No new principles are introduced.** Every item cites its source. Engine work references these IDs (for example "implements P-07").
 
 **Sources:**
 - **[B]** the T3-14 brief ("Football Intelligence & Chemistry Engine");
@@ -87,3 +87,11 @@
 - **D-3:** goalkeeper class effects to be made transparent and audited.
 - **D-4:** doctrine numbering consolidated (this document).
 - **D-5:** recruit David Luiz as a proposed ELITE defender, for approval before roster insertion.
+
+## Owner review decisions (2026-11-01, second round)
+
+- **R-1:** personality values to be re-scored independently (done as v2; see the review pack). Not integrated until approved.
+- **R-2:** goalkeeper classes redesigned: hidden probability bonuses removed in the new engine; classes drive decisions; attributes drive execution. Historical engines unchanged. Implemented in cage-t3-13, verified by `tests/t3-13-gk-style.cjs`.
+- **R-3:** this doctrine approved as canonical.
+- **R-4:** David Luiz provisional ELITE: Libero/Architect, 2014–2017, no formula change, profile reviewed against comparable defenders; OVR provisional.
+- **R-5:** Claude owns final engine integration. Codex commits visual work independently; Claude merges into an integration branch, runs all regression and replay checks, verifies the executable, and merges only when validated.

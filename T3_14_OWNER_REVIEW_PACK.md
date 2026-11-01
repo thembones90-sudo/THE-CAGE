@@ -84,3 +84,65 @@ Every item cites its source. No principles were invented to reach 23.
 - match state.
 
 It needs your verdict on §1 (values as proposed, the remedy, or a re-score). Until then I can build the mechanism behind a flag using existing attributes only, and measure it with the decision telemetry.
+
+
+---
+
+# Second review round (owner decisions R-1 to R-5, 2026-11-01)
+
+## R-1: personality re-scored independently, v2
+
+**File:** `proposals/personality-v2-proposal.json` (195 players). Each player now has a **separate note per dimension**. Pass 1 scored discipline with no reference to attacking tendencies; pass 2 scored individualism with no reference to positional discipline. v1 is kept for comparison.
+
+| Correlation | v1 | **v2** |
+|---|---|---|
+| Discipline vs individualism, all players | −0.87 | **−0.76** |
+| Within forwards | −0.58 | **−0.34** |
+| Within defenders / within midfielders | −0.90 / −0.90 | **−0.78 / −0.78** |
+| Discipline vs overall rating | 0.10 | 0.10 |
+| Individualism vs overall rating | −0.02 | −0.01 |
+
+**Notable separations in v2:**
+- Lampard: disciplined 72, shot-first 72.
+- Beckenbauer and Lúcio: defenders who carried the ball themselves (individualism 55 and 62).
+- Riquelme and Özil: undisciplined 42 and 48, but cooperative 45 and 18.
+- Eto'o: disciplined 86, scorer 62.
+- Inzaghi: role-faithful 70, greedy 90.
+
+**Why the defender and midfielder correlation stays high:** part of it comes from the definitions themselves. A defender who takes personal attacking actions must leave his position to do it, so positional indiscipline and attacking individualism co-occur in the same players (Roberto Carlos, Lúcio, Ramos, David Luiz). **I did not adjust values to hit a lower correlation** (that would be tuning to a statistic). If you want more separation, the option is a definition change: individualism measured **only once a player is already in an attacking situation**. Defenders would then be scored on what they do when they arrive in the box, not on how often they go there.
+
+- **Low confidence (10):** Nenê, Babangida, Luque, Mboma, Marcelinho, Arango, Farfán, Adu, Macheda, Drenthe.
+- **Not wired into gameplay.**
+
+## R-2: goalkeeper redesign, implemented and verified (cage-t3-13)
+
+See commit `929c165` and `tests/t3-13-gk-style.cjs`.
+
+**Execution:**
+- **No class execution bonus** in shot-stopping, sweeping, distribution or claiming; the test checks every keeper under all five classes.
+- **Success follows attributes:** sweep success is 0.327 for high-sweeping keepers vs 0.158 for low.
+
+**Decision rates in 600 real matches, measured vs style:**
+
+| Class | Sweep | Rush one-on-one | Claim |
+|---|---|---|---|
+| Sweeper | 0.91 / 0.90 | 0.83 / 0.80 | 0.41 / 0.45 |
+| Commander | 0.54 / 0.55 | 0.52 / 0.60 | 0.68 / 0.65 |
+| Guardian | 0.35 / 0.35 | 0.49 / 0.45 | 0.35 / 0.35 |
+| Distributor | 0.54 / 0.55 | 0.44 / 0.55 | 0.35 / 0.35 |
+| Reflex monster | 0.34 / 0.35 | 0.27 / 0.30 | 0.26 / 0.25 |
+
+**Match effect** (400 identical matches): goals 9.23 → 9.15; sweeps 14.3 → 6.5 per match; claims 2.7 per match (new).
+
+**Historical engines** use the untouched original rules; all historical keeper replay tests pass.
+
+**For Codex:** add `gk_claim` to the viewer's keeper-event list (`viewer-v4/viewer.js`) and a commentary line, so claims animate.
+
+## R-4: David Luiz, revised provisional profile
+
+**Compared with all 24 roster centre-backs** (details in `proposals/david-luiz-recruitment-proposal.json` → `revision`):
+- **Base composure 68 → 56.** His v1.1 composure (74) places him with Chiellini, Mihajlović, Stam and Lúcio, whose base values are 42–62.
+- **Defending and tackling 86 → 89.** The draft was the lowest of 24 centre-backs, but his documented flaw is positioning, not duelling.
+- **Positioning 76 → 78**, level with Stam.
+
+**Overall 84** (was 83). The formula is unchanged and the archetype stays "Traditional centre-back". Still provisional.
