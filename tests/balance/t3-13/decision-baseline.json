@@ -1,0 +1,380 @@
+{
+ "engine": "cage-t3-13",
+ "pairs": 20,
+ "teams": [
+  [
+   "ronaldinho",
+   "juan-roman-riquelme",
+   "dimitar-berbatov"
+  ],
+  [
+   "gennaro-gattuso",
+   "claude-makelele",
+   "ngolo-kante"
+  ],
+  [
+   "andrea-pirlo",
+   "paolo-maldini",
+   "ronaldo-nazario"
+  ],
+  [
+   "franz-beckenbauer",
+   "roberto-carlos",
+   "nemanja-vidic"
+  ],
+  [
+   "cristiano-ronaldo",
+   "zlatan-ibrahimovic",
+   "xavi-hernandez"
+  ],
+  [
+   "michael-ballack",
+   "didier-drogba",
+   "sergio-ramos"
+  ]
+ ],
+ "players": [
+  {
+   "id": "andrea-pirlo",
+   "decisions": 10049,
+   "shootPct": 6.7,
+   "shotsWhenGoodChancePct": 17.7,
+   "goodChances": 2746,
+   "freeMateAheadIgnoredPct": 26.7,
+   "poorShotPct": 1.3,
+   "lowValueShotsWithFreeMatePct": 0.4,
+   "chosen": {
+    "pass": 3670,
+    "dribble": 2395,
+    "wall": 1446,
+    "shoot": 672,
+    "carry": 602,
+    "through": 1090,
+    "outlet": 174
+   }
+  },
+  {
+   "id": "claude-makelele",
+   "decisions": 10259,
+   "shootPct": 0.4,
+   "shotsWhenGoodChancePct": 20,
+   "goodChances": 5,
+   "freeMateAheadIgnoredPct": 62.4,
+   "poorShotPct": 69,
+   "lowValueShotsWithFreeMatePct": 33.3,
+   "chosen": {
+    "pass": 6657,
+    "outlet": 1331,
+    "carry": 1353,
+    "dribble": 557,
+    "through": 283,
+    "wall": 36,
+    "shoot": 42
+   }
+  },
+  {
+   "id": "cristiano-ronaldo",
+   "decisions": 11504,
+   "shootPct": 18.5,
+   "shotsWhenGoodChancePct": 30.2,
+   "goodChances": 5279,
+   "freeMateAheadIgnoredPct": 25,
+   "poorShotPct": 0,
+   "lowValueShotsWithFreeMatePct": 1.3,
+   "chosen": {
+    "pass": 2924,
+    "wall": 1810,
+    "shoot": 2125,
+    "dribble": 2943,
+    "outlet": 237,
+    "through": 565,
+    "carry": 900
+   }
+  },
+  {
+   "id": "didier-drogba",
+   "decisions": 9809,
+   "shootPct": 23.7,
+   "shotsWhenGoodChancePct": 33.2,
+   "goodChances": 3995,
+   "freeMateAheadIgnoredPct": 33.4,
+   "poorShotPct": 0,
+   "lowValueShotsWithFreeMatePct": 4.4,
+   "chosen": {
+    "shoot": 2327,
+    "carry": 1141,
+    "dribble": 2658,
+    "pass": 3140,
+    "through": 19,
+    "outlet": 443,
+    "wall": 81
+   }
+  },
+  {
+   "id": "dimitar-berbatov",
+   "decisions": 7973,
+   "shootPct": 9.4,
+   "shotsWhenGoodChancePct": 21.7,
+   "goodChances": 2091,
+   "freeMateAheadIgnoredPct": 28.1,
+   "poorShotPct": 0,
+   "lowValueShotsWithFreeMatePct": 4.8,
+   "chosen": {
+    "pass": 2460,
+    "through": 972,
+    "outlet": 189,
+    "dribble": 1911,
+    "shoot": 748,
+    "wall": 769,
+    "carry": 924
+   }
+  },
+  {
+   "id": "franz-beckenbauer",
+   "decisions": 10987,
+   "shootPct": 1.4,
+   "shotsWhenGoodChancePct": 10.2,
+   "goodChances": 501,
+   "freeMateAheadIgnoredPct": 51.8,
+   "poorShotPct": 9.7,
+   "lowValueShotsWithFreeMatePct": 3.9,
+   "chosen": {
+    "through": 1618,
+    "pass": 6488,
+    "carry": 817,
+    "dribble": 726,
+    "outlet": 828,
+    "shoot": 154,
+    "wall": 356
+   }
+  },
+  {
+   "id": "gennaro-gattuso",
+   "decisions": 11245,
+   "shootPct": 0.9,
+   "shotsWhenGoodChancePct": 25,
+   "goodChances": 20,
+   "freeMateAheadIgnoredPct": 59,
+   "poorShotPct": 53.5,
+   "lowValueShotsWithFreeMatePct": 26.7,
+   "chosen": {
+    "pass": 6975,
+    "carry": 1345,
+    "dribble": 699,
+    "outlet": 1990,
+    "shoot": 101,
+    "wall": 61,
+    "through": 74
+   }
+  },
+  {
+   "id": "juan-roman-riquelme",
+   "decisions": 5543,
+   "shootPct": 5.5,
+   "shotsWhenGoodChancePct": 18.4,
+   "goodChances": 1235,
+   "freeMateAheadIgnoredPct": 39,
+   "poorShotPct": 2.3,
+   "lowValueShotsWithFreeMatePct": 0.3,
+   "chosen": {
+    "pass": 2558,
+    "through": 638,
+    "wall": 620,
+    "dribble": 977,
+    "shoot": 306,
+    "carry": 350,
+    "outlet": 94
+   }
+  },
+  {
+   "id": "michael-ballack",
+   "decisions": 9990,
+   "shootPct": 19.2,
+   "shotsWhenGoodChancePct": 36,
+   "goodChances": 3260,
+   "freeMateAheadIgnoredPct": 35.3,
+   "poorShotPct": 1.7,
+   "lowValueShotsWithFreeMatePct": 4.8,
+   "chosen": {
+    "wall": 145,
+    "pass": 3939,
+    "carry": 991,
+    "dribble": 2075,
+    "outlet": 353,
+    "shoot": 1917,
+    "through": 570
+   }
+  },
+  {
+   "id": "nemanja-vidic",
+   "decisions": 8124,
+   "shootPct": 1.4,
+   "shotsWhenGoodChancePct": null,
+   "goodChances": 0,
+   "freeMateAheadIgnoredPct": 46.9,
+   "poorShotPct": 95.7,
+   "lowValueShotsWithFreeMatePct": 25,
+   "chosen": {
+    "carry": 1512,
+    "pass": 3874,
+    "dribble": 714,
+    "outlet": 1679,
+    "shoot": 116,
+    "through": 108,
+    "wall": 121
+   }
+  },
+  {
+   "id": "ngolo-kante",
+   "decisions": 17298,
+   "shootPct": 6.9,
+   "shotsWhenGoodChancePct": 88.3,
+   "goodChances": 120,
+   "freeMateAheadIgnoredPct": 50,
+   "poorShotPct": 23.8,
+   "lowValueShotsWithFreeMatePct": 0,
+   "chosen": {
+    "carry": 2413,
+    "dribble": 4775,
+    "shoot": 1200,
+    "pass": 8643,
+    "wall": 251,
+    "outlet": 15,
+    "through": 1
+   }
+  },
+  {
+   "id": "paolo-maldini",
+   "decisions": 7890,
+   "shootPct": 1.1,
+   "shotsWhenGoodChancePct": 45,
+   "goodChances": 20,
+   "freeMateAheadIgnoredPct": 67.6,
+   "poorShotPct": 34.4,
+   "lowValueShotsWithFreeMatePct": 16.7,
+   "chosen": {
+    "carry": 646,
+    "dribble": 727,
+    "pass": 5502,
+    "through": 347,
+    "outlet": 495,
+    "shoot": 90,
+    "wall": 83
+   }
+  },
+  {
+   "id": "roberto-carlos",
+   "decisions": 14623,
+   "shootPct": 15.9,
+   "shotsWhenGoodChancePct": 33.9,
+   "goodChances": 4525,
+   "freeMateAheadIgnoredPct": 19.5,
+   "poorShotPct": 4.3,
+   "lowValueShotsWithFreeMatePct": 0.1,
+   "chosen": {
+    "shoot": 2332,
+    "carry": 1465,
+    "dribble": 4337,
+    "pass": 5538,
+    "wall": 891,
+    "through": 19,
+    "outlet": 41
+   }
+  },
+  {
+   "id": "ronaldinho",
+   "decisions": 10546,
+   "shootPct": 7.8,
+   "shotsWhenGoodChancePct": 14.7,
+   "goodChances": 3922,
+   "freeMateAheadIgnoredPct": 27.5,
+   "poorShotPct": 3.2,
+   "lowValueShotsWithFreeMatePct": 2.8,
+   "chosen": {
+    "pass": 3265,
+    "shoot": 825,
+    "carry": 670,
+    "dribble": 3102,
+    "wall": 1946,
+    "outlet": 166,
+    "through": 572
+   }
+  },
+  {
+   "id": "ronaldo-nazario",
+   "decisions": 10009,
+   "shootPct": 17.6,
+   "shotsWhenGoodChancePct": 28.6,
+   "goodChances": 4471,
+   "freeMateAheadIgnoredPct": 20.1,
+   "poorShotPct": 0,
+   "lowValueShotsWithFreeMatePct": 3,
+   "chosen": {
+    "pass": 2270,
+    "shoot": 1759,
+    "dribble": 2830,
+    "wall": 1320,
+    "through": 931,
+    "outlet": 233,
+    "carry": 666
+   }
+  },
+  {
+   "id": "sergio-ramos",
+   "decisions": 8289,
+   "shootPct": 1.7,
+   "shotsWhenGoodChancePct": 26.5,
+   "goodChances": 68,
+   "freeMateAheadIgnoredPct": 69.1,
+   "poorShotPct": 18.3,
+   "lowValueShotsWithFreeMatePct": 8.5,
+   "chosen": {
+    "carry": 880,
+    "pass": 5699,
+    "dribble": 705,
+    "outlet": 752,
+    "through": 66,
+    "shoot": 142,
+    "wall": 45
+   }
+  },
+  {
+   "id": "xavi-hernandez",
+   "decisions": 7165,
+   "shootPct": 4.7,
+   "shotsWhenGoodChancePct": 17,
+   "goodChances": 1360,
+   "freeMateAheadIgnoredPct": 38.2,
+   "poorShotPct": 2.4,
+   "lowValueShotsWithFreeMatePct": 1.5,
+   "chosen": {
+    "dribble": 1174,
+    "carry": 533,
+    "shoot": 336,
+    "through": 931,
+    "pass": 3067,
+    "wall": 957,
+    "outlet": 167
+   }
+  },
+  {
+   "id": "zlatan-ibrahimovic",
+   "decisions": 6467,
+   "shootPct": 13.9,
+   "shotsWhenGoodChancePct": 23,
+   "goodChances": 2640,
+   "freeMateAheadIgnoredPct": 30.3,
+   "poorShotPct": 0,
+   "lowValueShotsWithFreeMatePct": 2.6,
+   "chosen": {
+    "dribble": 1495,
+    "wall": 757,
+    "pass": 2135,
+    "shoot": 901,
+    "carry": 507,
+    "through": 518,
+    "outlet": 154
+   }
+  }
+ ]
+}

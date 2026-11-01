@@ -4,7 +4,7 @@ const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f
 const c={window:{location:{search:''}}};vm.createContext(c);
 for(const m of read('play.html').matchAll(/<script src="(src\/[^"]+)"><\/script>/g)){vm.runInContext(read(m[1]),c,{filename:m[1]});if(m[1]==='src/replay/records.js')break;}
 const W=c.window,E=W.CageEngineT311,old=W.CageEngineT310,Records=W.CageRecords;
-assert.equal(E.VERSION,'cage-t3-11');assert.equal(W.CageEngine.VERSION,'cage-t3-12');assert.equal(old.VERSION,'cage-t3-10');assert.equal(W.CAGE_ENGINE_REGISTRY['cage-t3-10'],old);
+assert.equal(E.VERSION,'cage-t3-11');assert.equal(W.CageEngine.VERSION,require('./baseline-current.cjs').CURRENT_ENGINE);assert.equal(old.VERSION,'cage-t3-10');assert.equal(W.CAGE_ENGINE_REGISTRY['cage-t3-10'],old);
 const set={
  mixed:[['paolo-maldini','michael-ballack','ronaldo-nazario'],['ledley-king','claudio-marchisio','antonio-valencia']],
  defenders:[['paolo-maldini','nemanja-vidic','alessandro-nesta'],['rio-ferdinand','ledley-king','john-terry']]

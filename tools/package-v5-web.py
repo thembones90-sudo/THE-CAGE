@@ -11,7 +11,7 @@ canonical=canonical[:canonical.index("src/showdown.js")]
 assert scripts[:len(canonical)]==canonical,"Playable scripts differ from canonical 194-player game. Run tools/sync-v53-game.py and review."
 assert "src/roster-182.js" in scripts
 styles=re.findall(r'<link\s+rel="stylesheet"\s+href="([^"]+)"',html)
-assets={"play.html","draft.html","src/random-draft.js","src/cpu-draft.js","src/war-room.js","design/qwen-v67-gk-cards.css","design/qwen-v67-integration.css","design/v68-gk-legends.css","src/keeper-card-ui.js","src/keeper-draft.js","src/goalkeepers.js","src/tactics/goalkeeper-rules.js","src/cage-engine-v66.js","src/cage-engine-v68.js","src/cage-engine-v69.js","src/cage-engine-v610.js","src/cage-engine-v611.js","src/goalkeepers-gk30.js","src/cage-engine-draft.js","manifest.webmanifest","assets/cage-icon.svg","sw.js",
+assets={"play.html","draft.html","src/random-draft.js","src/cpu-draft.js","src/war-room.js","design/qwen-v67-gk-cards.css","design/qwen-v67-integration.css","design/v68-gk-legends.css","src/keeper-card-ui.js","src/keeper-draft.js","src/goalkeepers.js","src/tactics/goalkeeper-rules.js","src/cage-engine-v66.js","src/cage-engine-v68.js","src/cage-engine-v69.js","src/cage-engine-v610.js","src/cage-engine-v611.js","src/cage-engine-v612.js","src/goalkeepers-gk30.js","src/cage-engine-draft.js","manifest.webmanifest","assets/cage-icon.svg","sw.js",
  "design/qwen-30b/arena/arena.svg","design/qwen-30b/arena/arena-golden.svg",
  "design/qwen-30b/arena/relic-ball.svg"}
 assets.update(scripts);assets.update(styles)

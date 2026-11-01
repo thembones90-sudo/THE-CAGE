@@ -4,7 +4,7 @@ const files=[...read('play.html').matchAll(/<script src="(src\/[^"]+)"><\/script
 const ctx={window:{location:{search:''}}};vm.createContext(ctx);
 for(const f of files){vm.runInContext(read(f),ctx,{filename:f});if(f==='src/replay/records.js')break;}
 const E=ctx.window.CageEngine,old=ctx.window.CageEngineV65,oldKeeper=ctx.window.CageEngineV66,oldT38=ctx.window.CageEngineT38,oldT310=ctx.window.CageEngineT310,oldT311=ctx.window.CageEngineT311,G=ctx.window.CageGoalkeepers,Records=ctx.window.CageRecords;
-assert.equal(E.VERSION,'cage-t3-12');assert.equal(oldT38.VERSION,'cage-t3-8');assert.equal(oldKeeper.VERSION,'cage-t3-7');assert.equal(old.VERSION,'cage-t3-6');assert.equal(G.players.length,50);assert.equal(ctx.window.CageEngineT39.VERSION,'cage-t3-9');
+assert.equal(E.VERSION,require('./baseline-current.cjs').CURRENT_ENGINE);assert.equal(oldT38.VERSION,'cage-t3-8');assert.equal(oldKeeper.VERSION,'cage-t3-7');assert.equal(old.VERSION,'cage-t3-6');assert.equal(G.players.length,50);assert.equal(ctx.window.CageEngineT39.VERSION,'cage-t3-9');
 assert.equal(ctx.window.CAGE_ENGINE_REGISTRY['cage-t3-6'].VERSION,'cage-t3-6');assert.equal(ctx.window.CAGE_ENGINE_REGISTRY['cage-t3-7'].VERSION,'cage-t3-7');assert.equal(ctx.window.CAGE_ENGINE_REGISTRY['cage-t3-8'].VERSION,'cage-t3-8');assert.equal(oldT310.VERSION,'cage-t3-10');assert.equal(oldT311.VERSION,'cage-t3-11');
 const team=[['paolo-maldini','michael-ballack','ronaldo-nazario'],['ledley-king','claudio-marchisio','antonio-valencia']];
 const base={teams:team,tactics:['balanced','press'],mode:'score',traits:{enabled:true}},pair=['gianluigi-buffon','rene-higuita'];

@@ -3,7 +3,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8'),files=[...read('play.html').matchAll(/<script src="(src\/[^"]+)"><\/script>/g)].map(m=>m[1]),ctx={window:{location:{search:''}}};vm.createContext(ctx);
 for(const f of files){vm.runInContext(read(f),ctx,{filename:f});if(f==='src/replay/records.js')break;}
 const E=ctx.window.CageEngine,old=ctx.window.CageEngineT38,R=ctx.window.CageRecords,G=ctx.window.CageGoalkeepers;
-assert.equal(E.VERSION,'cage-t3-12');assert.equal(old.VERSION,'cage-t3-8');assert(G.RATINGS_VERSION.includes('v68'));
+assert.equal(E.VERSION,require('./baseline-current.cjs').CURRENT_ENGINE);assert.equal(old.VERSION,'cage-t3-8');assert(G.RATINGS_VERSION.includes('v68'));
 const base={teams:[['paolo-maldini','michael-ballack','ronaldo-nazario'],['ledley-king','claudio-marchisio','antonio-valencia']],tactics:['balanced','press'],mode:'score',traits:{enabled:true},keepers:['gianluigi-buffon','rene-higuita']};
 const hashes={100:'95be1c5d',101:'4483cdf2',102:'822c2162',103:'5ab0f48d',1500:'e60dbf5d',1570:'61fe5c6f',9999:'7b2f98b9'};
 for(const [seed,hash] of Object.entries(hashes)){const cfg={...base,seed:+seed},r=old.simulate(cfg);assert.equal(r.eventHash,hash,'T3-8 archived event hash changed '+seed);const rec=R.make(cfg,r,1),legacy=JSON.parse(JSON.stringify(rec));legacy.engineVersion='cage-t3-8';legacy.paramsVersion=old.PARAMS_VERSION;delete legacy.keeperRatingsVersion;assert.equal(R.reproduce(legacy).eventHash,hash);}
