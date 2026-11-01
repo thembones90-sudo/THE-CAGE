@@ -142,3 +142,25 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.08;ba
 /* A free-kick award is a set piece, not a recorded shot. */
 .cv-stage .cv-action[data-kind="setpiece"]{color:#d2e8ee;border-color:#84c1cb;background:linear-gradient(100deg,#174047dc,#17242cec)}
 .cv-stage[data-action="setpiece"]{border-color:#638e9b}
+
+/* V6.3: shared goal spectacle on draft, match and replay viewers. */
+
+/* The goal shutter effect is rendered ONLY inside the recorded-goal overlay. */
+.cv-golden-doors{position:absolute;z-index:0;inset:10% 2%;pointer-events:none;display:flex;justify-content:space-between;opacity:.5}
+.cv-golden-doors i{display:block;height:100%;width:27%;border:2px solid #c79c4e;background:
+ repeating-linear-gradient(54deg,transparent 0 18px,#d7b77635 18px 19px,transparent 19px 32px,#d7b77635 32px 33px),
+ repeating-linear-gradient(-54deg,transparent 0 18px,#d7b77635 18px 19px,transparent 19px 32px,#d7b77635 32px 33px),
+ linear-gradient(90deg,#6c522b50,#0b182060);
+ box-shadow:inset 0 0 28px #000a,0 0 21px #dbb25a48}
+.cv-golden-doors i:first-child{transform:translateX(-105%);animation:v63-open-left .8s cubic-bezier(.19,.6,.2,1) both}
+.cv-golden-doors i:last-child{transform:translateX(105%);animation:v63-open-right .8s cubic-bezier(.19,.6,.2,1) both}
+.cv-root.cv-goal-in-progress[data-goal-side="a"] .cv-scoreboard{border-bottom:3px solid #5dc7ed;box-shadow:inset 0 -11px 26px #2e8eb121}
+.cv-root.cv-goal-in-progress[data-goal-side="b"] .cv-scoreboard{border-bottom:3px solid #f27983;box-shadow:inset 0 -11px 26px #a53e4c24}
+.cv-golden-core{position:relative;z-index:2}
+.cv-golden-winner{border:1px solid #cba356!important;border-radius:4px;box-shadow:inset 0 0 18px #d3a45630,0 0 20px #c39a5340}
+.cv-golden-scorer{padding:3px 12px;border-bottom:1px solid #e0b76d66}
+@keyframes v63-open-left{0%{transform:translateX(0);opacity:1}100%{transform:translateX(-106%);opacity:.5}}
+@keyframes v63-open-right{0%{transform:translateX(0);opacity:1}100%{transform:translateX(106%);opacity:.5}}
+
+@media(max-width:650px){.cv-golden-doors{display:none}}
+@media(prefers-reduced-motion:reduce){.cv-golden-doors{display:none!important}.cv-golden-doors i{animation:none!important}}

@@ -75,5 +75,19 @@ function sample(tl,T,tau,motion){
     spin:t*2.9+Math.min(8,b.speed*.017),flight:isFlight,shot,source:'event-derived-sampled-position'
   },inferred:true};
 }
-return {FIELD,TAU_STEP,TURN_STEP,clamp,wrapAngle,deltaPoint,velocity,ballVelocity,orientationFor,classify,sample};
+// V6.4: Pure visual stride and banking. Never offsets the six authoritative
+// player coordinates or creates an event. Seeking to the same tau is identical.
+function visualPose(gait,id,tau,reducedMotion=false){
+ if(!gait||!Number.isFinite(gait.speed)||!Number.isFinite(gait.heading)||!Number.isFinite(tau))throw Error('Recorded kinetic sample required');
+ const running=gait.gait==='sprint',jog=gait.gait==='jog',moving=running||jog;
+ const speed=clamp(gait.speed,0,MAX_SPEED);
+ const phase=tau*(3.8+speed*.047)+(Array.from(String(id)).reduce((sum,ch)=>sum+ch.charCodeAt(0),0)%13)*.29;
+ const stride=reducedMotion||!moving?0:Math.sin(phase)*(running?1:.56);
+ const bank=reducedMotion?0:clamp((gait.turnRate||0)/9,-1,1)*(running?.36:.18);
+ const lean=reducedMotion?0:clamp((gait.accel||0)/MAX_ACCEL,-1,1)*.38;
+ const trail=reducedMotion||!moving?0:clamp(speed/160,0,1)*(running?1:.55);
+ return Object.freeze({heading:gait.heading,stride,bank,lean,trail,mode:running?'sprint':jog?'jog':'idle',source:gait.source||'recorded-travel'});
+}
+
+return {FIELD,TAU_STEP,TURN_STEP,clamp,wrapAngle,deltaPoint,velocity,ballVelocity,orientationFor,classify,sample,visualPose};
 });

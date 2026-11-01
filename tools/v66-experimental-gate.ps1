@@ -30,6 +30,7 @@ try{
   @('tests/v57-cinematic-browser.cjs','--reduced-motion'),
   @('tests/v54-classic-parity.cjs'),
   @('tests/viewer/run-all.cjs'),
+  @('tests/v64-locomotion.cjs'),
   @('tests/v60-package-parity.cjs')
  )
  $passed=0

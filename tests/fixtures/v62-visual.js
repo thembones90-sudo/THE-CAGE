@@ -14,6 +14,7 @@
  const shell=getComputedStyle(score),picture=pitch.getBoundingClientRect(),panel=document.querySelector('#draft-arena .cv-side').getBoundingClientRect(),header=score.getBoundingClientRect();
  const actionType=['shot_attempt','shot_miss'].includes(seg.type)?'shot':['pass','through_ball'].includes(seg.type)?'pass':'';
  const matchBox=score.querySelector('.cv-match').getBoundingClientRect();
+ window.__v64Viewer=player;
  window.__arenaVisual={segment:seg.type,at:player.playback.tau,goals:player.timeline.goals.length,candidates:15,canvas:!!document.querySelector('.cv-canvas'),scoreboardDisplay:shell.display,columns:shell.gridTemplateColumns.split(' ').filter(Boolean).length,scoreAligned:Math.abs((matchBox.left+matchBox.right)/2-(header.left+header.right)/2)<180,pitchWidth:Math.round(picture.width),commentaryWidth:Math.round(panel.width),actionKind:action.dataset.kind,expectedActionKind:actionType};
  return window.__arenaVisual;
 })();

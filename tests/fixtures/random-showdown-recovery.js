@@ -28,7 +28,7 @@ try{
   const end=window.CageRandomDraft.snapshot();
   check(end.history.length===1&&end.wins.A+end.wins.B===1,'pending match not finalized after resumed playback');
   check(end.used.length===6,'player exhaustion changed on reload');
-  $('next-round').click();check(window.CageRandomDraft.snapshot().round===2,'round 2 not started');
+  $('next-round').click();check(window.CageRandomDraft.snapshot().round===2,'round 2 not started');check(!$('round-intermission').classList.contains('hidden'),'round-two intermission not shown after prior match');check($('intermission-score').textContent==='SERIES '+end.wins.A+' : '+end.wins.B,'intermission standings changed across reload');
   for(let i=0;i<6;i++){ $('reveal').click();const next=window.CageRandomDraft.snapshot();check(next.pool.length===15,'round 2 pool missing');check(next.pool.every(id=>!end.used.includes(id)),'round 1 player appeared in round 2');$('pool').querySelector('button.card').click(); }
   check(window.CageRandomDraft.snapshot().finished,'round 2 draft not locked');
   sessionStorage.setItem('cage-recover-stage','round2-unplayed');location.reload();return;
