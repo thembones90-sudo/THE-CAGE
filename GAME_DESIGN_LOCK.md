@@ -1,5 +1,14 @@
 # THE CAGE — CORE GAME DESIGN (LOCKED)
 
+> **AMENDED 2026-11-01 (owner decisions D1, D3, D4). These amendments override the original text below wherever they conflict.**
+>
+> 1. **Primary mode: the 15-card random draft** (`draft.html`, rules in `EXCLUSIVE_DRAFT_RULES.md`). It is the default entry point. **Memory-first recall** (`play.html` / `index.html`) is the **secondary mode**. All rules below still govern that mode.
+> 2. **Format: 3+1. Every team is three outfield players plus one goalkeeper, and goalkeepers must play.** New showdowns always include the private five-card goalkeeper draft. No-goalkeeper play exists only to resume old saves and to replay historical records. It is not offered for new matches.
+> 3. **Any composition is allowed** (for example three defenders or three midfielders). Each must have real strengths and weaknesses, and balance work treats a non-viable composition as an engine defect, not as a player mistake.
+> 4. **Scoring: regulation time, with a Golden Goal only if tied** (V6.5, user-approved).
+>
+> **Known gap:** the memory-recall mode (`src/showdown-v5.js`) has no goalkeeper phase yet. Until it does, it is out of line with rule 2.
+
 ## Foundational mechanic: memory-first player search
 
 THE CAGE is NOT a card browsing, pack opening, roster selection, or autocomplete discovery game.

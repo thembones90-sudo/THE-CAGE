@@ -213,7 +213,7 @@ button:focus-visible{outline:3px solid #f6d18b;outline-offset:3px}
       </div>
       <div class="iron-mode-setup"><label>MODE <select id="gameMode"><option value="hotseat">Local 2-player hotseat</option><option value="solo">Solo vs IRON AI</option></select></label><label>CPU DIFFICULTY <select id="cpuDifficulty" disabled><option value="casual">Casual</option><option value="competitive" selected>Competitive</option><option value="ruthless">Ruthless</option></select></label></div>
       <p class="muted" id="ironModeInfo">Hotseat: both players draft on this device. Solo: the CPU sees only its own fifteen candidates and revealed picks.</p>
-      <label class="intro-assist"><input type="checkbox" id="keeperMode"> Experimental 3+1 goalkeeper mode <small>50 ranked historical keepers · separate 5-card GK draft</small></label><label class="intro-assist"><input type="checkbox" id="hints"> Optional matchup indicators <small>OFF by default</small></label>
+      <label class="intro-assist"><input type="checkbox" id="keeperMode" checked disabled> 3+1 format: three outfield players + one goalkeeper <small>Mandatory · 50 ranked historical keepers · separate 5-card GK draft</small></label><label class="intro-assist"><input type="checkbox" id="hints"> Optional matchup indicators <small>OFF by default</small></label>
       <p class="muted" id="hintNote">Only verified class-counter guidance is shown.</p>
       <button id="begin" class="intro-start">TOSS THE COIN <span aria-hidden="true">↗</span></button>
       <p id="coinResult" class="gold" role="status"></p>
