@@ -1,0 +1,85 @@
+// THE CAGE V2: generate formula documentation and 184-player OVR registry from source of truth.
+const fs=require('fs'),path=require('path'),vm=require('vm');
+const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
+const ps=JSON.parse(read('docs/roster-audit-184-current.json')).players;
+const c={window:{THE_CAGE_PLAYERS:ps}};vm.createContext(c);vm.runInContext(read('src/overall.js'),c);
+const o=c.window.CageOverall,sorted=ps.slice().sort((a,b)=>b.overall-a.overall||a.name.localeCompare(b.name,'en'));
+const bins={};for(const p of sorted){const band=p.overall>=90?'90–99':p.overall>=85?'85–89':p.overall>=80?'80–84':p.overall>=75?'75–79':'1–74';bins[band]=(bins[band]||0)+1;}
+const method=[
+ '# THE CAGE: OVR V2.1 Formula and Archetypes',
+ '',
+ '> V2.1 OWNER-APPROVED ELITE calibration: a custom positional formula using 14 independent prime attribute inputs, 27 positional archetypes, and no individual OVR overrides.',
+ '',
+ '## 1. Eight skill domains',
+ '',
+ '| Domain | Calculation |',
+ '|---|---|',
+ '| Mobility | PACE |',
+ '| Ball mastery | 0.30 TECH + 0.35 FIRST TOUCH + 0.35 DRIBBLING |',
+ '| Creation | 0.58 PASS + 0.42 VISION |',
+ '| Scoring | 0.70 FINISH + 0.30 SHOOTING |',
+ '| Defending | 0.45 DEF + 0.30 TACKLING + 0.25 POSITIONING |',
+ '| Physical | PHYS |',
+ '| Composure | COMPOSURE |',
+ '| Endurance | STAMINA |',
+ '',
+ 'PASS and PASSING, FINISH and FINISHING, PHYS and PHYSICAL are duplicate fields; the extra copies contribute nothing. No tactical supplemental attributes are included.',
+ '',
+ '## 2. Position archetypes (all percentages)',
+ '',
+ 'Each card computes every archetype of its natural position and keeps the highest result. Every row below has weights summing to exactly 100%. This rewards a traditional poacher, a false nine, a deep orchestrator, a midfield ball-winner or a defending fullback for their actual strengths rather than one universal skill mix.',
+ '',
+ '| Position | Archetype | Mobility | Control | Creation | Scoring | Defending | Physical | Composure | Endurance |',
+ '|---|---|---:|---:|---:|---:|---:|---:|---:|---:|',
+ ...Object.entries(o.PROFILES).flatMap(([pos,arr])=>arr.map(v=>'| '+[pos,v.name,...['mobility','control','creation','scoring','defending','power','intelligence','engine'].map(k=>v.w[k]||0)].join(' | ')+' |')),
+ '',
+ '## 3. Final formula',
+ '',
+ 'For each archetype: score = SUM(domain value × positional percentage) / 100.',
+ 'Raw OVR = clamp(round(highest archetype score), 1, 99).',
+ 'Displayed OVR = raw formula OVR. All 67 approved ELITE targets come from recalibrated input stats rather than overrides.',
+ '',
+ '## 4. Exclusions and limitations',
+ '',
+ '- Career tier, fame, trophies, club, folklore, nationality and special traits provide zero OVR bonus.',
+ '- OVR is display-only. It does not influence match results, tactics or card selection probability.',
+ '- The owner-approved 67 ELITE targets were applied through explicit source-attribute revisions; all 117 non-ELITE player profiles remain unchanged. Historical ratings outside this batch remain subject to future review.',
+ '- Alex de Souza now has 86 RAW formula OVR, with playmaking and scoring inputs recalibrated. No hidden manual adjustment remains.',
+ '- No individual OVR overrides for any of the 184 players. Approved source: proposals/ELITE_OVR_67_APPROVED.json.',
+ '- Source code: src/overall.js. This document is generated from the same weights as the game.',
+ '',
+ '## Verification',
+ '',
+ 'Run: node tests/overall-v2.cjs',
+ 'Run: node tests/overall-match-invariance.cjs',
+ 'Run: node tests/ui-regression.cjs',
+ 'Run: node tests/random-draft.cjs',
+ ''
+];
+const overview=[
+ '# THE CAGE: All 184 OVR Ratings, V2.1',
+ '',
+ '> Owner-approved ELITE 67 prime skill recalibration; 27 archetypes; no hardcoded OVR values. Career tier remains separate from OVR.',
+ '',
+ '## Distribution',
+ '',
+ '| OVR band | Players |',
+ '|---|---:|',
+ ...['90–99','85–89','80–84','75–79','1–74'].map(k=>'| '+k+' | '+(bins[k]||0)+' |'),
+ '',
+ '## All players',
+ '',
+ '| OVR | Player | Natural position | Strongest archetype | Career tier |',
+ '|---:|---|---|---|---|',
+ ...sorted.map(p=>'| **'+p.overall+'** | '+p.name.replace(/\|/g,'\\|')+' | '+p.position+' | '+o.evaluate(p).archetype+' | '+p.careerTier+' |'),
+ '',
+ '## Owner-approved 67-player ELITE calibration',
+ '',
+ 'All 67 approved ELITE target OVRs are formula-derived, including Alex de Souza at 86. No player has an individual OVR override. See proposals/ELITE_OVR_67_APPROVED.json for every before/after prime-rating change.',
+ '',
+ 'Formula reference: docs/OVERALL_V2_METHOD.md. Runtime: src/overall.js.',
+ ''
+];
+fs.writeFileSync(path.join(root,'docs/OVERALL_V2_METHOD.md'),method.join('\n').trimEnd()+'\n','utf8');
+fs.writeFileSync(path.join(root,'docs/OVERALL_RATINGS_184.md'),overview.join('\n').trimEnd()+'\n','utf8');
+console.log('WROTE V2.1 method, '+sorted.length+' player OVRs, '+Object.values(o.PROFILES).reduce((n,a)=>n+a.length,0)+' archetypes, distribution '+JSON.stringify(bins));

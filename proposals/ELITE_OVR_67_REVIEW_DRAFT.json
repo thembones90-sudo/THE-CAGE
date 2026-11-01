@@ -1,0 +1,575 @@
+{
+  "status": "DRAFT-USER-REVIEW-NOT-APPROVED",
+  "scope": "ALL 67 ELITE PRIME OVR PROPOSALS",
+  "method": "historical peak ability editorial benchmarks; source prime attributes to be re-reviewed rather than OVR overrides",
+  "tierPolicy": "No tier forced bounds. Career tier and OVR separate.",
+  "mustRetain": [
+    "Okocha remains LEGEND (not included in ELITE proposal)",
+    "Valeron remains ELITE and 87 OVR unless user revisits",
+    "Alex de Souza 89 is already a provisional override; input ratings still need correction"
+  ],
+  "positionFlags": [
+    {
+      "name": "Siniša Mihajlović",
+      "current": "LB",
+      "proposed": "CB",
+      "secondary": "LB, CDM",
+      "rationale": "Longstanding centre-back and libero; current LB designation distorts OVR"
+    },
+    {
+      "name": "Trent Alexander-Arnold",
+      "current": "RB",
+      "proposed": "RB",
+      "secondary": "CM",
+      "rationale": "Creative fullback archetype underweights passing/vision relative to defensive shortcomings"
+    }
+  ],
+  "ratings": [
+    {
+      "name": "Safet Sušić",
+      "target": 89,
+      "id": "safet-susic",
+      "position": "CAM",
+      "current": 95,
+      "change": -6
+    },
+    {
+      "name": "Adriano",
+      "target": 91,
+      "id": "adriano",
+      "position": "ST",
+      "current": 93,
+      "change": -2
+    },
+    {
+      "name": "Andrea Barzagli",
+      "target": 88,
+      "id": "andrea-barzagli",
+      "position": "CB",
+      "current": 93,
+      "change": -5
+    },
+    {
+      "name": "Robert Prosinečki",
+      "target": 87,
+      "id": "robert-prosinecki",
+      "position": "CAM",
+      "current": 93,
+      "change": -6
+    },
+    {
+      "name": "Sami Hyypiä",
+      "target": 89,
+      "id": "sami-hyypia",
+      "position": "CB",
+      "current": 93,
+      "change": -4
+    },
+    {
+      "name": "Josip Iličić",
+      "target": 87,
+      "id": "josip-ilicic",
+      "position": "CAM",
+      "current": 92,
+      "change": -5
+    },
+    {
+      "name": "Matt Le Tissier",
+      "target": 89,
+      "id": "matt-le-tissier",
+      "position": "CAM",
+      "current": 92,
+      "change": -3
+    },
+    {
+      "name": "Miodrag Belodedici",
+      "target": 88,
+      "id": "miodrag-belodedici",
+      "position": "CB",
+      "current": 92,
+      "change": -4
+    },
+    {
+      "name": "Shunsuke Nakamura",
+      "target": 86,
+      "id": "shunsuke-nakamura",
+      "position": "CAM",
+      "current": 92,
+      "change": -6
+    },
+    {
+      "name": "Ariel Ortega",
+      "target": 87,
+      "id": "ariel-ortega",
+      "position": "CAM",
+      "current": 91,
+      "change": -4
+    },
+    {
+      "name": "Juan Arango",
+      "target": 87,
+      "id": "juan-arango",
+      "position": "CAM",
+      "current": 91,
+      "change": -4
+    },
+    {
+      "name": "Marcelinho",
+      "target": 87,
+      "id": "marcelinho-hertha",
+      "position": "CAM",
+      "current": 91,
+      "change": -4
+    },
+    {
+      "name": "Patrick Mboma",
+      "target": 87,
+      "id": "patrick-mboma",
+      "position": "ST",
+      "current": 91,
+      "change": -4
+    },
+    {
+      "name": "Pablo Aimar",
+      "target": 89,
+      "id": "pablo-aimar",
+      "position": "CAM",
+      "current": 90,
+      "change": -1
+    },
+    {
+      "name": "Paul Pogba",
+      "target": 89,
+      "id": "paul-pogba",
+      "position": "CM",
+      "current": 90,
+      "change": -1
+    },
+    {
+      "name": "Rúben Dias",
+      "target": 90,
+      "id": "ruben-dias",
+      "position": "CB",
+      "current": 90,
+      "change": 0
+    },
+    {
+      "name": "Santi Cazorla",
+      "target": 89,
+      "id": "santi-cazorla",
+      "position": "CM",
+      "current": 90,
+      "change": -1
+    },
+    {
+      "name": "Aílton",
+      "target": 88,
+      "id": "ailton",
+      "position": "ST",
+      "current": 89,
+      "change": -1
+    },
+    {
+      "name": "Alen Bokšić",
+      "target": 88,
+      "id": "alen-boksic",
+      "position": "ST",
+      "current": 89,
+      "change": -1
+    },
+    {
+      "name": "Alex de Souza",
+      "target": 89,
+      "id": "alex-de-souza",
+      "position": "CAM",
+      "current": 89,
+      "change": 0
+    },
+    {
+      "name": "Andrey Arshavin",
+      "target": 88,
+      "id": "andrey-arshavin",
+      "position": "LW",
+      "current": 89,
+      "change": -1
+    },
+    {
+      "name": "Bernardo Silva",
+      "target": 90,
+      "id": "bernardo-silva",
+      "position": "CAM",
+      "current": 89,
+      "change": 1
+    },
+    {
+      "name": "Darko Pančev",
+      "target": 88,
+      "id": "darko-pancev",
+      "position": "ST",
+      "current": 89,
+      "change": -1
+    },
+    {
+      "name": "Diego Tristán",
+      "target": 87,
+      "id": "diego-tristan",
+      "position": "ST",
+      "current": 89,
+      "change": -2
+    },
+    {
+      "name": "Djalminha",
+      "target": 86,
+      "id": "djalminha",
+      "position": "CAM",
+      "current": 89,
+      "change": -3
+    },
+    {
+      "name": "Hidetoshi Nakata",
+      "target": 86,
+      "id": "hidetoshi-nakata",
+      "position": "CAM",
+      "current": 89,
+      "change": -3
+    },
+    {
+      "name": "Hulk",
+      "target": 88,
+      "id": "hulk",
+      "position": "RW",
+      "current": 89,
+      "change": -1
+    },
+    {
+      "name": "Iván Zamorano",
+      "target": 89,
+      "id": "ivan-zamorano",
+      "position": "ST",
+      "current": 89,
+      "change": 0
+    },
+    {
+      "name": "Kyle Walker",
+      "target": 89,
+      "id": "kyle-walker",
+      "position": "RB",
+      "current": 89,
+      "change": 0
+    },
+    {
+      "name": "Marcelo Salas",
+      "target": 89,
+      "id": "marcelo-salas",
+      "position": "ST",
+      "current": 89,
+      "change": 0
+    },
+    {
+      "name": "Mark Viduka",
+      "target": 87,
+      "id": "mark-viduka",
+      "position": "ST",
+      "current": 89,
+      "change": -2
+    },
+    {
+      "name": "Pierre van Hooijdonk",
+      "target": 87,
+      "id": "pierre-van-hooijdonk",
+      "position": "ST",
+      "current": 89,
+      "change": -2
+    },
+    {
+      "name": "Álvaro Recoba",
+      "target": 88,
+      "id": "alvaro-recoba",
+      "position": "CF",
+      "current": 88,
+      "change": 0
+    },
+    {
+      "name": "Andrés D'Alessandro",
+      "target": 85,
+      "id": "andres-dalessandro",
+      "position": "CAM",
+      "current": 88,
+      "change": -3
+    },
+    {
+      "name": "Declan Rice",
+      "target": 89,
+      "id": "declan-rice",
+      "position": "CDM",
+      "current": 88,
+      "change": 1
+    },
+    {
+      "name": "Djibril Cissé",
+      "target": 86,
+      "id": "djibril-cisse",
+      "position": "ST",
+      "current": 88,
+      "change": -2
+    },
+    {
+      "name": "İlkay Gündoğan",
+      "target": 89,
+      "id": "ilkay-gundogan",
+      "position": "CM",
+      "current": 88,
+      "change": 1
+    },
+    {
+      "name": "Nwankwo Kanu",
+      "target": 88,
+      "id": "nwankwo-kanu",
+      "position": "CF",
+      "current": 88,
+      "change": 0
+    },
+    {
+      "name": "Riyad Mahrez",
+      "target": 89,
+      "id": "riyad-mahrez",
+      "position": "RW",
+      "current": 88,
+      "change": 1
+    },
+    {
+      "name": "Antonio Cassano",
+      "target": 87,
+      "id": "antonio-cassano",
+      "position": "CF",
+      "current": 87,
+      "change": 0
+    },
+    {
+      "name": "Bruno Fernandes",
+      "target": 89,
+      "id": "bruno-fernandes",
+      "position": "CAM",
+      "current": 87,
+      "change": 2
+    },
+    {
+      "name": "Christian Eriksen",
+      "target": 88,
+      "id": "christian-eriksen",
+      "position": "CAM",
+      "current": 87,
+      "change": 1
+    },
+    {
+      "name": "Jamie Vardy",
+      "target": 89,
+      "id": "jamie-vardy",
+      "position": "ST",
+      "current": 87,
+      "change": 2
+    },
+    {
+      "name": "Jefferson Farfán",
+      "target": 87,
+      "id": "jefferson-farfan",
+      "position": "RW",
+      "current": 87,
+      "change": 0
+    },
+    {
+      "name": "Juan Carlos Valerón",
+      "target": 87,
+      "id": "juan-carlos-valeron",
+      "position": "CAM",
+      "current": 87,
+      "change": 0
+    },
+    {
+      "name": "Ledley King",
+      "target": 87,
+      "id": "ledley-king",
+      "position": "CB",
+      "current": 87,
+      "change": 0
+    },
+    {
+      "name": "Michael Essien",
+      "target": 89,
+      "id": "michael-essien",
+      "position": "CM",
+      "current": 87,
+      "change": 2
+    },
+    {
+      "name": "Mousa Dembélé",
+      "target": 88,
+      "id": "mousa-dembele",
+      "position": "CM",
+      "current": 87,
+      "change": 1
+    },
+    {
+      "name": "Savo Milošević",
+      "target": 86,
+      "id": "savo-milosevic",
+      "position": "ST",
+      "current": 87,
+      "change": -1
+    },
+    {
+      "name": "Vladimir Jugović",
+      "target": 88,
+      "id": "vladimir-jugovic",
+      "position": "CM",
+      "current": 87,
+      "change": 1
+    },
+    {
+      "name": "Dimitar Berbatov",
+      "target": 88,
+      "id": "dimitar-berbatov",
+      "position": "ST",
+      "current": 86,
+      "change": 2
+    },
+    {
+      "name": "Jamie Carragher",
+      "target": 86,
+      "id": "jamie-carragher",
+      "position": "CB",
+      "current": 86,
+      "change": 0
+    },
+    {
+      "name": "Kolo Touré",
+      "target": 86,
+      "id": "kolo-toure",
+      "position": "CB",
+      "current": 86,
+      "change": 0
+    },
+    {
+      "name": "Milan Baroš",
+      "target": 85,
+      "id": "milan-baros",
+      "position": "ST",
+      "current": 86,
+      "change": -1
+    },
+    {
+      "name": "Patrice Evra",
+      "target": 89,
+      "id": "patrice-evra",
+      "position": "LB",
+      "current": 86,
+      "change": 3
+    },
+    {
+      "name": "Ricardo Carvalho",
+      "target": 89,
+      "id": "ricardo-carvalho",
+      "position": "CB",
+      "current": 86,
+      "change": 3
+    },
+    {
+      "name": "Andrew Robertson",
+      "target": 88,
+      "id": "andrew-robertson",
+      "position": "LB",
+      "current": 85,
+      "change": 3
+    },
+    {
+      "name": "Fernandinho",
+      "target": 89,
+      "id": "fernandinho",
+      "position": "CDM",
+      "current": 85,
+      "change": 4
+    },
+    {
+      "name": "Robert Pirès",
+      "target": 90,
+      "id": "robert-pires",
+      "position": "LM",
+      "current": 85,
+      "change": 5
+    },
+    {
+      "name": "Michael Carrick",
+      "target": 88,
+      "id": "michael-carrick",
+      "position": "CDM",
+      "current": 84,
+      "change": 4
+    },
+    {
+      "name": "Branislav Ivanović",
+      "target": 87,
+      "id": "branislav-ivanovic",
+      "position": "RB",
+      "current": 83,
+      "change": 4
+    },
+    {
+      "name": "Javier Mascherano",
+      "target": 89,
+      "id": "javier-mascherano",
+      "position": "CDM",
+      "current": 83,
+      "change": 6
+    },
+    {
+      "name": "Ricardo Quaresma",
+      "target": 85,
+      "id": "ricardo-quaresma",
+      "position": "RW",
+      "current": 83,
+      "change": 2
+    },
+    {
+      "name": "Gary Neville",
+      "target": 86,
+      "id": "gary-neville",
+      "position": "RB",
+      "current": 82,
+      "change": 4
+    },
+    {
+      "name": "Trent Alexander-Arnold",
+      "target": 88,
+      "id": "trent-alexander-arnold",
+      "position": "RB",
+      "current": 82,
+      "change": 6
+    },
+    {
+      "name": "Gilberto Silva",
+      "target": 88,
+      "id": "gilberto-silva",
+      "position": "CDM",
+      "current": 81,
+      "change": 7
+    },
+    {
+      "name": "Siniša Mihajlović",
+      "target": 85,
+      "id": "sinisa-mihajlovic",
+      "position": "LB",
+      "current": 75,
+      "change": 10
+    }
+  ],
+  "snapshot": {
+    "date": "2026-10-31",
+    "rosterTotal": 184,
+    "eliteCount": 67,
+    "current90plus": 17,
+    "proposed90plus": 4,
+    "raised": 24,
+    "lowered": 30,
+    "unchanged": 13
+  }
+}
