@@ -1,5 +1,5 @@
 /* THE CAGE V6.10 TACTICAL ENGINE EXPERIMENTAL: generated from the canonical playable dependency list. */
-const CACHE='the-cage-full-t312-e10b1a82c0db';
+const CACHE='the-cage-full-t312-e2b903870c98';
 const STATIC=[
   "./assets/cage-icon.svg",
   "./classic-v56/assets/cage-icon.svg",

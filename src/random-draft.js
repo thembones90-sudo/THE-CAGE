@@ -244,7 +244,8 @@ function fight(){
   clearMatchViewer();hideArenaOutcome();
   const teams=['A','B'].map(side=>game.picks.filter(p=>p.side===side).map(p=>p.id));
   const seed=crypto.getRandomValues(new Uint32Array(1))[0];
-  const config={teams,tactics:[$('tacticA').value,$('tacticB').value],seed,mode:'score',traits:{enabled:true}};if(game.keeperMode){if(!game.keeperCtl?.complete)throw Error('Two goalkeepers must be locked');config.keepers=[game.keeperCtl.picks.A,game.keeperCtl.picks.B];}
+  // Owner decision 2026-11-01: defender-quality shot pressure is on for every new match on engines that support it (recorded in the config).
+  const config={teams,tactics:[$('tacticA').value,$('tacticB').value],seed,mode:'score',traits:{enabled:true},...(window.CageEngine?.RULE_SWITCHES?.includes('defender-quality-v1')?{rules:{pressure:'defender-quality-v1'}}:{})};if(game.keeperMode){if(!game.keeperCtl?.complete)throw Error('Two goalkeepers must be locked');config.keepers=[game.keeperCtl.picks.A,game.keeperCtl.picks.B];}
   try{
     let result,safetyRetries=0;
     while(true){

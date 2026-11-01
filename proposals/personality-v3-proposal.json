@@ -2,7 +2,7 @@
  "version": "personality-v3-proposal",
  "date": "2026-11-01",
  "author": "Claude (draft for owner approval)",
- "status": "PROPOSAL, not approved and not integrated. Owner decision 1 (engineering round): individualism redefined as the choice made once an attacking opportunity exists.",
+ "status": "OWNER APPROVED 2026-11-01 (including the ten low-confidence cases). Values approved; gameplay wiring follows in the commitment and situational-decision milestones.",
  "dimensions": {
   "discipline": "0-100. Positioning, tactical responsibility and commitment to the assigned role. Not defending ability, not work rate. Includes adventurousness: how often a player leaves position to join the attack.",
   "individualism": "0-100. ONCE AN ATTACKING OPPORTUNITY EXISTS: tendency to choose a personal action (shot, dribble, holding the ball) over a cooperative option. How often a player gets forward is NOT counted here (that is discipline)."

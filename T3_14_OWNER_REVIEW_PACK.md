@@ -234,3 +234,15 @@ They are low-confidence because of limited documented footage and analysis of th
 | Defending, tackling | 86 → 89 | His failures came from positional gambles and decisions, not lost duels. At his peak (PSG 2014–16, Chelsea 2016–17) he was strong in the tackle, quick to recover and good in the air. The draft 86 rated his duelling below every centre-back in the roster, which conflated his positioning with his tackling. | Medium |
 | Base composure | 68 → 56 | The base skill measures decisions under pressure. Known for rash interventions and emotional decision-making under pressure; at the same time calm in possession, which is rated separately through technique and passing. His approved-scale composure (74) groups him with Chiellini, Mihajlović, Stam and Lúcio, and 56 is consistent with their base values (42–62). | Medium |
 | Overall | 83 → **84** | Computed by the unchanged formula. Lower composure is offset by stronger defending. **Still provisional; not in the roster.** | — |
+
+
+---
+
+# Owner decision, 2026-11-01: ACCEPT ALL
+
+The following are approved:
+- personality v3, including the ten low-confidence cases;
+- David Luiz's revised profile (OVR 84);
+- defender-quality shot pressure as the default for new matches (the game passes `rules.pressure='defender-quality-v1'`; it is recorded in every replay).
+
+T3-13 integrated into `main`.
