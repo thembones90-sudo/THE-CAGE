@@ -1,6 +1,8 @@
 'use strict';
 // V6.9 starting point verification. This test does NOT imply set-piece gameplay exists.
 const assert=require('node:assert/strict');
+const {CURRENT_ROSTER_SIZE,CURRENT_ENGINE,REPLAY_ENGINES,SNAPSHOT_184_STOP,SNAPSHOT_190_STOP}=require('./baseline-current.cjs');
+
 const fs=require('node:fs');
 const path=require('node:path');
 const vm=require('node:vm');
@@ -14,13 +16,13 @@ for(const file of scripts){
  if(file==='src/replay/records.js')break;
 }
 const {CageEngine:E,CageGoalkeepers:G,CageGoalkeepersGK30:old,CageRecords:R,CAGE_ENGINE_REGISTRY:versions}=ctx.window;
-assert.equal(E.VERSION,'cage-t3-10','Preparation must start from the V6.8 engine');
+assert.equal(E.VERSION,CURRENT_ENGINE,'V6.9 set-piece work must start from the current main engine');
 assert.equal(G.players.length,50);
 assert.equal(old.players.length,30);
 assert.equal(G.BY_ID['jose-luis-chilavert'].careerTier,'LEGEND');
 assert.deepEqual(Array.from(G.BY_ID['jose-luis-chilavert'].folklore),['STREET HERO','STREET VILLAIN','TALISMAN']);
 assert(G.BY_ID['rogerio-ceni']&&G.BY_ID['jose-luis-chilavert']);
-for(const version of ['cage-0.4.0','cage-t3-6','cage-t3-7','cage-t3-8','cage-t3-9','cage-t3-10']){
+for(const version of REPLAY_ENGINES){
  assert.equal(versions[version].VERSION,version,'Missing historical replay engine '+version);
 }
 const base={teams:[['paolo-maldini','michael-ballack','ronaldo-nazario'],['ledley-king','claudio-marchisio','antonio-valencia']],tactics:['balanced','press'],mode:'score',traits:{enabled:true},seed:6999};
@@ -36,4 +38,4 @@ for(const config of [base,{...base,keepers:['jose-luis-chilavert','rogerio-ceni'
  }
  assert(!a.events.some(e=>e.type==='gk_free_kick'||e.type==='gk_penalty'),'Set-piece feature should not be silently active');
 }
-console.log('V69_PREP_PASS: clean T3-10, 50 GK, owner-approved Chilavert folklore, Ceni identity, six replay engines, two reproducible matches, no unapproved GK set pieces.');
+console.log('V69_PREP_PASS: clean '+CURRENT_ENGINE+', 50 GK, owner-approved Chilavert folklore, Ceni identity, '+REPLAY_ENGINES.length+' replay engines, two reproducible matches, no unapproved GK set pieces.');

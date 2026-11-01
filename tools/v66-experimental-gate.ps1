@@ -31,6 +31,16 @@ try{
   @('tests/v54-classic-parity.cjs'),
   @('tests/viewer/run-all.cjs'),
   @('tests/v64-locomotion.cjs'),
+  @('tests/elite-67-approved-ovr.cjs'),
+  @('tests/overall-v2.cjs'),
+  @('tests/overall-184.cjs'),
+  @('tests/overall-alex-calibration.cjs'),
+  @('tests/overall-match-invariance.cjs'),
+  @('tests/owner-tier-revisions-v17.cjs'),
+  @('tests/roster-184-deportivo-legends.cjs'),
+  @('tests/valeron-reassessment.cjs'),
+  @('tests/di-canio-recruitment.cjs'),
+  @('tests/v69-preflight.cjs'),
   @('tests/v60-package-parity.cjs')
  )
  $passed=0

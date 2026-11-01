@@ -1,4 +1,5 @@
 // Owner tier correction regression: only ten explicit identities may change, Okocha remains LEGEND.
+const {CURRENT_ROSTER_SIZE,CURRENT_ENGINE,REPLAY_ENGINES,SNAPSHOT_184_STOP,SNAPSHOT_190_STOP}=require('./baseline-current.cjs');
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
 const plan=JSON.parse(read('proposals/owner-tier-revisions-10-v17.json')),html=read('index.html');
@@ -17,6 +18,7 @@ const c={window:{location:{search:'?engine=t3'}}};vm.createContext(c);
 let pre=null,post=null;
 for(const file of browser){
  if(file==='src/cage-commentary.js')break;
+ if(file===SNAPSHOT_184_STOP)break;// historical snapshot: the 184-player roster the v1.7 decisions were made on
  if(file===overlay)pre=JSON.parse(JSON.stringify(c.window.THE_CAGE_PLAYERS));
  vm.runInContext(read(file),c,{filename:file});
  if(file===overlay)post=JSON.parse(JSON.stringify(c.window.THE_CAGE_PLAYERS));
@@ -53,4 +55,9 @@ assert.equal(r.distribution.tier.LEGEND,69);assert.equal(r.distribution.tier.ELI
 assert.equal(r.ownerTierDecisions.version,plan.version);assert.equal(r.ownerTierDecisions.lockedLegend,plan.lockedLegend);
 assert.equal(byId.get('juan-carlos-valeron').careerTier,'ELITE');
 assert.equal(byId.get('roy-makaay').careerTier,'LEGEND');
+// The decisions must survive every later roster expansion unchanged.
+{const f={window:{location:{search:'?engine=t3'}}};vm.createContext(f);for(const file of browser){if(file==='src/cage-commentary.js')break;vm.runInContext(read(file),f,{filename:file});}
+ const cur=new Map(f.window.THE_CAGE_PLAYERS.map(p=>[p.id,p]));assert.equal(cur.size,CURRENT_ROSTER_SIZE);
+ for(const id of ids)assert.equal(cur.get(id).careerTier,'ELITE',id+' v1.7 move lost in current roster');
+ assert.equal(cur.get('jay-jay-okocha').careerTier,'LEGEND','Okocha must remain LEGEND in current roster');}
 console.log('PASS owner-tier-v1.7: exactly 10 LEGEND->ELITE; Okocha remains LEGEND; 184 players, 69 LEGENDS, 67 ELITE; abilities/traits/folklore unchanged.');
