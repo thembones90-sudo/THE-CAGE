@@ -124,5 +124,12 @@ if(recordedTrait!==null){
 }else if(s.traitsMode===true&&!String(E.VERSION).startsWith('cage-t3'))throw Error('Class mode requires the experimental T3 engine.');
 if(s.pending){validate(s.pending);if(s.roundFinished||!s.locked.A||!s.locked.B||s.pending.round!==s.round||JSON.stringify(s.pending.config.teams)!==JSON.stringify([s.claimed.A,s.claimed.B]))throw Error('Invalid interrupted match.');}
 if(!['normal','fast','instant','dramatic'].includes(s.pace))throw Error('Invalid playback setting.');return s;}
-window.CageRecords={SCHEMA,fingerprint,make,validate,reproduce,validateSave,copy};
+// Saves store only the match setup (teams, tactics, keepers, rules, seed) plus a verification hash, never the match itself.
+// The engine is deterministic: expand() recreates the round exactly and refuses if it does not match the saved hash.
+function compact(record){if(!record||!record.result)return record;const {result,...rest}=record;return {...rest,compact:{eventHash:result.eventHash,movementHash:result.movement?.hash,score:result.score,winner:result.winner}};}
+function expand(saved){if(!saved||saved.result||!saved.compact)return saved;return withCatalog(saved,()=>{const engine=window.CAGE_ENGINE_REGISTRY?.[saved.engineVersion]||(saved.engineVersion===E.VERSION?E:null);
+ if(!engine||saved.paramsVersion!==engine.PARAMS_VERSION)throw Error('This saved round needs its original engine version.');
+ const result=engine.simulate(saved.config);if(result.eventHash!==saved.compact.eventHash||(saved.compact.movementHash&&result.movement?.hash!==saved.compact.movementHash))throw Error('Saved round could not be recreated exactly.');
+ const {compact:_c,...rest}=saved;const record=E.freeze({...rest,result:copy(result)});validate(record);return record;});}
+window.CageRecords={SCHEMA,fingerprint,make,validate,reproduce,validateSave,copy,compact,expand};
 })();

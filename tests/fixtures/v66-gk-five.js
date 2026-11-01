@@ -21,7 +21,8 @@ try{
   check(after.keeperUsedCount===r*2,'GK exhaustion mismatch '+r);
   const save=JSON.parse(localStorage.getItem('the-cage.random-showdown.v66-gk'));const record=save.history.at(-1);
   check(record.schema===2&&record.config.keepers.length===2,'GK record schema/identity invalid');
-  check(window.CageRecords.reproduce(record).eventHash===record.result.eventHash,'GK replay not reproducible');
+  check(!('result' in record)&&record.compact?.eventHash,'saves store only setup and seed');const full=window.CageRecords.expand(record);
+  check(window.CageRecords.reproduce(full).eventHash===record.compact.eventHash,'GK replay not reproducible');
   rounds=r;if(after.champion)break;$('arena-next').click();
  }
  const end=window.CageRandomDraft.snapshot();check(end.champion&&Math.max(end.wins.A,end.wins.B)===3,'no first-to-three champion');

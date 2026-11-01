@@ -53,7 +53,8 @@
      const record=JSON.parse(localStorage.getItem('the-cage.random-showdown.v66-gk')).pending;
      check(record?.schema===2,'keeper match record schema 2');check(record.config.retryCount===1,'bounded safety retry not included in recorded config');
      check(record.config.keepers[0]===s.keepers.A&&record.config.keepers[1]===s.keepers.B,'engine keeper IDs differ');
-     check(window.CageRecords.reproduce(record).eventHash===record.result.eventHash,'keeper replay fails reproduction');
+     check(!('result' in record)&&record.compact?.eventHash,'saves store only setup and seed, no match data');
+     const full=window.CageRecords.expand(record);check(window.CageRecords.reproduce(full).eventHash===full.result.eventHash&&full.result.eventHash===record.compact.eventHash,'keeper replay fails reproduction');
      check(errors.length===0,'script errors: '+errors.join('; '));
      out.textContent='V66_GK_BROWSER_PASS 6 outfield picks + 2 keepers, 5-card private offers, CPU keeper pick concealed, schema2 save and deterministic replay';
    }

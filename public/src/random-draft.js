@@ -135,8 +135,8 @@ function standings(){
  for(let i=0;i<5;i++){const mark=document.createElement('span');mark.className='round-mark'+(game.history[i]?(game.history[i].result.winner===0?' a':' b'):i===game.round-1?' current':'');mark.title=game.history[i]?'Round '+(i+1)+': '+sideName(game.history[i].result.winner===0?'A':'B')+' won':'Round '+(i+1);marks.append(mark);}
 }
 function saveShowdown(){
- const state={schema:game.keeperMode?2:1,round:game.round,wins:game.wins,used:[...game.used],history:game.history,keeperMode:game.keeperMode,keeperUsed:[...game.keeperUsed],keeperState:game.keeperCtl?.snapshot()||null,
- pending:game.pending,picks:game.picks,winner:game.winner,rerolls:game.rerolls,mode:game.mode,difficulty:game.difficulty,
+ const state={schema:game.keeperMode?2:1,round:game.round,wins:game.wins,used:[...game.used],history:game.history.map(window.CageRecords.compact),keeperMode:game.keeperMode,keeperUsed:[...game.keeperUsed],keeperState:game.keeperCtl?.snapshot()||null,
+ pending:game.pending?window.CageRecords.compact(game.pending):null,picks:game.picks,winner:game.winner,rerolls:game.rerolls,mode:game.mode,difficulty:game.difficulty,
  pool:game.pool,deadline:game.deadline,active:game.active,finished:game.finished,champion:game.champion};
  try{localStorage.setItem(game.keeperMode?GK_SAVE_KEY:SAVE_KEY,JSON.stringify(state));localStorage.setItem(ACTIVE_KEY,game.keeperMode?'goalkeeper':'standard');}catch(e){showError('Unable to save showdown: '+e.message);}
 }
@@ -189,7 +189,7 @@ function validateKeeperShowdown(s){
  if(observed.size!==s.keeperUsed.length||s.keeperUsed.some(id=>!observed.has(id)))throw Error('Goalkeeper exhaustion disagrees with history and draft.');
 }
 function restoreShowdown(){
- let s;try{const active=localStorage.getItem(ACTIVE_KEY);const raw=active==='goalkeeper'?localStorage.getItem(GK_SAVE_KEY):active==='standard'?localStorage.getItem(SAVE_KEY):localStorage.getItem(SAVE_KEY)||localStorage.getItem(GK_SAVE_KEY);s=JSON.parse(raw||'null');}catch(e){showError('Saved showdown cannot be read. Existing file was not deleted.');return;}
+ let s;try{const active=localStorage.getItem(ACTIVE_KEY);const raw=active==='goalkeeper'?localStorage.getItem(GK_SAVE_KEY):active==='standard'?localStorage.getItem(SAVE_KEY):localStorage.getItem(SAVE_KEY)||localStorage.getItem(GK_SAVE_KEY);s=JSON.parse(raw||'null');if(s){s.history=(s.history||[]).map(window.CageRecords.expand);if(s.pending)s.pending=window.CageRecords.expand(s.pending);}}catch(e){showError('Saved showdown cannot be read. Existing file was not deleted.');return;}
  if(!s)return;
  try{
   if(![1,2].includes(s.schema)||!!s.keeperMode!==(s.schema===2)||!['hotseat','solo'].includes(s.mode||'hotseat')||!window.CageCpu.LEVELS.includes(s.difficulty||'competitive')||!Number.isInteger(s.round)||s.round<1||s.round>5||!Array.isArray(s.history)||s.history.length>5||!Array.isArray(s.used)||new Set(s.used).size!==s.used.length||s.used.some(id=>!byId.has(id)))throw Error('Unsupported saved showdown');

@@ -40,7 +40,7 @@ for(let round=1;round<=5;round++){
  check(state.history.length===round,'round not finalized');
  check(state.wins.A+state.wins.B===round,'wins not accounted');
  check($('result').textContent.includes('WINS'),'no winner displayed');check(!$('arena-outcome').classList.contains('hidden'),'no result panel underneath arena');check($('arena-summary').textContent.includes('SHOWDOWN'),'arena result missing series score');
- const beforeScore={A:state.wins.A,B:state.wins.B};beforeScore[saved.pending?.result?.winner===0?'A':'B']--;
+ const beforeScore={A:state.wins.A,B:state.wins.B};beforeScore[(saved.pending?.result?.winner??saved.pending?.compact?.winner)===0?'A':'B']--;
  $('watch-again').click();check(ctl.playback.mode==='replay','replay mode false');
  const displayed=document.querySelector('#draft-arena [data-k="showdown"]')?.textContent?.trim();check(displayed===beforeScore.A+' : '+beforeScore.B,'replay shows future series score '+displayed+' expected '+beforeScore.A+' : '+beforeScore.B);
  check(JSON.parse(localStorage.getItem('the-cage.random-showdown.v60')).history[round-1].config.seed===seed,'replay changed seed');
