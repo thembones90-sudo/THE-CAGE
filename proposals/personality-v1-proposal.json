@@ -1,0 +1,1183 @@
+{
+ "version": "personality-v1-proposal",
+ "date": "2026-11-01",
+ "author": "Claude (draft for owner approval)",
+ "status": "PROPOSAL, not approved and not integrated. Owner decision 2 (T3-14): values for review.",
+ "dimensions": {
+  "discipline": "0-100. How strictly a player keeps positional and tactical responsibilities (holding position, keeping shape, returning, avoiding adventurous or rash positional choices). Distinct from work rate (intensity) and from defending ability.",
+  "individualism": "0-100. Preference for a personal action (shot, dribble) over a pass of similar value. A tendency, not an ability: it only changes choices between near-equal options."
+ },
+ "scale": "15 very low, 30 low, 50 neutral, 70 high, 85+ very high. Confidence: H well documented, M reasonable, L limited evidence (owner review recommended).",
+ "players": {
+  "roy-keane": {
+   "discipline": 75,
+   "individualism": 30,
+   "confidence": "H",
+   "rationale": "Organised and held the midfield; temper caused rash moments, not positional drift."
+  },
+  "paul-scholes": {
+   "discipline": 70,
+   "individualism": 35,
+   "confidence": "H",
+   "rationale": "Disciplined deep passer; late box runs and long shots; mistimed tackles."
+  },
+  "ryan-giggs": {
+   "discipline": 70,
+   "individualism": 50,
+   "confidence": "H",
+   "rationale": "Held width and tracked back; direct dribbler when isolated."
+  },
+  "michael-essien": {
+   "discipline": 72,
+   "individualism": 35,
+   "confidence": "H",
+   "rationale": "Box-to-box engine within a reliable team shape."
+  },
+  "frank-lampard": {
+   "discipline": 60,
+   "individualism": 55,
+   "confidence": "H",
+   "rationale": "Freedom to arrive and shoot; less positional."
+  },
+  "claude-makelele": {
+   "discipline": 97,
+   "individualism": 8,
+   "confidence": "H",
+   "rationale": "Benchmark positional screen; almost never ventured forward."
+  },
+  "kevin-de-bruyne": {
+   "discipline": 60,
+   "individualism": 45,
+   "confidence": "H",
+   "rationale": "Free creative role; shoots readily but looks for the pass first."
+  },
+  "rodri": {
+   "discipline": 92,
+   "individualism": 20,
+   "confidence": "H",
+   "rationale": "Positional anchor; simple, secure choices."
+  },
+  "bernardo-silva": {
+   "discipline": 78,
+   "individualism": 35,
+   "confidence": "H",
+   "rationale": "Disciplined pressing technician; keeps the ball for the team."
+  },
+  "gilberto-silva": {
+   "discipline": 95,
+   "individualism": 10,
+   "confidence": "H",
+   "rationale": "The invisible wall; held position."
+  },
+  "patrick-vieira": {
+   "discipline": 72,
+   "individualism": 35,
+   "confidence": "H",
+   "rationale": "Dominant two-way midfielder within structure."
+  },
+  "robert-pires": {
+   "discipline": 55,
+   "individualism": 50,
+   "confidence": "M",
+   "rationale": "Drifted inside from the left; balanced creator and scorer."
+  },
+  "xabi-alonso": {
+   "discipline": 88,
+   "individualism": 25,
+   "confidence": "H",
+   "rationale": "Held deep; long passes; occasional long shots."
+  },
+  "steven-gerrard": {
+   "discipline": 45,
+   "individualism": 65,
+   "confidence": "H",
+   "rationale": "Roamed, chased games, shot from distance."
+  },
+  "javier-mascherano": {
+   "discipline": 85,
+   "individualism": 10,
+   "confidence": "H",
+   "rationale": "Disciplined destroyer; rash tackles are aggression, not drift."
+  },
+  "ngolo-kante": {
+   "discipline": 75,
+   "individualism": 15,
+   "confidence": "H",
+   "rationale": "Covered huge ground but within team shape."
+  },
+  "yaya-toure": {
+   "discipline": 50,
+   "individualism": 60,
+   "confidence": "H",
+   "rationale": "Powerful forward runs; light tracking."
+  },
+  "eden-hazard": {
+   "discipline": 40,
+   "individualism": 68,
+   "confidence": "H",
+   "rationale": "Freedom to dribble; minimal defensive duty."
+  },
+  "juan-roman-riquelme": {
+   "discipline": 45,
+   "individualism": 50,
+   "confidence": "H",
+   "rationale": "Static enganche: held the ball, rarely defended; passed more than shot."
+  },
+  "ricardo-quaresma": {
+   "discipline": 30,
+   "individualism": 85,
+   "confidence": "H",
+   "rationale": "Trivela-happy individualist."
+  },
+  "edgar-davids": {
+   "discipline": 60,
+   "individualism": 30,
+   "confidence": "H",
+   "rationale": "Pressed everywhere, at the cost of shape."
+  },
+  "roberto-baggio": {
+   "discipline": 45,
+   "individualism": 60,
+   "confidence": "H",
+   "rationale": "Free trequartista; decisive individual actions."
+  },
+  "adriano": {
+   "discipline": 40,
+   "individualism": 75,
+   "confidence": "M",
+   "rationale": "Power forward who shot on sight."
+  },
+  "javier-zanetti": {
+   "discipline": 95,
+   "individualism": 15,
+   "confidence": "H",
+   "rationale": "Model of tactical reliability."
+  },
+  "michael-ballack": {
+   "discipline": 72,
+   "individualism": 50,
+   "confidence": "H",
+   "rationale": "Two-way midfielder who arrived to shoot."
+  },
+  "paolo-maldini": {
+   "discipline": 97,
+   "individualism": 12,
+   "confidence": "H",
+   "rationale": "Disciplined covering and containment."
+  },
+  "ronaldo-nazario": {
+   "discipline": 30,
+   "individualism": 78,
+   "confidence": "H",
+   "rationale": "Lived to beat his man and shoot; no defensive role."
+  },
+  "thomas-gravesen": {
+   "discipline": 50,
+   "individualism": 30,
+   "confidence": "M",
+   "rationale": "Combative but erratic positioning."
+  },
+  "jay-jay-okocha": {
+   "discipline": 30,
+   "individualism": 80,
+   "confidence": "H",
+   "rationale": "Showman dribbler."
+  },
+  "nemanja-vidic": {
+   "discipline": 88,
+   "individualism": 10,
+   "confidence": "H",
+   "rationale": "Stayed home; dominant and positional."
+  },
+  "gabriel-batistuta": {
+   "discipline": 55,
+   "individualism": 75,
+   "confidence": "H",
+   "rationale": "Shot from anywhere."
+  },
+  "francesco-totti": {
+   "discipline": 45,
+   "individualism": 50,
+   "confidence": "H",
+   "rationale": "False nine in a free role; passed and shot."
+  },
+  "giorgio-chiellini": {
+   "discipline": 85,
+   "individualism": 10,
+   "confidence": "H",
+   "rationale": "Disciplined marker."
+  },
+  "alvaro-recoba": {
+   "discipline": 25,
+   "individualism": 80,
+   "confidence": "M",
+   "rationale": "Left-foot shooter with little tactical work."
+  },
+  "sinisa-mihajlovic": {
+   "discipline": 70,
+   "individualism": 40,
+   "confidence": "M",
+   "rationale": "Positional defender; free-kick shooter."
+  },
+  "nani": {
+   "discipline": 40,
+   "individualism": 75,
+   "confidence": "M",
+   "rationale": "Flashy winger who went alone."
+  },
+  "dimitar-berbatov": {
+   "discipline": 50,
+   "individualism": 40,
+   "confidence": "H",
+   "rationale": "Languid but team-minded; linked play."
+  },
+  "yannick-bolasie": {
+   "discipline": 45,
+   "individualism": 70,
+   "confidence": "M",
+   "rationale": "Trick-heavy winger."
+  },
+  "rio-ferdinand": {
+   "discipline": 88,
+   "individualism": 15,
+   "confidence": "H",
+   "rationale": "Composed positional defender."
+  },
+  "obafemi-martins": {
+   "discipline": 45,
+   "individualism": 65,
+   "confidence": "M",
+   "rationale": "Runner who shot early."
+  },
+  "michael-owen": {
+   "discipline": 55,
+   "individualism": 70,
+   "confidence": "H",
+   "rationale": "Poacher running in behind."
+  },
+  "jaap-stam": {
+   "discipline": 85,
+   "individualism": 10,
+   "confidence": "H",
+   "rationale": "Positional stopper."
+  },
+  "lilian-thuram": {
+   "discipline": 92,
+   "individualism": 12,
+   "confidence": "H",
+   "rationale": "Disciplined, intelligent defender."
+  },
+  "denilson": {
+   "discipline": 30,
+   "individualism": 85,
+   "confidence": "H",
+   "rationale": "Step-over specialist."
+  },
+  "alessandro-del-piero": {
+   "discipline": 60,
+   "individualism": 60,
+   "confidence": "H",
+   "rationale": "Disciplined for a fantasista; scorer."
+  },
+  "pablo-aimar": {
+   "discipline": 50,
+   "individualism": 50,
+   "confidence": "M",
+   "rationale": "Darting playmaker."
+  },
+  "antonio-cassano": {
+   "discipline": 20,
+   "individualism": 70,
+   "confidence": "H",
+   "rationale": "Tactically undisciplined talent."
+  },
+  "daniele-de-rossi": {
+   "discipline": 75,
+   "individualism": 30,
+   "confidence": "H",
+   "rationale": "Disciplined holder with aggression."
+  },
+  "andres-dalessandro": {
+   "discipline": 40,
+   "individualism": 70,
+   "confidence": "M",
+   "rationale": "Ball-hogging playmaker."
+  },
+  "zlatan-ibrahimovic": {
+   "discipline": 40,
+   "individualism": 82,
+   "confidence": "H",
+   "rationale": "Roamed; demanded the ball and the shot."
+  },
+  "lucio": {
+   "discipline": 45,
+   "individualism": 35,
+   "confidence": "H",
+   "rationale": "Forward surges that left gaps."
+  },
+  "hatem-ben-arfa": {
+   "discipline": 25,
+   "individualism": 88,
+   "confidence": "H",
+   "rationale": "Dazzling but individual."
+  },
+  "rivaldo": {
+   "discipline": 45,
+   "individualism": 72,
+   "confidence": "H",
+   "rationale": "Decisive individual shooter."
+  },
+  "marcel-desailly": {
+   "discipline": 90,
+   "individualism": 10,
+   "confidence": "H",
+   "rationale": "Positional authority."
+  },
+  "zinedine-zidane": {
+   "discipline": 60,
+   "individualism": 50,
+   "confidence": "H",
+   "rationale": "Free role inside a structure; balanced pass and dribble."
+  },
+  "ronaldinho": {
+   "discipline": 35,
+   "individualism": 62,
+   "confidence": "H",
+   "rationale": "Free spirit; audacious yet a generous passer."
+  },
+  "djalminha": {
+   "discipline": 30,
+   "individualism": 75,
+   "confidence": "M",
+   "rationale": "Outrageous technician."
+  },
+  "steed-malbranque": {
+   "discipline": 70,
+   "individualism": 40,
+   "confidence": "M",
+   "rationale": "Industrious link player."
+  },
+  "ricardo-carvalho": {
+   "discipline": 90,
+   "individualism": 10,
+   "confidence": "H",
+   "rationale": "Anticipating, positional defender."
+  },
+  "ledley-king": {
+   "discipline": 92,
+   "individualism": 8,
+   "confidence": "H",
+   "rationale": "Clean, positional defending."
+  },
+  "tugay-kerimoglu": {
+   "discipline": 70,
+   "individualism": 35,
+   "confidence": "M",
+   "rationale": "Composed deep passer."
+  },
+  "morten-gamst-pedersen": {
+   "discipline": 65,
+   "individualism": 50,
+   "confidence": "M",
+   "rationale": "Wide midfielder; set-piece shooter."
+  },
+  "nene": {
+   "discipline": 40,
+   "individualism": 65,
+   "confidence": "L",
+   "rationale": "Skilful attacker, little defensive work."
+  },
+  "gennaro-gattuso": {
+   "discipline": 80,
+   "individualism": 10,
+   "confidence": "H",
+   "rationale": "Did his job; aggression is not indiscipline."
+  },
+  "sergio-ramos": {
+   "discipline": 45,
+   "individualism": 40,
+   "confidence": "H",
+   "rationale": "Adventurous and rash; scores and gets sent off."
+  },
+  "alessandro-nesta": {
+   "discipline": 95,
+   "individualism": 8,
+   "confidence": "H",
+   "rationale": "Clean positional master."
+  },
+  "fabio-cannavaro": {
+   "discipline": 90,
+   "individualism": 10,
+   "confidence": "H",
+   "rationale": "Disciplined timing defender."
+  },
+  "carles-puyol": {
+   "discipline": 88,
+   "individualism": 12,
+   "confidence": "H",
+   "rationale": "Selfless, positional organiser."
+  },
+  "virgil-van-dijk": {
+   "discipline": 92,
+   "individualism": 10,
+   "confidence": "H",
+   "rationale": "Unhurried positional defender."
+  },
+  "john-terry": {
+   "discipline": 88,
+   "individualism": 15,
+   "confidence": "H",
+   "rationale": "Organiser who held the line."
+  },
+  "philipp-lahm": {
+   "discipline": 96,
+   "individualism": 15,
+   "confidence": "H",
+   "rationale": "Near-perfect tactical discipline."
+  },
+  "cafu": {
+   "discipline": 70,
+   "individualism": 30,
+   "confidence": "H",
+   "rationale": "Overlapping runner; returned diligently."
+  },
+  "roberto-carlos": {
+   "discipline": 35,
+   "individualism": 50,
+   "confidence": "H",
+   "rationale": "Bombed forward constantly; shot from range."
+  },
+  "franz-beckenbauer": {
+   "discipline": 70,
+   "individualism": 30,
+   "confidence": "H",
+   "rationale": "Libero with licence to advance; disciplined reader."
+  },
+  "vincent-kompany": {
+   "discipline": 85,
+   "individualism": 15,
+   "confidence": "H",
+   "rationale": "Commanding, positional."
+  },
+  "ashley-cole": {
+   "discipline": 85,
+   "individualism": 20,
+   "confidence": "H",
+   "rationale": "Disciplined attacking full-back."
+  },
+  "xavi-hernandez": {
+   "discipline": 92,
+   "individualism": 10,
+   "confidence": "H",
+   "rationale": "Positional metronome; always the pass."
+  },
+  "andres-iniesta": {
+   "discipline": 80,
+   "individualism": 30,
+   "confidence": "H",
+   "rationale": "Disciplined within a system; dribbled to pass."
+  },
+  "luka-modric": {
+   "discipline": 82,
+   "individualism": 30,
+   "confidence": "H",
+   "rationale": "Disciplined two-way technician."
+  },
+  "toni-kroos": {
+   "discipline": 90,
+   "individualism": 25,
+   "confidence": "H",
+   "rationale": "Positional distributor."
+  },
+  "andrea-pirlo": {
+   "discipline": 80,
+   "individualism": 20,
+   "confidence": "H",
+   "rationale": "Held the regista zone; little tracking."
+  },
+  "sergio-busquets": {
+   "discipline": 97,
+   "individualism": 5,
+   "confidence": "H",
+   "rationale": "Benchmark positional midfielder."
+  },
+  "kaka": {
+   "discipline": 50,
+   "individualism": 65,
+   "confidence": "H",
+   "rationale": "Surging carrier who finished."
+  },
+  "david-beckham": {
+   "discipline": 82,
+   "individualism": 35,
+   "confidence": "H",
+   "rationale": "Held the right side; crossed and shot."
+  },
+  "cesc-fabregas": {
+   "discipline": 65,
+   "individualism": 35,
+   "confidence": "H",
+   "rationale": "Creative passer."
+  },
+  "bastian-schweinsteiger": {
+   "discipline": 85,
+   "individualism": 25,
+   "confidence": "H",
+   "rationale": "Disciplined complete midfielder."
+  },
+  "clarence-seedorf": {
+   "discipline": 70,
+   "individualism": 45,
+   "confidence": "H",
+   "rationale": "Balanced and composed."
+  },
+  "mesut-ozil": {
+   "discipline": 55,
+   "individualism": 25,
+   "confidence": "H",
+   "rationale": "Unselfish creator who roamed."
+  },
+  "lionel-messi": {
+   "discipline": 40,
+   "individualism": 65,
+   "confidence": "H",
+   "rationale": "Free role; relentless dribbler yet a prolific creator."
+  },
+  "cristiano-ronaldo": {
+   "discipline": 45,
+   "individualism": 88,
+   "confidence": "H",
+   "rationale": "Shot-first individualist who still combined."
+  },
+  "neymar": {
+   "discipline": 35,
+   "individualism": 78,
+   "confidence": "H",
+   "rationale": "Dribble-first, theatrical."
+  },
+  "kylian-mbappe": {
+   "discipline": 45,
+   "individualism": 72,
+   "confidence": "H",
+   "rationale": "Direct runner and finisher."
+  },
+  "thierry-henry": {
+   "discipline": 55,
+   "individualism": 60,
+   "confidence": "H",
+   "rationale": "Drifted wide; scorer and creator."
+  },
+  "wayne-rooney": {
+   "discipline": 60,
+   "individualism": 50,
+   "confidence": "H",
+   "rationale": "Worked for the team; still took shots."
+  },
+  "luis-suarez": {
+   "discipline": 50,
+   "individualism": 65,
+   "confidence": "H",
+   "rationale": "Relentless; dribbles and shoots."
+  },
+  "robert-lewandowski": {
+   "discipline": 70,
+   "individualism": 55,
+   "confidence": "H",
+   "rationale": "Disciplined penalty-box forward."
+  },
+  "karim-benzema": {
+   "discipline": 65,
+   "individualism": 30,
+   "confidence": "H",
+   "rationale": "Unselfish link forward."
+  },
+  "didier-drogba": {
+   "discipline": 60,
+   "individualism": 65,
+   "confidence": "H",
+   "rationale": "Power forward and big-game shooter."
+  },
+  "samuel-etoo": {
+   "discipline": 75,
+   "individualism": 60,
+   "confidence": "H",
+   "rationale": "Selfless in Inter’s system; still a scorer."
+  },
+  "mohamed-salah": {
+   "discipline": 55,
+   "individualism": 72,
+   "confidence": "H",
+   "rationale": "Goal-hungry wide forward."
+  },
+  "adel-taarabt": {
+   "discipline": 20,
+   "individualism": 90,
+   "confidence": "H",
+   "rationale": "Notorious individualist."
+  },
+  "marouane-fellaini": {
+   "discipline": 70,
+   "individualism": 35,
+   "confidence": "M",
+   "rationale": "Physical, team-oriented."
+  },
+  "mario-balotelli": {
+   "discipline": 15,
+   "individualism": 88,
+   "confidence": "H",
+   "rationale": "Undisciplined individualist."
+  },
+  "sol-campbell": {
+   "discipline": 88,
+   "individualism": 10,
+   "confidence": "H",
+   "rationale": "Positional stopper."
+  },
+  "gary-neville": {
+   "discipline": 92,
+   "individualism": 10,
+   "confidence": "H",
+   "rationale": "Reliable, disciplined full-back."
+  },
+  "patrice-evra": {
+   "discipline": 82,
+   "individualism": 20,
+   "confidence": "H",
+   "rationale": "Disciplined attacking full-back."
+  },
+  "jamie-carragher": {
+   "discipline": 92,
+   "individualism": 5,
+   "confidence": "H",
+   "rationale": "Stayed home; organiser."
+  },
+  "kolo-toure": {
+   "discipline": 70,
+   "individualism": 15,
+   "confidence": "M",
+   "rationale": "Enthusiastic, occasionally reckless."
+  },
+  "branislav-ivanovic": {
+   "discipline": 82,
+   "individualism": 20,
+   "confidence": "M",
+   "rationale": "Solid full-back with goals."
+  },
+  "kyle-walker": {
+   "discipline": 75,
+   "individualism": 15,
+   "confidence": "H",
+   "rationale": "Recovery pace, positional."
+  },
+  "trent-alexander-arnold": {
+   "discipline": 55,
+   "individualism": 35,
+   "confidence": "H",
+   "rationale": "Inverts and ventures; attacking full-back."
+  },
+  "andrew-robertson": {
+   "discipline": 75,
+   "individualism": 20,
+   "confidence": "H",
+   "rationale": "Committed overlapping full-back."
+  },
+  "ruben-dias": {
+   "discipline": 92,
+   "individualism": 8,
+   "confidence": "H",
+   "rationale": "Organiser."
+  },
+  "david-silva": {
+   "discipline": 78,
+   "individualism": 30,
+   "confidence": "H",
+   "rationale": "Disciplined creator."
+  },
+  "michael-carrick": {
+   "discipline": 90,
+   "individualism": 15,
+   "confidence": "H",
+   "rationale": "Positional, simple, reliable."
+  },
+  "fernandinho": {
+   "discipline": 88,
+   "individualism": 12,
+   "confidence": "H",
+   "rationale": "Disciplined screen; tactical fouls."
+  },
+  "ilkay-gundogan": {
+   "discipline": 78,
+   "individualism": 40,
+   "confidence": "H",
+   "rationale": "Disciplined late arriver."
+  },
+  "santi-cazorla": {
+   "discipline": 65,
+   "individualism": 40,
+   "confidence": "H",
+   "rationale": "Two-footed creator."
+  },
+  "bruno-fernandes": {
+   "discipline": 50,
+   "individualism": 65,
+   "confidence": "H",
+   "rationale": "Takes risks; shoots often."
+  },
+  "christian-eriksen": {
+   "discipline": 75,
+   "individualism": 40,
+   "confidence": "H",
+   "rationale": "Disciplined creator, set-piece shooter."
+  },
+  "paul-pogba": {
+   "discipline": 40,
+   "individualism": 65,
+   "confidence": "H",
+   "rationale": "Flair over structure."
+  },
+  "mousa-dembele": {
+   "discipline": 75,
+   "individualism": 35,
+   "confidence": "H",
+   "rationale": "Press-resistant carrier."
+  },
+  "declan-rice": {
+   "discipline": 90,
+   "individualism": 15,
+   "confidence": "H",
+   "rationale": "Disciplined holder."
+  },
+  "sergio-aguero": {
+   "discipline": 55,
+   "individualism": 68,
+   "confidence": "H",
+   "rationale": "Box finisher."
+  },
+  "harry-kane": {
+   "discipline": 75,
+   "individualism": 55,
+   "confidence": "H",
+   "rationale": "Drops to link; shoots readily."
+  },
+  "robin-van-persie": {
+   "discipline": 60,
+   "individualism": 65,
+   "confidence": "H",
+   "rationale": "Finisher with flair."
+  },
+  "erling-haaland": {
+   "discipline": 65,
+   "individualism": 75,
+   "confidence": "H",
+   "rationale": "Box predator."
+  },
+  "fernando-torres": {
+   "discipline": 55,
+   "individualism": 65,
+   "confidence": "H",
+   "rationale": "Runner and finisher."
+  },
+  "gareth-bale": {
+   "discipline": 50,
+   "individualism": 75,
+   "confidence": "H",
+   "rationale": "Direct runner, long shots."
+  },
+  "son-heung-min": {
+   "discipline": 75,
+   "individualism": 55,
+   "confidence": "H",
+   "rationale": "Hard-working wide forward."
+  },
+  "sadio-mane": {
+   "discipline": 75,
+   "individualism": 55,
+   "confidence": "H",
+   "rationale": "Hard-working direct forward."
+  },
+  "ruud-van-nistelrooy": {
+   "discipline": 60,
+   "individualism": 82,
+   "confidence": "H",
+   "rationale": "Pure, greedy finisher."
+  },
+  "riyad-mahrez": {
+   "discipline": 50,
+   "individualism": 70,
+   "confidence": "H",
+   "rationale": "Cutting-in dribbler."
+  },
+  "jamie-vardy": {
+   "discipline": 65,
+   "individualism": 70,
+   "confidence": "H",
+   "rationale": "Runs in behind; shoots early."
+  },
+  "andrea-barzagli": {
+   "discipline": 92,
+   "individualism": 8,
+   "confidence": "H",
+   "rationale": "Positional reader."
+  },
+  "matt-le-tissier": {
+   "discipline": 35,
+   "individualism": 70,
+   "confidence": "H",
+   "rationale": "Genius who rarely tracked back."
+  },
+  "hernan-crespo": {
+   "discipline": 60,
+   "individualism": 70,
+   "confidence": "M",
+   "rationale": "Box finisher."
+  },
+  "marcelo-salas": {
+   "discipline": 55,
+   "individualism": 70,
+   "confidence": "M",
+   "rationale": "Clinical finisher."
+  },
+  "ivan-zamorano": {
+   "discipline": 65,
+   "individualism": 65,
+   "confidence": "M",
+   "rationale": "Aerial, hard-working striker."
+  },
+  "filippo-inzaghi": {
+   "discipline": 55,
+   "individualism": 85,
+   "confidence": "H",
+   "rationale": "Lived on the shoulder; famously greedy in the box."
+  },
+  "hidetoshi-nakata": {
+   "discipline": 70,
+   "individualism": 40,
+   "confidence": "M",
+   "rationale": "Intelligent two-way playmaker."
+  },
+  "park-ji-sung": {
+   "discipline": 95,
+   "individualism": 15,
+   "confidence": "H",
+   "rationale": "Tactical discipline personified."
+  },
+  "tijjani-babangida": {
+   "discipline": 45,
+   "individualism": 70,
+   "confidence": "L",
+   "rationale": "Pacey winger."
+  },
+  "mark-viduka": {
+   "discipline": 55,
+   "individualism": 55,
+   "confidence": "M",
+   "rationale": "Skilful target man."
+  },
+  "youri-djorkaeff": {
+   "discipline": 55,
+   "individualism": 55,
+   "confidence": "M",
+   "rationale": "Creative scorer."
+  },
+  "dejan-stankovic": {
+   "discipline": 75,
+   "individualism": 45,
+   "confidence": "M",
+   "rationale": "Dynamic, disciplined midfielder."
+  },
+  "predrag-mijatovic": {
+   "discipline": 50,
+   "individualism": 65,
+   "confidence": "M",
+   "rationale": "Scoring forward."
+  },
+  "dragan-stojkovic": {
+   "discipline": 45,
+   "individualism": 60,
+   "confidence": "M",
+   "rationale": "Free playmaker."
+  },
+  "dejan-savicevic": {
+   "discipline": 30,
+   "individualism": 70,
+   "confidence": "H",
+   "rationale": "Genius with little defensive interest."
+  },
+  "robert-prosinecki": {
+   "discipline": 45,
+   "individualism": 55,
+   "confidence": "M",
+   "rationale": "Elegant playmaker."
+  },
+  "darko-pancev": {
+   "discipline": 45,
+   "individualism": 80,
+   "confidence": "M",
+   "rationale": "Pure goal-poacher."
+  },
+  "miodrag-belodedici": {
+   "discipline": 80,
+   "individualism": 15,
+   "confidence": "M",
+   "rationale": "Reading libero."
+  },
+  "safet-susic": {
+   "discipline": 45,
+   "individualism": 55,
+   "confidence": "M",
+   "rationale": "Creative dribbler."
+  },
+  "davor-suker": {
+   "discipline": 50,
+   "individualism": 75,
+   "confidence": "H",
+   "rationale": "Left-foot finisher."
+  },
+  "alen-boksic": {
+   "discipline": 50,
+   "individualism": 65,
+   "confidence": "M",
+   "rationale": "Powerful runner."
+  },
+  "savo-milosevic": {
+   "discipline": 55,
+   "individualism": 65,
+   "confidence": "M",
+   "rationale": "Target-man scorer."
+  },
+  "josip-ilicic": {
+   "discipline": 45,
+   "individualism": 65,
+   "confidence": "M",
+   "rationale": "Languid left-footer."
+  },
+  "vladimir-jugovic": {
+   "discipline": 75,
+   "individualism": 40,
+   "confidence": "M",
+   "rationale": "Industrious midfielder."
+  },
+  "nwankwo-kanu": {
+   "discipline": 45,
+   "individualism": 60,
+   "confidence": "M",
+   "rationale": "Improvising forward."
+  },
+  "alex-de-souza": {
+   "discipline": 55,
+   "individualism": 55,
+   "confidence": "M",
+   "rationale": "Free-kick playmaker."
+  },
+  "andrey-arshavin": {
+   "discipline": 35,
+   "individualism": 72,
+   "confidence": "H",
+   "rationale": "Brilliant but individual."
+  },
+  "hulk": {
+   "discipline": 50,
+   "individualism": 75,
+   "confidence": "M",
+   "rationale": "Shooter and power runner."
+  },
+  "aiden-mcgeady": {
+   "discipline": 35,
+   "individualism": 80,
+   "confidence": "M",
+   "rationale": "Dribble-first winger."
+  },
+  "papiss-cisse": {
+   "discipline": 55,
+   "individualism": 75,
+   "confidence": "M",
+   "rationale": "Spectacular finisher."
+  },
+  "peter-crouch": {
+   "discipline": 65,
+   "individualism": 45,
+   "confidence": "M",
+   "rationale": "Link target man."
+  },
+  "djibril-cisse": {
+   "discipline": 50,
+   "individualism": 70,
+   "confidence": "M",
+   "rationale": "Pacey striker."
+  },
+  "dennis-bergkamp": {
+   "discipline": 65,
+   "individualism": 25,
+   "confidence": "H",
+   "rationale": "Creator-forward who chose the pass."
+  },
+  "pierre-van-hooijdonk": {
+   "discipline": 50,
+   "individualism": 70,
+   "confidence": "M",
+   "rationale": "Free-kick taker and finisher."
+  },
+  "shunsuke-nakamura": {
+   "discipline": 70,
+   "individualism": 45,
+   "confidence": "M",
+   "rationale": "Set-piece playmaker."
+  },
+  "alan-shearer": {
+   "discipline": 70,
+   "individualism": 70,
+   "confidence": "H",
+   "rationale": "Disciplined target man and ruthless finisher."
+  },
+  "alberto-luque": {
+   "discipline": 45,
+   "individualism": 65,
+   "confidence": "L",
+   "rationale": "Direct left winger."
+  },
+  "diego-tristan": {
+   "discipline": 40,
+   "individualism": 70,
+   "confidence": "M",
+   "rationale": "Gifted, inconsistent finisher."
+  },
+  "ariel-ortega": {
+   "discipline": 30,
+   "individualism": 75,
+   "confidence": "M",
+   "rationale": "Dribbler with a temper."
+  },
+  "patrick-mboma": {
+   "discipline": 55,
+   "individualism": 65,
+   "confidence": "L",
+   "rationale": "Powerful striker."
+  },
+  "sami-hyypia": {
+   "discipline": 92,
+   "individualism": 8,
+   "confidence": "H",
+   "rationale": "Positional aerial defender."
+  },
+  "milan-baros": {
+   "discipline": 45,
+   "individualism": 72,
+   "confidence": "M",
+   "rationale": "Runner and individual finisher."
+  },
+  "ruud-gullit": {
+   "discipline": 70,
+   "individualism": 50,
+   "confidence": "H",
+   "rationale": "Versatile, powerful leader."
+  },
+  "gianfranco-zola": {
+   "discipline": 60,
+   "individualism": 50,
+   "confidence": "H",
+   "rationale": "Creative forward, team-minded."
+  },
+  "ailton": {
+   "discipline": 45,
+   "individualism": 78,
+   "confidence": "M",
+   "rationale": "Prolific, individual striker."
+  },
+  "marcelinho-hertha": {
+   "discipline": 40,
+   "individualism": 65,
+   "confidence": "L",
+   "rationale": "Free-kick playmaker."
+  },
+  "juan-arango": {
+   "discipline": 55,
+   "individualism": 60,
+   "confidence": "L",
+   "rationale": "Left-foot shooter and playmaker."
+  },
+  "jefferson-farfan": {
+   "discipline": 55,
+   "individualism": 65,
+   "confidence": "L",
+   "rationale": "Pacey wide forward."
+  },
+  "juan-carlos-valeron": {
+   "discipline": 60,
+   "individualism": 30,
+   "confidence": "H",
+   "rationale": "Elegant, unselfish passer."
+  },
+  "roy-makaay": {
+   "discipline": 60,
+   "individualism": 72,
+   "confidence": "M",
+   "rationale": "Clinical poacher."
+  },
+  "freddy-adu": {
+   "discipline": 30,
+   "individualism": 70,
+   "confidence": "L",
+   "rationale": "Unpolished prodigy."
+  },
+  "federico-macheda": {
+   "discipline": 45,
+   "individualism": 65,
+   "confidence": "L",
+   "rationale": "Young finisher."
+  },
+  "royston-drenthe": {
+   "discipline": 30,
+   "individualism": 70,
+   "confidence": "L",
+   "rationale": "Explosive, erratic."
+  },
+  "leighton-baines": {
+   "discipline": 80,
+   "individualism": 25,
+   "confidence": "H",
+   "rationale": "Disciplined crossing full-back."
+  },
+  "andriy-shevchenko": {
+   "discipline": 65,
+   "individualism": 65,
+   "confidence": "H",
+   "rationale": "Complete striker."
+  },
+  "paolo-di-canio": {
+   "discipline": 20,
+   "individualism": 75,
+   "confidence": "H",
+   "rationale": "Volatile genius."
+  },
+  "gianluca-zambrotta": {
+   "discipline": 85,
+   "individualism": 20,
+   "confidence": "H",
+   "rationale": "Disciplined two-way full-back."
+  },
+  "antonio-valencia": {
+   "discipline": 85,
+   "individualism": 30,
+   "confidence": "H",
+   "rationale": "Diligent wide man."
+  },
+  "claudio-marchisio": {
+   "discipline": 85,
+   "individualism": 30,
+   "confidence": "H",
+   "rationale": "Disciplined box-to-box."
+  },
+  "mauro-camoranesi": {
+   "discipline": 70,
+   "individualism": 50,
+   "confidence": "M",
+   "rationale": "Industrious wide playmaker."
+  },
+  "david-luiz": {
+   "discipline": 30,
+   "individualism": 55,
+   "confidence": "H",
+   "rationale": "PROPOSED RECRUIT (not in roster): adventurous positioning, ambitious long passing and long shots."
+  }
+ }
+}

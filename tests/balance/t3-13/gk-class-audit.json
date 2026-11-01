@@ -1,0 +1,586 @@
+{
+ "classes": {
+  "REFLEX MONSTER": {
+   "n": 17,
+   "mean": {
+    "reflexes": 93.8,
+    "positioning": 90.9,
+    "handling": 89.1,
+    "oneOnOne": 92.9,
+    "aerialControl": 85.9,
+    "distribution": 77.7,
+    "sweeping": 80.5
+   }
+  },
+  "GUARDIAN": {
+   "n": 17,
+   "mean": {
+    "reflexes": 92.1,
+    "positioning": 92.7,
+    "handling": 92.2,
+    "oneOnOne": 91.6,
+    "aerialControl": 90.1,
+    "distribution": 78.3,
+    "sweeping": 78.4
+   }
+  },
+  "SWEEPER KEEPER": {
+   "n": 6,
+   "mean": {
+    "reflexes": 90.8,
+    "positioning": 85.8,
+    "handling": 82.2,
+    "oneOnOne": 91.8,
+    "aerialControl": 80,
+    "distribution": 89.5,
+    "sweeping": 94.8
+   }
+  },
+  "COMMANDER": {
+   "n": 4,
+   "mean": {
+    "reflexes": 94.3,
+    "positioning": 92,
+    "handling": 90.8,
+    "oneOnOne": 94,
+    "aerialControl": 90.8,
+    "distribution": 77.8,
+    "sweeping": 81.8
+   }
+  },
+  "DISTRIBUTOR": {
+   "n": 6,
+   "mean": {
+    "reflexes": 89.2,
+    "positioning": 88.3,
+    "handling": 86.3,
+    "oneOnOne": 89.3,
+    "aerialControl": 85.2,
+    "distribution": 93.2,
+    "sweeping": 87
+   }
+  }
+ },
+ "rows": [
+  {
+   "name": "Lev Yashin",
+   "cls": "REFLEX MONSTER",
+   "withBonus": -0.1673700000000003,
+   "attrsOnly": -0.1358700000000003,
+   "dist": 87,
+   "distNo": 87,
+   "sweep": 90.75,
+   "sweepNo": 90.75
+  },
+  {
+   "name": "Gianluigi Buffon",
+   "cls": "GUARDIAN",
+   "withBonus": -0.16968000000000028,
+   "attrsOnly": -0.14448000000000022,
+   "dist": 84,
+   "distNo": 84,
+   "sweep": 89.25,
+   "sweepNo": 89.25
+  },
+  {
+   "name": "Manuel Neuer",
+   "cls": "SWEEPER KEEPER",
+   "withBonus": -0.13272000000000017,
+   "attrsOnly": -0.13272000000000017,
+   "dist": 94,
+   "distNo": 94,
+   "sweep": 102.75,
+   "sweepNo": 97.75
+  },
+  {
+   "name": "Iker Casillas",
+   "cls": "REFLEX MONSTER",
+   "withBonus": -0.16044000000000033,
+   "attrsOnly": -0.12894000000000033,
+   "dist": 79,
+   "distNo": 79,
+   "sweep": 88,
+   "sweepNo": 88
+  },
+  {
+   "name": "Oliver Kahn",
+   "cls": "COMMANDER",
+   "withBonus": -0.1360800000000004,
+   "attrsOnly": -0.12138000000000033,
+   "dist": 76,
+   "distNo": 76,
+   "sweep": 85,
+   "sweepNo": 85
+  },
+  {
+   "name": "Peter Schmeichel",
+   "cls": "COMMANDER",
+   "withBonus": -0.14070000000000008,
+   "attrsOnly": -0.126,
+   "dist": 80,
+   "distNo": 80,
+   "sweep": 85.25,
+   "sweepNo": 85.25
+  },
+  {
+   "name": "Petr Cech",
+   "cls": "GUARDIAN",
+   "withBonus": -0.13944,
+   "attrsOnly": -0.11423999999999995,
+   "dist": 79,
+   "distNo": 79,
+   "sweep": 83,
+   "sweepNo": 83
+  },
+  {
+   "name": "Edwin van der Sar",
+   "cls": "GUARDIAN",
+   "withBonus": -0.10584000000000014,
+   "attrsOnly": -0.08064000000000007,
+   "dist": 92,
+   "distNo": 92,
+   "sweep": 87.75,
+   "sweepNo": 87.75
+  },
+  {
+   "name": "Dino Zoff",
+   "cls": "GUARDIAN",
+   "withBonus": -0.11885999999999994,
+   "attrsOnly": -0.09365999999999987,
+   "dist": 78,
+   "distNo": 78,
+   "sweep": 82.25,
+   "sweepNo": 82.25
+  },
+  {
+   "name": "Gordon Banks",
+   "cls": "REFLEX MONSTER",
+   "withBonus": -0.1362900000000005,
+   "attrsOnly": -0.1047900000000005,
+   "dist": 75,
+   "distNo": 75,
+   "sweep": 81.25,
+   "sweepNo": 81.25
+  },
+  {
+   "name": "Sepp Maier",
+   "cls": "REFLEX MONSTER",
+   "withBonus": -0.10353000000000045,
+   "attrsOnly": -0.07203000000000044,
+   "dist": 78,
+   "distNo": 78,
+   "sweep": 83,
+   "sweepNo": 83
+  },
+  {
+   "name": "Thibaut Courtois",
+   "cls": "GUARDIAN",
+   "withBonus": -0.13292999999999996,
+   "attrsOnly": -0.10772999999999991,
+   "dist": 74,
+   "distNo": 74,
+   "sweep": 82,
+   "sweepNo": 82
+  },
+  {
+   "name": "Jan Oblak",
+   "cls": "GUARDIAN",
+   "withBonus": -0.12978000000000015,
+   "attrsOnly": -0.10458000000000009,
+   "dist": 72,
+   "distNo": 72,
+   "sweep": 80.5,
+   "sweepNo": 80.5
+  },
+  {
+   "name": "Alisson Becker",
+   "cls": "SWEEPER KEEPER",
+   "withBonus": -0.09849000000000026,
+   "attrsOnly": -0.09849000000000026,
+   "dist": 91,
+   "distNo": 91,
+   "sweep": 98.75,
+   "sweepNo": 93.75
+  },
+  {
+   "name": "Ederson Moraes",
+   "cls": "DISTRIBUTOR",
+   "withBonus": -0.0025200000000000955,
+   "attrsOnly": -0.0025200000000000955,
+   "dist": 104,
+   "distNo": 99,
+   "sweep": 92,
+   "sweepNo": 92
+  },
+  {
+   "name": "Marc-Andre ter Stegen",
+   "cls": "DISTRIBUTOR",
+   "withBonus": -0.029190000000000015,
+   "attrsOnly": -0.029190000000000015,
+   "dist": 97,
+   "distNo": 92,
+   "sweep": 91.5,
+   "sweepNo": 91.5
+  },
+  {
+   "name": "Victor Valdes",
+   "cls": "DISTRIBUTOR",
+   "withBonus": -0.0016799999999999643,
+   "attrsOnly": -0.0016799999999999643,
+   "dist": 97,
+   "distNo": 92,
+   "sweep": 88.25,
+   "sweepNo": 88.25
+  },
+  {
+   "name": "Keylor Navas",
+   "cls": "REFLEX MONSTER",
+   "withBonus": -0.09639000000000007,
+   "attrsOnly": -0.06489000000000007,
+   "dist": 78,
+   "distNo": 78,
+   "sweep": 83,
+   "sweepNo": 83
+  },
+  {
+   "name": "Dida",
+   "cls": "GUARDIAN",
+   "withBonus": -0.08694000000000002,
+   "attrsOnly": -0.061739999999999955,
+   "dist": 78,
+   "distNo": 78,
+   "sweep": 81.75,
+   "sweepNo": 81.75
+  },
+  {
+   "name": "Julio Cesar",
+   "cls": "REFLEX MONSTER",
+   "withBonus": -0.09995999999999981,
+   "attrsOnly": -0.06845999999999981,
+   "dist": 77,
+   "distNo": 77,
+   "sweep": 83.25,
+   "sweepNo": 83.25
+  },
+  {
+   "name": "Gianluigi Donnarumma",
+   "cls": "REFLEX MONSTER",
+   "withBonus": -0.1230600000000003,
+   "attrsOnly": -0.0915600000000003,
+   "dist": 76,
+   "distNo": 76,
+   "sweep": 84.25,
+   "sweepNo": 84.25
+  },
+  {
+   "name": "Fabien Barthez",
+   "cls": "SWEEPER KEEPER",
+   "withBonus": 0.018480000000000205,
+   "attrsOnly": 0.018480000000000205,
+   "dist": 88,
+   "distNo": 88,
+   "sweep": 95.5,
+   "sweepNo": 90.5
+  },
+  {
+   "name": "Pepe Reina",
+   "cls": "DISTRIBUTOR",
+   "withBonus": 0.006510000000000048,
+   "attrsOnly": 0.006510000000000048,
+   "dist": 94,
+   "distNo": 89,
+   "sweep": 87.5,
+   "sweepNo": 87.5
+  },
+  {
+   "name": "Santiago Canizares",
+   "cls": "GUARDIAN",
+   "withBonus": -0.09030000000000024,
+   "attrsOnly": -0.06510000000000019,
+   "dist": 75,
+   "distNo": 75,
+   "sweep": 80.5,
+   "sweepNo": 80.5
+  },
+  {
+   "name": "Francesco Toldo",
+   "cls": "REFLEX MONSTER",
+   "withBonus": -0.09555000000000025,
+   "attrsOnly": -0.06405000000000025,
+   "dist": 74,
+   "distNo": 74,
+   "sweep": 79.75,
+   "sweepNo": 79.75
+  },
+  {
+   "name": "Rene Higuita",
+   "cls": "SWEEPER KEEPER",
+   "withBonus": 0.14447999999999991,
+   "attrsOnly": 0.14447999999999991,
+   "dist": 89,
+   "distNo": 89,
+   "sweep": 97,
+   "sweepNo": 92
+  },
+  {
+   "name": "Jose Luis Chilavert",
+   "cls": "DISTRIBUTOR",
+   "withBonus": -0.0522900000000002,
+   "attrsOnly": -0.0522900000000002,
+   "dist": 100,
+   "distNo": 95,
+   "sweep": 81.75,
+   "sweepNo": 81.75
+  },
+  {
+   "name": "Jorge Campos",
+   "cls": "SWEEPER KEEPER",
+   "withBonus": 0.1047899999999999,
+   "attrsOnly": 0.1047899999999999,
+   "dist": 90,
+   "distNo": 90,
+   "sweep": 95.5,
+   "sweepNo": 90.5
+  },
+  {
+   "name": "Samir Handanovic",
+   "cls": "GUARDIAN",
+   "withBonus": -0.08505000000000025,
+   "attrsOnly": -0.05985000000000018,
+   "dist": 75,
+   "distNo": 75,
+   "sweep": 80.25,
+   "sweepNo": 80.25
+  },
+  {
+   "name": "Yann Sommer",
+   "cls": "REFLEX MONSTER",
+   "withBonus": -0.05585999999999993,
+   "attrsOnly": -0.02435999999999993,
+   "dist": 86,
+   "distNo": 86,
+   "sweep": 86.75,
+   "sweepNo": 86.75
+  },
+  {
+   "name": "Peter Shilton",
+   "cls": "GUARDIAN",
+   "withBonus": -0.1339800000000002,
+   "attrsOnly": -0.10878000000000015,
+   "dist": 74,
+   "distNo": 74,
+   "sweep": 77,
+   "sweepNo": 77
+  },
+  {
+   "name": "Ricardo Zamora",
+   "cls": "REFLEX MONSTER",
+   "withBonus": -0.1314600000000001,
+   "attrsOnly": -0.09996000000000012,
+   "dist": 76,
+   "distNo": 76,
+   "sweep": 78.75,
+   "sweepNo": 78.75
+  },
+  {
+   "name": "Frantisek Planicka",
+   "cls": "REFLEX MONSTER",
+   "withBonus": -0.1100399999999999,
+   "attrsOnly": -0.0785399999999999,
+   "dist": 78,
+   "distNo": 78,
+   "sweep": 80,
+   "sweepNo": 80
+  },
+  {
+   "name": "Gilmar",
+   "cls": "GUARDIAN",
+   "withBonus": -0.10962000000000029,
+   "attrsOnly": -0.08442000000000022,
+   "dist": 79,
+   "distNo": 79,
+   "sweep": 81,
+   "sweepNo": 81
+  },
+  {
+   "name": "Ubaldo Fillol",
+   "cls": "REFLEX MONSTER",
+   "withBonus": -0.12558000000000008,
+   "attrsOnly": -0.0940800000000001,
+   "dist": 74,
+   "distNo": 74,
+   "sweep": 81.5,
+   "sweepNo": 81.5
+  },
+  {
+   "name": "Walter Zenga",
+   "cls": "COMMANDER",
+   "withBonus": -0.10080000000000025,
+   "attrsOnly": -0.08610000000000019,
+   "dist": 76,
+   "distNo": 76,
+   "sweep": 82.25,
+   "sweepNo": 82.25
+  },
+  {
+   "name": "Michel Preudhomme",
+   "cls": "GUARDIAN",
+   "withBonus": -0.13587,
+   "attrsOnly": -0.11066999999999992,
+   "dist": 78,
+   "distNo": 78,
+   "sweep": 82.5,
+   "sweepNo": 82.5
+  },
+  {
+   "name": "Rinat Dasayev",
+   "cls": "REFLEX MONSTER",
+   "withBonus": -0.12432000000000004,
+   "attrsOnly": -0.09282000000000004,
+   "dist": 80,
+   "distNo": 80,
+   "sweep": 84.5,
+   "sweepNo": 84.5
+  },
+  {
+   "name": "Jean-Marie Pfaff",
+   "cls": "REFLEX MONSTER",
+   "withBonus": -0.08295000000000007,
+   "attrsOnly": -0.051450000000000065,
+   "dist": 76,
+   "distNo": 76,
+   "sweep": 81,
+   "sweepNo": 81
+  },
+  {
+   "name": "Hugo Lloris",
+   "cls": "REFLEX MONSTER",
+   "withBonus": -0.10058999999999983,
+   "attrsOnly": -0.06908999999999983,
+   "dist": 78,
+   "distNo": 78,
+   "sweep": 87.25,
+   "sweepNo": 87.25
+  },
+  {
+   "name": "Andoni Zubizarreta",
+   "cls": "GUARDIAN",
+   "withBonus": -0.07539000000000037,
+   "attrsOnly": -0.05019000000000031,
+   "dist": 84,
+   "distNo": 84,
+   "sweep": 84.75,
+   "sweepNo": 84.75
+  },
+  {
+   "name": "Claudio Taffarel",
+   "cls": "GUARDIAN",
+   "withBonus": -0.10395000000000007,
+   "attrsOnly": -0.07875,
+   "dist": 79,
+   "distNo": 79,
+   "sweep": 82.25,
+   "sweepNo": 82.25
+  },
+  {
+   "name": "Rogerio Ceni",
+   "cls": "DISTRIBUTOR",
+   "withBonus": 0.04095000000000006,
+   "attrsOnly": 0.04095000000000006,
+   "dist": 97,
+   "distNo": 92,
+   "sweep": 83,
+   "sweepNo": 83
+  },
+  {
+   "name": "Jens Lehmann",
+   "cls": "SWEEPER KEEPER",
+   "withBonus": -0.010079999999999785,
+   "attrsOnly": -0.010079999999999785,
+   "dist": 85,
+   "distNo": 85,
+   "sweep": 96,
+   "sweepNo": 91
+  },
+  {
+   "name": "David Seaman",
+   "cls": "GUARDIAN",
+   "withBonus": -0.09387000000000029,
+   "attrsOnly": -0.06867000000000022,
+   "dist": 77,
+   "distNo": 77,
+   "sweep": 79,
+   "sweepNo": 79
+  },
+  {
+   "name": "Gianluca Pagliuca",
+   "cls": "REFLEX MONSTER",
+   "withBonus": -0.09492000000000023,
+   "attrsOnly": -0.06342000000000021,
+   "dist": 77,
+   "distNo": 77,
+   "sweep": 81.75,
+   "sweepNo": 81.75
+  },
+  {
+   "name": "Angelo Peruzzi",
+   "cls": "GUARDIAN",
+   "withBonus": -0.10437000000000028,
+   "attrsOnly": -0.07917000000000023,
+   "dist": 75,
+   "distNo": 75,
+   "sweep": 78.5,
+   "sweepNo": 78.5
+  },
+  {
+   "name": "Emiliano Martinez",
+   "cls": "COMMANDER",
+   "withBonus": -0.09303000000000015,
+   "attrsOnly": -0.0783300000000001,
+   "dist": 79,
+   "distNo": 79,
+   "sweep": 84.75,
+   "sweepNo": 84.75
+  },
+  {
+   "name": "Vitor Baia",
+   "cls": "GUARDIAN",
+   "withBonus": -0.035700000000000065,
+   "attrsOnly": -0.0105,
+   "dist": 78,
+   "distNo": 78,
+   "sweep": 80.75,
+   "sweepNo": 80.75
+  },
+  {
+   "name": "Sergio Goycochea",
+   "cls": "REFLEX MONSTER",
+   "withBonus": -0.02835000000000018,
+   "attrsOnly": 0.0031499999999998213,
+   "dist": 72,
+   "distNo": 72,
+   "sweep": 77.75,
+   "sweepNo": 77.75
+  }
+ ],
+ "moved": 38,
+ "maxMove": 13,
+ "supported": 35,
+ "unsupported": [
+  "Sepp Maier (REFLEX MONSTER: reflexes z=0.29, strongest positioning)",
+  "Dida (GUARDIAN: positioning z=-0.18, strongest aerialControl)",
+  "Santiago Canizares (GUARDIAN: positioning z=0.08, strongest handling)",
+  "Francesco Toldo (REFLEX MONSTER: reflexes z=-0.14, strongest aerialControl)",
+  "Samir Handanovic (GUARDIAN: positioning z=-0.18, strongest handling)",
+  "Yann Sommer (REFLEX MONSTER: reflexes z=0.29, strongest sweeping)",
+  "Walter Zenga (COMMANDER: aerialControl z=0.19, strongest reflexes)",
+  "Jean-Marie Pfaff (REFLEX MONSTER: reflexes z=-0.14, strongest aerialControl)",
+  "Hugo Lloris (REFLEX MONSTER: reflexes z=0.29, strongest sweeping)",
+  "Claudio Taffarel (GUARDIAN: positioning z=0.34, strongest oneOnOne)",
+  "David Seaman (GUARDIAN: positioning z=0.08, strongest aerialControl)",
+  "Angelo Peruzzi (GUARDIAN: positioning z=0.34, strongest handling)",
+  "Emiliano Martinez (COMMANDER: aerialControl z=0.01, strongest oneOnOne)",
+  "Vitor Baia (GUARDIAN: positioning z=-0.45, strongest aerialControl)",
+  "Sergio Goycochea (REFLEX MONSTER: reflexes z=-0.99, strongest oneOnOne)"
+ ]
+}
