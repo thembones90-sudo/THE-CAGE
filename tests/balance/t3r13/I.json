@@ -1,0 +1,143 @@
+{
+ "engine": "cage-t3-12",
+ "flags": [
+  "I"
+ ],
+ "param": {
+  "Arad": 0,
+  "Atk": 0.6,
+  "Abias": 0.9,
+  "B1late": 240,
+  "C1ref": 60,
+  "C1scale": 40,
+  "C1max": 0.9,
+  "C2bias": -0.45,
+  "C2k": 12,
+  "C2hi": 0.96
+ },
+ "gk": true,
+ "traits": true,
+ "N": 300,
+ "caps": 0,
+ "goalsMedian": 7,
+ "goalsMean": 7.82,
+ "goldenPct": 13.1,
+ "durP99": 1721,
+ "anat": {
+  "DDD": {
+   "win": 17.7,
+   "gf": 1.09,
+   "ga": 3.01,
+   "shotsPerPossF": 0.13,
+   "shotsPerPossA": 0.285,
+   "convF": 0.179,
+   "convA": 0.237,
+   "reachA": 83.1,
+   "reachF": 66.6,
+   "carriesCheckedPct": 0,
+   "passPctF": 86.7
+  },
+  "MMM": {
+   "win": 34,
+   "gf": 3.17,
+   "ga": 4.67,
+   "shotsPerPossF": 0.253,
+   "shotsPerPossA": 0.322,
+   "convF": 0.275,
+   "convA": 0.318,
+   "reachA": 76.7,
+   "reachF": 75.2,
+   "carriesCheckedPct": 0,
+   "passPctF": 87.3
+  },
+  "FFF": {
+   "win": 45.3,
+   "gf": 5.51,
+   "ga": 6.06,
+   "shotsPerPossF": 0.395,
+   "shotsPerPossA": 0.383,
+   "convF": 0.309,
+   "convA": 0.347,
+   "reachA": 77.6,
+   "reachF": 73.5,
+   "carriesCheckedPct": 0,
+   "passPctF": 87.2
+  },
+  "DMF": {
+   "win": 46,
+   "gf": 3.73,
+   "ga": 3.88,
+   "shotsPerPossF": 0.285,
+   "shotsPerPossA": 0.288,
+   "convF": 0.27,
+   "convA": 0.28,
+   "reachA": 74,
+   "reachF": 75,
+   "carriesCheckedPct": 0,
+   "passPctF": 86.3
+  },
+  "DDF": {
+   "win": 52,
+   "gf": 3.63,
+   "ga": 3.37,
+   "shotsPerPossF": 0.274,
+   "shotsPerPossA": 0.289,
+   "convF": 0.277,
+   "convA": 0.245,
+   "reachA": 76.3,
+   "reachF": 71,
+   "carriesCheckedPct": 0,
+   "passPctF": 86.6
+  },
+  "MMF": {
+   "win": 47.7,
+   "gf": 4.31,
+   "ga": 4.51,
+   "shotsPerPossF": 0.324,
+   "shotsPerPossA": 0.31,
+   "convF": 0.288,
+   "convA": 0.313,
+   "reachA": 74.7,
+   "reachF": 77.1,
+   "carriesCheckedPct": 0,
+   "passPctF": 88.1
+  }
+ },
+ "gradient": [
+  {
+   "bin": "-99..-8",
+   "win": 14.3,
+   "n": 21
+  },
+  {
+   "bin": "-8..-4",
+   "win": 36.2,
+   "n": 229
+  },
+  {
+   "bin": "-4..-1.5",
+   "win": 39.6,
+   "n": 321
+  },
+  {
+   "bin": "-1.5..1.5",
+   "win": 48.4,
+   "n": 574
+  },
+  {
+   "bin": "1.5..4",
+   "win": 60.1,
+   "n": 383
+  },
+  {
+   "bin": "4..8",
+   "win": 70,
+   "n": 237
+  },
+  {
+   "bin": "8..99",
+   "win": 88.6,
+   "n": 35
+  }
+ ]
+}

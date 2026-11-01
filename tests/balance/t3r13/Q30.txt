@@ -1,0 +1,13 @@
+cage-t3-12 flags=[Q] param={} gk=true traits=true N=300/comp caps=0 goals median 7 mean 8.05 golden 12.2% p99 1748s
+                       DDD     MMM     FFF     DMF     DDF     MMF
+win                     22    27.3      34    58.7      62    36.7
+gf                    1.13    3.12    5.57       4    3.78    4.24
+ga                    2.36    5.08    7.53    3.24    2.76    5.46
+shotsPerPossF        0.141   0.255   0.404   0.295   0.284   0.323
+shotsPerPossA        0.288   0.333   0.387   0.292   0.293    0.32
+convF                0.168   0.269    0.31    0.28   0.274   0.285
+convA                 0.18   0.334   0.435   0.231   0.197   0.368
+reachA                81.9    76.8    77.8    74.1    76.2    75.1
+carriesCheckedPct        0       0       0       0       0       0
+passPctF              86.5    87.5    87.4    86.8    86.2    87.6
+gradient -99..-8:4.8 | -8..-4:24 | -4..-1.5:42.7 | -1.5..1.5:47 | 1.5..4:58.2 | 4..8:74.7 | 8..99:82.9
