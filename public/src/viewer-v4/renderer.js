@@ -2,6 +2,28 @@
 // No game logic, no randomness, no event creation: it only paints what it is given.
 (()=>{'use strict';
 const C=window.CageViewerCoords,FX=window.CageViewerV4FX,Names=window.CageLabelLayout;
+// Pure, deterministic keeper stance in pitch units {u,v}. side 0 defends u=0, side 1 defends u=1.
+function keeperStance(f,side,id,event,active,phase){
+ const goalU=side===0?0:1,dir=side===0?1:-1,b=f.ball,ease=k=>k<=0?0:k>=1?1:k*k*(3-2*k);
+ const near=b?Math.max(0,1-Math.abs(b.u-goalU)/.55):0;
+ let depth=.035+.04*near,lane=b?Math.max(.36,Math.min(.64,.5+(b.v-.5)*(.22+.38*near))):.5;
+ if(active&&event){const k=f.reducedMotion?1:ease(phase*1.6);
+  if(event.type==='gk_sweep'||event.type==='gk_claim'){const tu=b?Math.min(.17,Math.abs(b.u-goalU)):.12,tv=b?Math.max(.25,Math.min(.75,b.v)):lane;depth=depth+(Math.max(depth,tu)-depth)*k;lane=lane+(tv-lane)*k;}
+  else if(event.calc?.keeperMode==='rush'){depth=depth+(.13-depth)*k;if(b)lane=lane+(Math.max(.25,Math.min(.75,b.v))-lane)*k;}
+  else if(event.calc?.keeperMode==='stay'){depth=.035;}
+  if((event.type==='gk_save'||event.type==='gk_parry')&&event.zone?.lane){const t={left:.39,centre:.5,right:.61}[event.zone.lane]??.5;lane=f.reducedMotion?t:lane+(t-lane)*Math.sin(Math.PI*Math.min(1,phase)/2);}
+ }
+ return {u:goalU+dir*depth,v:lane};
+}
+// Smoothed stance at playback time tau: the mean raw stance over the previous 0.35 s of the RECORDED timeline
+// (21 samples). A pure function of timeline + events, so seeking and replays are deterministic and frame-rate independent.
+function keeperStanceAt(tl,events,T,keepers,tau,side,reducedMotion){
+ const N=21,W=.35;let u=0,v=0;
+ for(let k=0;k<N;k++){const t=Math.max(0,tau-W*k/(N-1)),seg=tl.segments[T.segmentIndex(tl,t)],ev=events[seg.i],
+  keeperEvent=(['gk_save','gk_parry','gk_sweep','gk_distribution','gk_claim'].includes(ev?.type)||(ev?.gk&&ev?.calc?.keeperMode))?ev:null,
+  s=keeperStance({ball:T.ballAt(tl,t),reducedMotion},side,keepers[side],keeperEvent,!!keeperEvent&&keeperEvent.gk===keepers[side],T.phase(seg,t));u+=s.u;v+=s.v;}
+ return {u:u/N,v:v/N};
+}
 const TOKENS={'--cage-turf':'#1f4d2b','--cage-turf-2':'#225430','--cage-line':'rgba(235,245,235,.78)','--cage-steel':'#8c96a3','--cage-mesh':'rgba(190,200,210,.16)','--cage-flood':'rgba(255,248,220,.10)','--cage-surround':'#0d1014',
   '--team-a':'#3aa0ff','--team-a-ink':'#04121f','--team-b':'#ff5a52','--team-b-ink':'#1f0504','--ball':'#ffffff','--danger':'#e0283c','--momentum':'#ffb627','--verified':'#3ccf6e','--label-font':'600 11px system-ui, sans-serif','--grid':'rgba(255,255,255,.07)'};
 function readTokens(el){const cs=el&&typeof getComputedStyle==='function'?getComputedStyle(el):null,o={};for(const k in TOKENS){const v=cs&&cs.getPropertyValue(k).trim();o[k]=v||TOKENS[k];}return o;}
@@ -93,16 +115,15 @@ function createRenderer(canvas){
   }
 
   // Keeper markers are SEPARATE from the six recorded outfield positions.
-  // A lateral save motion occurs only during a logged goalkeeper action.
+  // Goalkeeper stance (PRESENTATION ONLY; the engine records no keeper position). Every frame the keeper tracks the
+  // recorded ball across the goal to narrow the angle and steps off the line as play approaches. Logged keeper actions
+  // move the keeper further: sweeps and claims run out to the ball, a one-on-one 'rush' closes the shooter down,
+  // 'stay' holds the line. Derived only from recorded data, so it never changes outcomes.
   function paintGoalkeepers(f,R){
     if(!Array.isArray(f.keepers)||f.keepers.length!==2)return;
     for(const side of [0,1]){
       const id=f.keepers[side],event=f.keeperEvent,active=event&&event.gk===id,phase=Math.max(0,Math.min(1,f.keeperPhase||0));
-      let lane=.5;
-      if(active&&event.zone?.lane){const target={left:.39,centre:.5,right:.61}[event.zone.lane]??.5;
-        lane=f.reducedMotion?target:.5+(target-.5)*Math.sin(Math.PI*phase/2);
-      }
-      const outSweep=active&&event.type==='gk_sweep',at=px({u:side===0?(outSweep?.12:.035):(outSweep?.88:.965),v:lane}),radius=R*.82;
+      const st=f.keeperPos?.[side]||keeperStance(f,side,id,event,active,phase),at=px({u:st.u,v:st.v}),radius=R*.82;
       ctx.save();
       ctx.fillStyle='rgba(4,13,21,.80)';ctx.strokeStyle=side===0?'#78c9ff':'#ffbd88';ctx.lineWidth=2;
       ctx.beginPath();ctx.arc(at.x,at.y,radius+2,0,Math.PI*2);ctx.fill();ctx.stroke();
@@ -273,5 +294,5 @@ function createRenderer(canvas){
   }
   return {resize,draw,get rect(){return rect;},tokens:()=>tk};
 }
-window.CageViewerRenderer={TOKENS,createRenderer,shouldPaintRecordedAction,v4:true};
+window.CageViewerRenderer={TOKENS,createRenderer,shouldPaintRecordedAction,keeperStance,keeperStanceAt,v4:true};
 })();
