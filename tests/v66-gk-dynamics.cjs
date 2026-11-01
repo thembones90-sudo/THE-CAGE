@@ -5,7 +5,7 @@ const files=[...read('play.html').matchAll(/<script src="(src\/[^"]+)"><\/script
 const c={window:{location:{search:''}}};vm.createContext(c);
 for(const f of files){vm.runInContext(read(f),c,{filename:f});if(f==='src/replay/records.js')break;}
 const E=c.window.CageEngine,G=c.window.CageGoalkeepers,R=c.window.CageRecords,Rules=c.window.CageGoalkeeperRules;
-assert.equal(E.VERSION,'cage-t3-10');
+assert.equal(E.VERSION,'cage-t3-12');
 const synthetic=Object.assign({},G.BY_ID['gianluigi-buffon'],{r:{...G.BY_ID['gianluigi-buffon'].r,distribution:99,sweeping:99}});
 const weak=Object.assign({},synthetic,{r:{...synthetic.r,distribution:67,sweeping:63}});
 assert(Rules.distribute(synthetic,0,.75).successful&&!Rules.distribute(weak,0,.75).successful);

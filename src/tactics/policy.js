@@ -1,5 +1,5 @@
 (()=>{'use strict';const C=window.CageCapabilities,lim=C.lim;
-function derive(players,tactic='balanced',params=window.CageTacticalParams.P){const tac=window.CageTacticalParams.TACTICS[tactic];if(!tac)throw Error('Unknown tactic.');const c=players.map(C.comp),raw=C.raw(players),a=params.policy,wr=C.avg(c.map(x=>x.a.wr)),press=C.avg(c.map(x=>x.press)),sta=C.avg(c.map(x=>x.a.sta));const natural=c.filter(x=>x.DEF>=x.ATT+a.restGap).length;
+function derive(players,tactic='balanced',params=window.CageTacticalParams.P,profiles=window.CageTacticalParams.TACTICS){const tac=profiles[tactic];if(!tac)throw Error('Unknown tactic.');const c=players.map(C.comp),raw=C.raw(players),a=params.policy,wr=C.avg(c.map(x=>x.a.wr)),press=C.avg(c.map(x=>x.press)),sta=C.avg(c.map(x=>x.a.sta));const natural=c.filter(x=>x.DEF>=x.ATT+a.restGap).length;
 const highPressDefenderOnly=tactic==='press'&&natural===3;
 // An all-specialist defensive trio does not start with two makeshift forwards.
 // If a REAL long match remains scoreless, the high-press coach may commit a

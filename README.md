@@ -1,3 +1,15 @@
+# THE CAGE V6.10: T3-12 TACTICAL BALANCE (EXPERIMENTAL)
+
+Press/Possession tactical profiles tuned from controlled simulations; technical midfielders can create bounded, logged shot-quality links through real forward passes. Frozen T3-11 and older replays retained. Goalkeeper set pieces remain on hold. See [full evidence report](docs/T312_TACTICAL_ENGINE_REPORT.md).
+
+---
+
+# THE CAGE V6.9: ENGINE FIRST — FAIR OVERTIME (EXPERIMENTAL)
+
+Core engine upgrade only. A tied regulation round enters Golden Goal with a seeded neutral kickoff, and late pressure works both with and without goalkeepers. No goalkeeper set-piece taking, new traits or player-rating changes. Historic T3-10 remains archived. Read [the engine audit and baseline study](docs/V69_ENGINE_BALANCE_AND_GOLDEN_GOAL.md).
+
+---
+
 # THE CAGE V6.8: 50 RANKED GOALKEEPERS (EXPERIMENTAL)
 
 50 historic goalkeepers with tier-first rank and 7-attribute grades. **OWNER-APPROVED:** Jose Luis Chilavert is LEGEND with STREET HERO + STREET VILLAIN + TALISMAN; his **90 OVR is a provisional formula-derived proposal**, not an approved attribute audit. The original 30-card historical catalog remains frozen for older T3-7/8/9 replays. See [full goalkeeper ranking and grades](docs/V68_GOALKEEPER_50_RANKINGS.md).

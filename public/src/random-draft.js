@@ -172,7 +172,7 @@ function validateKeeperShowdown(s){
  if(s.schema!==2||!Array.isArray(s.keeperUsed)||new Set(s.keeperUsed).size!==s.keeperUsed.length||s.keeperUsed.some(id=>!GKS.BY_ID[id]))throw Error('Invalid goalkeeper exhaustion state.');
  const used=new Set(),observed=new Set();
  for(const r of records){
-  if(r.schema!==2||!['cage-t3-7','cage-t3-8','cage-t3-9','cage-t3-10'].includes(r.engineVersion)||!Array.isArray(r.config?.keepers)||r.config.keepers.length!==2)throw Error('Keeper-mode round must use a supported T3-7/8/9 schema2 engine.');
+  if(r.schema!==2||!['cage-t3-7','cage-t3-8','cage-t3-9','cage-t3-10','cage-t3-11','cage-t3-12'].includes(r.engineVersion)||!Array.isArray(r.config?.keepers)||r.config.keepers.length!==2)throw Error('Keeper-mode round must use a supported T3-7/8/9 schema2 engine.');
   for(const id of r.config.keepers){if(used.has(id))throw Error('Goalkeeper repeated across showdown rounds.');used.add(id);observed.add(id);}
  }
  if(s.keeperState){

@@ -4,7 +4,7 @@ const html=read('play.html'),files=[...html.matchAll(/<script src="(src\/[^"]+)"
 const c={window:{location:{search:''}}};vm.createContext(c);
 for(const file of files){vm.runInContext(read(file),c,{filename:file});if(file==='src/replay/records.js')break;}
 const W=c.window,live=W.CageGoalkeepers,old=W.CageGoalkeepersGK30,R=W.CageRecords,E=W.CageEngine;
-assert.equal(live.players.length,50);assert.equal(old.players.length,30);assert.equal(E.VERSION,'cage-t3-10');
+assert.equal(live.players.length,50);assert.equal(old.players.length,30);assert.equal(E.VERSION,'cage-t3-12');
 assert.equal(live.BY_ID['jose-luis-chilavert'].careerTier,'LEGEND');
 assert.equal(live.BY_ID['jose-luis-chilavert'].overall,90);
 assert.equal(old.BY_ID['jose-luis-chilavert'].careerTier,'ELITE');
@@ -23,7 +23,7 @@ let count=0;
 for(const version of ['cage-t3-7','cage-t3-8','cage-t3-9']){
  const engine=W.CAGE_ENGINE_REGISTRY[version];assert(engine&&engine.VERSION===version);
  W.CageGoalkeepers=old;let oldResult,record;try{oldResult=engine.simulate(config);record=JSON.parse(JSON.stringify(R.make(config,oldResult,1)));}finally{W.CageGoalkeepers=live;}
- record.engineVersion=version;
+ record.engineVersion=version;record.paramsVersion=engine.PARAMS_VERSION;
  if(version!=='cage-t3-9')delete record.keeperRatingsVersion;
  const before=W.CageGoalkeepers;
  const replay=R.reproduce(record);assert.equal(replay.eventHash,oldResult.eventHash);
