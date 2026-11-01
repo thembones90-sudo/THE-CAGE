@@ -1,5 +1,5 @@
 /* THE CAGE V6.10 TACTICAL ENGINE EXPERIMENTAL: generated from the canonical playable dependency list. */
-const CACHE='the-cage-full-t312-dbe630af10d5';
+const CACHE='the-cage-full-t312-660887b9ee33';
 const STATIC=[
   "./assets/cage-icon.svg",
   "./classic-v56/assets/cage-icon.svg",
@@ -153,6 +153,7 @@ const STATIC=[
   "./src/viewer/clock.js",
   "./src/viewer/coords.js",
   "./src/viewer/layout.js",
+  "./src/viewer/recorded-motion.js",
   "./src/viewer/timeline.js",
   "./src/viewer/viewer.css",
   "./src/war-room.js"

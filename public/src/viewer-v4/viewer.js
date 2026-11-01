@@ -61,6 +61,8 @@ function mount(el,record,opts){
   const o=Object.assign({speed:'dynamic',mode:'live',teamNames:['Commander','Opponent'],names:{},lines:null,showdown:null,autoplay:false},opts||{});
   freeze(record); // invariant I5: the viewer cannot write to the record
   const tl=T.buildTimeline(record,o.timeline),events=(record.result||record).events;
+  // M2: draw the engine's recorded movement when the record has it; older records keep the inferred motion.
+  const RM=window.CageRecordedMotion?window.CageRecordedMotion.create(tl,record):null,TP=RM?RM.timelineApi(T):T;
   const name=id=>id?(o.names[id]||titleCase(id)):'';
   const labels={},numbers={};tl.ids.forEach(id=>{labels[id]=L.label(name(id));numbers[id]=tl.teams[tl.teamOf[id]].indexOf(id)+1;});
   const lines=T.schedule(tl,o.lines||basicLines(events,name));const cues=window.CageViewerV4FX.buildCues(tl,events);
@@ -81,7 +83,7 @@ function mount(el,record,opts){
     '<div class="cv-surge" data-k="surge" hidden></div>':'';
 
   const inferredMotionNote='V5.2 body facing, acceleration trails, turning and ball-flight styling are deterministic inferred visuals from recorded positions; they are not measured individual footwork.';
-  q('notes').innerHTML=tl.notes.concat(tl.warnings,[inferredMotionNote]).map(n=>'<li>'+esc(n)+'</li>').join('');
+  q('notes').innerHTML=tl.notes.concat(tl.warnings,[RM?'Player, goalkeeper and ball positions are the recorded engine movement ('+RM.version+', 4 Hz), drawn as recorded.':inferredMotionNote]).map(n=>'<li>'+esc(n)+'</li>').join('');
   q('speed').value=pb.speed;canvas.setAttribute('aria-label','Top-down cage pitch: '+tl.teams.map((t,i)=>o.teamNames[i]+' '+t.map(name).join(', ')).join(' versus '));
   let raf=0,last=null,shown=-1,flashUntil=0,trail=[],commHidden=false,lastSeg=-1,goalShown=false,now=0,goldenCue=null,goldenAt=0,goldenTimer=null;
   const sound=Audio.create();
@@ -132,7 +134,7 @@ function mount(el,record,opts){
   function syncComm(tau){const target=lines.filter(l=>l.tau<=tau).length;if(target===shown)return;const ol=q('comm');if(target<shown){ol.innerHTML='';shown=0;}
     const frag=document.createDocumentFragment();for(let k=Math.max(0,shown);k<target;k++){const l=lines[k],li=document.createElement('li');li.className='imp'+(l.imp||0);li.innerHTML='<time>'+mmss(l.t)+'</time> '+esc(l.text);frag.appendChild(li);}ol.appendChild(frag);shown=target;ol.scrollTop=ol.scrollHeight;
     if(target){q('ticker').textContent=lines[target-1].text;}}
-  function frame(){const tau=pb.tau,si=T.segmentIndex(tl,tau),seg=tl.segments[si],motion=M.sample(tl,events,tau,T),kinetics=Kin.sample(tl,T,tau,motion),players=motion.positions,ball=motion.ball,score=T.scoreAt(tl,tau);
+  function frame(){const tau=pb.tau,si=T.segmentIndex(tl,tau),seg=tl.segments[si],motion=M.sample(tl,events,tau,TP),kinetics=Kin.sample(tl,TP,tau,motion),players=motion.positions,ball=motion.ball,score=T.scoreAt(tl,tau);
     if(si!==lastSeg&&tau<(tl.segments[lastSeg]||{tau0:-1}).tau0)trail=[];lastSeg=si;
     if(!reduce){trail.push({u:ball.u,v:ball.v});if(trail.length>14)trail.shift();}
     const goldenPhase=G.phase(goldenCue,tau,goldenAt,now,reduce);
@@ -143,7 +145,7 @@ function mount(el,record,opts){
     const confirmedGoal=goalShown&&tl.goals.some(g=>tau>=g.tau);
     q('goalcard').hidden=goldenPhase.visible||!confirmedGoal;
     const contact=seg.contact?[seg.contact.id,seg.contact.carrier||seg.carrier].filter(Boolean):null;
-    renderer.draw({tau,cues,motion,kinetics,players,ball,teamOf:tl.teamOf,keepers:tl.keepers,keeperPos:Array.isArray(tl.keepers)&&tl.keepers.length===2?[0,1].map(side=>window.CageViewerRenderer.keeperStanceAt(tl,events,T,tl.keepers,tau,side,reduce)):null,keeperEvent:(['gk_save','gk_parry','gk_sweep','gk_distribution','gk_claim'].includes(events[seg.i]?.type)||(events[seg.i]?.gk&&events[seg.i]?.calc?.keeperMode))?events[seg.i]:null,keeperPhase:T.phase(seg,tau),labels,numbers,carrier:ball.owner,contact,oop:seg.oop,flash:Math.max(0,(flashUntil-now)/.6),trail,reducedMotion:reduce,focus:seg.carrier});
+    renderer.draw({tau,cues,motion,kinetics,players,ball,teamOf:tl.teamOf,keepers:tl.keepers,keeperPos:RM&&RM.keepersAt(tau).every(Boolean)?RM.keepersAt(tau):Array.isArray(tl.keepers)&&tl.keepers.length===2?[0,1].map(side=>window.CageViewerRenderer.keeperStanceAt(tl,events,T,tl.keepers,tau,side,reduce)):null,keeperEvent:(['gk_save','gk_parry','gk_sweep','gk_distribution','gk_claim'].includes(events[seg.i]?.type)||(events[seg.i]?.gk&&events[seg.i]?.calc?.keeperMode))?events[seg.i]:null,keeperPhase:T.phase(seg,tau),labels,numbers,carrier:ball.owner,contact,oop:seg.oop,flash:Math.max(0,(flashUntil-now)/.6),trail,reducedMotion:reduce,focus:seg.carrier});
     q('score').textContent=score[0]+'–'+score[1];q('clock').textContent=mmss(T.clockAt(tl,tau));
     const st=pb.inReplay?'REPLAY':pb.state==='ended'?'FULL TIME':pb.state==='playing'?(o.mode==='replay'?'▶ REPLAY':'● LIVE'):pb.state==='paused'?'❚❚ PAUSED':'READY';q('state').textContent=st;root.dataset.state=pb.inReplay||o.mode==='replay'?'replay':pb.state;
     q('play').textContent=pb.state==='playing'?'❚❚':'▶';q('play').setAttribute('aria-label',pb.state==='playing'?'Pause':'Play');

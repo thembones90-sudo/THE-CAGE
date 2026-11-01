@@ -7,6 +7,11 @@ const T=window.CageViewerTimeline;
 // boost: extra rate for safe build-up (possessions with no danger). Full has no condensation.
 const SPEEDS={
   full:{label:'Full',boost:1},
+  // Full match at a fixed multiple of real match time (1x: one match second per second), no condensation.
+  x075:{label:'Full 0.75×',boost:1,real:.75},
+  x1:{label:'Full 1×',boost:1,real:1},
+  x15:{label:'Full 1.5×',boost:1,real:1.5},
+  x2:{label:'Full 2×',boost:1,real:2},
   dramatic:{label:'Dramatic',boost:1.6,factor:1/1.4},
   dynamic:{label:'Dynamic',boost:3,factor:1},
   fast:{label:'Fast',boost:3,factor:1/.45},
@@ -20,7 +25,7 @@ function createPlayback(tl,opts){
   const o=Object.assign({speed:'dynamic',mode:'live'},opts||{}),listeners={};
   const st={tau:0,state:'ready',speed:SPEEDS[o.speed]?o.speed:'dynamic',mode:o.mode==='replay'?'replay':'live',endFired:false,replay:null,seg:0,goalsSeen:new Set()};
   const emit=(name,data)=>{(listeners[name]||[]).slice().forEach(fn=>fn(data));};
-  function base(){const sp=SPEEDS[st.speed];if(!sp.factor)return 1;return dynamicBase(tl,SPEEDS.dynamic.boost)*sp.factor;}
+  function base(){const sp=SPEEDS[st.speed];if(sp.real)return Math.max(1e-3,tl.total/Math.max(1,tl.duration))*sp.real;if(!sp.factor)return 1;return dynamicBase(tl,SPEEDS.dynamic.boost)*sp.factor;}
   let baseRate=base();
   function rateAt(tau){if(st.replay)return REPLAY_RATE;const sp=SPEEDS[st.speed],seg=tl.segments[T.segmentIndex(tl,tau)];return Math.max(.05,baseRate*(seg.danger?1:(sp.boost||1)));}
   function crossings(from,to){const b=T.segmentIndex(tl,to);for(let i=st.seg+1;i<=b;i++)emit('segment',{index:i,beat:tl.segments[i].beat});st.seg=b;
