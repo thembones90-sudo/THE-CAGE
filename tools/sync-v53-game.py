@@ -6,7 +6,7 @@ page=(root/"play.html").read_text(encoding='utf-8-sig')
 main_scripts=re.findall(r'<script\s+src="(src/[^"]+)"\s*></script>',current)
 assert "src/roster-182.js" in main_scripts and "src/recruitment-four-v1.js" in main_scripts and "src/showdown.js" in main_scripts,main_scripts
 main_scripts=main_scripts[:main_scripts.index("src/showdown.js")]
-v53_scripts=["src/viewer/coords.js","src/viewer/layout.js","src/viewer/timeline.js","src/viewer/clock.js",
+v53_scripts=["src/viewer/coords.js","src/viewer/layout.js","src/viewer/timeline.js","src/viewer/recorded-motion.js","src/viewer/key-moments.js","src/viewer/clock.js",
              "src/viewer-v4/fx.js","src/viewer-v4/motion.js","src/viewer-v4/kinetics.js",
              "src/viewer-v4/label-layout.js","src/viewer-v4/renderer.js",
              "src/viewer-v4/goal-experience.js","src/viewer-v4/goal-audio.js","src/viewer-v4/viewer.js"]

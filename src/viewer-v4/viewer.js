@@ -51,7 +51,7 @@ function shell(el,o){el.innerHTML=`<div class="cv-root" tabindex="-1">
  <label class="cv-speed">Speed <select data-k="speed">${Object.entries(K.SPEEDS).map(([k,v])=>`<option value="${k}">${v.label}</option>`).join('')}</select></label>
  <button data-k="sound" aria-pressed="false" aria-label="Enable goal sound" title="Original synthetic goal sound; optional and off by default">Sound: Off</button>
  <button data-k="replay" disabled>⟲ Goal replay</button>
- <input data-k="seek" type="range" min="0" max="1000" value="0" aria-label="Seek">
+ <div class="cv-seekbar"><input data-k="seek" type="range" min="0" max="1000" value="0" aria-label="Seek"><div class="cv-marks" data-k="marks" aria-label="Key moments"></div></div>
  <span class="cv-ptime" data-k="ptime" title="Playback time (real) vs timeline">0:00 / 0:00</span>
 </div>
 <div class="cv-sr" data-k="ticker" aria-live="polite"></div>
@@ -68,6 +68,7 @@ function mount(el,record,opts){
   const name=id=>id?(o.names[id]||window.CageGoalkeepers?.BY_ID[id]?.name||titleCase(id)):'';
   const labels={},numbers={};tl.ids.forEach(id=>{labels[id]=L.label(name(id));numbers[id]=tl.teams[tl.teamOf[id]].indexOf(id)+1;});
   const lines=T.schedule(tl,o.lines||basicLines(events,name));const cues=window.CageViewerV4FX.buildCues(tl,events);
+  const moments=window.CageKeyMoments?window.CageKeyMoments.build(tl):[];
   const q=shell(el,o),root=el.querySelector('.cv-root'),canvas=el.querySelector('canvas'),renderer=Rn.createRenderer(canvas),pb=K.createPlayback(tl,{speed:o.speed,mode:o.mode});
   const listeners={},emit=(n,d)=>(listeners[n]||[]).slice().forEach(f=>f(d));
   const reduce=typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -87,6 +88,11 @@ function mount(el,record,opts){
 
   const inferredMotionNote='Body facing, trails, connector lines and the small owned-ball foot offset are inferred display styling. They never change recorded positions, events or outcomes.';
   q('notes').innerHTML=tl.notes.concat(tl.warnings,[RM?'Player, goalkeeper and ball positions are the recorded engine movement ('+RM.version+', 4 Hz), drawn as recorded.':inferredMotionNote]).map(n=>'<li>'+esc(n)+'</li>').join('');
+  // Time bar: one marker per key moment; clicking jumps to the start of its build-up.
+  const marked=moments;
+  q('marks').innerHTML=marked.map((m,k)=>{const ev=events[m.i]||{},who=ev.actor||ev.gk||m.actor,score=m.kind==='goal'?' '+T.scoreAt(tl,m.tau+1e-4).join('–'):'';
+    const tip=mmss(m.t)+' · '+m.label+(who&&m.kind!=='golden'?' · '+name(m.kind==='save'?ev.gk||who:who):'')+score;
+    return '<button type="button" class="cv-mark cv-mark-'+m.kind+(m.team===1?' cv-mark-b':m.team===0?' cv-mark-a':'')+'" data-m="'+k+'" style="left:'+(100*m.tau/tl.total).toFixed(3)+'%" title="'+esc(tip)+'" aria-label="'+esc(tip)+'"></button>';}).join('');
   q('speed').value=pb.speed;canvas.setAttribute('aria-label','Top-down cage pitch: '+tl.teams.map((t,i)=>o.teamNames[i]+' '+t.map(name).join(', ')+(tl.keepers?.[i]?', goalkeeper '+name(tl.keepers[i]):'')).join(' versus '));
   let raf=0,last=null,shown=-1,flashUntil=0,trail=[],commHidden=false,lastSeg=-1,now=0,goldenCue=null,goldenAt=0,goldenTimer=null,goldenEndTau=Infinity,viewEnded=false;
   const sound=Audio.create();
@@ -187,6 +193,7 @@ function mount(el,record,opts){
     button.classList.toggle('cv-audio-on',active);
   });
   on('replay','click',()=>{pb.replayGoal();});
+  on('marks','click',e=>{const b=e.target.closest('.cv-mark');if(!b)return;const m=marked[+b.dataset.m];if(!m)return;pb.seek(m.from);dismissCinematic();trail=[];if(pb.state!=='playing')pb.play();});
   on('seek','input',e=>{pb.seek(tl.total*e.target.value/1000);dismissCinematic();trail=[];});
   on('commtoggle','click',e=>{commHidden=!commHidden;root.classList.toggle('cv-nocomm',commHidden);e.target.textContent=commHidden?'Show':'Hide';e.target.setAttribute('aria-pressed',String(!commHidden));});
   const key=e=>{if(e.target&&/INPUT|SELECT|TEXTAREA/.test(e.target.tagName))return;if(e.code==='Space'){e.preventDefault();pb.toggle();}else if(e.code==='ArrowRight'){pb.seek(pb.tau+3);dismissCinematic();}else if(e.code==='ArrowLeft'){pb.seek(pb.tau-3);dismissCinematic();}};
@@ -194,7 +201,7 @@ function mount(el,record,opts){
   const vis=()=>{if(document.hidden)pb.pause();};document.addEventListener('visibilitychange',vis);unsub.push(()=>document.removeEventListener('visibilitychange',vis));
   const rs=()=>{renderer.resize();frame();};const ro=typeof ResizeObserver==='function'?new ResizeObserver(rs):null;if(ro){ro.observe(canvas);unsub.push(()=>ro.disconnect());}else{window.addEventListener('resize',rs);unsub.push(()=>window.removeEventListener('resize',rs));}
   renderer.resize();frame();raf=requestAnimationFrame(loop);if(o.autoplay)pb.play();
-  const ctl={timeline:tl,cues,playback:pb,
+  const ctl={timeline:tl,cues,playback:pb,moments,
     setShowdown(score){if(score&&[score.A,score.B].every(n=>Number.isInteger(n)&&n>=0&&n<=3))q('showdown').textContent=score.A+' : '+score.B;return ctl;},
     play(){pb.play();return ctl;},pause(){pb.pause();return ctl;},resume(){pb.resume();return ctl;},toggle(){pb.toggle();return ctl;},
     seek(tau){pb.seek(tau);if(goldenCue&&pb.tau<goldenCue.tau)dismissCinematic();return ctl;},render(){frame();return ctl;},setSpeed(s){pb.setSpeed(s);q('speed').value=s;return ctl;},replayGoal(){return pb.replayGoal();},

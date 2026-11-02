@@ -175,3 +175,15 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.08;ba
 
 @media(max-width:650px){.cv-golden-doors{display:none}}
 @media(prefers-reduced-motion:reduce){.cv-golden-doors{display:none!important}.cv-golden-doors i{animation:none!important}}
+
+/* Time bar key-moment markers (functional layer; positions come from the recorded timeline). */
+.cv-seekbar{position:relative;flex:1;min-width:140px;display:flex;align-items:center}
+.cv-seekbar input[type=range]{flex:1;width:100%;min-width:0}
+.cv-marks{position:absolute;inset:0;pointer-events:none}
+.cv-mark{position:absolute;top:3px;width:12px;height:12px;min-height:0!important;min-width:0!important;padding:0!important;margin-left:-6px;border-radius:50%!important;border:2px solid #0d171c!important;background:#9fb3b5!important;pointer-events:auto;cursor:pointer;box-shadow:0 1px 3px #0008}
+.cv-mark-goal{width:16px;height:16px;margin-left:-8px;top:1px;background:#f2c76a!important}
+.cv-mark-golden{background:#fff!important;border-radius:2px!important}
+.cv-mark-save{background:#79c6e8!important}
+.cv-mark-miss,.cv-mark-block{width:8px;height:8px;margin-left:-4px;top:5px;opacity:.75}
+.cv-mark-goal.cv-mark-a{box-shadow:0 0 0 2px var(--cv-a,#3f8fd8)}.cv-mark-goal.cv-mark-b{box-shadow:0 0 0 2px var(--cv-b,#d8573f)}
+.cv-mark:hover,.cv-mark:focus-visible{transform:scale(1.35);outline:none;z-index:2}

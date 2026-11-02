@@ -12,6 +12,8 @@ const SPEEDS={
   x1:{label:'Full 1×',boost:1,real:1},
   x15:{label:'Full 1.5×',boost:1,real:1.5},
   x2:{label:'Full 2×',boost:1,real:2},
+  // Only the key moments (goals, saves, misses, blocks and their build-up) at match pace; the rest is skipped.
+  highlights:{label:'Highlights',boost:1,real:1,highlights:true},
   dramatic:{label:'Dramatic',boost:1.6,factor:1/1.4},
   dynamic:{label:'Dynamic',boost:3,factor:1},
   fast:{label:'Fast',boost:3,factor:1/.45},
@@ -27,6 +29,10 @@ function createPlayback(tl,opts){
   const emit=(name,data)=>{(listeners[name]||[]).slice().forEach(fn=>fn(data));};
   function base(){const sp=SPEEDS[st.speed];if(sp.real)return Math.max(1e-3,tl.total/Math.max(1,tl.duration))*sp.real;if(!sp.factor)return 1;return dynamicBase(tl,SPEEDS.dynamic.boost)*sp.factor;}
   let baseRate=base();
+  const KM=window.CageKeyMoments,wins=KM?KM.windows(tl):[];
+  // Highlights: the playhead inside a window, or the next window start (tl.total after the last one).
+  function hl(){return SPEEDS[st.speed].highlights&&!st.replay&&wins.length>0;}
+  function hlAt(tau){for(const w of wins){if(tau<w[1]-1e-9)return tau>=w[0]?{tau,end:w[1]}:{tau:w[0],end:w[1]};}return {tau:tl.total,end:tl.total};}
   function rateAt(tau){if(st.replay)return REPLAY_RATE;const sp=SPEEDS[st.speed],seg=tl.segments[T.segmentIndex(tl,tau)];return Math.max(.05,baseRate*(seg.danger?1:(sp.boost||1)));}
   function crossings(from,to){const b=T.segmentIndex(tl,to);for(let i=st.seg+1;i<=b;i++)emit('segment',{index:i,beat:tl.segments[i].beat});st.seg=b;
     for(const g of tl.goals)if(from<g.tau&&to>=g.tau)emit('goal',{goal:g,replay:!!st.replay||st.mode==='replay'});}
@@ -45,10 +51,13 @@ function createPlayback(tl,opts){
     replayGoal(){const g=tl.goals[tl.goals.length-1];if(!g)return false;st.replay={from:g.replayFrom};st.tau=g.replayFrom;st.seg=T.segmentIndex(tl,st.tau);st.state='playing';emit('replayStart',{from:g.replayFrom,goal:g});return true;},
     // Advance by real seconds. Returns the new tau.
     advance(real){if(st.state!=='playing'||!(real>0))return st.tau;if(st.tau>=tl.total){finish();return st.tau;}let left=real,tau=st.tau;
-      while(left>1e-9&&tau<tl.total){const seg=tl.segments[T.segmentIndex(tl,tau)],r=rateAt(tau),room=Math.max(seg.tau1-tau,1e-6),need=room/r;if(need>=left){tau+=left*r;left=0;}else{tau=seg.tau1;left-=need;}}
+      while(left>1e-9&&tau<tl.total){let lim=tl.total;if(hl()){const h=hlAt(tau);tau=h.tau;lim=h.end;if(tau>=tl.total)break;}
+        const seg=tl.segments[T.segmentIndex(tl,tau)],r=rateAt(tau),room=Math.max(Math.min(seg.tau1,lim)-tau,1e-6),need=room/r;if(need>=left){tau+=left*r;left=0;}else{tau=Math.min(seg.tau1,tau+room);left-=need;}}
       tau=Math.min(tau,tl.total);const from=st.tau;st.tau=tau;crossings(from,tau);if(tau>=tl.total)finish();return st.tau;},
     // Estimated real seconds for the whole match at the current speed (for the UI).
-    estimate(){if(st.speed==='instant')return 0;let s=0;for(const g of tl.segments)s+=(g.tau1-g.tau0)/rateAt(g.tau0);return s;}
+    estimate(){if(st.speed==='instant')return 0;let s=0;if(hl()){for(const w of wins)s+=(w[1]-w[0])/baseRate;return s;}for(const g of tl.segments)s+=(g.tau1-g.tau0)/rateAt(g.tau0);return s;},
+    // Merged highlight windows [from,to] in playback time (empty when key moments are unavailable).
+    get highlights(){return wins.map(w=>w.slice());}
   };
   return api;}
 window.CageViewerClock={SPEEDS,REPLAY_RATE,createPlayback,dynamicBase};
