@@ -34,7 +34,7 @@ function show(o){if(instant()||typeof document==='undefined'||!document.body)ret
 function land(skipped){if(!state||state.landed)return;state.landed=true;const o=state.o,n=o.names||{A:'COMMANDER',B:'OPPONENT'},coin=q('coin');
   clearTimeout(state.timer);if(state.anim){state.anim.onfinish=null;state.anim.finish();}else coin.style.transform='rotateX('+(o.winner==='B'?180:0)+'deg)';
   el.classList.add('ct-done');q('title').textContent=(o.winner==='A'?'HEADS':'TAILS');
-  const r=q('result');r.innerHTML='<b>'+n[o.winner]+'</b> WINS THE TOSS<small>'+n[o.winner]+' PICKS FIRST · PICKS ALTERNATE</small>';r.classList.add('ct-win-'+o.winner.toLowerCase());
+  const r=q('result');r.innerHTML='<b>'+n[o.winner]+'</b> WINS THE TOSS<small>'+n[o.winner]+' PICKS FIRST IN ROUNDS 1, 3, 5 · '+n[o.winner==='A'?'B':'A']+' IN ROUNDS 2, 4</small>';r.classList.add('ct-win-'+o.winner.toLowerCase());
   q('order').innerHTML=(o.order||[]).map((s,i)=>'<span class="ct-pip ct-pip-'+s.toLowerCase()+'" style="animation-delay:'+(reduce()?0:120*i)+'ms" title="Pick '+(i+1)+': '+n[s]+'">'+(i+1)+'</span>').join('');
   q('skip').hidden=true;const go=q('go');go.hidden=false;go.focus({preventScroll:true});
   state.timer=setTimeout(close,skipped?6000:4500);}

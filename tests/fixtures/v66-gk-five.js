@@ -4,6 +4,7 @@ try{
  const original=window.CageViewer.mount;window.CageViewer.mount=(...args)=>{controller=original(...args);return controller;};
  $('begin').click();const usedGK=new Set();let rounds=0;
  for(let r=1;r<=5;r++){
+  {const s0=window.CageRandomDraft.snapshot();if(r===1)window.__toss=s0.winner;check(s0.winner===(r%2===1?window.__toss:window.__toss==='A'?'B':'A'),'one toss per showdown: first pick alternates by round (round '+r+')');if(r>1)check($('intermission-first').textContent.endsWith('PICKS FIRST'),'intermission names the first picker');}
   for(let i=0;i<150;i++){const s=window.CageRandomDraft.snapshot();
    if(s.finished)break;
    if(s.picks.length<6){if(!$('handoff').classList.contains('hidden')&&!$('reveal').disabled)$('reveal').click();
@@ -27,6 +28,6 @@ try{
  }
  const end=window.CageRandomDraft.snapshot();check(end.champion&&Math.max(end.wins.A,end.wins.B)===3,'no first-to-three champion');
  check(usedGK.size===rounds*2,'repeated keeper across showdown');window.CageViewer.mount=original;
- out.textContent='V66_GK_FIVE_PASS '+rounds+' rounds, '+usedGK.size+' exhausted keepers, champion '+end.champion+', schema2 replayed every round';
+ out.textContent='V66_GK_FIVE_PASS '+rounds+' rounds (first pick alternates from one toss), '+usedGK.size+' exhausted keepers, champion '+end.champion+', schema2 replayed every round';
 }catch(e){out.textContent='V66_GK_FIVE_FAIL '+e.stack;}
 })();
