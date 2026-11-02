@@ -1,5 +1,5 @@
 /* THE CAGE V6.10 TACTICAL ENGINE EXPERIMENTAL: generated from the canonical playable dependency list. */
-const CACHE='the-cage-full-t312-ef5b65f1e32e';
+const CACHE='the-cage-full-t312-89694b8bbf1c';
 const STATIC=[
   "./assets/cage-icon.svg",
   "./assets/flags/ATTRIBUTION.md",
@@ -137,6 +137,7 @@ const STATIC=[
   "./classic-v56/src/viewer/timeline.js",
   "./classic-v56/src/viewer/viewer.css",
   "./classic-v56/src/viewer/viewer.js",
+  "./design/coin-toss.css",
   "./design/qwen-30b/arena/arena-golden.svg",
   "./design/qwen-30b/arena/arena.svg",
   "./design/qwen-30b/arena/relic-ball.svg",
@@ -173,6 +174,7 @@ const STATIC=[
   "./src/cage-engine-v69.js",
   "./src/cage-engine.js",
   "./src/cage-ui.css",
+  "./src/coin-toss.js",
   "./src/cpu-draft.js",
   "./src/david-luiz-recruitment-v1.js",
   "./src/di-canio-recruitment-v1.js",

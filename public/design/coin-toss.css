@@ -1,0 +1,61 @@
+/* THE CAGE: coin toss overlay + front page v2 (emblem stage, round steps). */
+html.ct-open{overflow:hidden}
+.ct-overlay{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:16px;background:radial-gradient(ellipse 60% 55% at 50% 42%,#2a3b3dcc,#050b10f2 70%),repeating-linear-gradient(135deg,transparent 0 22px,#9fbfc10a 22px 23px),repeating-linear-gradient(45deg,transparent 0 22px,#9fbfc10a 22px 23px);backdrop-filter:blur(3px);animation:ct-in .25s ease-out}
+.ct-overlay[hidden]{display:none}
+@keyframes ct-in{from{opacity:0}to{opacity:1}}
+.ct-lights i{position:absolute;top:-10%;width:34vw;height:120%;background:linear-gradient(180deg,#fff3cf2e,transparent 70%);filter:blur(18px);transform-origin:top center;pointer-events:none;animation:ct-sweep 5s ease-in-out infinite alternate}
+.ct-lights i:first-child{left:6%;transform:rotate(-18deg)}.ct-lights i:last-child{right:6%;transform:rotate(18deg);animation-delay:-2.5s}
+@keyframes ct-sweep{from{opacity:.35}to{opacity:.8}}
+.ct-panel{position:relative;width:min(560px,100%);text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;color:#eef3fb}
+.ct-kicker{font-size:11px;letter-spacing:.24em;font-weight:900;color:#c9a96b}
+.ct-panel h2{margin:0;font-size:clamp(30px,6vw,52px);letter-spacing:.14em;font-weight:1000;text-shadow:0 4px 24px #000}
+.ct-done .ct-panel h2{color:#f2cb78;animation:ct-pop .45s cubic-bezier(.2,1.6,.4,1)}
+@keyframes ct-pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+.ct-arena{position:relative;width:220px;height:300px;perspective:900px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:40px}
+.ct-shadow{position:absolute;bottom:22px;left:50%;width:150px;height:22px;margin-left:-75px;border-radius:50%;background:radial-gradient(#000c,transparent 70%);opacity:.55}
+.ct-coin{position:relative;width:170px;height:170px;transform-style:preserve-3d;will-change:transform}
+.ct-face{position:absolute;inset:0;border-radius:50%;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:hidden}
+.ct-face-a{background:radial-gradient(circle at 32% 24%,#fff2be,#f4ca64 30%,#b47d2e 68%,#59401f);color:#5b3a16;box-shadow:inset 0 0 0 5px #ffe7a2,inset 0 0 0 11px #8b662e,inset 0 -8px 20px #0006}
+.ct-face-a{transform:translateZ(1px)}.ct-face-b{transform:rotateX(180deg) translateZ(1px);background:radial-gradient(circle at 32% 24%,#ffffff,#c9d6dc 30%,#7b8f99 68%,#2b3a42);color:#22323a;box-shadow:inset 0 0 0 5px #eef6f8,inset 0 0 0 11px #56707b,inset 0 -8px 20px #0006}
+.ct-edge{position:absolute;inset:3px;border-radius:50%;transform:translateZ(0);background:#6d5020}
+.ct-rim{position:absolute;inset:16px;border-radius:50%;border:2px dashed currentColor;opacity:.35}
+.ct-crest svg{width:62px;height:62px;display:block}
+.ct-name{font-size:13px;font-weight:1000;letter-spacing:.12em;max-width:120px;line-height:1.1}
+.ct-side{font-size:9px;font-weight:900;letter-spacing:.3em;opacity:.7}
+.ct-face:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,#ffffff70 48%,transparent 60%);transform:translateX(-120%);animation:ct-glint 2.6s ease-in-out infinite}
+@keyframes ct-glint{55%,100%{transform:translateX(120%)}}
+.ct-result{min-height:52px;font-size:15px;font-weight:900;letter-spacing:.12em;color:#d8e4e8}
+.ct-result b{font-size:22px;display:inline-block;margin-right:6px}
+.ct-result.ct-win-a b{color:#f4cb72}.ct-result.ct-win-b b{color:#cfe0e6}
+.ct-result small{display:block;margin-top:5px;font-size:11px;letter-spacing:.18em;color:#9fb5bb}
+.ct-order{display:flex;gap:8px;justify-content:center;min-height:34px}
+.ct-pip{width:34px;height:34px;display:grid;place-items:center;border-radius:6px;font-weight:1000;font-size:14px;animation:ct-pip .35s backwards cubic-bezier(.2,1.5,.4,1)}
+.ct-pip-a{background:linear-gradient(160deg,#e9c06a,#8c6526);color:#1d1408}.ct-pip-b{background:linear-gradient(160deg,#d7e3e8,#62767f);color:#111b20}
+@keyframes ct-pip{from{transform:translateY(12px) scale(.6);opacity:0}}
+.ct-actions{display:flex;gap:10px;justify-content:center;min-height:52px;align-items:center}
+.ct-skip{background:transparent;border:1px solid #5d7278;color:#b9c9cd;padding:10px 18px;border-radius:4px;letter-spacing:.16em;font-weight:800;cursor:pointer;min-height:44px}
+.ct-skip:hover,.ct-skip:focus-visible{border-color:#e2bb6c;color:#f3d18a;outline:none}
+.ct-go:focus-visible{outline:2px solid #fff1c4;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.ct-overlay,.ct-lights i,.ct-face:after,.ct-pip,.ct-done .ct-panel h2{animation:none!important}}
+@media(max-width:480px){.ct-arena{height:250px;width:180px}.ct-coin{width:140px;height:140px}.ct-crest svg{width:48px;height:48px}.ct-name{font-size:11px}.ct-result b{font-size:18px}}
+
+/* Front page v2: the emblem is the coin, lit like a stage; a four-step round guide. */
+.intro-art{justify-content:space-between;background:radial-gradient(ellipse 70% 55% at 50% 48%,#3a3f36,#0e1c24 62%,#071119)!important}
+.intro-art:after{content:"";position:absolute;left:50%;top:44%;width:360px;height:360px;margin:-180px 0 0 -180px;border-radius:50%;background:radial-gradient(#f4c96a33,transparent 62%);animation:fp-breathe 4.5s ease-in-out infinite;pointer-events:none}
+@keyframes fp-breathe{50%{transform:scale(1.12);opacity:.6}}
+.intro-art svg{flex:1;height:auto!important;max-height:440px;min-height:300px;padding:10px 18px;z-index:1}
+.intro-art .fp-coin{transform-box:view-box;transform-origin:200px 190px;animation:fp-coin 7s ease-in-out infinite}
+@keyframes fp-coin{0%,100%{transform:scaleX(1)}46%{transform:scaleX(1)}50%{transform:scaleX(.08)}54%{transform:scaleX(1)}}
+.intro-art-beams{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.intro-art-beams i{position:absolute;top:-20%;width:42%;height:110%;background:linear-gradient(180deg,#fff4d230,transparent 65%);filter:blur(14px);transform-origin:top center}
+.intro-art-beams i:first-child{left:-6%;transform:rotate(-22deg);animation:ct-sweep 6s ease-in-out infinite alternate}
+.intro-art-beams i:last-child{right:-6%;transform:rotate(22deg);animation:ct-sweep 6s -3s ease-in-out infinite alternate}
+.intro-steps{list-style:none;margin:6px 0 2px;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;width:100%;max-width:620px;counter-reset:fp}
+.intro-steps li{counter-increment:fp;position:relative;padding:10px 10px 10px 40px;border:1px solid #33505a;border-radius:6px;background:linear-gradient(160deg,#10232d,#0a1820);font-size:11px;line-height:1.3;color:#a9bec5}
+.intro-steps li:before{content:counter(fp);position:absolute;left:9px;top:50%;margin-top:-12px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#e2b862;color:#1b1307;font-weight:1000;font-size:12px}
+.intro-steps b{display:block;color:#eef3fb;font-size:12px;letter-spacing:.08em}
+.intro-start{position:relative;overflow:hidden;transition:transform .15s,box-shadow .15s}
+.intro-start:hover,.intro-start:focus-visible{transform:translateY(-2px);box-shadow:0 10px 30px #d9a24a66}
+.intro-start:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,#fff6 48%,transparent 62%);transform:translateX(-120%);animation:ct-glint 3.2s ease-in-out infinite}
+@media(max-width:760px){.intro-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.intro-rules span{flex:1 1 auto}}
+@media(prefers-reduced-motion:reduce){.intro-art:after,.intro-art .fp-coin,.intro-art-beams i,.intro-start:after{animation:none!important}}

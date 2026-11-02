@@ -54,6 +54,7 @@ try{
   @('tests/visual-readability.cjs'),
   @('tests/sticker-cards.cjs'),
   @('tests/david-luiz-recruitment.cjs'),
+  @('tests/coin-toss.cjs'),
   @('tests/v60-package-parity.cjs')
  )
  $passed=0
