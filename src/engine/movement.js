@@ -23,7 +23,9 @@ function profile(a){
 function keeperProfile(g){const r=g?.r||{};return profile({pace:60+.3*(r.sweeping??80),agi:r.reflexes??85,tech:r.distribution??80});}
 const centre=c=>({x:(c.x+.5)*CELL_X,y:(c.y+.5)*CELL_Y});
 const inCell=(p,c,tol)=>p.x>=c.x*CELL_X-tol&&p.x<=(c.x+1)*CELL_X+tol&&p.y>=c.y*CELL_Y-tol&&p.y<=(c.y+1)*CELL_Y+tol;
-function create({teams,keepers,styles}){
+function create({teams,keepers,styles,wallBrake}){
+ // wallBrake (cage-t3-14+): bodies brake before the pitch boundary instead of stopping dead on it. Off for older engines,
+ // which call create() without it, so their recorded movement replays byte-for-byte.
  // bodies: outfield in engine order (team 0 then team 1), then the two keepers (team 0's, team 1's)
  const bodies=[];
  for(const team of teams)for(const q of team.ps){const c=centre(q.pos);bodies.push({id:q.id,team:team.ti,kind:'outfield',q,prof:profile(q.c.a),x:c.x,y:c.y,vx:0,vy:0,state:0,stateRuns:[]});}
@@ -66,6 +68,7 @@ function create({teams,keepers,styles}){
   const ddx=dvx-b.vx,ddy=dvy-b.vy,dd=hyp(ddx,ddy),newSp=hyp(dvx,dvy),lim=(newSp<sp?p.brake:p.accel)*dt;
   if(dd>lim){b.vx+=ddx/dd*lim;b.vy+=ddy/dd*lim;}else{b.vx=dvx;b.vy=dvy;}
   const sp2=hyp(b.vx,b.vy);
+  if(wallBrake){const cap=(pos,v,max)=>v<0?-min(-v,sqrt(2*p.brake*pos)):v>0?min(v,sqrt(2*p.brake*(max-pos))):v;b.vx=cap(b.x,b.vx,L);b.vy=cap(b.y,b.vy,W);}
   b.x=clamp(b.x+b.vx*dt,0,L);b.y=clamp(b.y+b.vy*dt,0,W);
   const braking=sp2<sp-.4;
   b.state=sp2<.4?0:braking?5:turned?6:sp2<2?1:sp2<4?2:sp2<.85*p.vmax?3:4;
@@ -116,7 +119,7 @@ function create({teams,keepers,styles}){
  }
  function finish(){
   const enc=encode();
-  const out={version:VERSION,hz:HZ,units:'dm',pitch:{length:L,width:W},bodies:bodies.map(b=>({id:b.id,team:b.team,kind:b.kind,style:b.style||undefined,vmax:+b.prof.vmax.toFixed(2),accel:+b.prof.accel.toFixed(2),brake:+b.prof.brake.toFixed(2),turnDeg:+(b.prof.turn*180/PI).toFixed(1)})).concat([{id:'ball',kind:'ball'}]),
+  const out={version:wallBrake?VERSION+'+wall':VERSION,hz:HZ,units:'dm',pitch:{length:L,width:W},bodies:bodies.map(b=>({id:b.id,team:b.team,kind:b.kind,style:b.style||undefined,vmax:+b.prof.vmax.toFixed(2),accel:+b.prof.accel.toFixed(2),brake:+b.prof.brake.toFixed(2),turnDeg:+(b.prof.turn*180/PI).toFixed(1)})).concat([{id:'ball',kind:'ball'}]),
    frames:frameCount,positions:enc.data,deltaOverflow:enc.overflow,
    states:{legend:STATES,encoding:'byte=(state<<5)|run(1..31), base64',runs:Object.fromEntries(bodies.map(b=>{const out=[];for(const [st,run] of b.stateRuns){let r=run;while(r>0){const k=min(31,r);out.push((st<<5)|k);r-=k;}}return [b.id,b64(Uint8Array.from(out))];}))},
    contradictions:{fields:['eventIndex','bodyIndex','distanceDm','impossible','kind(0 lag,1 relocation)'],rows:contradictions},summary:{contradictions:contradictions.length,impossible:stats.impossible,byEventType:stats.byType,maxSpeed:Object.fromEntries(bodies.map(b=>[b.id,+(b.maxSp||0).toFixed(2)]))}};

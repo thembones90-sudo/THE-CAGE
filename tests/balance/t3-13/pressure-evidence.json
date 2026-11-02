@@ -1,5 +1,5 @@
 {
- "engine": "cage-t3-13",
+ "engine": "cage-t3-14",
  "rule": {
   "pressure": "defender-quality-v1"
  },
@@ -25,40 +25,40 @@
  "seedsPerOrientation": 120,
  "result": {
   "off:paolo-maldini": {
-   "shotsUnderPressure": 3420,
-   "meanGoalChance": 0.4685,
-   "goalsPerUnblockedShot": 0.463,
-   "concededPerMatch": 6.02
+   "shotsUnderPressure": 3131,
+   "meanGoalChance": 0.4418,
+   "goalsPerUnblockedShot": 0.434,
+   "concededPerMatch": 5.84
   },
   "off:sergio-ramos": {
-   "shotsUnderPressure": 2977,
-   "meanGoalChance": 0.4766,
-   "goalsPerUnblockedShot": 0.476,
-   "concededPerMatch": 5.77
+   "shotsUnderPressure": 2731,
+   "meanGoalChance": 0.4674,
+   "goalsPerUnblockedShot": 0.454,
+   "concededPerMatch": 5.95
   },
   "off:juan-roman-riquelme": {
-   "shotsUnderPressure": 3035,
-   "meanGoalChance": 0.5166,
-   "goalsPerUnblockedShot": 0.529,
-   "concededPerMatch": 9.1
+   "shotsUnderPressure": 2594,
+   "meanGoalChance": 0.4902,
+   "goalsPerUnblockedShot": 0.487,
+   "concededPerMatch": 8.89
   },
   "on:paolo-maldini": {
-   "shotsUnderPressure": 3398,
-   "meanGoalChance": 0.4133,
-   "goalsPerUnblockedShot": 0.41,
-   "concededPerMatch": 5.36
+   "shotsUnderPressure": 3145,
+   "meanGoalChance": 0.3907,
+   "goalsPerUnblockedShot": 0.383,
+   "concededPerMatch": 5.45
   },
   "on:sergio-ramos": {
-   "shotsUnderPressure": 3028,
-   "meanGoalChance": 0.4257,
-   "goalsPerUnblockedShot": 0.428,
-   "concededPerMatch": 5.36
+   "shotsUnderPressure": 2754,
+   "meanGoalChance": 0.4247,
+   "goalsPerUnblockedShot": 0.42,
+   "concededPerMatch": 5.61
   },
   "on:juan-roman-riquelme": {
-   "shotsUnderPressure": 3013,
-   "meanGoalChance": 0.5659,
-   "goalsPerUnblockedShot": 0.576,
-   "concededPerMatch": 9.31
+   "shotsUnderPressure": 2596,
+   "meanGoalChance": 0.542,
+   "goalsPerUnblockedShot": 0.541,
+   "concededPerMatch": 9.29
   }
  }
 }

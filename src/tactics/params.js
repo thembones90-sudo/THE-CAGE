@@ -4,4 +4,7 @@ const TACTICS={balanced:{rest:0,engageHigh:.35,cp:1,tempo:1,risk:1,direct:1,fat:
 P.movement={creditBase:.55,agilityCredit:.45,creditCap:2,rotationPeriodBase:10,rotationPeriodScale:7,rotationPeriodMin:3,rotationDeficit:18,rotationPass:70,compactHelp:.7};
 P.resolution={fatigueScale:140,mobileLoss:.25,otherLoss:.08,fatigueBase:1.6,recoveryTarget:72,reboundEdge:6,shotBlockTarget:75,blockTackle:.35,blockRead:.65,shotMin:.01,shotMax:.8,shotReference:68,clearShot:.9,nearMiss:.35};
 P.decisions={pressSurgeAfter:1500,floor:.03,boxMin:.45,boxBase:1.2,boxReference:75,boxScale:40,edgeReference:80,edgeScale:12,engagedShot:.7,openShot:1.6,clearShot:6,dribbleBase:.4,dribbleScale:20,dribbleSupport:.25,carry:1.2,passBase:.5,passReference:70,passScale:25,engagedPass:1.3,safeOutlet:.2,throughReference:78,throughScale:10,transitionThrough:1.6,wallReference:84,wallScale:10,wallSupport:.2,shieldReference:72,shieldScale:15,outlet:.8,deepDiscipline:.6,boxDiscipline:.2,committedDiscipline:1.2,restPass:1.6,pressEscapeReference:70,pressEscapeScale:30,pressPenalty:-.5,forwardPass:-.5,recyclePass:.4};
+// M3 off-ball intelligence (cage-t3-14). Weights for choosing a run (open space, clear lane, depth, width), the running a
+// defender saves before handing a mark off, and the discipline levels below which a player doubles the ball / steps up.
+P.offball={space:1,lane:1,ahead:.6,width:.4,handoff:2,doubleUp:40,adventure:35};
 window.CageTacticalParams={VERSION:'t3-space-5',P,TACTICS};})();

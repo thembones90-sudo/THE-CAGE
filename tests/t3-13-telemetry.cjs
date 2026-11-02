@@ -7,8 +7,8 @@ const root = path.resolve(__dirname, '..'), read = f => fs.readFileSync(path.joi
 const scripts = [...read('play.html').matchAll(/<script src="(src\/[^"]+)"><\/script>/g)].map(m => m[1]);
 const c = { window: { location: { search: '' } } }; vm.createContext(c);
 for (const f of scripts) { vm.runInContext(read(f), c, { filename: f }); if (f === 'src/replay/records.js') break; }
-const W = c.window, E = W.CageEngine, OLD = W.CAGE_ENGINE_REGISTRY['cage-t3-12'], R = W.CageRecords, G = W.CageGoalkeepers.players;
-assert.equal(E.VERSION, CURRENT_ENGINE); assert.equal(E.VERSION, 'cage-t3-13'); assert(OLD && OLD.VERSION === 'cage-t3-12', 'frozen T3-12 must be registered for replay');
+const W = c.window, E = W.CAGE_ENGINE_REGISTRY['cage-t3-13'], OLD = W.CAGE_ENGINE_REGISTRY['cage-t3-12'], R = W.CageRecords, G = W.CageGoalkeepers.players;
+assert.equal(E.VERSION, 'cage-t3-13'); assert(OLD && OLD.VERSION === 'cage-t3-12', 'frozen T3-12 must be registered for replay');
 const ids = E.ROSTER.map(p => p.id), tactics = ['balanced', 'press', 'possession', 'counter'];
 const strip = ev => ev.map(e => { const { step, targets, decision, ...rest } = e; return rest; });
 let n = 0, passiveChecked = 0, decisions = 0, actionsWithDecision = 0, shotNowChecked = 0;
@@ -45,7 +45,7 @@ for (let k = 0; k < 160; k++) {
   }
   // 3. determinism and replay
   if (k % 8 === 0) { const again = E.simulate(cfg); assert.equal(again.eventHash, a.eventHash, 'deterministic');
-    const rec = R.make(cfg, a, 1); assert.equal(R.reproduce(rec).eventHash, a.eventHash, 'T3-13 record replays');
+    const rec = { ...R.make(cfg, a, 1), engineVersion: 'cage-t3-13', paramsVersion: E.PARAMS_VERSION }; assert.equal(R.reproduce(rec).eventHash, a.eventHash, 'T3-13 record replays');
     assert.equal(rec.engineVersion, 'cage-t3-13'); }
 }
 assert(decisions > 1000 && shotNowChecked > 100, 'telemetry must actually be produced');

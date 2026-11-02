@@ -1,0 +1,31 @@
+{
+ "engine": "cage-t3-14",
+ "params": "t3-space-7",
+ "matches": 60,
+ "laneShare": {
+  "t313": 0.5,
+  "t314": 0.564
+ },
+ "runnerSpace": {
+  "t313": 0.394,
+  "t314": 0.434
+ },
+ "passFailRate": {
+  "t313": 0.167,
+  "t314": 0.173
+ },
+ "goals": {
+  "t313": 558,
+  "t314": 573
+ },
+ "shots": {
+  "t313": 1892,
+  "t314": 1843
+ },
+ "handoffs": 7841,
+ "doublers": 21,
+ "steppers": 3,
+ "passCompletionVsDoubling": 0.847,
+ "passCompletionOtherwise": 0.825,
+ "unscoredDiscipline": "neutral 50 (no tendency)"
+}
